@@ -3,3 +3,5 @@ data/**/*.json filter=lfs diff=lfs merge=lfs -text
 kosis_data/kosis_metadata_final.json filter=lfs diff=lfs merge=lfs -text
 kosis_data/kosis_metadata_intermediate.json filter=lfs diff=lfs merge=lfs -text
 data/kosis_data/kosis_metadata_intermediate.json filter=lfs diff=lfs merge=lfs -text
+data/kosis_data/density.json filter=lfs diff=lfs merge=lfs -text
+data/kosis_data/kosis_metadata_final.json filter=lfs diff=lfs merge=lfs -text
