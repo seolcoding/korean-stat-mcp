@@ -58,6 +58,7 @@ def extract_search_keywords():
 
 SEARCH_KEYWORDS = extract_search_keywords().union(set(SEARCH_KEYWORDS))
 SEARCH_KEYWORDS = sorted(list(SEARCH_KEYWORDS))
+SEARCH_KEYWORDS = SEARCH_KEYWORDS[SEARCH_KEYWORDS.index('사회복지'):]  # 상위 100개 검색어로 제한
 print(f"검색어 목록: {SEARCH_KEYWORDS}")
 
 

@@ -13,10 +13,9 @@ _ = load_dotenv()
 # TODO: KOSIS에서 발급받은 본인의 API 키를 입력하세요.
 API_KEY = os.getenv("KOSIS_API_KEY")
 BASE_URL = os.getenv("KOSIS_API_ENDPOINT")
-if API_KEY is None:
-    raise ValueError("")
+if API_KEY is None or BASE_URL is None:
+    raise ValueError("API_KEY and BASE_URL MUST be Provided")
 
-BASE_URL = "https://kosis.kr/openapi/Param/statisticsParameterData.do"
 
 # --- 입출력 파일/폴더 설정 ---
 INPUT_METADATA_FILE = Path("./kosis_data/kosis_metadata_final.json")
@@ -107,6 +106,7 @@ def process_single_table(metadata):
             "prdSe": prd_se,
             "startPrdDe": metadata.get("STRT_PRD_DE"),
             "endPrdDe": metadata.get("END_PRD_DE"),
+            "jsonVD": "Y"
         }
 
         try:
