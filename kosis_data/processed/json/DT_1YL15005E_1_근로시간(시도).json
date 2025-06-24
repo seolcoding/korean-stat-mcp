@@ -22,7 +22,9 @@
       "item_codes": {
         "C1": "zone17_0"
       },
-      "itm_id": "index2"
+      "itm_id": "index2",
+      "region": "전국(5인이상)",
+      "data_name": "상용총근로시간"
     },
     {
       "item": "전국(5인이상) - 상용총근로시간",
@@ -31,7 +33,9 @@
       "item_codes": {
         "C1": "zone17_0"
       },
-      "itm_id": "index2"
+      "itm_id": "index2",
+      "region": "전국(5인이상)",
+      "data_name": "상용총근로시간"
     },
     {
       "item": "서울 - 상용총근로시간",
@@ -40,7 +44,9 @@
       "item_codes": {
         "C1": "zone17_1"
       },
-      "itm_id": "index2"
+      "itm_id": "index2",
+      "region": "서울",
+      "data_name": "상용총근로시간"
     },
     {
       "item": "서울 - 상용총근로시간",
@@ -49,7 +55,9 @@
       "item_codes": {
         "C1": "zone17_1"
       },
-      "itm_id": "index2"
+      "itm_id": "index2",
+      "region": "서울",
+      "data_name": "상용총근로시간"
     },
     {
       "item": "강원 - 상용총근로시간",
@@ -58,7 +66,9 @@
       "item_codes": {
         "C1": "zone17_10"
       },
-      "itm_id": "index2"
+      "itm_id": "index2",
+      "region": "강원",
+      "data_name": "상용총근로시간"
     },
     {
       "item": "강원 - 상용총근로시간",
@@ -67,7 +77,9 @@
       "item_codes": {
         "C1": "zone17_10"
       },
-      "itm_id": "index2"
+      "itm_id": "index2",
+      "region": "강원",
+      "data_name": "상용총근로시간"
     },
     {
       "item": "충북 - 상용총근로시간",
@@ -76,7 +88,9 @@
       "item_codes": {
         "C1": "zone17_11"
       },
-      "itm_id": "index2"
+      "itm_id": "index2",
+      "region": "충북",
+      "data_name": "상용총근로시간"
     },
     {
       "item": "충북 - 상용총근로시간",
@@ -85,7 +99,9 @@
       "item_codes": {
         "C1": "zone17_11"
       },
-      "itm_id": "index2"
+      "itm_id": "index2",
+      "region": "충북",
+      "data_name": "상용총근로시간"
     },
     {
       "item": "충남 - 상용총근로시간",
@@ -94,7 +110,9 @@
       "item_codes": {
         "C1": "zone17_12"
       },
-      "itm_id": "index2"
+      "itm_id": "index2",
+      "region": "충남",
+      "data_name": "상용총근로시간"
     },
     {
       "item": "충남 - 상용총근로시간",
@@ -103,7 +121,9 @@
       "item_codes": {
         "C1": "zone17_12"
       },
-      "itm_id": "index2"
+      "itm_id": "index2",
+      "region": "충남",
+      "data_name": "상용총근로시간"
     },
     {
       "item": "전북 - 상용총근로시간",
@@ -112,7 +132,9 @@
       "item_codes": {
         "C1": "zone17_13"
       },
-      "itm_id": "index2"
+      "itm_id": "index2",
+      "region": "전북",
+      "data_name": "상용총근로시간"
     },
     {
       "item": "전북 - 상용총근로시간",
@@ -121,7 +143,9 @@
       "item_codes": {
         "C1": "zone17_13"
       },
-      "itm_id": "index2"
+      "itm_id": "index2",
+      "region": "전북",
+      "data_name": "상용총근로시간"
     },
     {
       "item": "전남 - 상용총근로시간",
@@ -130,7 +154,9 @@
       "item_codes": {
         "C1": "zone17_14"
       },
-      "itm_id": "index2"
+      "itm_id": "index2",
+      "region": "전남",
+      "data_name": "상용총근로시간"
     },
     {
       "item": "전남 - 상용총근로시간",
@@ -139,7 +165,9 @@
       "item_codes": {
         "C1": "zone17_14"
       },
-      "itm_id": "index2"
+      "itm_id": "index2",
+      "region": "전남",
+      "data_name": "상용총근로시간"
     },
     {
       "item": "경북 - 상용총근로시간",
@@ -148,7 +176,9 @@
       "item_codes": {
         "C1": "zone17_15"
       },
-      "itm_id": "index2"
+      "itm_id": "index2",
+      "region": "경북",
+      "data_name": "상용총근로시간"
     },
     {
       "item": "경북 - 상용총근로시간",
@@ -157,7 +187,9 @@
       "item_codes": {
         "C1": "zone17_15"
       },
-      "itm_id": "index2"
+      "itm_id": "index2",
+      "region": "경북",
+      "data_name": "상용총근로시간"
     },
     {
       "item": "경남 - 상용총근로시간",
@@ -166,7 +198,9 @@
       "item_codes": {
         "C1": "zone17_16"
       },
-      "itm_id": "index2"
+      "itm_id": "index2",
+      "region": "경남",
+      "data_name": "상용총근로시간"
     },
     {
       "item": "경남 - 상용총근로시간",
@@ -175,7 +209,9 @@
       "item_codes": {
         "C1": "zone17_16"
       },
-      "itm_id": "index2"
+      "itm_id": "index2",
+      "region": "경남",
+      "data_name": "상용총근로시간"
     },
     {
       "item": "제주 - 상용총근로시간",
@@ -184,7 +220,9 @@
       "item_codes": {
         "C1": "zone17_17"
       },
-      "itm_id": "index2"
+      "itm_id": "index2",
+      "region": "제주",
+      "data_name": "상용총근로시간"
     },
     {
       "item": "제주 - 상용총근로시간",
@@ -193,7 +231,9 @@
       "item_codes": {
         "C1": "zone17_17"
       },
-      "itm_id": "index2"
+      "itm_id": "index2",
+      "region": "제주",
+      "data_name": "상용총근로시간"
     },
     {
       "item": "부산 - 상용총근로시간",
@@ -202,7 +242,9 @@
       "item_codes": {
         "C1": "zone17_2"
       },
-      "itm_id": "index2"
+      "itm_id": "index2",
+      "region": "부산",
+      "data_name": "상용총근로시간"
     },
     {
       "item": "부산 - 상용총근로시간",
@@ -211,7 +253,9 @@
       "item_codes": {
         "C1": "zone17_2"
       },
-      "itm_id": "index2"
+      "itm_id": "index2",
+      "region": "부산",
+      "data_name": "상용총근로시간"
     },
     {
       "item": "대구 - 상용총근로시간",
@@ -220,7 +264,9 @@
       "item_codes": {
         "C1": "zone17_3"
       },
-      "itm_id": "index2"
+      "itm_id": "index2",
+      "region": "대구",
+      "data_name": "상용총근로시간"
     },
     {
       "item": "대구 - 상용총근로시간",
@@ -229,7 +275,9 @@
       "item_codes": {
         "C1": "zone17_3"
       },
-      "itm_id": "index2"
+      "itm_id": "index2",
+      "region": "대구",
+      "data_name": "상용총근로시간"
     },
     {
       "item": "인천 - 상용총근로시간",
@@ -238,7 +286,9 @@
       "item_codes": {
         "C1": "zone17_4"
       },
-      "itm_id": "index2"
+      "itm_id": "index2",
+      "region": "인천",
+      "data_name": "상용총근로시간"
     },
     {
       "item": "인천 - 상용총근로시간",
@@ -247,7 +297,9 @@
       "item_codes": {
         "C1": "zone17_4"
       },
-      "itm_id": "index2"
+      "itm_id": "index2",
+      "region": "인천",
+      "data_name": "상용총근로시간"
     },
     {
       "item": "광주 - 상용총근로시간",
@@ -256,7 +308,9 @@
       "item_codes": {
         "C1": "zone17_5"
       },
-      "itm_id": "index2"
+      "itm_id": "index2",
+      "region": "광주",
+      "data_name": "상용총근로시간"
     },
     {
       "item": "광주 - 상용총근로시간",
@@ -265,7 +319,9 @@
       "item_codes": {
         "C1": "zone17_5"
       },
-      "itm_id": "index2"
+      "itm_id": "index2",
+      "region": "광주",
+      "data_name": "상용총근로시간"
     },
     {
       "item": "대전 - 상용총근로시간",
@@ -274,7 +330,9 @@
       "item_codes": {
         "C1": "zone17_6"
       },
-      "itm_id": "index2"
+      "itm_id": "index2",
+      "region": "대전",
+      "data_name": "상용총근로시간"
     },
     {
       "item": "대전 - 상용총근로시간",
@@ -283,7 +341,9 @@
       "item_codes": {
         "C1": "zone17_6"
       },
-      "itm_id": "index2"
+      "itm_id": "index2",
+      "region": "대전",
+      "data_name": "상용총근로시간"
     },
     {
       "item": "울산 - 상용총근로시간",
@@ -292,7 +352,9 @@
       "item_codes": {
         "C1": "zone17_7"
       },
-      "itm_id": "index2"
+      "itm_id": "index2",
+      "region": "울산",
+      "data_name": "상용총근로시간"
     },
     {
       "item": "울산 - 상용총근로시간",
@@ -301,7 +363,9 @@
       "item_codes": {
         "C1": "zone17_7"
       },
-      "itm_id": "index2"
+      "itm_id": "index2",
+      "region": "울산",
+      "data_name": "상용총근로시간"
     },
     {
       "item": "세종 - 상용총근로시간",
@@ -310,7 +374,9 @@
       "item_codes": {
         "C1": "zone17_8"
       },
-      "itm_id": "index2"
+      "itm_id": "index2",
+      "region": "세종",
+      "data_name": "상용총근로시간"
     },
     {
       "item": "세종 - 상용총근로시간",
@@ -319,7 +385,9 @@
       "item_codes": {
         "C1": "zone17_8"
       },
-      "itm_id": "index2"
+      "itm_id": "index2",
+      "region": "세종",
+      "data_name": "상용총근로시간"
     },
     {
       "item": "경기 - 상용총근로시간",
@@ -328,7 +396,9 @@
       "item_codes": {
         "C1": "zone17_9"
       },
-      "itm_id": "index2"
+      "itm_id": "index2",
+      "region": "경기",
+      "data_name": "상용총근로시간"
     },
     {
       "item": "경기 - 상용총근로시간",
@@ -337,7 +407,9 @@
       "item_codes": {
         "C1": "zone17_9"
       },
-      "itm_id": "index2"
+      "itm_id": "index2",
+      "region": "경기",
+      "data_name": "상용총근로시간"
     }
   ]
 }

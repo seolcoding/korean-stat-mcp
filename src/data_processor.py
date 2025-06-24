@@ -61,14 +61,43 @@ class DataProcessor:
             except ValueError:
                 value = None
             
-            processed_records.append({
-                "item": item_name,
+            # Extract individual components for separate fields
+            region = record.get("C1_NM", "").strip() if record.get("C1_NM") else None
+            category = record.get("C2_NM", "").strip() if record.get("C2_NM") else None
+            subcategory = record.get("C3_NM", "").strip() if record.get("C3_NM") else None
+            data_name = itm_nm if itm_nm else None
+            
+            # Build the record with both concatenated and separate fields
+            processed_record = {
+                "item": item_name,  # Keep original concatenated format
                 "timestamp": timestamp,
                 "value": value,
                 # Keep original classification codes for reference
                 "item_codes": {f"C{i}": record.get(f"C{i}", "") for i in range(1, 9) if record.get(f"C{i}")},
                 "itm_id": record.get("ITM_ID", "")
-            })
+            }
+            
+            # Add separate fields only if they have values
+            if region:
+                processed_record["region"] = region
+            if category:
+                processed_record["category"] = category
+            if subcategory:
+                processed_record["subcategory"] = subcategory
+            if data_name:
+                processed_record["data_name"] = data_name
+            
+            # Add any additional classification fields (C4_NM through C8_NM) as extra_categories
+            extra_categories = []
+            for i in range(4, 9):
+                c_nm = record.get(f"C{i}_NM")
+                if c_nm and c_nm.strip():
+                    extra_categories.append(c_nm.strip())
+            
+            if extra_categories:
+                processed_record["extra_categories"] = extra_categories
+            
+            processed_records.append(processed_record)
         
         return processed_records
     

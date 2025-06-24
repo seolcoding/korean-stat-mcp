@@ -22,7 +22,9 @@
       "item_codes": {
         "C1": "00"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "전국",
+      "data_name": "성장률"
     },
     {
       "item": "전국 - 성장률",
@@ -31,7 +33,9 @@
       "item_codes": {
         "C1": "00"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "전국",
+      "data_name": "성장률"
     },
     {
       "item": "전국 - 성장률",
@@ -40,7 +44,9 @@
       "item_codes": {
         "C1": "00"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "전국",
+      "data_name": "성장률"
     },
     {
       "item": "전국 - 성장률",
@@ -49,7 +55,9 @@
       "item_codes": {
         "C1": "00"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "전국",
+      "data_name": "성장률"
     },
     {
       "item": "전국 - 성장률",
@@ -58,7 +66,9 @@
       "item_codes": {
         "C1": "00"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "전국",
+      "data_name": "성장률"
     },
     {
       "item": "전국 - 성장률",
@@ -67,7 +77,9 @@
       "item_codes": {
         "C1": "00"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "전국",
+      "data_name": "성장률"
     },
     {
       "item": "전국 - 성장률",
@@ -76,7 +88,9 @@
       "item_codes": {
         "C1": "00"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "전국",
+      "data_name": "성장률"
     },
     {
       "item": "서울특별시 - 성장률",
@@ -85,7 +99,9 @@
       "item_codes": {
         "C1": "11"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "서울특별시",
+      "data_name": "성장률"
     },
     {
       "item": "서울특별시 - 성장률",
@@ -94,7 +110,9 @@
       "item_codes": {
         "C1": "11"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "서울특별시",
+      "data_name": "성장률"
     },
     {
       "item": "서울특별시 - 성장률",
@@ -103,7 +121,9 @@
       "item_codes": {
         "C1": "11"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "서울특별시",
+      "data_name": "성장률"
     },
     {
       "item": "서울특별시 - 성장률",
@@ -112,7 +132,9 @@
       "item_codes": {
         "C1": "11"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "서울특별시",
+      "data_name": "성장률"
     },
     {
       "item": "서울특별시 - 성장률",
@@ -121,7 +143,9 @@
       "item_codes": {
         "C1": "11"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "서울특별시",
+      "data_name": "성장률"
     },
     {
       "item": "서울특별시 - 성장률",
@@ -130,7 +154,9 @@
       "item_codes": {
         "C1": "11"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "서울특별시",
+      "data_name": "성장률"
     },
     {
       "item": "서울특별시 - 성장률",
@@ -139,7 +165,9 @@
       "item_codes": {
         "C1": "11"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "서울특별시",
+      "data_name": "성장률"
     },
     {
       "item": "부산광역시 - 성장률",
@@ -148,7 +176,9 @@
       "item_codes": {
         "C1": "21"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "부산광역시",
+      "data_name": "성장률"
     },
     {
       "item": "부산광역시 - 성장률",
@@ -157,7 +187,9 @@
       "item_codes": {
         "C1": "21"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "부산광역시",
+      "data_name": "성장률"
     },
     {
       "item": "부산광역시 - 성장률",
@@ -166,7 +198,9 @@
       "item_codes": {
         "C1": "21"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "부산광역시",
+      "data_name": "성장률"
     },
     {
       "item": "부산광역시 - 성장률",
@@ -175,7 +209,9 @@
       "item_codes": {
         "C1": "21"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "부산광역시",
+      "data_name": "성장률"
     },
     {
       "item": "부산광역시 - 성장률",
@@ -184,7 +220,9 @@
       "item_codes": {
         "C1": "21"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "부산광역시",
+      "data_name": "성장률"
     },
     {
       "item": "부산광역시 - 성장률",
@@ -193,7 +231,9 @@
       "item_codes": {
         "C1": "21"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "부산광역시",
+      "data_name": "성장률"
     },
     {
       "item": "부산광역시 - 성장률",
@@ -202,7 +242,9 @@
       "item_codes": {
         "C1": "21"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "부산광역시",
+      "data_name": "성장률"
     },
     {
       "item": "대구광역시 - 성장률",
@@ -211,7 +253,9 @@
       "item_codes": {
         "C1": "22"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "대구광역시",
+      "data_name": "성장률"
     },
     {
       "item": "대구광역시 - 성장률",
@@ -220,7 +264,9 @@
       "item_codes": {
         "C1": "22"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "대구광역시",
+      "data_name": "성장률"
     },
     {
       "item": "대구광역시 - 성장률",
@@ -229,7 +275,9 @@
       "item_codes": {
         "C1": "22"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "대구광역시",
+      "data_name": "성장률"
     },
     {
       "item": "대구광역시 - 성장률",
@@ -238,7 +286,9 @@
       "item_codes": {
         "C1": "22"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "대구광역시",
+      "data_name": "성장률"
     },
     {
       "item": "대구광역시 - 성장률",
@@ -247,7 +297,9 @@
       "item_codes": {
         "C1": "22"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "대구광역시",
+      "data_name": "성장률"
     },
     {
       "item": "대구광역시 - 성장률",
@@ -256,7 +308,9 @@
       "item_codes": {
         "C1": "22"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "대구광역시",
+      "data_name": "성장률"
     },
     {
       "item": "대구광역시 - 성장률",
@@ -265,7 +319,9 @@
       "item_codes": {
         "C1": "22"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "대구광역시",
+      "data_name": "성장률"
     },
     {
       "item": "인천광역시 - 성장률",
@@ -274,7 +330,9 @@
       "item_codes": {
         "C1": "23"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "인천광역시",
+      "data_name": "성장률"
     },
     {
       "item": "인천광역시 - 성장률",
@@ -283,7 +341,9 @@
       "item_codes": {
         "C1": "23"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "인천광역시",
+      "data_name": "성장률"
     },
     {
       "item": "인천광역시 - 성장률",
@@ -292,7 +352,9 @@
       "item_codes": {
         "C1": "23"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "인천광역시",
+      "data_name": "성장률"
     },
     {
       "item": "인천광역시 - 성장률",
@@ -301,7 +363,9 @@
       "item_codes": {
         "C1": "23"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "인천광역시",
+      "data_name": "성장률"
     },
     {
       "item": "인천광역시 - 성장률",
@@ -310,7 +374,9 @@
       "item_codes": {
         "C1": "23"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "인천광역시",
+      "data_name": "성장률"
     },
     {
       "item": "인천광역시 - 성장률",
@@ -319,7 +385,9 @@
       "item_codes": {
         "C1": "23"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "인천광역시",
+      "data_name": "성장률"
     },
     {
       "item": "인천광역시 - 성장률",
@@ -328,7 +396,9 @@
       "item_codes": {
         "C1": "23"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "인천광역시",
+      "data_name": "성장률"
     },
     {
       "item": "광주광역시 - 성장률",
@@ -337,7 +407,9 @@
       "item_codes": {
         "C1": "24"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "광주광역시",
+      "data_name": "성장률"
     },
     {
       "item": "광주광역시 - 성장률",
@@ -346,7 +418,9 @@
       "item_codes": {
         "C1": "24"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "광주광역시",
+      "data_name": "성장률"
     },
     {
       "item": "광주광역시 - 성장률",
@@ -355,7 +429,9 @@
       "item_codes": {
         "C1": "24"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "광주광역시",
+      "data_name": "성장률"
     },
     {
       "item": "광주광역시 - 성장률",
@@ -364,7 +440,9 @@
       "item_codes": {
         "C1": "24"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "광주광역시",
+      "data_name": "성장률"
     },
     {
       "item": "광주광역시 - 성장률",
@@ -373,7 +451,9 @@
       "item_codes": {
         "C1": "24"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "광주광역시",
+      "data_name": "성장률"
     },
     {
       "item": "광주광역시 - 성장률",
@@ -382,7 +462,9 @@
       "item_codes": {
         "C1": "24"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "광주광역시",
+      "data_name": "성장률"
     },
     {
       "item": "광주광역시 - 성장률",
@@ -391,7 +473,9 @@
       "item_codes": {
         "C1": "24"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "광주광역시",
+      "data_name": "성장률"
     },
     {
       "item": "대전광역시 - 성장률",
@@ -400,7 +484,9 @@
       "item_codes": {
         "C1": "25"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "대전광역시",
+      "data_name": "성장률"
     },
     {
       "item": "대전광역시 - 성장률",
@@ -409,7 +495,9 @@
       "item_codes": {
         "C1": "25"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "대전광역시",
+      "data_name": "성장률"
     },
     {
       "item": "대전광역시 - 성장률",
@@ -418,7 +506,9 @@
       "item_codes": {
         "C1": "25"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "대전광역시",
+      "data_name": "성장률"
     },
     {
       "item": "대전광역시 - 성장률",
@@ -427,7 +517,9 @@
       "item_codes": {
         "C1": "25"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "대전광역시",
+      "data_name": "성장률"
     },
     {
       "item": "대전광역시 - 성장률",
@@ -436,7 +528,9 @@
       "item_codes": {
         "C1": "25"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "대전광역시",
+      "data_name": "성장률"
     },
     {
       "item": "대전광역시 - 성장률",
@@ -445,7 +539,9 @@
       "item_codes": {
         "C1": "25"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "대전광역시",
+      "data_name": "성장률"
     },
     {
       "item": "대전광역시 - 성장률",
@@ -454,7 +550,9 @@
       "item_codes": {
         "C1": "25"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "대전광역시",
+      "data_name": "성장률"
     },
     {
       "item": "울산광역시 - 성장률",
@@ -463,7 +561,9 @@
       "item_codes": {
         "C1": "26"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "울산광역시",
+      "data_name": "성장률"
     },
     {
       "item": "울산광역시 - 성장률",
@@ -472,7 +572,9 @@
       "item_codes": {
         "C1": "26"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "울산광역시",
+      "data_name": "성장률"
     },
     {
       "item": "울산광역시 - 성장률",
@@ -481,7 +583,9 @@
       "item_codes": {
         "C1": "26"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "울산광역시",
+      "data_name": "성장률"
     },
     {
       "item": "울산광역시 - 성장률",
@@ -490,7 +594,9 @@
       "item_codes": {
         "C1": "26"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "울산광역시",
+      "data_name": "성장률"
     },
     {
       "item": "울산광역시 - 성장률",
@@ -499,7 +605,9 @@
       "item_codes": {
         "C1": "26"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "울산광역시",
+      "data_name": "성장률"
     },
     {
       "item": "울산광역시 - 성장률",
@@ -508,7 +616,9 @@
       "item_codes": {
         "C1": "26"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "울산광역시",
+      "data_name": "성장률"
     },
     {
       "item": "울산광역시 - 성장률",
@@ -517,7 +627,9 @@
       "item_codes": {
         "C1": "26"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "울산광역시",
+      "data_name": "성장률"
     },
     {
       "item": "세종특별자치시 - 성장률",
@@ -526,7 +638,9 @@
       "item_codes": {
         "C1": "29"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "세종특별자치시",
+      "data_name": "성장률"
     },
     {
       "item": "세종특별자치시 - 성장률",
@@ -535,7 +649,9 @@
       "item_codes": {
         "C1": "29"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "세종특별자치시",
+      "data_name": "성장률"
     },
     {
       "item": "세종특별자치시 - 성장률",
@@ -544,7 +660,9 @@
       "item_codes": {
         "C1": "29"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "세종특별자치시",
+      "data_name": "성장률"
     },
     {
       "item": "세종특별자치시 - 성장률",
@@ -553,7 +671,9 @@
       "item_codes": {
         "C1": "29"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "세종특별자치시",
+      "data_name": "성장률"
     },
     {
       "item": "세종특별자치시 - 성장률",
@@ -562,7 +682,9 @@
       "item_codes": {
         "C1": "29"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "세종특별자치시",
+      "data_name": "성장률"
     },
     {
       "item": "세종특별자치시 - 성장률",
@@ -571,7 +693,9 @@
       "item_codes": {
         "C1": "29"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "세종특별자치시",
+      "data_name": "성장률"
     },
     {
       "item": "세종특별자치시 - 성장률",
@@ -580,7 +704,9 @@
       "item_codes": {
         "C1": "29"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "세종특별자치시",
+      "data_name": "성장률"
     },
     {
       "item": "경기도 - 성장률",
@@ -589,7 +715,9 @@
       "item_codes": {
         "C1": "31"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "경기도",
+      "data_name": "성장률"
     },
     {
       "item": "경기도 - 성장률",
@@ -598,7 +726,9 @@
       "item_codes": {
         "C1": "31"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "경기도",
+      "data_name": "성장률"
     },
     {
       "item": "경기도 - 성장률",
@@ -607,7 +737,9 @@
       "item_codes": {
         "C1": "31"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "경기도",
+      "data_name": "성장률"
     },
     {
       "item": "경기도 - 성장률",
@@ -616,7 +748,9 @@
       "item_codes": {
         "C1": "31"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "경기도",
+      "data_name": "성장률"
     },
     {
       "item": "경기도 - 성장률",
@@ -625,7 +759,9 @@
       "item_codes": {
         "C1": "31"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "경기도",
+      "data_name": "성장률"
     },
     {
       "item": "경기도 - 성장률",
@@ -634,7 +770,9 @@
       "item_codes": {
         "C1": "31"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "경기도",
+      "data_name": "성장률"
     },
     {
       "item": "경기도 - 성장률",
@@ -643,7 +781,9 @@
       "item_codes": {
         "C1": "31"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "경기도",
+      "data_name": "성장률"
     },
     {
       "item": "강원특별자치도 - 성장률",
@@ -652,7 +792,9 @@
       "item_codes": {
         "C1": "32"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "강원특별자치도",
+      "data_name": "성장률"
     },
     {
       "item": "강원특별자치도 - 성장률",
@@ -661,7 +803,9 @@
       "item_codes": {
         "C1": "32"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "강원특별자치도",
+      "data_name": "성장률"
     },
     {
       "item": "강원특별자치도 - 성장률",
@@ -670,7 +814,9 @@
       "item_codes": {
         "C1": "32"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "강원특별자치도",
+      "data_name": "성장률"
     },
     {
       "item": "강원특별자치도 - 성장률",
@@ -679,7 +825,9 @@
       "item_codes": {
         "C1": "32"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "강원특별자치도",
+      "data_name": "성장률"
     },
     {
       "item": "강원특별자치도 - 성장률",
@@ -688,7 +836,9 @@
       "item_codes": {
         "C1": "32"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "강원특별자치도",
+      "data_name": "성장률"
     },
     {
       "item": "강원특별자치도 - 성장률",
@@ -697,7 +847,9 @@
       "item_codes": {
         "C1": "32"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "강원특별자치도",
+      "data_name": "성장률"
     },
     {
       "item": "강원특별자치도 - 성장률",
@@ -706,7 +858,9 @@
       "item_codes": {
         "C1": "32"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "강원특별자치도",
+      "data_name": "성장률"
     },
     {
       "item": "충청북도 - 성장률",
@@ -715,7 +869,9 @@
       "item_codes": {
         "C1": "33"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "충청북도",
+      "data_name": "성장률"
     },
     {
       "item": "충청북도 - 성장률",
@@ -724,7 +880,9 @@
       "item_codes": {
         "C1": "33"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "충청북도",
+      "data_name": "성장률"
     },
     {
       "item": "충청북도 - 성장률",
@@ -733,7 +891,9 @@
       "item_codes": {
         "C1": "33"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "충청북도",
+      "data_name": "성장률"
     },
     {
       "item": "충청북도 - 성장률",
@@ -742,7 +902,9 @@
       "item_codes": {
         "C1": "33"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "충청북도",
+      "data_name": "성장률"
     },
     {
       "item": "충청북도 - 성장률",
@@ -751,7 +913,9 @@
       "item_codes": {
         "C1": "33"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "충청북도",
+      "data_name": "성장률"
     },
     {
       "item": "충청북도 - 성장률",
@@ -760,7 +924,9 @@
       "item_codes": {
         "C1": "33"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "충청북도",
+      "data_name": "성장률"
     },
     {
       "item": "충청북도 - 성장률",
@@ -769,7 +935,9 @@
       "item_codes": {
         "C1": "33"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "충청북도",
+      "data_name": "성장률"
     },
     {
       "item": "충청남도 - 성장률",
@@ -778,7 +946,9 @@
       "item_codes": {
         "C1": "34"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "충청남도",
+      "data_name": "성장률"
     },
     {
       "item": "충청남도 - 성장률",
@@ -787,7 +957,9 @@
       "item_codes": {
         "C1": "34"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "충청남도",
+      "data_name": "성장률"
     },
     {
       "item": "충청남도 - 성장률",
@@ -796,7 +968,9 @@
       "item_codes": {
         "C1": "34"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "충청남도",
+      "data_name": "성장률"
     },
     {
       "item": "충청남도 - 성장률",
@@ -805,7 +979,9 @@
       "item_codes": {
         "C1": "34"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "충청남도",
+      "data_name": "성장률"
     },
     {
       "item": "충청남도 - 성장률",
@@ -814,7 +990,9 @@
       "item_codes": {
         "C1": "34"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "충청남도",
+      "data_name": "성장률"
     },
     {
       "item": "충청남도 - 성장률",
@@ -823,7 +1001,9 @@
       "item_codes": {
         "C1": "34"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "충청남도",
+      "data_name": "성장률"
     },
     {
       "item": "충청남도 - 성장률",
@@ -832,7 +1012,9 @@
       "item_codes": {
         "C1": "34"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "충청남도",
+      "data_name": "성장률"
     },
     {
       "item": "전북특별자치도 - 성장률",
@@ -841,7 +1023,9 @@
       "item_codes": {
         "C1": "35"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "전북특별자치도",
+      "data_name": "성장률"
     },
     {
       "item": "전북특별자치도 - 성장률",
@@ -850,7 +1034,9 @@
       "item_codes": {
         "C1": "35"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "전북특별자치도",
+      "data_name": "성장률"
     },
     {
       "item": "전북특별자치도 - 성장률",
@@ -859,7 +1045,9 @@
       "item_codes": {
         "C1": "35"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "전북특별자치도",
+      "data_name": "성장률"
     },
     {
       "item": "전북특별자치도 - 성장률",
@@ -868,7 +1056,9 @@
       "item_codes": {
         "C1": "35"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "전북특별자치도",
+      "data_name": "성장률"
     },
     {
       "item": "전북특별자치도 - 성장률",
@@ -877,7 +1067,9 @@
       "item_codes": {
         "C1": "35"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "전북특별자치도",
+      "data_name": "성장률"
     },
     {
       "item": "전북특별자치도 - 성장률",
@@ -886,7 +1078,9 @@
       "item_codes": {
         "C1": "35"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "전북특별자치도",
+      "data_name": "성장률"
     },
     {
       "item": "전북특별자치도 - 성장률",
@@ -895,7 +1089,9 @@
       "item_codes": {
         "C1": "35"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "전북특별자치도",
+      "data_name": "성장률"
     },
     {
       "item": "전라남도 - 성장률",
@@ -904,7 +1100,9 @@
       "item_codes": {
         "C1": "36"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "전라남도",
+      "data_name": "성장률"
     },
     {
       "item": "전라남도 - 성장률",
@@ -913,7 +1111,9 @@
       "item_codes": {
         "C1": "36"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "전라남도",
+      "data_name": "성장률"
     },
     {
       "item": "전라남도 - 성장률",
@@ -922,7 +1122,9 @@
       "item_codes": {
         "C1": "36"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "전라남도",
+      "data_name": "성장률"
     },
     {
       "item": "전라남도 - 성장률",
@@ -931,7 +1133,9 @@
       "item_codes": {
         "C1": "36"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "전라남도",
+      "data_name": "성장률"
     },
     {
       "item": "전라남도 - 성장률",
@@ -940,7 +1144,9 @@
       "item_codes": {
         "C1": "36"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "전라남도",
+      "data_name": "성장률"
     },
     {
       "item": "전라남도 - 성장률",
@@ -949,7 +1155,9 @@
       "item_codes": {
         "C1": "36"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "전라남도",
+      "data_name": "성장률"
     },
     {
       "item": "전라남도 - 성장률",
@@ -958,7 +1166,9 @@
       "item_codes": {
         "C1": "36"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "전라남도",
+      "data_name": "성장률"
     },
     {
       "item": "경상북도 - 성장률",
@@ -967,7 +1177,9 @@
       "item_codes": {
         "C1": "37"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "경상북도",
+      "data_name": "성장률"
     },
     {
       "item": "경상북도 - 성장률",
@@ -976,7 +1188,9 @@
       "item_codes": {
         "C1": "37"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "경상북도",
+      "data_name": "성장률"
     },
     {
       "item": "경상북도 - 성장률",
@@ -985,7 +1199,9 @@
       "item_codes": {
         "C1": "37"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "경상북도",
+      "data_name": "성장률"
     },
     {
       "item": "경상북도 - 성장률",
@@ -994,7 +1210,9 @@
       "item_codes": {
         "C1": "37"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "경상북도",
+      "data_name": "성장률"
     },
     {
       "item": "경상북도 - 성장률",
@@ -1003,7 +1221,9 @@
       "item_codes": {
         "C1": "37"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "경상북도",
+      "data_name": "성장률"
     },
     {
       "item": "경상북도 - 성장률",
@@ -1012,7 +1232,9 @@
       "item_codes": {
         "C1": "37"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "경상북도",
+      "data_name": "성장률"
     },
     {
       "item": "경상북도 - 성장률",
@@ -1021,7 +1243,9 @@
       "item_codes": {
         "C1": "37"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "경상북도",
+      "data_name": "성장률"
     },
     {
       "item": "경상남도 - 성장률",
@@ -1030,7 +1254,9 @@
       "item_codes": {
         "C1": "38"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "경상남도",
+      "data_name": "성장률"
     },
     {
       "item": "경상남도 - 성장률",
@@ -1039,7 +1265,9 @@
       "item_codes": {
         "C1": "38"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "경상남도",
+      "data_name": "성장률"
     },
     {
       "item": "경상남도 - 성장률",
@@ -1048,7 +1276,9 @@
       "item_codes": {
         "C1": "38"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "경상남도",
+      "data_name": "성장률"
     },
     {
       "item": "경상남도 - 성장률",
@@ -1057,7 +1287,9 @@
       "item_codes": {
         "C1": "38"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "경상남도",
+      "data_name": "성장률"
     },
     {
       "item": "경상남도 - 성장률",
@@ -1066,7 +1298,9 @@
       "item_codes": {
         "C1": "38"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "경상남도",
+      "data_name": "성장률"
     },
     {
       "item": "경상남도 - 성장률",
@@ -1075,7 +1309,9 @@
       "item_codes": {
         "C1": "38"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "경상남도",
+      "data_name": "성장률"
     },
     {
       "item": "경상남도 - 성장률",
@@ -1084,7 +1320,9 @@
       "item_codes": {
         "C1": "38"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "경상남도",
+      "data_name": "성장률"
     },
     {
       "item": "제주특별자치도 - 성장률",
@@ -1093,7 +1331,9 @@
       "item_codes": {
         "C1": "39"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "제주특별자치도",
+      "data_name": "성장률"
     },
     {
       "item": "제주특별자치도 - 성장률",
@@ -1102,7 +1342,9 @@
       "item_codes": {
         "C1": "39"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "제주특별자치도",
+      "data_name": "성장률"
     },
     {
       "item": "제주특별자치도 - 성장률",
@@ -1111,7 +1353,9 @@
       "item_codes": {
         "C1": "39"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "제주특별자치도",
+      "data_name": "성장률"
     },
     {
       "item": "제주특별자치도 - 성장률",
@@ -1120,7 +1364,9 @@
       "item_codes": {
         "C1": "39"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "제주특별자치도",
+      "data_name": "성장률"
     },
     {
       "item": "제주특별자치도 - 성장률",
@@ -1129,7 +1375,9 @@
       "item_codes": {
         "C1": "39"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "제주특별자치도",
+      "data_name": "성장률"
     },
     {
       "item": "제주특별자치도 - 성장률",
@@ -1138,7 +1386,9 @@
       "item_codes": {
         "C1": "39"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "제주특별자치도",
+      "data_name": "성장률"
     },
     {
       "item": "제주특별자치도 - 성장률",
@@ -1147,7 +1397,9 @@
       "item_codes": {
         "C1": "39"
       },
-      "itm_id": "T10"
+      "itm_id": "T10",
+      "region": "제주특별자치도",
+      "data_name": "성장률"
     }
   ]
 }
