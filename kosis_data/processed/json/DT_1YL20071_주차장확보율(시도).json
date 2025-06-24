@@ -1,0 +1,5104 @@
+{
+  "metadata": {
+    "org_id": "101",
+    "org_name": "통계청",
+    "table_id": "DT_1YL20071",
+    "table_name": "주차장확보율(시도)",
+    "stat_id": "9B08007",
+    "stat_name": "e-지방지표",
+    "date_range": "2010 ~ 2022",
+    "description": "행정구역별 주차장확보율  (A÷B×100) 주차장면수  (A) 자동차등록대수  (B) 서울특별시 전북특별자치도 부산광역시 전국 인천광역시 세종특별자치시 전라남도 대구광역시 광주광역시 울산광역시 경기도 경상북도 경상남도 대전광역시 강원특별자치도 충청북도 충청남도 제주특별자치도",
+    "item_info": "■  자료제공처:  통계청 지역통계기획팀 ■  자료원출처:  국토교통부(자동차등록현황보고)        시도통계연보(주차장면수) ■  자료제공주기:  1년 ■  다음자료현행화:  연중 □  정의  - 주차장확보율: 주차장의 수를 자동차등록대수로 나눈 비율 □  의의  - 주차난 및 교통의 원활한 소통 등과 관련된 주차환경을 나타내는 지표임 □  산식  - 주차장확보율=(주차장면수÷자동차등록대수)×100 □  용어  - 주차장: 자동차 등의 주차에 필요한 독립적인 시설을 갖춘 부지와 주차전용 건축물 및 이에 접속된 부속시설물의 부지, 노상주차장, 노외주차장, 건축물 부설주차장을 포함 - 자동차 : 승용차, 승합차, 화물차, 특수차에 한함",
+    "source_url": "http://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1YL20071",
+    "last_updated": "2025-06-24T18:16:03.293350",
+    "period_type": "M",
+    "period_name": "월간"
+  },
+  "data": [
+    {
+      "item": "전국 - 주차장면수＜br＞(A)",
+      "timestamp": "2011",
+      "value": 16673969.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전국 - 주차장면수＜br＞(A)",
+      "timestamp": "2012",
+      "value": 17600151.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전국 - 주차장면수＜br＞(A)",
+      "timestamp": "2013",
+      "value": 18663943.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전국 - 주차장면수＜br＞(A)",
+      "timestamp": "2014",
+      "value": 19126999.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전국 - 주차장면수＜br＞(A)",
+      "timestamp": "2015",
+      "value": 20511002.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전국 - 주차장면수＜br＞(A)",
+      "timestamp": "2016",
+      "value": 21441032.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전국 - 주차장면수＜br＞(A)",
+      "timestamp": "2017",
+      "value": 22198788.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전국 - 주차장면수＜br＞(A)",
+      "timestamp": "2018",
+      "value": 23434257.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전국 - 주차장면수＜br＞(A)",
+      "timestamp": "2019",
+      "value": 24584399.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전국 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2011",
+      "value": 18437373.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전국 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2012",
+      "value": 18870533.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전국 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2013",
+      "value": 19400864.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전국 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2014",
+      "value": 20117955.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전국 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2015",
+      "value": 20989885.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전국 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2016",
+      "value": 21803351.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전국 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2017",
+      "value": 22528295.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전국 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2018",
+      "value": 23202555.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전국 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2019",
+      "value": 23677366.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전국 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2020",
+      "value": 24365979.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전국 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2021",
+      "value": 24911101.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전국 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2022",
+      "value": 25503078.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전국 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2011",
+      "value": 90.4,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2012",
+      "value": 93.3,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2013",
+      "value": 96.2,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2014",
+      "value": 95.1,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2015",
+      "value": 97.7,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2016",
+      "value": 98.3,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2017",
+      "value": 98.5,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2018",
+      "value": 101.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2019",
+      "value": 103.8,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 주차장면수＜br＞(A)",
+      "timestamp": "2011",
+      "value": 3595750.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "서울특별시 - 주차장면수＜br＞(A)",
+      "timestamp": "2012",
+      "value": 3584262.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "서울특별시 - 주차장면수＜br＞(A)",
+      "timestamp": "2013",
+      "value": 3760461.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "서울특별시 - 주차장면수＜br＞(A)",
+      "timestamp": "2014",
+      "value": 3821527.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "서울특별시 - 주차장면수＜br＞(A)",
+      "timestamp": "2015",
+      "value": 3877326.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "서울특별시 - 주차장면수＜br＞(A)",
+      "timestamp": "2016",
+      "value": 3983291.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "서울특별시 - 주차장면수＜br＞(A)",
+      "timestamp": "2017",
+      "value": 4053875.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "서울특별시 - 주차장면수＜br＞(A)",
+      "timestamp": "2018",
+      "value": 4129723.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "서울특별시 - 주차장면수＜br＞(A)",
+      "timestamp": "2019",
+      "value": 4250682.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "서울특별시 - 주차장면수＜br＞(A)",
+      "timestamp": "2020",
+      "value": 4327614.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "서울특별시 - 주차장면수＜br＞(A)",
+      "timestamp": "2021",
+      "value": 4354516.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "서울특별시 - 주차장면수＜br＞(A)",
+      "timestamp": "2022",
+      "value": 4501875.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "서울특별시 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2011",
+      "value": 2977599.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "서울특별시 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2012",
+      "value": 2969184.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "서울특별시 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2013",
+      "value": 2973877.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "서울특별시 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2014",
+      "value": 3013541.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "서울특별시 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2015",
+      "value": 3056588.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "서울특별시 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2016",
+      "value": 3083007.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "서울특별시 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2017",
+      "value": 3116256.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "서울특별시 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2018",
+      "value": 3124651.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "서울특별시 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2019",
+      "value": 3124157.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "서울특별시 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2020",
+      "value": 3157361.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "서울특별시 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2021",
+      "value": 3176743.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "서울특별시 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2022",
+      "value": 3193351.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "서울특별시 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2011",
+      "value": 120.8,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2012",
+      "value": 120.7,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2013",
+      "value": 126.4,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2014",
+      "value": 126.8,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2015",
+      "value": 126.9,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2016",
+      "value": 129.2,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2017",
+      "value": 130.1,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2018",
+      "value": 132.2,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2019",
+      "value": 136.1,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2020",
+      "value": 137.1,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2021",
+      "value": 137.1,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2022",
+      "value": 141.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 주차장면수＜br＞(A)",
+      "timestamp": "2011",
+      "value": 1060384.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "부산광역시 - 주차장면수＜br＞(A)",
+      "timestamp": "2012",
+      "value": 1100967.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "부산광역시 - 주차장면수＜br＞(A)",
+      "timestamp": "2013",
+      "value": 1197207.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "부산광역시 - 주차장면수＜br＞(A)",
+      "timestamp": "2014",
+      "value": 1267322.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "부산광역시 - 주차장면수＜br＞(A)",
+      "timestamp": "2015",
+      "value": 1294561.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "부산광역시 - 주차장면수＜br＞(A)",
+      "timestamp": "2016",
+      "value": 1290115.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "부산광역시 - 주차장면수＜br＞(A)",
+      "timestamp": "2017",
+      "value": 1387215.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "부산광역시 - 주차장면수＜br＞(A)",
+      "timestamp": "2018",
+      "value": 1417361.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "부산광역시 - 주차장면수＜br＞(A)",
+      "timestamp": "2019",
+      "value": 1542526.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "부산광역시 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2011",
+      "value": 1159178.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "부산광역시 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2012",
+      "value": 1175205.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "부산광역시 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2013",
+      "value": 1183679.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "부산광역시 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2014",
+      "value": 1214175.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "부산광역시 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2015",
+      "value": 1255722.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "부산광역시 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2016",
+      "value": 1295316.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "부산광역시 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2017",
+      "value": 1333224.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "부산광역시 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2018",
+      "value": 1371172.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "부산광역시 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2019",
+      "value": 1395183.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "부산광역시 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2020",
+      "value": 1429040.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "부산광역시 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2021",
+      "value": 1464608.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "부산광역시 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2022",
+      "value": 1499503.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "부산광역시 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2011",
+      "value": 91.5,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2012",
+      "value": 93.7,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2013",
+      "value": 101.1,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2014",
+      "value": 104.4,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2015",
+      "value": 103.1,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2016",
+      "value": 99.6,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2017",
+      "value": 104.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2018",
+      "value": 103.4,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2019",
+      "value": 110.6,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 주차장면수＜br＞(A)",
+      "timestamp": "2011",
+      "value": 811176.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "대구광역시 - 주차장면수＜br＞(A)",
+      "timestamp": "2012",
+      "value": 825902.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "대구광역시 - 주차장면수＜br＞(A)",
+      "timestamp": "2013",
+      "value": 880606.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "대구광역시 - 주차장면수＜br＞(A)",
+      "timestamp": "2014",
+      "value": 910848.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "대구광역시 - 주차장면수＜br＞(A)",
+      "timestamp": "2015",
+      "value": 977003.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "대구광역시 - 주차장면수＜br＞(A)",
+      "timestamp": "2016",
+      "value": 996083.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "대구광역시 - 주차장면수＜br＞(A)",
+      "timestamp": "2017",
+      "value": 1019133.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "대구광역시 - 주차장면수＜br＞(A)",
+      "timestamp": "2018",
+      "value": 1045355.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "대구광역시 - 주차장면수＜br＞(A)",
+      "timestamp": "2019",
+      "value": 1107117.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "대구광역시 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2011",
+      "value": 985349.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "대구광역시 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2012",
+      "value": 1010065.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "대구광역시 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2013",
+      "value": 1039225.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "대구광역시 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2014",
+      "value": 1072305.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "대구광역시 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2015",
+      "value": 1106002.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "대구광역시 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2016",
+      "value": 1130811.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "대구광역시 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2017",
+      "value": 1157053.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "대구광역시 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2018",
+      "value": 1178353.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "대구광역시 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2019",
+      "value": 1190154.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "대구광역시 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2020",
+      "value": 1219196.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "대구광역시 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2021",
+      "value": 1211095.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "대구광역시 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2022",
+      "value": 1230183.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "대구광역시 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2011",
+      "value": 82.3,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2012",
+      "value": 81.8,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2013",
+      "value": 84.7,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2014",
+      "value": 84.9,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2015",
+      "value": 88.3,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2016",
+      "value": 88.1,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2017",
+      "value": 88.1,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2018",
+      "value": 88.7,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2019",
+      "value": 93.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 주차장면수＜br＞(A)",
+      "timestamp": "2011",
+      "value": 856647.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "인천광역시 - 주차장면수＜br＞(A)",
+      "timestamp": "2012",
+      "value": 956487.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "인천광역시 - 주차장면수＜br＞(A)",
+      "timestamp": "2013",
+      "value": 1076656.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "인천광역시 - 주차장면수＜br＞(A)",
+      "timestamp": "2014",
+      "value": 1000885.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "인천광역시 - 주차장면수＜br＞(A)",
+      "timestamp": "2015",
+      "value": 1097560.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "인천광역시 - 주차장면수＜br＞(A)",
+      "timestamp": "2016",
+      "value": 1164028.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "인천광역시 - 주차장면수＜br＞(A)",
+      "timestamp": "2017",
+      "value": 1217585.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "인천광역시 - 주차장면수＜br＞(A)",
+      "timestamp": "2018",
+      "value": 1284526.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "인천광역시 - 주차장면수＜br＞(A)",
+      "timestamp": "2019",
+      "value": 1310332.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "인천광역시 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2011",
+      "value": 983508.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "인천광역시 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2012",
+      "value": 1049444.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "인천광역시 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2013",
+      "value": 1142351.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "인천광역시 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2014",
+      "value": 1247485.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "인천광역시 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2015",
+      "value": 1355207.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "인천광역시 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2016",
+      "value": 1437373.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "인천광역시 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2017",
+      "value": 1510319.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "인천광역시 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2018",
+      "value": 1577607.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "인천광역시 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2019",
+      "value": 1635323.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "인천광역시 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2020",
+      "value": 1676442.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "인천광역시 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2021",
+      "value": 1675405.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "인천광역시 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2022",
+      "value": 1692760.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "인천광역시 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2011",
+      "value": 87.1,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2012",
+      "value": 91.1,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2013",
+      "value": 94.2,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2014",
+      "value": 80.2,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2015",
+      "value": 81.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2016",
+      "value": 81.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2017",
+      "value": 80.6,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2018",
+      "value": 81.4,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2019",
+      "value": 80.1,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 주차장면수＜br＞(A)",
+      "timestamp": "2011",
+      "value": 488799.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "광주광역시 - 주차장면수＜br＞(A)",
+      "timestamp": "2012",
+      "value": 501763.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "광주광역시 - 주차장면수＜br＞(A)",
+      "timestamp": "2013",
+      "value": 518214.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "광주광역시 - 주차장면수＜br＞(A)",
+      "timestamp": "2014",
+      "value": 543622.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "광주광역시 - 주차장면수＜br＞(A)",
+      "timestamp": "2015",
+      "value": 604750.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "광주광역시 - 주차장면수＜br＞(A)",
+      "timestamp": "2016",
+      "value": 727081.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "광주광역시 - 주차장면수＜br＞(A)",
+      "timestamp": "2017",
+      "value": 607910.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "광주광역시 - 주차장면수＜br＞(A)",
+      "timestamp": "2018",
+      "value": 618848.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "광주광역시 - 주차장면수＜br＞(A)",
+      "timestamp": "2019",
+      "value": 665964.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "광주광역시 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2011",
+      "value": 535812.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "광주광역시 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2012",
+      "value": 550821.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "광주광역시 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2013",
+      "value": 568054.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "광주광역시 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2014",
+      "value": 589334.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "광주광역시 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2015",
+      "value": 611280.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "광주광역시 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2016",
+      "value": 633375.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "광주광역시 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2017",
+      "value": 649293.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "광주광역시 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2018",
+      "value": 664316.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "광주광역시 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2019",
+      "value": 676281.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "광주광역시 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2020",
+      "value": 691740.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "광주광역시 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2021",
+      "value": 700783.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "광주광역시 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2022",
+      "value": 714401.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "광주광역시 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2011",
+      "value": 91.2,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2012",
+      "value": 91.1,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2013",
+      "value": 91.2,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2014",
+      "value": 92.2,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2015",
+      "value": 98.9,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2016",
+      "value": 114.8,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2017",
+      "value": 93.6,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2018",
+      "value": 93.2,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2019",
+      "value": 98.5,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 주차장면수＜br＞(A)",
+      "timestamp": "2011",
+      "value": 506455.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "대전광역시 - 주차장면수＜br＞(A)",
+      "timestamp": "2012",
+      "value": 523492.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "대전광역시 - 주차장면수＜br＞(A)",
+      "timestamp": "2013",
+      "value": 599142.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "대전광역시 - 주차장면수＜br＞(A)",
+      "timestamp": "2014",
+      "value": 626282.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "대전광역시 - 주차장면수＜br＞(A)",
+      "timestamp": "2015",
+      "value": 641525.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "대전광역시 - 주차장면수＜br＞(A)",
+      "timestamp": "2016",
+      "value": 683375.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "대전광역시 - 주차장면수＜br＞(A)",
+      "timestamp": "2017",
+      "value": 727727.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "대전광역시 - 주차장면수＜br＞(A)",
+      "timestamp": "2018",
+      "value": 794660.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "대전광역시 - 주차장면수＜br＞(A)",
+      "timestamp": "2019",
+      "value": 798036.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "대전광역시 - 주차장면수＜br＞(A)",
+      "timestamp": "2020",
+      "value": 826755.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "대전광역시 - 주차장면수＜br＞(A)",
+      "timestamp": "2021",
+      "value": 838344.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "대전광역시 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2011",
+      "value": 584435.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "대전광역시 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2012",
+      "value": 594786.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "대전광역시 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2013",
+      "value": 606283.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "대전광역시 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2014",
+      "value": 621035.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "대전광역시 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2015",
+      "value": 632954.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "대전광역시 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2016",
+      "value": 648084.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "대전광역시 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2017",
+      "value": 659619.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "대전광역시 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2018",
+      "value": 669959.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "대전광역시 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2019",
+      "value": 673899.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "대전광역시 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2020",
+      "value": 686429.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "대전광역시 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2021",
+      "value": 692702.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "대전광역시 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2022",
+      "value": 707928.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "대전광역시 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2011",
+      "value": 86.7,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2012",
+      "value": 88.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2013",
+      "value": 98.8,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2014",
+      "value": 100.8,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2015",
+      "value": 101.4,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2016",
+      "value": 105.4,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2017",
+      "value": 110.3,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2018",
+      "value": 118.6,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2019",
+      "value": 118.4,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2020",
+      "value": 120.4,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2021",
+      "value": 121.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 주차장면수＜br＞(A)",
+      "timestamp": "2011",
+      "value": 495530.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "울산광역시 - 주차장면수＜br＞(A)",
+      "timestamp": "2012",
+      "value": 582285.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "울산광역시 - 주차장면수＜br＞(A)",
+      "timestamp": "2013",
+      "value": 597007.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "울산광역시 - 주차장면수＜br＞(A)",
+      "timestamp": "2014",
+      "value": 610469.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "울산광역시 - 주차장면수＜br＞(A)",
+      "timestamp": "2015",
+      "value": 640449.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "울산광역시 - 주차장면수＜br＞(A)",
+      "timestamp": "2016",
+      "value": 623986.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "울산광역시 - 주차장면수＜br＞(A)",
+      "timestamp": "2017",
+      "value": 650496.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "울산광역시 - 주차장면수＜br＞(A)",
+      "timestamp": "2018",
+      "value": 679774.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "울산광역시 - 주차장면수＜br＞(A)",
+      "timestamp": "2019",
+      "value": 565211.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "울산광역시 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2011",
+      "value": 456051.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "울산광역시 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2012",
+      "value": 470410.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "울산광역시 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2013",
+      "value": 485184.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "울산광역시 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2014",
+      "value": 504604.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "울산광역시 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2015",
+      "value": 525092.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "울산광역시 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2016",
+      "value": 538720.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "울산광역시 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2017",
+      "value": 549489.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "울산광역시 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2018",
+      "value": 558106.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "울산광역시 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2019",
+      "value": 565639.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "울산광역시 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2020",
+      "value": 575700.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "울산광역시 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2021",
+      "value": 581429.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "울산광역시 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2022",
+      "value": 588079.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "울산광역시 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2011",
+      "value": 108.7,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2012",
+      "value": 123.8,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2013",
+      "value": 123.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2014",
+      "value": 121.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2015",
+      "value": 122.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2016",
+      "value": 115.8,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2017",
+      "value": 118.4,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2018",
+      "value": 121.8,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2019",
+      "value": 99.9,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "세종특별자치시 - 주차장면수＜br＞(A)",
+      "timestamp": "2012",
+      "value": 1266.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "세종특별자치시 - 주차장면수＜br＞(A)",
+      "timestamp": "2013",
+      "value": 27870.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "세종특별자치시 - 주차장면수＜br＞(A)",
+      "timestamp": "2014",
+      "value": 62336.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "세종특별자치시 - 주차장면수＜br＞(A)",
+      "timestamp": "2015",
+      "value": 95142.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "세종특별자치시 - 주차장면수＜br＞(A)",
+      "timestamp": "2016",
+      "value": 114709.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "세종특별자치시 - 주차장면수＜br＞(A)",
+      "timestamp": "2017",
+      "value": 132380.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "세종특별자치시 - 주차장면수＜br＞(A)",
+      "timestamp": "2018",
+      "value": 150830.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "세종특별자치시 - 주차장면수＜br＞(A)",
+      "timestamp": "2019",
+      "value": 174347.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "세종특별자치시 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2012",
+      "value": 47760.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "세종특별자치시 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2013",
+      "value": 52996.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "세종특별자치시 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2014",
+      "value": 67956.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "세종특별자치시 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2015",
+      "value": 93140.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "세종특별자치시 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2016",
+      "value": 110419.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "세종특별자치시 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2017",
+      "value": 129765.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "세종특별자치시 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2018",
+      "value": 147925.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "세종특별자치시 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2019",
+      "value": 163339.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "세종특별자치시 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2020",
+      "value": 174742.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "세종특별자치시 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2021",
+      "value": 185042.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "세종특별자치시 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2022",
+      "value": 193711.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "세종특별자치시 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2012",
+      "value": 2.7,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "세종특별자치시 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2013",
+      "value": 52.6,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "세종특별자치시 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2014",
+      "value": 91.7,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "세종특별자치시 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2015",
+      "value": 102.1,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "세종특별자치시 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2016",
+      "value": 103.9,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "세종특별자치시 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2017",
+      "value": 102.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "세종특별자치시 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2018",
+      "value": 102.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "세종특별자치시 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2019",
+      "value": 106.7,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 주차장면수＜br＞(A)",
+      "timestamp": "2011",
+      "value": 4263454.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경기도 - 주차장면수＜br＞(A)",
+      "timestamp": "2012",
+      "value": 4509204.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경기도 - 주차장면수＜br＞(A)",
+      "timestamp": "2013",
+      "value": 4721453.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경기도 - 주차장면수＜br＞(A)",
+      "timestamp": "2014",
+      "value": 4843203.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경기도 - 주차장면수＜br＞(A)",
+      "timestamp": "2015",
+      "value": 5138053.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경기도 - 주차장면수＜br＞(A)",
+      "timestamp": "2016",
+      "value": 5205609.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경기도 - 주차장면수＜br＞(A)",
+      "timestamp": "2017",
+      "value": 5321514.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경기도 - 주차장면수＜br＞(A)",
+      "timestamp": "2018",
+      "value": 5713968.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경기도 - 주차장면수＜br＞(A)",
+      "timestamp": "2019",
+      "value": 6354036.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경기도 - 주차장면수＜br＞(A)",
+      "timestamp": "2020",
+      "value": 7088279.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경기도 - 주차장면수＜br＞(A)",
+      "timestamp": "2021",
+      "value": 7105898.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경기도 - 주차장면수＜br＞(A)",
+      "timestamp": "2022",
+      "value": 7426513.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경기도 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2011",
+      "value": 4303774.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경기도 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2012",
+      "value": 4402396.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경기도 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2013",
+      "value": 4525170.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경기도 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2014",
+      "value": 4694527.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경기도 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2015",
+      "value": 4917091.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경기도 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2016",
+      "value": 5160921.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경기도 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2017",
+      "value": 5386022.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경기도 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2018",
+      "value": 5617611.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경기도 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2019",
+      "value": 5765692.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경기도 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2020",
+      "value": 6004126.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경기도 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2021",
+      "value": 6204452.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경기도 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2022",
+      "value": 6378632.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경기도 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2011",
+      "value": 99.1,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2012",
+      "value": 102.4,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2013",
+      "value": 104.3,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2014",
+      "value": 103.2,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2015",
+      "value": 104.5,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2016",
+      "value": 100.9,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2017",
+      "value": 98.8,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2018",
+      "value": 101.7,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2019",
+      "value": 110.2,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2020",
+      "value": 118.1,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2021",
+      "value": 114.5,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2022",
+      "value": 116.4,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 주차장면수＜br＞(A)",
+      "timestamp": "2011",
+      "value": 522578.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "강원특별자치도 - 주차장면수＜br＞(A)",
+      "timestamp": "2012",
+      "value": 543499.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "강원특별자치도 - 주차장면수＜br＞(A)",
+      "timestamp": "2013",
+      "value": 552712.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "강원특별자치도 - 주차장면수＜br＞(A)",
+      "timestamp": "2014",
+      "value": 578677.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "강원특별자치도 - 주차장면수＜br＞(A)",
+      "timestamp": "2015",
+      "value": 631455.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "강원특별자치도 - 주차장면수＜br＞(A)",
+      "timestamp": "2016",
+      "value": 683971.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "강원특별자치도 - 주차장면수＜br＞(A)",
+      "timestamp": "2017",
+      "value": 805722.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "강원특별자치도 - 주차장면수＜br＞(A)",
+      "timestamp": "2018",
+      "value": 829223.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "강원특별자치도 - 주차장면수＜br＞(A)",
+      "timestamp": "2019",
+      "value": 922739.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "강원특별자치도 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2011",
+      "value": 620463.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "강원특별자치도 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2012",
+      "value": 630860.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "강원특별자치도 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2013",
+      "value": 646532.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "강원특별자치도 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2014",
+      "value": 667144.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "강원특별자치도 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2015",
+      "value": 694040.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "강원특별자치도 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2016",
+      "value": 722333.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "강원특별자치도 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2017",
+      "value": 745959.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "강원특별자치도 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2018",
+      "value": 766374.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "강원특별자치도 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2019",
+      "value": 782700.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "강원특별자치도 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2020",
+      "value": 809099.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "강원특별자치도 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2021",
+      "value": 828146.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "강원특별자치도 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2022",
+      "value": 851553.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "강원특별자치도 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2011",
+      "value": 84.2,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2012",
+      "value": 86.2,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2013",
+      "value": 85.5,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2014",
+      "value": 86.7,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2015",
+      "value": 91.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2016",
+      "value": 94.7,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2017",
+      "value": 108.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2018",
+      "value": 108.2,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2019",
+      "value": 117.9,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 주차장면수＜br＞(A)",
+      "timestamp": "2011",
+      "value": 481738.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "충청북도 - 주차장면수＜br＞(A)",
+      "timestamp": "2012",
+      "value": 509809.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "충청북도 - 주차장면수＜br＞(A)",
+      "timestamp": "2013",
+      "value": 532228.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "충청북도 - 주차장면수＜br＞(A)",
+      "timestamp": "2014",
+      "value": 469085.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "충청북도 - 주차장면수＜br＞(A)",
+      "timestamp": "2015",
+      "value": 598510.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "충청북도 - 주차장면수＜br＞(A)",
+      "timestamp": "2016",
+      "value": 653628.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "충청북도 - 주차장면수＜br＞(A)",
+      "timestamp": "2017",
+      "value": 736768.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "충청북도 - 주차장면수＜br＞(A)",
+      "timestamp": "2018",
+      "value": 769908.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "충청북도 - 주차장면수＜br＞(A)",
+      "timestamp": "2019",
+      "value": 704207.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "충청북도 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2011",
+      "value": 640303.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "충청북도 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2012",
+      "value": 653610.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "충청북도 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2013",
+      "value": 674138.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "충청북도 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2014",
+      "value": 699797.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "충청북도 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2015",
+      "value": 730069.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "충청북도 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2016",
+      "value": 760701.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "충청북도 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2017",
+      "value": 787188.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "충청북도 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2018",
+      "value": 814698.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "충청북도 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2019",
+      "value": 837602.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "충청북도 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2020",
+      "value": 865620.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "충청북도 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2021",
+      "value": 892301.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "충청북도 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2022",
+      "value": 916455.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "충청북도 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2011",
+      "value": 75.2,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2012",
+      "value": 78.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2013",
+      "value": 78.9,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2014",
+      "value": 67.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2015",
+      "value": 82.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2016",
+      "value": 85.9,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2017",
+      "value": 93.6,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2018",
+      "value": 94.5,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2019",
+      "value": 84.1,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 주차장면수＜br＞(A)",
+      "timestamp": "2011",
+      "value": 498006.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "충청남도 - 주차장면수＜br＞(A)",
+      "timestamp": "2012",
+      "value": 619810.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "충청남도 - 주차장면수＜br＞(A)",
+      "timestamp": "2013",
+      "value": 732311.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "충청남도 - 주차장면수＜br＞(A)",
+      "timestamp": "2014",
+      "value": 662176.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "충청남도 - 주차장면수＜br＞(A)",
+      "timestamp": "2015",
+      "value": 811281.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "충청남도 - 주차장면수＜br＞(A)",
+      "timestamp": "2016",
+      "value": 1008680.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "충청남도 - 주차장면수＜br＞(A)",
+      "timestamp": "2017",
+      "value": 1005430.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "충청남도 - 주차장면수＜br＞(A)",
+      "timestamp": "2018",
+      "value": 1154680.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "충청남도 - 주차장면수＜br＞(A)",
+      "timestamp": "2019",
+      "value": 1117045.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "충청남도 - 주차장면수＜br＞(A)",
+      "timestamp": "2020",
+      "value": 1217654.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "충청남도 - 주차장면수＜br＞(A)",
+      "timestamp": "2021",
+      "value": 1190664.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "충청남도 - 주차장면수＜br＞(A)",
+      "timestamp": "2022",
+      "value": 1269728.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "충청남도 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2011",
+      "value": 868688.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "충청남도 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2012",
+      "value": 855751.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "충청남도 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2013",
+      "value": 887083.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "충청남도 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2014",
+      "value": 924576.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "충청남도 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2015",
+      "value": 969162.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "충청남도 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2016",
+      "value": 1015144.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "충청남도 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2017",
+      "value": 1057515.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "충청남도 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2018",
+      "value": 1093582.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "충청남도 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2019",
+      "value": 1118117.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "충청남도 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2020",
+      "value": 1149845.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "충청남도 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2021",
+      "value": 1176350.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "충청남도 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2022",
+      "value": 1211477.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "충청남도 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2011",
+      "value": 57.3,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2012",
+      "value": 72.4,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2013",
+      "value": 82.6,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2014",
+      "value": 71.6,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2015",
+      "value": 83.7,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2016",
+      "value": 99.4,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2017",
+      "value": 95.1,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2018",
+      "value": 105.6,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2019",
+      "value": 99.9,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2020",
+      "value": 105.9,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2021",
+      "value": 101.2,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2022",
+      "value": 104.8,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 주차장면수＜br＞(A)",
+      "timestamp": "2011",
+      "value": 561831.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전북특별자치도 - 주차장면수＜br＞(A)",
+      "timestamp": "2012",
+      "value": 605340.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전북특별자치도 - 주차장면수＜br＞(A)",
+      "timestamp": "2013",
+      "value": 626859.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전북특별자치도 - 주차장면수＜br＞(A)",
+      "timestamp": "2014",
+      "value": 626179.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전북특별자치도 - 주차장면수＜br＞(A)",
+      "timestamp": "2015",
+      "value": 643229.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전북특별자치도 - 주차장면수＜br＞(A)",
+      "timestamp": "2016",
+      "value": 727515.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전북특별자치도 - 주차장면수＜br＞(A)",
+      "timestamp": "2017",
+      "value": 728021.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전북특별자치도 - 주차장면수＜br＞(A)",
+      "timestamp": "2018",
+      "value": 749456.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전북특별자치도 - 주차장면수＜br＞(A)",
+      "timestamp": "2019",
+      "value": 907684.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전북특별자치도 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2011",
+      "value": 736698.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전북특별자치도 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2012",
+      "value": 755456.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전북특별자치도 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2013",
+      "value": 780844.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전북특별자치도 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2014",
+      "value": 807368.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전북특별자치도 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2015",
+      "value": 839181.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전북특별자치도 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2016",
+      "value": 869002.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전북특별자치도 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2017",
+      "value": 892118.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전북특별자치도 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2018",
+      "value": 915944.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전북특별자치도 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2019",
+      "value": 929061.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전북특별자치도 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2020",
+      "value": 948147.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전북특별자치도 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2021",
+      "value": 959920.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전북특별자치도 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2022",
+      "value": 977834.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전북특별자치도 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2011",
+      "value": 76.3,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2012",
+      "value": 80.1,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2013",
+      "value": 80.3,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2014",
+      "value": 77.6,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2015",
+      "value": 76.6,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2016",
+      "value": 83.7,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2017",
+      "value": 81.6,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2018",
+      "value": 81.8,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2019",
+      "value": 97.7,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 주차장면수＜br＞(A)",
+      "timestamp": "2011",
+      "value": 436465.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전라남도 - 주차장면수＜br＞(A)",
+      "timestamp": "2012",
+      "value": 509173.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전라남도 - 주차장면수＜br＞(A)",
+      "timestamp": "2013",
+      "value": 518655.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전라남도 - 주차장면수＜br＞(A)",
+      "timestamp": "2014",
+      "value": 538284.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전라남도 - 주차장면수＜br＞(A)",
+      "timestamp": "2015",
+      "value": 645660.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전라남도 - 주차장면수＜br＞(A)",
+      "timestamp": "2016",
+      "value": 675067.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전라남도 - 주차장면수＜br＞(A)",
+      "timestamp": "2017",
+      "value": 742501.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전라남도 - 주차장면수＜br＞(A)",
+      "timestamp": "2018",
+      "value": 800464.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전라남도 - 주차장면수＜br＞(A)",
+      "timestamp": "2019",
+      "value": 820144.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전라남도 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2011",
+      "value": 740903.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전라남도 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2012",
+      "value": 766704.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전라남도 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2013",
+      "value": 799385.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전라남도 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2014",
+      "value": 841881.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전라남도 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2015",
+      "value": 897655.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전라남도 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2016",
+      "value": 952004.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전라남도 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2017",
+      "value": 994318.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전라남도 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2018",
+      "value": 1032074.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전라남도 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2019",
+      "value": 1056239.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전라남도 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2020",
+      "value": 1099894.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전라남도 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2021",
+      "value": 1172282.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전라남도 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2022",
+      "value": 1236858.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전라남도 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2011",
+      "value": 58.9,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2012",
+      "value": 66.4,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2013",
+      "value": 64.9,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2014",
+      "value": 63.9,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2015",
+      "value": 71.9,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2016",
+      "value": 70.9,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2017",
+      "value": 74.7,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2018",
+      "value": 77.6,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2019",
+      "value": 77.6,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 주차장면수＜br＞(A)",
+      "timestamp": "2011",
+      "value": 815025.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경상북도 - 주차장면수＜br＞(A)",
+      "timestamp": "2012",
+      "value": 889269.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경상북도 - 주차장면수＜br＞(A)",
+      "timestamp": "2013",
+      "value": 884807.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경상북도 - 주차장면수＜br＞(A)",
+      "timestamp": "2014",
+      "value": 1007491.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경상북도 - 주차장면수＜br＞(A)",
+      "timestamp": "2015",
+      "value": 1090158.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경상북도 - 주차장면수＜br＞(A)",
+      "timestamp": "2016",
+      "value": 1105870.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경상북도 - 주차장면수＜br＞(A)",
+      "timestamp": "2017",
+      "value": 1183378.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경상북도 - 주차장면수＜br＞(A)",
+      "timestamp": "2018",
+      "value": 1361534.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경상북도 - 주차장면수＜br＞(A)",
+      "timestamp": "2019",
+      "value": 1309968.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경상북도 - 주차장면수＜br＞(A)",
+      "timestamp": "2020",
+      "value": 1374311.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경상북도 - 주차장면수＜br＞(A)",
+      "timestamp": "2021",
+      "value": 1367866.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경상북도 - 주차장면수＜br＞(A)",
+      "timestamp": "2022",
+      "value": 1382767.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경상북도 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2011",
+      "value": 1142737.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경상북도 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2012",
+      "value": 1172860.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경상북도 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2013",
+      "value": 1210986.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경상북도 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2014",
+      "value": 1255903.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경상북도 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2015",
+      "value": 1307495.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경상북도 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2016",
+      "value": 1353654.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경상북도 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2017",
+      "value": 1392151.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경상북도 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2018",
+      "value": 1422157.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경상북도 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2019",
+      "value": 1446262.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경상북도 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2020",
+      "value": 1475389.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경상북도 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2021",
+      "value": 1499200.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경상북도 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2022",
+      "value": 1523914.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경상북도 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2011",
+      "value": 71.3,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2012",
+      "value": 75.8,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2013",
+      "value": 73.1,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2014",
+      "value": 80.2,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2015",
+      "value": 83.4,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2016",
+      "value": 81.7,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2017",
+      "value": 85.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2018",
+      "value": 95.7,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2019",
+      "value": 90.6,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2020",
+      "value": 93.1,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2021",
+      "value": 91.2,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2022",
+      "value": 90.7,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 주차장면수＜br＞(A)",
+      "timestamp": "2011",
+      "value": 1058631.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경상남도 - 주차장면수＜br＞(A)",
+      "timestamp": "2012",
+      "value": 1115695.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경상남도 - 주차장면수＜br＞(A)",
+      "timestamp": "2013",
+      "value": 1208667.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경상남도 - 주차장면수＜br＞(A)",
+      "timestamp": "2014",
+      "value": 1311314.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경상남도 - 주차장면수＜br＞(A)",
+      "timestamp": "2015",
+      "value": 1455589.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경상남도 - 주차장면수＜br＞(A)",
+      "timestamp": "2016",
+      "value": 1499476.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경상남도 - 주차장면수＜br＞(A)",
+      "timestamp": "2017",
+      "value": 1552008.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경상남도 - 주차장면수＜br＞(A)",
+      "timestamp": "2018",
+      "value": 1593934.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경상남도 - 주차장면수＜br＞(A)",
+      "timestamp": "2019",
+      "value": 1637723.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경상남도 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2011",
+      "value": 1444721.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경상남도 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2012",
+      "value": 1470733.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경상남도 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2013",
+      "value": 1490651.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경상남도 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2014",
+      "value": 1512207.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경상남도 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2015",
+      "value": 1564192.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경상남도 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2016",
+      "value": 1625244.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경상남도 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2017",
+      "value": 1667809.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경상남도 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2018",
+      "value": 1694448.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경상남도 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2019",
+      "value": 1721503.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경상남도 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2020",
+      "value": 1787867.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경상남도 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2021",
+      "value": 1832049.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경상남도 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2022",
+      "value": 1896515.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경상남도 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2011",
+      "value": 73.3,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2012",
+      "value": 75.9,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2013",
+      "value": 81.1,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2014",
+      "value": 86.7,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2015",
+      "value": 93.1,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2016",
+      "value": 92.3,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2017",
+      "value": 93.1,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2018",
+      "value": 94.1,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2019",
+      "value": 95.1,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 주차장면수＜br＞(A)",
+      "timestamp": "2011",
+      "value": 221500.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "제주특별자치도 - 주차장면수＜br＞(A)",
+      "timestamp": "2012",
+      "value": 221928.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "제주특별자치도 - 주차장면수＜br＞(A)",
+      "timestamp": "2013",
+      "value": 229088.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "제주특별자치도 - 주차장면수＜br＞(A)",
+      "timestamp": "2014",
+      "value": 247299.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "제주특별자치도 - 주차장면수＜br＞(A)",
+      "timestamp": "2015",
+      "value": 268751.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "제주특별자치도 - 주차장면수＜br＞(A)",
+      "timestamp": "2016",
+      "value": 298548.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "제주특별자치도 - 주차장면수＜br＞(A)",
+      "timestamp": "2017",
+      "value": 327125.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "제주특별자치도 - 주차장면수＜br＞(A)",
+      "timestamp": "2018",
+      "value": 340013.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "제주특별자치도 - 주차장면수＜br＞(A)",
+      "timestamp": "2019",
+      "value": 396638.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "제주특별자치도 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2011",
+      "value": 257154.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "제주특별자치도 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2012",
+      "value": 294488.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "제주특별자치도 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2013",
+      "value": 334426.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "제주특별자치도 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2014",
+      "value": 384117.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "제주특별자치도 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2015",
+      "value": 435015.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "제주특별자치도 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2016",
+      "value": 467243.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "제주특별자치도 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2017",
+      "value": 500197.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "제주특별자치도 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2018",
+      "value": 553578.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "제주특별자치도 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2019",
+      "value": 596215.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "제주특별자치도 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2020",
+      "value": 615342.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "제주특별자치도 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2021",
+      "value": 658594.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "제주특별자치도 - 자동차등록대수＜br＞(B)",
+      "timestamp": "2022",
+      "value": 689924.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "제주특별자치도 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2011",
+      "value": 86.1,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2012",
+      "value": 75.4,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2013",
+      "value": 68.5,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2014",
+      "value": 64.4,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2015",
+      "value": 61.8,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2016",
+      "value": 63.9,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2017",
+      "value": 65.4,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2018",
+      "value": 61.4,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 주차장확보율＜br＞(A÷B×100)",
+      "timestamp": "2019",
+      "value": 66.5,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    }
+  ]
+}

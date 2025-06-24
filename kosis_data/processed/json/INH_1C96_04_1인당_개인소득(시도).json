@@ -1,0 +1,3637 @@
+{
+  "metadata": {
+    "org_id": "101",
+    "org_name": "통계청",
+    "table_id": "INH_1C96_04",
+    "table_name": "1인당 개인소득(시도)",
+    "stat_id": "1989005",
+    "stat_name": "지역소득",
+    "date_range": "2000 ~ 2023",
+    "description": "시도별 1인당 개인소득 전국 세종특별자치시 경상남도 서울특별시 인천광역시 전라남도 경상북도 충청남도 전북특별자치도 제주특별자치도 광주광역시 강원특별자치도 충청북도 부산광역시 경기도 대구광역시 울산광역시 대전광역시",
+    "item_info": "■  자료제공처:  통계청 지역통계기획팀 ■  자료원출처:  통계청 소득통계과(지역소득) ■  자료제공주기:  1년 ■  자료제공시기:  작성기준년도 익년12월 □  정의  - 1인당 개인소득: 가계 및 가계에 봉사하는 비영리단체의 총처분가능소득을 지역 인구수로 나눈 1인당 연간소득 □  의의  - 각 시·도 내에서 경제활동별로 얼마만큼의 부가가치가 발생되었는가를 나타냄 지역소득의 생산, 분배, 지출 각 측면이나 경제주체간 소득 순환을 파악하여, 지역경제의 실태를 포괄적으로 나타내주어 지역의 재정, 경제시책 수립에 필요한 자료제공 □  산식  - 1인당 개인소득=개인(사용) 총처분가능소득÷추계 인구 □  참고사항  - 1인당 지표는 2020년부터 통계청 시도별 장래인구추계결과(2022. 5. 공표)로 산출되었음 - 2012년 세종특별자치시는 과거 행정구역을 기준으로 충북 및 충남에 포함 - `87년 전남에서 광주시 분리, `89년 충남에서 대전시 분리, `98년 경남에서 울산시 분리, `13년 충남북에서 세종시가 분리되었음",
+    "source_url": "http://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=INH_1C96_04",
+    "last_updated": "2025-06-24T18:13:10.345808",
+    "period_type": "M",
+    "period_name": "월간"
+  },
+  "data": [
+    {
+      "item": "전국 - 1인당 개인소득",
+      "timestamp": "2001",
+      "value": 9398.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "전국 - 1인당 개인소득",
+      "timestamp": "2002",
+      "value": 10036.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "전국 - 1인당 개인소득",
+      "timestamp": "2003",
+      "value": 10650.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "전국 - 1인당 개인소득",
+      "timestamp": "2004",
+      "value": 11418.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "전국 - 1인당 개인소득",
+      "timestamp": "2005",
+      "value": 11949.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "전국 - 1인당 개인소득",
+      "timestamp": "2006",
+      "value": 12526.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "전국 - 1인당 개인소득",
+      "timestamp": "2007",
+      "value": 13219.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "전국 - 1인당 개인소득",
+      "timestamp": "2008",
+      "value": 14182.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "전국 - 1인당 개인소득",
+      "timestamp": "2009",
+      "value": 14596.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "전국 - 1인당 개인소득",
+      "timestamp": "2010",
+      "value": 15350.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "전국 - 1인당 개인소득",
+      "timestamp": "2011",
+      "value": 16074.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "전국 - 1인당 개인소득",
+      "timestamp": "2012",
+      "value": 16683.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "전국 - 1인당 개인소득",
+      "timestamp": "2013",
+      "value": 17511.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "전국 - 1인당 개인소득",
+      "timestamp": "2014",
+      "value": 18245.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "전국 - 1인당 개인소득",
+      "timestamp": "2015",
+      "value": 19288.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "전국 - 1인당 개인소득",
+      "timestamp": "2016",
+      "value": 19714.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "전국 - 1인당 개인소득",
+      "timestamp": "2017",
+      "value": 20309.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "전국 - 1인당 개인소득",
+      "timestamp": "2018",
+      "value": 21288.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "전국 - 1인당 개인소득",
+      "timestamp": "2019",
+      "value": 22289.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "전국 - 1인당 개인소득",
+      "timestamp": "2020",
+      "value": 23042.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "전국 - 1인당 개인소득",
+      "timestamp": "2021",
+      "value": 23726.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "전국 - 1인당 개인소득",
+      "timestamp": "2022",
+      "value": 24971.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "전국 - 1인당 개인소득",
+      "timestamp": "2023",
+      "value": 25536.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "서울특별시 - 1인당 개인소득",
+      "timestamp": "2001",
+      "value": 10849.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "서울특별시 - 1인당 개인소득",
+      "timestamp": "2002",
+      "value": 11741.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "서울특별시 - 1인당 개인소득",
+      "timestamp": "2003",
+      "value": 12707.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "서울특별시 - 1인당 개인소득",
+      "timestamp": "2004",
+      "value": 13552.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "서울특별시 - 1인당 개인소득",
+      "timestamp": "2005",
+      "value": 14154.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "서울특별시 - 1인당 개인소득",
+      "timestamp": "2006",
+      "value": 14749.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "서울특별시 - 1인당 개인소득",
+      "timestamp": "2007",
+      "value": 15936.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "서울특별시 - 1인당 개인소득",
+      "timestamp": "2008",
+      "value": 17156.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "서울특별시 - 1인당 개인소득",
+      "timestamp": "2009",
+      "value": 17528.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "서울특별시 - 1인당 개인소득",
+      "timestamp": "2010",
+      "value": 18699.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "서울특별시 - 1인당 개인소득",
+      "timestamp": "2011",
+      "value": 19789.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "서울특별시 - 1인당 개인소득",
+      "timestamp": "2012",
+      "value": 20402.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "서울특별시 - 1인당 개인소득",
+      "timestamp": "2013",
+      "value": 21278.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "서울특별시 - 1인당 개인소득",
+      "timestamp": "2014",
+      "value": 21946.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "서울특별시 - 1인당 개인소득",
+      "timestamp": "2015",
+      "value": 22822.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "서울특별시 - 1인당 개인소득",
+      "timestamp": "2016",
+      "value": 23375.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "서울특별시 - 1인당 개인소득",
+      "timestamp": "2017",
+      "value": 23976.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "서울특별시 - 1인당 개인소득",
+      "timestamp": "2018",
+      "value": 25053.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "서울특별시 - 1인당 개인소득",
+      "timestamp": "2019",
+      "value": 26229.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "서울특별시 - 1인당 개인소득",
+      "timestamp": "2020",
+      "value": 26428.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "서울특별시 - 1인당 개인소득",
+      "timestamp": "2021",
+      "value": 27119.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "서울특별시 - 1인당 개인소득",
+      "timestamp": "2022",
+      "value": 28187.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "서울특별시 - 1인당 개인소득",
+      "timestamp": "2023",
+      "value": 29372.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "부산광역시 - 1인당 개인소득",
+      "timestamp": "2001",
+      "value": 8777.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "부산광역시 - 1인당 개인소득",
+      "timestamp": "2002",
+      "value": 9446.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "부산광역시 - 1인당 개인소득",
+      "timestamp": "2003",
+      "value": 9944.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "부산광역시 - 1인당 개인소득",
+      "timestamp": "2004",
+      "value": 10592.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "부산광역시 - 1인당 개인소득",
+      "timestamp": "2005",
+      "value": 11203.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "부산광역시 - 1인당 개인소득",
+      "timestamp": "2006",
+      "value": 11873.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "부산광역시 - 1인당 개인소득",
+      "timestamp": "2007",
+      "value": 12652.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "부산광역시 - 1인당 개인소득",
+      "timestamp": "2008",
+      "value": 13686.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "부산광역시 - 1인당 개인소득",
+      "timestamp": "2009",
+      "value": 14149.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "부산광역시 - 1인당 개인소득",
+      "timestamp": "2010",
+      "value": 14904.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "부산광역시 - 1인당 개인소득",
+      "timestamp": "2011",
+      "value": 15823.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "부산광역시 - 1인당 개인소득",
+      "timestamp": "2012",
+      "value": 16406.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "부산광역시 - 1인당 개인소득",
+      "timestamp": "2013",
+      "value": 17116.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "부산광역시 - 1인당 개인소득",
+      "timestamp": "2014",
+      "value": 17835.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "부산광역시 - 1인당 개인소득",
+      "timestamp": "2015",
+      "value": 18609.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "부산광역시 - 1인당 개인소득",
+      "timestamp": "2016",
+      "value": 18637.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "부산광역시 - 1인당 개인소득",
+      "timestamp": "2017",
+      "value": 19161.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "부산광역시 - 1인당 개인소득",
+      "timestamp": "2018",
+      "value": 20022.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "부산광역시 - 1인당 개인소득",
+      "timestamp": "2019",
+      "value": 21096.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "부산광역시 - 1인당 개인소득",
+      "timestamp": "2020",
+      "value": 21715.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "부산광역시 - 1인당 개인소득",
+      "timestamp": "2021",
+      "value": 22338.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "부산광역시 - 1인당 개인소득",
+      "timestamp": "2022",
+      "value": 23730.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "부산광역시 - 1인당 개인소득",
+      "timestamp": "2023",
+      "value": 24026.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "대구광역시 - 1인당 개인소득",
+      "timestamp": "2001",
+      "value": 8936.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "대구광역시 - 1인당 개인소득",
+      "timestamp": "2002",
+      "value": 9432.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "대구광역시 - 1인당 개인소득",
+      "timestamp": "2003",
+      "value": 9776.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "대구광역시 - 1인당 개인소득",
+      "timestamp": "2004",
+      "value": 10399.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "대구광역시 - 1인당 개인소득",
+      "timestamp": "2005",
+      "value": 11019.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "대구광역시 - 1인당 개인소득",
+      "timestamp": "2006",
+      "value": 11590.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "대구광역시 - 1인당 개인소득",
+      "timestamp": "2007",
+      "value": 12061.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "대구광역시 - 1인당 개인소득",
+      "timestamp": "2008",
+      "value": 12946.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "대구광역시 - 1인당 개인소득",
+      "timestamp": "2009",
+      "value": 13393.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "대구광역시 - 1인당 개인소득",
+      "timestamp": "2010",
+      "value": 13978.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "대구광역시 - 1인당 개인소득",
+      "timestamp": "2011",
+      "value": 14637.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "대구광역시 - 1인당 개인소득",
+      "timestamp": "2012",
+      "value": 15196.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "대구광역시 - 1인당 개인소득",
+      "timestamp": "2013",
+      "value": 16032.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "대구광역시 - 1인당 개인소득",
+      "timestamp": "2014",
+      "value": 16885.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "대구광역시 - 1인당 개인소득",
+      "timestamp": "2015",
+      "value": 17939.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "대구광역시 - 1인당 개인소득",
+      "timestamp": "2016",
+      "value": 18468.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "대구광역시 - 1인당 개인소득",
+      "timestamp": "2017",
+      "value": 18955.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "대구광역시 - 1인당 개인소득",
+      "timestamp": "2018",
+      "value": 19891.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "대구광역시 - 1인당 개인소득",
+      "timestamp": "2019",
+      "value": 20760.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "대구광역시 - 1인당 개인소득",
+      "timestamp": "2020",
+      "value": 21581.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "대구광역시 - 1인당 개인소득",
+      "timestamp": "2021",
+      "value": 22197.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "대구광역시 - 1인당 개인소득",
+      "timestamp": "2022",
+      "value": 23425.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "대구광역시 - 1인당 개인소득",
+      "timestamp": "2023",
+      "value": 23760.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "인천광역시 - 1인당 개인소득",
+      "timestamp": "2001",
+      "value": 8150.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "인천광역시 - 1인당 개인소득",
+      "timestamp": "2002",
+      "value": 8787.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "인천광역시 - 1인당 개인소득",
+      "timestamp": "2003",
+      "value": 9394.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "인천광역시 - 1인당 개인소득",
+      "timestamp": "2004",
+      "value": 10188.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "인천광역시 - 1인당 개인소득",
+      "timestamp": "2005",
+      "value": 10679.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "인천광역시 - 1인당 개인소득",
+      "timestamp": "2006",
+      "value": 11243.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "인천광역시 - 1인당 개인소득",
+      "timestamp": "2007",
+      "value": 11803.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "인천광역시 - 1인당 개인소득",
+      "timestamp": "2008",
+      "value": 12720.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "인천광역시 - 1인당 개인소득",
+      "timestamp": "2009",
+      "value": 13262.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "인천광역시 - 1인당 개인소득",
+      "timestamp": "2010",
+      "value": 13961.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "인천광역시 - 1인당 개인소득",
+      "timestamp": "2011",
+      "value": 14635.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "인천광역시 - 1인당 개인소득",
+      "timestamp": "2012",
+      "value": 15372.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "인천광역시 - 1인당 개인소득",
+      "timestamp": "2013",
+      "value": 16080.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "인천광역시 - 1인당 개인소득",
+      "timestamp": "2014",
+      "value": 16825.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "인천광역시 - 1인당 개인소득",
+      "timestamp": "2015",
+      "value": 17960.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "인천광역시 - 1인당 개인소득",
+      "timestamp": "2016",
+      "value": 18611.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "인천광역시 - 1인당 개인소득",
+      "timestamp": "2017",
+      "value": 19297.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "인천광역시 - 1인당 개인소득",
+      "timestamp": "2018",
+      "value": 20522.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "인천광역시 - 1인당 개인소득",
+      "timestamp": "2019",
+      "value": 21517.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "인천광역시 - 1인당 개인소득",
+      "timestamp": "2020",
+      "value": 22338.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "인천광역시 - 1인당 개인소득",
+      "timestamp": "2021",
+      "value": 23053.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "인천광역시 - 1인당 개인소득",
+      "timestamp": "2022",
+      "value": 24387.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "인천광역시 - 1인당 개인소득",
+      "timestamp": "2023",
+      "value": 24665.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "광주광역시 - 1인당 개인소득",
+      "timestamp": "2001",
+      "value": 8741.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "광주광역시 - 1인당 개인소득",
+      "timestamp": "2002",
+      "value": 9198.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "광주광역시 - 1인당 개인소득",
+      "timestamp": "2003",
+      "value": 9872.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "광주광역시 - 1인당 개인소득",
+      "timestamp": "2004",
+      "value": 10492.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "광주광역시 - 1인당 개인소득",
+      "timestamp": "2005",
+      "value": 11170.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "광주광역시 - 1인당 개인소득",
+      "timestamp": "2006",
+      "value": 11801.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "광주광역시 - 1인당 개인소득",
+      "timestamp": "2007",
+      "value": 12648.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "광주광역시 - 1인당 개인소득",
+      "timestamp": "2008",
+      "value": 13604.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "광주광역시 - 1인당 개인소득",
+      "timestamp": "2009",
+      "value": 14125.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "광주광역시 - 1인당 개인소득",
+      "timestamp": "2010",
+      "value": 14689.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "광주광역시 - 1인당 개인소득",
+      "timestamp": "2011",
+      "value": 15207.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "광주광역시 - 1인당 개인소득",
+      "timestamp": "2012",
+      "value": 16037.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "광주광역시 - 1인당 개인소득",
+      "timestamp": "2013",
+      "value": 16868.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "광주광역시 - 1인당 개인소득",
+      "timestamp": "2014",
+      "value": 17560.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "광주광역시 - 1인당 개인소득",
+      "timestamp": "2015",
+      "value": 18632.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "광주광역시 - 1인당 개인소득",
+      "timestamp": "2016",
+      "value": 18837.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "광주광역시 - 1인당 개인소득",
+      "timestamp": "2017",
+      "value": 19483.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "광주광역시 - 1인당 개인소득",
+      "timestamp": "2018",
+      "value": 20675.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "광주광역시 - 1인당 개인소득",
+      "timestamp": "2019",
+      "value": 21759.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "광주광역시 - 1인당 개인소득",
+      "timestamp": "2020",
+      "value": 22766.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "광주광역시 - 1인당 개인소득",
+      "timestamp": "2021",
+      "value": 23649.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "광주광역시 - 1인당 개인소득",
+      "timestamp": "2022",
+      "value": 25203.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "광주광역시 - 1인당 개인소득",
+      "timestamp": "2023",
+      "value": 25378.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "대전광역시 - 1인당 개인소득",
+      "timestamp": "2001",
+      "value": 9045.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "대전광역시 - 1인당 개인소득",
+      "timestamp": "2002",
+      "value": 9669.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "대전광역시 - 1인당 개인소득",
+      "timestamp": "2003",
+      "value": 10531.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "대전광역시 - 1인당 개인소득",
+      "timestamp": "2004",
+      "value": 11166.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "대전광역시 - 1인당 개인소득",
+      "timestamp": "2005",
+      "value": 11753.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "대전광역시 - 1인당 개인소득",
+      "timestamp": "2006",
+      "value": 12480.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "대전광역시 - 1인당 개인소득",
+      "timestamp": "2007",
+      "value": 13189.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "대전광역시 - 1인당 개인소득",
+      "timestamp": "2008",
+      "value": 14104.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "대전광역시 - 1인당 개인소득",
+      "timestamp": "2009",
+      "value": 14761.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "대전광역시 - 1인당 개인소득",
+      "timestamp": "2010",
+      "value": 15443.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "대전광역시 - 1인당 개인소득",
+      "timestamp": "2011",
+      "value": 16213.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "대전광역시 - 1인당 개인소득",
+      "timestamp": "2012",
+      "value": 16758.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "대전광역시 - 1인당 개인소득",
+      "timestamp": "2013",
+      "value": 17622.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "대전광역시 - 1인당 개인소득",
+      "timestamp": "2014",
+      "value": 18387.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "대전광역시 - 1인당 개인소득",
+      "timestamp": "2015",
+      "value": 19568.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "대전광역시 - 1인당 개인소득",
+      "timestamp": "2016",
+      "value": 19917.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "대전광역시 - 1인당 개인소득",
+      "timestamp": "2017",
+      "value": 20619.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "대전광역시 - 1인당 개인소득",
+      "timestamp": "2018",
+      "value": 21756.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "대전광역시 - 1인당 개인소득",
+      "timestamp": "2019",
+      "value": 22978.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "대전광역시 - 1인당 개인소득",
+      "timestamp": "2020",
+      "value": 23916.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "대전광역시 - 1인당 개인소득",
+      "timestamp": "2021",
+      "value": 24774.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "대전광역시 - 1인당 개인소득",
+      "timestamp": "2022",
+      "value": 26158.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "대전광역시 - 1인당 개인소득",
+      "timestamp": "2023",
+      "value": 26493.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "울산광역시 - 1인당 개인소득",
+      "timestamp": "2001",
+      "value": 11386.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "울산광역시 - 1인당 개인소득",
+      "timestamp": "2002",
+      "value": 12275.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "울산광역시 - 1인당 개인소득",
+      "timestamp": "2003",
+      "value": 13111.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "울산광역시 - 1인당 개인소득",
+      "timestamp": "2004",
+      "value": 14106.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "울산광역시 - 1인당 개인소득",
+      "timestamp": "2005",
+      "value": 14927.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "울산광역시 - 1인당 개인소득",
+      "timestamp": "2006",
+      "value": 15507.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "울산광역시 - 1인당 개인소득",
+      "timestamp": "2007",
+      "value": 16623.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "울산광역시 - 1인당 개인소득",
+      "timestamp": "2008",
+      "value": 17751.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "울산광역시 - 1인당 개인소득",
+      "timestamp": "2009",
+      "value": 18357.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "울산광역시 - 1인당 개인소득",
+      "timestamp": "2010",
+      "value": 19095.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "울산광역시 - 1인당 개인소득",
+      "timestamp": "2011",
+      "value": 20139.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "울산광역시 - 1인당 개인소득",
+      "timestamp": "2012",
+      "value": 20535.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "울산광역시 - 1인당 개인소득",
+      "timestamp": "2013",
+      "value": 21555.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "울산광역시 - 1인당 개인소득",
+      "timestamp": "2014",
+      "value": 22106.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "울산광역시 - 1인당 개인소득",
+      "timestamp": "2015",
+      "value": 22904.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "울산광역시 - 1인당 개인소득",
+      "timestamp": "2016",
+      "value": 22883.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "울산광역시 - 1인당 개인소득",
+      "timestamp": "2017",
+      "value": 22973.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "울산광역시 - 1인당 개인소득",
+      "timestamp": "2018",
+      "value": 23252.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "울산광역시 - 1인당 개인소득",
+      "timestamp": "2019",
+      "value": 24079.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "울산광역시 - 1인당 개인소득",
+      "timestamp": "2020",
+      "value": 24671.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "울산광역시 - 1인당 개인소득",
+      "timestamp": "2021",
+      "value": 25672.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "울산광역시 - 1인당 개인소득",
+      "timestamp": "2022",
+      "value": 27079.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "울산광역시 - 1인당 개인소득",
+      "timestamp": "2023",
+      "value": 28102.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "세종특별자치시 - 1인당 개인소득",
+      "timestamp": "2013",
+      "value": 18406.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "세종특별자치시 - 1인당 개인소득",
+      "timestamp": "2014",
+      "value": 24751.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "세종특별자치시 - 1인당 개인소득",
+      "timestamp": "2015",
+      "value": 23323.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "세종특별자치시 - 1인당 개인소득",
+      "timestamp": "2016",
+      "value": 22605.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "세종특별자치시 - 1인당 개인소득",
+      "timestamp": "2017",
+      "value": 22678.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "세종특별자치시 - 1인당 개인소득",
+      "timestamp": "2018",
+      "value": 22790.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "세종특별자치시 - 1인당 개인소득",
+      "timestamp": "2019",
+      "value": 23515.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "세종특별자치시 - 1인당 개인소득",
+      "timestamp": "2020",
+      "value": 24369.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "세종특별자치시 - 1인당 개인소득",
+      "timestamp": "2021",
+      "value": 25346.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "세종특별자치시 - 1인당 개인소득",
+      "timestamp": "2022",
+      "value": 25854.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "세종특별자치시 - 1인당 개인소득",
+      "timestamp": "2023",
+      "value": 25995.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "경기도 - 1인당 개인소득",
+      "timestamp": "2001",
+      "value": 9752.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "경기도 - 1인당 개인소득",
+      "timestamp": "2002",
+      "value": 10341.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "경기도 - 1인당 개인소득",
+      "timestamp": "2003",
+      "value": 10838.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "경기도 - 1인당 개인소득",
+      "timestamp": "2004",
+      "value": 11559.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "경기도 - 1인당 개인소득",
+      "timestamp": "2005",
+      "value": 11911.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "경기도 - 1인당 개인소득",
+      "timestamp": "2006",
+      "value": 12461.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "경기도 - 1인당 개인소득",
+      "timestamp": "2007",
+      "value": 13066.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "경기도 - 1인당 개인소득",
+      "timestamp": "2008",
+      "value": 13975.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "경기도 - 1인당 개인소득",
+      "timestamp": "2009",
+      "value": 14155.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "경기도 - 1인당 개인소득",
+      "timestamp": "2010",
+      "value": 14890.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "경기도 - 1인당 개인소득",
+      "timestamp": "2011",
+      "value": 15593.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "경기도 - 1인당 개인소득",
+      "timestamp": "2012",
+      "value": 16260.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "경기도 - 1인당 개인소득",
+      "timestamp": "2013",
+      "value": 17157.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "경기도 - 1인당 개인소득",
+      "timestamp": "2014",
+      "value": 17950.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "경기도 - 1인당 개인소득",
+      "timestamp": "2015",
+      "value": 19096.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "경기도 - 1인당 개인소득",
+      "timestamp": "2016",
+      "value": 19660.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "경기도 - 1인당 개인소득",
+      "timestamp": "2017",
+      "value": 20414.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "경기도 - 1인당 개인소득",
+      "timestamp": "2018",
+      "value": 21488.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "경기도 - 1인당 개인소득",
+      "timestamp": "2019",
+      "value": 22552.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "경기도 - 1인당 개인소득",
+      "timestamp": "2020",
+      "value": 23379.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "경기도 - 1인당 개인소득",
+      "timestamp": "2021",
+      "value": 23962.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "경기도 - 1인당 개인소득",
+      "timestamp": "2022",
+      "value": 25248.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "경기도 - 1인당 개인소득",
+      "timestamp": "2023",
+      "value": 25696.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "강원특별자치도 - 1인당 개인소득",
+      "timestamp": "2001",
+      "value": 8224.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "강원특별자치도 - 1인당 개인소득",
+      "timestamp": "2002",
+      "value": 8778.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "강원특별자치도 - 1인당 개인소득",
+      "timestamp": "2003",
+      "value": 9299.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "강원특별자치도 - 1인당 개인소득",
+      "timestamp": "2004",
+      "value": 10071.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "강원특별자치도 - 1인당 개인소득",
+      "timestamp": "2005",
+      "value": 10496.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "강원특별자치도 - 1인당 개인소득",
+      "timestamp": "2006",
+      "value": 11010.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "강원특별자치도 - 1인당 개인소득",
+      "timestamp": "2007",
+      "value": 11487.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "강원특별자치도 - 1인당 개인소득",
+      "timestamp": "2008",
+      "value": 12350.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "강원특별자치도 - 1인당 개인소득",
+      "timestamp": "2009",
+      "value": 12943.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "강원특별자치도 - 1인당 개인소득",
+      "timestamp": "2010",
+      "value": 13332.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "강원특별자치도 - 1인당 개인소득",
+      "timestamp": "2011",
+      "value": 13775.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "강원특별자치도 - 1인당 개인소득",
+      "timestamp": "2012",
+      "value": 14373.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "강원특별자치도 - 1인당 개인소득",
+      "timestamp": "2013",
+      "value": 15162.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "강원특별자치도 - 1인당 개인소득",
+      "timestamp": "2014",
+      "value": 16005.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "강원특별자치도 - 1인당 개인소득",
+      "timestamp": "2015",
+      "value": 17113.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "강원특별자치도 - 1인당 개인소득",
+      "timestamp": "2016",
+      "value": 17644.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "강원특별자치도 - 1인당 개인소득",
+      "timestamp": "2017",
+      "value": 18305.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "강원특별자치도 - 1인당 개인소득",
+      "timestamp": "2018",
+      "value": 19285.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "강원특별자치도 - 1인당 개인소득",
+      "timestamp": "2019",
+      "value": 20221.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "강원특별자치도 - 1인당 개인소득",
+      "timestamp": "2020",
+      "value": 21294.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "강원특별자치도 - 1인당 개인소득",
+      "timestamp": "2021",
+      "value": 22104.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "강원특별자치도 - 1인당 개인소득",
+      "timestamp": "2022",
+      "value": 23029.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "강원특별자치도 - 1인당 개인소득",
+      "timestamp": "2023",
+      "value": 23326.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "충청북도 - 1인당 개인소득",
+      "timestamp": "2001",
+      "value": 8461.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "충청북도 - 1인당 개인소득",
+      "timestamp": "2002",
+      "value": 8898.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "충청북도 - 1인당 개인소득",
+      "timestamp": "2003",
+      "value": 9314.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "충청북도 - 1인당 개인소득",
+      "timestamp": "2004",
+      "value": 10094.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "충청북도 - 1인당 개인소득",
+      "timestamp": "2005",
+      "value": 10728.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "충청북도 - 1인당 개인소득",
+      "timestamp": "2006",
+      "value": 11278.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "충청북도 - 1인당 개인소득",
+      "timestamp": "2007",
+      "value": 11731.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "충청북도 - 1인당 개인소득",
+      "timestamp": "2008",
+      "value": 12541.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "충청북도 - 1인당 개인소득",
+      "timestamp": "2009",
+      "value": 13092.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "충청북도 - 1인당 개인소득",
+      "timestamp": "2010",
+      "value": 13693.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "충청북도 - 1인당 개인소득",
+      "timestamp": "2011",
+      "value": 14163.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "충청북도 - 1인당 개인소득",
+      "timestamp": "2012",
+      "value": 14775.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "충청북도 - 1인당 개인소득",
+      "timestamp": "2013",
+      "value": 15577.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "충청북도 - 1인당 개인소득",
+      "timestamp": "2014",
+      "value": 16048.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "충청북도 - 1인당 개인소득",
+      "timestamp": "2015",
+      "value": 17470.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "충청북도 - 1인당 개인소득",
+      "timestamp": "2016",
+      "value": 17894.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "충청북도 - 1인당 개인소득",
+      "timestamp": "2017",
+      "value": 18634.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "충청북도 - 1인당 개인소득",
+      "timestamp": "2018",
+      "value": 19734.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "충청북도 - 1인당 개인소득",
+      "timestamp": "2019",
+      "value": 20770.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "충청북도 - 1인당 개인소득",
+      "timestamp": "2020",
+      "value": 21801.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "충청북도 - 1인당 개인소득",
+      "timestamp": "2021",
+      "value": 22873.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "충청북도 - 1인당 개인소득",
+      "timestamp": "2022",
+      "value": 24181.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "충청북도 - 1인당 개인소득",
+      "timestamp": "2023",
+      "value": 24667.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "충청남도 - 1인당 개인소득",
+      "timestamp": "2001",
+      "value": 8483.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "충청남도 - 1인당 개인소득",
+      "timestamp": "2002",
+      "value": 9054.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "충청남도 - 1인당 개인소득",
+      "timestamp": "2003",
+      "value": 9571.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "충청남도 - 1인당 개인소득",
+      "timestamp": "2004",
+      "value": 10364.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "충청남도 - 1인당 개인소득",
+      "timestamp": "2005",
+      "value": 10757.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "충청남도 - 1인당 개인소득",
+      "timestamp": "2006",
+      "value": 11405.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "충청남도 - 1인당 개인소득",
+      "timestamp": "2007",
+      "value": 11766.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "충청남도 - 1인당 개인소득",
+      "timestamp": "2008",
+      "value": 12521.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "충청남도 - 1인당 개인소득",
+      "timestamp": "2009",
+      "value": 13122.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "충청남도 - 1인당 개인소득",
+      "timestamp": "2010",
+      "value": 13716.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "충청남도 - 1인당 개인소득",
+      "timestamp": "2011",
+      "value": 14051.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "충청남도 - 1인당 개인소득",
+      "timestamp": "2012",
+      "value": 14698.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "충청남도 - 1인당 개인소득",
+      "timestamp": "2013",
+      "value": 15800.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "충청남도 - 1인당 개인소득",
+      "timestamp": "2014",
+      "value": 16447.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "충청남도 - 1인당 개인소득",
+      "timestamp": "2015",
+      "value": 17704.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "충청남도 - 1인당 개인소득",
+      "timestamp": "2016",
+      "value": 17842.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "충청남도 - 1인당 개인소득",
+      "timestamp": "2017",
+      "value": 18332.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "충청남도 - 1인당 개인소득",
+      "timestamp": "2018",
+      "value": 19292.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "충청남도 - 1인당 개인소득",
+      "timestamp": "2019",
+      "value": 20125.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "충청남도 - 1인당 개인소득",
+      "timestamp": "2020",
+      "value": 21308.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "충청남도 - 1인당 개인소득",
+      "timestamp": "2021",
+      "value": 22047.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "충청남도 - 1인당 개인소득",
+      "timestamp": "2022",
+      "value": 23176.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "충청남도 - 1인당 개인소득",
+      "timestamp": "2023",
+      "value": 23647.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "전북특별자치도 - 1인당 개인소득",
+      "timestamp": "2001",
+      "value": 8515.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "전북특별자치도 - 1인당 개인소득",
+      "timestamp": "2002",
+      "value": 8875.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "전북특별자치도 - 1인당 개인소득",
+      "timestamp": "2003",
+      "value": 9526.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "전북특별자치도 - 1인당 개인소득",
+      "timestamp": "2004",
+      "value": 10268.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "전북특별자치도 - 1인당 개인소득",
+      "timestamp": "2005",
+      "value": 10846.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "전북특별자치도 - 1인당 개인소득",
+      "timestamp": "2006",
+      "value": 11395.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "전북특별자치도 - 1인당 개인소득",
+      "timestamp": "2007",
+      "value": 11826.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "전북특별자치도 - 1인당 개인소득",
+      "timestamp": "2008",
+      "value": 12673.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "전북특별자치도 - 1인당 개인소득",
+      "timestamp": "2009",
+      "value": 13299.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "전북특별자치도 - 1인당 개인소득",
+      "timestamp": "2010",
+      "value": 13902.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "전북특별자치도 - 1인당 개인소득",
+      "timestamp": "2011",
+      "value": 14542.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "전북특별자치도 - 1인당 개인소득",
+      "timestamp": "2012",
+      "value": 14945.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "전북특별자치도 - 1인당 개인소득",
+      "timestamp": "2013",
+      "value": 15729.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "전북특별자치도 - 1인당 개인소득",
+      "timestamp": "2014",
+      "value": 16447.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "전북특별자치도 - 1인당 개인소득",
+      "timestamp": "2015",
+      "value": 17500.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "전북특별자치도 - 1인당 개인소득",
+      "timestamp": "2016",
+      "value": 17670.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "전북특별자치도 - 1인당 개인소득",
+      "timestamp": "2017",
+      "value": 18298.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "전북특별자치도 - 1인당 개인소득",
+      "timestamp": "2018",
+      "value": 19302.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "전북특별자치도 - 1인당 개인소득",
+      "timestamp": "2019",
+      "value": 20271.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "전북특별자치도 - 1인당 개인소득",
+      "timestamp": "2020",
+      "value": 21444.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "전북특별자치도 - 1인당 개인소득",
+      "timestamp": "2021",
+      "value": 22029.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "전북특별자치도 - 1인당 개인소득",
+      "timestamp": "2022",
+      "value": 23633.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "전북특별자치도 - 1인당 개인소득",
+      "timestamp": "2023",
+      "value": 24157.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "전라남도 - 1인당 개인소득",
+      "timestamp": "2001",
+      "value": 8273.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "전라남도 - 1인당 개인소득",
+      "timestamp": "2002",
+      "value": 8813.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "전라남도 - 1인당 개인소득",
+      "timestamp": "2003",
+      "value": 9265.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "전라남도 - 1인당 개인소득",
+      "timestamp": "2004",
+      "value": 10157.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "전라남도 - 1인당 개인소득",
+      "timestamp": "2005",
+      "value": 10765.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "전라남도 - 1인당 개인소득",
+      "timestamp": "2006",
+      "value": 11360.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "전라남도 - 1인당 개인소득",
+      "timestamp": "2007",
+      "value": 11846.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "전라남도 - 1인당 개인소득",
+      "timestamp": "2008",
+      "value": 12507.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "전라남도 - 1인당 개인소득",
+      "timestamp": "2009",
+      "value": 13147.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "전라남도 - 1인당 개인소득",
+      "timestamp": "2010",
+      "value": 13706.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "전라남도 - 1인당 개인소득",
+      "timestamp": "2011",
+      "value": 14096.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "전라남도 - 1인당 개인소득",
+      "timestamp": "2012",
+      "value": 14699.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "전라남도 - 1인당 개인소득",
+      "timestamp": "2013",
+      "value": 15275.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "전라남도 - 1인당 개인소득",
+      "timestamp": "2014",
+      "value": 15940.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "전라남도 - 1인당 개인소득",
+      "timestamp": "2015",
+      "value": 17211.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "전라남도 - 1인당 개인소득",
+      "timestamp": "2016",
+      "value": 17863.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "전라남도 - 1인당 개인소득",
+      "timestamp": "2017",
+      "value": 18433.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "전라남도 - 1인당 개인소득",
+      "timestamp": "2018",
+      "value": 19384.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "전라남도 - 1인당 개인소득",
+      "timestamp": "2019",
+      "value": 20355.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "전라남도 - 1인당 개인소득",
+      "timestamp": "2020",
+      "value": 21395.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "전라남도 - 1인당 개인소득",
+      "timestamp": "2021",
+      "value": 22270.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "전라남도 - 1인당 개인소득",
+      "timestamp": "2022",
+      "value": 23748.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "전라남도 - 1인당 개인소득",
+      "timestamp": "2023",
+      "value": 24604.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "경상북도 - 1인당 개인소득",
+      "timestamp": "2001",
+      "value": 8777.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "경상북도 - 1인당 개인소득",
+      "timestamp": "2002",
+      "value": 9332.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "경상북도 - 1인당 개인소득",
+      "timestamp": "2003",
+      "value": 9669.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "경상북도 - 1인당 개인소득",
+      "timestamp": "2004",
+      "value": 10523.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "경상북도 - 1인당 개인소득",
+      "timestamp": "2005",
+      "value": 11191.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "경상북도 - 1인당 개인소득",
+      "timestamp": "2006",
+      "value": 11644.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "경상북도 - 1인당 개인소득",
+      "timestamp": "2007",
+      "value": 11938.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "경상북도 - 1인당 개인소득",
+      "timestamp": "2008",
+      "value": 12759.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "경상북도 - 1인당 개인소득",
+      "timestamp": "2009",
+      "value": 13221.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "경상북도 - 1인당 개인소득",
+      "timestamp": "2010",
+      "value": 13892.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "경상북도 - 1인당 개인소득",
+      "timestamp": "2011",
+      "value": 14323.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "경상북도 - 1인당 개인소득",
+      "timestamp": "2012",
+      "value": 15013.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "경상북도 - 1인당 개인소득",
+      "timestamp": "2013",
+      "value": 15733.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "경상북도 - 1인당 개인소득",
+      "timestamp": "2014",
+      "value": 16440.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "경상북도 - 1인당 개인소득",
+      "timestamp": "2015",
+      "value": 17424.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "경상북도 - 1인당 개인소득",
+      "timestamp": "2016",
+      "value": 17628.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "경상북도 - 1인당 개인소득",
+      "timestamp": "2017",
+      "value": 18106.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "경상북도 - 1인당 개인소득",
+      "timestamp": "2018",
+      "value": 18856.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "경상북도 - 1인당 개인소득",
+      "timestamp": "2019",
+      "value": 19655.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "경상북도 - 1인당 개인소득",
+      "timestamp": "2020",
+      "value": 20631.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "경상북도 - 1인당 개인소득",
+      "timestamp": "2021",
+      "value": 21251.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "경상북도 - 1인당 개인소득",
+      "timestamp": "2022",
+      "value": 22426.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "경상북도 - 1인당 개인소득",
+      "timestamp": "2023",
+      "value": 22921.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "경상남도 - 1인당 개인소득",
+      "timestamp": "2001",
+      "value": 8991.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "경상남도 - 1인당 개인소득",
+      "timestamp": "2002",
+      "value": 9477.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "경상남도 - 1인당 개인소득",
+      "timestamp": "2003",
+      "value": 9988.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "경상남도 - 1인당 개인소득",
+      "timestamp": "2004",
+      "value": 10755.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "경상남도 - 1인당 개인소득",
+      "timestamp": "2005",
+      "value": 11214.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "경상남도 - 1인당 개인소득",
+      "timestamp": "2006",
+      "value": 11726.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "경상남도 - 1인당 개인소득",
+      "timestamp": "2007",
+      "value": 12195.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "경상남도 - 1인당 개인소득",
+      "timestamp": "2008",
+      "value": 13168.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "경상남도 - 1인당 개인소득",
+      "timestamp": "2009",
+      "value": 13556.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "경상남도 - 1인당 개인소득",
+      "timestamp": "2010",
+      "value": 14106.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "경상남도 - 1인당 개인소득",
+      "timestamp": "2011",
+      "value": 14679.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "경상남도 - 1인당 개인소득",
+      "timestamp": "2012",
+      "value": 15175.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "경상남도 - 1인당 개인소득",
+      "timestamp": "2013",
+      "value": 15891.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "경상남도 - 1인당 개인소득",
+      "timestamp": "2014",
+      "value": 16662.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "경상남도 - 1인당 개인소득",
+      "timestamp": "2015",
+      "value": 17690.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "경상남도 - 1인당 개인소득",
+      "timestamp": "2016",
+      "value": 18181.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "경상남도 - 1인당 개인소득",
+      "timestamp": "2017",
+      "value": 18530.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "경상남도 - 1인당 개인소득",
+      "timestamp": "2018",
+      "value": 19217.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "경상남도 - 1인당 개인소득",
+      "timestamp": "2019",
+      "value": 19860.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "경상남도 - 1인당 개인소득",
+      "timestamp": "2020",
+      "value": 20622.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "경상남도 - 1인당 개인소득",
+      "timestamp": "2021",
+      "value": 21262.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "경상남도 - 1인당 개인소득",
+      "timestamp": "2022",
+      "value": 22447.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "경상남도 - 1인당 개인소득",
+      "timestamp": "2023",
+      "value": 22769.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "제주특별자치도 - 1인당 개인소득",
+      "timestamp": "2001",
+      "value": 9076.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "제주특별자치도 - 1인당 개인소득",
+      "timestamp": "2002",
+      "value": 9696.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "제주특별자치도 - 1인당 개인소득",
+      "timestamp": "2003",
+      "value": 10006.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "제주특별자치도 - 1인당 개인소득",
+      "timestamp": "2004",
+      "value": 10613.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "제주특별자치도 - 1인당 개인소득",
+      "timestamp": "2005",
+      "value": 11129.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "제주특별자치도 - 1인당 개인소득",
+      "timestamp": "2006",
+      "value": 11691.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "제주특별자치도 - 1인당 개인소득",
+      "timestamp": "2007",
+      "value": 12087.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "제주특별자치도 - 1인당 개인소득",
+      "timestamp": "2008",
+      "value": 12868.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "제주특별자치도 - 1인당 개인소득",
+      "timestamp": "2009",
+      "value": 13460.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "제주특별자치도 - 1인당 개인소득",
+      "timestamp": "2010",
+      "value": 14072.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "제주특별자치도 - 1인당 개인소득",
+      "timestamp": "2011",
+      "value": 14869.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "제주특별자치도 - 1인당 개인소득",
+      "timestamp": "2012",
+      "value": 15453.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "제주특별자치도 - 1인당 개인소득",
+      "timestamp": "2013",
+      "value": 16127.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "제주특별자치도 - 1인당 개인소득",
+      "timestamp": "2014",
+      "value": 16739.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "제주특별자치도 - 1인당 개인소득",
+      "timestamp": "2015",
+      "value": 17959.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "제주특별자치도 - 1인당 개인소득",
+      "timestamp": "2016",
+      "value": 18295.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "제주특별자치도 - 1인당 개인소득",
+      "timestamp": "2017",
+      "value": 18731.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "제주특별자치도 - 1인당 개인소득",
+      "timestamp": "2018",
+      "value": 19402.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "제주특별자치도 - 1인당 개인소득",
+      "timestamp": "2019",
+      "value": 19979.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "제주특별자치도 - 1인당 개인소득",
+      "timestamp": "2020",
+      "value": 20835.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "제주특별자치도 - 1인당 개인소득",
+      "timestamp": "2021",
+      "value": 21396.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "제주특별자치도 - 1인당 개인소득",
+      "timestamp": "2022",
+      "value": 22481.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T3"
+    },
+    {
+      "item": "제주특별자치도 - 1인당 개인소득",
+      "timestamp": "2023",
+      "value": 22893.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T3"
+    }
+  ]
+}

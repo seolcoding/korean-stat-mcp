@@ -1,0 +1,4825 @@
+{
+  "metadata": {
+    "org_id": "101",
+    "org_name": "통계청",
+    "table_id": "INH_1ES4H09S",
+    "table_name": "경력단절여성인구(시도)",
+    "stat_id": "2006081",
+    "stat_name": "지역별고용조사",
+    "date_range": "2014 ~ 2024",
+    "description": "행정구역별 - 경력단절여성 미취업여성 15 - 54세 기혼여성 세종특별자치시 경상북도 경상남도 전국 광주광역시 울산광역시 제주특별자치도 경기도 충청남도 전라남도 대전광역시 충청북도 인천광역시 부산광역시 대구광역시 서울특별시 강원특별자치도 전북특별자치도",
+    "item_info": "■  자료제공처:  통계청 지역통계기획팀 ■  자료원출처:  통계청 고용통계과(지역별고용조사) ■  자료제공주기:  1년 ■  자료제공시기:  조사기준반기 익반기 □ 참고사항 - 2015년 인구총조사(등록센서스) 결과를 토대로 소급작성된 추계인구의 변경을 반영하여 2011년부터 2017년까지의 자료를 변경하였음",
+    "source_url": "http://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=INH_1ES4H09S",
+    "last_updated": "2025-06-24T18:13:45.429604",
+    "period_type": "M",
+    "period_name": "월간"
+  },
+  "data": [
+    {
+      "item": "전국 - 15 - 54세 기혼여성",
+      "timestamp": "2015",
+      "value": 9561.1,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "전국 - 15 - 54세 기혼여성",
+      "timestamp": "2016",
+      "value": 9375.6,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "전국 - 15 - 54세 기혼여성",
+      "timestamp": "2017",
+      "value": 9158.5,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "전국 - 15 - 54세 기혼여성",
+      "timestamp": "2018",
+      "value": 9005.3,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "전국 - 15 - 54세 기혼여성",
+      "timestamp": "2019",
+      "value": 8843.8,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "전국 - 15 - 54세 기혼여성",
+      "timestamp": "2020",
+      "value": 8577.8,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "전국 - 15 - 54세 기혼여성",
+      "timestamp": "2021",
+      "value": 8322.5,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "전국 - 15 - 54세 기혼여성",
+      "timestamp": "2022",
+      "value": 8102.5,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "전국 - 15 - 54세 기혼여성",
+      "timestamp": "2023",
+      "value": 7943.4,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "전국 - 15 - 54세 기혼여성",
+      "timestamp": "2024",
+      "value": 7653.9,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "전국 - 미취업여성",
+      "timestamp": "2015",
+      "value": 3863.3,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "전국 - 미취업여성",
+      "timestamp": "2016",
+      "value": 3726.6,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "전국 - 미취업여성",
+      "timestamp": "2017",
+      "value": 3573.7,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "전국 - 미취업여성",
+      "timestamp": "2018",
+      "value": 3456.5,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "전국 - 미취업여성",
+      "timestamp": "2019",
+      "value": 3366.3,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "전국 - 미취업여성",
+      "timestamp": "2020",
+      "value": 3420.3,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "전국 - 미취업여성",
+      "timestamp": "2021",
+      "value": 3240.2,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "전국 - 미취업여성",
+      "timestamp": "2022",
+      "value": 3026.7,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "전국 - 미취업여성",
+      "timestamp": "2023",
+      "value": 2836.7,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "전국 - 미취업여성",
+      "timestamp": "2024",
+      "value": 2601.1,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "전국 - - 경력단절여성",
+      "timestamp": "2015",
+      "value": 2073.3,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "전국 - - 경력단절여성",
+      "timestamp": "2016",
+      "value": 1924.3,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "전국 - - 경력단절여성",
+      "timestamp": "2017",
+      "value": 1831.3,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "전국 - - 경력단절여성",
+      "timestamp": "2018",
+      "value": 1846.5,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "전국 - - 경력단절여성",
+      "timestamp": "2019",
+      "value": 1698.6,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "전국 - - 경력단절여성",
+      "timestamp": "2020",
+      "value": 1505.5,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "전국 - - 경력단절여성",
+      "timestamp": "2021",
+      "value": 1448.1,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "전국 - - 경력단절여성",
+      "timestamp": "2022",
+      "value": 1396.8,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "전국 - - 경력단절여성",
+      "timestamp": "2023",
+      "value": 1348.5,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "전국 - - 경력단절여성",
+      "timestamp": "2024",
+      "value": 1215.4,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "서울특별시 - 15 - 54세 기혼여성",
+      "timestamp": "2015",
+      "value": 1791.1,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "서울특별시 - 15 - 54세 기혼여성",
+      "timestamp": "2016",
+      "value": 1750.1,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "서울특별시 - 15 - 54세 기혼여성",
+      "timestamp": "2017",
+      "value": 1684.1,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "서울특별시 - 15 - 54세 기혼여성",
+      "timestamp": "2018",
+      "value": 1634.7,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "서울특별시 - 15 - 54세 기혼여성",
+      "timestamp": "2019",
+      "value": 1568.2,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "서울특별시 - 15 - 54세 기혼여성",
+      "timestamp": "2020",
+      "value": 1497.1,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "서울특별시 - 15 - 54세 기혼여성",
+      "timestamp": "2021",
+      "value": 1429.5,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "서울특별시 - 15 - 54세 기혼여성",
+      "timestamp": "2022",
+      "value": 1368.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "서울특별시 - 15 - 54세 기혼여성",
+      "timestamp": "2023",
+      "value": 1323.4,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "서울특별시 - 15 - 54세 기혼여성",
+      "timestamp": "2024",
+      "value": 1266.6,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "서울특별시 - 미취업여성",
+      "timestamp": "2015",
+      "value": 744.6,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "서울특별시 - 미취업여성",
+      "timestamp": "2016",
+      "value": 716.1,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "서울특별시 - 미취업여성",
+      "timestamp": "2017",
+      "value": 675.5,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "서울특별시 - 미취업여성",
+      "timestamp": "2018",
+      "value": 628.7,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "서울특별시 - 미취업여성",
+      "timestamp": "2019",
+      "value": 611.6,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "서울특별시 - 미취업여성",
+      "timestamp": "2020",
+      "value": 573.2,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "서울특별시 - 미취업여성",
+      "timestamp": "2021",
+      "value": 565.4,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "서울특별시 - 미취업여성",
+      "timestamp": "2022",
+      "value": 504.4,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "서울특별시 - 미취업여성",
+      "timestamp": "2023",
+      "value": 467.1,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "서울특별시 - 미취업여성",
+      "timestamp": "2024",
+      "value": 396.7,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "서울특별시 - - 경력단절여성",
+      "timestamp": "2015",
+      "value": 369.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "서울특별시 - - 경력단절여성",
+      "timestamp": "2016",
+      "value": 348.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "서울특별시 - - 경력단절여성",
+      "timestamp": "2017",
+      "value": 348.4,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "서울특별시 - - 경력단절여성",
+      "timestamp": "2018",
+      "value": 323.8,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "서울특별시 - - 경력단절여성",
+      "timestamp": "2019",
+      "value": 298.3,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "서울특별시 - - 경력단절여성",
+      "timestamp": "2020",
+      "value": 230.5,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "서울특별시 - - 경력단절여성",
+      "timestamp": "2021",
+      "value": 238.6,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "서울특별시 - - 경력단절여성",
+      "timestamp": "2022",
+      "value": 220.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "서울특별시 - - 경력단절여성",
+      "timestamp": "2023",
+      "value": 180.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "서울특별시 - - 경력단절여성",
+      "timestamp": "2024",
+      "value": 171.4,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "부산광역시 - 15 - 54세 기혼여성",
+      "timestamp": "2015",
+      "value": 603.2,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "부산광역시 - 15 - 54세 기혼여성",
+      "timestamp": "2016",
+      "value": 583.2,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "부산광역시 - 15 - 54세 기혼여성",
+      "timestamp": "2017",
+      "value": 557.1,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "부산광역시 - 15 - 54세 기혼여성",
+      "timestamp": "2018",
+      "value": 549.5,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "부산광역시 - 15 - 54세 기혼여성",
+      "timestamp": "2019",
+      "value": 532.4,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "부산광역시 - 15 - 54세 기혼여성",
+      "timestamp": "2020",
+      "value": 502.9,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "부산광역시 - 15 - 54세 기혼여성",
+      "timestamp": "2021",
+      "value": 486.4,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "부산광역시 - 15 - 54세 기혼여성",
+      "timestamp": "2022",
+      "value": 475.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "부산광역시 - 15 - 54세 기혼여성",
+      "timestamp": "2023",
+      "value": 457.5,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "부산광역시 - 15 - 54세 기혼여성",
+      "timestamp": "2024",
+      "value": 440.1,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "부산광역시 - 미취업여성",
+      "timestamp": "2015",
+      "value": 255.2,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "부산광역시 - 미취업여성",
+      "timestamp": "2016",
+      "value": 242.3,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "부산광역시 - 미취업여성",
+      "timestamp": "2017",
+      "value": 231.6,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "부산광역시 - 미취업여성",
+      "timestamp": "2018",
+      "value": 232.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "부산광역시 - 미취업여성",
+      "timestamp": "2019",
+      "value": 211.2,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "부산광역시 - 미취업여성",
+      "timestamp": "2020",
+      "value": 201.5,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "부산광역시 - 미취업여성",
+      "timestamp": "2021",
+      "value": 183.8,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "부산광역시 - 미취업여성",
+      "timestamp": "2022",
+      "value": 187.3,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "부산광역시 - 미취업여성",
+      "timestamp": "2023",
+      "value": 170.9,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "부산광역시 - 미취업여성",
+      "timestamp": "2024",
+      "value": 153.5,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "부산광역시 - - 경력단절여성",
+      "timestamp": "2015",
+      "value": 117.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "부산광역시 - - 경력단절여성",
+      "timestamp": "2016",
+      "value": 114.8,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "부산광역시 - - 경력단절여성",
+      "timestamp": "2017",
+      "value": 103.3,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "부산광역시 - - 경력단절여성",
+      "timestamp": "2018",
+      "value": 113.8,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "부산광역시 - - 경력단절여성",
+      "timestamp": "2019",
+      "value": 97.6,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "부산광역시 - - 경력단절여성",
+      "timestamp": "2020",
+      "value": 89.8,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "부산광역시 - - 경력단절여성",
+      "timestamp": "2021",
+      "value": 78.4,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "부산광역시 - - 경력단절여성",
+      "timestamp": "2022",
+      "value": 80.4,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "부산광역시 - - 경력단절여성",
+      "timestamp": "2023",
+      "value": 83.8,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "부산광역시 - - 경력단절여성",
+      "timestamp": "2024",
+      "value": 71.1,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "대구광역시 - 15 - 54세 기혼여성",
+      "timestamp": "2015",
+      "value": 458.5,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "대구광역시 - 15 - 54세 기혼여성",
+      "timestamp": "2016",
+      "value": 444.7,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "대구광역시 - 15 - 54세 기혼여성",
+      "timestamp": "2017",
+      "value": 432.8,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "대구광역시 - 15 - 54세 기혼여성",
+      "timestamp": "2018",
+      "value": 433.1,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "대구광역시 - 15 - 54세 기혼여성",
+      "timestamp": "2019",
+      "value": 424.5,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "대구광역시 - 15 - 54세 기혼여성",
+      "timestamp": "2020",
+      "value": 404.8,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "대구광역시 - 15 - 54세 기혼여성",
+      "timestamp": "2021",
+      "value": 388.2,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "대구광역시 - 15 - 54세 기혼여성",
+      "timestamp": "2022",
+      "value": 365.6,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "대구광역시 - 15 - 54세 기혼여성",
+      "timestamp": "2023",
+      "value": 365.8,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "대구광역시 - 15 - 54세 기혼여성",
+      "timestamp": "2024",
+      "value": 348.7,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "대구광역시 - 미취업여성",
+      "timestamp": "2015",
+      "value": 174.8,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "대구광역시 - 미취업여성",
+      "timestamp": "2016",
+      "value": 170.1,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "대구광역시 - 미취업여성",
+      "timestamp": "2017",
+      "value": 154.8,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "대구광역시 - 미취업여성",
+      "timestamp": "2018",
+      "value": 158.9,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "대구광역시 - 미취업여성",
+      "timestamp": "2019",
+      "value": 165.1,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "대구광역시 - 미취업여성",
+      "timestamp": "2020",
+      "value": 183.2,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "대구광역시 - 미취업여성",
+      "timestamp": "2021",
+      "value": 153.2,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "대구광역시 - 미취업여성",
+      "timestamp": "2022",
+      "value": 134.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "대구광역시 - 미취업여성",
+      "timestamp": "2023",
+      "value": 129.8,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "대구광역시 - 미취업여성",
+      "timestamp": "2024",
+      "value": 127.8,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "대구광역시 - - 경력단절여성",
+      "timestamp": "2015",
+      "value": 100.3,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "대구광역시 - - 경력단절여성",
+      "timestamp": "2016",
+      "value": 84.8,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "대구광역시 - - 경력단절여성",
+      "timestamp": "2017",
+      "value": 84.4,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "대구광역시 - - 경력단절여성",
+      "timestamp": "2018",
+      "value": 89.8,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "대구광역시 - - 경력단절여성",
+      "timestamp": "2019",
+      "value": 87.7,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "대구광역시 - - 경력단절여성",
+      "timestamp": "2020",
+      "value": 89.7,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "대구광역시 - - 경력단절여성",
+      "timestamp": "2021",
+      "value": 76.8,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "대구광역시 - - 경력단절여성",
+      "timestamp": "2022",
+      "value": 69.1,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "대구광역시 - - 경력단절여성",
+      "timestamp": "2023",
+      "value": 69.2,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "대구광역시 - - 경력단절여성",
+      "timestamp": "2024",
+      "value": 65.9,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "인천광역시 - 15 - 54세 기혼여성",
+      "timestamp": "2015",
+      "value": 570.3,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "인천광역시 - 15 - 54세 기혼여성",
+      "timestamp": "2016",
+      "value": 566.4,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "인천광역시 - 15 - 54세 기혼여성",
+      "timestamp": "2017",
+      "value": 550.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "인천광역시 - 15 - 54세 기혼여성",
+      "timestamp": "2018",
+      "value": 530.4,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "인천광역시 - 15 - 54세 기혼여성",
+      "timestamp": "2019",
+      "value": 520.1,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "인천광역시 - 15 - 54세 기혼여성",
+      "timestamp": "2020",
+      "value": 507.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "인천광역시 - 15 - 54세 기혼여성",
+      "timestamp": "2021",
+      "value": 486.5,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "인천광역시 - 15 - 54세 기혼여성",
+      "timestamp": "2022",
+      "value": 481.6,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "인천광역시 - 15 - 54세 기혼여성",
+      "timestamp": "2023",
+      "value": 468.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "인천광역시 - 15 - 54세 기혼여성",
+      "timestamp": "2024",
+      "value": 455.9,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "인천광역시 - 미취업여성",
+      "timestamp": "2015",
+      "value": 239.6,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "인천광역시 - 미취업여성",
+      "timestamp": "2016",
+      "value": 227.8,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "인천광역시 - 미취업여성",
+      "timestamp": "2017",
+      "value": 227.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "인천광역시 - 미취업여성",
+      "timestamp": "2018",
+      "value": 202.1,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "인천광역시 - 미취업여성",
+      "timestamp": "2019",
+      "value": 192.6,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "인천광역시 - 미취업여성",
+      "timestamp": "2020",
+      "value": 201.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "인천광역시 - 미취업여성",
+      "timestamp": "2021",
+      "value": 184.9,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "인천광역시 - 미취업여성",
+      "timestamp": "2022",
+      "value": 189.4,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "인천광역시 - 미취업여성",
+      "timestamp": "2023",
+      "value": 171.9,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "인천광역시 - 미취업여성",
+      "timestamp": "2024",
+      "value": 163.6,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "인천광역시 - - 경력단절여성",
+      "timestamp": "2015",
+      "value": 120.8,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "인천광역시 - - 경력단절여성",
+      "timestamp": "2016",
+      "value": 113.7,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "인천광역시 - - 경력단절여성",
+      "timestamp": "2017",
+      "value": 102.6,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "인천광역시 - - 경력단절여성",
+      "timestamp": "2018",
+      "value": 101.4,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "인천광역시 - - 경력단절여성",
+      "timestamp": "2019",
+      "value": 97.9,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "인천광역시 - - 경력단절여성",
+      "timestamp": "2020",
+      "value": 88.8,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "인천광역시 - - 경력단절여성",
+      "timestamp": "2021",
+      "value": 75.2,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "인천광역시 - - 경력단절여성",
+      "timestamp": "2022",
+      "value": 80.9,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "인천광역시 - - 경력단절여성",
+      "timestamp": "2023",
+      "value": 78.3,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "인천광역시 - - 경력단절여성",
+      "timestamp": "2024",
+      "value": 81.2,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "광주광역시 - 15 - 54세 기혼여성",
+      "timestamp": "2015",
+      "value": 288.2,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "광주광역시 - 15 - 54세 기혼여성",
+      "timestamp": "2016",
+      "value": 284.2,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "광주광역시 - 15 - 54세 기혼여성",
+      "timestamp": "2017",
+      "value": 276.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "광주광역시 - 15 - 54세 기혼여성",
+      "timestamp": "2018",
+      "value": 273.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "광주광역시 - 15 - 54세 기혼여성",
+      "timestamp": "2019",
+      "value": 267.7,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "광주광역시 - 15 - 54세 기혼여성",
+      "timestamp": "2020",
+      "value": 258.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "광주광역시 - 15 - 54세 기혼여성",
+      "timestamp": "2021",
+      "value": 247.1,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "광주광역시 - 15 - 54세 기혼여성",
+      "timestamp": "2022",
+      "value": 247.2,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "광주광역시 - 15 - 54세 기혼여성",
+      "timestamp": "2023",
+      "value": 235.1,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "광주광역시 - 15 - 54세 기혼여성",
+      "timestamp": "2024",
+      "value": 225.3,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "광주광역시 - 미취업여성",
+      "timestamp": "2015",
+      "value": 118.6,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "광주광역시 - 미취업여성",
+      "timestamp": "2016",
+      "value": 112.1,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "광주광역시 - 미취업여성",
+      "timestamp": "2017",
+      "value": 99.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "광주광역시 - 미취업여성",
+      "timestamp": "2018",
+      "value": 102.6,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "광주광역시 - 미취업여성",
+      "timestamp": "2019",
+      "value": 99.5,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "광주광역시 - 미취업여성",
+      "timestamp": "2020",
+      "value": 100.2,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "광주광역시 - 미취업여성",
+      "timestamp": "2021",
+      "value": 99.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "광주광역시 - 미취업여성",
+      "timestamp": "2022",
+      "value": 100.6,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "광주광역시 - 미취업여성",
+      "timestamp": "2023",
+      "value": 80.9,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "광주광역시 - 미취업여성",
+      "timestamp": "2024",
+      "value": 80.4,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "광주광역시 - - 경력단절여성",
+      "timestamp": "2015",
+      "value": 63.9,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "광주광역시 - - 경력단절여성",
+      "timestamp": "2016",
+      "value": 57.1,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "광주광역시 - - 경력단절여성",
+      "timestamp": "2017",
+      "value": 52.7,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "광주광역시 - - 경력단절여성",
+      "timestamp": "2018",
+      "value": 54.6,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "광주광역시 - - 경력단절여성",
+      "timestamp": "2019",
+      "value": 53.7,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "광주광역시 - - 경력단절여성",
+      "timestamp": "2020",
+      "value": 49.1,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "광주광역시 - - 경력단절여성",
+      "timestamp": "2021",
+      "value": 45.4,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "광주광역시 - - 경력단절여성",
+      "timestamp": "2022",
+      "value": 44.6,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "광주광역시 - - 경력단절여성",
+      "timestamp": "2023",
+      "value": 34.8,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "광주광역시 - - 경력단절여성",
+      "timestamp": "2024",
+      "value": 33.3,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "대전광역시 - 15 - 54세 기혼여성",
+      "timestamp": "2015",
+      "value": 296.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "대전광역시 - 15 - 54세 기혼여성",
+      "timestamp": "2016",
+      "value": 283.4,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "대전광역시 - 15 - 54세 기혼여성",
+      "timestamp": "2017",
+      "value": 278.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "대전광역시 - 15 - 54세 기혼여성",
+      "timestamp": "2018",
+      "value": 272.9,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "대전광역시 - 15 - 54세 기혼여성",
+      "timestamp": "2019",
+      "value": 260.9,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "대전광역시 - 15 - 54세 기혼여성",
+      "timestamp": "2020",
+      "value": 251.5,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "대전광역시 - 15 - 54세 기혼여성",
+      "timestamp": "2021",
+      "value": 245.6,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "대전광역시 - 15 - 54세 기혼여성",
+      "timestamp": "2022",
+      "value": 239.1,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "대전광역시 - 15 - 54세 기혼여성",
+      "timestamp": "2023",
+      "value": 224.2,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "대전광역시 - 15 - 54세 기혼여성",
+      "timestamp": "2024",
+      "value": 221.7,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "대전광역시 - 미취업여성",
+      "timestamp": "2015",
+      "value": 119.9,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "대전광역시 - 미취업여성",
+      "timestamp": "2016",
+      "value": 111.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "대전광역시 - 미취업여성",
+      "timestamp": "2017",
+      "value": 109.8,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "대전광역시 - 미취업여성",
+      "timestamp": "2018",
+      "value": 99.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "대전광역시 - 미취업여성",
+      "timestamp": "2019",
+      "value": 97.5,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "대전광역시 - 미취업여성",
+      "timestamp": "2020",
+      "value": 93.2,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "대전광역시 - 미취업여성",
+      "timestamp": "2021",
+      "value": 89.9,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "대전광역시 - 미취업여성",
+      "timestamp": "2022",
+      "value": 93.3,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "대전광역시 - 미취업여성",
+      "timestamp": "2023",
+      "value": 82.1,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "대전광역시 - 미취업여성",
+      "timestamp": "2024",
+      "value": 76.9,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "대전광역시 - - 경력단절여성",
+      "timestamp": "2015",
+      "value": 66.7,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "대전광역시 - - 경력단절여성",
+      "timestamp": "2016",
+      "value": 62.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "대전광역시 - - 경력단절여성",
+      "timestamp": "2017",
+      "value": 60.5,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "대전광역시 - - 경력단절여성",
+      "timestamp": "2018",
+      "value": 53.6,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "대전광역시 - - 경력단절여성",
+      "timestamp": "2019",
+      "value": 48.7,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "대전광역시 - - 경력단절여성",
+      "timestamp": "2020",
+      "value": 39.7,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "대전광역시 - - 경력단절여성",
+      "timestamp": "2021",
+      "value": 39.6,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "대전광역시 - - 경력단절여성",
+      "timestamp": "2022",
+      "value": 47.2,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "대전광역시 - - 경력단절여성",
+      "timestamp": "2023",
+      "value": 40.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "대전광역시 - - 경력단절여성",
+      "timestamp": "2024",
+      "value": 36.3,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "울산광역시 - 15 - 54세 기혼여성",
+      "timestamp": "2015",
+      "value": 245.7,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "울산광역시 - 15 - 54세 기혼여성",
+      "timestamp": "2016",
+      "value": 238.2,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "울산광역시 - 15 - 54세 기혼여성",
+      "timestamp": "2017",
+      "value": 234.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "울산광역시 - 15 - 54세 기혼여성",
+      "timestamp": "2018",
+      "value": 219.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "울산광역시 - 15 - 54세 기혼여성",
+      "timestamp": "2019",
+      "value": 210.7,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "울산광역시 - 15 - 54세 기혼여성",
+      "timestamp": "2020",
+      "value": 204.8,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "울산광역시 - 15 - 54세 기혼여성",
+      "timestamp": "2021",
+      "value": 196.6,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "울산광역시 - 15 - 54세 기혼여성",
+      "timestamp": "2022",
+      "value": 190.2,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "울산광역시 - 15 - 54세 기혼여성",
+      "timestamp": "2023",
+      "value": 187.8,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "울산광역시 - 15 - 54세 기혼여성",
+      "timestamp": "2024",
+      "value": 180.3,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "울산광역시 - 미취업여성",
+      "timestamp": "2015",
+      "value": 125.8,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "울산광역시 - 미취업여성",
+      "timestamp": "2016",
+      "value": 120.5,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "울산광역시 - 미취업여성",
+      "timestamp": "2017",
+      "value": 110.9,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "울산광역시 - 미취업여성",
+      "timestamp": "2018",
+      "value": 101.4,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "울산광역시 - 미취업여성",
+      "timestamp": "2019",
+      "value": 94.3,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "울산광역시 - 미취업여성",
+      "timestamp": "2020",
+      "value": 101.3,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "울산광역시 - 미취업여성",
+      "timestamp": "2021",
+      "value": 88.6,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "울산광역시 - 미취업여성",
+      "timestamp": "2022",
+      "value": 88.4,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "울산광역시 - 미취업여성",
+      "timestamp": "2023",
+      "value": 81.3,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "울산광역시 - 미취업여성",
+      "timestamp": "2024",
+      "value": 79.7,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "울산광역시 - - 경력단절여성",
+      "timestamp": "2015",
+      "value": 77.7,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "울산광역시 - - 경력단절여성",
+      "timestamp": "2016",
+      "value": 65.7,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "울산광역시 - - 경력단절여성",
+      "timestamp": "2017",
+      "value": 62.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "울산광역시 - - 경력단절여성",
+      "timestamp": "2018",
+      "value": 54.9,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "울산광역시 - - 경력단절여성",
+      "timestamp": "2019",
+      "value": 46.9,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "울산광역시 - - 경력단절여성",
+      "timestamp": "2020",
+      "value": 42.6,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "울산광역시 - - 경력단절여성",
+      "timestamp": "2021",
+      "value": 36.9,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "울산광역시 - - 경력단절여성",
+      "timestamp": "2022",
+      "value": 38.1,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "울산광역시 - - 경력단절여성",
+      "timestamp": "2023",
+      "value": 41.3,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "울산광역시 - - 경력단절여성",
+      "timestamp": "2024",
+      "value": 34.2,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "세종특별자치시 - 15 - 54세 기혼여성",
+      "timestamp": "2017",
+      "value": 52.3,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "세종특별자치시 - 15 - 54세 기혼여성",
+      "timestamp": "2018",
+      "value": 61.3,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "세종특별자치시 - 15 - 54세 기혼여성",
+      "timestamp": "2019",
+      "value": 68.5,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "세종특별자치시 - 15 - 54세 기혼여성",
+      "timestamp": "2020",
+      "value": 71.1,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "세종특별자치시 - 15 - 54세 기혼여성",
+      "timestamp": "2021",
+      "value": 72.1,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "세종특별자치시 - 15 - 54세 기혼여성",
+      "timestamp": "2022",
+      "value": 74.8,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "세종특별자치시 - 15 - 54세 기혼여성",
+      "timestamp": "2023",
+      "value": 77.2,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "세종특별자치시 - 15 - 54세 기혼여성",
+      "timestamp": "2024",
+      "value": 76.5,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "세종특별자치시 - 미취업여성",
+      "timestamp": "2017",
+      "value": 22.2,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "세종특별자치시 - 미취업여성",
+      "timestamp": "2018",
+      "value": 25.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "세종특별자치시 - 미취업여성",
+      "timestamp": "2019",
+      "value": 26.1,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "세종특별자치시 - 미취업여성",
+      "timestamp": "2020",
+      "value": 27.7,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "세종특별자치시 - 미취업여성",
+      "timestamp": "2021",
+      "value": 30.3,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "세종특별자치시 - 미취업여성",
+      "timestamp": "2022",
+      "value": 28.6,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "세종특별자치시 - 미취업여성",
+      "timestamp": "2023",
+      "value": 26.4,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "세종특별자치시 - 미취업여성",
+      "timestamp": "2024",
+      "value": 26.3,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "세종특별자치시 - - 경력단절여성",
+      "timestamp": "2017",
+      "value": 14.3,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "세종특별자치시 - - 경력단절여성",
+      "timestamp": "2018",
+      "value": 15.6,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "세종특별자치시 - - 경력단절여성",
+      "timestamp": "2019",
+      "value": 17.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "세종특별자치시 - - 경력단절여성",
+      "timestamp": "2020",
+      "value": 15.3,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "세종특별자치시 - - 경력단절여성",
+      "timestamp": "2021",
+      "value": 15.5,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "세종특별자치시 - - 경력단절여성",
+      "timestamp": "2022",
+      "value": 17.9,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "세종특별자치시 - - 경력단절여성",
+      "timestamp": "2023",
+      "value": 16.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "세종특별자치시 - - 경력단절여성",
+      "timestamp": "2024",
+      "value": 14.5,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "경기도 - 15 - 54세 기혼여성",
+      "timestamp": "2015",
+      "value": 2489.5,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "경기도 - 15 - 54세 기혼여성",
+      "timestamp": "2016",
+      "value": 2443.1,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "경기도 - 15 - 54세 기혼여성",
+      "timestamp": "2017",
+      "value": 2412.4,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "경기도 - 15 - 54세 기혼여성",
+      "timestamp": "2018",
+      "value": 2415.9,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "경기도 - 15 - 54세 기혼여성",
+      "timestamp": "2019",
+      "value": 2434.8,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "경기도 - 15 - 54세 기혼여성",
+      "timestamp": "2020",
+      "value": 2393.5,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "경기도 - 15 - 54세 기혼여성",
+      "timestamp": "2021",
+      "value": 2365.8,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "경기도 - 15 - 54세 기혼여성",
+      "timestamp": "2022",
+      "value": 2321.7,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "경기도 - 15 - 54세 기혼여성",
+      "timestamp": "2023",
+      "value": 2299.3,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "경기도 - 15 - 54세 기혼여성",
+      "timestamp": "2024",
+      "value": 2223.9,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "경기도 - 미취업여성",
+      "timestamp": "2015",
+      "value": 1016.8,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "경기도 - 미취업여성",
+      "timestamp": "2016",
+      "value": 966.4,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "경기도 - 미취업여성",
+      "timestamp": "2017",
+      "value": 961.7,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "경기도 - 미취업여성",
+      "timestamp": "2018",
+      "value": 958.9,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "경기도 - 미취업여성",
+      "timestamp": "2019",
+      "value": 976.9,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "경기도 - 미취업여성",
+      "timestamp": "2020",
+      "value": 1014.4,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "경기도 - 미취업여성",
+      "timestamp": "2021",
+      "value": 968.1,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "경기도 - 미취업여성",
+      "timestamp": "2022",
+      "value": 862.1,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "경기도 - 미취업여성",
+      "timestamp": "2023",
+      "value": 878.8,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "경기도 - 미취업여성",
+      "timestamp": "2024",
+      "value": 794.5,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "경기도 - - 경력단절여성",
+      "timestamp": "2015",
+      "value": 588.8,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "경기도 - - 경력단절여성",
+      "timestamp": "2016",
+      "value": 529.2,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "경기도 - - 경력단절여성",
+      "timestamp": "2017",
+      "value": 510.5,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "경기도 - - 경력단절여성",
+      "timestamp": "2018",
+      "value": 544.4,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "경기도 - - 경력단절여성",
+      "timestamp": "2019",
+      "value": 519.2,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "경기도 - - 경력단절여성",
+      "timestamp": "2020",
+      "value": 446.1,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "경기도 - - 경력단절여성",
+      "timestamp": "2021",
+      "value": 454.5,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "경기도 - - 경력단절여성",
+      "timestamp": "2022",
+      "value": 423.6,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "경기도 - - 경력단절여성",
+      "timestamp": "2023",
+      "value": 446.2,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "경기도 - - 경력단절여성",
+      "timestamp": "2024",
+      "value": 368.8,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "강원특별자치도 - 15 - 54세 기혼여성",
+      "timestamp": "2015",
+      "value": 267.1,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "강원특별자치도 - 15 - 54세 기혼여성",
+      "timestamp": "2016",
+      "value": 255.8,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "강원특별자치도 - 15 - 54세 기혼여성",
+      "timestamp": "2017",
+      "value": 245.7,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "강원특별자치도 - 15 - 54세 기혼여성",
+      "timestamp": "2018",
+      "value": 246.8,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "강원특별자치도 - 15 - 54세 기혼여성",
+      "timestamp": "2019",
+      "value": 242.2,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "강원특별자치도 - 15 - 54세 기혼여성",
+      "timestamp": "2020",
+      "value": 233.3,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "강원특별자치도 - 15 - 54세 기혼여성",
+      "timestamp": "2021",
+      "value": 224.3,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "강원특별자치도 - 15 - 54세 기혼여성",
+      "timestamp": "2022",
+      "value": 219.3,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "강원특별자치도 - 15 - 54세 기혼여성",
+      "timestamp": "2023",
+      "value": 217.4,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "강원특별자치도 - 15 - 54세 기혼여성",
+      "timestamp": "2024",
+      "value": 211.1,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "강원특별자치도 - 미취업여성",
+      "timestamp": "2015",
+      "value": 99.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "강원특별자치도 - 미취업여성",
+      "timestamp": "2016",
+      "value": 94.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "강원특별자치도 - 미취업여성",
+      "timestamp": "2017",
+      "value": 85.7,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "강원특별자치도 - 미취업여성",
+      "timestamp": "2018",
+      "value": 86.3,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "강원특별자치도 - 미취업여성",
+      "timestamp": "2019",
+      "value": 81.4,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "강원특별자치도 - 미취업여성",
+      "timestamp": "2020",
+      "value": 86.1,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "강원특별자치도 - 미취업여성",
+      "timestamp": "2021",
+      "value": 76.1,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "강원특별자치도 - 미취업여성",
+      "timestamp": "2022",
+      "value": 67.1,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "강원특별자치도 - 미취업여성",
+      "timestamp": "2023",
+      "value": 62.7,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "강원특별자치도 - 미취업여성",
+      "timestamp": "2024",
+      "value": 64.7,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "강원특별자치도 - - 경력단절여성",
+      "timestamp": "2015",
+      "value": 49.3,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "강원특별자치도 - - 경력단절여성",
+      "timestamp": "2016",
+      "value": 44.7,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "강원특별자치도 - - 경력단절여성",
+      "timestamp": "2017",
+      "value": 40.8,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "강원특별자치도 - - 경력단절여성",
+      "timestamp": "2018",
+      "value": 47.1,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "강원특별자치도 - - 경력단절여성",
+      "timestamp": "2019",
+      "value": 42.2,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "강원특별자치도 - - 경력단절여성",
+      "timestamp": "2020",
+      "value": 38.3,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "강원특별자치도 - - 경력단절여성",
+      "timestamp": "2021",
+      "value": 34.6,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "강원특별자치도 - - 경력단절여성",
+      "timestamp": "2022",
+      "value": 32.6,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "강원특별자치도 - - 경력단절여성",
+      "timestamp": "2023",
+      "value": 32.3,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "강원특별자치도 - - 경력단절여성",
+      "timestamp": "2024",
+      "value": 30.9,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "충청북도 - 15 - 54세 기혼여성",
+      "timestamp": "2015",
+      "value": 296.9,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "충청북도 - 15 - 54세 기혼여성",
+      "timestamp": "2016",
+      "value": 291.2,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "충청북도 - 15 - 54세 기혼여성",
+      "timestamp": "2017",
+      "value": 284.1,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "충청북도 - 15 - 54세 기혼여성",
+      "timestamp": "2018",
+      "value": 272.9,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "충청북도 - 15 - 54세 기혼여성",
+      "timestamp": "2019",
+      "value": 264.5,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "충청북도 - 15 - 54세 기혼여성",
+      "timestamp": "2020",
+      "value": 261.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "충청북도 - 15 - 54세 기혼여성",
+      "timestamp": "2021",
+      "value": 256.7,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "충청북도 - 15 - 54세 기혼여성",
+      "timestamp": "2022",
+      "value": 253.3,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "충청북도 - 15 - 54세 기혼여성",
+      "timestamp": "2023",
+      "value": 251.5,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "충청북도 - 15 - 54세 기혼여성",
+      "timestamp": "2024",
+      "value": 241.5,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "충청북도 - 미취업여성",
+      "timestamp": "2015",
+      "value": 103.6,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "충청북도 - 미취업여성",
+      "timestamp": "2016",
+      "value": 105.5,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "충청북도 - 미취업여성",
+      "timestamp": "2017",
+      "value": 93.2,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "충청북도 - 미취업여성",
+      "timestamp": "2018",
+      "value": 97.3,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "충청북도 - 미취업여성",
+      "timestamp": "2019",
+      "value": 88.5,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "충청북도 - 미취업여성",
+      "timestamp": "2020",
+      "value": 95.8,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "충청북도 - 미취업여성",
+      "timestamp": "2021",
+      "value": 87.5,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "충청북도 - 미취업여성",
+      "timestamp": "2022",
+      "value": 91.8,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "충청북도 - 미취업여성",
+      "timestamp": "2023",
+      "value": 83.9,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "충청북도 - 미취업여성",
+      "timestamp": "2024",
+      "value": 74.2,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "충청북도 - - 경력단절여성",
+      "timestamp": "2015",
+      "value": 57.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "충청북도 - - 경력단절여성",
+      "timestamp": "2016",
+      "value": 58.3,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "충청북도 - - 경력단절여성",
+      "timestamp": "2017",
+      "value": 49.8,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "충청북도 - - 경력단절여성",
+      "timestamp": "2018",
+      "value": 56.5,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "충청북도 - - 경력단절여성",
+      "timestamp": "2019",
+      "value": 46.2,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "충청북도 - - 경력단절여성",
+      "timestamp": "2020",
+      "value": 48.3,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "충청북도 - - 경력단절여성",
+      "timestamp": "2021",
+      "value": 45.9,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "충청북도 - - 경력단절여성",
+      "timestamp": "2022",
+      "value": 44.7,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "충청북도 - - 경력단절여성",
+      "timestamp": "2023",
+      "value": 47.7,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "충청북도 - - 경력단절여성",
+      "timestamp": "2024",
+      "value": 42.5,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "충청남도 - 15 - 54세 기혼여성",
+      "timestamp": "2015",
+      "value": 413.2,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "충청남도 - 15 - 54세 기혼여성",
+      "timestamp": "2016",
+      "value": 428.4,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "충청남도 - 15 - 54세 기혼여성",
+      "timestamp": "2017",
+      "value": 379.8,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "충청남도 - 15 - 54세 기혼여성",
+      "timestamp": "2018",
+      "value": 367.4,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "충청남도 - 15 - 54세 기혼여성",
+      "timestamp": "2019",
+      "value": 365.2,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "충청남도 - 15 - 54세 기혼여성",
+      "timestamp": "2020",
+      "value": 364.2,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "충청남도 - 15 - 54세 기혼여성",
+      "timestamp": "2021",
+      "value": 353.6,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "충청남도 - 15 - 54세 기혼여성",
+      "timestamp": "2022",
+      "value": 343.1,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "충청남도 - 15 - 54세 기혼여성",
+      "timestamp": "2023",
+      "value": 337.7,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "충청남도 - 15 - 54세 기혼여성",
+      "timestamp": "2024",
+      "value": 327.4,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "충청남도 - 미취업여성",
+      "timestamp": "2015",
+      "value": 160.7,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "충청남도 - 미취업여성",
+      "timestamp": "2016",
+      "value": 173.5,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "충청남도 - 미취업여성",
+      "timestamp": "2017",
+      "value": 151.1,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "충청남도 - 미취업여성",
+      "timestamp": "2018",
+      "value": 133.6,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "충청남도 - 미취업여성",
+      "timestamp": "2019",
+      "value": 133.7,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "충청남도 - 미취업여성",
+      "timestamp": "2020",
+      "value": 131.9,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "충청남도 - 미취업여성",
+      "timestamp": "2021",
+      "value": 135.5,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "충청남도 - 미취업여성",
+      "timestamp": "2022",
+      "value": 131.6,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "충청남도 - 미취업여성",
+      "timestamp": "2023",
+      "value": 124.2,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "충청남도 - 미취업여성",
+      "timestamp": "2024",
+      "value": 120.7,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "충청남도 - - 경력단절여성",
+      "timestamp": "2015",
+      "value": 96.1,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "충청남도 - - 경력단절여성",
+      "timestamp": "2016",
+      "value": 97.5,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "충청남도 - - 경력단절여성",
+      "timestamp": "2017",
+      "value": 77.5,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "충청남도 - - 경력단절여성",
+      "timestamp": "2018",
+      "value": 74.5,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "충청남도 - - 경력단절여성",
+      "timestamp": "2019",
+      "value": 69.1,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "충청남도 - - 경력단절여성",
+      "timestamp": "2020",
+      "value": 64.3,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "충청남도 - - 경력단절여성",
+      "timestamp": "2021",
+      "value": 65.6,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "충청남도 - - 경력단절여성",
+      "timestamp": "2022",
+      "value": 67.5,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "충청남도 - - 경력단절여성",
+      "timestamp": "2023",
+      "value": 60.5,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "충청남도 - - 경력단절여성",
+      "timestamp": "2024",
+      "value": 60.2,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "전북특별자치도 - 15 - 54세 기혼여성",
+      "timestamp": "2015",
+      "value": 320.4,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "전북특별자치도 - 15 - 54세 기혼여성",
+      "timestamp": "2016",
+      "value": 310.5,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "전북특별자치도 - 15 - 54세 기혼여성",
+      "timestamp": "2017",
+      "value": 308.6,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "전북특별자치도 - 15 - 54세 기혼여성",
+      "timestamp": "2018",
+      "value": 296.2,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "전북특별자치도 - 15 - 54세 기혼여성",
+      "timestamp": "2019",
+      "value": 285.8,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "전북특별자치도 - 15 - 54세 기혼여성",
+      "timestamp": "2020",
+      "value": 274.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "전북특별자치도 - 15 - 54세 기혼여성",
+      "timestamp": "2021",
+      "value": 263.8,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "전북특별자치도 - 15 - 54세 기혼여성",
+      "timestamp": "2022",
+      "value": 262.3,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "전북특별자치도 - 15 - 54세 기혼여성",
+      "timestamp": "2023",
+      "value": 253.1,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "전북특별자치도 - 15 - 54세 기혼여성",
+      "timestamp": "2024",
+      "value": 242.1,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "전북특별자치도 - 미취업여성",
+      "timestamp": "2015",
+      "value": 122.5,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "전북특별자치도 - 미취업여성",
+      "timestamp": "2016",
+      "value": 111.5,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "전북특별자치도 - 미취업여성",
+      "timestamp": "2017",
+      "value": 111.6,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "전북특별자치도 - 미취업여성",
+      "timestamp": "2018",
+      "value": 107.3,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "전북특별자치도 - 미취업여성",
+      "timestamp": "2019",
+      "value": 95.5,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "전북특별자치도 - 미취업여성",
+      "timestamp": "2020",
+      "value": 101.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "전북특별자치도 - 미취업여성",
+      "timestamp": "2021",
+      "value": 90.8,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "전북특별자치도 - 미취업여성",
+      "timestamp": "2022",
+      "value": 81.6,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "전북특별자치도 - 미취업여성",
+      "timestamp": "2023",
+      "value": 73.9,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "전북특별자치도 - 미취업여성",
+      "timestamp": "2024",
+      "value": 62.2,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "전북특별자치도 - - 경력단절여성",
+      "timestamp": "2015",
+      "value": 60.4,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "전북특별자치도 - - 경력단절여성",
+      "timestamp": "2016",
+      "value": 47.5,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "전북특별자치도 - - 경력단절여성",
+      "timestamp": "2017",
+      "value": 48.6,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "전북특별자치도 - - 경력단절여성",
+      "timestamp": "2018",
+      "value": 47.5,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "전북특별자치도 - - 경력단절여성",
+      "timestamp": "2019",
+      "value": 39.1,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "전북특별자치도 - - 경력단절여성",
+      "timestamp": "2020",
+      "value": 40.9,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "전북특별자치도 - - 경력단절여성",
+      "timestamp": "2021",
+      "value": 34.2,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "전북특별자치도 - - 경력단절여성",
+      "timestamp": "2022",
+      "value": 31.6,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "전북특별자치도 - - 경력단절여성",
+      "timestamp": "2023",
+      "value": 27.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "전북특별자치도 - - 경력단절여성",
+      "timestamp": "2024",
+      "value": 25.3,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "전라남도 - 15 - 54세 기혼여성",
+      "timestamp": "2015",
+      "value": 300.3,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "전라남도 - 15 - 54세 기혼여성",
+      "timestamp": "2016",
+      "value": 299.2,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "전라남도 - 15 - 54세 기혼여성",
+      "timestamp": "2017",
+      "value": 293.1,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "전라남도 - 15 - 54세 기혼여성",
+      "timestamp": "2018",
+      "value": 287.6,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "전라남도 - 15 - 54세 기혼여성",
+      "timestamp": "2019",
+      "value": 278.6,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "전라남도 - 15 - 54세 기혼여성",
+      "timestamp": "2020",
+      "value": 265.2,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "전라남도 - 15 - 54세 기혼여성",
+      "timestamp": "2021",
+      "value": 251.4,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "전라남도 - 15 - 54세 기혼여성",
+      "timestamp": "2022",
+      "value": 244.5,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "전라남도 - 15 - 54세 기혼여성",
+      "timestamp": "2023",
+      "value": 235.7,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "전라남도 - 15 - 54세 기혼여성",
+      "timestamp": "2024",
+      "value": 233.6,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "전라남도 - 미취업여성",
+      "timestamp": "2015",
+      "value": 108.8,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "전라남도 - 미취업여성",
+      "timestamp": "2016",
+      "value": 107.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "전라남도 - 미취업여성",
+      "timestamp": "2017",
+      "value": 111.4,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "전라남도 - 미취업여성",
+      "timestamp": "2018",
+      "value": 104.2,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "전라남도 - 미취업여성",
+      "timestamp": "2019",
+      "value": 95.2,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "전라남도 - 미취업여성",
+      "timestamp": "2020",
+      "value": 93.4,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "전라남도 - 미취업여성",
+      "timestamp": "2021",
+      "value": 83.7,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "전라남도 - 미취업여성",
+      "timestamp": "2022",
+      "value": 74.2,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "전라남도 - 미취업여성",
+      "timestamp": "2023",
+      "value": 61.8,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "전라남도 - 미취업여성",
+      "timestamp": "2024",
+      "value": 64.9,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "전라남도 - - 경력단절여성",
+      "timestamp": "2015",
+      "value": 55.5,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "전라남도 - - 경력단절여성",
+      "timestamp": "2016",
+      "value": 57.9,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "전라남도 - - 경력단절여성",
+      "timestamp": "2017",
+      "value": 56.1,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "전라남도 - - 경력단절여성",
+      "timestamp": "2018",
+      "value": 54.1,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "전라남도 - - 경력단절여성",
+      "timestamp": "2019",
+      "value": 51.6,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "전라남도 - - 경력단절여성",
+      "timestamp": "2020",
+      "value": 44.3,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "전라남도 - - 경력단절여성",
+      "timestamp": "2021",
+      "value": 37.9,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "전라남도 - - 경력단절여성",
+      "timestamp": "2022",
+      "value": 34.8,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "전라남도 - - 경력단절여성",
+      "timestamp": "2023",
+      "value": 30.8,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "전라남도 - - 경력단절여성",
+      "timestamp": "2024",
+      "value": 29.5,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "경상북도 - 15 - 54세 기혼여성",
+      "timestamp": "2015",
+      "value": 468.6,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "경상북도 - 15 - 54세 기혼여성",
+      "timestamp": "2016",
+      "value": 459.9,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "경상북도 - 15 - 54세 기혼여성",
+      "timestamp": "2017",
+      "value": 437.9,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "경상북도 - 15 - 54세 기혼여성",
+      "timestamp": "2018",
+      "value": 434.4,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "경상북도 - 15 - 54세 기혼여성",
+      "timestamp": "2019",
+      "value": 426.5,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "경상북도 - 15 - 54세 기혼여성",
+      "timestamp": "2020",
+      "value": 415.8,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "경상북도 - 15 - 54세 기혼여성",
+      "timestamp": "2021",
+      "value": 400.9,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "경상북도 - 15 - 54세 기혼여성",
+      "timestamp": "2022",
+      "value": 379.3,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "경상북도 - 15 - 54세 기혼여성",
+      "timestamp": "2023",
+      "value": 374.2,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "경상북도 - 15 - 54세 기혼여성",
+      "timestamp": "2024",
+      "value": 358.3,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "경상북도 - 미취업여성",
+      "timestamp": "2015",
+      "value": 186.1,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "경상북도 - 미취업여성",
+      "timestamp": "2016",
+      "value": 176.1,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "경상북도 - 미취업여성",
+      "timestamp": "2017",
+      "value": 164.4,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "경상북도 - 미취업여성",
+      "timestamp": "2018",
+      "value": 156.2,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "경상북도 - 미취업여성",
+      "timestamp": "2019",
+      "value": 151.3,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "경상북도 - 미취업여성",
+      "timestamp": "2020",
+      "value": 159.6,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "경상북도 - 미취업여성",
+      "timestamp": "2021",
+      "value": 167.4,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "경상북도 - 미취업여성",
+      "timestamp": "2022",
+      "value": 147.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "경상북도 - 미취업여성",
+      "timestamp": "2023",
+      "value": 129.8,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "경상북도 - 미취업여성",
+      "timestamp": "2024",
+      "value": 124.2,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "경상북도 - - 경력단절여성",
+      "timestamp": "2015",
+      "value": 101.3,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "경상북도 - - 경력단절여성",
+      "timestamp": "2016",
+      "value": 92.2,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "경상북도 - - 경력단절여성",
+      "timestamp": "2017",
+      "value": 85.9,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "경상북도 - - 경력단절여성",
+      "timestamp": "2018",
+      "value": 84.1,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "경상북도 - - 경력단절여성",
+      "timestamp": "2019",
+      "value": 73.6,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "경상북도 - - 경력단절여성",
+      "timestamp": "2020",
+      "value": 70.6,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "경상북도 - - 경력단절여성",
+      "timestamp": "2021",
+      "value": 69.9,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "경상북도 - - 경력단절여성",
+      "timestamp": "2022",
+      "value": 58.5,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "경상북도 - - 경력단절여성",
+      "timestamp": "2023",
+      "value": 62.2,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "경상북도 - - 경력단절여성",
+      "timestamp": "2024",
+      "value": 59.6,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "경상남도 - 15 - 54세 기혼여성",
+      "timestamp": "2015",
+      "value": 636.5,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "경상남도 - 15 - 54세 기혼여성",
+      "timestamp": "2016",
+      "value": 621.7,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "경상남도 - 15 - 54세 기혼여성",
+      "timestamp": "2017",
+      "value": 617.5,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "경상남도 - 15 - 54세 기혼여성",
+      "timestamp": "2018",
+      "value": 596.2,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "경상남도 - 15 - 54세 기혼여성",
+      "timestamp": "2019",
+      "value": 578.8,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "경상남도 - 15 - 54세 기혼여성",
+      "timestamp": "2020",
+      "value": 560.9,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "경상남도 - 15 - 54세 기혼여성",
+      "timestamp": "2021",
+      "value": 543.9,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "경상남도 - 15 - 54세 기혼여성",
+      "timestamp": "2022",
+      "value": 527.7,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "경상남도 - 15 - 54세 기혼여성",
+      "timestamp": "2023",
+      "value": 525.1,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "경상남도 - 15 - 54세 기혼여성",
+      "timestamp": "2024",
+      "value": 494.6,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "경상남도 - 미취업여성",
+      "timestamp": "2015",
+      "value": 252.2,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "경상남도 - 미취업여성",
+      "timestamp": "2016",
+      "value": 262.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "경상남도 - 미취업여성",
+      "timestamp": "2017",
+      "value": 238.4,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "경상남도 - 미취업여성",
+      "timestamp": "2018",
+      "value": 233.6,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "경상남도 - 미취업여성",
+      "timestamp": "2019",
+      "value": 215.2,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "경상남도 - 미취업여성",
+      "timestamp": "2020",
+      "value": 222.9,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "경상남도 - 미취업여성",
+      "timestamp": "2021",
+      "value": 209.4,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "경상남도 - 미취업여성",
+      "timestamp": "2022",
+      "value": 212.8,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "경상남도 - 미취업여성",
+      "timestamp": "2023",
+      "value": 182.3,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "경상남도 - 미취업여성",
+      "timestamp": "2024",
+      "value": 166.8,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "경상남도 - - 경력단절여성",
+      "timestamp": "2015",
+      "value": 133.6,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "경상남도 - - 경력단절여성",
+      "timestamp": "2016",
+      "value": 134.6,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "경상남도 - - 경력단절여성",
+      "timestamp": "2017",
+      "value": 124.1,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "경상남도 - - 경력단절여성",
+      "timestamp": "2018",
+      "value": 117.9,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "경상남도 - - 경력단절여성",
+      "timestamp": "2019",
+      "value": 96.2,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "경상남도 - - 경력단절여성",
+      "timestamp": "2020",
+      "value": 93.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "경상남도 - - 경력단절여성",
+      "timestamp": "2021",
+      "value": 85.1,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "경상남도 - - 경력단절여성",
+      "timestamp": "2022",
+      "value": 94.6,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "경상남도 - - 경력단절여성",
+      "timestamp": "2023",
+      "value": 86.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "경상남도 - - 경력단절여성",
+      "timestamp": "2024",
+      "value": 80.5,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "제주특별자치도 - 15 - 54세 기혼여성",
+      "timestamp": "2015",
+      "value": 115.5,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "제주특별자치도 - 15 - 54세 기혼여성",
+      "timestamp": "2016",
+      "value": 115.6,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "제주특별자치도 - 15 - 54세 기혼여성",
+      "timestamp": "2017",
+      "value": 114.9,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "제주특별자치도 - 15 - 54세 기혼여성",
+      "timestamp": "2018",
+      "value": 114.1,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "제주특별자치도 - 15 - 54세 기혼여성",
+      "timestamp": "2019",
+      "value": 114.5,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "제주특별자치도 - 15 - 54세 기혼여성",
+      "timestamp": "2020",
+      "value": 112.8,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "제주특별자치도 - 15 - 54세 기혼여성",
+      "timestamp": "2021",
+      "value": 110.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "제주특별자치도 - 15 - 54세 기혼여성",
+      "timestamp": "2022",
+      "value": 109.7,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "제주특별자치도 - 15 - 54세 기혼여성",
+      "timestamp": "2023",
+      "value": 110.5,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "제주특별자치도 - 15 - 54세 기혼여성",
+      "timestamp": "2024",
+      "value": 106.3,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T00"
+    },
+    {
+      "item": "제주특별자치도 - 미취업여성",
+      "timestamp": "2015",
+      "value": 35.1,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "제주특별자치도 - 미취업여성",
+      "timestamp": "2016",
+      "value": 30.9,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "제주특별자치도 - 미취업여성",
+      "timestamp": "2017",
+      "value": 25.4,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "제주특별자치도 - 미취업여성",
+      "timestamp": "2018",
+      "value": 29.5,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "제주특별자치도 - 미취업여성",
+      "timestamp": "2019",
+      "value": 30.6,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "제주특별자치도 - 미취업여성",
+      "timestamp": "2020",
+      "value": 33.9,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "제주특별자치도 - 미취업여성",
+      "timestamp": "2021",
+      "value": 26.8,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "제주특별자치도 - 미취업여성",
+      "timestamp": "2022",
+      "value": 32.4,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "제주특별자치도 - 미취업여성",
+      "timestamp": "2023",
+      "value": 29.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "제주특별자치도 - 미취업여성",
+      "timestamp": "2024",
+      "value": 24.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T01"
+    },
+    {
+      "item": "제주특별자치도 - - 경력단절여성",
+      "timestamp": "2015",
+      "value": 15.8,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "제주특별자치도 - - 경력단절여성",
+      "timestamp": "2016",
+      "value": 16.4,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "제주특별자치도 - - 경력단절여성",
+      "timestamp": "2017",
+      "value": 9.8,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "제주특별자치도 - - 경력단절여성",
+      "timestamp": "2018",
+      "value": 12.9,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "제주특별자치도 - - 경력단절여성",
+      "timestamp": "2019",
+      "value": 13.4,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "제주특별자치도 - - 경력단절여성",
+      "timestamp": "2020",
+      "value": 14.3,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "제주특별자치도 - - 경력단절여성",
+      "timestamp": "2021",
+      "value": 13.9,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "제주특별자치도 - - 경력단절여성",
+      "timestamp": "2022",
+      "value": 10.9,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "제주특별자치도 - - 경력단절여성",
+      "timestamp": "2023",
+      "value": 12.4,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T21"
+    },
+    {
+      "item": "제주특별자치도 - - 경력단절여성",
+      "timestamp": "2024",
+      "value": 9.9,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T21"
+    }
+  ]
+}

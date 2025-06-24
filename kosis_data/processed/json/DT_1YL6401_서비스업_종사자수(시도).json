@@ -1,0 +1,2125 @@
+{
+  "metadata": {
+    "org_id": "101",
+    "org_name": "통계청",
+    "table_id": "DT_1YL6401",
+    "table_name": "서비스업 종사자수(시도)",
+    "stat_id": "9B08007",
+    "stat_name": "e-지방지표",
+    "date_range": "2006 ~ 2019",
+    "description": "행정구역별 서비스업종사자수 충청북도 경상남도 대구광역시 대전광역시 부산광역시 울산광역시 광주광역시 세종특별자치시 경기도 강원특별자치도 충청남도 제주특별자치도 전국 서울특별시 인천광역시 전북특별자치도 전라남도 경상북도",
+    "item_info": "□  참고사항  - 10차개정 자료수록 - 끝자리 0,5년도의 자료는 경제총조사 자료로 제공됨 ■  자료제공처:  통계청 지역통계기획팀 ■  자료원출처:  통계청 경제총조사과(전국사업체조사) ■  자료제공주기:  1년 ■  다음자료현행화:  조사기준년도 익년12월 □  정의  - 서비스업종사자: 한국표준산업분류상 서비스업에 해당하는 사업체에 종사하는 사람의 수   E. 수도, 하수 및 폐기물 처리, 원료 재생업 (36~39)   G. 도매 및 소매업(45~47) (47920 노점 및 유사 이동 소매업, 47999 그외 기타 무점포 소매업 제외)   I. 숙박 및 음식업점(55~56) (56142 이동 음식업 제외)   J. 정보통신업(58~63) (61 우편 및 통신업 제외)   L. 부동산업(68)   M. 전문, 과학 및 기술서비스업(70~73) (70 연구개발업 제외, 7151 회사 본부 제외)   N. 사업시설관리 및 사업지원 및 임대 서비스업(74~76)   P. 교육서비스업(85) (851~854 제외, 855~857 일반 교습학원 및 기타교육기관 등만 조사)   Q. 보건업 및 사회복지 서비스업(86~87)   R. 예술, 스포츠 및 여가관련 서비스업(90~91)   S. 협회 및 단체, 수리 및 기타 개인서비스업(94~96) (94 협회 및 단체 제외) ※ 2020년 자료부터 47920(노점 및 유사 이동 소매업), 47999(그외 기타 무점포 소매업), 56142(이동 음식점업), 7151(회사본부) 포함 □  의의  - 지역별 서비스업 사업체의 종사자에 대한 규모 및 분포를 파악하여, 국가 및 지방자치단체의 정책수립 및 평가, 기업의 경영계획 수립 및 학술 연구 등을 위한 기초자료로 활용 □  용어  - 서비스업사업체: 한국표준산업분류상 서비스업에 해당하는 사업체",
+    "source_url": "http://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1YL6401",
+    "last_updated": "2025-06-24T18:18:09.187228",
+    "period_type": "M",
+    "period_name": "월간"
+  },
+  "data": [
+    {
+      "item": "전국 - 서비스업종사자수",
+      "timestamp": "2007",
+      "value": 9219027.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 서비스업종사자수",
+      "timestamp": "2008",
+      "value": 9449746.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 서비스업종사자수",
+      "timestamp": "2009",
+      "value": 9779536.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 서비스업종사자수",
+      "timestamp": "2010",
+      "value": 10135238.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 서비스업종사자수",
+      "timestamp": "2011",
+      "value": 10430187.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 서비스업종사자수",
+      "timestamp": "2012",
+      "value": 10849483.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 서비스업종사자수",
+      "timestamp": "2013",
+      "value": 11330119.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 서비스업종사자수",
+      "timestamp": "2014",
+      "value": 11785671.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 서비스업종사자수",
+      "timestamp": "2015",
+      "value": 12311080.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 서비스업종사자수",
+      "timestamp": "2016",
+      "value": 11429633.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 서비스업종사자수",
+      "timestamp": "2017",
+      "value": 11714064.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 서비스업종사자수",
+      "timestamp": "2018",
+      "value": 12188778.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 서비스업종사자수",
+      "timestamp": "2019",
+      "value": 12537747.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 서비스업종사자수",
+      "timestamp": "2007",
+      "value": 2750955.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 서비스업종사자수",
+      "timestamp": "2008",
+      "value": 2828590.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 서비스업종사자수",
+      "timestamp": "2009",
+      "value": 2899611.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 서비스업종사자수",
+      "timestamp": "2010",
+      "value": 3035027.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 서비스업종사자수",
+      "timestamp": "2011",
+      "value": 3062491.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 서비스업종사자수",
+      "timestamp": "2012",
+      "value": 3150200.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 서비스업종사자수",
+      "timestamp": "2013",
+      "value": 3240620.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 서비스업종사자수",
+      "timestamp": "2014",
+      "value": 3390832.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 서비스업종사자수",
+      "timestamp": "2015",
+      "value": 3613409.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 서비스업종사자수",
+      "timestamp": "2016",
+      "value": 3309432.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 서비스업종사자수",
+      "timestamp": "2017",
+      "value": 3332052.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 서비스업종사자수",
+      "timestamp": "2018",
+      "value": 3438207.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 서비스업종사자수",
+      "timestamp": "2019",
+      "value": 3464411.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 서비스업종사자수",
+      "timestamp": "2007",
+      "value": 680964.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 서비스업종사자수",
+      "timestamp": "2008",
+      "value": 687946.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 서비스업종사자수",
+      "timestamp": "2009",
+      "value": 705003.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 서비스업종사자수",
+      "timestamp": "2010",
+      "value": 712512.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 서비스업종사자수",
+      "timestamp": "2011",
+      "value": 732433.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 서비스업종사자수",
+      "timestamp": "2012",
+      "value": 761247.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 서비스업종사자수",
+      "timestamp": "2013",
+      "value": 787947.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 서비스업종사자수",
+      "timestamp": "2014",
+      "value": 806753.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 서비스업종사자수",
+      "timestamp": "2015",
+      "value": 821513.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 서비스업종사자수",
+      "timestamp": "2016",
+      "value": 785733.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 서비스업종사자수",
+      "timestamp": "2017",
+      "value": 801670.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 서비스업종사자수",
+      "timestamp": "2018",
+      "value": 818471.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 서비스업종사자수",
+      "timestamp": "2019",
+      "value": 842161.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 서비스업종사자수",
+      "timestamp": "2007",
+      "value": 437619.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 서비스업종사자수",
+      "timestamp": "2008",
+      "value": 442612.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 서비스업종사자수",
+      "timestamp": "2009",
+      "value": 457995.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 서비스업종사자수",
+      "timestamp": "2010",
+      "value": 461398.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 서비스업종사자수",
+      "timestamp": "2011",
+      "value": 479447.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 서비스업종사자수",
+      "timestamp": "2012",
+      "value": 498734.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 서비스업종사자수",
+      "timestamp": "2013",
+      "value": 514135.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 서비스업종사자수",
+      "timestamp": "2014",
+      "value": 522549.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 서비스업종사자수",
+      "timestamp": "2015",
+      "value": 536259.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 서비스업종사자수",
+      "timestamp": "2016",
+      "value": 512288.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 서비스업종사자수",
+      "timestamp": "2017",
+      "value": 523355.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 서비스업종사자수",
+      "timestamp": "2018",
+      "value": 551065.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 서비스업종사자수",
+      "timestamp": "2019",
+      "value": 549232.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 서비스업종사자수",
+      "timestamp": "2007",
+      "value": 390066.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 서비스업종사자수",
+      "timestamp": "2008",
+      "value": 396979.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 서비스업종사자수",
+      "timestamp": "2009",
+      "value": 413573.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 서비스업종사자수",
+      "timestamp": "2010",
+      "value": 428668.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 서비스업종사자수",
+      "timestamp": "2011",
+      "value": 444264.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 서비스업종사자수",
+      "timestamp": "2012",
+      "value": 462997.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 서비스업종사자수",
+      "timestamp": "2013",
+      "value": 485291.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 서비스업종사자수",
+      "timestamp": "2014",
+      "value": 506638.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 서비스업종사자수",
+      "timestamp": "2015",
+      "value": 530589.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 서비스업종사자수",
+      "timestamp": "2016",
+      "value": 498282.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 서비스업종사자수",
+      "timestamp": "2017",
+      "value": 521875.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 서비스업종사자수",
+      "timestamp": "2018",
+      "value": 546015.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 서비스업종사자수",
+      "timestamp": "2019",
+      "value": 568556.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 서비스업종사자수",
+      "timestamp": "2007",
+      "value": 273761.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 서비스업종사자수",
+      "timestamp": "2008",
+      "value": 278508.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 서비스업종사자수",
+      "timestamp": "2009",
+      "value": 290862.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 서비스업종사자수",
+      "timestamp": "2010",
+      "value": 294676.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 서비스업종사자수",
+      "timestamp": "2011",
+      "value": 300291.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 서비스업종사자수",
+      "timestamp": "2012",
+      "value": 316870.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 서비스업종사자수",
+      "timestamp": "2013",
+      "value": 327918.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 서비스업종사자수",
+      "timestamp": "2014",
+      "value": 336701.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 서비스업종사자수",
+      "timestamp": "2015",
+      "value": 347480.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 서비스업종사자수",
+      "timestamp": "2016",
+      "value": 332216.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 서비스업종사자수",
+      "timestamp": "2017",
+      "value": 342112.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 서비스업종사자수",
+      "timestamp": "2018",
+      "value": 352204.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 서비스업종사자수",
+      "timestamp": "2019",
+      "value": 364864.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 서비스업종사자수",
+      "timestamp": "2007",
+      "value": 272572.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 서비스업종사자수",
+      "timestamp": "2008",
+      "value": 282470.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 서비스업종사자수",
+      "timestamp": "2009",
+      "value": 290742.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 서비스업종사자수",
+      "timestamp": "2010",
+      "value": 301855.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 서비스업종사자수",
+      "timestamp": "2011",
+      "value": 315740.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 서비스업종사자수",
+      "timestamp": "2012",
+      "value": 329554.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 서비스업종사자수",
+      "timestamp": "2013",
+      "value": 345977.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 서비스업종사자수",
+      "timestamp": "2014",
+      "value": 359806.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 서비스업종사자수",
+      "timestamp": "2015",
+      "value": 373014.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 서비스업종사자수",
+      "timestamp": "2016",
+      "value": 341240.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 서비스업종사자수",
+      "timestamp": "2017",
+      "value": 349338.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 서비스업종사자수",
+      "timestamp": "2018",
+      "value": 353847.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 서비스업종사자수",
+      "timestamp": "2019",
+      "value": 366278.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 서비스업종사자수",
+      "timestamp": "2007",
+      "value": 183229.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 서비스업종사자수",
+      "timestamp": "2008",
+      "value": 184659.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 서비스업종사자수",
+      "timestamp": "2009",
+      "value": 191480.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 서비스업종사자수",
+      "timestamp": "2010",
+      "value": 201367.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 서비스업종사자수",
+      "timestamp": "2011",
+      "value": 208755.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 서비스업종사자수",
+      "timestamp": "2012",
+      "value": 211917.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 서비스업종사자수",
+      "timestamp": "2013",
+      "value": 224538.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 서비스업종사자수",
+      "timestamp": "2014",
+      "value": 234565.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 서비스업종사자수",
+      "timestamp": "2015",
+      "value": 240960.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 서비스업종사자수",
+      "timestamp": "2016",
+      "value": 224078.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 서비스업종사자수",
+      "timestamp": "2017",
+      "value": 223409.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 서비스업종사자수",
+      "timestamp": "2018",
+      "value": 230334.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 서비스업종사자수",
+      "timestamp": "2019",
+      "value": 233611.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "세종특별자치시 - 서비스업종사자수",
+      "timestamp": "2007",
+      "value": null,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "세종특별자치시 - 서비스업종사자수",
+      "timestamp": "2008",
+      "value": null,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "세종특별자치시 - 서비스업종사자수",
+      "timestamp": "2009",
+      "value": null,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "세종특별자치시 - 서비스업종사자수",
+      "timestamp": "2010",
+      "value": null,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "세종특별자치시 - 서비스업종사자수",
+      "timestamp": "2011",
+      "value": null,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "세종특별자치시 - 서비스업종사자수",
+      "timestamp": "2012",
+      "value": 17946.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "세종특별자치시 - 서비스업종사자수",
+      "timestamp": "2013",
+      "value": 20518.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "세종특별자치시 - 서비스업종사자수",
+      "timestamp": "2014",
+      "value": 27329.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "세종특별자치시 - 서비스업종사자수",
+      "timestamp": "2015",
+      "value": 36275.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "세종특별자치시 - 서비스업종사자수",
+      "timestamp": "2016",
+      "value": 33147.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "세종특별자치시 - 서비스업종사자수",
+      "timestamp": "2017",
+      "value": 41357.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "세종특별자치시 - 서비스업종사자수",
+      "timestamp": "2018",
+      "value": 49097.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "세종특별자치시 - 서비스업종사자수",
+      "timestamp": "2019",
+      "value": 54095.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 서비스업종사자수",
+      "timestamp": "2007",
+      "value": 1770631.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 서비스업종사자수",
+      "timestamp": "2008",
+      "value": 1838884.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 서비스업종사자수",
+      "timestamp": "2009",
+      "value": 1918824.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 서비스업종사자수",
+      "timestamp": "2010",
+      "value": 2011443.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 서비스업종사자수",
+      "timestamp": "2011",
+      "value": 2106594.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 서비스업종사자수",
+      "timestamp": "2012",
+      "value": 2210904.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 서비스업종사자수",
+      "timestamp": "2013",
+      "value": 2357699.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 서비스업종사자수",
+      "timestamp": "2014",
+      "value": 2463583.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 서비스업종사자수",
+      "timestamp": "2015",
+      "value": 2560814.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 서비스업종사자수",
+      "timestamp": "2016",
+      "value": 2414044.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 서비스업종사자수",
+      "timestamp": "2017",
+      "value": 2518809.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 서비스업종사자수",
+      "timestamp": "2018",
+      "value": 2663023.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 서비스업종사자수",
+      "timestamp": "2019",
+      "value": 2747556.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 서비스업종사자수",
+      "timestamp": "2007",
+      "value": 284549.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 서비스업종사자수",
+      "timestamp": "2008",
+      "value": 292606.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 서비스업종사자수",
+      "timestamp": "2009",
+      "value": 303167.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 서비스업종사자수",
+      "timestamp": "2010",
+      "value": 308602.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 서비스업종사자수",
+      "timestamp": "2011",
+      "value": 317905.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 서비스업종사자수",
+      "timestamp": "2012",
+      "value": 333593.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 서비스업종사자수",
+      "timestamp": "2013",
+      "value": 355238.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 서비스업종사자수",
+      "timestamp": "2014",
+      "value": 364488.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 서비스업종사자수",
+      "timestamp": "2015",
+      "value": 368284.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 서비스업종사자수",
+      "timestamp": "2016",
+      "value": 337650.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 서비스업종사자수",
+      "timestamp": "2017",
+      "value": 350670.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 서비스업종사자수",
+      "timestamp": "2018",
+      "value": 365795.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 서비스업종사자수",
+      "timestamp": "2019",
+      "value": 384868.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 서비스업종사자수",
+      "timestamp": "2007",
+      "value": 247495.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 서비스업종사자수",
+      "timestamp": "2008",
+      "value": 252226.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 서비스업종사자수",
+      "timestamp": "2009",
+      "value": 260866.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 서비스업종사자수",
+      "timestamp": "2010",
+      "value": 269642.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 서비스업종사자수",
+      "timestamp": "2011",
+      "value": 280446.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 서비스업종사자수",
+      "timestamp": "2012",
+      "value": 295774.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 서비스업종사자수",
+      "timestamp": "2013",
+      "value": 306173.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 서비스업종사자수",
+      "timestamp": "2014",
+      "value": 318973.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 서비스업종사자수",
+      "timestamp": "2015",
+      "value": 330707.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 서비스업종사자수",
+      "timestamp": "2016",
+      "value": 303507.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 서비스업종사자수",
+      "timestamp": "2017",
+      "value": 312066.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 서비스업종사자수",
+      "timestamp": "2018",
+      "value": 324878.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 서비스업종사자수",
+      "timestamp": "2019",
+      "value": 341993.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 서비스업종사자수",
+      "timestamp": "2007",
+      "value": 309489.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 서비스업종사자수",
+      "timestamp": "2008",
+      "value": 314468.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 서비스업종사자수",
+      "timestamp": "2009",
+      "value": 326046.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 서비스업종사자수",
+      "timestamp": "2010",
+      "value": 345327.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 서비스업종사자수",
+      "timestamp": "2011",
+      "value": 357799.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 서비스업종사자수",
+      "timestamp": "2012",
+      "value": 360653.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 서비스업종사자수",
+      "timestamp": "2013",
+      "value": 378549.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 서비스업종사자수",
+      "timestamp": "2014",
+      "value": 397832.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 서비스업종사자수",
+      "timestamp": "2015",
+      "value": 421703.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 서비스업종사자수",
+      "timestamp": "2016",
+      "value": 382907.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 서비스업종사자수",
+      "timestamp": "2017",
+      "value": 396018.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 서비스업종사자수",
+      "timestamp": "2018",
+      "value": 414315.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 서비스업종사자수",
+      "timestamp": "2019",
+      "value": 441873.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 서비스업종사자수",
+      "timestamp": "2007",
+      "value": 293392.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 서비스업종사자수",
+      "timestamp": "2008",
+      "value": 298442.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 서비스업종사자수",
+      "timestamp": "2009",
+      "value": 314930.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 서비스업종사자수",
+      "timestamp": "2010",
+      "value": 321711.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 서비스업종사자수",
+      "timestamp": "2011",
+      "value": 334379.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 서비스업종사자수",
+      "timestamp": "2012",
+      "value": 349283.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 서비스업종사자수",
+      "timestamp": "2013",
+      "value": 364057.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 서비스업종사자수",
+      "timestamp": "2014",
+      "value": 376545.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 서비스업종사자수",
+      "timestamp": "2015",
+      "value": 389933.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 서비스업종사자수",
+      "timestamp": "2016",
+      "value": 350592.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 서비스업종사자수",
+      "timestamp": "2017",
+      "value": 357929.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 서비스업종사자수",
+      "timestamp": "2018",
+      "value": 371158.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 서비스업종사자수",
+      "timestamp": "2019",
+      "value": 387857.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 서비스업종사자수",
+      "timestamp": "2007",
+      "value": 287097.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 서비스업종사자수",
+      "timestamp": "2008",
+      "value": 291750.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 서비스업종사자수",
+      "timestamp": "2009",
+      "value": 301766.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 서비스업종사자수",
+      "timestamp": "2010",
+      "value": 305540.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 서비스업종사자수",
+      "timestamp": "2011",
+      "value": 316928.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 서비스업종사자수",
+      "timestamp": "2012",
+      "value": 329714.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 서비스업종사자수",
+      "timestamp": "2013",
+      "value": 344464.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 서비스업종사자수",
+      "timestamp": "2014",
+      "value": 358488.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 서비스업종사자수",
+      "timestamp": "2015",
+      "value": 371045.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 서비스업종사자수",
+      "timestamp": "2016",
+      "value": 339579.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 서비스업종사자수",
+      "timestamp": "2017",
+      "value": 351492.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 서비스업종사자수",
+      "timestamp": "2018",
+      "value": 367657.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 서비스업종사자수",
+      "timestamp": "2019",
+      "value": 389087.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 서비스업종사자수",
+      "timestamp": "2007",
+      "value": 413470.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 서비스업종사자수",
+      "timestamp": "2008",
+      "value": 419182.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 서비스업종사자수",
+      "timestamp": "2009",
+      "value": 430977.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 서비스업종사자수",
+      "timestamp": "2010",
+      "value": 447105.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 서비스업종사자수",
+      "timestamp": "2011",
+      "value": 460522.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 서비스업종사자수",
+      "timestamp": "2012",
+      "value": 474082.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 서비스업종사자수",
+      "timestamp": "2013",
+      "value": 494760.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 서비스업종사자수",
+      "timestamp": "2014",
+      "value": 508289.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 서비스업종사자수",
+      "timestamp": "2015",
+      "value": 523540.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 서비스업종사자수",
+      "timestamp": "2016",
+      "value": 474810.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 서비스업종사자수",
+      "timestamp": "2017",
+      "value": 485670.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 서비스업종사자수",
+      "timestamp": "2018",
+      "value": 503821.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 서비스업종사자수",
+      "timestamp": "2019",
+      "value": 529036.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 서비스업종사자수",
+      "timestamp": "2007",
+      "value": 504581.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 서비스업종사자수",
+      "timestamp": "2008",
+      "value": 519459.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 서비스업종사자수",
+      "timestamp": "2009",
+      "value": 541321.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 서비스업종사자수",
+      "timestamp": "2010",
+      "value": 556024.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 서비스업종사자수",
+      "timestamp": "2011",
+      "value": 574316.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 서비스업종사자수",
+      "timestamp": "2012",
+      "value": 600406.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 서비스업종사자수",
+      "timestamp": "2013",
+      "value": 624377.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 서비스업종사자수",
+      "timestamp": "2014",
+      "value": 647184.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 서비스업종사자수",
+      "timestamp": "2015",
+      "value": 670881.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 서비스업종사자수",
+      "timestamp": "2016",
+      "value": 623462.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 서비스업종사자수",
+      "timestamp": "2017",
+      "value": 634267.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 서비스업종사자수",
+      "timestamp": "2018",
+      "value": 656145.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 서비스업종사자수",
+      "timestamp": "2019",
+      "value": 681153.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 서비스업종사자수",
+      "timestamp": "2007",
+      "value": 119157.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 서비스업종사자수",
+      "timestamp": "2008",
+      "value": 120965.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 서비스업종사자수",
+      "timestamp": "2009",
+      "value": 132373.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 서비스업종사자수",
+      "timestamp": "2010",
+      "value": 134341.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 서비스업종사자수",
+      "timestamp": "2011",
+      "value": 137877.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 서비스업종사자수",
+      "timestamp": "2012",
+      "value": 145609.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 서비스업종사자수",
+      "timestamp": "2013",
+      "value": 157858.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 서비스업종사자수",
+      "timestamp": "2014",
+      "value": 165116.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 서비스업종사자수",
+      "timestamp": "2015",
+      "value": 174674.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 서비스업종사자수",
+      "timestamp": "2016",
+      "value": 166666.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 서비스업종사자수",
+      "timestamp": "2017",
+      "value": 171975.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 서비스업종사자수",
+      "timestamp": "2018",
+      "value": 182746.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 서비스업종사자수",
+      "timestamp": "2019",
+      "value": 191116.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    }
+  ]
+}

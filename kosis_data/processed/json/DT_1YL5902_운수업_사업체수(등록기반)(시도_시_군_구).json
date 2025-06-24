@@ -1,0 +1,6661 @@
+{
+  "metadata": {
+    "org_id": "101",
+    "org_name": "통계청",
+    "table_id": "DT_1YL5902",
+    "table_name": "운수업 사업체수(등록기반)(시도/시/군/구)",
+    "stat_id": "9B08007",
+    "stat_name": "e-지방지표",
+    "date_range": "2020 ~ 2023",
+    "description": "행정구역별 운수업기업체수 용인시 이천시 삼척시 정선군 철원군 괴산군 단양군 금산군 순천시 보성군 경상북도 경산시 의성군 성주군 봉화군 김해시 창녕군 제주특별자치도 서귀포시 용산구 도봉구 서대문구 서초구 영도구 동래구 남구 북구 사상구 서구 부평구 강화군 대덕구 경기도 안양시 강원특별자치도 동해시 태백시 속초시 양양군 충주시 아산시 진안군 임실군 목포시 장성군 영덕군 울릉군 거제시 함안군 고성군 남해군 산청군 합천군 성북구 부산광역시 해운대구 강서구 연제구 북구 수성구 서구 ...",
+    "item_info": "- 조사기반: 물리적 장소가 있는 사업체(공장, 회사, 사무실, 상점, 식당, 학원, 학교, 병원, 당구장 등)를 대상으로 조사한 자료(1994~2020년) - 등록기반: 조사기반 + 행정자료를 활용하여 물리적 장소가 없는 가구내 사업체(가구내 전자상거래, 1인 미디어, 프리랜서 등) 등을 추가하여 조사한 자료(2020년 이후) ■ 자료제공처: 통계청 지역통계기획팀 ■ 자료원출처: 통계청 경제총조사과(전국사업체조사) ■ 자료제공주기: 1년 ■ 다음자료현행화:조사기준년도 익년12월 □ 정의 - 운수업사업체수: 한국표준산업분류상 ＇H.운수 및 창고업＇에 해당하는 사업체의 수 □ 의의 - 지역별 운수업 산업에 대한 구조와 지역별 분포 등을 파악하여 교통정책 및 물류정책 수립의 기초자료로 활용하고, 또한 지자체의 운수업부문 관련 지역정책수립에도 활용 □ 참고사항 - 10차개정 자료수록 - 끝자리 0,5년도의 자료는 경제총조사 자료로 제공됨 □ 조사기반·등록기반",
+    "source_url": "http://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1YL5902",
+    "last_updated": "2025-06-24T18:18:17.170981",
+    "period_type": "M",
+    "period_name": "월간"
+  },
+  "data": [
+    {
+      "item": "전국 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 616484.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 644407.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 669091.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 110339.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 118073.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 117785.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "종로구 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 1699.0,
+      "item_codes": {
+        "C1": "11010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "종로구 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 1832.0,
+      "item_codes": {
+        "C1": "11010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "종로구 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 1916.0,
+      "item_codes": {
+        "C1": "11010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "중구 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 2325.0,
+      "item_codes": {
+        "C1": "11020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "중구 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 2319.0,
+      "item_codes": {
+        "C1": "11020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "중구 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 2325.0,
+      "item_codes": {
+        "C1": "11020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "용산구 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 1739.0,
+      "item_codes": {
+        "C1": "11030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "용산구 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 1754.0,
+      "item_codes": {
+        "C1": "11030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "용산구 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 1701.0,
+      "item_codes": {
+        "C1": "11030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "성동구 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 2994.0,
+      "item_codes": {
+        "C1": "11040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "성동구 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 3114.0,
+      "item_codes": {
+        "C1": "11040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "성동구 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 3165.0,
+      "item_codes": {
+        "C1": "11040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광진구 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 2778.0,
+      "item_codes": {
+        "C1": "11050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광진구 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 2997.0,
+      "item_codes": {
+        "C1": "11050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광진구 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 3140.0,
+      "item_codes": {
+        "C1": "11050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동대문구 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 3956.0,
+      "item_codes": {
+        "C1": "11060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동대문구 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 4203.0,
+      "item_codes": {
+        "C1": "11060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동대문구 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 4252.0,
+      "item_codes": {
+        "C1": "11060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "중랑구 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 5830.0,
+      "item_codes": {
+        "C1": "11070"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "중랑구 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 6458.0,
+      "item_codes": {
+        "C1": "11070"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "중랑구 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 6613.0,
+      "item_codes": {
+        "C1": "11070"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "성북구 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 3691.0,
+      "item_codes": {
+        "C1": "11080"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "성북구 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 3921.0,
+      "item_codes": {
+        "C1": "11080"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "성북구 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 3920.0,
+      "item_codes": {
+        "C1": "11080"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강북구 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 3102.0,
+      "item_codes": {
+        "C1": "11090"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강북구 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 3316.0,
+      "item_codes": {
+        "C1": "11090"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강북구 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 3497.0,
+      "item_codes": {
+        "C1": "11090"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "도봉구 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 5058.0,
+      "item_codes": {
+        "C1": "11100"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "도봉구 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 5278.0,
+      "item_codes": {
+        "C1": "11100"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "도봉구 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 5491.0,
+      "item_codes": {
+        "C1": "11100"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "노원구 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 6415.0,
+      "item_codes": {
+        "C1": "11110"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "노원구 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 6791.0,
+      "item_codes": {
+        "C1": "11110"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "노원구 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 6776.0,
+      "item_codes": {
+        "C1": "11110"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "은평구 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 5095.0,
+      "item_codes": {
+        "C1": "11120"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "은평구 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 4930.0,
+      "item_codes": {
+        "C1": "11120"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "은평구 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 4716.0,
+      "item_codes": {
+        "C1": "11120"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서대문구 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 3414.0,
+      "item_codes": {
+        "C1": "11130"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서대문구 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 3775.0,
+      "item_codes": {
+        "C1": "11130"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서대문구 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 3721.0,
+      "item_codes": {
+        "C1": "11130"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "마포구 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 3963.0,
+      "item_codes": {
+        "C1": "11140"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "마포구 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 4099.0,
+      "item_codes": {
+        "C1": "11140"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "마포구 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 4128.0,
+      "item_codes": {
+        "C1": "11140"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "양천구 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 6507.0,
+      "item_codes": {
+        "C1": "11150"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "양천구 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 6526.0,
+      "item_codes": {
+        "C1": "11150"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "양천구 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 6563.0,
+      "item_codes": {
+        "C1": "11150"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강서구 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 9188.0,
+      "item_codes": {
+        "C1": "11160"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강서구 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 9712.0,
+      "item_codes": {
+        "C1": "11160"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강서구 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 9547.0,
+      "item_codes": {
+        "C1": "11160"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "구로구 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 5498.0,
+      "item_codes": {
+        "C1": "11170"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "구로구 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 6146.0,
+      "item_codes": {
+        "C1": "11170"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "구로구 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 5848.0,
+      "item_codes": {
+        "C1": "11170"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "금천구 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 3218.0,
+      "item_codes": {
+        "C1": "11180"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "금천구 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 3543.0,
+      "item_codes": {
+        "C1": "11180"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "금천구 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 3533.0,
+      "item_codes": {
+        "C1": "11180"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영등포구 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 5793.0,
+      "item_codes": {
+        "C1": "11190"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영등포구 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 6442.0,
+      "item_codes": {
+        "C1": "11190"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영등포구 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 6282.0,
+      "item_codes": {
+        "C1": "11190"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동작구 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 2250.0,
+      "item_codes": {
+        "C1": "11200"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동작구 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 2260.0,
+      "item_codes": {
+        "C1": "11200"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동작구 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 2345.0,
+      "item_codes": {
+        "C1": "11200"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "관악구 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 4490.0,
+      "item_codes": {
+        "C1": "11210"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "관악구 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 4667.0,
+      "item_codes": {
+        "C1": "11210"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "관악구 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 4699.0,
+      "item_codes": {
+        "C1": "11210"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서초구 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 4352.0,
+      "item_codes": {
+        "C1": "11220"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서초구 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 4347.0,
+      "item_codes": {
+        "C1": "11220"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서초구 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 4435.0,
+      "item_codes": {
+        "C1": "11220"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강남구 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 3708.0,
+      "item_codes": {
+        "C1": "11230"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강남구 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 4344.0,
+      "item_codes": {
+        "C1": "11230"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강남구 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 4198.0,
+      "item_codes": {
+        "C1": "11230"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "송파구 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 7834.0,
+      "item_codes": {
+        "C1": "11240"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "송파구 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 8881.0,
+      "item_codes": {
+        "C1": "11240"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "송파구 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 8800.0,
+      "item_codes": {
+        "C1": "11240"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강동구 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 5442.0,
+      "item_codes": {
+        "C1": "11250"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강동구 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 6418.0,
+      "item_codes": {
+        "C1": "11250"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강동구 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 6174.0,
+      "item_codes": {
+        "C1": "11250"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 49764.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 49937.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 51527.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "중구 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 4744.0,
+      "item_codes": {
+        "C1": "21010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "중구 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 4676.0,
+      "item_codes": {
+        "C1": "21010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "중구 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 4422.0,
+      "item_codes": {
+        "C1": "21010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서구 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 1461.0,
+      "item_codes": {
+        "C1": "21020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서구 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 1449.0,
+      "item_codes": {
+        "C1": "21020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서구 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 1500.0,
+      "item_codes": {
+        "C1": "21020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동구 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 3085.0,
+      "item_codes": {
+        "C1": "21030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동구 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 3064.0,
+      "item_codes": {
+        "C1": "21030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동구 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 2776.0,
+      "item_codes": {
+        "C1": "21030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영도구 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 1432.0,
+      "item_codes": {
+        "C1": "21040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영도구 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 1347.0,
+      "item_codes": {
+        "C1": "21040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영도구 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 1424.0,
+      "item_codes": {
+        "C1": "21040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산진구 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 3828.0,
+      "item_codes": {
+        "C1": "21050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산진구 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 3746.0,
+      "item_codes": {
+        "C1": "21050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산진구 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 4508.0,
+      "item_codes": {
+        "C1": "21050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동래구 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 2807.0,
+      "item_codes": {
+        "C1": "21060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동래구 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 2716.0,
+      "item_codes": {
+        "C1": "21060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동래구 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 3043.0,
+      "item_codes": {
+        "C1": "21060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "남구 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 4198.0,
+      "item_codes": {
+        "C1": "21070"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "남구 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 4132.0,
+      "item_codes": {
+        "C1": "21070"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "남구 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 4039.0,
+      "item_codes": {
+        "C1": "21070"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "북구 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 2970.0,
+      "item_codes": {
+        "C1": "21080"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "북구 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 2999.0,
+      "item_codes": {
+        "C1": "21080"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "북구 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 3361.0,
+      "item_codes": {
+        "C1": "21080"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "해운대구 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 4402.0,
+      "item_codes": {
+        "C1": "21090"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "해운대구 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 4410.0,
+      "item_codes": {
+        "C1": "21090"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "해운대구 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 4526.0,
+      "item_codes": {
+        "C1": "21090"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "사하구 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 3768.0,
+      "item_codes": {
+        "C1": "21100"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "사하구 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 3786.0,
+      "item_codes": {
+        "C1": "21100"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "사하구 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 3979.0,
+      "item_codes": {
+        "C1": "21100"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "금정구 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 4333.0,
+      "item_codes": {
+        "C1": "21110"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "금정구 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 4441.0,
+      "item_codes": {
+        "C1": "21110"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "금정구 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 4128.0,
+      "item_codes": {
+        "C1": "21110"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강서구 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 2258.0,
+      "item_codes": {
+        "C1": "21120"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강서구 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 2473.0,
+      "item_codes": {
+        "C1": "21120"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강서구 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 2695.0,
+      "item_codes": {
+        "C1": "21120"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "연제구 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 3383.0,
+      "item_codes": {
+        "C1": "21130"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "연제구 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 3484.0,
+      "item_codes": {
+        "C1": "21130"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "연제구 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 3583.0,
+      "item_codes": {
+        "C1": "21130"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "수영구 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 1840.0,
+      "item_codes": {
+        "C1": "21140"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "수영구 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 1817.0,
+      "item_codes": {
+        "C1": "21140"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "수영구 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 1967.0,
+      "item_codes": {
+        "C1": "21140"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "사상구 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 3690.0,
+      "item_codes": {
+        "C1": "21150"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "사상구 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 3738.0,
+      "item_codes": {
+        "C1": "21150"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "사상구 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 3804.0,
+      "item_codes": {
+        "C1": "21150"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "기장군 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 1565.0,
+      "item_codes": {
+        "C1": "21510"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "기장군 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 1659.0,
+      "item_codes": {
+        "C1": "21510"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "기장군 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 1772.0,
+      "item_codes": {
+        "C1": "21510"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 31075.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 31605.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 34118.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "중구 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 924.0,
+      "item_codes": {
+        "C1": "22010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "중구 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 822.0,
+      "item_codes": {
+        "C1": "22010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "중구 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 877.0,
+      "item_codes": {
+        "C1": "22010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동구 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 5835.0,
+      "item_codes": {
+        "C1": "22020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동구 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 6090.0,
+      "item_codes": {
+        "C1": "22020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동구 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 6285.0,
+      "item_codes": {
+        "C1": "22020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서구 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 2294.0,
+      "item_codes": {
+        "C1": "22030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서구 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 2313.0,
+      "item_codes": {
+        "C1": "22030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서구 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 2378.0,
+      "item_codes": {
+        "C1": "22030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "남구 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 1207.0,
+      "item_codes": {
+        "C1": "22040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "남구 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 1256.0,
+      "item_codes": {
+        "C1": "22040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "남구 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 1448.0,
+      "item_codes": {
+        "C1": "22040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "북구 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 5926.0,
+      "item_codes": {
+        "C1": "22050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "북구 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 6152.0,
+      "item_codes": {
+        "C1": "22050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "북구 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 6369.0,
+      "item_codes": {
+        "C1": "22050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "수성구 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 3077.0,
+      "item_codes": {
+        "C1": "22060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "수성구 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 2796.0,
+      "item_codes": {
+        "C1": "22060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "수성구 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 3552.0,
+      "item_codes": {
+        "C1": "22060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "달서구 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 8429.0,
+      "item_codes": {
+        "C1": "22070"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "달서구 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 8614.0,
+      "item_codes": {
+        "C1": "22070"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "달서구 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 8946.0,
+      "item_codes": {
+        "C1": "22070"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "달성군 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 3383.0,
+      "item_codes": {
+        "C1": "22510"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "달성군 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 3562.0,
+      "item_codes": {
+        "C1": "22510"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "달성군 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 4049.0,
+      "item_codes": {
+        "C1": "22510"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "군위군 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 214.0,
+      "item_codes": {
+        "C1": "22520"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 38766.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 41236.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 42619.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "중구 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 6149.0,
+      "item_codes": {
+        "C1": "23010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "중구 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 6189.0,
+      "item_codes": {
+        "C1": "23010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "중구 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 6637.0,
+      "item_codes": {
+        "C1": "23010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동구 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 1691.0,
+      "item_codes": {
+        "C1": "23020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동구 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 1671.0,
+      "item_codes": {
+        "C1": "23020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동구 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 1739.0,
+      "item_codes": {
+        "C1": "23020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "연수구 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 3288.0,
+      "item_codes": {
+        "C1": "23040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "연수구 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 3261.0,
+      "item_codes": {
+        "C1": "23040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "연수구 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 3282.0,
+      "item_codes": {
+        "C1": "23040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "남동구 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 5725.0,
+      "item_codes": {
+        "C1": "23050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "남동구 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 6239.0,
+      "item_codes": {
+        "C1": "23050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "남동구 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 6471.0,
+      "item_codes": {
+        "C1": "23050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부평구 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 4563.0,
+      "item_codes": {
+        "C1": "23060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부평구 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 5027.0,
+      "item_codes": {
+        "C1": "23060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부평구 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 4845.0,
+      "item_codes": {
+        "C1": "23060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "계양구 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 4212.0,
+      "item_codes": {
+        "C1": "23070"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "계양구 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 4481.0,
+      "item_codes": {
+        "C1": "23070"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "계양구 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 4444.0,
+      "item_codes": {
+        "C1": "23070"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서구 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 6755.0,
+      "item_codes": {
+        "C1": "23080"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서구 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 7318.0,
+      "item_codes": {
+        "C1": "23080"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서구 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 7870.0,
+      "item_codes": {
+        "C1": "23080"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "미추홀구 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 5325.0,
+      "item_codes": {
+        "C1": "23090"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "미추홀구 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 5883.0,
+      "item_codes": {
+        "C1": "23090"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "미추홀구 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 6208.0,
+      "item_codes": {
+        "C1": "23090"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강화군 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 950.0,
+      "item_codes": {
+        "C1": "23510"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강화군 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 1017.0,
+      "item_codes": {
+        "C1": "23510"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강화군 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 986.0,
+      "item_codes": {
+        "C1": "23510"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "옹진군 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 108.0,
+      "item_codes": {
+        "C1": "23520"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "옹진군 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 150.0,
+      "item_codes": {
+        "C1": "23520"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "옹진군 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 137.0,
+      "item_codes": {
+        "C1": "23520"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 18986.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 19354.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 20126.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동구 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 922.0,
+      "item_codes": {
+        "C1": "24010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동구 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 827.0,
+      "item_codes": {
+        "C1": "24010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동구 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 1024.0,
+      "item_codes": {
+        "C1": "24010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서구 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 2642.0,
+      "item_codes": {
+        "C1": "24020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서구 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 2758.0,
+      "item_codes": {
+        "C1": "24020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서구 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 2759.0,
+      "item_codes": {
+        "C1": "24020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "남구 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 1476.0,
+      "item_codes": {
+        "C1": "24030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "남구 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 1581.0,
+      "item_codes": {
+        "C1": "24030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "남구 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 1817.0,
+      "item_codes": {
+        "C1": "24030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "북구 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 5488.0,
+      "item_codes": {
+        "C1": "24040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "북구 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 5383.0,
+      "item_codes": {
+        "C1": "24040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "북구 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 5573.0,
+      "item_codes": {
+        "C1": "24040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광산구 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 8458.0,
+      "item_codes": {
+        "C1": "24050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광산구 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 8805.0,
+      "item_codes": {
+        "C1": "24050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광산구 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 8953.0,
+      "item_codes": {
+        "C1": "24050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 17999.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 18358.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 18298.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동구 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 2702.0,
+      "item_codes": {
+        "C1": "25010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동구 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 2950.0,
+      "item_codes": {
+        "C1": "25010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동구 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 3089.0,
+      "item_codes": {
+        "C1": "25010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "중구 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 3688.0,
+      "item_codes": {
+        "C1": "25020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "중구 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 3644.0,
+      "item_codes": {
+        "C1": "25020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "중구 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 3723.0,
+      "item_codes": {
+        "C1": "25020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서구 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 4576.0,
+      "item_codes": {
+        "C1": "25030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서구 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 4979.0,
+      "item_codes": {
+        "C1": "25030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서구 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 4795.0,
+      "item_codes": {
+        "C1": "25030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "유성구 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 2863.0,
+      "item_codes": {
+        "C1": "25040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "유성구 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 2595.0,
+      "item_codes": {
+        "C1": "25040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "유성구 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 2636.0,
+      "item_codes": {
+        "C1": "25040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대덕구 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 4170.0,
+      "item_codes": {
+        "C1": "25050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대덕구 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 4190.0,
+      "item_codes": {
+        "C1": "25050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대덕구 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 4055.0,
+      "item_codes": {
+        "C1": "25050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 12621.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 11888.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 12828.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "중구 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 1914.0,
+      "item_codes": {
+        "C1": "26010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "중구 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 1894.0,
+      "item_codes": {
+        "C1": "26010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "중구 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 2139.0,
+      "item_codes": {
+        "C1": "26010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "남구 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 4124.0,
+      "item_codes": {
+        "C1": "26020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "남구 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 3796.0,
+      "item_codes": {
+        "C1": "26020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "남구 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 4055.0,
+      "item_codes": {
+        "C1": "26020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동구 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 755.0,
+      "item_codes": {
+        "C1": "26030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동구 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 793.0,
+      "item_codes": {
+        "C1": "26030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동구 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 812.0,
+      "item_codes": {
+        "C1": "26030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "북구 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 2152.0,
+      "item_codes": {
+        "C1": "26040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "북구 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 1978.0,
+      "item_codes": {
+        "C1": "26040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "북구 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 2178.0,
+      "item_codes": {
+        "C1": "26040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울주군 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 3676.0,
+      "item_codes": {
+        "C1": "26510"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울주군 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 3427.0,
+      "item_codes": {
+        "C1": "26510"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울주군 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 3644.0,
+      "item_codes": {
+        "C1": "26510"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "세종특별자치시 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 2230.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "세종특별자치시 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 2476.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "세종특별자치시 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 2568.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 155809.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 168257.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 178600.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "수원시 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 10979.0,
+      "item_codes": {
+        "C1": "31010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "수원시 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 10918.0,
+      "item_codes": {
+        "C1": "31010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "수원시 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 11573.0,
+      "item_codes": {
+        "C1": "31010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "성남시 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 8384.0,
+      "item_codes": {
+        "C1": "31020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "성남시 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 8702.0,
+      "item_codes": {
+        "C1": "31020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "성남시 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 9087.0,
+      "item_codes": {
+        "C1": "31020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "의정부시 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 3834.0,
+      "item_codes": {
+        "C1": "31030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "의정부시 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 4614.0,
+      "item_codes": {
+        "C1": "31030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "의정부시 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 4656.0,
+      "item_codes": {
+        "C1": "31030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "안양시 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 6189.0,
+      "item_codes": {
+        "C1": "31040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "안양시 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 7607.0,
+      "item_codes": {
+        "C1": "31040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "안양시 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 7767.0,
+      "item_codes": {
+        "C1": "31040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부천시 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 8473.0,
+      "item_codes": {
+        "C1": "31050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부천시 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 9696.0,
+      "item_codes": {
+        "C1": "31050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부천시 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 10572.0,
+      "item_codes": {
+        "C1": "31050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광명시 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 3245.0,
+      "item_codes": {
+        "C1": "31060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광명시 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 3369.0,
+      "item_codes": {
+        "C1": "31060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광명시 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 3414.0,
+      "item_codes": {
+        "C1": "31060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "평택시 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 7123.0,
+      "item_codes": {
+        "C1": "31070"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "평택시 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 7487.0,
+      "item_codes": {
+        "C1": "31070"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "평택시 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 7872.0,
+      "item_codes": {
+        "C1": "31070"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동두천시 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 963.0,
+      "item_codes": {
+        "C1": "31080"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동두천시 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 1006.0,
+      "item_codes": {
+        "C1": "31080"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동두천시 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 1123.0,
+      "item_codes": {
+        "C1": "31080"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "안산시 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 8865.0,
+      "item_codes": {
+        "C1": "31090"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "안산시 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 9489.0,
+      "item_codes": {
+        "C1": "31090"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "안산시 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 9867.0,
+      "item_codes": {
+        "C1": "31090"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "고양시 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 9959.0,
+      "item_codes": {
+        "C1": "31100"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "고양시 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 10786.0,
+      "item_codes": {
+        "C1": "31100"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "고양시 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 11386.0,
+      "item_codes": {
+        "C1": "31100"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "과천시 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 476.0,
+      "item_codes": {
+        "C1": "31110"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "과천시 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 574.0,
+      "item_codes": {
+        "C1": "31110"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "과천시 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 596.0,
+      "item_codes": {
+        "C1": "31110"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "구리시 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 2260.0,
+      "item_codes": {
+        "C1": "31120"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "구리시 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 2452.0,
+      "item_codes": {
+        "C1": "31120"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "구리시 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 2728.0,
+      "item_codes": {
+        "C1": "31120"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "남양주시 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 5293.0,
+      "item_codes": {
+        "C1": "31130"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "남양주시 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 5989.0,
+      "item_codes": {
+        "C1": "31130"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "남양주시 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 8149.0,
+      "item_codes": {
+        "C1": "31130"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "오산시 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 2448.0,
+      "item_codes": {
+        "C1": "31140"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "오산시 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 2505.0,
+      "item_codes": {
+        "C1": "31140"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "오산시 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 3335.0,
+      "item_codes": {
+        "C1": "31140"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "시흥시 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 7351.0,
+      "item_codes": {
+        "C1": "31150"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "시흥시 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 7881.0,
+      "item_codes": {
+        "C1": "31150"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "시흥시 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 8377.0,
+      "item_codes": {
+        "C1": "31150"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "군포시 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 3619.0,
+      "item_codes": {
+        "C1": "31160"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "군포시 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 4073.0,
+      "item_codes": {
+        "C1": "31160"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "군포시 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 4014.0,
+      "item_codes": {
+        "C1": "31160"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "의왕시 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 1956.0,
+      "item_codes": {
+        "C1": "31170"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "의왕시 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 2065.0,
+      "item_codes": {
+        "C1": "31170"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "의왕시 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 2086.0,
+      "item_codes": {
+        "C1": "31170"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "하남시 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 2919.0,
+      "item_codes": {
+        "C1": "31180"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "하남시 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 2925.0,
+      "item_codes": {
+        "C1": "31180"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "하남시 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 2815.0,
+      "item_codes": {
+        "C1": "31180"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "용인시 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 10918.0,
+      "item_codes": {
+        "C1": "31190"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "용인시 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 12456.0,
+      "item_codes": {
+        "C1": "31190"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "용인시 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 12941.0,
+      "item_codes": {
+        "C1": "31190"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "파주시 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 6343.0,
+      "item_codes": {
+        "C1": "31200"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "파주시 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 6611.0,
+      "item_codes": {
+        "C1": "31200"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "파주시 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 6865.0,
+      "item_codes": {
+        "C1": "31200"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "이천시 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 4817.0,
+      "item_codes": {
+        "C1": "31210"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "이천시 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 5118.0,
+      "item_codes": {
+        "C1": "31210"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "이천시 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 5235.0,
+      "item_codes": {
+        "C1": "31210"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "안성시 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 4346.0,
+      "item_codes": {
+        "C1": "31220"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "안성시 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 4263.0,
+      "item_codes": {
+        "C1": "31220"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "안성시 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 4287.0,
+      "item_codes": {
+        "C1": "31220"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "김포시 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 5194.0,
+      "item_codes": {
+        "C1": "31230"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "김포시 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 5567.0,
+      "item_codes": {
+        "C1": "31230"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "김포시 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 6019.0,
+      "item_codes": {
+        "C1": "31230"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "화성시 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 8071.0,
+      "item_codes": {
+        "C1": "31240"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "화성시 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 8996.0,
+      "item_codes": {
+        "C1": "31240"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "화성시 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 11377.0,
+      "item_codes": {
+        "C1": "31240"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주시 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 6075.0,
+      "item_codes": {
+        "C1": "31250"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주시 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 6280.0,
+      "item_codes": {
+        "C1": "31250"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주시 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 6666.0,
+      "item_codes": {
+        "C1": "31250"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "양주시 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 2446.0,
+      "item_codes": {
+        "C1": "31260"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "양주시 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 2752.0,
+      "item_codes": {
+        "C1": "31260"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "양주시 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 3256.0,
+      "item_codes": {
+        "C1": "31260"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "포천시 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 2389.0,
+      "item_codes": {
+        "C1": "31270"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "포천시 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 2507.0,
+      "item_codes": {
+        "C1": "31270"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "포천시 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 2689.0,
+      "item_codes": {
+        "C1": "31270"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "여주시 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 5664.0,
+      "item_codes": {
+        "C1": "31280"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "여주시 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 6244.0,
+      "item_codes": {
+        "C1": "31280"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "여주시 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 6303.0,
+      "item_codes": {
+        "C1": "31280"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "연천군 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 3945.0,
+      "item_codes": {
+        "C1": "31550"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "연천군 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 4128.0,
+      "item_codes": {
+        "C1": "31550"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "연천군 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 2230.0,
+      "item_codes": {
+        "C1": "31550"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "가평군 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 319.0,
+      "item_codes": {
+        "C1": "31570"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "가평군 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 366.0,
+      "item_codes": {
+        "C1": "31570"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "가평군 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 379.0,
+      "item_codes": {
+        "C1": "31570"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "양평군 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 946.0,
+      "item_codes": {
+        "C1": "31580"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "양평군 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 831.0,
+      "item_codes": {
+        "C1": "31580"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "양평군 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 936.0,
+      "item_codes": {
+        "C1": "31580"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 14773.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 15328.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 16249.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "춘천시 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 3537.0,
+      "item_codes": {
+        "C1": "32010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "춘천시 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 3658.0,
+      "item_codes": {
+        "C1": "32010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "춘천시 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 3676.0,
+      "item_codes": {
+        "C1": "32010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "원주시 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 3532.0,
+      "item_codes": {
+        "C1": "32020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "원주시 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 3822.0,
+      "item_codes": {
+        "C1": "32020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "원주시 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 4316.0,
+      "item_codes": {
+        "C1": "32020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강릉시 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 2412.0,
+      "item_codes": {
+        "C1": "32030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강릉시 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 2409.0,
+      "item_codes": {
+        "C1": "32030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강릉시 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 2584.0,
+      "item_codes": {
+        "C1": "32030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동해시 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 951.0,
+      "item_codes": {
+        "C1": "32040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동해시 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 967.0,
+      "item_codes": {
+        "C1": "32040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동해시 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 961.0,
+      "item_codes": {
+        "C1": "32040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "태백시 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 394.0,
+      "item_codes": {
+        "C1": "32050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "태백시 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 408.0,
+      "item_codes": {
+        "C1": "32050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "태백시 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 419.0,
+      "item_codes": {
+        "C1": "32050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "속초시 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 858.0,
+      "item_codes": {
+        "C1": "32060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "속초시 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 883.0,
+      "item_codes": {
+        "C1": "32060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "속초시 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 912.0,
+      "item_codes": {
+        "C1": "32060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "삼척시 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 444.0,
+      "item_codes": {
+        "C1": "32070"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "삼척시 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 453.0,
+      "item_codes": {
+        "C1": "32070"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "삼척시 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 459.0,
+      "item_codes": {
+        "C1": "32070"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "홍천군 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 563.0,
+      "item_codes": {
+        "C1": "32510"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "홍천군 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 567.0,
+      "item_codes": {
+        "C1": "32510"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "홍천군 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 557.0,
+      "item_codes": {
+        "C1": "32510"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "횡성군 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 330.0,
+      "item_codes": {
+        "C1": "32520"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "횡성군 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 353.0,
+      "item_codes": {
+        "C1": "32520"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "횡성군 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 376.0,
+      "item_codes": {
+        "C1": "32520"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영월군 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 269.0,
+      "item_codes": {
+        "C1": "32530"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영월군 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 284.0,
+      "item_codes": {
+        "C1": "32530"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영월군 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 298.0,
+      "item_codes": {
+        "C1": "32530"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "평창군 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 228.0,
+      "item_codes": {
+        "C1": "32540"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "평창군 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 225.0,
+      "item_codes": {
+        "C1": "32540"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "평창군 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 306.0,
+      "item_codes": {
+        "C1": "32540"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "정선군 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 295.0,
+      "item_codes": {
+        "C1": "32550"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "정선군 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 304.0,
+      "item_codes": {
+        "C1": "32550"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "정선군 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 335.0,
+      "item_codes": {
+        "C1": "32550"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "철원군 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 230.0,
+      "item_codes": {
+        "C1": "32560"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "철원군 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 255.0,
+      "item_codes": {
+        "C1": "32560"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "철원군 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 256.0,
+      "item_codes": {
+        "C1": "32560"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "화천군 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 104.0,
+      "item_codes": {
+        "C1": "32570"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "화천군 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 102.0,
+      "item_codes": {
+        "C1": "32570"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "화천군 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 107.0,
+      "item_codes": {
+        "C1": "32570"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "양구군 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 104.0,
+      "item_codes": {
+        "C1": "32580"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "양구군 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 105.0,
+      "item_codes": {
+        "C1": "32580"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "양구군 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 106.0,
+      "item_codes": {
+        "C1": "32580"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인제군 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 153.0,
+      "item_codes": {
+        "C1": "32590"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인제군 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 175.0,
+      "item_codes": {
+        "C1": "32590"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인제군 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 204.0,
+      "item_codes": {
+        "C1": "32590"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "고성군 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 183.0,
+      "item_codes": {
+        "C1": "32600"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "고성군 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 171.0,
+      "item_codes": {
+        "C1": "32600"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "고성군 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 186.0,
+      "item_codes": {
+        "C1": "32600"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "양양군 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 186.0,
+      "item_codes": {
+        "C1": "32610"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "양양군 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 187.0,
+      "item_codes": {
+        "C1": "32610"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "양양군 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 191.0,
+      "item_codes": {
+        "C1": "32610"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 19281.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 19938.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 21338.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충주시 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 2711.0,
+      "item_codes": {
+        "C1": "33020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충주시 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 2748.0,
+      "item_codes": {
+        "C1": "33020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충주시 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 2804.0,
+      "item_codes": {
+        "C1": "33020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제천시 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 2154.0,
+      "item_codes": {
+        "C1": "33030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제천시 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 2285.0,
+      "item_codes": {
+        "C1": "33030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제천시 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 2339.0,
+      "item_codes": {
+        "C1": "33030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "청주시 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 8911.0,
+      "item_codes": {
+        "C1": "33040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "청주시 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 9279.0,
+      "item_codes": {
+        "C1": "33040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "청주시 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 10281.0,
+      "item_codes": {
+        "C1": "33040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "보은군 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 544.0,
+      "item_codes": {
+        "C1": "33520"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "보은군 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 541.0,
+      "item_codes": {
+        "C1": "33520"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "보은군 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 529.0,
+      "item_codes": {
+        "C1": "33520"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "옥천군 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 731.0,
+      "item_codes": {
+        "C1": "33530"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "옥천군 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 775.0,
+      "item_codes": {
+        "C1": "33530"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "옥천군 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 824.0,
+      "item_codes": {
+        "C1": "33530"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영동군 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 297.0,
+      "item_codes": {
+        "C1": "33540"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영동군 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 316.0,
+      "item_codes": {
+        "C1": "33540"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영동군 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 322.0,
+      "item_codes": {
+        "C1": "33540"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "진천군 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 1064.0,
+      "item_codes": {
+        "C1": "33550"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "진천군 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 988.0,
+      "item_codes": {
+        "C1": "33550"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "진천군 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 1163.0,
+      "item_codes": {
+        "C1": "33550"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "괴산군 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 340.0,
+      "item_codes": {
+        "C1": "33560"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "괴산군 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 348.0,
+      "item_codes": {
+        "C1": "33560"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "괴산군 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 379.0,
+      "item_codes": {
+        "C1": "33560"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "음성군 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 1540.0,
+      "item_codes": {
+        "C1": "33570"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "음성군 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 1625.0,
+      "item_codes": {
+        "C1": "33570"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "음성군 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 1597.0,
+      "item_codes": {
+        "C1": "33570"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "단양군 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 391.0,
+      "item_codes": {
+        "C1": "33580"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "단양군 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 403.0,
+      "item_codes": {
+        "C1": "33580"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "단양군 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 435.0,
+      "item_codes": {
+        "C1": "33580"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "증평군 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 598.0,
+      "item_codes": {
+        "C1": "33590"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "증평군 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 630.0,
+      "item_codes": {
+        "C1": "33590"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "증평군 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 665.0,
+      "item_codes": {
+        "C1": "33590"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 23236.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 24286.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 25056.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "천안시 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 6584.0,
+      "item_codes": {
+        "C1": "34010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "천안시 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 6957.0,
+      "item_codes": {
+        "C1": "34010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "천안시 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 7002.0,
+      "item_codes": {
+        "C1": "34010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "공주시 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 972.0,
+      "item_codes": {
+        "C1": "34020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "공주시 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 1008.0,
+      "item_codes": {
+        "C1": "34020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "공주시 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 1082.0,
+      "item_codes": {
+        "C1": "34020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "보령시 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 1156.0,
+      "item_codes": {
+        "C1": "34030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "보령시 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 1254.0,
+      "item_codes": {
+        "C1": "34030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "보령시 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 1234.0,
+      "item_codes": {
+        "C1": "34030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "아산시 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 3450.0,
+      "item_codes": {
+        "C1": "34040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "아산시 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 3679.0,
+      "item_codes": {
+        "C1": "34040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "아산시 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 3691.0,
+      "item_codes": {
+        "C1": "34040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서산시 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 1995.0,
+      "item_codes": {
+        "C1": "34050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서산시 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 1601.0,
+      "item_codes": {
+        "C1": "34050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서산시 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 1923.0,
+      "item_codes": {
+        "C1": "34050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "논산시 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 1350.0,
+      "item_codes": {
+        "C1": "34060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "논산시 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 1673.0,
+      "item_codes": {
+        "C1": "34060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "논산시 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 1695.0,
+      "item_codes": {
+        "C1": "34060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "계룡시 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 291.0,
+      "item_codes": {
+        "C1": "34070"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "계룡시 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 311.0,
+      "item_codes": {
+        "C1": "34070"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "계룡시 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 338.0,
+      "item_codes": {
+        "C1": "34070"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "당진시 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 2410.0,
+      "item_codes": {
+        "C1": "34080"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "당진시 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 2618.0,
+      "item_codes": {
+        "C1": "34080"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "당진시 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 2793.0,
+      "item_codes": {
+        "C1": "34080"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "금산군 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 799.0,
+      "item_codes": {
+        "C1": "34510"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "금산군 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 765.0,
+      "item_codes": {
+        "C1": "34510"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "금산군 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 836.0,
+      "item_codes": {
+        "C1": "34510"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부여군 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 605.0,
+      "item_codes": {
+        "C1": "34530"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부여군 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 632.0,
+      "item_codes": {
+        "C1": "34530"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부여군 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 633.0,
+      "item_codes": {
+        "C1": "34530"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서천군 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 572.0,
+      "item_codes": {
+        "C1": "34540"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서천군 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 597.0,
+      "item_codes": {
+        "C1": "34540"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서천군 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 605.0,
+      "item_codes": {
+        "C1": "34540"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "청양군 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 697.0,
+      "item_codes": {
+        "C1": "34550"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "청양군 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 706.0,
+      "item_codes": {
+        "C1": "34550"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "청양군 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 642.0,
+      "item_codes": {
+        "C1": "34550"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "홍성군 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 1031.0,
+      "item_codes": {
+        "C1": "34560"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "홍성군 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 1113.0,
+      "item_codes": {
+        "C1": "34560"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "홍성군 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 1149.0,
+      "item_codes": {
+        "C1": "34560"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "예산군 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 836.0,
+      "item_codes": {
+        "C1": "34570"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "예산군 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 877.0,
+      "item_codes": {
+        "C1": "34570"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "예산군 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 922.0,
+      "item_codes": {
+        "C1": "34570"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "태안군 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 488.0,
+      "item_codes": {
+        "C1": "34580"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "태안군 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 495.0,
+      "item_codes": {
+        "C1": "34580"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "태안군 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 511.0,
+      "item_codes": {
+        "C1": "34580"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 20718.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 21527.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 22586.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전주시 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 6013.0,
+      "item_codes": {
+        "C1": "35010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전주시 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 6597.0,
+      "item_codes": {
+        "C1": "35010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전주시 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 6991.0,
+      "item_codes": {
+        "C1": "35010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "군산시 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 3849.0,
+      "item_codes": {
+        "C1": "35020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "군산시 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 3695.0,
+      "item_codes": {
+        "C1": "35020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "군산시 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 4154.0,
+      "item_codes": {
+        "C1": "35020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "익산시 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 3859.0,
+      "item_codes": {
+        "C1": "35030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "익산시 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 3896.0,
+      "item_codes": {
+        "C1": "35030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "익산시 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 3967.0,
+      "item_codes": {
+        "C1": "35030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "정읍시 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 1209.0,
+      "item_codes": {
+        "C1": "35040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "정읍시 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 1377.0,
+      "item_codes": {
+        "C1": "35040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "정읍시 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 1246.0,
+      "item_codes": {
+        "C1": "35040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "남원시 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 752.0,
+      "item_codes": {
+        "C1": "35050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "남원시 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 750.0,
+      "item_codes": {
+        "C1": "35050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "남원시 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 816.0,
+      "item_codes": {
+        "C1": "35050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "김제시 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 957.0,
+      "item_codes": {
+        "C1": "35060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "김제시 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 1023.0,
+      "item_codes": {
+        "C1": "35060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "김제시 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 1093.0,
+      "item_codes": {
+        "C1": "35060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "완주군 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 2021.0,
+      "item_codes": {
+        "C1": "35510"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "완주군 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 2135.0,
+      "item_codes": {
+        "C1": "35510"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "완주군 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 2199.0,
+      "item_codes": {
+        "C1": "35510"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "진안군 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 140.0,
+      "item_codes": {
+        "C1": "35520"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "진안군 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 158.0,
+      "item_codes": {
+        "C1": "35520"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "진안군 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 166.0,
+      "item_codes": {
+        "C1": "35520"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "무주군 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 317.0,
+      "item_codes": {
+        "C1": "35530"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "무주군 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 318.0,
+      "item_codes": {
+        "C1": "35530"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "무주군 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 306.0,
+      "item_codes": {
+        "C1": "35530"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "장수군 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 153.0,
+      "item_codes": {
+        "C1": "35540"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "장수군 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 164.0,
+      "item_codes": {
+        "C1": "35540"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "장수군 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 166.0,
+      "item_codes": {
+        "C1": "35540"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "임실군 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 354.0,
+      "item_codes": {
+        "C1": "35550"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "임실군 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 328.0,
+      "item_codes": {
+        "C1": "35550"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "임실군 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 359.0,
+      "item_codes": {
+        "C1": "35550"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "순창군 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 142.0,
+      "item_codes": {
+        "C1": "35560"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "순창군 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 137.0,
+      "item_codes": {
+        "C1": "35560"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "순창군 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 164.0,
+      "item_codes": {
+        "C1": "35560"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "고창군 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 453.0,
+      "item_codes": {
+        "C1": "35570"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "고창군 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 463.0,
+      "item_codes": {
+        "C1": "35570"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "고창군 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 460.0,
+      "item_codes": {
+        "C1": "35570"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부안군 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 499.0,
+      "item_codes": {
+        "C1": "35580"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부안군 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 486.0,
+      "item_codes": {
+        "C1": "35580"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부안군 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 499.0,
+      "item_codes": {
+        "C1": "35580"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 24332.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 24579.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 24616.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "목포시 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 3715.0,
+      "item_codes": {
+        "C1": "36010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "목포시 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 3784.0,
+      "item_codes": {
+        "C1": "36010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "목포시 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 3782.0,
+      "item_codes": {
+        "C1": "36010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "여수시 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 4308.0,
+      "item_codes": {
+        "C1": "36020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "여수시 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 4337.0,
+      "item_codes": {
+        "C1": "36020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "여수시 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 4290.0,
+      "item_codes": {
+        "C1": "36020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "순천시 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 2469.0,
+      "item_codes": {
+        "C1": "36030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "순천시 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 2535.0,
+      "item_codes": {
+        "C1": "36030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "순천시 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 2669.0,
+      "item_codes": {
+        "C1": "36030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "나주시 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 1865.0,
+      "item_codes": {
+        "C1": "36040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "나주시 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 1915.0,
+      "item_codes": {
+        "C1": "36040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "나주시 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 1860.0,
+      "item_codes": {
+        "C1": "36040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광양시 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 2681.0,
+      "item_codes": {
+        "C1": "36060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광양시 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 2625.0,
+      "item_codes": {
+        "C1": "36060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광양시 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 2575.0,
+      "item_codes": {
+        "C1": "36060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "담양군 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 1057.0,
+      "item_codes": {
+        "C1": "36510"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "담양군 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 1051.0,
+      "item_codes": {
+        "C1": "36510"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "담양군 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 1049.0,
+      "item_codes": {
+        "C1": "36510"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "곡성군 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 502.0,
+      "item_codes": {
+        "C1": "36520"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "곡성군 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 511.0,
+      "item_codes": {
+        "C1": "36520"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "곡성군 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 495.0,
+      "item_codes": {
+        "C1": "36520"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "구례군 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 203.0,
+      "item_codes": {
+        "C1": "36530"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "구례군 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 189.0,
+      "item_codes": {
+        "C1": "36530"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "구례군 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 202.0,
+      "item_codes": {
+        "C1": "36530"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "고흥군 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 424.0,
+      "item_codes": {
+        "C1": "36550"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "고흥군 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 455.0,
+      "item_codes": {
+        "C1": "36550"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "고흥군 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 355.0,
+      "item_codes": {
+        "C1": "36550"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "보성군 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 455.0,
+      "item_codes": {
+        "C1": "36560"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "보성군 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 448.0,
+      "item_codes": {
+        "C1": "36560"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "보성군 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 487.0,
+      "item_codes": {
+        "C1": "36560"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "화순군 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 662.0,
+      "item_codes": {
+        "C1": "36570"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "화순군 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 671.0,
+      "item_codes": {
+        "C1": "36570"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "화순군 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 689.0,
+      "item_codes": {
+        "C1": "36570"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "장흥군 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 335.0,
+      "item_codes": {
+        "C1": "36580"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "장흥군 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 346.0,
+      "item_codes": {
+        "C1": "36580"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "장흥군 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 374.0,
+      "item_codes": {
+        "C1": "36580"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강진군 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 836.0,
+      "item_codes": {
+        "C1": "36590"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강진군 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 857.0,
+      "item_codes": {
+        "C1": "36590"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강진군 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 823.0,
+      "item_codes": {
+        "C1": "36590"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "해남군 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 397.0,
+      "item_codes": {
+        "C1": "36600"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "해남군 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 389.0,
+      "item_codes": {
+        "C1": "36600"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "해남군 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 388.0,
+      "item_codes": {
+        "C1": "36600"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영암군 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 712.0,
+      "item_codes": {
+        "C1": "36610"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영암군 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 699.0,
+      "item_codes": {
+        "C1": "36610"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영암군 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 702.0,
+      "item_codes": {
+        "C1": "36610"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "무안군 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 980.0,
+      "item_codes": {
+        "C1": "36620"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "무안군 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 968.0,
+      "item_codes": {
+        "C1": "36620"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "무안군 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 1062.0,
+      "item_codes": {
+        "C1": "36620"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "함평군 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 301.0,
+      "item_codes": {
+        "C1": "36630"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "함평군 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 304.0,
+      "item_codes": {
+        "C1": "36630"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "함평군 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 301.0,
+      "item_codes": {
+        "C1": "36630"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영광군 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 544.0,
+      "item_codes": {
+        "C1": "36640"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영광군 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 570.0,
+      "item_codes": {
+        "C1": "36640"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영광군 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 607.0,
+      "item_codes": {
+        "C1": "36640"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "장성군 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 853.0,
+      "item_codes": {
+        "C1": "36650"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "장성군 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 855.0,
+      "item_codes": {
+        "C1": "36650"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "장성군 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 870.0,
+      "item_codes": {
+        "C1": "36650"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "완도군 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 391.0,
+      "item_codes": {
+        "C1": "36660"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "완도군 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 433.0,
+      "item_codes": {
+        "C1": "36660"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "완도군 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 424.0,
+      "item_codes": {
+        "C1": "36660"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "진도군 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 175.0,
+      "item_codes": {
+        "C1": "36670"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "진도군 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 181.0,
+      "item_codes": {
+        "C1": "36670"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "진도군 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 188.0,
+      "item_codes": {
+        "C1": "36670"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "신안군 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 467.0,
+      "item_codes": {
+        "C1": "36680"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "신안군 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 456.0,
+      "item_codes": {
+        "C1": "36680"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "신안군 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 424.0,
+      "item_codes": {
+        "C1": "36680"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 32491.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 32852.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 33831.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "포항시 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 7313.0,
+      "item_codes": {
+        "C1": "37010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "포항시 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 7269.0,
+      "item_codes": {
+        "C1": "37010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "포항시 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 7412.0,
+      "item_codes": {
+        "C1": "37010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경주시 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 2739.0,
+      "item_codes": {
+        "C1": "37020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경주시 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 2896.0,
+      "item_codes": {
+        "C1": "37020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경주시 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 2979.0,
+      "item_codes": {
+        "C1": "37020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "김천시 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 1496.0,
+      "item_codes": {
+        "C1": "37030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "김천시 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 1570.0,
+      "item_codes": {
+        "C1": "37030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "김천시 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 1610.0,
+      "item_codes": {
+        "C1": "37030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "안동시 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 1917.0,
+      "item_codes": {
+        "C1": "37040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "안동시 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 1884.0,
+      "item_codes": {
+        "C1": "37040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "안동시 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 2023.0,
+      "item_codes": {
+        "C1": "37040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "구미시 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 4902.0,
+      "item_codes": {
+        "C1": "37050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "구미시 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 5074.0,
+      "item_codes": {
+        "C1": "37050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "구미시 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 5164.0,
+      "item_codes": {
+        "C1": "37050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영주시 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 1138.0,
+      "item_codes": {
+        "C1": "37060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영주시 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 1095.0,
+      "item_codes": {
+        "C1": "37060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영주시 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 1206.0,
+      "item_codes": {
+        "C1": "37060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영천시 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 1989.0,
+      "item_codes": {
+        "C1": "37070"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영천시 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 1910.0,
+      "item_codes": {
+        "C1": "37070"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영천시 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 1947.0,
+      "item_codes": {
+        "C1": "37070"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "상주시 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 1176.0,
+      "item_codes": {
+        "C1": "37080"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "상주시 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 1278.0,
+      "item_codes": {
+        "C1": "37080"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "상주시 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 1311.0,
+      "item_codes": {
+        "C1": "37080"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "문경시 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 554.0,
+      "item_codes": {
+        "C1": "37090"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "문경시 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 539.0,
+      "item_codes": {
+        "C1": "37090"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "문경시 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 559.0,
+      "item_codes": {
+        "C1": "37090"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경산시 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 3385.0,
+      "item_codes": {
+        "C1": "37100"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경산시 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 3310.0,
+      "item_codes": {
+        "C1": "37100"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경산시 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 3556.0,
+      "item_codes": {
+        "C1": "37100"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "군위군 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 244.0,
+      "item_codes": {
+        "C1": "37310"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "군위군 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 240.0,
+      "item_codes": {
+        "C1": "37310"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "의성군 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 758.0,
+      "item_codes": {
+        "C1": "37520"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "의성군 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 721.0,
+      "item_codes": {
+        "C1": "37520"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "의성군 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 776.0,
+      "item_codes": {
+        "C1": "37520"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "청송군 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 143.0,
+      "item_codes": {
+        "C1": "37530"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "청송군 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 144.0,
+      "item_codes": {
+        "C1": "37530"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "청송군 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 147.0,
+      "item_codes": {
+        "C1": "37530"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영양군 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 81.0,
+      "item_codes": {
+        "C1": "37540"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영양군 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 78.0,
+      "item_codes": {
+        "C1": "37540"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영양군 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 75.0,
+      "item_codes": {
+        "C1": "37540"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영덕군 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 208.0,
+      "item_codes": {
+        "C1": "37550"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영덕군 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 208.0,
+      "item_codes": {
+        "C1": "37550"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영덕군 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 206.0,
+      "item_codes": {
+        "C1": "37550"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "청도군 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 593.0,
+      "item_codes": {
+        "C1": "37560"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "청도군 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 637.0,
+      "item_codes": {
+        "C1": "37560"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "청도군 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 627.0,
+      "item_codes": {
+        "C1": "37560"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "고령군 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 472.0,
+      "item_codes": {
+        "C1": "37570"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "고령군 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 462.0,
+      "item_codes": {
+        "C1": "37570"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "고령군 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 482.0,
+      "item_codes": {
+        "C1": "37570"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "성주군 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 912.0,
+      "item_codes": {
+        "C1": "37580"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "성주군 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 918.0,
+      "item_codes": {
+        "C1": "37580"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "성주군 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 966.0,
+      "item_codes": {
+        "C1": "37580"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "칠곡군 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 1692.0,
+      "item_codes": {
+        "C1": "37590"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "칠곡군 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 1827.0,
+      "item_codes": {
+        "C1": "37590"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "칠곡군 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 1956.0,
+      "item_codes": {
+        "C1": "37590"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "예천군 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 325.0,
+      "item_codes": {
+        "C1": "37600"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "예천군 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 333.0,
+      "item_codes": {
+        "C1": "37600"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "예천군 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 340.0,
+      "item_codes": {
+        "C1": "37600"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "봉화군 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 136.0,
+      "item_codes": {
+        "C1": "37610"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "봉화군 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 126.0,
+      "item_codes": {
+        "C1": "37610"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "봉화군 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 140.0,
+      "item_codes": {
+        "C1": "37610"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울진군 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 239.0,
+      "item_codes": {
+        "C1": "37620"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울진군 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 247.0,
+      "item_codes": {
+        "C1": "37620"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울진군 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 248.0,
+      "item_codes": {
+        "C1": "37620"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울릉군 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 79.0,
+      "item_codes": {
+        "C1": "37630"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울릉군 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 86.0,
+      "item_codes": {
+        "C1": "37630"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울릉군 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 101.0,
+      "item_codes": {
+        "C1": "37630"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 35988.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 36520.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 38517.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "진주시 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 3900.0,
+      "item_codes": {
+        "C1": "38030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "진주시 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 4001.0,
+      "item_codes": {
+        "C1": "38030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "진주시 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 3642.0,
+      "item_codes": {
+        "C1": "38030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "통영시 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 1100.0,
+      "item_codes": {
+        "C1": "38050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "통영시 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 1032.0,
+      "item_codes": {
+        "C1": "38050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "통영시 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 1051.0,
+      "item_codes": {
+        "C1": "38050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "사천시 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 984.0,
+      "item_codes": {
+        "C1": "38060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "사천시 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 1006.0,
+      "item_codes": {
+        "C1": "38060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "사천시 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 1062.0,
+      "item_codes": {
+        "C1": "38060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "김해시 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 5766.0,
+      "item_codes": {
+        "C1": "38070"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "김해시 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 6217.0,
+      "item_codes": {
+        "C1": "38070"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "김해시 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 6600.0,
+      "item_codes": {
+        "C1": "38070"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "밀양시 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 2238.0,
+      "item_codes": {
+        "C1": "38080"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "밀양시 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 2387.0,
+      "item_codes": {
+        "C1": "38080"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "밀양시 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 2451.0,
+      "item_codes": {
+        "C1": "38080"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "거제시 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 1155.0,
+      "item_codes": {
+        "C1": "38090"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "거제시 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 1186.0,
+      "item_codes": {
+        "C1": "38090"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "거제시 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 1243.0,
+      "item_codes": {
+        "C1": "38090"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "양산시 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 6724.0,
+      "item_codes": {
+        "C1": "38100"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "양산시 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 6873.0,
+      "item_codes": {
+        "C1": "38100"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "양산시 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 7544.0,
+      "item_codes": {
+        "C1": "38100"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "창원시 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 10073.0,
+      "item_codes": {
+        "C1": "38110"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "창원시 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 9773.0,
+      "item_codes": {
+        "C1": "38110"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "창원시 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 10710.0,
+      "item_codes": {
+        "C1": "38110"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "의령군 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 509.0,
+      "item_codes": {
+        "C1": "38510"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "의령군 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 482.0,
+      "item_codes": {
+        "C1": "38510"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "의령군 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 512.0,
+      "item_codes": {
+        "C1": "38510"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "함안군 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 670.0,
+      "item_codes": {
+        "C1": "38520"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "함안군 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 629.0,
+      "item_codes": {
+        "C1": "38520"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "함안군 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 600.0,
+      "item_codes": {
+        "C1": "38520"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "창녕군 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 545.0,
+      "item_codes": {
+        "C1": "38530"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "창녕군 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 577.0,
+      "item_codes": {
+        "C1": "38530"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "창녕군 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 623.0,
+      "item_codes": {
+        "C1": "38530"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "고성군 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 360.0,
+      "item_codes": {
+        "C1": "38540"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "고성군 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 377.0,
+      "item_codes": {
+        "C1": "38540"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "고성군 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 373.0,
+      "item_codes": {
+        "C1": "38540"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "남해군 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 292.0,
+      "item_codes": {
+        "C1": "38550"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "남해군 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 320.0,
+      "item_codes": {
+        "C1": "38550"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "남해군 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 326.0,
+      "item_codes": {
+        "C1": "38550"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "하동군 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 256.0,
+      "item_codes": {
+        "C1": "38560"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "하동군 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 237.0,
+      "item_codes": {
+        "C1": "38560"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "하동군 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 243.0,
+      "item_codes": {
+        "C1": "38560"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "산청군 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 505.0,
+      "item_codes": {
+        "C1": "38570"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "산청군 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 510.0,
+      "item_codes": {
+        "C1": "38570"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "산청군 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 548.0,
+      "item_codes": {
+        "C1": "38570"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "함양군 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 228.0,
+      "item_codes": {
+        "C1": "38580"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "함양군 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 236.0,
+      "item_codes": {
+        "C1": "38580"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "함양군 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 225.0,
+      "item_codes": {
+        "C1": "38580"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "거창군 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 435.0,
+      "item_codes": {
+        "C1": "38590"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "거창군 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 426.0,
+      "item_codes": {
+        "C1": "38590"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "거창군 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 464.0,
+      "item_codes": {
+        "C1": "38590"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "합천군 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 248.0,
+      "item_codes": {
+        "C1": "38600"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "합천군 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 251.0,
+      "item_codes": {
+        "C1": "38600"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "합천군 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 300.0,
+      "item_codes": {
+        "C1": "38600"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 8076.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 8193.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 8429.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주시 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 6595.0,
+      "item_codes": {
+        "C1": "39010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주시 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 6713.0,
+      "item_codes": {
+        "C1": "39010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주시 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 6897.0,
+      "item_codes": {
+        "C1": "39010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서귀포시 - 운수업기업체수",
+      "timestamp": "2021",
+      "value": 1481.0,
+      "item_codes": {
+        "C1": "39020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서귀포시 - 운수업기업체수",
+      "timestamp": "2022",
+      "value": 1480.0,
+      "item_codes": {
+        "C1": "39020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서귀포시 - 운수업기업체수",
+      "timestamp": "2023",
+      "value": 1532.0,
+      "item_codes": {
+        "C1": "39020"
+      },
+      "itm_id": "T10"
+    }
+  ]
+}

@@ -1,0 +1,8875 @@
+{
+  "metadata": {
+    "org_id": "101",
+    "org_name": "통계청",
+    "table_id": "DT_1YL3001",
+    "table_name": "인구 천명당 범죄발생건수(시도)",
+    "stat_id": "9B08007",
+    "stat_name": "e-지방지표",
+    "date_range": "2004 ~ 2023",
+    "description": "행정구역별 범죄발생건수  (A) 주민등록인구  (B) 인구 천명당 범죄발생건수  (A÷B×1,000) 전라남도 강원특별자치도 경상북도 경상남도 서울특별시 대전광역시 광주광역시 제주특별자치도 부산광역시 울산광역시 충청남도 대구광역시 충청북도 전국 경기도 전북특별자치도 인천광역시 세종특별자치시",
+    "item_info": "■  자료제공처:  통계청 지역통계기획팀 ■  자료원출처:  경찰청(경찰통계연보)        행정안전부(주민등록인구현황) ■  자료제공주기:  1년 ■  다음자료현행화:  작성기준년도 익년8월 □  정의  - 인구천명당 범죄발생건수: 인구 천명당 범죄발생건수 □  의의  - 인간 정주의 기본 전제인 생활 안전성을 평가함. 치안 수준은 생명과 직결되는 요인으로서 지속가능한 발전을 위한 기초자료임 □  산식  - 인구천명당 범죄발생건수=(범죄발생건수÷주민등록인구)×1,000 □  용어  - 범죄발생건수: 경찰이 입건하여 통계원표를 승인한 사건수 □  참고사항  - 경찰청 본청 및 해양경찰, 검찰과 특별사법경찰에 의해서 인지 처리된 사건은 제외",
+    "source_url": "http://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1YL3001",
+    "last_updated": "2025-06-24T18:19:32.121100",
+    "period_type": "M",
+    "period_name": "월간"
+  },
+  "data": [
+    {
+      "item": "전국 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2005",
+      "value": 1690455.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전국 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2006",
+      "value": 1666302.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전국 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2007",
+      "value": 1784384.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전국 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2008",
+      "value": 2012504.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전국 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2009",
+      "value": 1970042.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전국 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2010",
+      "value": 1736355.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전국 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2011",
+      "value": 1706007.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전국 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2012",
+      "value": 1747523.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전국 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2013",
+      "value": 1805891.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전국 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2014",
+      "value": 1765652.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전국 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2015",
+      "value": 1834836.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전국 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2016",
+      "value": 1819014.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전국 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2017",
+      "value": 1636131.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전국 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2018",
+      "value": 1542267.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전국 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2019",
+      "value": 1568968.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전국 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2020",
+      "value": 1542270.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전국 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2021",
+      "value": 1382736.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전국 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2022",
+      "value": 1434888.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전국 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2023",
+      "value": 1467729.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전국 - 주민등록인구＜br＞(B)",
+      "timestamp": "2005",
+      "value": 48782274.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전국 - 주민등록인구＜br＞(B)",
+      "timestamp": "2006",
+      "value": 48991779.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전국 - 주민등록인구＜br＞(B)",
+      "timestamp": "2007",
+      "value": 49268928.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전국 - 주민등록인구＜br＞(B)",
+      "timestamp": "2008",
+      "value": 49540367.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전국 - 주민등록인구＜br＞(B)",
+      "timestamp": "2009",
+      "value": 49773145.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전국 - 주민등록인구＜br＞(B)",
+      "timestamp": "2010",
+      "value": 50515666.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전국 - 주민등록인구＜br＞(B)",
+      "timestamp": "2011",
+      "value": 50734284.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전국 - 주민등록인구＜br＞(B)",
+      "timestamp": "2012",
+      "value": 50948272.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전국 - 주민등록인구＜br＞(B)",
+      "timestamp": "2013",
+      "value": 51141463.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전국 - 주민등록인구＜br＞(B)",
+      "timestamp": "2014",
+      "value": 51327916.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전국 - 주민등록인구＜br＞(B)",
+      "timestamp": "2015",
+      "value": 51529338.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전국 - 주민등록인구＜br＞(B)",
+      "timestamp": "2016",
+      "value": 51696216.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전국 - 주민등록인구＜br＞(B)",
+      "timestamp": "2017",
+      "value": 51778544.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전국 - 주민등록인구＜br＞(B)",
+      "timestamp": "2018",
+      "value": 51826059.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전국 - 주민등록인구＜br＞(B)",
+      "timestamp": "2019",
+      "value": 51849861.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전국 - 주민등록인구＜br＞(B)",
+      "timestamp": "2020",
+      "value": 51829023.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전국 - 주민등록인구＜br＞(B)",
+      "timestamp": "2021",
+      "value": 51638809.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전국 - 주민등록인구＜br＞(B)",
+      "timestamp": "2022",
+      "value": 51439038.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전국 - 주민등록인구＜br＞(B)",
+      "timestamp": "2023",
+      "value": 51325329.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전국 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2005",
+      "value": 34.7,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2006",
+      "value": 34.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2007",
+      "value": 36.2,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2008",
+      "value": 40.6,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2009",
+      "value": 39.6,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2010",
+      "value": 34.4,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2011",
+      "value": 33.6,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2012",
+      "value": 34.3,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2013",
+      "value": 35.3,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2014",
+      "value": 34.4,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2015",
+      "value": 35.6,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2016",
+      "value": 35.2,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2017",
+      "value": 31.6,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2018",
+      "value": 29.8,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2019",
+      "value": 30.3,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2020",
+      "value": 29.8,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2021",
+      "value": 26.8,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2022",
+      "value": 27.9,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2023",
+      "value": 28.6,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2005",
+      "value": 350505.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "서울특별시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2006",
+      "value": 346733.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "서울특별시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2007",
+      "value": 355754.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "서울특별시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2008",
+      "value": 392590.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "서울특별시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2009",
+      "value": 405428.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "서울특별시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2010",
+      "value": 348180.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "서울특별시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2011",
+      "value": 358620.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "서울특별시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2012",
+      "value": 358534.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "서울특별시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2013",
+      "value": 368583.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "서울특별시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2014",
+      "value": 355991.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "서울특별시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2015",
+      "value": 356575.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "서울특별시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2016",
+      "value": 343104.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "서울특별시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2017",
+      "value": 320193.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "서울특별시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2018",
+      "value": 308997.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "서울특별시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2019",
+      "value": 309269.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "서울특별시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2020",
+      "value": 296178.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "서울특별시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2021",
+      "value": 257969.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "서울특별시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2022",
+      "value": 279507.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "서울특별시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2023",
+      "value": 277213.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "서울특별시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2005",
+      "value": 10167344.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "서울특별시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2006",
+      "value": 10181166.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "서울특별시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2007",
+      "value": 10192710.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "서울특별시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2008",
+      "value": 10200827.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "서울특별시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2009",
+      "value": 10208302.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "서울특별시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2010",
+      "value": 10312545.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "서울특별시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2011",
+      "value": 10249679.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "서울특별시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2012",
+      "value": 10195318.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "서울특별시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2013",
+      "value": 10143645.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "서울특별시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2014",
+      "value": 10103233.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "서울특별시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2015",
+      "value": 10022181.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "서울특별시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2016",
+      "value": 9930616.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "서울특별시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2017",
+      "value": 9857426.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "서울특별시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2018",
+      "value": 9765623.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "서울특별시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2019",
+      "value": 9729107.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "서울특별시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2020",
+      "value": 9668465.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "서울특별시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2021",
+      "value": 9509458.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "서울특별시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2022",
+      "value": 9428372.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "서울특별시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2023",
+      "value": 9386034.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "서울특별시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2005",
+      "value": 34.5,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2006",
+      "value": 34.1,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2007",
+      "value": 34.9,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2008",
+      "value": 38.5,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2009",
+      "value": 39.7,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2010",
+      "value": 33.8,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2011",
+      "value": 35.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2012",
+      "value": 35.2,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2013",
+      "value": 36.3,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2014",
+      "value": 35.2,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2015",
+      "value": 35.6,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2016",
+      "value": 34.6,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2017",
+      "value": 32.5,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2018",
+      "value": 31.6,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2019",
+      "value": 31.8,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2020",
+      "value": 30.6,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2021",
+      "value": 27.1,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2022",
+      "value": 29.6,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2023",
+      "value": 29.5,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2005",
+      "value": 110287.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "부산광역시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2006",
+      "value": 120873.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "부산광역시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2007",
+      "value": 135769.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "부산광역시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2008",
+      "value": 164221.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "부산광역시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2009",
+      "value": 170193.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "부산광역시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2010",
+      "value": 127220.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "부산광역시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2011",
+      "value": 126411.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "부산광역시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2012",
+      "value": 131480.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "부산광역시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2013",
+      "value": 133629.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "부산광역시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2014",
+      "value": 133755.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "부산광역시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2015",
+      "value": 140700.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "부산광역시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2016",
+      "value": 129211.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "부산광역시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2017",
+      "value": 116449.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "부산광역시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2018",
+      "value": 110628.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "부산광역시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2019",
+      "value": 113138.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "부산광역시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2020",
+      "value": 113652.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "부산광역시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2021",
+      "value": 100439.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "부산광역시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2022",
+      "value": 105057.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "부산광역시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2023",
+      "value": 106433.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "부산광역시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2005",
+      "value": 3638293.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "부산광역시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2006",
+      "value": 3611992.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "부산광역시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2007",
+      "value": 3587439.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "부산광역시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2008",
+      "value": 3564577.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "부산광역시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2009",
+      "value": 3543030.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "부산광역시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2010",
+      "value": 3567910.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "부산광역시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2011",
+      "value": 3550963.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "부산광역시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2012",
+      "value": 3538484.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "부산광역시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2013",
+      "value": 3527635.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "부산광역시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2014",
+      "value": 3519401.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "부산광역시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2015",
+      "value": 3513777.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "부산광역시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2016",
+      "value": 3498529.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "부산광역시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2017",
+      "value": 3470653.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "부산광역시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2018",
+      "value": 3441453.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "부산광역시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2019",
+      "value": 3413841.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "부산광역시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2020",
+      "value": 3391946.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "부산광역시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2021",
+      "value": 3350380.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "부산광역시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2022",
+      "value": 3317812.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "부산광역시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2023",
+      "value": 3293362.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "부산광역시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2005",
+      "value": 30.3,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2006",
+      "value": 33.5,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2007",
+      "value": 37.8,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2008",
+      "value": 46.1,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2009",
+      "value": 48.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2010",
+      "value": 35.7,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2011",
+      "value": 35.6,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2012",
+      "value": 37.2,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2013",
+      "value": 37.9,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2014",
+      "value": 38.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2015",
+      "value": 40.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2016",
+      "value": 36.9,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2017",
+      "value": 33.6,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2018",
+      "value": 32.1,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2019",
+      "value": 33.1,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2020",
+      "value": 33.5,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2021",
+      "value": 30.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2022",
+      "value": 31.7,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2023",
+      "value": 32.3,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2005",
+      "value": 92734.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "대구광역시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2006",
+      "value": 89687.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "대구광역시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2007",
+      "value": 94628.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "대구광역시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2008",
+      "value": 106569.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "대구광역시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2009",
+      "value": 97648.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "대구광역시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2010",
+      "value": 96351.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "대구광역시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2011",
+      "value": 96265.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "대구광역시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2012",
+      "value": 97921.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "대구광역시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2013",
+      "value": 96186.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "대구광역시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2014",
+      "value": 95753.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "대구광역시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2015",
+      "value": 98897.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "대구광역시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2016",
+      "value": 86150.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "대구광역시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2017",
+      "value": 75016.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "대구광역시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2018",
+      "value": 72341.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "대구광역시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2019",
+      "value": 75797.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "대구광역시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2020",
+      "value": 72373.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "대구광역시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2021",
+      "value": 67915.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "대구광역시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2022",
+      "value": 66786.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "대구광역시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2023",
+      "value": 66674.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "대구광역시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2005",
+      "value": 2511306.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "대구광역시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2006",
+      "value": 2496115.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "대구광역시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2007",
+      "value": 2493261.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "대구광역시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2008",
+      "value": 2492724.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "대구광역시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2009",
+      "value": 2489781.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "대구광역시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2010",
+      "value": 2511676.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "대구광역시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2011",
+      "value": 2507271.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "대구광역시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2012",
+      "value": 2505644.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "대구광역시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2013",
+      "value": 2501588.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "대구광역시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2014",
+      "value": 2493264.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "대구광역시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2015",
+      "value": 2487829.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "대구광역시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2016",
+      "value": 2484557.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "대구광역시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2017",
+      "value": 2475231.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "대구광역시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2018",
+      "value": 2461769.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "대구광역시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2019",
+      "value": 2438031.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "대구광역시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2020",
+      "value": 2418346.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "대구광역시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2021",
+      "value": 2385412.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "대구광역시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2022",
+      "value": 2363691.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "대구광역시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2023",
+      "value": 2374960.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "대구광역시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2005",
+      "value": 36.9,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2006",
+      "value": 35.9,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2007",
+      "value": 38.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2008",
+      "value": 42.8,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2009",
+      "value": 39.2,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2010",
+      "value": 38.4,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2011",
+      "value": 38.4,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2012",
+      "value": 39.1,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2013",
+      "value": 38.4,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2014",
+      "value": 38.4,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2015",
+      "value": 39.8,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2016",
+      "value": 34.7,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2017",
+      "value": 30.3,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2018",
+      "value": 29.4,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2019",
+      "value": 31.1,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2020",
+      "value": 29.9,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2021",
+      "value": 28.5,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2022",
+      "value": 28.3,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2023",
+      "value": 28.1,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2005",
+      "value": 99682.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "인천광역시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2006",
+      "value": 103491.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "인천광역시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2007",
+      "value": 99260.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "인천광역시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2008",
+      "value": 106547.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "인천광역시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2009",
+      "value": 103727.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "인천광역시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2010",
+      "value": 85078.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "인천광역시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2011",
+      "value": 82870.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "인천광역시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2012",
+      "value": 89911.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "인천광역시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2013",
+      "value": 95270.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "인천광역시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2014",
+      "value": 94210.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "인천광역시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2015",
+      "value": 99915.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "인천광역시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2016",
+      "value": 100387.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "인천광역시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2017",
+      "value": 91385.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "인천광역시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2018",
+      "value": 86391.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "인천광역시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2019",
+      "value": 90608.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "인천광역시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2020",
+      "value": 88143.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "인천광역시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2021",
+      "value": 76584.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "인천광역시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2022",
+      "value": 82397.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "인천광역시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2023",
+      "value": 87831.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "인천광역시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2005",
+      "value": 2600495.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "인천광역시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2006",
+      "value": 2624391.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "인천광역시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2007",
+      "value": 2664576.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "인천광역시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2008",
+      "value": 2692696.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "인천광역시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2009",
+      "value": 2710579.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "인천광역시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2010",
+      "value": 2758296.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "인천광역시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2011",
+      "value": 2801274.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "인천광역시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2012",
+      "value": 2843981.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "인천광역시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2013",
+      "value": 2879782.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "인천광역시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2014",
+      "value": 2902608.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "인천광역시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2015",
+      "value": 2925815.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "인천광역시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2016",
+      "value": 2943069.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "인천광역시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2017",
+      "value": 2948542.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "인천광역시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2018",
+      "value": 2954642.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "인천광역시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2019",
+      "value": 2957026.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "인천광역시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2020",
+      "value": 2942828.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "인천광역시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2021",
+      "value": 2948375.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "인천광역시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2022",
+      "value": 2967314.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "인천광역시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2023",
+      "value": 2997410.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "인천광역시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2005",
+      "value": 38.3,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2006",
+      "value": 39.4,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2007",
+      "value": 37.3,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2008",
+      "value": 39.6,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2009",
+      "value": 38.3,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2010",
+      "value": 30.8,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2011",
+      "value": 29.6,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2012",
+      "value": 31.6,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2013",
+      "value": 33.1,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2014",
+      "value": 32.5,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2015",
+      "value": 34.1,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2016",
+      "value": 34.1,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2017",
+      "value": 31.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2018",
+      "value": 29.2,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2019",
+      "value": 30.6,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2020",
+      "value": 30.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2021",
+      "value": 26.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2022",
+      "value": 27.8,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2023",
+      "value": 29.3,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2005",
+      "value": 62736.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "광주광역시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2006",
+      "value": 56956.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "광주광역시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2007",
+      "value": 59819.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "광주광역시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2008",
+      "value": 61806.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "광주광역시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2009",
+      "value": 61679.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "광주광역시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2010",
+      "value": 62021.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "광주광역시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2011",
+      "value": 63672.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "광주광역시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2012",
+      "value": 67272.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "광주광역시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2013",
+      "value": 67969.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "광주광역시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2014",
+      "value": 64822.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "광주광역시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2015",
+      "value": 61234.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "광주광역시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2016",
+      "value": 54271.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "광주광역시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2017",
+      "value": 48213.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "광주광역시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2018",
+      "value": 43569.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "광주광역시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2019",
+      "value": 44274.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "광주광역시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2020",
+      "value": 43517.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "광주광역시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2021",
+      "value": 39392.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "광주광역시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2022",
+      "value": 38900.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "광주광역시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2023",
+      "value": 42058.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "광주광역시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2005",
+      "value": 1401745.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "광주광역시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2006",
+      "value": 1407798.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "광주광역시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2007",
+      "value": 1413444.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "광주광역시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2008",
+      "value": 1422702.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "광주광역시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2009",
+      "value": 1433640.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "광주광역시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2010",
+      "value": 1454636.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "광주광역시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2011",
+      "value": 1463464.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "광주광역시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2012",
+      "value": 1469216.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "광주광역시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2013",
+      "value": 1472910.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "광주광역시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2014",
+      "value": 1475884.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "광주광역시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2015",
+      "value": 1472199.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "광주광역시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2016",
+      "value": 1469214.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "광주광역시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2017",
+      "value": 1463770.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "광주광역시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2018",
+      "value": 1459336.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "광주광역시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2019",
+      "value": 1456468.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "광주광역시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2020",
+      "value": 1450062.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "광주광역시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2021",
+      "value": 1441611.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "광주광역시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2022",
+      "value": 1431050.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "광주광역시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2023",
+      "value": 1419237.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "광주광역시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2005",
+      "value": 44.8,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2006",
+      "value": 40.5,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2007",
+      "value": 42.3,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2008",
+      "value": 43.4,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2009",
+      "value": 43.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2010",
+      "value": 42.6,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2011",
+      "value": 43.5,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2012",
+      "value": 45.8,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2013",
+      "value": 46.1,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2014",
+      "value": 43.9,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2015",
+      "value": 41.6,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2016",
+      "value": 36.9,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2017",
+      "value": 32.9,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2018",
+      "value": 29.9,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2019",
+      "value": 30.4,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2020",
+      "value": 30.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2021",
+      "value": 27.3,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2022",
+      "value": 27.2,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2023",
+      "value": 29.6,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2005",
+      "value": 51156.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "대전광역시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2006",
+      "value": 46147.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "대전광역시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2007",
+      "value": 51177.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "대전광역시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2008",
+      "value": 53124.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "대전광역시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2009",
+      "value": 54484.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "대전광역시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2010",
+      "value": 49057.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "대전광역시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2011",
+      "value": 47473.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "대전광역시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2012",
+      "value": 45163.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "대전광역시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2013",
+      "value": 48484.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "대전광역시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2014",
+      "value": 47565.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "대전광역시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2015",
+      "value": 49593.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "대전광역시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2016",
+      "value": 49038.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "대전광역시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2017",
+      "value": 46988.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "대전광역시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2018",
+      "value": 45527.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "대전광역시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2019",
+      "value": 45167.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "대전광역시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2020",
+      "value": 44623.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "대전광역시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2021",
+      "value": 39982.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "대전광역시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2022",
+      "value": 43736.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "대전광역시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2023",
+      "value": 43327.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "대전광역시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2005",
+      "value": 1454638.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "대전광역시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2006",
+      "value": 1466158.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "대전광역시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2007",
+      "value": 1475659.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "대전광역시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2008",
+      "value": 1480895.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "대전광역시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2009",
+      "value": 1484180.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "대전광역시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2010",
+      "value": 1503664.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "대전광역시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2011",
+      "value": 1515603.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "대전광역시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2012",
+      "value": 1524583.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "대전광역시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2013",
+      "value": 1532811.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "대전광역시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2014",
+      "value": 1531809.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "대전광역시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2015",
+      "value": 1518775.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "대전광역시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2016",
+      "value": 1514370.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "대전광역시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2017",
+      "value": 1502227.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "대전광역시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2018",
+      "value": 1489936.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "대전광역시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2019",
+      "value": 1474870.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "대전광역시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2020",
+      "value": 1463882.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "대전광역시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2021",
+      "value": 1452251.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "대전광역시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2022",
+      "value": 1446072.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "대전광역시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2023",
+      "value": 1442216.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "대전광역시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2005",
+      "value": 35.2,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2006",
+      "value": 31.5,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2007",
+      "value": 34.7,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2008",
+      "value": 35.9,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2009",
+      "value": 36.7,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2010",
+      "value": 32.6,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2011",
+      "value": 31.3,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2012",
+      "value": 29.6,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2013",
+      "value": 31.6,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2014",
+      "value": 31.1,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2015",
+      "value": 32.7,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2016",
+      "value": 32.4,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2017",
+      "value": 31.3,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2018",
+      "value": 30.6,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2019",
+      "value": 30.6,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2020",
+      "value": 30.5,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2021",
+      "value": 27.5,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2022",
+      "value": 30.2,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2023",
+      "value": 30.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2005",
+      "value": 36530.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "울산광역시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2006",
+      "value": 38372.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "울산광역시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2007",
+      "value": 44071.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "울산광역시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2008",
+      "value": 44590.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "울산광역시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2009",
+      "value": 45807.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "울산광역시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2010",
+      "value": 41314.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "울산광역시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2011",
+      "value": 36848.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "울산광역시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2012",
+      "value": 37362.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "울산광역시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2013",
+      "value": 40848.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "울산광역시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2014",
+      "value": 41167.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "울산광역시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2015",
+      "value": 44569.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "울산광역시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2016",
+      "value": 39799.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "울산광역시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2017",
+      "value": 34912.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "울산광역시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2018",
+      "value": 32764.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "울산광역시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2019",
+      "value": 32780.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "울산광역시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2020",
+      "value": 31381.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "울산광역시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2021",
+      "value": 29085.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "울산광역시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2022",
+      "value": 27286.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "울산광역시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2023",
+      "value": 29859.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "울산광역시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2005",
+      "value": 1087648.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "울산광역시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2006",
+      "value": 1092494.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "울산광역시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2007",
+      "value": 1099995.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "울산광역시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2008",
+      "value": 1112407.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "울산광역시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2009",
+      "value": 1114866.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "울산광역시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2010",
+      "value": 1126298.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "울산광역시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2011",
+      "value": 1135494.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "울산광역시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2012",
+      "value": 1147256.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "울산광역시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2013",
+      "value": 1156480.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "울산광역시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2014",
+      "value": 1166377.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "울산광역시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2015",
+      "value": 1173534.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "울산광역시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2016",
+      "value": 1172304.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "울산광역시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2017",
+      "value": 1165132.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "울산광역시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2018",
+      "value": 1155623.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "울산광역시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2019",
+      "value": 1148019.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "울산광역시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2020",
+      "value": 1136017.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "울산광역시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2021",
+      "value": 1121592.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "울산광역시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2022",
+      "value": 1110663.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "울산광역시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2023",
+      "value": 1103661.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "울산광역시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2005",
+      "value": 33.6,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2006",
+      "value": 35.1,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2007",
+      "value": 40.1,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2008",
+      "value": 40.1,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2009",
+      "value": 41.1,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2010",
+      "value": 36.7,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2011",
+      "value": 32.5,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2012",
+      "value": 32.6,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2013",
+      "value": 35.3,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2014",
+      "value": 35.3,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2015",
+      "value": 38.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2016",
+      "value": 33.9,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2017",
+      "value": 30.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2018",
+      "value": 28.4,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2019",
+      "value": 28.6,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2020",
+      "value": 27.6,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2021",
+      "value": 25.9,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2022",
+      "value": 24.6,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2023",
+      "value": 27.1,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "세종특별자치시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2019",
+      "value": 6111.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "세종특별자치시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2020",
+      "value": 6276.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "세종특별자치시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2021",
+      "value": 5937.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "세종특별자치시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2022",
+      "value": 6575.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "세종특별자치시 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2023",
+      "value": 7603.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "세종특별자치시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2019",
+      "value": 340575.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "세종특별자치시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2020",
+      "value": 355831.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "세종특별자치시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2021",
+      "value": 371895.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "세종특별자치시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2022",
+      "value": 383591.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "세종특별자치시 - 주민등록인구＜br＞(B)",
+      "timestamp": "2023",
+      "value": 386525.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "세종특별자치시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2019",
+      "value": 17.9,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "세종특별자치시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2020",
+      "value": 17.6,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "세종특별자치시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2021",
+      "value": 16.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "세종특별자치시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2022",
+      "value": 17.1,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "세종특별자치시 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2023",
+      "value": 19.7,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2005",
+      "value": 342107.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경기도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2006",
+      "value": 342659.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경기도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2007",
+      "value": 374596.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경기도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2008",
+      "value": 484617.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경기도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2009",
+      "value": 444851.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경기도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2010",
+      "value": 358597.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경기도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2011",
+      "value": 369543.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경기도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2012",
+      "value": 385811.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경기도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2013",
+      "value": 401963.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경기도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2014",
+      "value": 404390.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경기도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2015",
+      "value": 430790.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경기도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2016",
+      "value": 476348.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경기도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2017",
+      "value": 417066.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경기도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2018",
+      "value": 388938.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경기도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2019",
+      "value": 394276.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경기도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2020",
+      "value": 394226.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경기도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2021",
+      "value": 357243.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경기도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2022",
+      "value": 364534.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경기도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2023",
+      "value": 378157.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경기도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2005",
+      "value": 10697215.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경기도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2006",
+      "value": 10906033.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경기도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2007",
+      "value": 11106211.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경기도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2008",
+      "value": 11292264.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경기도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2009",
+      "value": 11460610.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경기도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2010",
+      "value": 11786622.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경기도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2011",
+      "value": 11937415.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경기도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2012",
+      "value": 12093299.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경기도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2013",
+      "value": 12234630.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경기도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2014",
+      "value": 12357830.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경기도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2015",
+      "value": 12522606.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경기도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2016",
+      "value": 12716780.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경기도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2017",
+      "value": 12873895.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경기도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2018",
+      "value": 13077153.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경기도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2019",
+      "value": 13239666.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경기도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2020",
+      "value": 13427014.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경기도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2021",
+      "value": 13565450.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경기도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2022",
+      "value": 13589432.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경기도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2023",
+      "value": 13630821.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경기도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2005",
+      "value": 32.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2006",
+      "value": 31.4,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2007",
+      "value": 33.7,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2008",
+      "value": 42.9,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2009",
+      "value": 38.8,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2010",
+      "value": 30.4,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2011",
+      "value": 31.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2012",
+      "value": 31.9,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2013",
+      "value": 32.9,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2014",
+      "value": 32.7,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2015",
+      "value": 34.4,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2016",
+      "value": 37.5,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2017",
+      "value": 32.4,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2018",
+      "value": 29.7,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2019",
+      "value": 29.8,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2020",
+      "value": 29.4,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2021",
+      "value": 26.3,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2022",
+      "value": 26.8,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2023",
+      "value": 27.7,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2005",
+      "value": 61157.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "강원특별자치도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2006",
+      "value": 58027.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "강원특별자치도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2007",
+      "value": 62470.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "강원특별자치도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2008",
+      "value": 60197.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "강원특별자치도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2009",
+      "value": 59247.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "강원특별자치도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2010",
+      "value": 57289.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "강원특별자치도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2011",
+      "value": 55061.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "강원특별자치도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2012",
+      "value": 59087.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "강원특별자치도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2013",
+      "value": 58533.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "강원특별자치도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2014",
+      "value": 53722.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "강원특별자치도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2015",
+      "value": 56928.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "강원특별자치도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2016",
+      "value": 58814.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "강원특별자치도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2017",
+      "value": 53171.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "강원특별자치도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2018",
+      "value": 45233.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "강원특별자치도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2019",
+      "value": 46096.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "강원특별자치도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2020",
+      "value": 44571.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "강원특별자치도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2021",
+      "value": 39593.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "강원특별자치도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2022",
+      "value": 41715.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "강원특별자치도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2023",
+      "value": 43173.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "강원특별자치도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2005",
+      "value": 1513110.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "강원특별자치도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2006",
+      "value": 1505420.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "강원특별자치도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2007",
+      "value": 1503806.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "강원특별자치도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2008",
+      "value": 1508575.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "강원특별자치도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2009",
+      "value": 1512870.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "강원특별자치도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2010",
+      "value": 1529818.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "강원특별자치도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2011",
+      "value": 1536448.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "강원특별자치도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2012",
+      "value": 1538630.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "강원특별자치도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2013",
+      "value": 1542263.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "강원특별자치도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2014",
+      "value": 1544442.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "강원특별자치도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2015",
+      "value": 1549507.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "강원특별자치도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2016",
+      "value": 1550806.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "강원특별자치도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2017",
+      "value": 1550142.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "강원특별자치도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2018",
+      "value": 1543052.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "강원특별자치도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2019",
+      "value": 1541502.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "강원특별자치도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2020",
+      "value": 1542840.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "강원특별자치도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2021",
+      "value": 1538492.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "강원특별자치도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2022",
+      "value": 1536498.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "강원특별자치도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2023",
+      "value": 1527807.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "강원특별자치도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2005",
+      "value": 40.4,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2006",
+      "value": 38.5,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2007",
+      "value": 41.5,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2008",
+      "value": 39.9,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2009",
+      "value": 39.2,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2010",
+      "value": 37.4,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2011",
+      "value": 35.8,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2012",
+      "value": 38.4,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2013",
+      "value": 38.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2014",
+      "value": 34.8,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2015",
+      "value": 36.7,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2016",
+      "value": 37.9,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2017",
+      "value": 34.3,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2018",
+      "value": 29.3,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2019",
+      "value": 29.9,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2020",
+      "value": 28.9,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2021",
+      "value": 25.7,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2022",
+      "value": 27.1,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2023",
+      "value": 28.3,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2005",
+      "value": 56552.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "충청북도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2006",
+      "value": 52662.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "충청북도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2007",
+      "value": 60902.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "충청북도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2008",
+      "value": 63243.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "충청북도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2009",
+      "value": 58990.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "충청북도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2010",
+      "value": 54370.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "충청북도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2011",
+      "value": 48236.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "충청북도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2012",
+      "value": 50477.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "충청북도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2013",
+      "value": 52065.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "충청북도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2014",
+      "value": 50857.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "충청북도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2015",
+      "value": 53703.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "충청북도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2016",
+      "value": 56179.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "충청북도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2017",
+      "value": 50387.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "충청북도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2018",
+      "value": 48315.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "충청북도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2019",
+      "value": 48085.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "충청북도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2020",
+      "value": 47864.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "충청북도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2021",
+      "value": 43397.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "충청북도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2022",
+      "value": 44055.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "충청북도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2023",
+      "value": 42517.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "충청북도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2005",
+      "value": 1488803.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "충청북도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2006",
+      "value": 1494559.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "충청북도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2007",
+      "value": 1506608.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "충청북도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2008",
+      "value": 1519587.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "충청북도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2009",
+      "value": 1527478.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "충청북도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2010",
+      "value": 1549528.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "충청북도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2011",
+      "value": 1562903.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "충청북도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2012",
+      "value": 1565628.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "충청북도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2013",
+      "value": 1572732.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "충청북도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2014",
+      "value": 1578933.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "충청북도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2015",
+      "value": 1583952.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "충청북도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2016",
+      "value": 1591625.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "충청북도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2017",
+      "value": 1594432.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "충청북도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2018",
+      "value": 1599252.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "충청북도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2019",
+      "value": 1600007.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "충청북도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2020",
+      "value": 1600837.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "충청북도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2021",
+      "value": 1597427.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "충청북도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2022",
+      "value": 1595058.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "충청북도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2023",
+      "value": 1593469.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "충청북도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2005",
+      "value": 38.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2006",
+      "value": 35.2,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2007",
+      "value": 40.4,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2008",
+      "value": 41.6,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2009",
+      "value": 38.6,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2010",
+      "value": 35.1,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2011",
+      "value": 30.9,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2012",
+      "value": 32.2,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2013",
+      "value": 33.1,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2014",
+      "value": 32.2,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2015",
+      "value": 33.9,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2016",
+      "value": 35.3,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2017",
+      "value": 31.6,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2018",
+      "value": 30.2,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2019",
+      "value": 30.1,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2020",
+      "value": 29.9,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2021",
+      "value": 27.2,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2022",
+      "value": 27.6,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2023",
+      "value": 26.7,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2005",
+      "value": 74922.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "충청남도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2006",
+      "value": 68268.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "충청남도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2007",
+      "value": 72749.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "충청남도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2008",
+      "value": 73623.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "충청남도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2009",
+      "value": 73857.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "충청남도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2010",
+      "value": 70989.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "충청남도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2011",
+      "value": 63054.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "충청남도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2012",
+      "value": 67554.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "충청남도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2013",
+      "value": 70573.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "충청남도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2014",
+      "value": 71136.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "충청남도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2015",
+      "value": 73409.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "충청남도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2016",
+      "value": 72072.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "충청남도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2017",
+      "value": 67276.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "충청남도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2018",
+      "value": 68577.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "충청남도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2019",
+      "value": 62666.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "충청남도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2020",
+      "value": 61612.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "충청남도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2021",
+      "value": 54223.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "충청남도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2022",
+      "value": 59196.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "충청남도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2023",
+      "value": 61507.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "충청남도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2005",
+      "value": 1962646.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "충청남도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2006",
+      "value": 1974433.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "충청남도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2007",
+      "value": 1995531.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "충청남도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2008",
+      "value": 2018537.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "충청남도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2009",
+      "value": 2037582.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "충청남도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2010",
+      "value": 2075514.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "충청남도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2011",
+      "value": 2101284.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "충청남도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2012",
+      "value": 2141894.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "충청남도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2013",
+      "value": 2169784.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "충청남도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2014",
+      "value": 2218398.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "충청남도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2015",
+      "value": 2288533.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "충청남도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2016",
+      "value": 2339775.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "충청남도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2017",
+      "value": 2396870.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "충청남도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2018",
+      "value": 2440408.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "충청남도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2019",
+      "value": 2123709.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "충청남도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2020",
+      "value": 2121029.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "충청남도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2021",
+      "value": 2119257.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "충청남도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2022",
+      "value": 2123037.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "충청남도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2023",
+      "value": 2130119.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "충청남도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2005",
+      "value": 38.2,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2006",
+      "value": 34.6,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2007",
+      "value": 36.5,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2008",
+      "value": 36.5,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2009",
+      "value": 36.2,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2010",
+      "value": 34.2,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2011",
+      "value": 30.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2012",
+      "value": 31.5,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2013",
+      "value": 32.5,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2014",
+      "value": 32.1,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2015",
+      "value": 32.1,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2016",
+      "value": 30.8,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2017",
+      "value": 28.1,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2018",
+      "value": 28.1,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2019",
+      "value": 29.5,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2020",
+      "value": 29.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2021",
+      "value": 25.6,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2022",
+      "value": 27.9,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2023",
+      "value": 28.9,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2005",
+      "value": 59487.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전북특별자치도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2006",
+      "value": 58152.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전북특별자치도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2007",
+      "value": 56813.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전북특별자치도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2008",
+      "value": 60895.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전북특별자치도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2009",
+      "value": 62911.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전북특별자치도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2010",
+      "value": 61757.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전북특별자치도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2011",
+      "value": 58570.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전북특별자치도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2012",
+      "value": 62200.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전북특별자치도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2013",
+      "value": 59906.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전북특별자치도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2014",
+      "value": 56642.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전북특별자치도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2015",
+      "value": 57342.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전북특별자치도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2016",
+      "value": 53375.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전북특별자치도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2017",
+      "value": 48979.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전북특별자치도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2018",
+      "value": 47944.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전북특별자치도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2019",
+      "value": 48252.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전북특별자치도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2020",
+      "value": 47446.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전북특별자치도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2021",
+      "value": 43650.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전북특별자치도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2022",
+      "value": 45199.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전북특별자치도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2023",
+      "value": 46143.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전북특별자치도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2005",
+      "value": 1885335.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전북특별자치도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2006",
+      "value": 1868365.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전북특별자치도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2007",
+      "value": 1862277.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전북특별자치도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2008",
+      "value": 1855772.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전북특별자치도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2009",
+      "value": 1854508.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전북특별자치도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2010",
+      "value": 1868963.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전북특별자치도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2011",
+      "value": 1874031.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전북특별자치도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2012",
+      "value": 1873341.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전북특별자치도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2013",
+      "value": 1872965.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전북특별자치도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2014",
+      "value": 1871560.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전북특별자치도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2015",
+      "value": 1869711.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전북특별자치도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2016",
+      "value": 1864791.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전북특별자치도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2017",
+      "value": 1854607.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전북특별자치도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2018",
+      "value": 1836832.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전북특별자치도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2019",
+      "value": 1818917.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전북특별자치도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2020",
+      "value": 1804104.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전북특별자치도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2021",
+      "value": 1786855.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전북특별자치도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2022",
+      "value": 1769607.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전북특별자치도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2023",
+      "value": 1754757.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전북특별자치도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2005",
+      "value": 31.6,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2006",
+      "value": 31.1,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2007",
+      "value": 30.5,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2008",
+      "value": 32.8,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2009",
+      "value": 33.9,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2010",
+      "value": 33.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2011",
+      "value": 31.3,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2012",
+      "value": 33.2,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2013",
+      "value": 32.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2014",
+      "value": 30.3,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2015",
+      "value": 30.7,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2016",
+      "value": 28.6,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2017",
+      "value": 26.4,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2018",
+      "value": 26.1,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2019",
+      "value": 26.5,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2020",
+      "value": 26.3,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2021",
+      "value": 24.4,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2022",
+      "value": 25.5,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2023",
+      "value": 26.3,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2005",
+      "value": 69175.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전라남도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2006",
+      "value": 65244.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전라남도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2007",
+      "value": 70871.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전라남도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2008",
+      "value": 72467.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전라남도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2009",
+      "value": 70933.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전라남도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2010",
+      "value": 71326.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전라남도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2011",
+      "value": 63780.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전라남도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2012",
+      "value": 63187.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전라남도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2013",
+      "value": 65888.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전라남도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2014",
+      "value": 63197.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전라남도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2015",
+      "value": 66643.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전라남도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2016",
+      "value": 62794.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전라남도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2017",
+      "value": 53892.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전라남도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2018",
+      "value": 50993.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전라남도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2019",
+      "value": 52698.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전라남도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2020",
+      "value": 51519.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전라남도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2021",
+      "value": 48380.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전라남도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2022",
+      "value": 48062.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전라남도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2023",
+      "value": 49909.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전라남도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2005",
+      "value": 1967205.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전라남도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2006",
+      "value": 1942925.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전라남도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2007",
+      "value": 1929836.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전라남도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2008",
+      "value": 1919000.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전라남도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2009",
+      "value": 1913004.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전라남도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2010",
+      "value": 1918485.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전라남도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2011",
+      "value": 1914339.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전라남도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2012",
+      "value": 1909618.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전라남도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2013",
+      "value": 1907172.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전라남도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2014",
+      "value": 1905780.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전라남도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2015",
+      "value": 1908996.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전라남도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2016",
+      "value": 1903914.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전라남도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2017",
+      "value": 1896424.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전라남도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2018",
+      "value": 1882970.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전라남도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2019",
+      "value": 1868745.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전라남도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2020",
+      "value": 1851549.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전라남도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2021",
+      "value": 1832803.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전라남도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2022",
+      "value": 1817697.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전라남도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2023",
+      "value": 1804217.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전라남도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2005",
+      "value": 35.2,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2006",
+      "value": 33.6,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2007",
+      "value": 36.7,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2008",
+      "value": 37.8,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2009",
+      "value": 37.1,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2010",
+      "value": 37.2,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2011",
+      "value": 33.3,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2012",
+      "value": 33.1,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2013",
+      "value": 34.5,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2014",
+      "value": 33.2,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2015",
+      "value": 34.9,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2016",
+      "value": 33.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2017",
+      "value": 28.4,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2018",
+      "value": 27.1,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2019",
+      "value": 28.2,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2020",
+      "value": 27.8,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2021",
+      "value": 26.4,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2022",
+      "value": 26.4,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2023",
+      "value": 27.7,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2005",
+      "value": 91934.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경상북도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2006",
+      "value": 90543.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경상북도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2007",
+      "value": 97891.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경상북도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2008",
+      "value": 105865.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경상북도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2009",
+      "value": 104420.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경상북도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2010",
+      "value": 99078.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경상북도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2011",
+      "value": 90480.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경상북도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2012",
+      "value": 93072.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경상북도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2013",
+      "value": 98162.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경상북도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2014",
+      "value": 88938.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경상북도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2015",
+      "value": 91876.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경상북도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2016",
+      "value": 88059.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경상북도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2017",
+      "value": 80061.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경상북도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2018",
+      "value": 74356.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경상북도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2019",
+      "value": 77449.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경상북도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2020",
+      "value": 73762.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경상북도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2021",
+      "value": 65553.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경상북도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2022",
+      "value": 66928.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경상북도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2023",
+      "value": 67953.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경상북도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2005",
+      "value": 2688491.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경상북도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2006",
+      "value": 2688577.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경상북도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2007",
+      "value": 2681364.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경상북도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2008",
+      "value": 2673931.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경상북도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2009",
+      "value": 2669876.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경상북도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2010",
+      "value": 2689920.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경상북도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2011",
+      "value": 2699195.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경상북도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2012",
+      "value": 2698353.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경상북도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2013",
+      "value": 2699440.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경상북도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2014",
+      "value": 2700794.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경상북도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2015",
+      "value": 2702826.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경상북도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2016",
+      "value": 2700398.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경상북도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2017",
+      "value": 2691706.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경상북도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2018",
+      "value": 2676831.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경상북도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2019",
+      "value": 2665836.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경상북도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2020",
+      "value": 2639422.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경상북도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2021",
+      "value": 2626609.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경상북도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2022",
+      "value": 2600492.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경상북도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2023",
+      "value": 2554324.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경상북도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2005",
+      "value": 34.2,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2006",
+      "value": 33.7,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2007",
+      "value": 36.5,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2008",
+      "value": 39.6,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2009",
+      "value": 39.1,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2010",
+      "value": 36.8,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2011",
+      "value": 33.5,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2012",
+      "value": 34.5,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2013",
+      "value": 36.4,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2014",
+      "value": 32.9,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2015",
+      "value": 34.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2016",
+      "value": 32.6,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2017",
+      "value": 29.7,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2018",
+      "value": 27.8,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2019",
+      "value": 29.1,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2020",
+      "value": 27.9,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2021",
+      "value": 25.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2022",
+      "value": 25.7,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2023",
+      "value": 26.6,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2005",
+      "value": 106207.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경상남도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2006",
+      "value": 103932.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경상남도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2007",
+      "value": 124521.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경상남도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2008",
+      "value": 135012.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경상남도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2009",
+      "value": 131763.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경상남도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2010",
+      "value": 128394.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경상남도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2011",
+      "value": 120418.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경상남도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2012",
+      "value": 112208.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경상남도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2013",
+      "value": 116609.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경상남도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2014",
+      "value": 112253.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경상남도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2015",
+      "value": 118843.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경상남도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2016",
+      "value": 114410.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경상남도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2017",
+      "value": 100775.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경상남도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2018",
+      "value": 90267.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경상남도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2019",
+      "value": 96212.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경상남도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2020",
+      "value": 97998.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경상남도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2021",
+      "value": 87879.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경상남도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2022",
+      "value": 88852.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경상남도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2023",
+      "value": 90536.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경상남도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2005",
+      "value": 3160431.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경상남도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2006",
+      "value": 3172857.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경상남도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2007",
+      "value": 3196953.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경상남도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2008",
+      "value": 3225255.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경상남도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2009",
+      "value": 3250176.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경상남도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2010",
+      "value": 3290536.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경상남도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2011",
+      "value": 3308765.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경상남도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2012",
+      "value": 3319314.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경상남도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2013",
+      "value": 3333820.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경상남도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2014",
+      "value": 3350257.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경상남도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2015",
+      "value": 3364702.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경상남도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2016",
+      "value": 3373871.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경상남도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2017",
+      "value": 3380404.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경상남도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2018",
+      "value": 3373988.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경상남도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2019",
+      "value": 3362553.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경상남도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2020",
+      "value": 3340216.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경상남도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2021",
+      "value": 3314183.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경상남도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2022",
+      "value": 3280493.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경상남도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2023",
+      "value": 3251158.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경상남도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2005",
+      "value": 33.6,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2006",
+      "value": 32.8,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2007",
+      "value": 38.9,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2008",
+      "value": 41.9,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2009",
+      "value": 40.5,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2010",
+      "value": 39.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2011",
+      "value": 36.4,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2012",
+      "value": 33.8,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2013",
+      "value": 35.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2014",
+      "value": 33.5,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2015",
+      "value": 35.3,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2016",
+      "value": 33.9,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2017",
+      "value": 29.8,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2018",
+      "value": 26.8,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2019",
+      "value": 28.6,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2020",
+      "value": 29.3,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2021",
+      "value": 26.5,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2022",
+      "value": 27.1,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2023",
+      "value": 27.8,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2005",
+      "value": 25284.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "제주특별자치도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2006",
+      "value": 24556.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "제주특별자치도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2007",
+      "value": 23093.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "제주특별자치도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2008",
+      "value": 27138.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "제주특별자치도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2009",
+      "value": 24104.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "제주특별자치도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2010",
+      "value": 25334.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "제주특별자치도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2011",
+      "value": 24706.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "제주특별자치도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2012",
+      "value": 26284.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "제주특별자치도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2013",
+      "value": 31223.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "제주특별자치도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2014",
+      "value": 31254.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "제주특별자치도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2015",
+      "value": 33819.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "제주특별자치도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2016",
+      "value": 35003.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "제주특별자치도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2017",
+      "value": 31368.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "제주특별자치도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2018",
+      "value": 27427.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "제주특별자치도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2019",
+      "value": 26090.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "제주특별자치도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2020",
+      "value": 27129.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "제주특별자치도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2021",
+      "value": 25515.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "제주특별자치도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2022",
+      "value": 26103.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "제주특별자치도 - 범죄발생건수＜br＞(A)",
+      "timestamp": "2023",
+      "value": 26836.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "제주특별자치도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2005",
+      "value": 557569.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "제주특별자치도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2006",
+      "value": 558496.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "제주특별자치도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2007",
+      "value": 559258.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "제주특별자치도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2008",
+      "value": 560618.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "제주특별자치도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2009",
+      "value": 562663.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "제주특별자치도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2010",
+      "value": 571255.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "제주특별자치도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2011",
+      "value": 576156.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "제주특별자치도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2012",
+      "value": 583713.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "제주특별자치도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2013",
+      "value": 593806.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "제주특별자치도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2014",
+      "value": 607346.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "제주특별자치도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2015",
+      "value": 624395.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "제주특별자치도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2016",
+      "value": 641597.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "제주특별자치도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2017",
+      "value": 657083.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "제주특별자치도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2018",
+      "value": 667191.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "제주특별자치도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2019",
+      "value": 670989.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "제주특별자치도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2020",
+      "value": 674635.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "제주특별자치도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2021",
+      "value": 676759.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "제주특별자치도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2022",
+      "value": 678159.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "제주특별자치도 - 주민등록인구＜br＞(B)",
+      "timestamp": "2023",
+      "value": 675252.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "제주특별자치도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2005",
+      "value": 45.3,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2006",
+      "value": 44.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2007",
+      "value": 41.3,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2008",
+      "value": 48.4,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2009",
+      "value": 42.8,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2010",
+      "value": 44.3,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2011",
+      "value": 42.9,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2012",
+      "value": 45.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2013",
+      "value": 52.6,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2014",
+      "value": 51.5,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2015",
+      "value": 54.2,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2016",
+      "value": 54.6,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2017",
+      "value": 47.7,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2018",
+      "value": 41.1,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2019",
+      "value": 38.9,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2020",
+      "value": 40.2,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2021",
+      "value": 37.7,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2022",
+      "value": 38.5,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 인구 천명당 범죄발생건수＜br＞(A÷B×1000)",
+      "timestamp": "2023",
+      "value": 39.7,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    }
+  ]
+}

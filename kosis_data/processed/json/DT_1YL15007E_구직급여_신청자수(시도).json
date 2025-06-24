@@ -1,0 +1,7030 @@
+{
+  "metadata": {
+    "org_id": "101",
+    "org_name": "통계청",
+    "table_id": "DT_1YL15007E",
+    "table_name": "구직급여 신청자수(시도)",
+    "stat_id": "9B08007",
+    "stat_name": "e-지방지표",
+    "date_range": "2015 ~ 2025",
+    "description": "행정구역별 구직급여 신청자수 부산광역시 대전광역시 경상북도 세종특별자치시 서울특별시 제주특별자치도 울산광역시 대구광역시 전북특별자치도 전국 전라남도 기타 인천광역시 경기도 충청북도 충청남도 광주광역시 강원특별자치도 경상남도",
+    "item_info": "■  자료제공처:  통계청 지역통계기획팀 ■  자료원출처:  고용노동부(구직급여신청동향) ■  자료제공주기:  분기 ■  자료제공시기:  작성기준분기 익익월 □  정의  - 구직급여 신청자수: 구직급여 수급자격 판단 이전의 순수 신규 신청자의 수 □  의의  - 구직급여 신청자 규모는 경제활동인구나 전체 실업자에서 차지하는 비중이 작음. 따라서, 전반적인 경기 상황을 반영한다고 보는 것은 곤란하며, 고용시장 현황 파악을 위한 참고자료로 활용 □  용어  - 구직급여 신청자수: 수급자격 미충족 대상자도 포함하며 임금근로자 외 자영업자, 무급가족종사자 등 비임금근로자 제외 - 2015년 1분기~2017년 2분기까지 세종특별자치시는 충남 지역에 포함 - 구직급여 신청자 규모는 경제활동인구나 전체 실업자에서 차지하는 비중이 작음. 따라서, 전반적인 경기 상황을 반영한다고 보는 것은 곤란하며, 고용시장 현황 파악을 위한 참고자료로 활용 - 행정통계 특성상 월 통계 집계 후 신청 취소, 중복 신청 제거 등이 발생하여 월 통계의 합계가 분기 통계와 상이할 수 있음 - ＇19.10.1부터 구직급여 지급요건, 지급수준, 지급기간 등이 변경되어, 기존 구직급여 신청 및 지급현황 통계와 시계열 단절이 발생하므로 전년동기대비 비교는 부적절",
+    "source_url": "http://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1YL15007E",
+    "last_updated": "2025-06-24T18:14:12.440526",
+    "period_type": "M",
+    "period_name": "월간"
+  },
+  "data": [
+    {
+      "item": "전국 - 구직급여 신청자수",
+      "timestamp": "201501",
+      "value": 303417.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전국 - 구직급여 신청자수",
+      "timestamp": "201502",
+      "value": 225280.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전국 - 구직급여 신청자수",
+      "timestamp": "201503",
+      "value": 211659.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전국 - 구직급여 신청자수",
+      "timestamp": "201504",
+      "value": 211382.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전국 - 구직급여 신청자수",
+      "timestamp": "201601",
+      "value": 307270.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전국 - 구직급여 신청자수",
+      "timestamp": "201602",
+      "value": 223801.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전국 - 구직급여 신청자수",
+      "timestamp": "201603",
+      "value": 208254.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전국 - 구직급여 신청자수",
+      "timestamp": "201604",
+      "value": 215675.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전국 - 구직급여 신청자수",
+      "timestamp": "201701",
+      "value": 298626.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전국 - 구직급여 신청자수",
+      "timestamp": "201702",
+      "value": 218667.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전국 - 구직급여 신청자수",
+      "timestamp": "201703",
+      "value": 219360.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전국 - 구직급여 신청자수",
+      "timestamp": "201704",
+      "value": 203448.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전국 - 구직급여 신청자수",
+      "timestamp": "201801",
+      "value": 345314.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전국 - 구직급여 신청자수",
+      "timestamp": "201802",
+      "value": 242404.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전국 - 구직급여 신청자수",
+      "timestamp": "201803",
+      "value": 235125.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전국 - 구직급여 신청자수",
+      "timestamp": "201804",
+      "value": 239979.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전국 - 구직급여 신청자수",
+      "timestamp": "201901",
+      "value": 376482.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전국 - 구직급여 신청자수",
+      "timestamp": "201902",
+      "value": 256975.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전국 - 구직급여 신청자수",
+      "timestamp": "201903",
+      "value": 249557.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전국 - 구직급여 신청자수",
+      "timestamp": "201904",
+      "value": 264886.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전국 - 구직급여 신청자수",
+      "timestamp": "202001",
+      "value": 437343.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전국 - 구직급여 신청자수",
+      "timestamp": "202002",
+      "value": 345361.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전국 - 구직급여 신청자수",
+      "timestamp": "202003",
+      "value": 303402.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전국 - 구직급여 신청자수",
+      "timestamp": "202004",
+      "value": 285627.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전국 - 구직급여 신청자수",
+      "timestamp": "202101",
+      "value": 470196.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전국 - 구직급여 신청자수",
+      "timestamp": "202102",
+      "value": 280389.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전국 - 구직급여 신청자수",
+      "timestamp": "202103",
+      "value": 269063.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전국 - 구직급여 신청자수",
+      "timestamp": "202104",
+      "value": 268844.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전국 - 구직급여 신청자수",
+      "timestamp": "202201",
+      "value": 413704.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전국 - 구직급여 신청자수",
+      "timestamp": "202202",
+      "value": 262368.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전국 - 구직급여 신청자수",
+      "timestamp": "202203",
+      "value": 261310.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전국 - 구직급여 신청자수",
+      "timestamp": "202204",
+      "value": 261354.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전국 - 구직급여 신청자수",
+      "timestamp": "202301",
+      "value": 439802.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전국 - 구직급여 신청자수",
+      "timestamp": "202302",
+      "value": 269573.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전국 - 구직급여 신청자수",
+      "timestamp": "202303",
+      "value": 272450.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전국 - 구직급여 신청자수",
+      "timestamp": "202304",
+      "value": 260302.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전국 - 구직급여 신청자수",
+      "timestamp": "202401",
+      "value": 425614.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전국 - 구직급여 신청자수",
+      "timestamp": "202402",
+      "value": 272773.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전국 - 구직급여 신청자수",
+      "timestamp": "202403",
+      "value": 279094.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전국 - 구직급여 신청자수",
+      "timestamp": "202404",
+      "value": 280510.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전국 - 구직급여 신청자수",
+      "timestamp": "202501",
+      "value": 439265.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "서울특별시 - 구직급여 신청자수",
+      "timestamp": "201501",
+      "value": 63123.0,
+      "item_codes": {
+        "C1": "01"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "서울특별시 - 구직급여 신청자수",
+      "timestamp": "201502",
+      "value": 48611.0,
+      "item_codes": {
+        "C1": "01"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "서울특별시 - 구직급여 신청자수",
+      "timestamp": "201503",
+      "value": 46286.0,
+      "item_codes": {
+        "C1": "01"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "서울특별시 - 구직급여 신청자수",
+      "timestamp": "201504",
+      "value": 44430.0,
+      "item_codes": {
+        "C1": "01"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "서울특별시 - 구직급여 신청자수",
+      "timestamp": "201601",
+      "value": 62048.0,
+      "item_codes": {
+        "C1": "01"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "서울특별시 - 구직급여 신청자수",
+      "timestamp": "201602",
+      "value": 46076.0,
+      "item_codes": {
+        "C1": "01"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "서울특별시 - 구직급여 신청자수",
+      "timestamp": "201603",
+      "value": 43758.0,
+      "item_codes": {
+        "C1": "01"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "서울특별시 - 구직급여 신청자수",
+      "timestamp": "201604",
+      "value": 44410.0,
+      "item_codes": {
+        "C1": "01"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "서울특별시 - 구직급여 신청자수",
+      "timestamp": "201701",
+      "value": 59403.0,
+      "item_codes": {
+        "C1": "01"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "서울특별시 - 구직급여 신청자수",
+      "timestamp": "201702",
+      "value": 44503.0,
+      "item_codes": {
+        "C1": "01"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "서울특별시 - 구직급여 신청자수",
+      "timestamp": "201703",
+      "value": 44530.0,
+      "item_codes": {
+        "C1": "01"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "서울특별시 - 구직급여 신청자수",
+      "timestamp": "201704",
+      "value": 41177.0,
+      "item_codes": {
+        "C1": "01"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "서울특별시 - 구직급여 신청자수",
+      "timestamp": "201801",
+      "value": 67974.0,
+      "item_codes": {
+        "C1": "01"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "서울특별시 - 구직급여 신청자수",
+      "timestamp": "201802",
+      "value": 46156.0,
+      "item_codes": {
+        "C1": "01"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "서울특별시 - 구직급여 신청자수",
+      "timestamp": "201803",
+      "value": 45374.0,
+      "item_codes": {
+        "C1": "01"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "서울특별시 - 구직급여 신청자수",
+      "timestamp": "201804",
+      "value": 45791.0,
+      "item_codes": {
+        "C1": "01"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "서울특별시 - 구직급여 신청자수",
+      "timestamp": "201901",
+      "value": 71733.0,
+      "item_codes": {
+        "C1": "01"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "서울특별시 - 구직급여 신청자수",
+      "timestamp": "201902",
+      "value": 49035.0,
+      "item_codes": {
+        "C1": "01"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "서울특별시 - 구직급여 신청자수",
+      "timestamp": "201903",
+      "value": 48558.0,
+      "item_codes": {
+        "C1": "01"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "서울특별시 - 구직급여 신청자수",
+      "timestamp": "201904",
+      "value": 50325.0,
+      "item_codes": {
+        "C1": "01"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "서울특별시 - 구직급여 신청자수",
+      "timestamp": "202001",
+      "value": 83615.0,
+      "item_codes": {
+        "C1": "01"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "서울특별시 - 구직급여 신청자수",
+      "timestamp": "202002",
+      "value": 68906.0,
+      "item_codes": {
+        "C1": "01"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "서울특별시 - 구직급여 신청자수",
+      "timestamp": "202003",
+      "value": 60556.0,
+      "item_codes": {
+        "C1": "01"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "서울특별시 - 구직급여 신청자수",
+      "timestamp": "202004",
+      "value": 56752.0,
+      "item_codes": {
+        "C1": "01"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "서울특별시 - 구직급여 신청자수",
+      "timestamp": "202101",
+      "value": 87530.0,
+      "item_codes": {
+        "C1": "01"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "서울특별시 - 구직급여 신청자수",
+      "timestamp": "202102",
+      "value": 51172.0,
+      "item_codes": {
+        "C1": "01"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "서울특별시 - 구직급여 신청자수",
+      "timestamp": "202103",
+      "value": 50575.0,
+      "item_codes": {
+        "C1": "01"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "서울특별시 - 구직급여 신청자수",
+      "timestamp": "202104",
+      "value": 48373.0,
+      "item_codes": {
+        "C1": "01"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "서울특별시 - 구직급여 신청자수",
+      "timestamp": "202201",
+      "value": 74457.0,
+      "item_codes": {
+        "C1": "01"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "서울특별시 - 구직급여 신청자수",
+      "timestamp": "202202",
+      "value": 48907.0,
+      "item_codes": {
+        "C1": "01"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "서울특별시 - 구직급여 신청자수",
+      "timestamp": "202203",
+      "value": 48833.0,
+      "item_codes": {
+        "C1": "01"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "서울특별시 - 구직급여 신청자수",
+      "timestamp": "202204",
+      "value": 47115.0,
+      "item_codes": {
+        "C1": "01"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "서울특별시 - 구직급여 신청자수",
+      "timestamp": "202301",
+      "value": 78597.0,
+      "item_codes": {
+        "C1": "01"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "서울특별시 - 구직급여 신청자수",
+      "timestamp": "202302",
+      "value": 50676.0,
+      "item_codes": {
+        "C1": "01"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "서울특별시 - 구직급여 신청자수",
+      "timestamp": "202303",
+      "value": 52523.0,
+      "item_codes": {
+        "C1": "01"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "서울특별시 - 구직급여 신청자수",
+      "timestamp": "202304",
+      "value": 47603.0,
+      "item_codes": {
+        "C1": "01"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "서울특별시 - 구직급여 신청자수",
+      "timestamp": "202401",
+      "value": 77555.0,
+      "item_codes": {
+        "C1": "01"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "서울특별시 - 구직급여 신청자수",
+      "timestamp": "202402",
+      "value": 51742.0,
+      "item_codes": {
+        "C1": "01"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "서울특별시 - 구직급여 신청자수",
+      "timestamp": "202403",
+      "value": 52929.0,
+      "item_codes": {
+        "C1": "01"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "서울특별시 - 구직급여 신청자수",
+      "timestamp": "202404",
+      "value": 51211.0,
+      "item_codes": {
+        "C1": "01"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "서울특별시 - 구직급여 신청자수",
+      "timestamp": "202501",
+      "value": 77731.0,
+      "item_codes": {
+        "C1": "01"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "부산광역시 - 구직급여 신청자수",
+      "timestamp": "201501",
+      "value": 21665.0,
+      "item_codes": {
+        "C1": "02"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "부산광역시 - 구직급여 신청자수",
+      "timestamp": "201502",
+      "value": 16548.0,
+      "item_codes": {
+        "C1": "02"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "부산광역시 - 구직급여 신청자수",
+      "timestamp": "201503",
+      "value": 15933.0,
+      "item_codes": {
+        "C1": "02"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "부산광역시 - 구직급여 신청자수",
+      "timestamp": "201504",
+      "value": 15982.0,
+      "item_codes": {
+        "C1": "02"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "부산광역시 - 구직급여 신청자수",
+      "timestamp": "201601",
+      "value": 22302.0,
+      "item_codes": {
+        "C1": "02"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "부산광역시 - 구직급여 신청자수",
+      "timestamp": "201602",
+      "value": 17787.0,
+      "item_codes": {
+        "C1": "02"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "부산광역시 - 구직급여 신청자수",
+      "timestamp": "201603",
+      "value": 16691.0,
+      "item_codes": {
+        "C1": "02"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "부산광역시 - 구직급여 신청자수",
+      "timestamp": "201604",
+      "value": 17722.0,
+      "item_codes": {
+        "C1": "02"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "부산광역시 - 구직급여 신청자수",
+      "timestamp": "201701",
+      "value": 22417.0,
+      "item_codes": {
+        "C1": "02"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "부산광역시 - 구직급여 신청자수",
+      "timestamp": "201702",
+      "value": 17713.0,
+      "item_codes": {
+        "C1": "02"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "부산광역시 - 구직급여 신청자수",
+      "timestamp": "201703",
+      "value": 18061.0,
+      "item_codes": {
+        "C1": "02"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "부산광역시 - 구직급여 신청자수",
+      "timestamp": "201704",
+      "value": 16610.0,
+      "item_codes": {
+        "C1": "02"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "부산광역시 - 구직급여 신청자수",
+      "timestamp": "201801",
+      "value": 25786.0,
+      "item_codes": {
+        "C1": "02"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "부산광역시 - 구직급여 신청자수",
+      "timestamp": "201802",
+      "value": 20181.0,
+      "item_codes": {
+        "C1": "02"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "부산광역시 - 구직급여 신청자수",
+      "timestamp": "201803",
+      "value": 19138.0,
+      "item_codes": {
+        "C1": "02"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "부산광역시 - 구직급여 신청자수",
+      "timestamp": "201804",
+      "value": 19368.0,
+      "item_codes": {
+        "C1": "02"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "부산광역시 - 구직급여 신청자수",
+      "timestamp": "201901",
+      "value": 27805.0,
+      "item_codes": {
+        "C1": "02"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "부산광역시 - 구직급여 신청자수",
+      "timestamp": "201902",
+      "value": 20908.0,
+      "item_codes": {
+        "C1": "02"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "부산광역시 - 구직급여 신청자수",
+      "timestamp": "201903",
+      "value": 19486.0,
+      "item_codes": {
+        "C1": "02"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "부산광역시 - 구직급여 신청자수",
+      "timestamp": "201904",
+      "value": 20496.0,
+      "item_codes": {
+        "C1": "02"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "부산광역시 - 구직급여 신청자수",
+      "timestamp": "202001",
+      "value": 31260.0,
+      "item_codes": {
+        "C1": "02"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "부산광역시 - 구직급여 신청자수",
+      "timestamp": "202002",
+      "value": 26750.0,
+      "item_codes": {
+        "C1": "02"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "부산광역시 - 구직급여 신청자수",
+      "timestamp": "202003",
+      "value": 23130.0,
+      "item_codes": {
+        "C1": "02"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "부산광역시 - 구직급여 신청자수",
+      "timestamp": "202004",
+      "value": 21462.0,
+      "item_codes": {
+        "C1": "02"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "부산광역시 - 구직급여 신청자수",
+      "timestamp": "202101",
+      "value": 33217.0,
+      "item_codes": {
+        "C1": "02"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "부산광역시 - 구직급여 신청자수",
+      "timestamp": "202102",
+      "value": 22037.0,
+      "item_codes": {
+        "C1": "02"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "부산광역시 - 구직급여 신청자수",
+      "timestamp": "202103",
+      "value": 20592.0,
+      "item_codes": {
+        "C1": "02"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "부산광역시 - 구직급여 신청자수",
+      "timestamp": "202104",
+      "value": 20290.0,
+      "item_codes": {
+        "C1": "02"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "부산광역시 - 구직급여 신청자수",
+      "timestamp": "202201",
+      "value": 29813.0,
+      "item_codes": {
+        "C1": "02"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "부산광역시 - 구직급여 신청자수",
+      "timestamp": "202202",
+      "value": 20481.0,
+      "item_codes": {
+        "C1": "02"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "부산광역시 - 구직급여 신청자수",
+      "timestamp": "202203",
+      "value": 19659.0,
+      "item_codes": {
+        "C1": "02"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "부산광역시 - 구직급여 신청자수",
+      "timestamp": "202204",
+      "value": 19290.0,
+      "item_codes": {
+        "C1": "02"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "부산광역시 - 구직급여 신청자수",
+      "timestamp": "202301",
+      "value": 29998.0,
+      "item_codes": {
+        "C1": "02"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "부산광역시 - 구직급여 신청자수",
+      "timestamp": "202302",
+      "value": 20322.0,
+      "item_codes": {
+        "C1": "02"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "부산광역시 - 구직급여 신청자수",
+      "timestamp": "202303",
+      "value": 19808.0,
+      "item_codes": {
+        "C1": "02"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "부산광역시 - 구직급여 신청자수",
+      "timestamp": "202304",
+      "value": 18674.0,
+      "item_codes": {
+        "C1": "02"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "부산광역시 - 구직급여 신청자수",
+      "timestamp": "202401",
+      "value": 28520.0,
+      "item_codes": {
+        "C1": "02"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "부산광역시 - 구직급여 신청자수",
+      "timestamp": "202402",
+      "value": 20214.0,
+      "item_codes": {
+        "C1": "02"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "부산광역시 - 구직급여 신청자수",
+      "timestamp": "202403",
+      "value": 19561.0,
+      "item_codes": {
+        "C1": "02"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "부산광역시 - 구직급여 신청자수",
+      "timestamp": "202404",
+      "value": 19324.0,
+      "item_codes": {
+        "C1": "02"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "부산광역시 - 구직급여 신청자수",
+      "timestamp": "202501",
+      "value": 29576.0,
+      "item_codes": {
+        "C1": "02"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "대구광역시 - 구직급여 신청자수",
+      "timestamp": "201501",
+      "value": 13259.0,
+      "item_codes": {
+        "C1": "03"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "대구광역시 - 구직급여 신청자수",
+      "timestamp": "201502",
+      "value": 10462.0,
+      "item_codes": {
+        "C1": "03"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "대구광역시 - 구직급여 신청자수",
+      "timestamp": "201503",
+      "value": 9407.0,
+      "item_codes": {
+        "C1": "03"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "대구광역시 - 구직급여 신청자수",
+      "timestamp": "201504",
+      "value": 9574.0,
+      "item_codes": {
+        "C1": "03"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "대구광역시 - 구직급여 신청자수",
+      "timestamp": "201601",
+      "value": 13622.0,
+      "item_codes": {
+        "C1": "03"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "대구광역시 - 구직급여 신청자수",
+      "timestamp": "201602",
+      "value": 10284.0,
+      "item_codes": {
+        "C1": "03"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "대구광역시 - 구직급여 신청자수",
+      "timestamp": "201603",
+      "value": 9312.0,
+      "item_codes": {
+        "C1": "03"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "대구광역시 - 구직급여 신청자수",
+      "timestamp": "201604",
+      "value": 9607.0,
+      "item_codes": {
+        "C1": "03"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "대구광역시 - 구직급여 신청자수",
+      "timestamp": "201701",
+      "value": 13494.0,
+      "item_codes": {
+        "C1": "03"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "대구광역시 - 구직급여 신청자수",
+      "timestamp": "201702",
+      "value": 9946.0,
+      "item_codes": {
+        "C1": "03"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "대구광역시 - 구직급여 신청자수",
+      "timestamp": "201703",
+      "value": 10312.0,
+      "item_codes": {
+        "C1": "03"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "대구광역시 - 구직급여 신청자수",
+      "timestamp": "201704",
+      "value": 9180.0,
+      "item_codes": {
+        "C1": "03"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "대구광역시 - 구직급여 신청자수",
+      "timestamp": "201801",
+      "value": 16109.0,
+      "item_codes": {
+        "C1": "03"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "대구광역시 - 구직급여 신청자수",
+      "timestamp": "201802",
+      "value": 11042.0,
+      "item_codes": {
+        "C1": "03"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "대구광역시 - 구직급여 신청자수",
+      "timestamp": "201803",
+      "value": 11052.0,
+      "item_codes": {
+        "C1": "03"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "대구광역시 - 구직급여 신청자수",
+      "timestamp": "201804",
+      "value": 11276.0,
+      "item_codes": {
+        "C1": "03"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "대구광역시 - 구직급여 신청자수",
+      "timestamp": "201901",
+      "value": 17534.0,
+      "item_codes": {
+        "C1": "03"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "대구광역시 - 구직급여 신청자수",
+      "timestamp": "201902",
+      "value": 11855.0,
+      "item_codes": {
+        "C1": "03"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "대구광역시 - 구직급여 신청자수",
+      "timestamp": "201903",
+      "value": 11722.0,
+      "item_codes": {
+        "C1": "03"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "대구광역시 - 구직급여 신청자수",
+      "timestamp": "201904",
+      "value": 12322.0,
+      "item_codes": {
+        "C1": "03"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "대구광역시 - 구직급여 신청자수",
+      "timestamp": "202001",
+      "value": 19570.0,
+      "item_codes": {
+        "C1": "03"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "대구광역시 - 구직급여 신청자수",
+      "timestamp": "202002",
+      "value": 16453.0,
+      "item_codes": {
+        "C1": "03"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "대구광역시 - 구직급여 신청자수",
+      "timestamp": "202003",
+      "value": 13717.0,
+      "item_codes": {
+        "C1": "03"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "대구광역시 - 구직급여 신청자수",
+      "timestamp": "202004",
+      "value": 12263.0,
+      "item_codes": {
+        "C1": "03"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "대구광역시 - 구직급여 신청자수",
+      "timestamp": "202101",
+      "value": 21183.0,
+      "item_codes": {
+        "C1": "03"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "대구광역시 - 구직급여 신청자수",
+      "timestamp": "202102",
+      "value": 12124.0,
+      "item_codes": {
+        "C1": "03"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "대구광역시 - 구직급여 신청자수",
+      "timestamp": "202103",
+      "value": 12426.0,
+      "item_codes": {
+        "C1": "03"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "대구광역시 - 구직급여 신청자수",
+      "timestamp": "202104",
+      "value": 13282.0,
+      "item_codes": {
+        "C1": "03"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "대구광역시 - 구직급여 신청자수",
+      "timestamp": "202201",
+      "value": 19355.0,
+      "item_codes": {
+        "C1": "03"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "대구광역시 - 구직급여 신청자수",
+      "timestamp": "202202",
+      "value": 12199.0,
+      "item_codes": {
+        "C1": "03"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "대구광역시 - 구직급여 신청자수",
+      "timestamp": "202203",
+      "value": 12625.0,
+      "item_codes": {
+        "C1": "03"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "대구광역시 - 구직급여 신청자수",
+      "timestamp": "202204",
+      "value": 12771.0,
+      "item_codes": {
+        "C1": "03"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "대구광역시 - 구직급여 신청자수",
+      "timestamp": "202301",
+      "value": 20155.0,
+      "item_codes": {
+        "C1": "03"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "대구광역시 - 구직급여 신청자수",
+      "timestamp": "202302",
+      "value": 11877.0,
+      "item_codes": {
+        "C1": "03"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "대구광역시 - 구직급여 신청자수",
+      "timestamp": "202303",
+      "value": 13079.0,
+      "item_codes": {
+        "C1": "03"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "대구광역시 - 구직급여 신청자수",
+      "timestamp": "202304",
+      "value": 12099.0,
+      "item_codes": {
+        "C1": "03"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "대구광역시 - 구직급여 신청자수",
+      "timestamp": "202401",
+      "value": 19953.0,
+      "item_codes": {
+        "C1": "03"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "대구광역시 - 구직급여 신청자수",
+      "timestamp": "202402",
+      "value": 12599.0,
+      "item_codes": {
+        "C1": "03"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "대구광역시 - 구직급여 신청자수",
+      "timestamp": "202403",
+      "value": 12567.0,
+      "item_codes": {
+        "C1": "03"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "대구광역시 - 구직급여 신청자수",
+      "timestamp": "202404",
+      "value": 13247.0,
+      "item_codes": {
+        "C1": "03"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "대구광역시 - 구직급여 신청자수",
+      "timestamp": "202501",
+      "value": 20255.0,
+      "item_codes": {
+        "C1": "03"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "인천광역시 - 구직급여 신청자수",
+      "timestamp": "201501",
+      "value": 19372.0,
+      "item_codes": {
+        "C1": "04"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "인천광역시 - 구직급여 신청자수",
+      "timestamp": "201502",
+      "value": 14412.0,
+      "item_codes": {
+        "C1": "04"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "인천광역시 - 구직급여 신청자수",
+      "timestamp": "201503",
+      "value": 13465.0,
+      "item_codes": {
+        "C1": "04"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "인천광역시 - 구직급여 신청자수",
+      "timestamp": "201504",
+      "value": 14128.0,
+      "item_codes": {
+        "C1": "04"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "인천광역시 - 구직급여 신청자수",
+      "timestamp": "201601",
+      "value": 18600.0,
+      "item_codes": {
+        "C1": "04"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "인천광역시 - 구직급여 신청자수",
+      "timestamp": "201602",
+      "value": 13778.0,
+      "item_codes": {
+        "C1": "04"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "인천광역시 - 구직급여 신청자수",
+      "timestamp": "201603",
+      "value": 12870.0,
+      "item_codes": {
+        "C1": "04"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "인천광역시 - 구직급여 신청자수",
+      "timestamp": "201604",
+      "value": 13344.0,
+      "item_codes": {
+        "C1": "04"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "인천광역시 - 구직급여 신청자수",
+      "timestamp": "201701",
+      "value": 17432.0,
+      "item_codes": {
+        "C1": "04"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "인천광역시 - 구직급여 신청자수",
+      "timestamp": "201702",
+      "value": 13624.0,
+      "item_codes": {
+        "C1": "04"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "인천광역시 - 구직급여 신청자수",
+      "timestamp": "201703",
+      "value": 13002.0,
+      "item_codes": {
+        "C1": "04"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "인천광역시 - 구직급여 신청자수",
+      "timestamp": "201704",
+      "value": 12692.0,
+      "item_codes": {
+        "C1": "04"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "인천광역시 - 구직급여 신청자수",
+      "timestamp": "201801",
+      "value": 20501.0,
+      "item_codes": {
+        "C1": "04"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "인천광역시 - 구직급여 신청자수",
+      "timestamp": "201802",
+      "value": 15446.0,
+      "item_codes": {
+        "C1": "04"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "인천광역시 - 구직급여 신청자수",
+      "timestamp": "201803",
+      "value": 14272.0,
+      "item_codes": {
+        "C1": "04"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "인천광역시 - 구직급여 신청자수",
+      "timestamp": "201804",
+      "value": 14973.0,
+      "item_codes": {
+        "C1": "04"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "인천광역시 - 구직급여 신청자수",
+      "timestamp": "201901",
+      "value": 23013.0,
+      "item_codes": {
+        "C1": "04"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "인천광역시 - 구직급여 신청자수",
+      "timestamp": "201902",
+      "value": 16509.0,
+      "item_codes": {
+        "C1": "04"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "인천광역시 - 구직급여 신청자수",
+      "timestamp": "201903",
+      "value": 15864.0,
+      "item_codes": {
+        "C1": "04"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "인천광역시 - 구직급여 신청자수",
+      "timestamp": "201904",
+      "value": 16849.0,
+      "item_codes": {
+        "C1": "04"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "인천광역시 - 구직급여 신청자수",
+      "timestamp": "202001",
+      "value": 26235.0,
+      "item_codes": {
+        "C1": "04"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "인천광역시 - 구직급여 신청자수",
+      "timestamp": "202002",
+      "value": 24093.0,
+      "item_codes": {
+        "C1": "04"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "인천광역시 - 구직급여 신청자수",
+      "timestamp": "202003",
+      "value": 19761.0,
+      "item_codes": {
+        "C1": "04"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "인천광역시 - 구직급여 신청자수",
+      "timestamp": "202004",
+      "value": 18328.0,
+      "item_codes": {
+        "C1": "04"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "인천광역시 - 구직급여 신청자수",
+      "timestamp": "202101",
+      "value": 26894.0,
+      "item_codes": {
+        "C1": "04"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "인천광역시 - 구직급여 신청자수",
+      "timestamp": "202102",
+      "value": 16714.0,
+      "item_codes": {
+        "C1": "04"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "인천광역시 - 구직급여 신청자수",
+      "timestamp": "202103",
+      "value": 16000.0,
+      "item_codes": {
+        "C1": "04"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "인천광역시 - 구직급여 신청자수",
+      "timestamp": "202104",
+      "value": 15841.0,
+      "item_codes": {
+        "C1": "04"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "인천광역시 - 구직급여 신청자수",
+      "timestamp": "202201",
+      "value": 23618.0,
+      "item_codes": {
+        "C1": "04"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "인천광역시 - 구직급여 신청자수",
+      "timestamp": "202202",
+      "value": 15698.0,
+      "item_codes": {
+        "C1": "04"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "인천광역시 - 구직급여 신청자수",
+      "timestamp": "202203",
+      "value": 15649.0,
+      "item_codes": {
+        "C1": "04"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "인천광역시 - 구직급여 신청자수",
+      "timestamp": "202204",
+      "value": 16254.0,
+      "item_codes": {
+        "C1": "04"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "인천광역시 - 구직급여 신청자수",
+      "timestamp": "202301",
+      "value": 26507.0,
+      "item_codes": {
+        "C1": "04"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "인천광역시 - 구직급여 신청자수",
+      "timestamp": "202302",
+      "value": 17130.0,
+      "item_codes": {
+        "C1": "04"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "인천광역시 - 구직급여 신청자수",
+      "timestamp": "202303",
+      "value": 17229.0,
+      "item_codes": {
+        "C1": "04"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "인천광역시 - 구직급여 신청자수",
+      "timestamp": "202304",
+      "value": 16350.0,
+      "item_codes": {
+        "C1": "04"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "인천광역시 - 구직급여 신청자수",
+      "timestamp": "202401",
+      "value": 25374.0,
+      "item_codes": {
+        "C1": "04"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "인천광역시 - 구직급여 신청자수",
+      "timestamp": "202402",
+      "value": 16630.0,
+      "item_codes": {
+        "C1": "04"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "인천광역시 - 구직급여 신청자수",
+      "timestamp": "202403",
+      "value": 17164.0,
+      "item_codes": {
+        "C1": "04"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "인천광역시 - 구직급여 신청자수",
+      "timestamp": "202404",
+      "value": 17746.0,
+      "item_codes": {
+        "C1": "04"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "인천광역시 - 구직급여 신청자수",
+      "timestamp": "202501",
+      "value": 27340.0,
+      "item_codes": {
+        "C1": "04"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "광주광역시 - 구직급여 신청자수",
+      "timestamp": "201501",
+      "value": 8754.0,
+      "item_codes": {
+        "C1": "05"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "광주광역시 - 구직급여 신청자수",
+      "timestamp": "201502",
+      "value": 5900.0,
+      "item_codes": {
+        "C1": "05"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "광주광역시 - 구직급여 신청자수",
+      "timestamp": "201503",
+      "value": 5558.0,
+      "item_codes": {
+        "C1": "05"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "광주광역시 - 구직급여 신청자수",
+      "timestamp": "201504",
+      "value": 5283.0,
+      "item_codes": {
+        "C1": "05"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "광주광역시 - 구직급여 신청자수",
+      "timestamp": "201601",
+      "value": 8227.0,
+      "item_codes": {
+        "C1": "05"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "광주광역시 - 구직급여 신청자수",
+      "timestamp": "201602",
+      "value": 5876.0,
+      "item_codes": {
+        "C1": "05"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "광주광역시 - 구직급여 신청자수",
+      "timestamp": "201603",
+      "value": 5126.0,
+      "item_codes": {
+        "C1": "05"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "광주광역시 - 구직급여 신청자수",
+      "timestamp": "201604",
+      "value": 5132.0,
+      "item_codes": {
+        "C1": "05"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "광주광역시 - 구직급여 신청자수",
+      "timestamp": "201701",
+      "value": 7963.0,
+      "item_codes": {
+        "C1": "05"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "광주광역시 - 구직급여 신청자수",
+      "timestamp": "201702",
+      "value": 5682.0,
+      "item_codes": {
+        "C1": "05"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "광주광역시 - 구직급여 신청자수",
+      "timestamp": "201703",
+      "value": 5637.0,
+      "item_codes": {
+        "C1": "05"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "광주광역시 - 구직급여 신청자수",
+      "timestamp": "201704",
+      "value": 5036.0,
+      "item_codes": {
+        "C1": "05"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "광주광역시 - 구직급여 신청자수",
+      "timestamp": "201801",
+      "value": 9132.0,
+      "item_codes": {
+        "C1": "05"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "광주광역시 - 구직급여 신청자수",
+      "timestamp": "201802",
+      "value": 6186.0,
+      "item_codes": {
+        "C1": "05"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "광주광역시 - 구직급여 신청자수",
+      "timestamp": "201803",
+      "value": 6267.0,
+      "item_codes": {
+        "C1": "05"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "광주광역시 - 구직급여 신청자수",
+      "timestamp": "201804",
+      "value": 5921.0,
+      "item_codes": {
+        "C1": "05"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "광주광역시 - 구직급여 신청자수",
+      "timestamp": "201901",
+      "value": 10161.0,
+      "item_codes": {
+        "C1": "05"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "광주광역시 - 구직급여 신청자수",
+      "timestamp": "201902",
+      "value": 6806.0,
+      "item_codes": {
+        "C1": "05"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "광주광역시 - 구직급여 신청자수",
+      "timestamp": "201903",
+      "value": 6642.0,
+      "item_codes": {
+        "C1": "05"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "광주광역시 - 구직급여 신청자수",
+      "timestamp": "201904",
+      "value": 6534.0,
+      "item_codes": {
+        "C1": "05"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "광주광역시 - 구직급여 신청자수",
+      "timestamp": "202001",
+      "value": 11583.0,
+      "item_codes": {
+        "C1": "05"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "광주광역시 - 구직급여 신청자수",
+      "timestamp": "202002",
+      "value": 8563.0,
+      "item_codes": {
+        "C1": "05"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "광주광역시 - 구직급여 신청자수",
+      "timestamp": "202003",
+      "value": 8033.0,
+      "item_codes": {
+        "C1": "05"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "광주광역시 - 구직급여 신청자수",
+      "timestamp": "202004",
+      "value": 6842.0,
+      "item_codes": {
+        "C1": "05"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "광주광역시 - 구직급여 신청자수",
+      "timestamp": "202101",
+      "value": 12614.0,
+      "item_codes": {
+        "C1": "05"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "광주광역시 - 구직급여 신청자수",
+      "timestamp": "202102",
+      "value": 7421.0,
+      "item_codes": {
+        "C1": "05"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "광주광역시 - 구직급여 신청자수",
+      "timestamp": "202103",
+      "value": 7078.0,
+      "item_codes": {
+        "C1": "05"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "광주광역시 - 구직급여 신청자수",
+      "timestamp": "202104",
+      "value": 7257.0,
+      "item_codes": {
+        "C1": "05"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "광주광역시 - 구직급여 신청자수",
+      "timestamp": "202201",
+      "value": 12098.0,
+      "item_codes": {
+        "C1": "05"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "광주광역시 - 구직급여 신청자수",
+      "timestamp": "202202",
+      "value": 6711.0,
+      "item_codes": {
+        "C1": "05"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "광주광역시 - 구직급여 신청자수",
+      "timestamp": "202203",
+      "value": 7306.0,
+      "item_codes": {
+        "C1": "05"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "광주광역시 - 구직급여 신청자수",
+      "timestamp": "202204",
+      "value": 6686.0,
+      "item_codes": {
+        "C1": "05"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "광주광역시 - 구직급여 신청자수",
+      "timestamp": "202301",
+      "value": 12376.0,
+      "item_codes": {
+        "C1": "05"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "광주광역시 - 구직급여 신청자수",
+      "timestamp": "202302",
+      "value": 7193.0,
+      "item_codes": {
+        "C1": "05"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "광주광역시 - 구직급여 신청자수",
+      "timestamp": "202303",
+      "value": 7354.0,
+      "item_codes": {
+        "C1": "05"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "광주광역시 - 구직급여 신청자수",
+      "timestamp": "202304",
+      "value": 6985.0,
+      "item_codes": {
+        "C1": "05"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "광주광역시 - 구직급여 신청자수",
+      "timestamp": "202401",
+      "value": 12520.0,
+      "item_codes": {
+        "C1": "05"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "광주광역시 - 구직급여 신청자수",
+      "timestamp": "202402",
+      "value": 7419.0,
+      "item_codes": {
+        "C1": "05"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "광주광역시 - 구직급여 신청자수",
+      "timestamp": "202403",
+      "value": 7518.0,
+      "item_codes": {
+        "C1": "05"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "광주광역시 - 구직급여 신청자수",
+      "timestamp": "202404",
+      "value": 7255.0,
+      "item_codes": {
+        "C1": "05"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "광주광역시 - 구직급여 신청자수",
+      "timestamp": "202501",
+      "value": 12390.0,
+      "item_codes": {
+        "C1": "05"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "대전광역시 - 구직급여 신청자수",
+      "timestamp": "201501",
+      "value": 9939.0,
+      "item_codes": {
+        "C1": "06"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "대전광역시 - 구직급여 신청자수",
+      "timestamp": "201502",
+      "value": 6979.0,
+      "item_codes": {
+        "C1": "06"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "대전광역시 - 구직급여 신청자수",
+      "timestamp": "201503",
+      "value": 6431.0,
+      "item_codes": {
+        "C1": "06"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "대전광역시 - 구직급여 신청자수",
+      "timestamp": "201504",
+      "value": 5757.0,
+      "item_codes": {
+        "C1": "06"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "대전광역시 - 구직급여 신청자수",
+      "timestamp": "201601",
+      "value": 9376.0,
+      "item_codes": {
+        "C1": "06"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "대전광역시 - 구직급여 신청자수",
+      "timestamp": "201602",
+      "value": 6162.0,
+      "item_codes": {
+        "C1": "06"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "대전광역시 - 구직급여 신청자수",
+      "timestamp": "201603",
+      "value": 6116.0,
+      "item_codes": {
+        "C1": "06"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "대전광역시 - 구직급여 신청자수",
+      "timestamp": "201604",
+      "value": 5950.0,
+      "item_codes": {
+        "C1": "06"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "대전광역시 - 구직급여 신청자수",
+      "timestamp": "201701",
+      "value": 9186.0,
+      "item_codes": {
+        "C1": "06"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "대전광역시 - 구직급여 신청자수",
+      "timestamp": "201702",
+      "value": 6255.0,
+      "item_codes": {
+        "C1": "06"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "대전광역시 - 구직급여 신청자수",
+      "timestamp": "201703",
+      "value": 6434.0,
+      "item_codes": {
+        "C1": "06"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "대전광역시 - 구직급여 신청자수",
+      "timestamp": "201704",
+      "value": 5676.0,
+      "item_codes": {
+        "C1": "06"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "대전광역시 - 구직급여 신청자수",
+      "timestamp": "201801",
+      "value": 10830.0,
+      "item_codes": {
+        "C1": "06"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "대전광역시 - 구직급여 신청자수",
+      "timestamp": "201802",
+      "value": 6822.0,
+      "item_codes": {
+        "C1": "06"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "대전광역시 - 구직급여 신청자수",
+      "timestamp": "201803",
+      "value": 7015.0,
+      "item_codes": {
+        "C1": "06"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "대전광역시 - 구직급여 신청자수",
+      "timestamp": "201804",
+      "value": 6751.0,
+      "item_codes": {
+        "C1": "06"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "대전광역시 - 구직급여 신청자수",
+      "timestamp": "201901",
+      "value": 11412.0,
+      "item_codes": {
+        "C1": "06"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "대전광역시 - 구직급여 신청자수",
+      "timestamp": "201902",
+      "value": 7541.0,
+      "item_codes": {
+        "C1": "06"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "대전광역시 - 구직급여 신청자수",
+      "timestamp": "201903",
+      "value": 7146.0,
+      "item_codes": {
+        "C1": "06"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "대전광역시 - 구직급여 신청자수",
+      "timestamp": "201904",
+      "value": 7269.0,
+      "item_codes": {
+        "C1": "06"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "대전광역시 - 구직급여 신청자수",
+      "timestamp": "202001",
+      "value": 12972.0,
+      "item_codes": {
+        "C1": "06"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "대전광역시 - 구직급여 신청자수",
+      "timestamp": "202002",
+      "value": 9173.0,
+      "item_codes": {
+        "C1": "06"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "대전광역시 - 구직급여 신청자수",
+      "timestamp": "202003",
+      "value": 8587.0,
+      "item_codes": {
+        "C1": "06"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "대전광역시 - 구직급여 신청자수",
+      "timestamp": "202004",
+      "value": 7577.0,
+      "item_codes": {
+        "C1": "06"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "대전광역시 - 구직급여 신청자수",
+      "timestamp": "202101",
+      "value": 13908.0,
+      "item_codes": {
+        "C1": "06"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "대전광역시 - 구직급여 신청자수",
+      "timestamp": "202102",
+      "value": 8152.0,
+      "item_codes": {
+        "C1": "06"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "대전광역시 - 구직급여 신청자수",
+      "timestamp": "202103",
+      "value": 8143.0,
+      "item_codes": {
+        "C1": "06"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "대전광역시 - 구직급여 신청자수",
+      "timestamp": "202104",
+      "value": 7797.0,
+      "item_codes": {
+        "C1": "06"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "대전광역시 - 구직급여 신청자수",
+      "timestamp": "202201",
+      "value": 12806.0,
+      "item_codes": {
+        "C1": "06"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "대전광역시 - 구직급여 신청자수",
+      "timestamp": "202202",
+      "value": 7801.0,
+      "item_codes": {
+        "C1": "06"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "대전광역시 - 구직급여 신청자수",
+      "timestamp": "202203",
+      "value": 7783.0,
+      "item_codes": {
+        "C1": "06"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "대전광역시 - 구직급여 신청자수",
+      "timestamp": "202204",
+      "value": 8021.0,
+      "item_codes": {
+        "C1": "06"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "대전광역시 - 구직급여 신청자수",
+      "timestamp": "202301",
+      "value": 13468.0,
+      "item_codes": {
+        "C1": "06"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "대전광역시 - 구직급여 신청자수",
+      "timestamp": "202302",
+      "value": 7743.0,
+      "item_codes": {
+        "C1": "06"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "대전광역시 - 구직급여 신청자수",
+      "timestamp": "202303",
+      "value": 7991.0,
+      "item_codes": {
+        "C1": "06"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "대전광역시 - 구직급여 신청자수",
+      "timestamp": "202304",
+      "value": 7719.0,
+      "item_codes": {
+        "C1": "06"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "대전광역시 - 구직급여 신청자수",
+      "timestamp": "202401",
+      "value": 12465.0,
+      "item_codes": {
+        "C1": "06"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "대전광역시 - 구직급여 신청자수",
+      "timestamp": "202402",
+      "value": 7596.0,
+      "item_codes": {
+        "C1": "06"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "대전광역시 - 구직급여 신청자수",
+      "timestamp": "202403",
+      "value": 7752.0,
+      "item_codes": {
+        "C1": "06"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "대전광역시 - 구직급여 신청자수",
+      "timestamp": "202404",
+      "value": 8021.0,
+      "item_codes": {
+        "C1": "06"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "대전광역시 - 구직급여 신청자수",
+      "timestamp": "202501",
+      "value": 12723.0,
+      "item_codes": {
+        "C1": "06"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "울산광역시 - 구직급여 신청자수",
+      "timestamp": "201501",
+      "value": 7996.0,
+      "item_codes": {
+        "C1": "07"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "울산광역시 - 구직급여 신청자수",
+      "timestamp": "201502",
+      "value": 5146.0,
+      "item_codes": {
+        "C1": "07"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "울산광역시 - 구직급여 신청자수",
+      "timestamp": "201503",
+      "value": 4879.0,
+      "item_codes": {
+        "C1": "07"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "울산광역시 - 구직급여 신청자수",
+      "timestamp": "201504",
+      "value": 5338.0,
+      "item_codes": {
+        "C1": "07"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "울산광역시 - 구직급여 신청자수",
+      "timestamp": "201601",
+      "value": 9454.0,
+      "item_codes": {
+        "C1": "07"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "울산광역시 - 구직급여 신청자수",
+      "timestamp": "201602",
+      "value": 7002.0,
+      "item_codes": {
+        "C1": "07"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "울산광역시 - 구직급여 신청자수",
+      "timestamp": "201603",
+      "value": 6964.0,
+      "item_codes": {
+        "C1": "07"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "울산광역시 - 구직급여 신청자수",
+      "timestamp": "201604",
+      "value": 6061.0,
+      "item_codes": {
+        "C1": "07"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "울산광역시 - 구직급여 신청자수",
+      "timestamp": "201701",
+      "value": 10232.0,
+      "item_codes": {
+        "C1": "07"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "울산광역시 - 구직급여 신청자수",
+      "timestamp": "201702",
+      "value": 6806.0,
+      "item_codes": {
+        "C1": "07"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "울산광역시 - 구직급여 신청자수",
+      "timestamp": "201703",
+      "value": 6568.0,
+      "item_codes": {
+        "C1": "07"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "울산광역시 - 구직급여 신청자수",
+      "timestamp": "201704",
+      "value": 6071.0,
+      "item_codes": {
+        "C1": "07"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "울산광역시 - 구직급여 신청자수",
+      "timestamp": "201801",
+      "value": 10556.0,
+      "item_codes": {
+        "C1": "07"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "울산광역시 - 구직급여 신청자수",
+      "timestamp": "201802",
+      "value": 8419.0,
+      "item_codes": {
+        "C1": "07"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "울산광역시 - 구직급여 신청자수",
+      "timestamp": "201803",
+      "value": 8838.0,
+      "item_codes": {
+        "C1": "07"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "울산광역시 - 구직급여 신청자수",
+      "timestamp": "201804",
+      "value": 6263.0,
+      "item_codes": {
+        "C1": "07"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "울산광역시 - 구직급여 신청자수",
+      "timestamp": "201901",
+      "value": 11607.0,
+      "item_codes": {
+        "C1": "07"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "울산광역시 - 구직급여 신청자수",
+      "timestamp": "201902",
+      "value": 6357.0,
+      "item_codes": {
+        "C1": "07"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "울산광역시 - 구직급여 신청자수",
+      "timestamp": "201903",
+      "value": 6165.0,
+      "item_codes": {
+        "C1": "07"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "울산광역시 - 구직급여 신청자수",
+      "timestamp": "201904",
+      "value": 5949.0,
+      "item_codes": {
+        "C1": "07"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "울산광역시 - 구직급여 신청자수",
+      "timestamp": "202001",
+      "value": 12339.0,
+      "item_codes": {
+        "C1": "07"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "울산광역시 - 구직급여 신청자수",
+      "timestamp": "202002",
+      "value": 8569.0,
+      "item_codes": {
+        "C1": "07"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "울산광역시 - 구직급여 신청자수",
+      "timestamp": "202003",
+      "value": 8261.0,
+      "item_codes": {
+        "C1": "07"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "울산광역시 - 구직급여 신청자수",
+      "timestamp": "202004",
+      "value": 7358.0,
+      "item_codes": {
+        "C1": "07"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "울산광역시 - 구직급여 신청자수",
+      "timestamp": "202101",
+      "value": 14308.0,
+      "item_codes": {
+        "C1": "07"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "울산광역시 - 구직급여 신청자수",
+      "timestamp": "202102",
+      "value": 7186.0,
+      "item_codes": {
+        "C1": "07"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "울산광역시 - 구직급여 신청자수",
+      "timestamp": "202103",
+      "value": 6904.0,
+      "item_codes": {
+        "C1": "07"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "울산광역시 - 구직급여 신청자수",
+      "timestamp": "202104",
+      "value": 6766.0,
+      "item_codes": {
+        "C1": "07"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "울산광역시 - 구직급여 신청자수",
+      "timestamp": "202201",
+      "value": 12008.0,
+      "item_codes": {
+        "C1": "07"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "울산광역시 - 구직급여 신청자수",
+      "timestamp": "202202",
+      "value": 5592.0,
+      "item_codes": {
+        "C1": "07"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "울산광역시 - 구직급여 신청자수",
+      "timestamp": "202203",
+      "value": 6540.0,
+      "item_codes": {
+        "C1": "07"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "울산광역시 - 구직급여 신청자수",
+      "timestamp": "202204",
+      "value": 6052.0,
+      "item_codes": {
+        "C1": "07"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "울산광역시 - 구직급여 신청자수",
+      "timestamp": "202301",
+      "value": 12849.0,
+      "item_codes": {
+        "C1": "07"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "울산광역시 - 구직급여 신청자수",
+      "timestamp": "202302",
+      "value": 6030.0,
+      "item_codes": {
+        "C1": "07"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "울산광역시 - 구직급여 신청자수",
+      "timestamp": "202303",
+      "value": 6418.0,
+      "item_codes": {
+        "C1": "07"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "울산광역시 - 구직급여 신청자수",
+      "timestamp": "202304",
+      "value": 6531.0,
+      "item_codes": {
+        "C1": "07"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "울산광역시 - 구직급여 신청자수",
+      "timestamp": "202401",
+      "value": 12521.0,
+      "item_codes": {
+        "C1": "07"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "울산광역시 - 구직급여 신청자수",
+      "timestamp": "202402",
+      "value": 6297.0,
+      "item_codes": {
+        "C1": "07"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "울산광역시 - 구직급여 신청자수",
+      "timestamp": "202403",
+      "value": 7044.0,
+      "item_codes": {
+        "C1": "07"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "울산광역시 - 구직급여 신청자수",
+      "timestamp": "202404",
+      "value": 6742.0,
+      "item_codes": {
+        "C1": "07"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "울산광역시 - 구직급여 신청자수",
+      "timestamp": "202501",
+      "value": 12534.0,
+      "item_codes": {
+        "C1": "07"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경기도 - 구직급여 신청자수",
+      "timestamp": "201501",
+      "value": 73488.0,
+      "item_codes": {
+        "C1": "08"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경기도 - 구직급여 신청자수",
+      "timestamp": "201502",
+      "value": 56902.0,
+      "item_codes": {
+        "C1": "08"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경기도 - 구직급여 신청자수",
+      "timestamp": "201503",
+      "value": 54743.0,
+      "item_codes": {
+        "C1": "08"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경기도 - 구직급여 신청자수",
+      "timestamp": "201504",
+      "value": 53329.0,
+      "item_codes": {
+        "C1": "08"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경기도 - 구직급여 신청자수",
+      "timestamp": "201601",
+      "value": 75080.0,
+      "item_codes": {
+        "C1": "08"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경기도 - 구직급여 신청자수",
+      "timestamp": "201602",
+      "value": 56593.0,
+      "item_codes": {
+        "C1": "08"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경기도 - 구직급여 신청자수",
+      "timestamp": "201603",
+      "value": 51476.0,
+      "item_codes": {
+        "C1": "08"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경기도 - 구직급여 신청자수",
+      "timestamp": "201604",
+      "value": 53481.0,
+      "item_codes": {
+        "C1": "08"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경기도 - 구직급여 신청자수",
+      "timestamp": "201701",
+      "value": 70665.0,
+      "item_codes": {
+        "C1": "08"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경기도 - 구직급여 신청자수",
+      "timestamp": "201702",
+      "value": 52975.0,
+      "item_codes": {
+        "C1": "08"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경기도 - 구직급여 신청자수",
+      "timestamp": "201703",
+      "value": 53354.0,
+      "item_codes": {
+        "C1": "08"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경기도 - 구직급여 신청자수",
+      "timestamp": "201704",
+      "value": 49336.0,
+      "item_codes": {
+        "C1": "08"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경기도 - 구직급여 신청자수",
+      "timestamp": "201801",
+      "value": 82490.0,
+      "item_codes": {
+        "C1": "08"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경기도 - 구직급여 신청자수",
+      "timestamp": "201802",
+      "value": 60668.0,
+      "item_codes": {
+        "C1": "08"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경기도 - 구직급여 신청자수",
+      "timestamp": "201803",
+      "value": 59371.0,
+      "item_codes": {
+        "C1": "08"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경기도 - 구직급여 신청자수",
+      "timestamp": "201804",
+      "value": 61362.0,
+      "item_codes": {
+        "C1": "08"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경기도 - 구직급여 신청자수",
+      "timestamp": "201901",
+      "value": 92481.0,
+      "item_codes": {
+        "C1": "08"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경기도 - 구직급여 신청자수",
+      "timestamp": "201902",
+      "value": 67432.0,
+      "item_codes": {
+        "C1": "08"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경기도 - 구직급여 신청자수",
+      "timestamp": "201903",
+      "value": 65936.0,
+      "item_codes": {
+        "C1": "08"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경기도 - 구직급여 신청자수",
+      "timestamp": "201904",
+      "value": 70441.0,
+      "item_codes": {
+        "C1": "08"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경기도 - 구직급여 신청자수",
+      "timestamp": "202001",
+      "value": 110801.0,
+      "item_codes": {
+        "C1": "08"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경기도 - 구직급여 신청자수",
+      "timestamp": "202002",
+      "value": 88284.0,
+      "item_codes": {
+        "C1": "08"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경기도 - 구직급여 신청자수",
+      "timestamp": "202003",
+      "value": 80071.0,
+      "item_codes": {
+        "C1": "08"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경기도 - 구직급여 신청자수",
+      "timestamp": "202004",
+      "value": 75471.0,
+      "item_codes": {
+        "C1": "08"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경기도 - 구직급여 신청자수",
+      "timestamp": "202101",
+      "value": 118331.0,
+      "item_codes": {
+        "C1": "08"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경기도 - 구직급여 신청자수",
+      "timestamp": "202102",
+      "value": 75150.0,
+      "item_codes": {
+        "C1": "08"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경기도 - 구직급여 신청자수",
+      "timestamp": "202103",
+      "value": 72008.0,
+      "item_codes": {
+        "C1": "08"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경기도 - 구직급여 신청자수",
+      "timestamp": "202104",
+      "value": 69727.0,
+      "item_codes": {
+        "C1": "08"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경기도 - 구직급여 신청자수",
+      "timestamp": "202201",
+      "value": 102392.0,
+      "item_codes": {
+        "C1": "08"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경기도 - 구직급여 신청자수",
+      "timestamp": "202202",
+      "value": 69332.0,
+      "item_codes": {
+        "C1": "08"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경기도 - 구직급여 신청자수",
+      "timestamp": "202203",
+      "value": 69088.0,
+      "item_codes": {
+        "C1": "08"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경기도 - 구직급여 신청자수",
+      "timestamp": "202204",
+      "value": 69151.0,
+      "item_codes": {
+        "C1": "08"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경기도 - 구직급여 신청자수",
+      "timestamp": "202301",
+      "value": 114868.0,
+      "item_codes": {
+        "C1": "08"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경기도 - 구직급여 신청자수",
+      "timestamp": "202302",
+      "value": 75632.0,
+      "item_codes": {
+        "C1": "08"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경기도 - 구직급여 신청자수",
+      "timestamp": "202303",
+      "value": 73822.0,
+      "item_codes": {
+        "C1": "08"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경기도 - 구직급여 신청자수",
+      "timestamp": "202304",
+      "value": 70302.0,
+      "item_codes": {
+        "C1": "08"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경기도 - 구직급여 신청자수",
+      "timestamp": "202401",
+      "value": 110250.0,
+      "item_codes": {
+        "C1": "08"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경기도 - 구직급여 신청자수",
+      "timestamp": "202402",
+      "value": 75865.0,
+      "item_codes": {
+        "C1": "08"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경기도 - 구직급여 신청자수",
+      "timestamp": "202403",
+      "value": 78127.0,
+      "item_codes": {
+        "C1": "08"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경기도 - 구직급여 신청자수",
+      "timestamp": "202404",
+      "value": 77583.0,
+      "item_codes": {
+        "C1": "08"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경기도 - 구직급여 신청자수",
+      "timestamp": "202501",
+      "value": 116873.0,
+      "item_codes": {
+        "C1": "08"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "강원특별자치도 - 구직급여 신청자수",
+      "timestamp": "201501",
+      "value": 10895.0,
+      "item_codes": {
+        "C1": "09"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "강원특별자치도 - 구직급여 신청자수",
+      "timestamp": "201502",
+      "value": 5555.0,
+      "item_codes": {
+        "C1": "09"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "강원특별자치도 - 구직급여 신청자수",
+      "timestamp": "201503",
+      "value": 4969.0,
+      "item_codes": {
+        "C1": "09"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "강원특별자치도 - 구직급여 신청자수",
+      "timestamp": "201504",
+      "value": 6618.0,
+      "item_codes": {
+        "C1": "09"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "강원특별자치도 - 구직급여 신청자수",
+      "timestamp": "201601",
+      "value": 10517.0,
+      "item_codes": {
+        "C1": "09"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "강원특별자치도 - 구직급여 신청자수",
+      "timestamp": "201602",
+      "value": 5357.0,
+      "item_codes": {
+        "C1": "09"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "강원특별자치도 - 구직급여 신청자수",
+      "timestamp": "201603",
+      "value": 4927.0,
+      "item_codes": {
+        "C1": "09"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "강원특별자치도 - 구직급여 신청자수",
+      "timestamp": "201604",
+      "value": 7161.0,
+      "item_codes": {
+        "C1": "09"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "강원특별자치도 - 구직급여 신청자수",
+      "timestamp": "201701",
+      "value": 10364.0,
+      "item_codes": {
+        "C1": "09"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "강원특별자치도 - 구직급여 신청자수",
+      "timestamp": "201702",
+      "value": 5371.0,
+      "item_codes": {
+        "C1": "09"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "강원특별자치도 - 구직급여 신청자수",
+      "timestamp": "201703",
+      "value": 5469.0,
+      "item_codes": {
+        "C1": "09"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "강원특별자치도 - 구직급여 신청자수",
+      "timestamp": "201704",
+      "value": 6695.0,
+      "item_codes": {
+        "C1": "09"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "강원특별자치도 - 구직급여 신청자수",
+      "timestamp": "201801",
+      "value": 11713.0,
+      "item_codes": {
+        "C1": "09"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "강원특별자치도 - 구직급여 신청자수",
+      "timestamp": "201802",
+      "value": 6248.0,
+      "item_codes": {
+        "C1": "09"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "강원특별자치도 - 구직급여 신청자수",
+      "timestamp": "201803",
+      "value": 5897.0,
+      "item_codes": {
+        "C1": "09"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "강원특별자치도 - 구직급여 신청자수",
+      "timestamp": "201804",
+      "value": 7830.0,
+      "item_codes": {
+        "C1": "09"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "강원특별자치도 - 구직급여 신청자수",
+      "timestamp": "201901",
+      "value": 12532.0,
+      "item_codes": {
+        "C1": "09"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "강원특별자치도 - 구직급여 신청자수",
+      "timestamp": "201902",
+      "value": 6722.0,
+      "item_codes": {
+        "C1": "09"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "강원특별자치도 - 구직급여 신청자수",
+      "timestamp": "201903",
+      "value": 6248.0,
+      "item_codes": {
+        "C1": "09"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "강원특별자치도 - 구직급여 신청자수",
+      "timestamp": "201904",
+      "value": 8577.0,
+      "item_codes": {
+        "C1": "09"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "강원특별자치도 - 구직급여 신청자수",
+      "timestamp": "202001",
+      "value": 14706.0,
+      "item_codes": {
+        "C1": "09"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "강원특별자치도 - 구직급여 신청자수",
+      "timestamp": "202002",
+      "value": 8786.0,
+      "item_codes": {
+        "C1": "09"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "강원특별자치도 - 구직급여 신청자수",
+      "timestamp": "202003",
+      "value": 7414.0,
+      "item_codes": {
+        "C1": "09"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "강원특별자치도 - 구직급여 신청자수",
+      "timestamp": "202004",
+      "value": 9485.0,
+      "item_codes": {
+        "C1": "09"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "강원특별자치도 - 구직급여 신청자수",
+      "timestamp": "202101",
+      "value": 16195.0,
+      "item_codes": {
+        "C1": "09"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "강원특별자치도 - 구직급여 신청자수",
+      "timestamp": "202102",
+      "value": 7483.0,
+      "item_codes": {
+        "C1": "09"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "강원특별자치도 - 구직급여 신청자수",
+      "timestamp": "202103",
+      "value": 7134.0,
+      "item_codes": {
+        "C1": "09"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "강원특별자치도 - 구직급여 신청자수",
+      "timestamp": "202104",
+      "value": 9612.0,
+      "item_codes": {
+        "C1": "09"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "강원특별자치도 - 구직급여 신청자수",
+      "timestamp": "202201",
+      "value": 14161.0,
+      "item_codes": {
+        "C1": "09"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "강원특별자치도 - 구직급여 신청자수",
+      "timestamp": "202202",
+      "value": 7152.0,
+      "item_codes": {
+        "C1": "09"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "강원특별자치도 - 구직급여 신청자수",
+      "timestamp": "202203",
+      "value": 7382.0,
+      "item_codes": {
+        "C1": "09"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "강원특별자치도 - 구직급여 신청자수",
+      "timestamp": "202204",
+      "value": 9206.0,
+      "item_codes": {
+        "C1": "09"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "강원특별자치도 - 구직급여 신청자수",
+      "timestamp": "202301",
+      "value": 14724.0,
+      "item_codes": {
+        "C1": "09"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "강원특별자치도 - 구직급여 신청자수",
+      "timestamp": "202302",
+      "value": 6911.0,
+      "item_codes": {
+        "C1": "09"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "강원특별자치도 - 구직급여 신청자수",
+      "timestamp": "202303",
+      "value": 7220.0,
+      "item_codes": {
+        "C1": "09"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "강원특별자치도 - 구직급여 신청자수",
+      "timestamp": "202304",
+      "value": 8849.0,
+      "item_codes": {
+        "C1": "09"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "강원특별자치도 - 구직급여 신청자수",
+      "timestamp": "202401",
+      "value": 14352.0,
+      "item_codes": {
+        "C1": "09"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "강원특별자치도 - 구직급여 신청자수",
+      "timestamp": "202402",
+      "value": 6997.0,
+      "item_codes": {
+        "C1": "09"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "강원특별자치도 - 구직급여 신청자수",
+      "timestamp": "202403",
+      "value": 7316.0,
+      "item_codes": {
+        "C1": "09"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "강원특별자치도 - 구직급여 신청자수",
+      "timestamp": "202404",
+      "value": 9201.0,
+      "item_codes": {
+        "C1": "09"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "강원특별자치도 - 구직급여 신청자수",
+      "timestamp": "202501",
+      "value": 13717.0,
+      "item_codes": {
+        "C1": "09"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "충청북도 - 구직급여 신청자수",
+      "timestamp": "201501",
+      "value": 9728.0,
+      "item_codes": {
+        "C1": "10"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "충청북도 - 구직급여 신청자수",
+      "timestamp": "201502",
+      "value": 6365.0,
+      "item_codes": {
+        "C1": "10"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "충청북도 - 구직급여 신청자수",
+      "timestamp": "201503",
+      "value": 6018.0,
+      "item_codes": {
+        "C1": "10"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "충청북도 - 구직급여 신청자수",
+      "timestamp": "201504",
+      "value": 5635.0,
+      "item_codes": {
+        "C1": "10"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "충청북도 - 구직급여 신청자수",
+      "timestamp": "201601",
+      "value": 9614.0,
+      "item_codes": {
+        "C1": "10"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "충청북도 - 구직급여 신청자수",
+      "timestamp": "201602",
+      "value": 5796.0,
+      "item_codes": {
+        "C1": "10"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "충청북도 - 구직급여 신청자수",
+      "timestamp": "201603",
+      "value": 5111.0,
+      "item_codes": {
+        "C1": "10"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "충청북도 - 구직급여 신청자수",
+      "timestamp": "201604",
+      "value": 6041.0,
+      "item_codes": {
+        "C1": "10"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "충청북도 - 구직급여 신청자수",
+      "timestamp": "201701",
+      "value": 9009.0,
+      "item_codes": {
+        "C1": "10"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "충청북도 - 구직급여 신청자수",
+      "timestamp": "201702",
+      "value": 5659.0,
+      "item_codes": {
+        "C1": "10"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "충청북도 - 구직급여 신청자수",
+      "timestamp": "201703",
+      "value": 5607.0,
+      "item_codes": {
+        "C1": "10"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "충청북도 - 구직급여 신청자수",
+      "timestamp": "201704",
+      "value": 5830.0,
+      "item_codes": {
+        "C1": "10"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "충청북도 - 구직급여 신청자수",
+      "timestamp": "201801",
+      "value": 10132.0,
+      "item_codes": {
+        "C1": "10"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "충청북도 - 구직급여 신청자수",
+      "timestamp": "201802",
+      "value": 5996.0,
+      "item_codes": {
+        "C1": "10"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "충청북도 - 구직급여 신청자수",
+      "timestamp": "201803",
+      "value": 6047.0,
+      "item_codes": {
+        "C1": "10"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "충청북도 - 구직급여 신청자수",
+      "timestamp": "201804",
+      "value": 7003.0,
+      "item_codes": {
+        "C1": "10"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "충청북도 - 구직급여 신청자수",
+      "timestamp": "201901",
+      "value": 11547.0,
+      "item_codes": {
+        "C1": "10"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "충청북도 - 구직급여 신청자수",
+      "timestamp": "201902",
+      "value": 6939.0,
+      "item_codes": {
+        "C1": "10"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "충청북도 - 구직급여 신청자수",
+      "timestamp": "201903",
+      "value": 6497.0,
+      "item_codes": {
+        "C1": "10"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "충청북도 - 구직급여 신청자수",
+      "timestamp": "201904",
+      "value": 7603.0,
+      "item_codes": {
+        "C1": "10"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "충청북도 - 구직급여 신청자수",
+      "timestamp": "202001",
+      "value": 12870.0,
+      "item_codes": {
+        "C1": "10"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "충청북도 - 구직급여 신청자수",
+      "timestamp": "202002",
+      "value": 8877.0,
+      "item_codes": {
+        "C1": "10"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "충청북도 - 구직급여 신청자수",
+      "timestamp": "202003",
+      "value": 7556.0,
+      "item_codes": {
+        "C1": "10"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "충청북도 - 구직급여 신청자수",
+      "timestamp": "202004",
+      "value": 7746.0,
+      "item_codes": {
+        "C1": "10"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "충청북도 - 구직급여 신청자수",
+      "timestamp": "202101",
+      "value": 13715.0,
+      "item_codes": {
+        "C1": "10"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "충청북도 - 구직급여 신청자수",
+      "timestamp": "202102",
+      "value": 7349.0,
+      "item_codes": {
+        "C1": "10"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "충청북도 - 구직급여 신청자수",
+      "timestamp": "202103",
+      "value": 7105.0,
+      "item_codes": {
+        "C1": "10"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "충청북도 - 구직급여 신청자수",
+      "timestamp": "202104",
+      "value": 7735.0,
+      "item_codes": {
+        "C1": "10"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "충청북도 - 구직급여 신청자수",
+      "timestamp": "202201",
+      "value": 12718.0,
+      "item_codes": {
+        "C1": "10"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "충청북도 - 구직급여 신청자수",
+      "timestamp": "202202",
+      "value": 7390.0,
+      "item_codes": {
+        "C1": "10"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "충청북도 - 구직급여 신청자수",
+      "timestamp": "202203",
+      "value": 7021.0,
+      "item_codes": {
+        "C1": "10"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "충청북도 - 구직급여 신청자수",
+      "timestamp": "202204",
+      "value": 7533.0,
+      "item_codes": {
+        "C1": "10"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "충청북도 - 구직급여 신청자수",
+      "timestamp": "202301",
+      "value": 13662.0,
+      "item_codes": {
+        "C1": "10"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "충청북도 - 구직급여 신청자수",
+      "timestamp": "202302",
+      "value": 7578.0,
+      "item_codes": {
+        "C1": "10"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "충청북도 - 구직급여 신청자수",
+      "timestamp": "202303",
+      "value": 7608.0,
+      "item_codes": {
+        "C1": "10"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "충청북도 - 구직급여 신청자수",
+      "timestamp": "202304",
+      "value": 7667.0,
+      "item_codes": {
+        "C1": "10"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "충청북도 - 구직급여 신청자수",
+      "timestamp": "202401",
+      "value": 13019.0,
+      "item_codes": {
+        "C1": "10"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "충청북도 - 구직급여 신청자수",
+      "timestamp": "202402",
+      "value": 7199.0,
+      "item_codes": {
+        "C1": "10"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "충청북도 - 구직급여 신청자수",
+      "timestamp": "202403",
+      "value": 7835.0,
+      "item_codes": {
+        "C1": "10"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "충청북도 - 구직급여 신청자수",
+      "timestamp": "202404",
+      "value": 7791.0,
+      "item_codes": {
+        "C1": "10"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "충청북도 - 구직급여 신청자수",
+      "timestamp": "202501",
+      "value": 13004.0,
+      "item_codes": {
+        "C1": "10"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "충청남도 - 구직급여 신청자수",
+      "timestamp": "201501",
+      "value": 10801.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "충청남도 - 구직급여 신청자수",
+      "timestamp": "201502",
+      "value": 7689.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "충청남도 - 구직급여 신청자수",
+      "timestamp": "201503",
+      "value": 6974.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "충청남도 - 구직급여 신청자수",
+      "timestamp": "201504",
+      "value": 7272.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "충청남도 - 구직급여 신청자수",
+      "timestamp": "201601",
+      "value": 11473.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "충청남도 - 구직급여 신청자수",
+      "timestamp": "201602",
+      "value": 7493.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "충청남도 - 구직급여 신청자수",
+      "timestamp": "201603",
+      "value": 6897.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "충청남도 - 구직급여 신청자수",
+      "timestamp": "201604",
+      "value": 7168.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "충청남도 - 구직급여 신청자수",
+      "timestamp": "201701",
+      "value": 10577.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "충청남도 - 구직급여 신청자수",
+      "timestamp": "201702",
+      "value": 7020.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "충청남도 - 구직급여 신청자수",
+      "timestamp": "201703",
+      "value": 6301.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "충청남도 - 구직급여 신청자수",
+      "timestamp": "201704",
+      "value": 5811.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "충청남도 - 구직급여 신청자수",
+      "timestamp": "201801",
+      "value": 11410.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "충청남도 - 구직급여 신청자수",
+      "timestamp": "201802",
+      "value": 7650.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "충청남도 - 구직급여 신청자수",
+      "timestamp": "201803",
+      "value": 7701.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "충청남도 - 구직급여 신청자수",
+      "timestamp": "201804",
+      "value": 7676.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "충청남도 - 구직급여 신청자수",
+      "timestamp": "201901",
+      "value": 12889.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "충청남도 - 구직급여 신청자수",
+      "timestamp": "201902",
+      "value": 8326.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "충청남도 - 구직급여 신청자수",
+      "timestamp": "201903",
+      "value": 8248.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "충청남도 - 구직급여 신청자수",
+      "timestamp": "201904",
+      "value": 8949.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "충청남도 - 구직급여 신청자수",
+      "timestamp": "202001",
+      "value": 14913.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "충청남도 - 구직급여 신청자수",
+      "timestamp": "202002",
+      "value": 10578.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "충청남도 - 구직급여 신청자수",
+      "timestamp": "202003",
+      "value": 10332.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "충청남도 - 구직급여 신청자수",
+      "timestamp": "202004",
+      "value": 9412.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "충청남도 - 구직급여 신청자수",
+      "timestamp": "202101",
+      "value": 16525.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "충청남도 - 구직급여 신청자수",
+      "timestamp": "202102",
+      "value": 9428.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "충청남도 - 구직급여 신청자수",
+      "timestamp": "202103",
+      "value": 9282.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "충청남도 - 구직급여 신청자수",
+      "timestamp": "202104",
+      "value": 9722.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "충청남도 - 구직급여 신청자수",
+      "timestamp": "202201",
+      "value": 15077.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "충청남도 - 구직급여 신청자수",
+      "timestamp": "202202",
+      "value": 8277.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "충청남도 - 구직급여 신청자수",
+      "timestamp": "202203",
+      "value": 8586.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "충청남도 - 구직급여 신청자수",
+      "timestamp": "202204",
+      "value": 8498.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "충청남도 - 구직급여 신청자수",
+      "timestamp": "202301",
+      "value": 15424.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "충청남도 - 구직급여 신청자수",
+      "timestamp": "202302",
+      "value": 8857.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "충청남도 - 구직급여 신청자수",
+      "timestamp": "202303",
+      "value": 8850.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "충청남도 - 구직급여 신청자수",
+      "timestamp": "202304",
+      "value": 8584.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "충청남도 - 구직급여 신청자수",
+      "timestamp": "202401",
+      "value": 15653.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "충청남도 - 구직급여 신청자수",
+      "timestamp": "202402",
+      "value": 9572.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "충청남도 - 구직급여 신청자수",
+      "timestamp": "202403",
+      "value": 9830.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "충청남도 - 구직급여 신청자수",
+      "timestamp": "202404",
+      "value": 9838.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "충청남도 - 구직급여 신청자수",
+      "timestamp": "202501",
+      "value": 16601.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전북특별자치도 - 구직급여 신청자수",
+      "timestamp": "201501",
+      "value": 10785.0,
+      "item_codes": {
+        "C1": "12"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전북특별자치도 - 구직급여 신청자수",
+      "timestamp": "201502",
+      "value": 7317.0,
+      "item_codes": {
+        "C1": "12"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전북특별자치도 - 구직급여 신청자수",
+      "timestamp": "201503",
+      "value": 6688.0,
+      "item_codes": {
+        "C1": "12"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전북특별자치도 - 구직급여 신청자수",
+      "timestamp": "201504",
+      "value": 6872.0,
+      "item_codes": {
+        "C1": "12"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전북특별자치도 - 구직급여 신청자수",
+      "timestamp": "201601",
+      "value": 10977.0,
+      "item_codes": {
+        "C1": "12"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전북특별자치도 - 구직급여 신청자수",
+      "timestamp": "201602",
+      "value": 6798.0,
+      "item_codes": {
+        "C1": "12"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전북특별자치도 - 구직급여 신청자수",
+      "timestamp": "201603",
+      "value": 6157.0,
+      "item_codes": {
+        "C1": "12"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전북특별자치도 - 구직급여 신청자수",
+      "timestamp": "201604",
+      "value": 7190.0,
+      "item_codes": {
+        "C1": "12"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전북특별자치도 - 구직급여 신청자수",
+      "timestamp": "201701",
+      "value": 11058.0,
+      "item_codes": {
+        "C1": "12"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전북특별자치도 - 구직급여 신청자수",
+      "timestamp": "201702",
+      "value": 7161.0,
+      "item_codes": {
+        "C1": "12"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전북특별자치도 - 구직급여 신청자수",
+      "timestamp": "201703",
+      "value": 6858.0,
+      "item_codes": {
+        "C1": "12"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전북특별자치도 - 구직급여 신청자수",
+      "timestamp": "201704",
+      "value": 6502.0,
+      "item_codes": {
+        "C1": "12"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전북특별자치도 - 구직급여 신청자수",
+      "timestamp": "201801",
+      "value": 12087.0,
+      "item_codes": {
+        "C1": "12"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전북특별자치도 - 구직급여 신청자수",
+      "timestamp": "201802",
+      "value": 8264.0,
+      "item_codes": {
+        "C1": "12"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전북특별자치도 - 구직급여 신청자수",
+      "timestamp": "201803",
+      "value": 7004.0,
+      "item_codes": {
+        "C1": "12"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전북특별자치도 - 구직급여 신청자수",
+      "timestamp": "201804",
+      "value": 7538.0,
+      "item_codes": {
+        "C1": "12"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전북특별자치도 - 구직급여 신청자수",
+      "timestamp": "201901",
+      "value": 13080.0,
+      "item_codes": {
+        "C1": "12"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전북특별자치도 - 구직급여 신청자수",
+      "timestamp": "201902",
+      "value": 7725.0,
+      "item_codes": {
+        "C1": "12"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전북특별자치도 - 구직급여 신청자수",
+      "timestamp": "201903",
+      "value": 7355.0,
+      "item_codes": {
+        "C1": "12"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전북특별자치도 - 구직급여 신청자수",
+      "timestamp": "201904",
+      "value": 8069.0,
+      "item_codes": {
+        "C1": "12"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전북특별자치도 - 구직급여 신청자수",
+      "timestamp": "202001",
+      "value": 14730.0,
+      "item_codes": {
+        "C1": "12"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전북특별자치도 - 구직급여 신청자수",
+      "timestamp": "202002",
+      "value": 10046.0,
+      "item_codes": {
+        "C1": "12"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전북특별자치도 - 구직급여 신청자수",
+      "timestamp": "202003",
+      "value": 8508.0,
+      "item_codes": {
+        "C1": "12"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전북특별자치도 - 구직급여 신청자수",
+      "timestamp": "202004",
+      "value": 8713.0,
+      "item_codes": {
+        "C1": "12"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전북특별자치도 - 구직급여 신청자수",
+      "timestamp": "202101",
+      "value": 15549.0,
+      "item_codes": {
+        "C1": "12"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전북특별자치도 - 구직급여 신청자수",
+      "timestamp": "202102",
+      "value": 8107.0,
+      "item_codes": {
+        "C1": "12"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전북특별자치도 - 구직급여 신청자수",
+      "timestamp": "202103",
+      "value": 7939.0,
+      "item_codes": {
+        "C1": "12"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전북특별자치도 - 구직급여 신청자수",
+      "timestamp": "202104",
+      "value": 8660.0,
+      "item_codes": {
+        "C1": "12"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전북특별자치도 - 구직급여 신청자수",
+      "timestamp": "202201",
+      "value": 14169.0,
+      "item_codes": {
+        "C1": "12"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전북특별자치도 - 구직급여 신청자수",
+      "timestamp": "202202",
+      "value": 8199.0,
+      "item_codes": {
+        "C1": "12"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전북특별자치도 - 구직급여 신청자수",
+      "timestamp": "202203",
+      "value": 8262.0,
+      "item_codes": {
+        "C1": "12"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전북특별자치도 - 구직급여 신청자수",
+      "timestamp": "202204",
+      "value": 8521.0,
+      "item_codes": {
+        "C1": "12"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전북특별자치도 - 구직급여 신청자수",
+      "timestamp": "202301",
+      "value": 14425.0,
+      "item_codes": {
+        "C1": "12"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전북특별자치도 - 구직급여 신청자수",
+      "timestamp": "202302",
+      "value": 7979.0,
+      "item_codes": {
+        "C1": "12"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전북특별자치도 - 구직급여 신청자수",
+      "timestamp": "202303",
+      "value": 7900.0,
+      "item_codes": {
+        "C1": "12"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전북특별자치도 - 구직급여 신청자수",
+      "timestamp": "202304",
+      "value": 7843.0,
+      "item_codes": {
+        "C1": "12"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전북특별자치도 - 구직급여 신청자수",
+      "timestamp": "202401",
+      "value": 14255.0,
+      "item_codes": {
+        "C1": "12"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전북특별자치도 - 구직급여 신청자수",
+      "timestamp": "202402",
+      "value": 7924.0,
+      "item_codes": {
+        "C1": "12"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전북특별자치도 - 구직급여 신청자수",
+      "timestamp": "202403",
+      "value": 7751.0,
+      "item_codes": {
+        "C1": "12"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전북특별자치도 - 구직급여 신청자수",
+      "timestamp": "202404",
+      "value": 8265.0,
+      "item_codes": {
+        "C1": "12"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전북특별자치도 - 구직급여 신청자수",
+      "timestamp": "202501",
+      "value": 14586.0,
+      "item_codes": {
+        "C1": "12"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전라남도 - 구직급여 신청자수",
+      "timestamp": "201501",
+      "value": 8035.0,
+      "item_codes": {
+        "C1": "13"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전라남도 - 구직급여 신청자수",
+      "timestamp": "201502",
+      "value": 5169.0,
+      "item_codes": {
+        "C1": "13"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전라남도 - 구직급여 신청자수",
+      "timestamp": "201503",
+      "value": 5297.0,
+      "item_codes": {
+        "C1": "13"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전라남도 - 구직급여 신청자수",
+      "timestamp": "201504",
+      "value": 5161.0,
+      "item_codes": {
+        "C1": "13"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전라남도 - 구직급여 신청자수",
+      "timestamp": "201601",
+      "value": 8346.0,
+      "item_codes": {
+        "C1": "13"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전라남도 - 구직급여 신청자수",
+      "timestamp": "201602",
+      "value": 5652.0,
+      "item_codes": {
+        "C1": "13"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전라남도 - 구직급여 신청자수",
+      "timestamp": "201603",
+      "value": 5594.0,
+      "item_codes": {
+        "C1": "13"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전라남도 - 구직급여 신청자수",
+      "timestamp": "201604",
+      "value": 5244.0,
+      "item_codes": {
+        "C1": "13"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전라남도 - 구직급여 신청자수",
+      "timestamp": "201701",
+      "value": 8340.0,
+      "item_codes": {
+        "C1": "13"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전라남도 - 구직급여 신청자수",
+      "timestamp": "201702",
+      "value": 6131.0,
+      "item_codes": {
+        "C1": "13"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전라남도 - 구직급여 신청자수",
+      "timestamp": "201703",
+      "value": 5876.0,
+      "item_codes": {
+        "C1": "13"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전라남도 - 구직급여 신청자수",
+      "timestamp": "201704",
+      "value": 4974.0,
+      "item_codes": {
+        "C1": "13"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전라남도 - 구직급여 신청자수",
+      "timestamp": "201801",
+      "value": 9402.0,
+      "item_codes": {
+        "C1": "13"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전라남도 - 구직급여 신청자수",
+      "timestamp": "201802",
+      "value": 5743.0,
+      "item_codes": {
+        "C1": "13"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전라남도 - 구직급여 신청자수",
+      "timestamp": "201803",
+      "value": 6317.0,
+      "item_codes": {
+        "C1": "13"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전라남도 - 구직급여 신청자수",
+      "timestamp": "201804",
+      "value": 5829.0,
+      "item_codes": {
+        "C1": "13"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전라남도 - 구직급여 신청자수",
+      "timestamp": "201901",
+      "value": 10449.0,
+      "item_codes": {
+        "C1": "13"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전라남도 - 구직급여 신청자수",
+      "timestamp": "201902",
+      "value": 6116.0,
+      "item_codes": {
+        "C1": "13"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전라남도 - 구직급여 신청자수",
+      "timestamp": "201903",
+      "value": 7209.0,
+      "item_codes": {
+        "C1": "13"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전라남도 - 구직급여 신청자수",
+      "timestamp": "201904",
+      "value": 6581.0,
+      "item_codes": {
+        "C1": "13"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전라남도 - 구직급여 신청자수",
+      "timestamp": "202001",
+      "value": 11840.0,
+      "item_codes": {
+        "C1": "13"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전라남도 - 구직급여 신청자수",
+      "timestamp": "202002",
+      "value": 7479.0,
+      "item_codes": {
+        "C1": "13"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전라남도 - 구직급여 신청자수",
+      "timestamp": "202003",
+      "value": 7751.0,
+      "item_codes": {
+        "C1": "13"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전라남도 - 구직급여 신청자수",
+      "timestamp": "202004",
+      "value": 7069.0,
+      "item_codes": {
+        "C1": "13"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전라남도 - 구직급여 신청자수",
+      "timestamp": "202101",
+      "value": 15057.0,
+      "item_codes": {
+        "C1": "13"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전라남도 - 구직급여 신청자수",
+      "timestamp": "202102",
+      "value": 9544.0,
+      "item_codes": {
+        "C1": "13"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전라남도 - 구직급여 신청자수",
+      "timestamp": "202103",
+      "value": 8879.0,
+      "item_codes": {
+        "C1": "13"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전라남도 - 구직급여 신청자수",
+      "timestamp": "202104",
+      "value": 8011.0,
+      "item_codes": {
+        "C1": "13"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전라남도 - 구직급여 신청자수",
+      "timestamp": "202201",
+      "value": 13170.0,
+      "item_codes": {
+        "C1": "13"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전라남도 - 구직급여 신청자수",
+      "timestamp": "202202",
+      "value": 6724.0,
+      "item_codes": {
+        "C1": "13"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전라남도 - 구직급여 신청자수",
+      "timestamp": "202203",
+      "value": 7403.0,
+      "item_codes": {
+        "C1": "13"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전라남도 - 구직급여 신청자수",
+      "timestamp": "202204",
+      "value": 7199.0,
+      "item_codes": {
+        "C1": "13"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전라남도 - 구직급여 신청자수",
+      "timestamp": "202301",
+      "value": 13075.0,
+      "item_codes": {
+        "C1": "13"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전라남도 - 구직급여 신청자수",
+      "timestamp": "202302",
+      "value": 6720.0,
+      "item_codes": {
+        "C1": "13"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전라남도 - 구직급여 신청자수",
+      "timestamp": "202303",
+      "value": 7216.0,
+      "item_codes": {
+        "C1": "13"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전라남도 - 구직급여 신청자수",
+      "timestamp": "202304",
+      "value": 7426.0,
+      "item_codes": {
+        "C1": "13"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전라남도 - 구직급여 신청자수",
+      "timestamp": "202401",
+      "value": 12281.0,
+      "item_codes": {
+        "C1": "13"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전라남도 - 구직급여 신청자수",
+      "timestamp": "202402",
+      "value": 7046.0,
+      "item_codes": {
+        "C1": "13"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전라남도 - 구직급여 신청자수",
+      "timestamp": "202403",
+      "value": 8086.0,
+      "item_codes": {
+        "C1": "13"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전라남도 - 구직급여 신청자수",
+      "timestamp": "202404",
+      "value": 8791.0,
+      "item_codes": {
+        "C1": "13"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "전라남도 - 구직급여 신청자수",
+      "timestamp": "202501",
+      "value": 14076.0,
+      "item_codes": {
+        "C1": "13"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경상북도 - 구직급여 신청자수",
+      "timestamp": "201501",
+      "value": 14473.0,
+      "item_codes": {
+        "C1": "14"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경상북도 - 구직급여 신청자수",
+      "timestamp": "201502",
+      "value": 11753.0,
+      "item_codes": {
+        "C1": "14"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경상북도 - 구직급여 신청자수",
+      "timestamp": "201503",
+      "value": 10539.0,
+      "item_codes": {
+        "C1": "14"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경상북도 - 구직급여 신청자수",
+      "timestamp": "201504",
+      "value": 10655.0,
+      "item_codes": {
+        "C1": "14"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경상북도 - 구직급여 신청자수",
+      "timestamp": "201601",
+      "value": 15628.0,
+      "item_codes": {
+        "C1": "14"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경상북도 - 구직급여 신청자수",
+      "timestamp": "201602",
+      "value": 11323.0,
+      "item_codes": {
+        "C1": "14"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경상북도 - 구직급여 신청자수",
+      "timestamp": "201603",
+      "value": 9638.0,
+      "item_codes": {
+        "C1": "14"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경상북도 - 구직급여 신청자수",
+      "timestamp": "201604",
+      "value": 9946.0,
+      "item_codes": {
+        "C1": "14"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경상북도 - 구직급여 신청자수",
+      "timestamp": "201701",
+      "value": 15046.0,
+      "item_codes": {
+        "C1": "14"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경상북도 - 구직급여 신청자수",
+      "timestamp": "201702",
+      "value": 10067.0,
+      "item_codes": {
+        "C1": "14"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경상북도 - 구직급여 신청자수",
+      "timestamp": "201703",
+      "value": 10634.0,
+      "item_codes": {
+        "C1": "14"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경상북도 - 구직급여 신청자수",
+      "timestamp": "201704",
+      "value": 9537.0,
+      "item_codes": {
+        "C1": "14"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경상북도 - 구직급여 신청자수",
+      "timestamp": "201801",
+      "value": 17881.0,
+      "item_codes": {
+        "C1": "14"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경상북도 - 구직급여 신청자수",
+      "timestamp": "201802",
+      "value": 11815.0,
+      "item_codes": {
+        "C1": "14"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경상북도 - 구직급여 신청자수",
+      "timestamp": "201803",
+      "value": 11595.0,
+      "item_codes": {
+        "C1": "14"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경상북도 - 구직급여 신청자수",
+      "timestamp": "201804",
+      "value": 13401.0,
+      "item_codes": {
+        "C1": "14"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경상북도 - 구직급여 신청자수",
+      "timestamp": "201901",
+      "value": 19652.0,
+      "item_codes": {
+        "C1": "14"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경상북도 - 구직급여 신청자수",
+      "timestamp": "201902",
+      "value": 12906.0,
+      "item_codes": {
+        "C1": "14"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경상북도 - 구직급여 신청자수",
+      "timestamp": "201903",
+      "value": 11875.0,
+      "item_codes": {
+        "C1": "14"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경상북도 - 구직급여 신청자수",
+      "timestamp": "201904",
+      "value": 13372.0,
+      "item_codes": {
+        "C1": "14"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경상북도 - 구직급여 신청자수",
+      "timestamp": "202001",
+      "value": 22585.0,
+      "item_codes": {
+        "C1": "14"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경상북도 - 구직급여 신청자수",
+      "timestamp": "202002",
+      "value": 16884.0,
+      "item_codes": {
+        "C1": "14"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경상북도 - 구직급여 신청자수",
+      "timestamp": "202003",
+      "value": 14179.0,
+      "item_codes": {
+        "C1": "14"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경상북도 - 구직급여 신청자수",
+      "timestamp": "202004",
+      "value": 13282.0,
+      "item_codes": {
+        "C1": "14"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경상북도 - 구직급여 신청자수",
+      "timestamp": "202101",
+      "value": 24231.0,
+      "item_codes": {
+        "C1": "14"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경상북도 - 구직급여 신청자수",
+      "timestamp": "202102",
+      "value": 13268.0,
+      "item_codes": {
+        "C1": "14"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경상북도 - 구직급여 신청자수",
+      "timestamp": "202103",
+      "value": 12265.0,
+      "item_codes": {
+        "C1": "14"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경상북도 - 구직급여 신청자수",
+      "timestamp": "202104",
+      "value": 12869.0,
+      "item_codes": {
+        "C1": "14"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경상북도 - 구직급여 신청자수",
+      "timestamp": "202201",
+      "value": 22105.0,
+      "item_codes": {
+        "C1": "14"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경상북도 - 구직급여 신청자수",
+      "timestamp": "202202",
+      "value": 13490.0,
+      "item_codes": {
+        "C1": "14"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경상북도 - 구직급여 신청자수",
+      "timestamp": "202203",
+      "value": 12451.0,
+      "item_codes": {
+        "C1": "14"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경상북도 - 구직급여 신청자수",
+      "timestamp": "202204",
+      "value": 13217.0,
+      "item_codes": {
+        "C1": "14"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경상북도 - 구직급여 신청자수",
+      "timestamp": "202301",
+      "value": 23103.0,
+      "item_codes": {
+        "C1": "14"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경상북도 - 구직급여 신청자수",
+      "timestamp": "202302",
+      "value": 12672.0,
+      "item_codes": {
+        "C1": "14"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경상북도 - 구직급여 신청자수",
+      "timestamp": "202303",
+      "value": 13654.0,
+      "item_codes": {
+        "C1": "14"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경상북도 - 구직급여 신청자수",
+      "timestamp": "202304",
+      "value": 12431.0,
+      "item_codes": {
+        "C1": "14"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경상북도 - 구직급여 신청자수",
+      "timestamp": "202401",
+      "value": 21862.0,
+      "item_codes": {
+        "C1": "14"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경상북도 - 구직급여 신청자수",
+      "timestamp": "202402",
+      "value": 12975.0,
+      "item_codes": {
+        "C1": "14"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경상북도 - 구직급여 신청자수",
+      "timestamp": "202403",
+      "value": 13831.0,
+      "item_codes": {
+        "C1": "14"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경상북도 - 구직급여 신청자수",
+      "timestamp": "202404",
+      "value": 13480.0,
+      "item_codes": {
+        "C1": "14"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경상북도 - 구직급여 신청자수",
+      "timestamp": "202501",
+      "value": 22082.0,
+      "item_codes": {
+        "C1": "14"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경상남도 - 구직급여 신청자수",
+      "timestamp": "201501",
+      "value": 18556.0,
+      "item_codes": {
+        "C1": "15"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경상남도 - 구직급여 신청자수",
+      "timestamp": "201502",
+      "value": 14662.0,
+      "item_codes": {
+        "C1": "15"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경상남도 - 구직급여 신청자수",
+      "timestamp": "201503",
+      "value": 12820.0,
+      "item_codes": {
+        "C1": "15"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경상남도 - 구직급여 신청자수",
+      "timestamp": "201504",
+      "value": 13779.0,
+      "item_codes": {
+        "C1": "15"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경상남도 - 구직급여 신청자수",
+      "timestamp": "201601",
+      "value": 19441.0,
+      "item_codes": {
+        "C1": "15"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경상남도 - 구직급여 신청자수",
+      "timestamp": "201602",
+      "value": 16059.0,
+      "item_codes": {
+        "C1": "15"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경상남도 - 구직급여 신청자수",
+      "timestamp": "201603",
+      "value": 15977.0,
+      "item_codes": {
+        "C1": "15"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경상남도 - 구직급여 신청자수",
+      "timestamp": "201604",
+      "value": 15538.0,
+      "item_codes": {
+        "C1": "15"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경상남도 - 구직급여 신청자수",
+      "timestamp": "201701",
+      "value": 20535.0,
+      "item_codes": {
+        "C1": "15"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경상남도 - 구직급여 신청자수",
+      "timestamp": "201702",
+      "value": 17559.0,
+      "item_codes": {
+        "C1": "15"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경상남도 - 구직급여 신청자수",
+      "timestamp": "201703",
+      "value": 17803.0,
+      "item_codes": {
+        "C1": "15"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경상남도 - 구직급여 신청자수",
+      "timestamp": "201704",
+      "value": 15650.0,
+      "item_codes": {
+        "C1": "15"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경상남도 - 구직급여 신청자수",
+      "timestamp": "201801",
+      "value": 24149.0,
+      "item_codes": {
+        "C1": "15"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경상남도 - 구직급여 신청자수",
+      "timestamp": "201802",
+      "value": 18316.0,
+      "item_codes": {
+        "C1": "15"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경상남도 - 구직급여 신청자수",
+      "timestamp": "201803",
+      "value": 15798.0,
+      "item_codes": {
+        "C1": "15"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경상남도 - 구직급여 신청자수",
+      "timestamp": "201804",
+      "value": 15351.0,
+      "item_codes": {
+        "C1": "15"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경상남도 - 구직급여 신청자수",
+      "timestamp": "201901",
+      "value": 24970.0,
+      "item_codes": {
+        "C1": "15"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경상남도 - 구직급여 신청자수",
+      "timestamp": "201902",
+      "value": 18018.0,
+      "item_codes": {
+        "C1": "15"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경상남도 - 구직급여 신청자수",
+      "timestamp": "201903",
+      "value": 16779.0,
+      "item_codes": {
+        "C1": "15"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경상남도 - 구직급여 신청자수",
+      "timestamp": "201904",
+      "value": 17405.0,
+      "item_codes": {
+        "C1": "15"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경상남도 - 구직급여 신청자수",
+      "timestamp": "202001",
+      "value": 29538.0,
+      "item_codes": {
+        "C1": "15"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경상남도 - 구직급여 신청자수",
+      "timestamp": "202002",
+      "value": 24884.0,
+      "item_codes": {
+        "C1": "15"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경상남도 - 구직급여 신청자수",
+      "timestamp": "202003",
+      "value": 20255.0,
+      "item_codes": {
+        "C1": "15"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경상남도 - 구직급여 신청자수",
+      "timestamp": "202004",
+      "value": 19076.0,
+      "item_codes": {
+        "C1": "15"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경상남도 - 구직급여 신청자수",
+      "timestamp": "202101",
+      "value": 32595.0,
+      "item_codes": {
+        "C1": "15"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경상남도 - 구직급여 신청자수",
+      "timestamp": "202102",
+      "value": 20839.0,
+      "item_codes": {
+        "C1": "15"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경상남도 - 구직급여 신청자수",
+      "timestamp": "202103",
+      "value": 18068.0,
+      "item_codes": {
+        "C1": "15"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경상남도 - 구직급여 신청자수",
+      "timestamp": "202104",
+      "value": 18588.0,
+      "item_codes": {
+        "C1": "15"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경상남도 - 구직급여 신청자수",
+      "timestamp": "202201",
+      "value": 28156.0,
+      "item_codes": {
+        "C1": "15"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경상남도 - 구직급여 신청자수",
+      "timestamp": "202202",
+      "value": 19762.0,
+      "item_codes": {
+        "C1": "15"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경상남도 - 구직급여 신청자수",
+      "timestamp": "202203",
+      "value": 18246.0,
+      "item_codes": {
+        "C1": "15"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경상남도 - 구직급여 신청자수",
+      "timestamp": "202204",
+      "value": 17489.0,
+      "item_codes": {
+        "C1": "15"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경상남도 - 구직급여 신청자수",
+      "timestamp": "202301",
+      "value": 28501.0,
+      "item_codes": {
+        "C1": "15"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경상남도 - 구직급여 신청자수",
+      "timestamp": "202302",
+      "value": 18004.0,
+      "item_codes": {
+        "C1": "15"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경상남도 - 구직급여 신청자수",
+      "timestamp": "202303",
+      "value": 17199.0,
+      "item_codes": {
+        "C1": "15"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경상남도 - 구직급여 신청자수",
+      "timestamp": "202304",
+      "value": 16840.0,
+      "item_codes": {
+        "C1": "15"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경상남도 - 구직급여 신청자수",
+      "timestamp": "202401",
+      "value": 26745.0,
+      "item_codes": {
+        "C1": "15"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경상남도 - 구직급여 신청자수",
+      "timestamp": "202402",
+      "value": 18119.0,
+      "item_codes": {
+        "C1": "15"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경상남도 - 구직급여 신청자수",
+      "timestamp": "202403",
+      "value": 17049.0,
+      "item_codes": {
+        "C1": "15"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경상남도 - 구직급여 신청자수",
+      "timestamp": "202404",
+      "value": 17177.0,
+      "item_codes": {
+        "C1": "15"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "경상남도 - 구직급여 신청자수",
+      "timestamp": "202501",
+      "value": 27372.0,
+      "item_codes": {
+        "C1": "15"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "제주특별자치도 - 구직급여 신청자수",
+      "timestamp": "201501",
+      "value": 2548.0,
+      "item_codes": {
+        "C1": "16"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "제주특별자치도 - 구직급여 신청자수",
+      "timestamp": "201502",
+      "value": 1810.0,
+      "item_codes": {
+        "C1": "16"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "제주특별자치도 - 구직급여 신청자수",
+      "timestamp": "201503",
+      "value": 1652.0,
+      "item_codes": {
+        "C1": "16"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "제주특별자치도 - 구직급여 신청자수",
+      "timestamp": "201504",
+      "value": 1569.0,
+      "item_codes": {
+        "C1": "16"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "제주특별자치도 - 구직급여 신청자수",
+      "timestamp": "201601",
+      "value": 2565.0,
+      "item_codes": {
+        "C1": "16"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "제주특별자치도 - 구직급여 신청자수",
+      "timestamp": "201602",
+      "value": 1765.0,
+      "item_codes": {
+        "C1": "16"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "제주특별자치도 - 구직급여 신청자수",
+      "timestamp": "201603",
+      "value": 1640.0,
+      "item_codes": {
+        "C1": "16"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "제주특별자치도 - 구직급여 신청자수",
+      "timestamp": "201604",
+      "value": 1680.0,
+      "item_codes": {
+        "C1": "16"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "제주특별자치도 - 구직급여 신청자수",
+      "timestamp": "201701",
+      "value": 2905.0,
+      "item_codes": {
+        "C1": "16"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "제주특별자치도 - 구직급여 신청자수",
+      "timestamp": "201702",
+      "value": 2195.0,
+      "item_codes": {
+        "C1": "16"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "제주특별자치도 - 구직급여 신청자수",
+      "timestamp": "201703",
+      "value": 2048.0,
+      "item_codes": {
+        "C1": "16"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "제주특별자치도 - 구직급여 신청자수",
+      "timestamp": "201704",
+      "value": 1930.0,
+      "item_codes": {
+        "C1": "16"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "제주특별자치도 - 구직급여 신청자수",
+      "timestamp": "201801",
+      "value": 3343.0,
+      "item_codes": {
+        "C1": "16"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "제주특별자치도 - 구직급여 신청자수",
+      "timestamp": "201802",
+      "value": 2278.0,
+      "item_codes": {
+        "C1": "16"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "제주특별자치도 - 구직급여 신청자수",
+      "timestamp": "201803",
+      "value": 2321.0,
+      "item_codes": {
+        "C1": "16"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "제주특별자치도 - 구직급여 신청자수",
+      "timestamp": "201804",
+      "value": 2556.0,
+      "item_codes": {
+        "C1": "16"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "제주특별자치도 - 구직급여 신청자수",
+      "timestamp": "201901",
+      "value": 3650.0,
+      "item_codes": {
+        "C1": "16"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "제주특별자치도 - 구직급여 신청자수",
+      "timestamp": "201902",
+      "value": 2536.0,
+      "item_codes": {
+        "C1": "16"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "제주특별자치도 - 구직급여 신청자수",
+      "timestamp": "201903",
+      "value": 2531.0,
+      "item_codes": {
+        "C1": "16"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "제주특별자치도 - 구직급여 신청자수",
+      "timestamp": "201904",
+      "value": 2741.0,
+      "item_codes": {
+        "C1": "16"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "제주특별자치도 - 구직급여 신청자수",
+      "timestamp": "202001",
+      "value": 5390.0,
+      "item_codes": {
+        "C1": "16"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "제주특별자치도 - 구직급여 신청자수",
+      "timestamp": "202002",
+      "value": 5395.0,
+      "item_codes": {
+        "C1": "16"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "제주특별자치도 - 구직급여 신청자수",
+      "timestamp": "202003",
+      "value": 3721.0,
+      "item_codes": {
+        "C1": "16"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "제주특별자치도 - 구직급여 신청자수",
+      "timestamp": "202004",
+      "value": 3379.0,
+      "item_codes": {
+        "C1": "16"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "제주특별자치도 - 구직급여 신청자수",
+      "timestamp": "202101",
+      "value": 5625.0,
+      "item_codes": {
+        "C1": "16"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "제주특별자치도 - 구직급여 신청자수",
+      "timestamp": "202102",
+      "value": 2949.0,
+      "item_codes": {
+        "C1": "16"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "제주특별자치도 - 구직급여 신청자수",
+      "timestamp": "202103",
+      "value": 3120.0,
+      "item_codes": {
+        "C1": "16"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "제주특별자치도 - 구직급여 신청자수",
+      "timestamp": "202104",
+      "value": 2972.0,
+      "item_codes": {
+        "C1": "16"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "제주특별자치도 - 구직급여 신청자수",
+      "timestamp": "202201",
+      "value": 5035.0,
+      "item_codes": {
+        "C1": "16"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "제주특별자치도 - 구직급여 신청자수",
+      "timestamp": "202202",
+      "value": 3154.0,
+      "item_codes": {
+        "C1": "16"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "제주특별자치도 - 구직급여 신청자수",
+      "timestamp": "202203",
+      "value": 2946.0,
+      "item_codes": {
+        "C1": "16"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "제주특별자치도 - 구직급여 신청자수",
+      "timestamp": "202204",
+      "value": 2903.0,
+      "item_codes": {
+        "C1": "16"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "제주특별자치도 - 구직급여 신청자수",
+      "timestamp": "202301",
+      "value": 5150.0,
+      "item_codes": {
+        "C1": "16"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "제주특별자치도 - 구직급여 신청자수",
+      "timestamp": "202302",
+      "value": 2732.0,
+      "item_codes": {
+        "C1": "16"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "제주특별자치도 - 구직급여 신청자수",
+      "timestamp": "202303",
+      "value": 2964.0,
+      "item_codes": {
+        "C1": "16"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "제주특별자치도 - 구직급여 신청자수",
+      "timestamp": "202304",
+      "value": 3021.0,
+      "item_codes": {
+        "C1": "16"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "제주특별자치도 - 구직급여 신청자수",
+      "timestamp": "202401",
+      "value": 5335.0,
+      "item_codes": {
+        "C1": "16"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "제주특별자치도 - 구직급여 신청자수",
+      "timestamp": "202402",
+      "value": 2992.0,
+      "item_codes": {
+        "C1": "16"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "제주특별자치도 - 구직급여 신청자수",
+      "timestamp": "202403",
+      "value": 3152.0,
+      "item_codes": {
+        "C1": "16"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "제주특별자치도 - 구직급여 신청자수",
+      "timestamp": "202404",
+      "value": 3162.0,
+      "item_codes": {
+        "C1": "16"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "제주특별자치도 - 구직급여 신청자수",
+      "timestamp": "202501",
+      "value": 5403.0,
+      "item_codes": {
+        "C1": "16"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "세종특별자치시 - 구직급여 신청자수",
+      "timestamp": "201501",
+      "value": null,
+      "item_codes": {
+        "C1": "17"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "세종특별자치시 - 구직급여 신청자수",
+      "timestamp": "201502",
+      "value": null,
+      "item_codes": {
+        "C1": "17"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "세종특별자치시 - 구직급여 신청자수",
+      "timestamp": "201503",
+      "value": null,
+      "item_codes": {
+        "C1": "17"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "세종특별자치시 - 구직급여 신청자수",
+      "timestamp": "201504",
+      "value": null,
+      "item_codes": {
+        "C1": "17"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "세종특별자치시 - 구직급여 신청자수",
+      "timestamp": "201601",
+      "value": null,
+      "item_codes": {
+        "C1": "17"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "세종특별자치시 - 구직급여 신청자수",
+      "timestamp": "201602",
+      "value": null,
+      "item_codes": {
+        "C1": "17"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "세종특별자치시 - 구직급여 신청자수",
+      "timestamp": "201603",
+      "value": null,
+      "item_codes": {
+        "C1": "17"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "세종특별자치시 - 구직급여 신청자수",
+      "timestamp": "201604",
+      "value": null,
+      "item_codes": {
+        "C1": "17"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "세종특별자치시 - 구직급여 신청자수",
+      "timestamp": "201701",
+      "value": null,
+      "item_codes": {
+        "C1": "17"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "세종특별자치시 - 구직급여 신청자수",
+      "timestamp": "201702",
+      "value": null,
+      "item_codes": {
+        "C1": "17"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "세종특별자치시 - 구직급여 신청자수",
+      "timestamp": "201703",
+      "value": 866.0,
+      "item_codes": {
+        "C1": "17"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "세종특별자치시 - 구직급여 신청자수",
+      "timestamp": "201704",
+      "value": 741.0,
+      "item_codes": {
+        "C1": "17"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "세종특별자치시 - 구직급여 신청자수",
+      "timestamp": "201801",
+      "value": 1819.0,
+      "item_codes": {
+        "C1": "17"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "세종특별자치시 - 구직급여 신청자수",
+      "timestamp": "201802",
+      "value": 1174.0,
+      "item_codes": {
+        "C1": "17"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "세종특별자치시 - 구직급여 신청자수",
+      "timestamp": "201803",
+      "value": 1118.0,
+      "item_codes": {
+        "C1": "17"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "세종특별자치시 - 구직급여 신청자수",
+      "timestamp": "201804",
+      "value": 1090.0,
+      "item_codes": {
+        "C1": "17"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "세종특별자치시 - 구직급여 신청자수",
+      "timestamp": "201901",
+      "value": 1965.0,
+      "item_codes": {
+        "C1": "17"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "세종특별자치시 - 구직급여 신청자수",
+      "timestamp": "201902",
+      "value": 1244.0,
+      "item_codes": {
+        "C1": "17"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "세종특별자치시 - 구직급여 신청자수",
+      "timestamp": "201903",
+      "value": 1294.0,
+      "item_codes": {
+        "C1": "17"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "세종특별자치시 - 구직급여 신청자수",
+      "timestamp": "201904",
+      "value": 1402.0,
+      "item_codes": {
+        "C1": "17"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "세종특별자치시 - 구직급여 신청자수",
+      "timestamp": "202001",
+      "value": 2392.0,
+      "item_codes": {
+        "C1": "17"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "세종특별자치시 - 구직급여 신청자수",
+      "timestamp": "202002",
+      "value": 1636.0,
+      "item_codes": {
+        "C1": "17"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "세종특별자치시 - 구직급여 신청자수",
+      "timestamp": "202003",
+      "value": 1565.0,
+      "item_codes": {
+        "C1": "17"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "세종특별자치시 - 구직급여 신청자수",
+      "timestamp": "202004",
+      "value": 1410.0,
+      "item_codes": {
+        "C1": "17"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "세종특별자치시 - 구직급여 신청자수",
+      "timestamp": "202101",
+      "value": 2713.0,
+      "item_codes": {
+        "C1": "17"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "세종특별자치시 - 구직급여 신청자수",
+      "timestamp": "202102",
+      "value": 1464.0,
+      "item_codes": {
+        "C1": "17"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "세종특별자치시 - 구직급여 신청자수",
+      "timestamp": "202103",
+      "value": 1537.0,
+      "item_codes": {
+        "C1": "17"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "세종특별자치시 - 구직급여 신청자수",
+      "timestamp": "202104",
+      "value": 1333.0,
+      "item_codes": {
+        "C1": "17"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "세종특별자치시 - 구직급여 신청자수",
+      "timestamp": "202201",
+      "value": 2542.0,
+      "item_codes": {
+        "C1": "17"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "세종특별자치시 - 구직급여 신청자수",
+      "timestamp": "202202",
+      "value": 1483.0,
+      "item_codes": {
+        "C1": "17"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "세종특별자치시 - 구직급여 신청자수",
+      "timestamp": "202203",
+      "value": 1523.0,
+      "item_codes": {
+        "C1": "17"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "세종특별자치시 - 구직급여 신청자수",
+      "timestamp": "202204",
+      "value": 1438.0,
+      "item_codes": {
+        "C1": "17"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "세종특별자치시 - 구직급여 신청자수",
+      "timestamp": "202301",
+      "value": 2908.0,
+      "item_codes": {
+        "C1": "17"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "세종특별자치시 - 구직급여 신청자수",
+      "timestamp": "202302",
+      "value": 1507.0,
+      "item_codes": {
+        "C1": "17"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "세종특별자치시 - 구직급여 신청자수",
+      "timestamp": "202303",
+      "value": 1613.0,
+      "item_codes": {
+        "C1": "17"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "세종특별자치시 - 구직급여 신청자수",
+      "timestamp": "202304",
+      "value": 1378.0,
+      "item_codes": {
+        "C1": "17"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "세종특별자치시 - 구직급여 신청자수",
+      "timestamp": "202401",
+      "value": 2954.0,
+      "item_codes": {
+        "C1": "17"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "세종특별자치시 - 구직급여 신청자수",
+      "timestamp": "202402",
+      "value": 1587.0,
+      "item_codes": {
+        "C1": "17"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "세종특별자치시 - 구직급여 신청자수",
+      "timestamp": "202403",
+      "value": 1582.0,
+      "item_codes": {
+        "C1": "17"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "세종특별자치시 - 구직급여 신청자수",
+      "timestamp": "202404",
+      "value": 1674.0,
+      "item_codes": {
+        "C1": "17"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "세종특별자치시 - 구직급여 신청자수",
+      "timestamp": "202501",
+      "value": 3002.0,
+      "item_codes": {
+        "C1": "17"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "기타 - 구직급여 신청자수",
+      "timestamp": "201501",
+      "value": null,
+      "item_codes": {
+        "C1": "18"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "기타 - 구직급여 신청자수",
+      "timestamp": "201502",
+      "value": null,
+      "item_codes": {
+        "C1": "18"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "기타 - 구직급여 신청자수",
+      "timestamp": "201503",
+      "value": null,
+      "item_codes": {
+        "C1": "18"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "기타 - 구직급여 신청자수",
+      "timestamp": "201504",
+      "value": null,
+      "item_codes": {
+        "C1": "18"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "기타 - 구직급여 신청자수",
+      "timestamp": "201601",
+      "value": null,
+      "item_codes": {
+        "C1": "18"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "기타 - 구직급여 신청자수",
+      "timestamp": "201602",
+      "value": null,
+      "item_codes": {
+        "C1": "18"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "기타 - 구직급여 신청자수",
+      "timestamp": "201603",
+      "value": null,
+      "item_codes": {
+        "C1": "18"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "기타 - 구직급여 신청자수",
+      "timestamp": "201604",
+      "value": null,
+      "item_codes": {
+        "C1": "18"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "기타 - 구직급여 신청자수",
+      "timestamp": "201701",
+      "value": null,
+      "item_codes": {
+        "C1": "18"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "기타 - 구직급여 신청자수",
+      "timestamp": "201702",
+      "value": null,
+      "item_codes": {
+        "C1": "18"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "기타 - 구직급여 신청자수",
+      "timestamp": "201703",
+      "value": null,
+      "item_codes": {
+        "C1": "18"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "기타 - 구직급여 신청자수",
+      "timestamp": "201704",
+      "value": null,
+      "item_codes": {
+        "C1": "18"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "기타 - 구직급여 신청자수",
+      "timestamp": "201801",
+      "value": null,
+      "item_codes": {
+        "C1": "18"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "기타 - 구직급여 신청자수",
+      "timestamp": "201802",
+      "value": null,
+      "item_codes": {
+        "C1": "18"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "기타 - 구직급여 신청자수",
+      "timestamp": "201803",
+      "value": null,
+      "item_codes": {
+        "C1": "18"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "기타 - 구직급여 신청자수",
+      "timestamp": "201804",
+      "value": null,
+      "item_codes": {
+        "C1": "18"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "기타 - 구직급여 신청자수",
+      "timestamp": "201901",
+      "value": 2.0,
+      "item_codes": {
+        "C1": "18"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "기타 - 구직급여 신청자수",
+      "timestamp": "201902",
+      "value": null,
+      "item_codes": {
+        "C1": "18"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "기타 - 구직급여 신청자수",
+      "timestamp": "201903",
+      "value": 2.0,
+      "item_codes": {
+        "C1": "18"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "기타 - 구직급여 신청자수",
+      "timestamp": "201904",
+      "value": 2.0,
+      "item_codes": {
+        "C1": "18"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "기타 - 구직급여 신청자수",
+      "timestamp": "202001",
+      "value": 4.0,
+      "item_codes": {
+        "C1": "18"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "기타 - 구직급여 신청자수",
+      "timestamp": "202002",
+      "value": 5.0,
+      "item_codes": {
+        "C1": "18"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "기타 - 구직급여 신청자수",
+      "timestamp": "202003",
+      "value": 5.0,
+      "item_codes": {
+        "C1": "18"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "기타 - 구직급여 신청자수",
+      "timestamp": "202004",
+      "value": 2.0,
+      "item_codes": {
+        "C1": "18"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "기타 - 구직급여 신청자수",
+      "timestamp": "202101",
+      "value": 6.0,
+      "item_codes": {
+        "C1": "18"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "기타 - 구직급여 신청자수",
+      "timestamp": "202102",
+      "value": 2.0,
+      "item_codes": {
+        "C1": "18"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "기타 - 구직급여 신청자수",
+      "timestamp": "202103",
+      "value": 8.0,
+      "item_codes": {
+        "C1": "18"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "기타 - 구직급여 신청자수",
+      "timestamp": "202104",
+      "value": 9.0,
+      "item_codes": {
+        "C1": "18"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "기타 - 구직급여 신청자수",
+      "timestamp": "202201",
+      "value": 24.0,
+      "item_codes": {
+        "C1": "18"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "기타 - 구직급여 신청자수",
+      "timestamp": "202202",
+      "value": 16.0,
+      "item_codes": {
+        "C1": "18"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "기타 - 구직급여 신청자수",
+      "timestamp": "202203",
+      "value": 7.0,
+      "item_codes": {
+        "C1": "18"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "기타 - 구직급여 신청자수",
+      "timestamp": "202204",
+      "value": 10.0,
+      "item_codes": {
+        "C1": "18"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "기타 - 구직급여 신청자수",
+      "timestamp": "202301",
+      "value": 12.0,
+      "item_codes": {
+        "C1": "18"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "기타 - 구직급여 신청자수",
+      "timestamp": "202302",
+      "value": 10.0,
+      "item_codes": {
+        "C1": "18"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "기타 - 구직급여 신청자수",
+      "timestamp": "202303",
+      "value": 2.0,
+      "item_codes": {
+        "C1": "18"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "기타 - 구직급여 신청자수",
+      "timestamp": "202304",
+      "value": null,
+      "item_codes": {
+        "C1": "18"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "기타 - 구직급여 신청자수",
+      "timestamp": "202401",
+      "value": null,
+      "item_codes": {
+        "C1": "18"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "기타 - 구직급여 신청자수",
+      "timestamp": "202402",
+      "value": null,
+      "item_codes": {
+        "C1": "18"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "기타 - 구직급여 신청자수",
+      "timestamp": "202403",
+      "value": null,
+      "item_codes": {
+        "C1": "18"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "기타 - 구직급여 신청자수",
+      "timestamp": "202404",
+      "value": 2.0,
+      "item_codes": {
+        "C1": "18"
+      },
+      "itm_id": "T1"
+    },
+    {
+      "item": "기타 - 구직급여 신청자수",
+      "timestamp": "202501",
+      "value": 0.0,
+      "item_codes": {
+        "C1": "18"
+      },
+      "itm_id": "T1"
+    }
+  ]
+}

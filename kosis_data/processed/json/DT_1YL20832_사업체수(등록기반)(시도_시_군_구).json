@@ -1,0 +1,6661 @@
+{
+  "metadata": {
+    "org_id": "101",
+    "org_name": "통계청",
+    "table_id": "DT_1YL20832",
+    "table_name": "사업체수(등록기반)(시도/시/군/구)",
+    "stat_id": "9B08007",
+    "stat_name": "e-지방지표",
+    "date_range": "2020 ~ 2023",
+    "description": "행정구역별 사업체수 양평군 인제군 영동군 진천군 보령시 금산군 정읍시 김제시 순천시 화순군 장흥군 신안군 김천시 예천군 양산시 고성군 제주특별자치도 동래구 사하구 연제구 수영구 수성구 강화군 광주광역시 대전광역시 연천군 강원특별자치도 춘천시 원주시 고성군 보은군 충청남도 서산시 계룡시 부여군 강진군 영천시 문경시 경산시 영양군 고령군 울진군 경상남도 산청군 강북구 은평구 서대문구 영등포구 중구 남구 서구 남구 북구 계양구 서구 남구 북구 군포시 하남시 용인시 양주시 홍천...",
+    "item_info": "■ 자료제공처: 통계청 지역통계기획팀 ■ 자료원출처: 통계청 경제총조사과(전국사업체조사) ■ 자료제공주기: 1년 ■ 자료제공시기: 조사기준년도 익년 12월 □ 정의 - 사업체수: 국내에서 산업활동을 수행하고 있는(또는 수행한) 모든 사업체 단, 국방 및 국가기밀보안 관련 시설, 국제기구, 외국공관, 개인이 경영하는 농림어업 사업체는 제외 □ 의의 - 국가 및 지방자치단체의 정책수립 및 평가, 기업의 경영계획 수립 및 학술 연구 등을 위한 기초자료로 활용 - 지역개발계획 수립 및 평가자료, 지역소득추계의 기초자료로 활용 □ 용어 - 사업체수 : 일정한 ＇장소＇에서 단일 또는 주된 경제활동을 독립적으로 수행하는 기업체 또는 기업체를 구성하는 부분(상점, 사무소, 영업소, 은행, 학교, 병원, 여관, 식당, 학원, 교회, 사찰, 공공기관, 사회복지시설, 1인 유튜버 같은 가구내 사업체) □ 참고사항 - 10차개정 자료수록 - 끝자리 0,5년도의 자료는 경제총조사 자료로 제공됨 □ 조사기반·등록기반 - 조사기반: 물리적 장소가 있는 사업체(공장, 회사, 사무실, 상점, 식당, 학원, 학교, 병원, 당구장 등)를 대상으로 조사한 자료(1994~2020년) - 등록기반: 조사기반 + 행정자료를 활용하여 물리적 장소가 없는 가구내 사업체(가구내 전자상거래, 1인 미디어, 프리랜서 등) 등을 추가하여 조사한 자료(2020년 이후)",
+    "source_url": "http://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1YL20832",
+    "last_updated": "2025-06-24T18:18:02.696949",
+    "period_type": "M",
+    "period_name": "월간"
+  },
+  "data": [
+    {
+      "item": "전국 - 사업체수",
+      "timestamp": "2021",
+      "value": 6079702.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 사업체수",
+      "timestamp": "2022",
+      "value": 6139899.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 사업체수",
+      "timestamp": "2023",
+      "value": 6246489.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 사업체수",
+      "timestamp": "2021",
+      "value": 1188091.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 사업체수",
+      "timestamp": "2022",
+      "value": 1180025.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 사업체수",
+      "timestamp": "2023",
+      "value": 1177287.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "종로구 - 사업체수",
+      "timestamp": "2021",
+      "value": 48361.0,
+      "item_codes": {
+        "C1": "11010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "종로구 - 사업체수",
+      "timestamp": "2022",
+      "value": 47595.0,
+      "item_codes": {
+        "C1": "11010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "종로구 - 사업체수",
+      "timestamp": "2023",
+      "value": 46977.0,
+      "item_codes": {
+        "C1": "11010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "중구 - 사업체수",
+      "timestamp": "2021",
+      "value": 70308.0,
+      "item_codes": {
+        "C1": "11020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "중구 - 사업체수",
+      "timestamp": "2022",
+      "value": 68143.0,
+      "item_codes": {
+        "C1": "11020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "중구 - 사업체수",
+      "timestamp": "2023",
+      "value": 67202.0,
+      "item_codes": {
+        "C1": "11020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "용산구 - 사업체수",
+      "timestamp": "2021",
+      "value": 29680.0,
+      "item_codes": {
+        "C1": "11030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "용산구 - 사업체수",
+      "timestamp": "2022",
+      "value": 28047.0,
+      "item_codes": {
+        "C1": "11030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "용산구 - 사업체수",
+      "timestamp": "2023",
+      "value": 28363.0,
+      "item_codes": {
+        "C1": "11030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "성동구 - 사업체수",
+      "timestamp": "2021",
+      "value": 41665.0,
+      "item_codes": {
+        "C1": "11040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "성동구 - 사업체수",
+      "timestamp": "2022",
+      "value": 41306.0,
+      "item_codes": {
+        "C1": "11040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "성동구 - 사업체수",
+      "timestamp": "2023",
+      "value": 40674.0,
+      "item_codes": {
+        "C1": "11040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광진구 - 사업체수",
+      "timestamp": "2021",
+      "value": 33706.0,
+      "item_codes": {
+        "C1": "11050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광진구 - 사업체수",
+      "timestamp": "2022",
+      "value": 33325.0,
+      "item_codes": {
+        "C1": "11050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광진구 - 사업체수",
+      "timestamp": "2023",
+      "value": 33384.0,
+      "item_codes": {
+        "C1": "11050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동대문구 - 사업체수",
+      "timestamp": "2021",
+      "value": 42813.0,
+      "item_codes": {
+        "C1": "11060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동대문구 - 사업체수",
+      "timestamp": "2022",
+      "value": 42491.0,
+      "item_codes": {
+        "C1": "11060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동대문구 - 사업체수",
+      "timestamp": "2023",
+      "value": 42782.0,
+      "item_codes": {
+        "C1": "11060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "중랑구 - 사업체수",
+      "timestamp": "2021",
+      "value": 39310.0,
+      "item_codes": {
+        "C1": "11070"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "중랑구 - 사업체수",
+      "timestamp": "2022",
+      "value": 40320.0,
+      "item_codes": {
+        "C1": "11070"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "중랑구 - 사업체수",
+      "timestamp": "2023",
+      "value": 40964.0,
+      "item_codes": {
+        "C1": "11070"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "성북구 - 사업체수",
+      "timestamp": "2021",
+      "value": 34712.0,
+      "item_codes": {
+        "C1": "11080"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "성북구 - 사업체수",
+      "timestamp": "2022",
+      "value": 35162.0,
+      "item_codes": {
+        "C1": "11080"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "성북구 - 사업체수",
+      "timestamp": "2023",
+      "value": 35548.0,
+      "item_codes": {
+        "C1": "11080"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강북구 - 사업체수",
+      "timestamp": "2021",
+      "value": 26385.0,
+      "item_codes": {
+        "C1": "11090"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강북구 - 사업체수",
+      "timestamp": "2022",
+      "value": 26114.0,
+      "item_codes": {
+        "C1": "11090"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강북구 - 사업체수",
+      "timestamp": "2023",
+      "value": 26310.0,
+      "item_codes": {
+        "C1": "11090"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "도봉구 - 사업체수",
+      "timestamp": "2021",
+      "value": 25391.0,
+      "item_codes": {
+        "C1": "11100"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "도봉구 - 사업체수",
+      "timestamp": "2022",
+      "value": 25193.0,
+      "item_codes": {
+        "C1": "11100"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "도봉구 - 사업체수",
+      "timestamp": "2023",
+      "value": 25580.0,
+      "item_codes": {
+        "C1": "11100"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "노원구 - 사업체수",
+      "timestamp": "2021",
+      "value": 37909.0,
+      "item_codes": {
+        "C1": "11110"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "노원구 - 사업체수",
+      "timestamp": "2022",
+      "value": 38018.0,
+      "item_codes": {
+        "C1": "11110"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "노원구 - 사업체수",
+      "timestamp": "2023",
+      "value": 38439.0,
+      "item_codes": {
+        "C1": "11110"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "은평구 - 사업체수",
+      "timestamp": "2021",
+      "value": 36509.0,
+      "item_codes": {
+        "C1": "11120"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "은평구 - 사업체수",
+      "timestamp": "2022",
+      "value": 36430.0,
+      "item_codes": {
+        "C1": "11120"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "은평구 - 사업체수",
+      "timestamp": "2023",
+      "value": 36201.0,
+      "item_codes": {
+        "C1": "11120"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서대문구 - 사업체수",
+      "timestamp": "2021",
+      "value": 28522.0,
+      "item_codes": {
+        "C1": "11130"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서대문구 - 사업체수",
+      "timestamp": "2022",
+      "value": 28427.0,
+      "item_codes": {
+        "C1": "11130"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서대문구 - 사업체수",
+      "timestamp": "2023",
+      "value": 28401.0,
+      "item_codes": {
+        "C1": "11130"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "마포구 - 사업체수",
+      "timestamp": "2021",
+      "value": 56782.0,
+      "item_codes": {
+        "C1": "11140"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "마포구 - 사업체수",
+      "timestamp": "2022",
+      "value": 55516.0,
+      "item_codes": {
+        "C1": "11140"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "마포구 - 사업체수",
+      "timestamp": "2023",
+      "value": 55741.0,
+      "item_codes": {
+        "C1": "11140"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "양천구 - 사업체수",
+      "timestamp": "2021",
+      "value": 37929.0,
+      "item_codes": {
+        "C1": "11150"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "양천구 - 사업체수",
+      "timestamp": "2022",
+      "value": 37774.0,
+      "item_codes": {
+        "C1": "11150"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "양천구 - 사업체수",
+      "timestamp": "2023",
+      "value": 38114.0,
+      "item_codes": {
+        "C1": "11150"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강서구 - 사업체수",
+      "timestamp": "2021",
+      "value": 58806.0,
+      "item_codes": {
+        "C1": "11160"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강서구 - 사업체수",
+      "timestamp": "2022",
+      "value": 59660.0,
+      "item_codes": {
+        "C1": "11160"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강서구 - 사업체수",
+      "timestamp": "2023",
+      "value": 59969.0,
+      "item_codes": {
+        "C1": "11160"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "구로구 - 사업체수",
+      "timestamp": "2021",
+      "value": 52791.0,
+      "item_codes": {
+        "C1": "11170"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "구로구 - 사업체수",
+      "timestamp": "2022",
+      "value": 52988.0,
+      "item_codes": {
+        "C1": "11170"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "구로구 - 사업체수",
+      "timestamp": "2023",
+      "value": 51955.0,
+      "item_codes": {
+        "C1": "11170"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "금천구 - 사업체수",
+      "timestamp": "2021",
+      "value": 47964.0,
+      "item_codes": {
+        "C1": "11180"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "금천구 - 사업체수",
+      "timestamp": "2022",
+      "value": 48438.0,
+      "item_codes": {
+        "C1": "11180"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "금천구 - 사업체수",
+      "timestamp": "2023",
+      "value": 47935.0,
+      "item_codes": {
+        "C1": "11180"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영등포구 - 사업체수",
+      "timestamp": "2021",
+      "value": 74562.0,
+      "item_codes": {
+        "C1": "11190"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영등포구 - 사업체수",
+      "timestamp": "2022",
+      "value": 75470.0,
+      "item_codes": {
+        "C1": "11190"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영등포구 - 사업체수",
+      "timestamp": "2023",
+      "value": 74558.0,
+      "item_codes": {
+        "C1": "11190"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동작구 - 사업체수",
+      "timestamp": "2021",
+      "value": 27915.0,
+      "item_codes": {
+        "C1": "11200"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동작구 - 사업체수",
+      "timestamp": "2022",
+      "value": 27120.0,
+      "item_codes": {
+        "C1": "11200"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동작구 - 사업체수",
+      "timestamp": "2023",
+      "value": 27441.0,
+      "item_codes": {
+        "C1": "11200"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "관악구 - 사업체수",
+      "timestamp": "2021",
+      "value": 37915.0,
+      "item_codes": {
+        "C1": "11210"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "관악구 - 사업체수",
+      "timestamp": "2022",
+      "value": 36814.0,
+      "item_codes": {
+        "C1": "11210"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "관악구 - 사업체수",
+      "timestamp": "2023",
+      "value": 37689.0,
+      "item_codes": {
+        "C1": "11210"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서초구 - 사업체수",
+      "timestamp": "2021",
+      "value": 71958.0,
+      "item_codes": {
+        "C1": "11220"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서초구 - 사업체수",
+      "timestamp": "2022",
+      "value": 69975.0,
+      "item_codes": {
+        "C1": "11220"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서초구 - 사업체수",
+      "timestamp": "2023",
+      "value": 70510.0,
+      "item_codes": {
+        "C1": "11220"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강남구 - 사업체수",
+      "timestamp": "2021",
+      "value": 110007.0,
+      "item_codes": {
+        "C1": "11230"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강남구 - 사업체수",
+      "timestamp": "2022",
+      "value": 107804.0,
+      "item_codes": {
+        "C1": "11230"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강남구 - 사업체수",
+      "timestamp": "2023",
+      "value": 104299.0,
+      "item_codes": {
+        "C1": "11230"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "송파구 - 사업체수",
+      "timestamp": "2021",
+      "value": 74531.0,
+      "item_codes": {
+        "C1": "11240"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "송파구 - 사업체수",
+      "timestamp": "2022",
+      "value": 74738.0,
+      "item_codes": {
+        "C1": "11240"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "송파구 - 사업체수",
+      "timestamp": "2023",
+      "value": 74893.0,
+      "item_codes": {
+        "C1": "11240"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강동구 - 사업체수",
+      "timestamp": "2021",
+      "value": 41660.0,
+      "item_codes": {
+        "C1": "11250"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강동구 - 사업체수",
+      "timestamp": "2022",
+      "value": 43157.0,
+      "item_codes": {
+        "C1": "11250"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강동구 - 사업체수",
+      "timestamp": "2023",
+      "value": 43358.0,
+      "item_codes": {
+        "C1": "11250"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 사업체수",
+      "timestamp": "2021",
+      "value": 401254.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 사업체수",
+      "timestamp": "2022",
+      "value": 400565.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 사업체수",
+      "timestamp": "2023",
+      "value": 401008.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "중구 - 사업체수",
+      "timestamp": "2021",
+      "value": 18306.0,
+      "item_codes": {
+        "C1": "21010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "중구 - 사업체수",
+      "timestamp": "2022",
+      "value": 18083.0,
+      "item_codes": {
+        "C1": "21010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "중구 - 사업체수",
+      "timestamp": "2023",
+      "value": 17407.0,
+      "item_codes": {
+        "C1": "21010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서구 - 사업체수",
+      "timestamp": "2021",
+      "value": 11376.0,
+      "item_codes": {
+        "C1": "21020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서구 - 사업체수",
+      "timestamp": "2022",
+      "value": 11216.0,
+      "item_codes": {
+        "C1": "21020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서구 - 사업체수",
+      "timestamp": "2023",
+      "value": 11146.0,
+      "item_codes": {
+        "C1": "21020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동구 - 사업체수",
+      "timestamp": "2021",
+      "value": 18208.0,
+      "item_codes": {
+        "C1": "21030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동구 - 사업체수",
+      "timestamp": "2022",
+      "value": 17943.0,
+      "item_codes": {
+        "C1": "21030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동구 - 사업체수",
+      "timestamp": "2023",
+      "value": 17620.0,
+      "item_codes": {
+        "C1": "21030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영도구 - 사업체수",
+      "timestamp": "2021",
+      "value": 11616.0,
+      "item_codes": {
+        "C1": "21040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영도구 - 사업체수",
+      "timestamp": "2022",
+      "value": 11755.0,
+      "item_codes": {
+        "C1": "21040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영도구 - 사업체수",
+      "timestamp": "2023",
+      "value": 11843.0,
+      "item_codes": {
+        "C1": "21040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산진구 - 사업체수",
+      "timestamp": "2021",
+      "value": 44355.0,
+      "item_codes": {
+        "C1": "21050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산진구 - 사업체수",
+      "timestamp": "2022",
+      "value": 44035.0,
+      "item_codes": {
+        "C1": "21050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산진구 - 사업체수",
+      "timestamp": "2023",
+      "value": 44530.0,
+      "item_codes": {
+        "C1": "21050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동래구 - 사업체수",
+      "timestamp": "2021",
+      "value": 27667.0,
+      "item_codes": {
+        "C1": "21060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동래구 - 사업체수",
+      "timestamp": "2022",
+      "value": 27647.0,
+      "item_codes": {
+        "C1": "21060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동래구 - 사업체수",
+      "timestamp": "2023",
+      "value": 28059.0,
+      "item_codes": {
+        "C1": "21060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "남구 - 사업체수",
+      "timestamp": "2021",
+      "value": 24190.0,
+      "item_codes": {
+        "C1": "21070"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "남구 - 사업체수",
+      "timestamp": "2022",
+      "value": 23966.0,
+      "item_codes": {
+        "C1": "21070"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "남구 - 사업체수",
+      "timestamp": "2023",
+      "value": 23686.0,
+      "item_codes": {
+        "C1": "21070"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "북구 - 사업체수",
+      "timestamp": "2021",
+      "value": 21049.0,
+      "item_codes": {
+        "C1": "21080"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "북구 - 사업체수",
+      "timestamp": "2022",
+      "value": 20544.0,
+      "item_codes": {
+        "C1": "21080"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "북구 - 사업체수",
+      "timestamp": "2023",
+      "value": 20780.0,
+      "item_codes": {
+        "C1": "21080"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "해운대구 - 사업체수",
+      "timestamp": "2021",
+      "value": 40946.0,
+      "item_codes": {
+        "C1": "21090"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "해운대구 - 사업체수",
+      "timestamp": "2022",
+      "value": 40564.0,
+      "item_codes": {
+        "C1": "21090"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "해운대구 - 사업체수",
+      "timestamp": "2023",
+      "value": 40668.0,
+      "item_codes": {
+        "C1": "21090"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "사하구 - 사업체수",
+      "timestamp": "2021",
+      "value": 29196.0,
+      "item_codes": {
+        "C1": "21100"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "사하구 - 사업체수",
+      "timestamp": "2022",
+      "value": 29298.0,
+      "item_codes": {
+        "C1": "21100"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "사하구 - 사업체수",
+      "timestamp": "2023",
+      "value": 29208.0,
+      "item_codes": {
+        "C1": "21100"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "금정구 - 사업체수",
+      "timestamp": "2021",
+      "value": 26714.0,
+      "item_codes": {
+        "C1": "21110"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "금정구 - 사업체수",
+      "timestamp": "2022",
+      "value": 26544.0,
+      "item_codes": {
+        "C1": "21110"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "금정구 - 사업체수",
+      "timestamp": "2023",
+      "value": 26080.0,
+      "item_codes": {
+        "C1": "21110"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강서구 - 사업체수",
+      "timestamp": "2021",
+      "value": 30038.0,
+      "item_codes": {
+        "C1": "21120"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강서구 - 사업체수",
+      "timestamp": "2022",
+      "value": 30915.0,
+      "item_codes": {
+        "C1": "21120"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강서구 - 사업체수",
+      "timestamp": "2023",
+      "value": 31277.0,
+      "item_codes": {
+        "C1": "21120"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "연제구 - 사업체수",
+      "timestamp": "2021",
+      "value": 23946.0,
+      "item_codes": {
+        "C1": "21130"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "연제구 - 사업체수",
+      "timestamp": "2022",
+      "value": 23906.0,
+      "item_codes": {
+        "C1": "21130"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "연제구 - 사업체수",
+      "timestamp": "2023",
+      "value": 24131.0,
+      "item_codes": {
+        "C1": "21130"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "수영구 - 사업체수",
+      "timestamp": "2021",
+      "value": 19613.0,
+      "item_codes": {
+        "C1": "21140"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "수영구 - 사업체수",
+      "timestamp": "2022",
+      "value": 19880.0,
+      "item_codes": {
+        "C1": "21140"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "수영구 - 사업체수",
+      "timestamp": "2023",
+      "value": 20369.0,
+      "item_codes": {
+        "C1": "21140"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "사상구 - 사업체수",
+      "timestamp": "2021",
+      "value": 36104.0,
+      "item_codes": {
+        "C1": "21150"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "사상구 - 사업체수",
+      "timestamp": "2022",
+      "value": 35788.0,
+      "item_codes": {
+        "C1": "21150"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "사상구 - 사업체수",
+      "timestamp": "2023",
+      "value": 35210.0,
+      "item_codes": {
+        "C1": "21150"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "기장군 - 사업체수",
+      "timestamp": "2021",
+      "value": 17930.0,
+      "item_codes": {
+        "C1": "21510"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "기장군 - 사업체수",
+      "timestamp": "2022",
+      "value": 18481.0,
+      "item_codes": {
+        "C1": "21510"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "기장군 - 사업체수",
+      "timestamp": "2023",
+      "value": 18994.0,
+      "item_codes": {
+        "C1": "21510"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 사업체수",
+      "timestamp": "2021",
+      "value": 279798.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 사업체수",
+      "timestamp": "2022",
+      "value": 279223.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 사업체수",
+      "timestamp": "2023",
+      "value": 285388.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "중구 - 사업체수",
+      "timestamp": "2021",
+      "value": 25518.0,
+      "item_codes": {
+        "C1": "22010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "중구 - 사업체수",
+      "timestamp": "2022",
+      "value": 25006.0,
+      "item_codes": {
+        "C1": "22010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "중구 - 사업체수",
+      "timestamp": "2023",
+      "value": 25324.0,
+      "item_codes": {
+        "C1": "22010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동구 - 사업체수",
+      "timestamp": "2021",
+      "value": 36892.0,
+      "item_codes": {
+        "C1": "22020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동구 - 사업체수",
+      "timestamp": "2022",
+      "value": 36917.0,
+      "item_codes": {
+        "C1": "22020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동구 - 사업체수",
+      "timestamp": "2023",
+      "value": 37395.0,
+      "item_codes": {
+        "C1": "22020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서구 - 사업체수",
+      "timestamp": "2021",
+      "value": 23088.0,
+      "item_codes": {
+        "C1": "22030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서구 - 사업체수",
+      "timestamp": "2022",
+      "value": 22801.0,
+      "item_codes": {
+        "C1": "22030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서구 - 사업체수",
+      "timestamp": "2023",
+      "value": 22510.0,
+      "item_codes": {
+        "C1": "22030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "남구 - 사업체수",
+      "timestamp": "2021",
+      "value": 17411.0,
+      "item_codes": {
+        "C1": "22040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "남구 - 사업체수",
+      "timestamp": "2022",
+      "value": 17474.0,
+      "item_codes": {
+        "C1": "22040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "남구 - 사업체수",
+      "timestamp": "2023",
+      "value": 17795.0,
+      "item_codes": {
+        "C1": "22040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "북구 - 사업체수",
+      "timestamp": "2021",
+      "value": 53909.0,
+      "item_codes": {
+        "C1": "22050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "북구 - 사업체수",
+      "timestamp": "2022",
+      "value": 54146.0,
+      "item_codes": {
+        "C1": "22050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "북구 - 사업체수",
+      "timestamp": "2023",
+      "value": 53756.0,
+      "item_codes": {
+        "C1": "22050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "수성구 - 사업체수",
+      "timestamp": "2021",
+      "value": 36963.0,
+      "item_codes": {
+        "C1": "22060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "수성구 - 사업체수",
+      "timestamp": "2022",
+      "value": 36566.0,
+      "item_codes": {
+        "C1": "22060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "수성구 - 사업체수",
+      "timestamp": "2023",
+      "value": 38258.0,
+      "item_codes": {
+        "C1": "22060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "달서구 - 사업체수",
+      "timestamp": "2021",
+      "value": 59739.0,
+      "item_codes": {
+        "C1": "22070"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "달서구 - 사업체수",
+      "timestamp": "2022",
+      "value": 59909.0,
+      "item_codes": {
+        "C1": "22070"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "달서구 - 사업체수",
+      "timestamp": "2023",
+      "value": 59835.0,
+      "item_codes": {
+        "C1": "22070"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "달성군 - 사업체수",
+      "timestamp": "2021",
+      "value": 26278.0,
+      "item_codes": {
+        "C1": "22510"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "달성군 - 사업체수",
+      "timestamp": "2022",
+      "value": 26404.0,
+      "item_codes": {
+        "C1": "22510"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "달성군 - 사업체수",
+      "timestamp": "2023",
+      "value": 27083.0,
+      "item_codes": {
+        "C1": "22510"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "군위군 - 사업체수",
+      "timestamp": "2023",
+      "value": 3432.0,
+      "item_codes": {
+        "C1": "22520"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 사업체수",
+      "timestamp": "2021",
+      "value": 308892.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 사업체수",
+      "timestamp": "2022",
+      "value": 317133.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 사업체수",
+      "timestamp": "2023",
+      "value": 322297.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "중구 - 사업체수",
+      "timestamp": "2021",
+      "value": 22370.0,
+      "item_codes": {
+        "C1": "23010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "중구 - 사업체수",
+      "timestamp": "2022",
+      "value": 22917.0,
+      "item_codes": {
+        "C1": "23010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "중구 - 사업체수",
+      "timestamp": "2023",
+      "value": 23954.0,
+      "item_codes": {
+        "C1": "23010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동구 - 사업체수",
+      "timestamp": "2021",
+      "value": 11247.0,
+      "item_codes": {
+        "C1": "23020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동구 - 사업체수",
+      "timestamp": "2022",
+      "value": 10935.0,
+      "item_codes": {
+        "C1": "23020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동구 - 사업체수",
+      "timestamp": "2023",
+      "value": 10714.0,
+      "item_codes": {
+        "C1": "23020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "연수구 - 사업체수",
+      "timestamp": "2021",
+      "value": 32548.0,
+      "item_codes": {
+        "C1": "23040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "연수구 - 사업체수",
+      "timestamp": "2022",
+      "value": 34041.0,
+      "item_codes": {
+        "C1": "23040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "연수구 - 사업체수",
+      "timestamp": "2023",
+      "value": 35693.0,
+      "item_codes": {
+        "C1": "23040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "남동구 - 사업체수",
+      "timestamp": "2021",
+      "value": 57621.0,
+      "item_codes": {
+        "C1": "23050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "남동구 - 사업체수",
+      "timestamp": "2022",
+      "value": 58596.0,
+      "item_codes": {
+        "C1": "23050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "남동구 - 사업체수",
+      "timestamp": "2023",
+      "value": 58158.0,
+      "item_codes": {
+        "C1": "23050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부평구 - 사업체수",
+      "timestamp": "2021",
+      "value": 45679.0,
+      "item_codes": {
+        "C1": "23060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부평구 - 사업체수",
+      "timestamp": "2022",
+      "value": 47615.0,
+      "item_codes": {
+        "C1": "23060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부평구 - 사업체수",
+      "timestamp": "2023",
+      "value": 47307.0,
+      "item_codes": {
+        "C1": "23060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "계양구 - 사업체수",
+      "timestamp": "2021",
+      "value": 27913.0,
+      "item_codes": {
+        "C1": "23070"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "계양구 - 사업체수",
+      "timestamp": "2022",
+      "value": 28068.0,
+      "item_codes": {
+        "C1": "23070"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "계양구 - 사업체수",
+      "timestamp": "2023",
+      "value": 28286.0,
+      "item_codes": {
+        "C1": "23070"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서구 - 사업체수",
+      "timestamp": "2021",
+      "value": 58270.0,
+      "item_codes": {
+        "C1": "23080"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서구 - 사업체수",
+      "timestamp": "2022",
+      "value": 61255.0,
+      "item_codes": {
+        "C1": "23080"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서구 - 사업체수",
+      "timestamp": "2023",
+      "value": 63831.0,
+      "item_codes": {
+        "C1": "23080"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "미추홀구 - 사업체수",
+      "timestamp": "2021",
+      "value": 41395.0,
+      "item_codes": {
+        "C1": "23090"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "미추홀구 - 사업체수",
+      "timestamp": "2022",
+      "value": 41696.0,
+      "item_codes": {
+        "C1": "23090"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "미추홀구 - 사업체수",
+      "timestamp": "2023",
+      "value": 42151.0,
+      "item_codes": {
+        "C1": "23090"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강화군 - 사업체수",
+      "timestamp": "2021",
+      "value": 9256.0,
+      "item_codes": {
+        "C1": "23510"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강화군 - 사업체수",
+      "timestamp": "2022",
+      "value": 9318.0,
+      "item_codes": {
+        "C1": "23510"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강화군 - 사업체수",
+      "timestamp": "2023",
+      "value": 9514.0,
+      "item_codes": {
+        "C1": "23510"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "옹진군 - 사업체수",
+      "timestamp": "2021",
+      "value": 2593.0,
+      "item_codes": {
+        "C1": "23520"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "옹진군 - 사업체수",
+      "timestamp": "2022",
+      "value": 2692.0,
+      "item_codes": {
+        "C1": "23520"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "옹진군 - 사업체수",
+      "timestamp": "2023",
+      "value": 2689.0,
+      "item_codes": {
+        "C1": "23520"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 사업체수",
+      "timestamp": "2021",
+      "value": 170973.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 사업체수",
+      "timestamp": "2022",
+      "value": 170894.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 사업체수",
+      "timestamp": "2023",
+      "value": 173424.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동구 - 사업체수",
+      "timestamp": "2021",
+      "value": 17979.0,
+      "item_codes": {
+        "C1": "24010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동구 - 사업체수",
+      "timestamp": "2022",
+      "value": 17842.0,
+      "item_codes": {
+        "C1": "24010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동구 - 사업체수",
+      "timestamp": "2023",
+      "value": 18276.0,
+      "item_codes": {
+        "C1": "24010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서구 - 사업체수",
+      "timestamp": "2021",
+      "value": 39773.0,
+      "item_codes": {
+        "C1": "24020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서구 - 사업체수",
+      "timestamp": "2022",
+      "value": 39559.0,
+      "item_codes": {
+        "C1": "24020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서구 - 사업체수",
+      "timestamp": "2023",
+      "value": 40031.0,
+      "item_codes": {
+        "C1": "24020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "남구 - 사업체수",
+      "timestamp": "2021",
+      "value": 18706.0,
+      "item_codes": {
+        "C1": "24030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "남구 - 사업체수",
+      "timestamp": "2022",
+      "value": 18667.0,
+      "item_codes": {
+        "C1": "24030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "남구 - 사업체수",
+      "timestamp": "2023",
+      "value": 19422.0,
+      "item_codes": {
+        "C1": "24030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "북구 - 사업체수",
+      "timestamp": "2021",
+      "value": 46173.0,
+      "item_codes": {
+        "C1": "24040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "북구 - 사업체수",
+      "timestamp": "2022",
+      "value": 45484.0,
+      "item_codes": {
+        "C1": "24040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "북구 - 사업체수",
+      "timestamp": "2023",
+      "value": 46092.0,
+      "item_codes": {
+        "C1": "24040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광산구 - 사업체수",
+      "timestamp": "2021",
+      "value": 48342.0,
+      "item_codes": {
+        "C1": "24050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광산구 - 사업체수",
+      "timestamp": "2022",
+      "value": 49342.0,
+      "item_codes": {
+        "C1": "24050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광산구 - 사업체수",
+      "timestamp": "2023",
+      "value": 49603.0,
+      "item_codes": {
+        "C1": "24050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 사업체수",
+      "timestamp": "2021",
+      "value": 164095.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 사업체수",
+      "timestamp": "2022",
+      "value": 164664.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 사업체수",
+      "timestamp": "2023",
+      "value": 167782.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동구 - 사업체수",
+      "timestamp": "2021",
+      "value": 23780.0,
+      "item_codes": {
+        "C1": "25010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동구 - 사업체수",
+      "timestamp": "2022",
+      "value": 24000.0,
+      "item_codes": {
+        "C1": "25010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동구 - 사업체수",
+      "timestamp": "2023",
+      "value": 24142.0,
+      "item_codes": {
+        "C1": "25010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "중구 - 사업체수",
+      "timestamp": "2021",
+      "value": 28362.0,
+      "item_codes": {
+        "C1": "25020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "중구 - 사업체수",
+      "timestamp": "2022",
+      "value": 27690.0,
+      "item_codes": {
+        "C1": "25020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "중구 - 사업체수",
+      "timestamp": "2023",
+      "value": 28593.0,
+      "item_codes": {
+        "C1": "25020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서구 - 사업체수",
+      "timestamp": "2021",
+      "value": 49273.0,
+      "item_codes": {
+        "C1": "25030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서구 - 사업체수",
+      "timestamp": "2022",
+      "value": 49534.0,
+      "item_codes": {
+        "C1": "25030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서구 - 사업체수",
+      "timestamp": "2023",
+      "value": 50562.0,
+      "item_codes": {
+        "C1": "25030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "유성구 - 사업체수",
+      "timestamp": "2021",
+      "value": 37275.0,
+      "item_codes": {
+        "C1": "25040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "유성구 - 사업체수",
+      "timestamp": "2022",
+      "value": 38012.0,
+      "item_codes": {
+        "C1": "25040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "유성구 - 사업체수",
+      "timestamp": "2023",
+      "value": 39108.0,
+      "item_codes": {
+        "C1": "25040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대덕구 - 사업체수",
+      "timestamp": "2021",
+      "value": 25405.0,
+      "item_codes": {
+        "C1": "25050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대덕구 - 사업체수",
+      "timestamp": "2022",
+      "value": 25428.0,
+      "item_codes": {
+        "C1": "25050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대덕구 - 사업체수",
+      "timestamp": "2023",
+      "value": 25377.0,
+      "item_codes": {
+        "C1": "25050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 사업체수",
+      "timestamp": "2021",
+      "value": 115408.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 사업체수",
+      "timestamp": "2022",
+      "value": 115784.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 사업체수",
+      "timestamp": "2023",
+      "value": 116666.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "중구 - 사업체수",
+      "timestamp": "2021",
+      "value": 20436.0,
+      "item_codes": {
+        "C1": "26010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "중구 - 사업체수",
+      "timestamp": "2022",
+      "value": 20280.0,
+      "item_codes": {
+        "C1": "26010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "중구 - 사업체수",
+      "timestamp": "2023",
+      "value": 20400.0,
+      "item_codes": {
+        "C1": "26010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "남구 - 사업체수",
+      "timestamp": "2021",
+      "value": 41144.0,
+      "item_codes": {
+        "C1": "26020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "남구 - 사업체수",
+      "timestamp": "2022",
+      "value": 40665.0,
+      "item_codes": {
+        "C1": "26020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "남구 - 사업체수",
+      "timestamp": "2023",
+      "value": 40605.0,
+      "item_codes": {
+        "C1": "26020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동구 - 사업체수",
+      "timestamp": "2021",
+      "value": 10717.0,
+      "item_codes": {
+        "C1": "26030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동구 - 사업체수",
+      "timestamp": "2022",
+      "value": 10781.0,
+      "item_codes": {
+        "C1": "26030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동구 - 사업체수",
+      "timestamp": "2023",
+      "value": 10849.0,
+      "item_codes": {
+        "C1": "26030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "북구 - 사업체수",
+      "timestamp": "2021",
+      "value": 18017.0,
+      "item_codes": {
+        "C1": "26040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "북구 - 사업체수",
+      "timestamp": "2022",
+      "value": 18913.0,
+      "item_codes": {
+        "C1": "26040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "북구 - 사업체수",
+      "timestamp": "2023",
+      "value": 19255.0,
+      "item_codes": {
+        "C1": "26040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울주군 - 사업체수",
+      "timestamp": "2021",
+      "value": 25094.0,
+      "item_codes": {
+        "C1": "26510"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울주군 - 사업체수",
+      "timestamp": "2022",
+      "value": 25145.0,
+      "item_codes": {
+        "C1": "26510"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울주군 - 사업체수",
+      "timestamp": "2023",
+      "value": 25557.0,
+      "item_codes": {
+        "C1": "26510"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "세종특별자치시 - 사업체수",
+      "timestamp": "2021",
+      "value": 30478.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "세종특별자치시 - 사업체수",
+      "timestamp": "2022",
+      "value": 33076.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "세종특별자치시 - 사업체수",
+      "timestamp": "2023",
+      "value": 34099.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 사업체수",
+      "timestamp": "2021",
+      "value": 1481054.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 사업체수",
+      "timestamp": "2022",
+      "value": 1514951.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 사업체수",
+      "timestamp": "2023",
+      "value": 1562116.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "수원시 - 사업체수",
+      "timestamp": "2021",
+      "value": 110987.0,
+      "item_codes": {
+        "C1": "31010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "수원시 - 사업체수",
+      "timestamp": "2022",
+      "value": 112282.0,
+      "item_codes": {
+        "C1": "31010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "수원시 - 사업체수",
+      "timestamp": "2023",
+      "value": 116559.0,
+      "item_codes": {
+        "C1": "31010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "성남시 - 사업체수",
+      "timestamp": "2021",
+      "value": 97955.0,
+      "item_codes": {
+        "C1": "31020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "성남시 - 사업체수",
+      "timestamp": "2022",
+      "value": 97596.0,
+      "item_codes": {
+        "C1": "31020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "성남시 - 사업체수",
+      "timestamp": "2023",
+      "value": 98891.0,
+      "item_codes": {
+        "C1": "31020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "의정부시 - 사업체수",
+      "timestamp": "2021",
+      "value": 40864.0,
+      "item_codes": {
+        "C1": "31030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "의정부시 - 사업체수",
+      "timestamp": "2022",
+      "value": 41403.0,
+      "item_codes": {
+        "C1": "31030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "의정부시 - 사업체수",
+      "timestamp": "2023",
+      "value": 42066.0,
+      "item_codes": {
+        "C1": "31030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "안양시 - 사업체수",
+      "timestamp": "2021",
+      "value": 63452.0,
+      "item_codes": {
+        "C1": "31040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "안양시 - 사업체수",
+      "timestamp": "2022",
+      "value": 65722.0,
+      "item_codes": {
+        "C1": "31040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "안양시 - 사업체수",
+      "timestamp": "2023",
+      "value": 66594.0,
+      "item_codes": {
+        "C1": "31040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부천시 - 사업체수",
+      "timestamp": "2021",
+      "value": 87889.0,
+      "item_codes": {
+        "C1": "31050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부천시 - 사업체수",
+      "timestamp": "2022",
+      "value": 88728.0,
+      "item_codes": {
+        "C1": "31050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부천시 - 사업체수",
+      "timestamp": "2023",
+      "value": 89469.0,
+      "item_codes": {
+        "C1": "31050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광명시 - 사업체수",
+      "timestamp": "2021",
+      "value": 26653.0,
+      "item_codes": {
+        "C1": "31060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광명시 - 사업체수",
+      "timestamp": "2022",
+      "value": 26394.0,
+      "item_codes": {
+        "C1": "31060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광명시 - 사업체수",
+      "timestamp": "2023",
+      "value": 26604.0,
+      "item_codes": {
+        "C1": "31060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "평택시 - 사업체수",
+      "timestamp": "2021",
+      "value": 60910.0,
+      "item_codes": {
+        "C1": "31070"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "평택시 - 사업체수",
+      "timestamp": "2022",
+      "value": 61651.0,
+      "item_codes": {
+        "C1": "31070"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "평택시 - 사업체수",
+      "timestamp": "2023",
+      "value": 63346.0,
+      "item_codes": {
+        "C1": "31070"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동두천시 - 사업체수",
+      "timestamp": "2021",
+      "value": 9011.0,
+      "item_codes": {
+        "C1": "31080"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동두천시 - 사업체수",
+      "timestamp": "2022",
+      "value": 9077.0,
+      "item_codes": {
+        "C1": "31080"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동두천시 - 사업체수",
+      "timestamp": "2023",
+      "value": 9327.0,
+      "item_codes": {
+        "C1": "31080"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "안산시 - 사업체수",
+      "timestamp": "2021",
+      "value": 81372.0,
+      "item_codes": {
+        "C1": "31090"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "안산시 - 사업체수",
+      "timestamp": "2022",
+      "value": 82523.0,
+      "item_codes": {
+        "C1": "31090"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "안산시 - 사업체수",
+      "timestamp": "2023",
+      "value": 84944.0,
+      "item_codes": {
+        "C1": "31090"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "고양시 - 사업체수",
+      "timestamp": "2021",
+      "value": 110660.0,
+      "item_codes": {
+        "C1": "31100"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "고양시 - 사업체수",
+      "timestamp": "2022",
+      "value": 111401.0,
+      "item_codes": {
+        "C1": "31100"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "고양시 - 사업체수",
+      "timestamp": "2023",
+      "value": 116028.0,
+      "item_codes": {
+        "C1": "31100"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "과천시 - 사업체수",
+      "timestamp": "2021",
+      "value": 6039.0,
+      "item_codes": {
+        "C1": "31110"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "과천시 - 사업체수",
+      "timestamp": "2022",
+      "value": 6218.0,
+      "item_codes": {
+        "C1": "31110"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "과천시 - 사업체수",
+      "timestamp": "2023",
+      "value": 6714.0,
+      "item_codes": {
+        "C1": "31110"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "구리시 - 사업체수",
+      "timestamp": "2021",
+      "value": 21325.0,
+      "item_codes": {
+        "C1": "31120"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "구리시 - 사업체수",
+      "timestamp": "2022",
+      "value": 21435.0,
+      "item_codes": {
+        "C1": "31120"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "구리시 - 사업체수",
+      "timestamp": "2023",
+      "value": 22121.0,
+      "item_codes": {
+        "C1": "31120"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "남양주시 - 사업체수",
+      "timestamp": "2021",
+      "value": 66794.0,
+      "item_codes": {
+        "C1": "31130"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "남양주시 - 사업체수",
+      "timestamp": "2022",
+      "value": 68272.0,
+      "item_codes": {
+        "C1": "31130"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "남양주시 - 사업체수",
+      "timestamp": "2023",
+      "value": 71539.0,
+      "item_codes": {
+        "C1": "31130"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "오산시 - 사업체수",
+      "timestamp": "2021",
+      "value": 20094.0,
+      "item_codes": {
+        "C1": "31140"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "오산시 - 사업체수",
+      "timestamp": "2022",
+      "value": 20440.0,
+      "item_codes": {
+        "C1": "31140"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "오산시 - 사업체수",
+      "timestamp": "2023",
+      "value": 21691.0,
+      "item_codes": {
+        "C1": "31140"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "시흥시 - 사업체수",
+      "timestamp": "2021",
+      "value": 69637.0,
+      "item_codes": {
+        "C1": "31150"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "시흥시 - 사업체수",
+      "timestamp": "2022",
+      "value": 71474.0,
+      "item_codes": {
+        "C1": "31150"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "시흥시 - 사업체수",
+      "timestamp": "2023",
+      "value": 71302.0,
+      "item_codes": {
+        "C1": "31150"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "군포시 - 사업체수",
+      "timestamp": "2021",
+      "value": 26843.0,
+      "item_codes": {
+        "C1": "31160"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "군포시 - 사업체수",
+      "timestamp": "2022",
+      "value": 28217.0,
+      "item_codes": {
+        "C1": "31160"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "군포시 - 사업체수",
+      "timestamp": "2023",
+      "value": 28071.0,
+      "item_codes": {
+        "C1": "31160"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "의왕시 - 사업체수",
+      "timestamp": "2021",
+      "value": 13761.0,
+      "item_codes": {
+        "C1": "31170"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "의왕시 - 사업체수",
+      "timestamp": "2022",
+      "value": 13983.0,
+      "item_codes": {
+        "C1": "31170"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "의왕시 - 사업체수",
+      "timestamp": "2023",
+      "value": 14240.0,
+      "item_codes": {
+        "C1": "31170"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "하남시 - 사업체수",
+      "timestamp": "2021",
+      "value": 32386.0,
+      "item_codes": {
+        "C1": "31180"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "하남시 - 사업체수",
+      "timestamp": "2022",
+      "value": 34456.0,
+      "item_codes": {
+        "C1": "31180"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "하남시 - 사업체수",
+      "timestamp": "2023",
+      "value": 35781.0,
+      "item_codes": {
+        "C1": "31180"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "용인시 - 사업체수",
+      "timestamp": "2021",
+      "value": 98465.0,
+      "item_codes": {
+        "C1": "31190"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "용인시 - 사업체수",
+      "timestamp": "2022",
+      "value": 100231.0,
+      "item_codes": {
+        "C1": "31190"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "용인시 - 사업체수",
+      "timestamp": "2023",
+      "value": 109797.0,
+      "item_codes": {
+        "C1": "31190"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "파주시 - 사업체수",
+      "timestamp": "2021",
+      "value": 56504.0,
+      "item_codes": {
+        "C1": "31200"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "파주시 - 사업체수",
+      "timestamp": "2022",
+      "value": 59553.0,
+      "item_codes": {
+        "C1": "31200"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "파주시 - 사업체수",
+      "timestamp": "2023",
+      "value": 62183.0,
+      "item_codes": {
+        "C1": "31200"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "이천시 - 사업체수",
+      "timestamp": "2021",
+      "value": 28608.0,
+      "item_codes": {
+        "C1": "31210"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "이천시 - 사업체수",
+      "timestamp": "2022",
+      "value": 29422.0,
+      "item_codes": {
+        "C1": "31210"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "이천시 - 사업체수",
+      "timestamp": "2023",
+      "value": 29824.0,
+      "item_codes": {
+        "C1": "31210"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "안성시 - 사업체수",
+      "timestamp": "2021",
+      "value": 26323.0,
+      "item_codes": {
+        "C1": "31220"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "안성시 - 사업체수",
+      "timestamp": "2022",
+      "value": 26827.0,
+      "item_codes": {
+        "C1": "31220"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "안성시 - 사업체수",
+      "timestamp": "2023",
+      "value": 27219.0,
+      "item_codes": {
+        "C1": "31220"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "김포시 - 사업체수",
+      "timestamp": "2021",
+      "value": 62310.0,
+      "item_codes": {
+        "C1": "31230"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "김포시 - 사업체수",
+      "timestamp": "2022",
+      "value": 64231.0,
+      "item_codes": {
+        "C1": "31230"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "김포시 - 사업체수",
+      "timestamp": "2023",
+      "value": 66118.0,
+      "item_codes": {
+        "C1": "31230"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "화성시 - 사업체수",
+      "timestamp": "2021",
+      "value": 109971.0,
+      "item_codes": {
+        "C1": "31240"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "화성시 - 사업체수",
+      "timestamp": "2022",
+      "value": 116455.0,
+      "item_codes": {
+        "C1": "31240"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "화성시 - 사업체수",
+      "timestamp": "2023",
+      "value": 121189.0,
+      "item_codes": {
+        "C1": "31240"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주시 - 사업체수",
+      "timestamp": "2021",
+      "value": 46834.0,
+      "item_codes": {
+        "C1": "31250"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주시 - 사업체수",
+      "timestamp": "2022",
+      "value": 48726.0,
+      "item_codes": {
+        "C1": "31250"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주시 - 사업체수",
+      "timestamp": "2023",
+      "value": 49927.0,
+      "item_codes": {
+        "C1": "31250"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "양주시 - 사업체수",
+      "timestamp": "2021",
+      "value": 28132.0,
+      "item_codes": {
+        "C1": "31260"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "양주시 - 사업체수",
+      "timestamp": "2022",
+      "value": 29246.0,
+      "item_codes": {
+        "C1": "31260"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "양주시 - 사업체수",
+      "timestamp": "2023",
+      "value": 30903.0,
+      "item_codes": {
+        "C1": "31260"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "포천시 - 사업체수",
+      "timestamp": "2021",
+      "value": 27380.0,
+      "item_codes": {
+        "C1": "31270"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "포천시 - 사업체수",
+      "timestamp": "2022",
+      "value": 27551.0,
+      "item_codes": {
+        "C1": "31270"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "포천시 - 사업체수",
+      "timestamp": "2023",
+      "value": 27710.0,
+      "item_codes": {
+        "C1": "31270"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "여주시 - 사업체수",
+      "timestamp": "2021",
+      "value": 18154.0,
+      "item_codes": {
+        "C1": "31280"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "여주시 - 사업체수",
+      "timestamp": "2022",
+      "value": 18780.0,
+      "item_codes": {
+        "C1": "31280"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "여주시 - 사업체수",
+      "timestamp": "2023",
+      "value": 19501.0,
+      "item_codes": {
+        "C1": "31280"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "연천군 - 사업체수",
+      "timestamp": "2021",
+      "value": 8967.0,
+      "item_codes": {
+        "C1": "31550"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "연천군 - 사업체수",
+      "timestamp": "2022",
+      "value": 9116.0,
+      "item_codes": {
+        "C1": "31550"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "연천군 - 사업체수",
+      "timestamp": "2023",
+      "value": 7359.0,
+      "item_codes": {
+        "C1": "31550"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "가평군 - 사업체수",
+      "timestamp": "2021",
+      "value": 9289.0,
+      "item_codes": {
+        "C1": "31570"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "가평군 - 사업체수",
+      "timestamp": "2022",
+      "value": 9658.0,
+      "item_codes": {
+        "C1": "31570"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "가평군 - 사업체수",
+      "timestamp": "2023",
+      "value": 9945.0,
+      "item_codes": {
+        "C1": "31570"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "양평군 - 사업체수",
+      "timestamp": "2021",
+      "value": 13485.0,
+      "item_codes": {
+        "C1": "31580"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "양평군 - 사업체수",
+      "timestamp": "2022",
+      "value": 13883.0,
+      "item_codes": {
+        "C1": "31580"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "양평군 - 사업체수",
+      "timestamp": "2023",
+      "value": 15154.0,
+      "item_codes": {
+        "C1": "31580"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 사업체수",
+      "timestamp": "2021",
+      "value": 200365.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 사업체수",
+      "timestamp": "2022",
+      "value": 203375.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 사업체수",
+      "timestamp": "2023",
+      "value": 209314.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "춘천시 - 사업체수",
+      "timestamp": "2021",
+      "value": 32958.0,
+      "item_codes": {
+        "C1": "32010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "춘천시 - 사업체수",
+      "timestamp": "2022",
+      "value": 33323.0,
+      "item_codes": {
+        "C1": "32010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "춘천시 - 사업체수",
+      "timestamp": "2023",
+      "value": 34322.0,
+      "item_codes": {
+        "C1": "32010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "원주시 - 사업체수",
+      "timestamp": "2021",
+      "value": 42783.0,
+      "item_codes": {
+        "C1": "32020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "원주시 - 사업체수",
+      "timestamp": "2022",
+      "value": 43665.0,
+      "item_codes": {
+        "C1": "32020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "원주시 - 사업체수",
+      "timestamp": "2023",
+      "value": 45011.0,
+      "item_codes": {
+        "C1": "32020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강릉시 - 사업체수",
+      "timestamp": "2021",
+      "value": 29034.0,
+      "item_codes": {
+        "C1": "32030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강릉시 - 사업체수",
+      "timestamp": "2022",
+      "value": 29280.0,
+      "item_codes": {
+        "C1": "32030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강릉시 - 사업체수",
+      "timestamp": "2023",
+      "value": 30009.0,
+      "item_codes": {
+        "C1": "32030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동해시 - 사업체수",
+      "timestamp": "2021",
+      "value": 11395.0,
+      "item_codes": {
+        "C1": "32040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동해시 - 사업체수",
+      "timestamp": "2022",
+      "value": 11516.0,
+      "item_codes": {
+        "C1": "32040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동해시 - 사업체수",
+      "timestamp": "2023",
+      "value": 11666.0,
+      "item_codes": {
+        "C1": "32040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "태백시 - 사업체수",
+      "timestamp": "2021",
+      "value": 5399.0,
+      "item_codes": {
+        "C1": "32050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "태백시 - 사업체수",
+      "timestamp": "2022",
+      "value": 5495.0,
+      "item_codes": {
+        "C1": "32050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "태백시 - 사업체수",
+      "timestamp": "2023",
+      "value": 5665.0,
+      "item_codes": {
+        "C1": "32050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "속초시 - 사업체수",
+      "timestamp": "2021",
+      "value": 11658.0,
+      "item_codes": {
+        "C1": "32060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "속초시 - 사업체수",
+      "timestamp": "2022",
+      "value": 11736.0,
+      "item_codes": {
+        "C1": "32060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "속초시 - 사업체수",
+      "timestamp": "2023",
+      "value": 12035.0,
+      "item_codes": {
+        "C1": "32060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "삼척시 - 사업체수",
+      "timestamp": "2021",
+      "value": 8912.0,
+      "item_codes": {
+        "C1": "32070"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "삼척시 - 사업체수",
+      "timestamp": "2022",
+      "value": 9150.0,
+      "item_codes": {
+        "C1": "32070"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "삼척시 - 사업체수",
+      "timestamp": "2023",
+      "value": 9268.0,
+      "item_codes": {
+        "C1": "32070"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "홍천군 - 사업체수",
+      "timestamp": "2021",
+      "value": 9423.0,
+      "item_codes": {
+        "C1": "32510"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "홍천군 - 사업체수",
+      "timestamp": "2022",
+      "value": 9661.0,
+      "item_codes": {
+        "C1": "32510"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "홍천군 - 사업체수",
+      "timestamp": "2023",
+      "value": 9905.0,
+      "item_codes": {
+        "C1": "32510"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "횡성군 - 사업체수",
+      "timestamp": "2021",
+      "value": 5813.0,
+      "item_codes": {
+        "C1": "32520"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "횡성군 - 사업체수",
+      "timestamp": "2022",
+      "value": 6066.0,
+      "item_codes": {
+        "C1": "32520"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "횡성군 - 사업체수",
+      "timestamp": "2023",
+      "value": 6322.0,
+      "item_codes": {
+        "C1": "32520"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영월군 - 사업체수",
+      "timestamp": "2021",
+      "value": 5452.0,
+      "item_codes": {
+        "C1": "32530"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영월군 - 사업체수",
+      "timestamp": "2022",
+      "value": 5574.0,
+      "item_codes": {
+        "C1": "32530"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영월군 - 사업체수",
+      "timestamp": "2023",
+      "value": 5778.0,
+      "item_codes": {
+        "C1": "32530"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "평창군 - 사업체수",
+      "timestamp": "2021",
+      "value": 6493.0,
+      "item_codes": {
+        "C1": "32540"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "평창군 - 사업체수",
+      "timestamp": "2022",
+      "value": 6563.0,
+      "item_codes": {
+        "C1": "32540"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "평창군 - 사업체수",
+      "timestamp": "2023",
+      "value": 6764.0,
+      "item_codes": {
+        "C1": "32540"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "정선군 - 사업체수",
+      "timestamp": "2021",
+      "value": 5138.0,
+      "item_codes": {
+        "C1": "32550"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "정선군 - 사업체수",
+      "timestamp": "2022",
+      "value": 5001.0,
+      "item_codes": {
+        "C1": "32550"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "정선군 - 사업체수",
+      "timestamp": "2023",
+      "value": 5133.0,
+      "item_codes": {
+        "C1": "32550"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "철원군 - 사업체수",
+      "timestamp": "2021",
+      "value": 5105.0,
+      "item_codes": {
+        "C1": "32560"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "철원군 - 사업체수",
+      "timestamp": "2022",
+      "value": 5274.0,
+      "item_codes": {
+        "C1": "32560"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "철원군 - 사업체수",
+      "timestamp": "2023",
+      "value": 5518.0,
+      "item_codes": {
+        "C1": "32560"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "화천군 - 사업체수",
+      "timestamp": "2021",
+      "value": 3172.0,
+      "item_codes": {
+        "C1": "32570"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "화천군 - 사업체수",
+      "timestamp": "2022",
+      "value": 3183.0,
+      "item_codes": {
+        "C1": "32570"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "화천군 - 사업체수",
+      "timestamp": "2023",
+      "value": 3259.0,
+      "item_codes": {
+        "C1": "32570"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "양구군 - 사업체수",
+      "timestamp": "2021",
+      "value": 3186.0,
+      "item_codes": {
+        "C1": "32580"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "양구군 - 사업체수",
+      "timestamp": "2022",
+      "value": 3184.0,
+      "item_codes": {
+        "C1": "32580"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "양구군 - 사업체수",
+      "timestamp": "2023",
+      "value": 3320.0,
+      "item_codes": {
+        "C1": "32580"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인제군 - 사업체수",
+      "timestamp": "2021",
+      "value": 5090.0,
+      "item_codes": {
+        "C1": "32590"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인제군 - 사업체수",
+      "timestamp": "2022",
+      "value": 5077.0,
+      "item_codes": {
+        "C1": "32590"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인제군 - 사업체수",
+      "timestamp": "2023",
+      "value": 5277.0,
+      "item_codes": {
+        "C1": "32590"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "고성군 - 사업체수",
+      "timestamp": "2021",
+      "value": 4365.0,
+      "item_codes": {
+        "C1": "32600"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "고성군 - 사업체수",
+      "timestamp": "2022",
+      "value": 4426.0,
+      "item_codes": {
+        "C1": "32600"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "고성군 - 사업체수",
+      "timestamp": "2023",
+      "value": 4683.0,
+      "item_codes": {
+        "C1": "32600"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "양양군 - 사업체수",
+      "timestamp": "2021",
+      "value": 4989.0,
+      "item_codes": {
+        "C1": "32610"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "양양군 - 사업체수",
+      "timestamp": "2022",
+      "value": 5201.0,
+      "item_codes": {
+        "C1": "32610"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "양양군 - 사업체수",
+      "timestamp": "2023",
+      "value": 5379.0,
+      "item_codes": {
+        "C1": "32610"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 사업체수",
+      "timestamp": "2021",
+      "value": 194561.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 사업체수",
+      "timestamp": "2022",
+      "value": 197158.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 사업체수",
+      "timestamp": "2023",
+      "value": 203356.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충주시 - 사업체수",
+      "timestamp": "2021",
+      "value": 26893.0,
+      "item_codes": {
+        "C1": "33020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충주시 - 사업체수",
+      "timestamp": "2022",
+      "value": 27207.0,
+      "item_codes": {
+        "C1": "33020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충주시 - 사업체수",
+      "timestamp": "2023",
+      "value": 27657.0,
+      "item_codes": {
+        "C1": "33020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제천시 - 사업체수",
+      "timestamp": "2021",
+      "value": 18496.0,
+      "item_codes": {
+        "C1": "33030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제천시 - 사업체수",
+      "timestamp": "2022",
+      "value": 19001.0,
+      "item_codes": {
+        "C1": "33030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제천시 - 사업체수",
+      "timestamp": "2023",
+      "value": 19233.0,
+      "item_codes": {
+        "C1": "33030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "청주시 - 사업체수",
+      "timestamp": "2021",
+      "value": 91315.0,
+      "item_codes": {
+        "C1": "33040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "청주시 - 사업체수",
+      "timestamp": "2022",
+      "value": 92424.0,
+      "item_codes": {
+        "C1": "33040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "청주시 - 사업체수",
+      "timestamp": "2023",
+      "value": 95487.0,
+      "item_codes": {
+        "C1": "33040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "보은군 - 사업체수",
+      "timestamp": "2021",
+      "value": 4488.0,
+      "item_codes": {
+        "C1": "33520"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "보은군 - 사업체수",
+      "timestamp": "2022",
+      "value": 4293.0,
+      "item_codes": {
+        "C1": "33520"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "보은군 - 사업체수",
+      "timestamp": "2023",
+      "value": 4597.0,
+      "item_codes": {
+        "C1": "33520"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "옥천군 - 사업체수",
+      "timestamp": "2021",
+      "value": 7433.0,
+      "item_codes": {
+        "C1": "33530"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "옥천군 - 사업체수",
+      "timestamp": "2022",
+      "value": 7627.0,
+      "item_codes": {
+        "C1": "33530"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "옥천군 - 사업체수",
+      "timestamp": "2023",
+      "value": 8047.0,
+      "item_codes": {
+        "C1": "33530"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영동군 - 사업체수",
+      "timestamp": "2021",
+      "value": 5486.0,
+      "item_codes": {
+        "C1": "33540"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영동군 - 사업체수",
+      "timestamp": "2022",
+      "value": 5422.0,
+      "item_codes": {
+        "C1": "33540"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영동군 - 사업체수",
+      "timestamp": "2023",
+      "value": 5716.0,
+      "item_codes": {
+        "C1": "33540"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "진천군 - 사업체수",
+      "timestamp": "2021",
+      "value": 11244.0,
+      "item_codes": {
+        "C1": "33550"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "진천군 - 사업체수",
+      "timestamp": "2022",
+      "value": 11218.0,
+      "item_codes": {
+        "C1": "33550"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "진천군 - 사업체수",
+      "timestamp": "2023",
+      "value": 11579.0,
+      "item_codes": {
+        "C1": "33550"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "괴산군 - 사업체수",
+      "timestamp": "2021",
+      "value": 4932.0,
+      "item_codes": {
+        "C1": "33560"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "괴산군 - 사업체수",
+      "timestamp": "2022",
+      "value": 4934.0,
+      "item_codes": {
+        "C1": "33560"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "괴산군 - 사업체수",
+      "timestamp": "2023",
+      "value": 5231.0,
+      "item_codes": {
+        "C1": "33560"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "음성군 - 사업체수",
+      "timestamp": "2021",
+      "value": 15430.0,
+      "item_codes": {
+        "C1": "33570"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "음성군 - 사업체수",
+      "timestamp": "2022",
+      "value": 16068.0,
+      "item_codes": {
+        "C1": "33570"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "음성군 - 사업체수",
+      "timestamp": "2023",
+      "value": 16480.0,
+      "item_codes": {
+        "C1": "33570"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "단양군 - 사업체수",
+      "timestamp": "2021",
+      "value": 4451.0,
+      "item_codes": {
+        "C1": "33580"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "단양군 - 사업체수",
+      "timestamp": "2022",
+      "value": 4468.0,
+      "item_codes": {
+        "C1": "33580"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "단양군 - 사업체수",
+      "timestamp": "2023",
+      "value": 4679.0,
+      "item_codes": {
+        "C1": "33580"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "증평군 - 사업체수",
+      "timestamp": "2021",
+      "value": 4393.0,
+      "item_codes": {
+        "C1": "33590"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "증평군 - 사업체수",
+      "timestamp": "2022",
+      "value": 4496.0,
+      "item_codes": {
+        "C1": "33590"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "증평군 - 사업체수",
+      "timestamp": "2023",
+      "value": 4650.0,
+      "item_codes": {
+        "C1": "33590"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 사업체수",
+      "timestamp": "2021",
+      "value": 261263.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 사업체수",
+      "timestamp": "2022",
+      "value": 266577.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 사업체수",
+      "timestamp": "2023",
+      "value": 276134.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "천안시 - 사업체수",
+      "timestamp": "2021",
+      "value": 74581.0,
+      "item_codes": {
+        "C1": "34010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "천안시 - 사업체수",
+      "timestamp": "2022",
+      "value": 77243.0,
+      "item_codes": {
+        "C1": "34010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "천안시 - 사업체수",
+      "timestamp": "2023",
+      "value": 79458.0,
+      "item_codes": {
+        "C1": "34010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "공주시 - 사업체수",
+      "timestamp": "2021",
+      "value": 14691.0,
+      "item_codes": {
+        "C1": "34020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "공주시 - 사업체수",
+      "timestamp": "2022",
+      "value": 14751.0,
+      "item_codes": {
+        "C1": "34020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "공주시 - 사업체수",
+      "timestamp": "2023",
+      "value": 15401.0,
+      "item_codes": {
+        "C1": "34020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "보령시 - 사업체수",
+      "timestamp": "2021",
+      "value": 13513.0,
+      "item_codes": {
+        "C1": "34030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "보령시 - 사업체수",
+      "timestamp": "2022",
+      "value": 13600.0,
+      "item_codes": {
+        "C1": "34030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "보령시 - 사업체수",
+      "timestamp": "2023",
+      "value": 14136.0,
+      "item_codes": {
+        "C1": "34030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "아산시 - 사업체수",
+      "timestamp": "2021",
+      "value": 34775.0,
+      "item_codes": {
+        "C1": "34040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "아산시 - 사업체수",
+      "timestamp": "2022",
+      "value": 35938.0,
+      "item_codes": {
+        "C1": "34040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "아산시 - 사업체수",
+      "timestamp": "2023",
+      "value": 36996.0,
+      "item_codes": {
+        "C1": "34040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서산시 - 사업체수",
+      "timestamp": "2021",
+      "value": 19964.0,
+      "item_codes": {
+        "C1": "34050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서산시 - 사업체수",
+      "timestamp": "2022",
+      "value": 19588.0,
+      "item_codes": {
+        "C1": "34050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서산시 - 사업체수",
+      "timestamp": "2023",
+      "value": 20443.0,
+      "item_codes": {
+        "C1": "34050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "논산시 - 사업체수",
+      "timestamp": "2021",
+      "value": 16724.0,
+      "item_codes": {
+        "C1": "34060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "논산시 - 사업체수",
+      "timestamp": "2022",
+      "value": 17205.0,
+      "item_codes": {
+        "C1": "34060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "논산시 - 사업체수",
+      "timestamp": "2023",
+      "value": 17940.0,
+      "item_codes": {
+        "C1": "34060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "계룡시 - 사업체수",
+      "timestamp": "2021",
+      "value": 3307.0,
+      "item_codes": {
+        "C1": "34070"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "계룡시 - 사업체수",
+      "timestamp": "2022",
+      "value": 3397.0,
+      "item_codes": {
+        "C1": "34070"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "계룡시 - 사업체수",
+      "timestamp": "2023",
+      "value": 3607.0,
+      "item_codes": {
+        "C1": "34070"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "당진시 - 사업체수",
+      "timestamp": "2021",
+      "value": 21029.0,
+      "item_codes": {
+        "C1": "34080"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "당진시 - 사업체수",
+      "timestamp": "2022",
+      "value": 21838.0,
+      "item_codes": {
+        "C1": "34080"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "당진시 - 사업체수",
+      "timestamp": "2023",
+      "value": 22607.0,
+      "item_codes": {
+        "C1": "34080"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "금산군 - 사업체수",
+      "timestamp": "2021",
+      "value": 9474.0,
+      "item_codes": {
+        "C1": "34510"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "금산군 - 사업체수",
+      "timestamp": "2022",
+      "value": 9507.0,
+      "item_codes": {
+        "C1": "34510"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "금산군 - 사업체수",
+      "timestamp": "2023",
+      "value": 9728.0,
+      "item_codes": {
+        "C1": "34510"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부여군 - 사업체수",
+      "timestamp": "2021",
+      "value": 8146.0,
+      "item_codes": {
+        "C1": "34530"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부여군 - 사업체수",
+      "timestamp": "2022",
+      "value": 7671.0,
+      "item_codes": {
+        "C1": "34530"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부여군 - 사업체수",
+      "timestamp": "2023",
+      "value": 8337.0,
+      "item_codes": {
+        "C1": "34530"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서천군 - 사업체수",
+      "timestamp": "2021",
+      "value": 7630.0,
+      "item_codes": {
+        "C1": "34540"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서천군 - 사업체수",
+      "timestamp": "2022",
+      "value": 7898.0,
+      "item_codes": {
+        "C1": "34540"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서천군 - 사업체수",
+      "timestamp": "2023",
+      "value": 8210.0,
+      "item_codes": {
+        "C1": "34540"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "청양군 - 사업체수",
+      "timestamp": "2021",
+      "value": 4772.0,
+      "item_codes": {
+        "C1": "34550"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "청양군 - 사업체수",
+      "timestamp": "2022",
+      "value": 4921.0,
+      "item_codes": {
+        "C1": "34550"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "청양군 - 사업체수",
+      "timestamp": "2023",
+      "value": 4969.0,
+      "item_codes": {
+        "C1": "34550"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "홍성군 - 사업체수",
+      "timestamp": "2021",
+      "value": 12388.0,
+      "item_codes": {
+        "C1": "34560"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "홍성군 - 사업체수",
+      "timestamp": "2022",
+      "value": 12756.0,
+      "item_codes": {
+        "C1": "34560"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "홍성군 - 사업체수",
+      "timestamp": "2023",
+      "value": 13162.0,
+      "item_codes": {
+        "C1": "34560"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "예산군 - 사업체수",
+      "timestamp": "2021",
+      "value": 10922.0,
+      "item_codes": {
+        "C1": "34570"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "예산군 - 사업체수",
+      "timestamp": "2022",
+      "value": 11143.0,
+      "item_codes": {
+        "C1": "34570"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "예산군 - 사업체수",
+      "timestamp": "2023",
+      "value": 11564.0,
+      "item_codes": {
+        "C1": "34570"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "태안군 - 사업체수",
+      "timestamp": "2021",
+      "value": 9347.0,
+      "item_codes": {
+        "C1": "34580"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "태안군 - 사업체수",
+      "timestamp": "2022",
+      "value": 9121.0,
+      "item_codes": {
+        "C1": "34580"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "태안군 - 사업체수",
+      "timestamp": "2023",
+      "value": 9576.0,
+      "item_codes": {
+        "C1": "34580"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 사업체수",
+      "timestamp": "2021",
+      "value": 231380.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 사업체수",
+      "timestamp": "2022",
+      "value": 232695.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 사업체수",
+      "timestamp": "2023",
+      "value": 239757.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전주시 - 사업체수",
+      "timestamp": "2021",
+      "value": 76227.0,
+      "item_codes": {
+        "C1": "35010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전주시 - 사업체수",
+      "timestamp": "2022",
+      "value": 76634.0,
+      "item_codes": {
+        "C1": "35010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전주시 - 사업체수",
+      "timestamp": "2023",
+      "value": 77923.0,
+      "item_codes": {
+        "C1": "35010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "군산시 - 사업체수",
+      "timestamp": "2021",
+      "value": 33592.0,
+      "item_codes": {
+        "C1": "35020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "군산시 - 사업체수",
+      "timestamp": "2022",
+      "value": 32870.0,
+      "item_codes": {
+        "C1": "35020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "군산시 - 사업체수",
+      "timestamp": "2023",
+      "value": 33811.0,
+      "item_codes": {
+        "C1": "35020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "익산시 - 사업체수",
+      "timestamp": "2021",
+      "value": 35427.0,
+      "item_codes": {
+        "C1": "35030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "익산시 - 사업체수",
+      "timestamp": "2022",
+      "value": 36147.0,
+      "item_codes": {
+        "C1": "35030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "익산시 - 사업체수",
+      "timestamp": "2023",
+      "value": 36734.0,
+      "item_codes": {
+        "C1": "35030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "정읍시 - 사업체수",
+      "timestamp": "2021",
+      "value": 15625.0,
+      "item_codes": {
+        "C1": "35040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "정읍시 - 사업체수",
+      "timestamp": "2022",
+      "value": 16311.0,
+      "item_codes": {
+        "C1": "35040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "정읍시 - 사업체수",
+      "timestamp": "2023",
+      "value": 16500.0,
+      "item_codes": {
+        "C1": "35040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "남원시 - 사업체수",
+      "timestamp": "2021",
+      "value": 11634.0,
+      "item_codes": {
+        "C1": "35050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "남원시 - 사업체수",
+      "timestamp": "2022",
+      "value": 10807.0,
+      "item_codes": {
+        "C1": "35050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "남원시 - 사업체수",
+      "timestamp": "2023",
+      "value": 12207.0,
+      "item_codes": {
+        "C1": "35050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "김제시 - 사업체수",
+      "timestamp": "2021",
+      "value": 13001.0,
+      "item_codes": {
+        "C1": "35060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "김제시 - 사업체수",
+      "timestamp": "2022",
+      "value": 13019.0,
+      "item_codes": {
+        "C1": "35060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "김제시 - 사업체수",
+      "timestamp": "2023",
+      "value": 13461.0,
+      "item_codes": {
+        "C1": "35060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "완주군 - 사업체수",
+      "timestamp": "2021",
+      "value": 12843.0,
+      "item_codes": {
+        "C1": "35510"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "완주군 - 사업체수",
+      "timestamp": "2022",
+      "value": 13046.0,
+      "item_codes": {
+        "C1": "35510"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "완주군 - 사업체수",
+      "timestamp": "2023",
+      "value": 13569.0,
+      "item_codes": {
+        "C1": "35510"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "진안군 - 사업체수",
+      "timestamp": "2021",
+      "value": 3716.0,
+      "item_codes": {
+        "C1": "35520"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "진안군 - 사업체수",
+      "timestamp": "2022",
+      "value": 4185.0,
+      "item_codes": {
+        "C1": "35520"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "진안군 - 사업체수",
+      "timestamp": "2023",
+      "value": 4014.0,
+      "item_codes": {
+        "C1": "35520"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "무주군 - 사업체수",
+      "timestamp": "2021",
+      "value": 3462.0,
+      "item_codes": {
+        "C1": "35530"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "무주군 - 사업체수",
+      "timestamp": "2022",
+      "value": 3581.0,
+      "item_codes": {
+        "C1": "35530"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "무주군 - 사업체수",
+      "timestamp": "2023",
+      "value": 3703.0,
+      "item_codes": {
+        "C1": "35530"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "장수군 - 사업체수",
+      "timestamp": "2021",
+      "value": 3170.0,
+      "item_codes": {
+        "C1": "35540"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "장수군 - 사업체수",
+      "timestamp": "2022",
+      "value": 3098.0,
+      "item_codes": {
+        "C1": "35540"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "장수군 - 사업체수",
+      "timestamp": "2023",
+      "value": 3403.0,
+      "item_codes": {
+        "C1": "35540"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "임실군 - 사업체수",
+      "timestamp": "2021",
+      "value": 4275.0,
+      "item_codes": {
+        "C1": "35550"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "임실군 - 사업체수",
+      "timestamp": "2022",
+      "value": 4295.0,
+      "item_codes": {
+        "C1": "35550"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "임실군 - 사업체수",
+      "timestamp": "2023",
+      "value": 4528.0,
+      "item_codes": {
+        "C1": "35550"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "순창군 - 사업체수",
+      "timestamp": "2021",
+      "value": 3358.0,
+      "item_codes": {
+        "C1": "35560"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "순창군 - 사업체수",
+      "timestamp": "2022",
+      "value": 3306.0,
+      "item_codes": {
+        "C1": "35560"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "순창군 - 사업체수",
+      "timestamp": "2023",
+      "value": 3686.0,
+      "item_codes": {
+        "C1": "35560"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "고창군 - 사업체수",
+      "timestamp": "2021",
+      "value": 7374.0,
+      "item_codes": {
+        "C1": "35570"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "고창군 - 사업체수",
+      "timestamp": "2022",
+      "value": 7746.0,
+      "item_codes": {
+        "C1": "35570"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "고창군 - 사업체수",
+      "timestamp": "2023",
+      "value": 8262.0,
+      "item_codes": {
+        "C1": "35570"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부안군 - 사업체수",
+      "timestamp": "2021",
+      "value": 7676.0,
+      "item_codes": {
+        "C1": "35580"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부안군 - 사업체수",
+      "timestamp": "2022",
+      "value": 7650.0,
+      "item_codes": {
+        "C1": "35580"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부안군 - 사업체수",
+      "timestamp": "2023",
+      "value": 7956.0,
+      "item_codes": {
+        "C1": "35580"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 사업체수",
+      "timestamp": "2021",
+      "value": 234688.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 사업체수",
+      "timestamp": "2022",
+      "value": 236470.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 사업체수",
+      "timestamp": "2023",
+      "value": 243020.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "목포시 - 사업체수",
+      "timestamp": "2021",
+      "value": 29018.0,
+      "item_codes": {
+        "C1": "36010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "목포시 - 사업체수",
+      "timestamp": "2022",
+      "value": 28662.0,
+      "item_codes": {
+        "C1": "36010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "목포시 - 사업체수",
+      "timestamp": "2023",
+      "value": 28791.0,
+      "item_codes": {
+        "C1": "36010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "여수시 - 사업체수",
+      "timestamp": "2021",
+      "value": 33780.0,
+      "item_codes": {
+        "C1": "36020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "여수시 - 사업체수",
+      "timestamp": "2022",
+      "value": 34291.0,
+      "item_codes": {
+        "C1": "36020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "여수시 - 사업체수",
+      "timestamp": "2023",
+      "value": 34533.0,
+      "item_codes": {
+        "C1": "36020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "순천시 - 사업체수",
+      "timestamp": "2021",
+      "value": 32480.0,
+      "item_codes": {
+        "C1": "36030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "순천시 - 사업체수",
+      "timestamp": "2022",
+      "value": 32428.0,
+      "item_codes": {
+        "C1": "36030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "순천시 - 사업체수",
+      "timestamp": "2023",
+      "value": 32751.0,
+      "item_codes": {
+        "C1": "36030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "나주시 - 사업체수",
+      "timestamp": "2021",
+      "value": 15459.0,
+      "item_codes": {
+        "C1": "36040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "나주시 - 사업체수",
+      "timestamp": "2022",
+      "value": 15963.0,
+      "item_codes": {
+        "C1": "36040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "나주시 - 사업체수",
+      "timestamp": "2023",
+      "value": 16660.0,
+      "item_codes": {
+        "C1": "36040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광양시 - 사업체수",
+      "timestamp": "2021",
+      "value": 18979.0,
+      "item_codes": {
+        "C1": "36060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광양시 - 사업체수",
+      "timestamp": "2022",
+      "value": 19504.0,
+      "item_codes": {
+        "C1": "36060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광양시 - 사업체수",
+      "timestamp": "2023",
+      "value": 19613.0,
+      "item_codes": {
+        "C1": "36060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "담양군 - 사업체수",
+      "timestamp": "2021",
+      "value": 6922.0,
+      "item_codes": {
+        "C1": "36510"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "담양군 - 사업체수",
+      "timestamp": "2022",
+      "value": 6992.0,
+      "item_codes": {
+        "C1": "36510"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "담양군 - 사업체수",
+      "timestamp": "2023",
+      "value": 7332.0,
+      "item_codes": {
+        "C1": "36510"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "곡성군 - 사업체수",
+      "timestamp": "2021",
+      "value": 3716.0,
+      "item_codes": {
+        "C1": "36520"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "곡성군 - 사업체수",
+      "timestamp": "2022",
+      "value": 3721.0,
+      "item_codes": {
+        "C1": "36520"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "곡성군 - 사업체수",
+      "timestamp": "2023",
+      "value": 3899.0,
+      "item_codes": {
+        "C1": "36520"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "구례군 - 사업체수",
+      "timestamp": "2021",
+      "value": 3233.0,
+      "item_codes": {
+        "C1": "36530"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "구례군 - 사업체수",
+      "timestamp": "2022",
+      "value": 3281.0,
+      "item_codes": {
+        "C1": "36530"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "구례군 - 사업체수",
+      "timestamp": "2023",
+      "value": 3462.0,
+      "item_codes": {
+        "C1": "36530"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "고흥군 - 사업체수",
+      "timestamp": "2021",
+      "value": 7933.0,
+      "item_codes": {
+        "C1": "36550"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "고흥군 - 사업체수",
+      "timestamp": "2022",
+      "value": 7681.0,
+      "item_codes": {
+        "C1": "36550"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "고흥군 - 사업체수",
+      "timestamp": "2023",
+      "value": 8237.0,
+      "item_codes": {
+        "C1": "36550"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "보성군 - 사업체수",
+      "timestamp": "2021",
+      "value": 5129.0,
+      "item_codes": {
+        "C1": "36560"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "보성군 - 사업체수",
+      "timestamp": "2022",
+      "value": 5088.0,
+      "item_codes": {
+        "C1": "36560"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "보성군 - 사업체수",
+      "timestamp": "2023",
+      "value": 5412.0,
+      "item_codes": {
+        "C1": "36560"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "화순군 - 사업체수",
+      "timestamp": "2021",
+      "value": 7649.0,
+      "item_codes": {
+        "C1": "36570"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "화순군 - 사업체수",
+      "timestamp": "2022",
+      "value": 8008.0,
+      "item_codes": {
+        "C1": "36570"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "화순군 - 사업체수",
+      "timestamp": "2023",
+      "value": 8226.0,
+      "item_codes": {
+        "C1": "36570"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "장흥군 - 사업체수",
+      "timestamp": "2021",
+      "value": 4934.0,
+      "item_codes": {
+        "C1": "36580"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "장흥군 - 사업체수",
+      "timestamp": "2022",
+      "value": 5125.0,
+      "item_codes": {
+        "C1": "36580"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "장흥군 - 사업체수",
+      "timestamp": "2023",
+      "value": 5372.0,
+      "item_codes": {
+        "C1": "36580"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강진군 - 사업체수",
+      "timestamp": "2021",
+      "value": 5615.0,
+      "item_codes": {
+        "C1": "36590"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강진군 - 사업체수",
+      "timestamp": "2022",
+      "value": 5579.0,
+      "item_codes": {
+        "C1": "36590"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강진군 - 사업체수",
+      "timestamp": "2023",
+      "value": 5876.0,
+      "item_codes": {
+        "C1": "36590"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "해남군 - 사업체수",
+      "timestamp": "2021",
+      "value": 9246.0,
+      "item_codes": {
+        "C1": "36600"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "해남군 - 사업체수",
+      "timestamp": "2022",
+      "value": 8971.0,
+      "item_codes": {
+        "C1": "36600"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "해남군 - 사업체수",
+      "timestamp": "2023",
+      "value": 9423.0,
+      "item_codes": {
+        "C1": "36600"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영암군 - 사업체수",
+      "timestamp": "2021",
+      "value": 8128.0,
+      "item_codes": {
+        "C1": "36610"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영암군 - 사업체수",
+      "timestamp": "2022",
+      "value": 8164.0,
+      "item_codes": {
+        "C1": "36610"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영암군 - 사업체수",
+      "timestamp": "2023",
+      "value": 8337.0,
+      "item_codes": {
+        "C1": "36610"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "무안군 - 사업체수",
+      "timestamp": "2021",
+      "value": 9738.0,
+      "item_codes": {
+        "C1": "36620"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "무안군 - 사업체수",
+      "timestamp": "2022",
+      "value": 9612.0,
+      "item_codes": {
+        "C1": "36620"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "무안군 - 사업체수",
+      "timestamp": "2023",
+      "value": 10313.0,
+      "item_codes": {
+        "C1": "36620"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "함평군 - 사업체수",
+      "timestamp": "2021",
+      "value": 4083.0,
+      "item_codes": {
+        "C1": "36630"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "함평군 - 사업체수",
+      "timestamp": "2022",
+      "value": 4269.0,
+      "item_codes": {
+        "C1": "36630"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "함평군 - 사업체수",
+      "timestamp": "2023",
+      "value": 4502.0,
+      "item_codes": {
+        "C1": "36630"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영광군 - 사업체수",
+      "timestamp": "2021",
+      "value": 6909.0,
+      "item_codes": {
+        "C1": "36640"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영광군 - 사업체수",
+      "timestamp": "2022",
+      "value": 7071.0,
+      "item_codes": {
+        "C1": "36640"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영광군 - 사업체수",
+      "timestamp": "2023",
+      "value": 7348.0,
+      "item_codes": {
+        "C1": "36640"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "장성군 - 사업체수",
+      "timestamp": "2021",
+      "value": 6518.0,
+      "item_codes": {
+        "C1": "36650"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "장성군 - 사업체수",
+      "timestamp": "2022",
+      "value": 6581.0,
+      "item_codes": {
+        "C1": "36650"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "장성군 - 사업체수",
+      "timestamp": "2023",
+      "value": 6732.0,
+      "item_codes": {
+        "C1": "36650"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "완도군 - 사업체수",
+      "timestamp": "2021",
+      "value": 6521.0,
+      "item_codes": {
+        "C1": "36660"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "완도군 - 사업체수",
+      "timestamp": "2022",
+      "value": 6582.0,
+      "item_codes": {
+        "C1": "36660"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "완도군 - 사업체수",
+      "timestamp": "2023",
+      "value": 6859.0,
+      "item_codes": {
+        "C1": "36660"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "진도군 - 사업체수",
+      "timestamp": "2021",
+      "value": 4115.0,
+      "item_codes": {
+        "C1": "36670"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "진도군 - 사업체수",
+      "timestamp": "2022",
+      "value": 4106.0,
+      "item_codes": {
+        "C1": "36670"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "진도군 - 사업체수",
+      "timestamp": "2023",
+      "value": 4386.0,
+      "item_codes": {
+        "C1": "36670"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "신안군 - 사업체수",
+      "timestamp": "2021",
+      "value": 4583.0,
+      "item_codes": {
+        "C1": "36680"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "신안군 - 사업체수",
+      "timestamp": "2022",
+      "value": 4791.0,
+      "item_codes": {
+        "C1": "36680"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "신안군 - 사업체수",
+      "timestamp": "2023",
+      "value": 4956.0,
+      "item_codes": {
+        "C1": "36680"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 사업체수",
+      "timestamp": "2021",
+      "value": 328657.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 사업체수",
+      "timestamp": "2022",
+      "value": 333276.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 사업체수",
+      "timestamp": "2023",
+      "value": 336555.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "포항시 - 사업체수",
+      "timestamp": "2021",
+      "value": 59457.0,
+      "item_codes": {
+        "C1": "37010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "포항시 - 사업체수",
+      "timestamp": "2022",
+      "value": 59948.0,
+      "item_codes": {
+        "C1": "37010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "포항시 - 사업체수",
+      "timestamp": "2023",
+      "value": 60730.0,
+      "item_codes": {
+        "C1": "37010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경주시 - 사업체수",
+      "timestamp": "2021",
+      "value": 33379.0,
+      "item_codes": {
+        "C1": "37020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경주시 - 사업체수",
+      "timestamp": "2022",
+      "value": 33870.0,
+      "item_codes": {
+        "C1": "37020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경주시 - 사업체수",
+      "timestamp": "2023",
+      "value": 34503.0,
+      "item_codes": {
+        "C1": "37020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "김천시 - 사업체수",
+      "timestamp": "2021",
+      "value": 16101.0,
+      "item_codes": {
+        "C1": "37030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "김천시 - 사업체수",
+      "timestamp": "2022",
+      "value": 16917.0,
+      "item_codes": {
+        "C1": "37030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "김천시 - 사업체수",
+      "timestamp": "2023",
+      "value": 17481.0,
+      "item_codes": {
+        "C1": "37030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "안동시 - 사업체수",
+      "timestamp": "2021",
+      "value": 20093.0,
+      "item_codes": {
+        "C1": "37040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "안동시 - 사업체수",
+      "timestamp": "2022",
+      "value": 20089.0,
+      "item_codes": {
+        "C1": "37040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "안동시 - 사업체수",
+      "timestamp": "2023",
+      "value": 20992.0,
+      "item_codes": {
+        "C1": "37040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "구미시 - 사업체수",
+      "timestamp": "2021",
+      "value": 46926.0,
+      "item_codes": {
+        "C1": "37050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "구미시 - 사업체수",
+      "timestamp": "2022",
+      "value": 47547.0,
+      "item_codes": {
+        "C1": "37050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "구미시 - 사업체수",
+      "timestamp": "2023",
+      "value": 47515.0,
+      "item_codes": {
+        "C1": "37050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영주시 - 사업체수",
+      "timestamp": "2021",
+      "value": 13761.0,
+      "item_codes": {
+        "C1": "37060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영주시 - 사업체수",
+      "timestamp": "2022",
+      "value": 13546.0,
+      "item_codes": {
+        "C1": "37060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영주시 - 사업체수",
+      "timestamp": "2023",
+      "value": 14210.0,
+      "item_codes": {
+        "C1": "37060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영천시 - 사업체수",
+      "timestamp": "2021",
+      "value": 14397.0,
+      "item_codes": {
+        "C1": "37070"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영천시 - 사업체수",
+      "timestamp": "2022",
+      "value": 14217.0,
+      "item_codes": {
+        "C1": "37070"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영천시 - 사업체수",
+      "timestamp": "2023",
+      "value": 14496.0,
+      "item_codes": {
+        "C1": "37070"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "상주시 - 사업체수",
+      "timestamp": "2021",
+      "value": 12883.0,
+      "item_codes": {
+        "C1": "37080"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "상주시 - 사업체수",
+      "timestamp": "2022",
+      "value": 13332.0,
+      "item_codes": {
+        "C1": "37080"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "상주시 - 사업체수",
+      "timestamp": "2023",
+      "value": 13909.0,
+      "item_codes": {
+        "C1": "37080"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "문경시 - 사업체수",
+      "timestamp": "2021",
+      "value": 8647.0,
+      "item_codes": {
+        "C1": "37090"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "문경시 - 사업체수",
+      "timestamp": "2022",
+      "value": 8600.0,
+      "item_codes": {
+        "C1": "37090"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "문경시 - 사업체수",
+      "timestamp": "2023",
+      "value": 8944.0,
+      "item_codes": {
+        "C1": "37090"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경산시 - 사업체수",
+      "timestamp": "2021",
+      "value": 30358.0,
+      "item_codes": {
+        "C1": "37100"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경산시 - 사업체수",
+      "timestamp": "2022",
+      "value": 30880.0,
+      "item_codes": {
+        "C1": "37100"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경산시 - 사업체수",
+      "timestamp": "2023",
+      "value": 31082.0,
+      "item_codes": {
+        "C1": "37100"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "군위군 - 사업체수",
+      "timestamp": "2021",
+      "value": 3321.0,
+      "item_codes": {
+        "C1": "37310"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "군위군 - 사업체수",
+      "timestamp": "2022",
+      "value": 3438.0,
+      "item_codes": {
+        "C1": "37310"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "의성군 - 사업체수",
+      "timestamp": "2021",
+      "value": 6242.0,
+      "item_codes": {
+        "C1": "37520"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "의성군 - 사업체수",
+      "timestamp": "2022",
+      "value": 6278.0,
+      "item_codes": {
+        "C1": "37520"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "의성군 - 사업체수",
+      "timestamp": "2023",
+      "value": 6493.0,
+      "item_codes": {
+        "C1": "37520"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "청송군 - 사업체수",
+      "timestamp": "2021",
+      "value": 3060.0,
+      "item_codes": {
+        "C1": "37530"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "청송군 - 사업체수",
+      "timestamp": "2022",
+      "value": 3041.0,
+      "item_codes": {
+        "C1": "37530"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "청송군 - 사업체수",
+      "timestamp": "2023",
+      "value": 3195.0,
+      "item_codes": {
+        "C1": "37530"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영양군 - 사업체수",
+      "timestamp": "2021",
+      "value": 1796.0,
+      "item_codes": {
+        "C1": "37540"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영양군 - 사업체수",
+      "timestamp": "2022",
+      "value": 1825.0,
+      "item_codes": {
+        "C1": "37540"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영양군 - 사업체수",
+      "timestamp": "2023",
+      "value": 1987.0,
+      "item_codes": {
+        "C1": "37540"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영덕군 - 사업체수",
+      "timestamp": "2021",
+      "value": 5619.0,
+      "item_codes": {
+        "C1": "37550"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영덕군 - 사업체수",
+      "timestamp": "2022",
+      "value": 5741.0,
+      "item_codes": {
+        "C1": "37550"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영덕군 - 사업체수",
+      "timestamp": "2023",
+      "value": 5791.0,
+      "item_codes": {
+        "C1": "37550"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "청도군 - 사업체수",
+      "timestamp": "2021",
+      "value": 5612.0,
+      "item_codes": {
+        "C1": "37560"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "청도군 - 사업체수",
+      "timestamp": "2022",
+      "value": 5825.0,
+      "item_codes": {
+        "C1": "37560"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "청도군 - 사업체수",
+      "timestamp": "2023",
+      "value": 6094.0,
+      "item_codes": {
+        "C1": "37560"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "고령군 - 사업체수",
+      "timestamp": "2021",
+      "value": 5610.0,
+      "item_codes": {
+        "C1": "37570"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "고령군 - 사업체수",
+      "timestamp": "2022",
+      "value": 5831.0,
+      "item_codes": {
+        "C1": "37570"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "고령군 - 사업체수",
+      "timestamp": "2023",
+      "value": 5936.0,
+      "item_codes": {
+        "C1": "37570"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "성주군 - 사업체수",
+      "timestamp": "2021",
+      "value": 7485.0,
+      "item_codes": {
+        "C1": "37580"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "성주군 - 사업체수",
+      "timestamp": "2022",
+      "value": 7567.0,
+      "item_codes": {
+        "C1": "37580"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "성주군 - 사업체수",
+      "timestamp": "2023",
+      "value": 7750.0,
+      "item_codes": {
+        "C1": "37580"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "칠곡군 - 사업체수",
+      "timestamp": "2021",
+      "value": 17160.0,
+      "item_codes": {
+        "C1": "37590"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "칠곡군 - 사업체수",
+      "timestamp": "2022",
+      "value": 17752.0,
+      "item_codes": {
+        "C1": "37590"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "칠곡군 - 사업체수",
+      "timestamp": "2023",
+      "value": 17773.0,
+      "item_codes": {
+        "C1": "37590"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "예천군 - 사업체수",
+      "timestamp": "2021",
+      "value": 5825.0,
+      "item_codes": {
+        "C1": "37600"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "예천군 - 사업체수",
+      "timestamp": "2022",
+      "value": 5994.0,
+      "item_codes": {
+        "C1": "37600"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "예천군 - 사업체수",
+      "timestamp": "2023",
+      "value": 6156.0,
+      "item_codes": {
+        "C1": "37600"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "봉화군 - 사업체수",
+      "timestamp": "2021",
+      "value": 3598.0,
+      "item_codes": {
+        "C1": "37610"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "봉화군 - 사업체수",
+      "timestamp": "2022",
+      "value": 3508.0,
+      "item_codes": {
+        "C1": "37610"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "봉화군 - 사업체수",
+      "timestamp": "2023",
+      "value": 3686.0,
+      "item_codes": {
+        "C1": "37610"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울진군 - 사업체수",
+      "timestamp": "2021",
+      "value": 5857.0,
+      "item_codes": {
+        "C1": "37620"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울진군 - 사업체수",
+      "timestamp": "2022",
+      "value": 5929.0,
+      "item_codes": {
+        "C1": "37620"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울진군 - 사업체수",
+      "timestamp": "2023",
+      "value": 6126.0,
+      "item_codes": {
+        "C1": "37620"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울릉군 - 사업체수",
+      "timestamp": "2021",
+      "value": 1470.0,
+      "item_codes": {
+        "C1": "37630"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울릉군 - 사업체수",
+      "timestamp": "2022",
+      "value": 1601.0,
+      "item_codes": {
+        "C1": "37630"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울릉군 - 사업체수",
+      "timestamp": "2023",
+      "value": 1706.0,
+      "item_codes": {
+        "C1": "37630"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 사업체수",
+      "timestamp": "2021",
+      "value": 392614.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 사업체수",
+      "timestamp": "2022",
+      "value": 397699.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 사업체수",
+      "timestamp": "2023",
+      "value": 399164.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "진주시 - 사업체수",
+      "timestamp": "2021",
+      "value": 41268.0,
+      "item_codes": {
+        "C1": "38030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "진주시 - 사업체수",
+      "timestamp": "2022",
+      "value": 42511.0,
+      "item_codes": {
+        "C1": "38030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "진주시 - 사업체수",
+      "timestamp": "2023",
+      "value": 42004.0,
+      "item_codes": {
+        "C1": "38030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "통영시 - 사업체수",
+      "timestamp": "2021",
+      "value": 15052.0,
+      "item_codes": {
+        "C1": "38050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "통영시 - 사업체수",
+      "timestamp": "2022",
+      "value": 15180.0,
+      "item_codes": {
+        "C1": "38050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "통영시 - 사업체수",
+      "timestamp": "2023",
+      "value": 15263.0,
+      "item_codes": {
+        "C1": "38050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "사천시 - 사업체수",
+      "timestamp": "2021",
+      "value": 13520.0,
+      "item_codes": {
+        "C1": "38060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "사천시 - 사업체수",
+      "timestamp": "2022",
+      "value": 13679.0,
+      "item_codes": {
+        "C1": "38060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "사천시 - 사업체수",
+      "timestamp": "2023",
+      "value": 13954.0,
+      "item_codes": {
+        "C1": "38060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "김해시 - 사업체수",
+      "timestamp": "2021",
+      "value": 67905.0,
+      "item_codes": {
+        "C1": "38070"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "김해시 - 사업체수",
+      "timestamp": "2022",
+      "value": 69770.0,
+      "item_codes": {
+        "C1": "38070"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "김해시 - 사업체수",
+      "timestamp": "2023",
+      "value": 68717.0,
+      "item_codes": {
+        "C1": "38070"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "밀양시 - 사업체수",
+      "timestamp": "2021",
+      "value": 13979.0,
+      "item_codes": {
+        "C1": "38080"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "밀양시 - 사업체수",
+      "timestamp": "2022",
+      "value": 14422.0,
+      "item_codes": {
+        "C1": "38080"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "밀양시 - 사업체수",
+      "timestamp": "2023",
+      "value": 14694.0,
+      "item_codes": {
+        "C1": "38080"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "거제시 - 사업체수",
+      "timestamp": "2021",
+      "value": 21513.0,
+      "item_codes": {
+        "C1": "38090"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "거제시 - 사업체수",
+      "timestamp": "2022",
+      "value": 21635.0,
+      "item_codes": {
+        "C1": "38090"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "거제시 - 사업체수",
+      "timestamp": "2023",
+      "value": 21666.0,
+      "item_codes": {
+        "C1": "38090"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "양산시 - 사업체수",
+      "timestamp": "2021",
+      "value": 41370.0,
+      "item_codes": {
+        "C1": "38100"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "양산시 - 사업체수",
+      "timestamp": "2022",
+      "value": 42080.0,
+      "item_codes": {
+        "C1": "38100"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "양산시 - 사업체수",
+      "timestamp": "2023",
+      "value": 42755.0,
+      "item_codes": {
+        "C1": "38100"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "창원시 - 사업체수",
+      "timestamp": "2021",
+      "value": 114965.0,
+      "item_codes": {
+        "C1": "38110"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "창원시 - 사업체수",
+      "timestamp": "2022",
+      "value": 114464.0,
+      "item_codes": {
+        "C1": "38110"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "창원시 - 사업체수",
+      "timestamp": "2023",
+      "value": 114490.0,
+      "item_codes": {
+        "C1": "38110"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "의령군 - 사업체수",
+      "timestamp": "2021",
+      "value": 3138.0,
+      "item_codes": {
+        "C1": "38510"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "의령군 - 사업체수",
+      "timestamp": "2022",
+      "value": 3096.0,
+      "item_codes": {
+        "C1": "38510"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "의령군 - 사업체수",
+      "timestamp": "2023",
+      "value": 3198.0,
+      "item_codes": {
+        "C1": "38510"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "함안군 - 사업체수",
+      "timestamp": "2021",
+      "value": 11263.0,
+      "item_codes": {
+        "C1": "38520"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "함안군 - 사업체수",
+      "timestamp": "2022",
+      "value": 11447.0,
+      "item_codes": {
+        "C1": "38520"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "함안군 - 사업체수",
+      "timestamp": "2023",
+      "value": 11344.0,
+      "item_codes": {
+        "C1": "38520"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "창녕군 - 사업체수",
+      "timestamp": "2021",
+      "value": 7186.0,
+      "item_codes": {
+        "C1": "38530"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "창녕군 - 사업체수",
+      "timestamp": "2022",
+      "value": 7230.0,
+      "item_codes": {
+        "C1": "38530"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "창녕군 - 사업체수",
+      "timestamp": "2023",
+      "value": 7344.0,
+      "item_codes": {
+        "C1": "38530"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "고성군 - 사업체수",
+      "timestamp": "2021",
+      "value": 6276.0,
+      "item_codes": {
+        "C1": "38540"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "고성군 - 사업체수",
+      "timestamp": "2022",
+      "value": 6380.0,
+      "item_codes": {
+        "C1": "38540"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "고성군 - 사업체수",
+      "timestamp": "2023",
+      "value": 6570.0,
+      "item_codes": {
+        "C1": "38540"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "남해군 - 사업체수",
+      "timestamp": "2021",
+      "value": 5909.0,
+      "item_codes": {
+        "C1": "38550"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "남해군 - 사업체수",
+      "timestamp": "2022",
+      "value": 6239.0,
+      "item_codes": {
+        "C1": "38550"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "남해군 - 사업체수",
+      "timestamp": "2023",
+      "value": 6446.0,
+      "item_codes": {
+        "C1": "38550"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "하동군 - 사업체수",
+      "timestamp": "2021",
+      "value": 6270.0,
+      "item_codes": {
+        "C1": "38560"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "하동군 - 사업체수",
+      "timestamp": "2022",
+      "value": 6345.0,
+      "item_codes": {
+        "C1": "38560"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "하동군 - 사업체수",
+      "timestamp": "2023",
+      "value": 6536.0,
+      "item_codes": {
+        "C1": "38560"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "산청군 - 사업체수",
+      "timestamp": "2021",
+      "value": 5025.0,
+      "item_codes": {
+        "C1": "38570"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "산청군 - 사업체수",
+      "timestamp": "2022",
+      "value": 5088.0,
+      "item_codes": {
+        "C1": "38570"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "산청군 - 사업체수",
+      "timestamp": "2023",
+      "value": 5292.0,
+      "item_codes": {
+        "C1": "38570"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "함양군 - 사업체수",
+      "timestamp": "2021",
+      "value": 4838.0,
+      "item_codes": {
+        "C1": "38580"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "함양군 - 사업체수",
+      "timestamp": "2022",
+      "value": 4981.0,
+      "item_codes": {
+        "C1": "38580"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "함양군 - 사업체수",
+      "timestamp": "2023",
+      "value": 5185.0,
+      "item_codes": {
+        "C1": "38580"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "거창군 - 사업체수",
+      "timestamp": "2021",
+      "value": 7666.0,
+      "item_codes": {
+        "C1": "38590"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "거창군 - 사업체수",
+      "timestamp": "2022",
+      "value": 7579.0,
+      "item_codes": {
+        "C1": "38590"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "거창군 - 사업체수",
+      "timestamp": "2023",
+      "value": 7977.0,
+      "item_codes": {
+        "C1": "38590"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "합천군 - 사업체수",
+      "timestamp": "2021",
+      "value": 5471.0,
+      "item_codes": {
+        "C1": "38600"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "합천군 - 사업체수",
+      "timestamp": "2022",
+      "value": 5573.0,
+      "item_codes": {
+        "C1": "38600"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "합천군 - 사업체수",
+      "timestamp": "2023",
+      "value": 5729.0,
+      "item_codes": {
+        "C1": "38600"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 사업체수",
+      "timestamp": "2021",
+      "value": 96131.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 사업체수",
+      "timestamp": "2022",
+      "value": 96334.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 사업체수",
+      "timestamp": "2023",
+      "value": 99122.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주시 - 사업체수",
+      "timestamp": "2021",
+      "value": 71409.0,
+      "item_codes": {
+        "C1": "39010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주시 - 사업체수",
+      "timestamp": "2022",
+      "value": 71455.0,
+      "item_codes": {
+        "C1": "39010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주시 - 사업체수",
+      "timestamp": "2023",
+      "value": 73638.0,
+      "item_codes": {
+        "C1": "39010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서귀포시 - 사업체수",
+      "timestamp": "2021",
+      "value": 24722.0,
+      "item_codes": {
+        "C1": "39020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서귀포시 - 사업체수",
+      "timestamp": "2022",
+      "value": 24879.0,
+      "item_codes": {
+        "C1": "39020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서귀포시 - 사업체수",
+      "timestamp": "2023",
+      "value": 25484.0,
+      "item_codes": {
+        "C1": "39020"
+      },
+      "itm_id": "T10"
+    }
+  ]
+}

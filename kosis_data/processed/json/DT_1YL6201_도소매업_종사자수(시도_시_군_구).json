@@ -1,0 +1,8236 @@
+{
+  "metadata": {
+    "org_id": "101",
+    "org_name": "통계청",
+    "table_id": "DT_1YL6201",
+    "table_name": "도소매업 종사자수(시도/시/군/구)",
+    "stat_id": "9B08007",
+    "stat_name": "e-지방지표",
+    "date_range": "2006 ~ 2019",
+    "description": "행정구역별 도소매업종사자수 동구 남구 해운대구 금정구 달서구 중구 남동구 아산시 서산시 예산군 부안군 나주시 담양군 신안군 영덕군 울릉군 경남 창원시 양산시 하동군 서귀포시 강북구 노원구 구로구 영등포구 동작구 강동구 대전광역시 남구 동구 광명시 군포시 강원특별자치도 인제군 충북 청주시 제천시 태안군 정읍시 김제시 곡성군 고흥군 보성군 강진군 안동시 영주시 영천시 문경시 창녕군 서울특별시 강서구 송파구 수영구 강화군 남구 북구 광산구 평택시 고양시 의왕시 파주시 경기 여주군 ...",
+    "item_info": "■  자료제공처:  통계청 지역통계기획팀 ■  자료원출처:  통계청 경제총조사과(전국사업체조사) ■  자료제공주기:  1년 ■  다음자료현행화:  조사기준년도 익년12월 □  정의  - 도소매업종사자: 한국표준산업분류상 도소매업에 해당하는 사업체에 종사하는 사람의 수 □  의의  - 지역별 도소매업 사업체의 종사자에 대한 규모 및 분포를 파악하여, 국가 및 지방자치단체의 정책수립 및 평가, 기업의 경영계획 수립 및 학술 연구 등을 위한 기초자료로 활용 □  용어  - 도소매업사업체: 한국표준산업분류상 ＇G.도매 및 소매업＇에 해당하는 사업체 □  참고사항  - 17년부터 10차 산업분류로 조사되었으며, 16년 이전 자료는 9차 산업분류를 10차로 연계하여 서비스",
+    "source_url": "http://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1YL6201",
+    "last_updated": "2025-06-24T18:17:59.741349",
+    "period_type": "M",
+    "period_name": "월간"
+  },
+  "data": [
+    {
+      "item": "전국 - 도소매업종사자수",
+      "timestamp": "2007",
+      "value": 2547330.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 도소매업종사자수",
+      "timestamp": "2008",
+      "value": 2554013.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 도소매업종사자수",
+      "timestamp": "2009",
+      "value": 2618346.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 도소매업종사자수",
+      "timestamp": "2010",
+      "value": 2618185.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 도소매업종사자수",
+      "timestamp": "2011",
+      "value": 2689305.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 도소매업종사자수",
+      "timestamp": "2012",
+      "value": 2782007.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 도소매업종사자수",
+      "timestamp": "2013",
+      "value": 2885740.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 도소매업종사자수",
+      "timestamp": "2014",
+      "value": 3007745.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 도소매업종사자수",
+      "timestamp": "2015",
+      "value": 3129601.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 도소매업종사자수",
+      "timestamp": "2016",
+      "value": 3141900.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 3173320.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 3250867.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 3289652.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 도소매업종사자수",
+      "timestamp": "2007",
+      "value": 769969.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 도소매업종사자수",
+      "timestamp": "2008",
+      "value": 772774.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 도소매업종사자수",
+      "timestamp": "2009",
+      "value": 795680.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 도소매업종사자수",
+      "timestamp": "2010",
+      "value": 782169.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 도소매업종사자수",
+      "timestamp": "2011",
+      "value": 793641.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 도소매업종사자수",
+      "timestamp": "2012",
+      "value": 806212.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 도소매업종사자수",
+      "timestamp": "2013",
+      "value": 830261.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 도소매업종사자수",
+      "timestamp": "2014",
+      "value": 866126.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 도소매업종사자수",
+      "timestamp": "2015",
+      "value": 912448.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 도소매업종사자수",
+      "timestamp": "2016",
+      "value": 891402.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 888464.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 896326.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 899642.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "종로구 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 44263.0,
+      "item_codes": {
+        "C1": "11010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "종로구 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 43116.0,
+      "item_codes": {
+        "C1": "11010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "종로구 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 42172.0,
+      "item_codes": {
+        "C1": "11010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "중구 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 97809.0,
+      "item_codes": {
+        "C1": "11020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "중구 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 98606.0,
+      "item_codes": {
+        "C1": "11020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "중구 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 95562.0,
+      "item_codes": {
+        "C1": "11020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "용산구 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 27506.0,
+      "item_codes": {
+        "C1": "11030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "용산구 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 31093.0,
+      "item_codes": {
+        "C1": "11030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "용산구 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 31996.0,
+      "item_codes": {
+        "C1": "11030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "성동구 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 32412.0,
+      "item_codes": {
+        "C1": "11040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "성동구 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 31602.0,
+      "item_codes": {
+        "C1": "11040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "성동구 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 33180.0,
+      "item_codes": {
+        "C1": "11040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광진구 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 19488.0,
+      "item_codes": {
+        "C1": "11050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광진구 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 19023.0,
+      "item_codes": {
+        "C1": "11050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광진구 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 19389.0,
+      "item_codes": {
+        "C1": "11050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동대문구 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 31474.0,
+      "item_codes": {
+        "C1": "11060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동대문구 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 31318.0,
+      "item_codes": {
+        "C1": "11060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동대문구 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 30950.0,
+      "item_codes": {
+        "C1": "11060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "중랑구 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 16124.0,
+      "item_codes": {
+        "C1": "11070"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "중랑구 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 16071.0,
+      "item_codes": {
+        "C1": "11070"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "중랑구 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 15505.0,
+      "item_codes": {
+        "C1": "11070"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "성북구 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 15313.0,
+      "item_codes": {
+        "C1": "11080"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "성북구 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 15159.0,
+      "item_codes": {
+        "C1": "11080"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "성북구 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 14662.0,
+      "item_codes": {
+        "C1": "11080"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강북구 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 10768.0,
+      "item_codes": {
+        "C1": "11090"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강북구 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 10625.0,
+      "item_codes": {
+        "C1": "11090"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강북구 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 10726.0,
+      "item_codes": {
+        "C1": "11090"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "도봉구 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 10915.0,
+      "item_codes": {
+        "C1": "11100"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "도봉구 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 10983.0,
+      "item_codes": {
+        "C1": "11100"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "도봉구 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 10797.0,
+      "item_codes": {
+        "C1": "11100"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "노원구 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 15534.0,
+      "item_codes": {
+        "C1": "11110"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "노원구 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 15757.0,
+      "item_codes": {
+        "C1": "11110"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "노원구 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 15458.0,
+      "item_codes": {
+        "C1": "11110"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "은평구 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 15605.0,
+      "item_codes": {
+        "C1": "11120"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "은평구 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 15264.0,
+      "item_codes": {
+        "C1": "11120"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "은평구 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 15220.0,
+      "item_codes": {
+        "C1": "11120"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서대문구 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 14505.0,
+      "item_codes": {
+        "C1": "11130"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서대문구 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 14045.0,
+      "item_codes": {
+        "C1": "11130"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서대문구 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 13468.0,
+      "item_codes": {
+        "C1": "11130"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "마포구 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 33868.0,
+      "item_codes": {
+        "C1": "11140"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "마포구 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 35083.0,
+      "item_codes": {
+        "C1": "11140"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "마포구 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 34878.0,
+      "item_codes": {
+        "C1": "11140"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "양천구 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 17338.0,
+      "item_codes": {
+        "C1": "11150"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "양천구 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 17547.0,
+      "item_codes": {
+        "C1": "11150"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "양천구 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 17160.0,
+      "item_codes": {
+        "C1": "11150"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강서구 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 34665.0,
+      "item_codes": {
+        "C1": "11160"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강서구 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 37641.0,
+      "item_codes": {
+        "C1": "11160"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강서구 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 37437.0,
+      "item_codes": {
+        "C1": "11160"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "구로구 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 40111.0,
+      "item_codes": {
+        "C1": "11170"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "구로구 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 40438.0,
+      "item_codes": {
+        "C1": "11170"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "구로구 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 39383.0,
+      "item_codes": {
+        "C1": "11170"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "금천구 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 41969.0,
+      "item_codes": {
+        "C1": "11180"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "금천구 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 40952.0,
+      "item_codes": {
+        "C1": "11180"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "금천구 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 41416.0,
+      "item_codes": {
+        "C1": "11180"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영등포구 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 51856.0,
+      "item_codes": {
+        "C1": "11190"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영등포구 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 52863.0,
+      "item_codes": {
+        "C1": "11190"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영등포구 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 52966.0,
+      "item_codes": {
+        "C1": "11190"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동작구 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 14990.0,
+      "item_codes": {
+        "C1": "11200"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동작구 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 14773.0,
+      "item_codes": {
+        "C1": "11200"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동작구 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 14001.0,
+      "item_codes": {
+        "C1": "11200"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "관악구 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 16347.0,
+      "item_codes": {
+        "C1": "11210"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "관악구 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 15166.0,
+      "item_codes": {
+        "C1": "11210"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "관악구 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 15299.0,
+      "item_codes": {
+        "C1": "11210"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서초구 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 68309.0,
+      "item_codes": {
+        "C1": "11220"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서초구 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 67696.0,
+      "item_codes": {
+        "C1": "11220"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서초구 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 66616.0,
+      "item_codes": {
+        "C1": "11220"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강남구 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 133772.0,
+      "item_codes": {
+        "C1": "11230"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강남구 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 136778.0,
+      "item_codes": {
+        "C1": "11230"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강남구 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 143936.0,
+      "item_codes": {
+        "C1": "11230"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "송파구 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 58913.0,
+      "item_codes": {
+        "C1": "11240"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "송파구 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 60790.0,
+      "item_codes": {
+        "C1": "11240"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "송파구 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 63804.0,
+      "item_codes": {
+        "C1": "11240"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강동구 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 24610.0,
+      "item_codes": {
+        "C1": "11250"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강동구 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 23937.0,
+      "item_codes": {
+        "C1": "11250"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강동구 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 23661.0,
+      "item_codes": {
+        "C1": "11250"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 도소매업종사자수",
+      "timestamp": "2007",
+      "value": 209108.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 도소매업종사자수",
+      "timestamp": "2008",
+      "value": 206451.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 도소매업종사자수",
+      "timestamp": "2009",
+      "value": 210210.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 도소매업종사자수",
+      "timestamp": "2010",
+      "value": 204190.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 도소매업종사자수",
+      "timestamp": "2011",
+      "value": 206818.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 도소매업종사자수",
+      "timestamp": "2012",
+      "value": 212711.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 도소매업종사자수",
+      "timestamp": "2013",
+      "value": 217667.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 도소매업종사자수",
+      "timestamp": "2014",
+      "value": 223027.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 도소매업종사자수",
+      "timestamp": "2015",
+      "value": 225788.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 도소매업종사자수",
+      "timestamp": "2016",
+      "value": 229571.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 231875.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 232787.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 234742.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "중구 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 14141.0,
+      "item_codes": {
+        "C1": "21010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "중구 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 13690.0,
+      "item_codes": {
+        "C1": "21010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "중구 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 13037.0,
+      "item_codes": {
+        "C1": "21010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서구 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 9190.0,
+      "item_codes": {
+        "C1": "21020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서구 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 9004.0,
+      "item_codes": {
+        "C1": "21020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서구 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 9020.0,
+      "item_codes": {
+        "C1": "21020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동구 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 12433.0,
+      "item_codes": {
+        "C1": "21030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동구 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 12178.0,
+      "item_codes": {
+        "C1": "21030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동구 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 12428.0,
+      "item_codes": {
+        "C1": "21030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영도구 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 5481.0,
+      "item_codes": {
+        "C1": "21040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영도구 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 5711.0,
+      "item_codes": {
+        "C1": "21040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영도구 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 5728.0,
+      "item_codes": {
+        "C1": "21040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산진구 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 28365.0,
+      "item_codes": {
+        "C1": "21050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산진구 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 28309.0,
+      "item_codes": {
+        "C1": "21050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산진구 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 28079.0,
+      "item_codes": {
+        "C1": "21050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동래구 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 14665.0,
+      "item_codes": {
+        "C1": "21060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동래구 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 14608.0,
+      "item_codes": {
+        "C1": "21060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동래구 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 14157.0,
+      "item_codes": {
+        "C1": "21060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "남구 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 10298.0,
+      "item_codes": {
+        "C1": "21070"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "남구 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 10936.0,
+      "item_codes": {
+        "C1": "21070"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "남구 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 11285.0,
+      "item_codes": {
+        "C1": "21070"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "북구 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 9635.0,
+      "item_codes": {
+        "C1": "21080"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "북구 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 9912.0,
+      "item_codes": {
+        "C1": "21080"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "북구 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 9786.0,
+      "item_codes": {
+        "C1": "21080"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "해운대구 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 25015.0,
+      "item_codes": {
+        "C1": "21090"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "해운대구 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 25799.0,
+      "item_codes": {
+        "C1": "21090"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "해운대구 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 26063.0,
+      "item_codes": {
+        "C1": "21090"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "사하구 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 14779.0,
+      "item_codes": {
+        "C1": "21100"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "사하구 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 14542.0,
+      "item_codes": {
+        "C1": "21100"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "사하구 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 14784.0,
+      "item_codes": {
+        "C1": "21100"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "금정구 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 13799.0,
+      "item_codes": {
+        "C1": "21110"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "금정구 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 13822.0,
+      "item_codes": {
+        "C1": "21110"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "금정구 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 13667.0,
+      "item_codes": {
+        "C1": "21110"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강서구 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 14090.0,
+      "item_codes": {
+        "C1": "21120"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강서구 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 15542.0,
+      "item_codes": {
+        "C1": "21120"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강서구 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 17287.0,
+      "item_codes": {
+        "C1": "21120"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "연제구 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 12854.0,
+      "item_codes": {
+        "C1": "21130"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "연제구 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 12255.0,
+      "item_codes": {
+        "C1": "21130"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "연제구 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 12337.0,
+      "item_codes": {
+        "C1": "21130"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "수영구 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 9522.0,
+      "item_codes": {
+        "C1": "21140"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "수영구 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 9494.0,
+      "item_codes": {
+        "C1": "21140"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "수영구 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 9402.0,
+      "item_codes": {
+        "C1": "21140"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "사상구 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 28897.0,
+      "item_codes": {
+        "C1": "21150"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "사상구 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 27998.0,
+      "item_codes": {
+        "C1": "21150"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "사상구 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 27975.0,
+      "item_codes": {
+        "C1": "21150"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "기장군 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 8711.0,
+      "item_codes": {
+        "C1": "21310"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "기장군 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 8987.0,
+      "item_codes": {
+        "C1": "21310"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "기장군 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 9707.0,
+      "item_codes": {
+        "C1": "21310"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 도소매업종사자수",
+      "timestamp": "2007",
+      "value": 130596.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 도소매업종사자수",
+      "timestamp": "2008",
+      "value": 130432.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 도소매업종사자수",
+      "timestamp": "2009",
+      "value": 132145.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 도소매업종사자수",
+      "timestamp": "2010",
+      "value": 131259.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 도소매업종사자수",
+      "timestamp": "2011",
+      "value": 134366.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 도소매업종사자수",
+      "timestamp": "2012",
+      "value": 139316.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 도소매업종사자수",
+      "timestamp": "2013",
+      "value": 141980.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 도소매업종사자수",
+      "timestamp": "2014",
+      "value": 144491.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 도소매업종사자수",
+      "timestamp": "2015",
+      "value": 146794.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 도소매업종사자수",
+      "timestamp": "2016",
+      "value": 151124.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 153579.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 165411.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 154973.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "중구 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 23069.0,
+      "item_codes": {
+        "C1": "22010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "중구 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 22640.0,
+      "item_codes": {
+        "C1": "22010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "중구 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 21901.0,
+      "item_codes": {
+        "C1": "22010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동구 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 20370.0,
+      "item_codes": {
+        "C1": "22020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동구 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 20868.0,
+      "item_codes": {
+        "C1": "22020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동구 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 21055.0,
+      "item_codes": {
+        "C1": "22020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서구 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 15274.0,
+      "item_codes": {
+        "C1": "22030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서구 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 15191.0,
+      "item_codes": {
+        "C1": "22030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서구 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 15047.0,
+      "item_codes": {
+        "C1": "22030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "남구 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 8051.0,
+      "item_codes": {
+        "C1": "22040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "남구 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 8181.0,
+      "item_codes": {
+        "C1": "22040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "남구 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 8419.0,
+      "item_codes": {
+        "C1": "22040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "북구 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 33586.0,
+      "item_codes": {
+        "C1": "22050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "북구 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 33476.0,
+      "item_codes": {
+        "C1": "22050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "북구 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 34650.0,
+      "item_codes": {
+        "C1": "22050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "수성구 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 17831.0,
+      "item_codes": {
+        "C1": "22060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "수성구 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 29379.0,
+      "item_codes": {
+        "C1": "22060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "수성구 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 17499.0,
+      "item_codes": {
+        "C1": "22060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "달서구 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 26880.0,
+      "item_codes": {
+        "C1": "22070"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "달서구 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 26520.0,
+      "item_codes": {
+        "C1": "22070"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "달서구 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 26888.0,
+      "item_codes": {
+        "C1": "22070"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "달성군 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 8518.0,
+      "item_codes": {
+        "C1": "22310"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "달성군 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 9156.0,
+      "item_codes": {
+        "C1": "22310"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "달성군 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 9514.0,
+      "item_codes": {
+        "C1": "22310"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 도소매업종사자수",
+      "timestamp": "2007",
+      "value": 110176.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 도소매업종사자수",
+      "timestamp": "2008",
+      "value": 108934.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 도소매업종사자수",
+      "timestamp": "2009",
+      "value": 110783.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 도소매업종사자수",
+      "timestamp": "2010",
+      "value": 113730.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 도소매업종사자수",
+      "timestamp": "2011",
+      "value": 116744.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 도소매업종사자수",
+      "timestamp": "2012",
+      "value": 121133.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 도소매업종사자수",
+      "timestamp": "2013",
+      "value": 126809.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 도소매업종사자수",
+      "timestamp": "2014",
+      "value": 130472.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 도소매업종사자수",
+      "timestamp": "2015",
+      "value": 136060.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 도소매업종사자수",
+      "timestamp": "2016",
+      "value": 139481.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 143663.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 146626.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 147971.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "중구 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 10719.0,
+      "item_codes": {
+        "C1": "23010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "중구 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 10659.0,
+      "item_codes": {
+        "C1": "23010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "중구 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 10893.0,
+      "item_codes": {
+        "C1": "23010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동구 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 6764.0,
+      "item_codes": {
+        "C1": "23020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동구 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 6730.0,
+      "item_codes": {
+        "C1": "23020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동구 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 6727.0,
+      "item_codes": {
+        "C1": "23020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "남구 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 18180.0,
+      "item_codes": {
+        "C1": "23030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "연수구 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 17177.0,
+      "item_codes": {
+        "C1": "23040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "연수구 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 18440.0,
+      "item_codes": {
+        "C1": "23040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "연수구 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 18396.0,
+      "item_codes": {
+        "C1": "23040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "남동구 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 26817.0,
+      "item_codes": {
+        "C1": "23050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "남동구 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 27199.0,
+      "item_codes": {
+        "C1": "23050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "남동구 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 26603.0,
+      "item_codes": {
+        "C1": "23050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부평구 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 24060.0,
+      "item_codes": {
+        "C1": "23060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부평구 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 23969.0,
+      "item_codes": {
+        "C1": "23060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부평구 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 23496.0,
+      "item_codes": {
+        "C1": "23060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "계양구 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 12954.0,
+      "item_codes": {
+        "C1": "23070"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "계양구 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 12955.0,
+      "item_codes": {
+        "C1": "23070"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "계양구 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 12943.0,
+      "item_codes": {
+        "C1": "23070"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서구 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 24012.0,
+      "item_codes": {
+        "C1": "23080"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서구 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 25340.0,
+      "item_codes": {
+        "C1": "23080"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서구 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 27309.0,
+      "item_codes": {
+        "C1": "23080"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "미추홀구 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 18221.0,
+      "item_codes": {
+        "C1": "23090"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "미추홀구 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 18277.0,
+      "item_codes": {
+        "C1": "23090"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강화군 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 2460.0,
+      "item_codes": {
+        "C1": "23310"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강화군 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 2583.0,
+      "item_codes": {
+        "C1": "23310"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강화군 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 2730.0,
+      "item_codes": {
+        "C1": "23310"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "옹진군 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 520.0,
+      "item_codes": {
+        "C1": "23320"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "옹진군 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 530.0,
+      "item_codes": {
+        "C1": "23320"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "옹진군 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 597.0,
+      "item_codes": {
+        "C1": "23320"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 도소매업종사자수",
+      "timestamp": "2007",
+      "value": 79829.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 도소매업종사자수",
+      "timestamp": "2008",
+      "value": 76780.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 도소매업종사자수",
+      "timestamp": "2009",
+      "value": 78936.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 도소매업종사자수",
+      "timestamp": "2010",
+      "value": 77686.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 도소매업종사자수",
+      "timestamp": "2011",
+      "value": 79104.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 도소매업종사자수",
+      "timestamp": "2012",
+      "value": 82656.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 도소매업종사자수",
+      "timestamp": "2013",
+      "value": 84520.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 도소매업종사자수",
+      "timestamp": "2014",
+      "value": 87631.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 도소매업종사자수",
+      "timestamp": "2015",
+      "value": 89616.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 도소매업종사자수",
+      "timestamp": "2016",
+      "value": 91616.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 92544.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 93051.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 94194.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동구 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 13859.0,
+      "item_codes": {
+        "C1": "24010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동구 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 12784.0,
+      "item_codes": {
+        "C1": "24010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동구 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 12249.0,
+      "item_codes": {
+        "C1": "24010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서구 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 24488.0,
+      "item_codes": {
+        "C1": "24020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서구 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 24423.0,
+      "item_codes": {
+        "C1": "24020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서구 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 25104.0,
+      "item_codes": {
+        "C1": "24020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "남구 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 7810.0,
+      "item_codes": {
+        "C1": "24030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "남구 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 8264.0,
+      "item_codes": {
+        "C1": "24030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "남구 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 8808.0,
+      "item_codes": {
+        "C1": "24030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "북구 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 25471.0,
+      "item_codes": {
+        "C1": "24040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "북구 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 25634.0,
+      "item_codes": {
+        "C1": "24040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "북구 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 25545.0,
+      "item_codes": {
+        "C1": "24040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광산구 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 20916.0,
+      "item_codes": {
+        "C1": "24050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광산구 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 21946.0,
+      "item_codes": {
+        "C1": "24050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광산구 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 22488.0,
+      "item_codes": {
+        "C1": "24050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 도소매업종사자수",
+      "timestamp": "2007",
+      "value": 73019.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 도소매업종사자수",
+      "timestamp": "2008",
+      "value": 73304.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 도소매업종사자수",
+      "timestamp": "2009",
+      "value": 73796.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 도소매업종사자수",
+      "timestamp": "2010",
+      "value": 75662.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 도소매업종사자수",
+      "timestamp": "2011",
+      "value": 78457.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 도소매업종사자수",
+      "timestamp": "2012",
+      "value": 81613.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 도소매업종사자수",
+      "timestamp": "2013",
+      "value": 82913.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 도소매업종사자수",
+      "timestamp": "2014",
+      "value": 86067.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 도소매업종사자수",
+      "timestamp": "2015",
+      "value": 89612.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 도소매업종사자수",
+      "timestamp": "2016",
+      "value": 89082.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 90191.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 90795.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 92180.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동구 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 13823.0,
+      "item_codes": {
+        "C1": "25010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동구 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 13925.0,
+      "item_codes": {
+        "C1": "25010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동구 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 13981.0,
+      "item_codes": {
+        "C1": "25010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "중구 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 15875.0,
+      "item_codes": {
+        "C1": "25020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "중구 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 15779.0,
+      "item_codes": {
+        "C1": "25020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "중구 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 15619.0,
+      "item_codes": {
+        "C1": "25020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서구 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 26397.0,
+      "item_codes": {
+        "C1": "25030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서구 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 26808.0,
+      "item_codes": {
+        "C1": "25030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서구 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 27050.0,
+      "item_codes": {
+        "C1": "25030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "유성구 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 18201.0,
+      "item_codes": {
+        "C1": "25040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "유성구 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 18493.0,
+      "item_codes": {
+        "C1": "25040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "유성구 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 19411.0,
+      "item_codes": {
+        "C1": "25040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대덕구 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 15895.0,
+      "item_codes": {
+        "C1": "25050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대덕구 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 15790.0,
+      "item_codes": {
+        "C1": "25050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대덕구 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 16119.0,
+      "item_codes": {
+        "C1": "25050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 도소매업종사자수",
+      "timestamp": "2007",
+      "value": 46457.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 도소매업종사자수",
+      "timestamp": "2008",
+      "value": 46151.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 도소매업종사자수",
+      "timestamp": "2009",
+      "value": 47505.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 도소매업종사자수",
+      "timestamp": "2010",
+      "value": 47677.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 도소매업종사자수",
+      "timestamp": "2011",
+      "value": 49157.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 도소매업종사자수",
+      "timestamp": "2012",
+      "value": 49737.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 도소매업종사자수",
+      "timestamp": "2013",
+      "value": 52934.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 도소매업종사자수",
+      "timestamp": "2014",
+      "value": 53470.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 도소매업종사자수",
+      "timestamp": "2015",
+      "value": 55020.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 도소매업종사자수",
+      "timestamp": "2016",
+      "value": 55827.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 55777.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 57109.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 57099.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "중구 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 9749.0,
+      "item_codes": {
+        "C1": "26010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "중구 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 9775.0,
+      "item_codes": {
+        "C1": "26010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "중구 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 9810.0,
+      "item_codes": {
+        "C1": "26010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "남구 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 23439.0,
+      "item_codes": {
+        "C1": "26020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "남구 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 23821.0,
+      "item_codes": {
+        "C1": "26020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "남구 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 23705.0,
+      "item_codes": {
+        "C1": "26020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동구 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 4859.0,
+      "item_codes": {
+        "C1": "26030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동구 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 4873.0,
+      "item_codes": {
+        "C1": "26030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동구 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 5037.0,
+      "item_codes": {
+        "C1": "26030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "북구 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 8895.0,
+      "item_codes": {
+        "C1": "26040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "북구 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 9579.0,
+      "item_codes": {
+        "C1": "26040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "북구 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 8949.0,
+      "item_codes": {
+        "C1": "26040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울주군 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 8835.0,
+      "item_codes": {
+        "C1": "26310"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울주군 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 9061.0,
+      "item_codes": {
+        "C1": "26310"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울주군 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 9598.0,
+      "item_codes": {
+        "C1": "26310"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "세종특별자치시 - 도소매업종사자수",
+      "timestamp": "2012",
+      "value": 3765.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "세종특별자치시 - 도소매업종사자수",
+      "timestamp": "2013",
+      "value": 4002.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "세종특별자치시 - 도소매업종사자수",
+      "timestamp": "2014",
+      "value": 5327.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "세종특별자치시 - 도소매업종사자수",
+      "timestamp": "2015",
+      "value": 6168.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "세종특별자치시 - 도소매업종사자수",
+      "timestamp": "2016",
+      "value": 6794.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "세종특별자치시 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 7617.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "세종특별자치시 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 8811.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "세종특별자치시 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 9603.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 도소매업종사자수",
+      "timestamp": "2007",
+      "value": 468649.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 도소매업종사자수",
+      "timestamp": "2008",
+      "value": 476205.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 도소매업종사자수",
+      "timestamp": "2009",
+      "value": 494016.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 도소매업종사자수",
+      "timestamp": "2010",
+      "value": 508473.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 도소매업종사자수",
+      "timestamp": "2011",
+      "value": 537214.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 도소매업종사자수",
+      "timestamp": "2012",
+      "value": 566129.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 도소매업종사자수",
+      "timestamp": "2013",
+      "value": 598720.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 도소매업종사자수",
+      "timestamp": "2014",
+      "value": 637416.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 도소매업종사자수",
+      "timestamp": "2015",
+      "value": 663891.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 도소매업종사자수",
+      "timestamp": "2016",
+      "value": 686330.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 701193.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 735964.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 742267.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "수원시 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 57152.0,
+      "item_codes": {
+        "C1": "31010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "수원시 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 58530.0,
+      "item_codes": {
+        "C1": "31010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "수원시 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 57653.0,
+      "item_codes": {
+        "C1": "31010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "성남시 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 67742.0,
+      "item_codes": {
+        "C1": "31020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "성남시 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 73763.0,
+      "item_codes": {
+        "C1": "31020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "성남시 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 69543.0,
+      "item_codes": {
+        "C1": "31020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "의정부시 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 20004.0,
+      "item_codes": {
+        "C1": "31030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "의정부시 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 19686.0,
+      "item_codes": {
+        "C1": "31030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "의정부시 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 19612.0,
+      "item_codes": {
+        "C1": "31030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "안양시 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 39521.0,
+      "item_codes": {
+        "C1": "31040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "안양시 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 39786.0,
+      "item_codes": {
+        "C1": "31040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "안양시 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 39650.0,
+      "item_codes": {
+        "C1": "31040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부천시 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 42122.0,
+      "item_codes": {
+        "C1": "31050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부천시 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 42966.0,
+      "item_codes": {
+        "C1": "31050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부천시 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 42634.0,
+      "item_codes": {
+        "C1": "31050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광명시 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 17675.0,
+      "item_codes": {
+        "C1": "31060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광명시 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 17751.0,
+      "item_codes": {
+        "C1": "31060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광명시 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 16587.0,
+      "item_codes": {
+        "C1": "31060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "평택시 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 23795.0,
+      "item_codes": {
+        "C1": "31070"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "평택시 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 25122.0,
+      "item_codes": {
+        "C1": "31070"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "평택시 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 26050.0,
+      "item_codes": {
+        "C1": "31070"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동두천시 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 3560.0,
+      "item_codes": {
+        "C1": "31080"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동두천시 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 3580.0,
+      "item_codes": {
+        "C1": "31080"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동두천시 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 3775.0,
+      "item_codes": {
+        "C1": "31080"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "안산시 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 36219.0,
+      "item_codes": {
+        "C1": "31090"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "안산시 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 36732.0,
+      "item_codes": {
+        "C1": "31090"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "안산시 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 35780.0,
+      "item_codes": {
+        "C1": "31090"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "고양시 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 63659.0,
+      "item_codes": {
+        "C1": "31100"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "고양시 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 65854.0,
+      "item_codes": {
+        "C1": "31100"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "고양시 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 64562.0,
+      "item_codes": {
+        "C1": "31100"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "과천시 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 5069.0,
+      "item_codes": {
+        "C1": "31110"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "과천시 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 4309.0,
+      "item_codes": {
+        "C1": "31110"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "과천시 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 4388.0,
+      "item_codes": {
+        "C1": "31110"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "구리시 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 13927.0,
+      "item_codes": {
+        "C1": "31120"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "구리시 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 14422.0,
+      "item_codes": {
+        "C1": "31120"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "구리시 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 13974.0,
+      "item_codes": {
+        "C1": "31120"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "남양주시 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 31834.0,
+      "item_codes": {
+        "C1": "31130"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "남양주시 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 32898.0,
+      "item_codes": {
+        "C1": "31130"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "남양주시 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 34867.0,
+      "item_codes": {
+        "C1": "31130"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "오산시 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 9295.0,
+      "item_codes": {
+        "C1": "31140"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "오산시 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 9460.0,
+      "item_codes": {
+        "C1": "31140"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "오산시 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 9556.0,
+      "item_codes": {
+        "C1": "31140"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "시흥시 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 27228.0,
+      "item_codes": {
+        "C1": "31150"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "시흥시 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 28272.0,
+      "item_codes": {
+        "C1": "31150"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "시흥시 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 29393.0,
+      "item_codes": {
+        "C1": "31150"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "군포시 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 12545.0,
+      "item_codes": {
+        "C1": "31160"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "군포시 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 12759.0,
+      "item_codes": {
+        "C1": "31160"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "군포시 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 12628.0,
+      "item_codes": {
+        "C1": "31160"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "의왕시 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 6806.0,
+      "item_codes": {
+        "C1": "31170"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "의왕시 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 7246.0,
+      "item_codes": {
+        "C1": "31170"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "의왕시 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 7368.0,
+      "item_codes": {
+        "C1": "31170"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "하남시 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 21106.0,
+      "item_codes": {
+        "C1": "31180"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "하남시 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 23246.0,
+      "item_codes": {
+        "C1": "31180"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "하남시 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 24547.0,
+      "item_codes": {
+        "C1": "31180"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "용인시 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 42552.0,
+      "item_codes": {
+        "C1": "31190"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "용인시 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 48139.0,
+      "item_codes": {
+        "C1": "31190"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "용인시 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 49690.0,
+      "item_codes": {
+        "C1": "31190"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "파주시 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 21386.0,
+      "item_codes": {
+        "C1": "31200"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "파주시 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 22724.0,
+      "item_codes": {
+        "C1": "31200"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "파주시 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 23802.0,
+      "item_codes": {
+        "C1": "31200"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "이천시 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 11997.0,
+      "item_codes": {
+        "C1": "31210"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "이천시 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 12555.0,
+      "item_codes": {
+        "C1": "31210"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "이천시 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 12572.0,
+      "item_codes": {
+        "C1": "31210"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "안성시 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 9175.0,
+      "item_codes": {
+        "C1": "31220"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "안성시 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 10145.0,
+      "item_codes": {
+        "C1": "31220"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "안성시 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 10757.0,
+      "item_codes": {
+        "C1": "31220"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "김포시 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 19962.0,
+      "item_codes": {
+        "C1": "31230"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "김포시 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 22700.0,
+      "item_codes": {
+        "C1": "31230"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "김포시 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 23858.0,
+      "item_codes": {
+        "C1": "31230"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "화성시 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 36813.0,
+      "item_codes": {
+        "C1": "31240"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "화성시 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 40630.0,
+      "item_codes": {
+        "C1": "31240"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "화성시 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 43356.0,
+      "item_codes": {
+        "C1": "31240"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주시 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 22932.0,
+      "item_codes": {
+        "C1": "31250"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주시 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 24040.0,
+      "item_codes": {
+        "C1": "31250"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주시 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 25100.0,
+      "item_codes": {
+        "C1": "31250"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "양주시 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 11285.0,
+      "item_codes": {
+        "C1": "31260"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "양주시 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 11947.0,
+      "item_codes": {
+        "C1": "31260"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "양주시 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 12744.0,
+      "item_codes": {
+        "C1": "31260"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "포천시 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 10846.0,
+      "item_codes": {
+        "C1": "31270"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "포천시 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 11344.0,
+      "item_codes": {
+        "C1": "31270"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "포천시 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 11933.0,
+      "item_codes": {
+        "C1": "31270"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "여주시 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 6188.0,
+      "item_codes": {
+        "C1": "31280"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "여주시 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 6304.0,
+      "item_codes": {
+        "C1": "31280"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "여주시 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 6555.0,
+      "item_codes": {
+        "C1": "31280"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "연천군 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 1728.0,
+      "item_codes": {
+        "C1": "31350"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "연천군 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 1641.0,
+      "item_codes": {
+        "C1": "31350"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "연천군 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 1686.0,
+      "item_codes": {
+        "C1": "31350"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "가평군 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 2806.0,
+      "item_codes": {
+        "C1": "31370"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "가평군 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 3014.0,
+      "item_codes": {
+        "C1": "31370"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "가평군 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 2970.0,
+      "item_codes": {
+        "C1": "31370"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "양평군 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 4264.0,
+      "item_codes": {
+        "C1": "31380"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "양평군 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 4399.0,
+      "item_codes": {
+        "C1": "31380"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "양평군 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 4677.0,
+      "item_codes": {
+        "C1": "31380"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 도소매업종사자수",
+      "timestamp": "2007",
+      "value": 71219.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 도소매업종사자수",
+      "timestamp": "2008",
+      "value": 71108.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 도소매업종사자수",
+      "timestamp": "2009",
+      "value": 72291.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 도소매업종사자수",
+      "timestamp": "2010",
+      "value": 72475.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 도소매업종사자수",
+      "timestamp": "2011",
+      "value": 73071.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 도소매업종사자수",
+      "timestamp": "2012",
+      "value": 76264.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 도소매업종사자수",
+      "timestamp": "2013",
+      "value": 79826.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 도소매업종사자수",
+      "timestamp": "2014",
+      "value": 81715.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 도소매업종사자수",
+      "timestamp": "2015",
+      "value": 83659.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 도소매업종사자수",
+      "timestamp": "2016",
+      "value": 82052.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 83052.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 84822.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 88824.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "춘천시 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 13914.0,
+      "item_codes": {
+        "C1": "32010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "춘천시 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 14478.0,
+      "item_codes": {
+        "C1": "32010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "춘천시 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 15127.0,
+      "item_codes": {
+        "C1": "32010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "원주시 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 20143.0,
+      "item_codes": {
+        "C1": "32020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "원주시 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 20544.0,
+      "item_codes": {
+        "C1": "32020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "원주시 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 21749.0,
+      "item_codes": {
+        "C1": "32020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강릉시 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 13324.0,
+      "item_codes": {
+        "C1": "32030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강릉시 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 12946.0,
+      "item_codes": {
+        "C1": "32030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강릉시 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 13697.0,
+      "item_codes": {
+        "C1": "32030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동해시 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 5084.0,
+      "item_codes": {
+        "C1": "32040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동해시 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 5087.0,
+      "item_codes": {
+        "C1": "32040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동해시 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 5169.0,
+      "item_codes": {
+        "C1": "32040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "태백시 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 2753.0,
+      "item_codes": {
+        "C1": "32050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "태백시 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 2660.0,
+      "item_codes": {
+        "C1": "32050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "태백시 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 2765.0,
+      "item_codes": {
+        "C1": "32050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "속초시 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 5391.0,
+      "item_codes": {
+        "C1": "32060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "속초시 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 5608.0,
+      "item_codes": {
+        "C1": "32060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "속초시 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 5807.0,
+      "item_codes": {
+        "C1": "32060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "삼척시 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 3232.0,
+      "item_codes": {
+        "C1": "32070"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "삼척시 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 3336.0,
+      "item_codes": {
+        "C1": "32070"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "삼척시 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 3386.0,
+      "item_codes": {
+        "C1": "32070"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "홍천군 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 3421.0,
+      "item_codes": {
+        "C1": "32310"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "홍천군 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 3421.0,
+      "item_codes": {
+        "C1": "32310"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "홍천군 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 3702.0,
+      "item_codes": {
+        "C1": "32310"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "횡성군 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 2181.0,
+      "item_codes": {
+        "C1": "32320"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "횡성군 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 2586.0,
+      "item_codes": {
+        "C1": "32320"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "횡성군 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 2716.0,
+      "item_codes": {
+        "C1": "32320"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영월군 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 1817.0,
+      "item_codes": {
+        "C1": "32330"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영월군 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 1868.0,
+      "item_codes": {
+        "C1": "32330"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영월군 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 1951.0,
+      "item_codes": {
+        "C1": "32330"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "평창군 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 2303.0,
+      "item_codes": {
+        "C1": "32340"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "평창군 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 2296.0,
+      "item_codes": {
+        "C1": "32340"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "평창군 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 2210.0,
+      "item_codes": {
+        "C1": "32340"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "정선군 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 1721.0,
+      "item_codes": {
+        "C1": "32350"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "정선군 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 1871.0,
+      "item_codes": {
+        "C1": "32350"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "정선군 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 1947.0,
+      "item_codes": {
+        "C1": "32350"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "철원군 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 1800.0,
+      "item_codes": {
+        "C1": "32360"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "철원군 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 1813.0,
+      "item_codes": {
+        "C1": "32360"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "철원군 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 1842.0,
+      "item_codes": {
+        "C1": "32360"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "화천군 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 874.0,
+      "item_codes": {
+        "C1": "32370"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "화천군 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 928.0,
+      "item_codes": {
+        "C1": "32370"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "화천군 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 905.0,
+      "item_codes": {
+        "C1": "32370"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "양구군 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 828.0,
+      "item_codes": {
+        "C1": "32380"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "양구군 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 865.0,
+      "item_codes": {
+        "C1": "32380"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "양구군 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 1017.0,
+      "item_codes": {
+        "C1": "32380"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인제군 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 1590.0,
+      "item_codes": {
+        "C1": "32390"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인제군 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 1635.0,
+      "item_codes": {
+        "C1": "32390"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인제군 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 1775.0,
+      "item_codes": {
+        "C1": "32390"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "고성군 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 1169.0,
+      "item_codes": {
+        "C1": "32400"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "고성군 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 1266.0,
+      "item_codes": {
+        "C1": "32400"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "고성군 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 1309.0,
+      "item_codes": {
+        "C1": "32400"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "양양군 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 1507.0,
+      "item_codes": {
+        "C1": "32410"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "양양군 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 1614.0,
+      "item_codes": {
+        "C1": "32410"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "양양군 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 1750.0,
+      "item_codes": {
+        "C1": "32410"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 도소매업종사자수",
+      "timestamp": "2007",
+      "value": 65304.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 도소매업종사자수",
+      "timestamp": "2008",
+      "value": 65927.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 도소매업종사자수",
+      "timestamp": "2009",
+      "value": 66425.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 도소매업종사자수",
+      "timestamp": "2010",
+      "value": 65836.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 도소매업종사자수",
+      "timestamp": "2011",
+      "value": 67615.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 도소매업종사자수",
+      "timestamp": "2012",
+      "value": 72117.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 도소매업종사자수",
+      "timestamp": "2013",
+      "value": 74643.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 도소매업종사자수",
+      "timestamp": "2014",
+      "value": 75971.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 도소매업종사자수",
+      "timestamp": "2015",
+      "value": 79215.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 도소매업종사자수",
+      "timestamp": "2016",
+      "value": 79464.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 80085.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 81148.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 84157.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충주시 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 11453.0,
+      "item_codes": {
+        "C1": "33020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충주시 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 11340.0,
+      "item_codes": {
+        "C1": "33020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충주시 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 12288.0,
+      "item_codes": {
+        "C1": "33020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제천시 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 8083.0,
+      "item_codes": {
+        "C1": "33030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제천시 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 7942.0,
+      "item_codes": {
+        "C1": "33030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제천시 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 8208.0,
+      "item_codes": {
+        "C1": "33030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "청주시 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 42858.0,
+      "item_codes": {
+        "C1": "33040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "청주시 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 43185.0,
+      "item_codes": {
+        "C1": "33040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "청주시 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 44235.0,
+      "item_codes": {
+        "C1": "33040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "보은군 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 1401.0,
+      "item_codes": {
+        "C1": "33320"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "보은군 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 1338.0,
+      "item_codes": {
+        "C1": "33320"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "보은군 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 1364.0,
+      "item_codes": {
+        "C1": "33320"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "옥천군 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 2057.0,
+      "item_codes": {
+        "C1": "33330"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "옥천군 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 2261.0,
+      "item_codes": {
+        "C1": "33330"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "옥천군 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 2277.0,
+      "item_codes": {
+        "C1": "33330"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영동군 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 1682.0,
+      "item_codes": {
+        "C1": "33340"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영동군 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 1703.0,
+      "item_codes": {
+        "C1": "33340"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영동군 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 1865.0,
+      "item_codes": {
+        "C1": "33340"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "진천군 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 3256.0,
+      "item_codes": {
+        "C1": "33350"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "진천군 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 3553.0,
+      "item_codes": {
+        "C1": "33350"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "진천군 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 3664.0,
+      "item_codes": {
+        "C1": "33350"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "괴산군 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 1469.0,
+      "item_codes": {
+        "C1": "33360"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "괴산군 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 1491.0,
+      "item_codes": {
+        "C1": "33360"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "괴산군 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 1417.0,
+      "item_codes": {
+        "C1": "33360"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "음성군 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 4742.0,
+      "item_codes": {
+        "C1": "33370"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "음성군 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 5232.0,
+      "item_codes": {
+        "C1": "33370"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "음성군 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 5599.0,
+      "item_codes": {
+        "C1": "33370"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "단양군 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 1320.0,
+      "item_codes": {
+        "C1": "33380"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "단양군 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 1319.0,
+      "item_codes": {
+        "C1": "33380"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "단양군 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 1374.0,
+      "item_codes": {
+        "C1": "33380"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "증평군 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 1764.0,
+      "item_codes": {
+        "C1": "33390"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "증평군 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 1784.0,
+      "item_codes": {
+        "C1": "33390"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "증평군 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 1866.0,
+      "item_codes": {
+        "C1": "33390"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 도소매업종사자수",
+      "timestamp": "2007",
+      "value": 82506.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 도소매업종사자수",
+      "timestamp": "2008",
+      "value": 84621.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 도소매업종사자수",
+      "timestamp": "2009",
+      "value": 85529.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 도소매업종사자수",
+      "timestamp": "2010",
+      "value": 87607.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 도소매업종사자수",
+      "timestamp": "2011",
+      "value": 88389.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 도소매업종사자수",
+      "timestamp": "2012",
+      "value": 89681.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 도소매업종사자수",
+      "timestamp": "2013",
+      "value": 93669.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 도소매업종사자수",
+      "timestamp": "2014",
+      "value": 98782.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 도소매업종사자수",
+      "timestamp": "2015",
+      "value": 104440.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 도소매업종사자수",
+      "timestamp": "2016",
+      "value": 104402.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 106142.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 109494.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 114902.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "천안시 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 34669.0,
+      "item_codes": {
+        "C1": "34010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "천안시 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 36194.0,
+      "item_codes": {
+        "C1": "34010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "천안시 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 37793.0,
+      "item_codes": {
+        "C1": "34010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "공주시 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 5690.0,
+      "item_codes": {
+        "C1": "34020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "공주시 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 5985.0,
+      "item_codes": {
+        "C1": "34020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "공주시 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 6182.0,
+      "item_codes": {
+        "C1": "34020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "보령시 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 5390.0,
+      "item_codes": {
+        "C1": "34030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "보령시 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 5339.0,
+      "item_codes": {
+        "C1": "34030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "보령시 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 5523.0,
+      "item_codes": {
+        "C1": "34030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "아산시 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 13150.0,
+      "item_codes": {
+        "C1": "34040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "아산시 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 13904.0,
+      "item_codes": {
+        "C1": "34040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "아산시 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 14487.0,
+      "item_codes": {
+        "C1": "34040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서산시 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 8289.0,
+      "item_codes": {
+        "C1": "34050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서산시 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 8539.0,
+      "item_codes": {
+        "C1": "34050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서산시 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 9047.0,
+      "item_codes": {
+        "C1": "34050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "논산시 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 6896.0,
+      "item_codes": {
+        "C1": "34060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "논산시 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 6958.0,
+      "item_codes": {
+        "C1": "34060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "논산시 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 7344.0,
+      "item_codes": {
+        "C1": "34060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "계룡시 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 1408.0,
+      "item_codes": {
+        "C1": "34070"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "계룡시 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 1430.0,
+      "item_codes": {
+        "C1": "34070"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "계룡시 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 1456.0,
+      "item_codes": {
+        "C1": "34070"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "당진시 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 7563.0,
+      "item_codes": {
+        "C1": "34080"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "당진시 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 7712.0,
+      "item_codes": {
+        "C1": "34080"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "당진시 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 8224.0,
+      "item_codes": {
+        "C1": "34080"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "금산군 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 3463.0,
+      "item_codes": {
+        "C1": "34310"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "금산군 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 3561.0,
+      "item_codes": {
+        "C1": "34310"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "금산군 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 3651.0,
+      "item_codes": {
+        "C1": "34310"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부여군 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 3127.0,
+      "item_codes": {
+        "C1": "34330"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부여군 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 2944.0,
+      "item_codes": {
+        "C1": "34330"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부여군 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 3065.0,
+      "item_codes": {
+        "C1": "34330"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서천군 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 2499.0,
+      "item_codes": {
+        "C1": "34340"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서천군 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 2690.0,
+      "item_codes": {
+        "C1": "34340"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서천군 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 2857.0,
+      "item_codes": {
+        "C1": "34340"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "청양군 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 1623.0,
+      "item_codes": {
+        "C1": "34350"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "청양군 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 1629.0,
+      "item_codes": {
+        "C1": "34350"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "청양군 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 1678.0,
+      "item_codes": {
+        "C1": "34350"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "홍성군 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 5449.0,
+      "item_codes": {
+        "C1": "34360"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "홍성군 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 5547.0,
+      "item_codes": {
+        "C1": "34360"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "홍성군 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 5776.0,
+      "item_codes": {
+        "C1": "34360"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "예산군 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 3605.0,
+      "item_codes": {
+        "C1": "34370"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "예산군 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 3676.0,
+      "item_codes": {
+        "C1": "34370"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "예산군 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 3991.0,
+      "item_codes": {
+        "C1": "34370"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "태안군 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 3321.0,
+      "item_codes": {
+        "C1": "34380"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "태안군 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 3386.0,
+      "item_codes": {
+        "C1": "34380"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "태안군 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 3828.0,
+      "item_codes": {
+        "C1": "34380"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 도소매업종사자수",
+      "timestamp": "2007",
+      "value": 83310.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 도소매업종사자수",
+      "timestamp": "2008",
+      "value": 81883.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 도소매업종사자수",
+      "timestamp": "2009",
+      "value": 84637.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 도소매업종사자수",
+      "timestamp": "2010",
+      "value": 84556.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 도소매업종사자수",
+      "timestamp": "2011",
+      "value": 87554.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 도소매업종사자수",
+      "timestamp": "2012",
+      "value": 90951.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 도소매업종사자수",
+      "timestamp": "2013",
+      "value": 92897.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 도소매업종사자수",
+      "timestamp": "2014",
+      "value": 97125.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 도소매업종사자수",
+      "timestamp": "2015",
+      "value": 99640.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 도소매업종사자수",
+      "timestamp": "2016",
+      "value": 98561.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 97504.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 99639.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 102998.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전주시 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 38736.0,
+      "item_codes": {
+        "C1": "35010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전주시 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 39834.0,
+      "item_codes": {
+        "C1": "35010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전주시 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 39802.0,
+      "item_codes": {
+        "C1": "35010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "군산시 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 13558.0,
+      "item_codes": {
+        "C1": "35020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "군산시 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 14192.0,
+      "item_codes": {
+        "C1": "35020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "군산시 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 14477.0,
+      "item_codes": {
+        "C1": "35020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "익산시 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 15343.0,
+      "item_codes": {
+        "C1": "35030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "익산시 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 15088.0,
+      "item_codes": {
+        "C1": "35030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "익산시 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 16323.0,
+      "item_codes": {
+        "C1": "35030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "정읍시 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 5545.0,
+      "item_codes": {
+        "C1": "35040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "정읍시 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 5553.0,
+      "item_codes": {
+        "C1": "35040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "정읍시 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 5644.0,
+      "item_codes": {
+        "C1": "35040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "남원시 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 4414.0,
+      "item_codes": {
+        "C1": "35050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "남원시 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 4608.0,
+      "item_codes": {
+        "C1": "35050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "남원시 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 4804.0,
+      "item_codes": {
+        "C1": "35050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "김제시 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 4952.0,
+      "item_codes": {
+        "C1": "35060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "김제시 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 5107.0,
+      "item_codes": {
+        "C1": "35060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "김제시 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 5363.0,
+      "item_codes": {
+        "C1": "35060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "완주군 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 4301.0,
+      "item_codes": {
+        "C1": "35310"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "완주군 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 4323.0,
+      "item_codes": {
+        "C1": "35310"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "완주군 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 4880.0,
+      "item_codes": {
+        "C1": "35310"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "진안군 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 1000.0,
+      "item_codes": {
+        "C1": "35320"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "진안군 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 1102.0,
+      "item_codes": {
+        "C1": "35320"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "진안군 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 1136.0,
+      "item_codes": {
+        "C1": "35320"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "무주군 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 981.0,
+      "item_codes": {
+        "C1": "35330"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "무주군 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 1039.0,
+      "item_codes": {
+        "C1": "35330"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "무주군 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 1210.0,
+      "item_codes": {
+        "C1": "35330"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "장수군 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 750.0,
+      "item_codes": {
+        "C1": "35340"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "장수군 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 820.0,
+      "item_codes": {
+        "C1": "35340"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "장수군 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 811.0,
+      "item_codes": {
+        "C1": "35340"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "임실군 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 1003.0,
+      "item_codes": {
+        "C1": "35350"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "임실군 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 993.0,
+      "item_codes": {
+        "C1": "35350"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "임실군 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 1054.0,
+      "item_codes": {
+        "C1": "35350"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "순창군 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 1040.0,
+      "item_codes": {
+        "C1": "35360"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "순창군 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 973.0,
+      "item_codes": {
+        "C1": "35360"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "순창군 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 1045.0,
+      "item_codes": {
+        "C1": "35360"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "고창군 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 2908.0,
+      "item_codes": {
+        "C1": "35370"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "고창군 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 2877.0,
+      "item_codes": {
+        "C1": "35370"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "고창군 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 3295.0,
+      "item_codes": {
+        "C1": "35370"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부안군 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 2973.0,
+      "item_codes": {
+        "C1": "35380"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부안군 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 3130.0,
+      "item_codes": {
+        "C1": "35380"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부안군 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 3154.0,
+      "item_codes": {
+        "C1": "35380"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 도소매업종사자수",
+      "timestamp": "2007",
+      "value": 82410.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 도소매업종사자수",
+      "timestamp": "2008",
+      "value": 81814.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 도소매업종사자수",
+      "timestamp": "2009",
+      "value": 82687.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 도소매업종사자수",
+      "timestamp": "2010",
+      "value": 81614.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 도소매업종사자수",
+      "timestamp": "2011",
+      "value": 83196.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 도소매업종사자수",
+      "timestamp": "2012",
+      "value": 85839.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 도소매업종사자수",
+      "timestamp": "2013",
+      "value": 90282.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 도소매업종사자수",
+      "timestamp": "2014",
+      "value": 94491.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 도소매업종사자수",
+      "timestamp": "2015",
+      "value": 97466.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 도소매업종사자수",
+      "timestamp": "2016",
+      "value": 97116.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 98718.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 101376.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 105159.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "목포시 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 15125.0,
+      "item_codes": {
+        "C1": "36010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "목포시 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 14837.0,
+      "item_codes": {
+        "C1": "36010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "목포시 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 14836.0,
+      "item_codes": {
+        "C1": "36010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "여수시 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 16235.0,
+      "item_codes": {
+        "C1": "36020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "여수시 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 16520.0,
+      "item_codes": {
+        "C1": "36020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "여수시 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 17062.0,
+      "item_codes": {
+        "C1": "36020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "순천시 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 16320.0,
+      "item_codes": {
+        "C1": "36030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "순천시 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 16233.0,
+      "item_codes": {
+        "C1": "36030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "순천시 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 16426.0,
+      "item_codes": {
+        "C1": "36030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "나주시 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 5027.0,
+      "item_codes": {
+        "C1": "36040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "나주시 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 5650.0,
+      "item_codes": {
+        "C1": "36040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "나주시 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 6015.0,
+      "item_codes": {
+        "C1": "36040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광양시 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 7796.0,
+      "item_codes": {
+        "C1": "36060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광양시 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 8132.0,
+      "item_codes": {
+        "C1": "36060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광양시 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 8348.0,
+      "item_codes": {
+        "C1": "36060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "담양군 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 2253.0,
+      "item_codes": {
+        "C1": "36310"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "담양군 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 2306.0,
+      "item_codes": {
+        "C1": "36310"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "담양군 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 2476.0,
+      "item_codes": {
+        "C1": "36310"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "곡성군 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 1003.0,
+      "item_codes": {
+        "C1": "36320"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "곡성군 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 999.0,
+      "item_codes": {
+        "C1": "36320"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "곡성군 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 1093.0,
+      "item_codes": {
+        "C1": "36320"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "구례군 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 1162.0,
+      "item_codes": {
+        "C1": "36330"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "구례군 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 1220.0,
+      "item_codes": {
+        "C1": "36330"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "구례군 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 1299.0,
+      "item_codes": {
+        "C1": "36330"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "고흥군 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 3145.0,
+      "item_codes": {
+        "C1": "36350"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "고흥군 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 3326.0,
+      "item_codes": {
+        "C1": "36350"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "고흥군 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 3394.0,
+      "item_codes": {
+        "C1": "36350"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "보성군 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 2136.0,
+      "item_codes": {
+        "C1": "36360"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "보성군 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 2179.0,
+      "item_codes": {
+        "C1": "36360"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "보성군 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 2331.0,
+      "item_codes": {
+        "C1": "36360"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "화순군 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 2679.0,
+      "item_codes": {
+        "C1": "36370"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "화순군 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 2969.0,
+      "item_codes": {
+        "C1": "36370"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "화순군 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 3200.0,
+      "item_codes": {
+        "C1": "36370"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "장흥군 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 2245.0,
+      "item_codes": {
+        "C1": "36380"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "장흥군 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 2388.0,
+      "item_codes": {
+        "C1": "36380"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "장흥군 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 2517.0,
+      "item_codes": {
+        "C1": "36380"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강진군 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 2019.0,
+      "item_codes": {
+        "C1": "36390"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강진군 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 2036.0,
+      "item_codes": {
+        "C1": "36390"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강진군 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 2141.0,
+      "item_codes": {
+        "C1": "36390"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "해남군 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 3645.0,
+      "item_codes": {
+        "C1": "36400"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "해남군 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 3760.0,
+      "item_codes": {
+        "C1": "36400"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "해남군 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 3893.0,
+      "item_codes": {
+        "C1": "36400"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영암군 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 2611.0,
+      "item_codes": {
+        "C1": "36410"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영암군 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 2755.0,
+      "item_codes": {
+        "C1": "36410"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영암군 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 2974.0,
+      "item_codes": {
+        "C1": "36410"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "무안군 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 3586.0,
+      "item_codes": {
+        "C1": "36420"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "무안군 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 3727.0,
+      "item_codes": {
+        "C1": "36420"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "무안군 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 3967.0,
+      "item_codes": {
+        "C1": "36420"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "함평군 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 1418.0,
+      "item_codes": {
+        "C1": "36430"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "함평군 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 1504.0,
+      "item_codes": {
+        "C1": "36430"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "함평군 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 1715.0,
+      "item_codes": {
+        "C1": "36430"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영광군 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 2465.0,
+      "item_codes": {
+        "C1": "36440"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영광군 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 2649.0,
+      "item_codes": {
+        "C1": "36440"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영광군 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 2865.0,
+      "item_codes": {
+        "C1": "36440"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "장성군 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 1975.0,
+      "item_codes": {
+        "C1": "36450"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "장성군 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 2161.0,
+      "item_codes": {
+        "C1": "36450"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "장성군 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 2243.0,
+      "item_codes": {
+        "C1": "36450"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "완도군 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 3128.0,
+      "item_codes": {
+        "C1": "36460"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "완도군 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 3085.0,
+      "item_codes": {
+        "C1": "36460"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "완도군 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 3350.0,
+      "item_codes": {
+        "C1": "36460"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "진도군 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 1883.0,
+      "item_codes": {
+        "C1": "36470"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "진도군 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 1983.0,
+      "item_codes": {
+        "C1": "36470"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "진도군 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 1987.0,
+      "item_codes": {
+        "C1": "36470"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "신안군 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 862.0,
+      "item_codes": {
+        "C1": "36480"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "신안군 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 957.0,
+      "item_codes": {
+        "C1": "36480"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "신안군 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 1027.0,
+      "item_codes": {
+        "C1": "36480"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 도소매업종사자수",
+      "timestamp": "2007",
+      "value": 107609.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 도소매업종사자수",
+      "timestamp": "2008",
+      "value": 109002.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 도소매업종사자수",
+      "timestamp": "2009",
+      "value": 110098.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 도소매업종사자수",
+      "timestamp": "2010",
+      "value": 111331.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 도소매업종사자수",
+      "timestamp": "2011",
+      "value": 114329.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 도소매업종사자수",
+      "timestamp": "2012",
+      "value": 116687.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 도소매업종사자수",
+      "timestamp": "2013",
+      "value": 120290.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 도소매업종사자수",
+      "timestamp": "2014",
+      "value": 124751.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 도소매업종사자수",
+      "timestamp": "2015",
+      "value": 130272.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 도소매업종사자수",
+      "timestamp": "2016",
+      "value": 129592.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 130807.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 132384.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 138239.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "포항시 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 26984.0,
+      "item_codes": {
+        "C1": "37010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "포항시 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 27383.0,
+      "item_codes": {
+        "C1": "37010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "포항시 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 28177.0,
+      "item_codes": {
+        "C1": "37010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경주시 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 12711.0,
+      "item_codes": {
+        "C1": "37020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경주시 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 12730.0,
+      "item_codes": {
+        "C1": "37020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경주시 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 13183.0,
+      "item_codes": {
+        "C1": "37020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "김천시 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 6058.0,
+      "item_codes": {
+        "C1": "37030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "김천시 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 6192.0,
+      "item_codes": {
+        "C1": "37030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "김천시 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 6631.0,
+      "item_codes": {
+        "C1": "37030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "안동시 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 9205.0,
+      "item_codes": {
+        "C1": "37040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "안동시 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 9333.0,
+      "item_codes": {
+        "C1": "37040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "안동시 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 9613.0,
+      "item_codes": {
+        "C1": "37040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "구미시 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 19169.0,
+      "item_codes": {
+        "C1": "37050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "구미시 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 19096.0,
+      "item_codes": {
+        "C1": "37050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "구미시 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 19809.0,
+      "item_codes": {
+        "C1": "37050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영주시 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 6939.0,
+      "item_codes": {
+        "C1": "37060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영주시 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 6721.0,
+      "item_codes": {
+        "C1": "37060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영주시 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 6810.0,
+      "item_codes": {
+        "C1": "37060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영천시 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 4858.0,
+      "item_codes": {
+        "C1": "37070"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영천시 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 4886.0,
+      "item_codes": {
+        "C1": "37070"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영천시 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 4944.0,
+      "item_codes": {
+        "C1": "37070"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "상주시 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 4288.0,
+      "item_codes": {
+        "C1": "37080"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "상주시 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 4226.0,
+      "item_codes": {
+        "C1": "37080"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "상주시 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 4421.0,
+      "item_codes": {
+        "C1": "37080"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "문경시 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 3503.0,
+      "item_codes": {
+        "C1": "37090"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "문경시 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 3376.0,
+      "item_codes": {
+        "C1": "37090"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "문경시 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 3571.0,
+      "item_codes": {
+        "C1": "37090"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경산시 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 11977.0,
+      "item_codes": {
+        "C1": "37100"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경산시 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 12320.0,
+      "item_codes": {
+        "C1": "37100"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경산시 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 12842.0,
+      "item_codes": {
+        "C1": "37100"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "군위군 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 899.0,
+      "item_codes": {
+        "C1": "37310"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "군위군 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 936.0,
+      "item_codes": {
+        "C1": "37310"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "군위군 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 966.0,
+      "item_codes": {
+        "C1": "37310"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "의성군 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 2031.0,
+      "item_codes": {
+        "C1": "37320"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "의성군 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 2154.0,
+      "item_codes": {
+        "C1": "37320"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "의성군 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 2306.0,
+      "item_codes": {
+        "C1": "37320"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "청송군 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 1072.0,
+      "item_codes": {
+        "C1": "37330"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "청송군 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 1102.0,
+      "item_codes": {
+        "C1": "37330"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "청송군 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 1094.0,
+      "item_codes": {
+        "C1": "37330"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영양군 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 447.0,
+      "item_codes": {
+        "C1": "37340"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영양군 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 465.0,
+      "item_codes": {
+        "C1": "37340"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영양군 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 498.0,
+      "item_codes": {
+        "C1": "37340"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영덕군 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 1727.0,
+      "item_codes": {
+        "C1": "37350"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영덕군 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 1838.0,
+      "item_codes": {
+        "C1": "37350"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영덕군 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 2078.0,
+      "item_codes": {
+        "C1": "37350"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "청도군 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 2275.0,
+      "item_codes": {
+        "C1": "37360"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "청도군 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 2363.0,
+      "item_codes": {
+        "C1": "37360"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "청도군 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 2456.0,
+      "item_codes": {
+        "C1": "37360"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "고령군 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 1963.0,
+      "item_codes": {
+        "C1": "37370"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "고령군 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 2027.0,
+      "item_codes": {
+        "C1": "37370"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "고령군 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 2212.0,
+      "item_codes": {
+        "C1": "37370"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "성주군 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 1827.0,
+      "item_codes": {
+        "C1": "37380"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "성주군 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 1947.0,
+      "item_codes": {
+        "C1": "37380"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "성주군 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 2120.0,
+      "item_codes": {
+        "C1": "37380"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "칠곡군 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 7203.0,
+      "item_codes": {
+        "C1": "37390"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "칠곡군 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 7563.0,
+      "item_codes": {
+        "C1": "37390"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "칠곡군 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 8262.0,
+      "item_codes": {
+        "C1": "37390"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "예천군 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 1648.0,
+      "item_codes": {
+        "C1": "37400"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "예천군 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 1742.0,
+      "item_codes": {
+        "C1": "37400"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "예천군 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 2037.0,
+      "item_codes": {
+        "C1": "37400"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "봉화군 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 1128.0,
+      "item_codes": {
+        "C1": "37410"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "봉화군 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 1064.0,
+      "item_codes": {
+        "C1": "37410"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "봉화군 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 1135.0,
+      "item_codes": {
+        "C1": "37410"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울진군 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 2333.0,
+      "item_codes": {
+        "C1": "37420"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울진군 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 2366.0,
+      "item_codes": {
+        "C1": "37420"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울진군 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 2515.0,
+      "item_codes": {
+        "C1": "37420"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울릉군 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 562.0,
+      "item_codes": {
+        "C1": "37430"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울릉군 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 554.0,
+      "item_codes": {
+        "C1": "37430"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울릉군 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 559.0,
+      "item_codes": {
+        "C1": "37430"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 도소매업종사자수",
+      "timestamp": "2007",
+      "value": 135751.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 도소매업종사자수",
+      "timestamp": "2008",
+      "value": 137269.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 도소매업종사자수",
+      "timestamp": "2009",
+      "value": 140789.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 도소매업종사자수",
+      "timestamp": "2010",
+      "value": 140676.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 도소매업종사자수",
+      "timestamp": "2011",
+      "value": 144724.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 도소매업종사자수",
+      "timestamp": "2012",
+      "value": 150429.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 도소매업종사자수",
+      "timestamp": "2013",
+      "value": 155033.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 도소매업종사자수",
+      "timestamp": "2014",
+      "value": 160745.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 도소매업종사자수",
+      "timestamp": "2015",
+      "value": 168036.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 도소매업종사자수",
+      "timestamp": "2016",
+      "value": 167773.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 169269.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 170972.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 176361.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "진주시 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 20526.0,
+      "item_codes": {
+        "C1": "38030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "진주시 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 20271.0,
+      "item_codes": {
+        "C1": "38030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "진주시 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 20786.0,
+      "item_codes": {
+        "C1": "38030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "통영시 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 7138.0,
+      "item_codes": {
+        "C1": "38050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "통영시 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 7353.0,
+      "item_codes": {
+        "C1": "38050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "통영시 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 7489.0,
+      "item_codes": {
+        "C1": "38050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "사천시 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 6575.0,
+      "item_codes": {
+        "C1": "38060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "사천시 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 6834.0,
+      "item_codes": {
+        "C1": "38060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "사천시 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 7270.0,
+      "item_codes": {
+        "C1": "38060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "김해시 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 29451.0,
+      "item_codes": {
+        "C1": "38070"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "김해시 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 29858.0,
+      "item_codes": {
+        "C1": "38070"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "김해시 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 30887.0,
+      "item_codes": {
+        "C1": "38070"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "밀양시 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 5092.0,
+      "item_codes": {
+        "C1": "38080"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "밀양시 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 5411.0,
+      "item_codes": {
+        "C1": "38080"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "밀양시 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 5513.0,
+      "item_codes": {
+        "C1": "38080"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "거제시 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 8678.0,
+      "item_codes": {
+        "C1": "38090"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "거제시 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 8518.0,
+      "item_codes": {
+        "C1": "38090"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "거제시 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 8635.0,
+      "item_codes": {
+        "C1": "38090"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "양산시 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 15082.0,
+      "item_codes": {
+        "C1": "38100"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "양산시 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 15512.0,
+      "item_codes": {
+        "C1": "38100"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "양산시 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 16530.0,
+      "item_codes": {
+        "C1": "38100"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "창원시 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 56154.0,
+      "item_codes": {
+        "C1": "38110"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "창원시 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 56262.0,
+      "item_codes": {
+        "C1": "38110"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "창원시 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 57033.0,
+      "item_codes": {
+        "C1": "38110"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "의령군 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 737.0,
+      "item_codes": {
+        "C1": "38310"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "의령군 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 780.0,
+      "item_codes": {
+        "C1": "38310"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "의령군 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 838.0,
+      "item_codes": {
+        "C1": "38310"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "함안군 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 3149.0,
+      "item_codes": {
+        "C1": "38320"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "함안군 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 3348.0,
+      "item_codes": {
+        "C1": "38320"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "함안군 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 3638.0,
+      "item_codes": {
+        "C1": "38320"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "창녕군 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 2835.0,
+      "item_codes": {
+        "C1": "38330"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "창녕군 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 2834.0,
+      "item_codes": {
+        "C1": "38330"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "창녕군 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 2996.0,
+      "item_codes": {
+        "C1": "38330"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "고성군 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 2186.0,
+      "item_codes": {
+        "C1": "38340"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "고성군 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 2141.0,
+      "item_codes": {
+        "C1": "38340"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "고성군 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 2357.0,
+      "item_codes": {
+        "C1": "38340"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "남해군 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 2080.0,
+      "item_codes": {
+        "C1": "38350"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "남해군 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 2127.0,
+      "item_codes": {
+        "C1": "38350"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "남해군 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 2251.0,
+      "item_codes": {
+        "C1": "38350"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "하동군 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 2007.0,
+      "item_codes": {
+        "C1": "38360"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "하동군 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 2034.0,
+      "item_codes": {
+        "C1": "38360"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "하동군 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 2138.0,
+      "item_codes": {
+        "C1": "38360"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "산청군 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 1445.0,
+      "item_codes": {
+        "C1": "38370"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "산청군 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 1537.0,
+      "item_codes": {
+        "C1": "38370"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "산청군 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 1615.0,
+      "item_codes": {
+        "C1": "38370"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "함양군 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 1823.0,
+      "item_codes": {
+        "C1": "38380"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "함양군 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 1847.0,
+      "item_codes": {
+        "C1": "38380"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "함양군 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 1852.0,
+      "item_codes": {
+        "C1": "38380"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "거창군 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 2792.0,
+      "item_codes": {
+        "C1": "38390"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "거창군 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 2753.0,
+      "item_codes": {
+        "C1": "38390"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "거창군 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 2909.0,
+      "item_codes": {
+        "C1": "38390"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "합천군 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 1519.0,
+      "item_codes": {
+        "C1": "38400"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "합천군 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 1552.0,
+      "item_codes": {
+        "C1": "38400"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "합천군 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 1624.0,
+      "item_codes": {
+        "C1": "38400"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 도소매업종사자수",
+      "timestamp": "2007",
+      "value": 31418.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 도소매업종사자수",
+      "timestamp": "2008",
+      "value": 31358.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 도소매업종사자수",
+      "timestamp": "2009",
+      "value": 32819.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 도소매업종사자수",
+      "timestamp": "2010",
+      "value": 33244.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 도소매업종사자수",
+      "timestamp": "2011",
+      "value": 34926.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 도소매업종사자수",
+      "timestamp": "2012",
+      "value": 36767.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 도소매업종사자수",
+      "timestamp": "2013",
+      "value": 39294.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 도소매업종사자수",
+      "timestamp": "2014",
+      "value": 40138.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 도소매업종사자수",
+      "timestamp": "2015",
+      "value": 41476.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 도소매업종사자수",
+      "timestamp": "2016",
+      "value": 41713.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 42840.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 44152.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 46341.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주시 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 32149.0,
+      "item_codes": {
+        "C1": "39010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주시 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 32889.0,
+      "item_codes": {
+        "C1": "39010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주시 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 34355.0,
+      "item_codes": {
+        "C1": "39010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서귀포시 - 도소매업종사자수",
+      "timestamp": "2017",
+      "value": 10691.0,
+      "item_codes": {
+        "C1": "39020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서귀포시 - 도소매업종사자수",
+      "timestamp": "2018",
+      "value": 11263.0,
+      "item_codes": {
+        "C1": "39020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서귀포시 - 도소매업종사자수",
+      "timestamp": "2019",
+      "value": 11986.0,
+      "item_codes": {
+        "C1": "39020"
+      },
+      "itm_id": "T10"
+    }
+  ]
+}

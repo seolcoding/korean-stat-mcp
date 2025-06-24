@@ -1,0 +1,8236 @@
+{
+  "metadata": {
+    "org_id": "101",
+    "org_name": "통계청",
+    "table_id": "DT_1YL6001",
+    "table_name": "운수업 종사자수(시도/시/군/구)",
+    "stat_id": "9B08007",
+    "stat_name": "e-지방지표",
+    "date_range": "2006 ~ 2019",
+    "description": "행정구역별 운수업종사자수 용산구 도봉구 구로구 강남구 남구 북구 달성군 동구 옹진군 광산구 경기도 안양시 부천시 동두천시 이천시 경기 여주군 가평군 속초시 영월군 천안시 남원시 보성군 함평군 신안군 영주시 문경시 봉화군 경남 창원시 함안군 동대문구 강북구 동래구 수영구 달서구 광주광역시 중구 춘천시 공주시 당진시 충남 당진군 익산시 진안군 고창군 광양시 안동시 상주시 경산시 칠곡군 경상남도 진주시 창녕군 합천군 제주시 강서구 영등포구 관악구 서구 강서구 연제구 연수구 계양구 ...",
+    "item_info": "■  자료제공처:  통계청 지역통계기획팀 ■  자료원출처:  통계청 경제총조사과(전국사업체조사) ■  자료제공주기:  1년 ■  다음자료현행화:  조사기준년도 익년12월 □  정의  - 운수업기업체 종사자수: 한국표준산업분류상 ＇H.운수 및 창고업(49~52)＇에 해당하는 사업체에 종사하는 사람의 수 □  의의  - 지역별 운수업 산업에 대한 구조와 지역별 분포 등을 파악하여 교통정책 및 물류정책 수립의 기초자료로 활용하고, 또한 지자체의 운수업부문 관련 지역정책수립에도 활용 □  참고사항  - 10차개정 자료수록 - 끝자리 0,5년도의 자료는 경제총조사 자료로 제공됨",
+    "source_url": "http://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1YL6001",
+    "last_updated": "2025-06-24T18:18:21.295278",
+    "period_type": "M",
+    "period_name": "월간"
+  },
+  "data": [
+    {
+      "item": "전국 - 운수업종사자수",
+      "timestamp": "2007",
+      "value": 885737.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 운수업종사자수",
+      "timestamp": "2008",
+      "value": 929684.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 운수업종사자수",
+      "timestamp": "2009",
+      "value": 976105.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 운수업종사자수",
+      "timestamp": "2010",
+      "value": 989773.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 운수업종사자수",
+      "timestamp": "2011",
+      "value": 998457.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 운수업종사자수",
+      "timestamp": "2012",
+      "value": 1012741.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 운수업종사자수",
+      "timestamp": "2013",
+      "value": 1015915.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 운수업종사자수",
+      "timestamp": "2014",
+      "value": 1049058.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 운수업종사자수",
+      "timestamp": "2015",
+      "value": 1096051.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 운수업종사자수",
+      "timestamp": "2016",
+      "value": 1111060.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 1115990.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 1145752.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 1155965.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 운수업종사자수",
+      "timestamp": "2007",
+      "value": 233067.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 운수업종사자수",
+      "timestamp": "2008",
+      "value": 249053.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 운수업종사자수",
+      "timestamp": "2009",
+      "value": 262744.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 운수업종사자수",
+      "timestamp": "2010",
+      "value": 265248.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 운수업종사자수",
+      "timestamp": "2011",
+      "value": 264363.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 운수업종사자수",
+      "timestamp": "2012",
+      "value": 258770.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 운수업종사자수",
+      "timestamp": "2013",
+      "value": 255994.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 운수업종사자수",
+      "timestamp": "2014",
+      "value": 259483.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 운수업종사자수",
+      "timestamp": "2015",
+      "value": 279879.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 운수업종사자수",
+      "timestamp": "2016",
+      "value": 276717.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 274793.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 272618.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 264181.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "종로구 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 6818.0,
+      "item_codes": {
+        "C1": "11010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "종로구 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 7260.0,
+      "item_codes": {
+        "C1": "11010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "종로구 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 7606.0,
+      "item_codes": {
+        "C1": "11010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "중구 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 14172.0,
+      "item_codes": {
+        "C1": "11020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "중구 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 14316.0,
+      "item_codes": {
+        "C1": "11020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "중구 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 13924.0,
+      "item_codes": {
+        "C1": "11020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "용산구 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 3919.0,
+      "item_codes": {
+        "C1": "11030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "용산구 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 3918.0,
+      "item_codes": {
+        "C1": "11030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "용산구 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 3951.0,
+      "item_codes": {
+        "C1": "11030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "성동구 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 8295.0,
+      "item_codes": {
+        "C1": "11040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "성동구 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 8653.0,
+      "item_codes": {
+        "C1": "11040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "성동구 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 8814.0,
+      "item_codes": {
+        "C1": "11040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광진구 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 6133.0,
+      "item_codes": {
+        "C1": "11050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광진구 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 5828.0,
+      "item_codes": {
+        "C1": "11050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광진구 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 5240.0,
+      "item_codes": {
+        "C1": "11050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동대문구 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 6889.0,
+      "item_codes": {
+        "C1": "11060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동대문구 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 6562.0,
+      "item_codes": {
+        "C1": "11060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동대문구 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 6520.0,
+      "item_codes": {
+        "C1": "11060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "중랑구 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 13473.0,
+      "item_codes": {
+        "C1": "11070"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "중랑구 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 13092.0,
+      "item_codes": {
+        "C1": "11070"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "중랑구 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 12496.0,
+      "item_codes": {
+        "C1": "11070"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "성북구 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 6708.0,
+      "item_codes": {
+        "C1": "11080"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "성북구 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 6058.0,
+      "item_codes": {
+        "C1": "11080"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "성북구 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 6130.0,
+      "item_codes": {
+        "C1": "11080"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강북구 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 6822.0,
+      "item_codes": {
+        "C1": "11090"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강북구 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 6625.0,
+      "item_codes": {
+        "C1": "11090"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강북구 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 6305.0,
+      "item_codes": {
+        "C1": "11090"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "도봉구 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 9543.0,
+      "item_codes": {
+        "C1": "11100"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "도봉구 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 10030.0,
+      "item_codes": {
+        "C1": "11100"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "도봉구 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 9064.0,
+      "item_codes": {
+        "C1": "11100"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "노원구 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 12677.0,
+      "item_codes": {
+        "C1": "11110"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "노원구 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 12573.0,
+      "item_codes": {
+        "C1": "11110"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "노원구 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 11955.0,
+      "item_codes": {
+        "C1": "11110"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "은평구 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 8482.0,
+      "item_codes": {
+        "C1": "11120"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "은평구 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 8898.0,
+      "item_codes": {
+        "C1": "11120"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "은평구 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 8809.0,
+      "item_codes": {
+        "C1": "11120"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서대문구 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 6195.0,
+      "item_codes": {
+        "C1": "11130"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서대문구 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 5835.0,
+      "item_codes": {
+        "C1": "11130"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서대문구 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 5480.0,
+      "item_codes": {
+        "C1": "11130"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "마포구 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 11967.0,
+      "item_codes": {
+        "C1": "11140"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "마포구 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 12398.0,
+      "item_codes": {
+        "C1": "11140"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "마포구 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 10892.0,
+      "item_codes": {
+        "C1": "11140"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "양천구 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 12935.0,
+      "item_codes": {
+        "C1": "11150"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "양천구 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 12806.0,
+      "item_codes": {
+        "C1": "11150"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "양천구 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 12291.0,
+      "item_codes": {
+        "C1": "11150"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강서구 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 53820.0,
+      "item_codes": {
+        "C1": "11160"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강서구 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 52138.0,
+      "item_codes": {
+        "C1": "11160"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강서구 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 50974.0,
+      "item_codes": {
+        "C1": "11160"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "구로구 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 9552.0,
+      "item_codes": {
+        "C1": "11170"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "구로구 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 9160.0,
+      "item_codes": {
+        "C1": "11170"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "구로구 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 9242.0,
+      "item_codes": {
+        "C1": "11170"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "금천구 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 9589.0,
+      "item_codes": {
+        "C1": "11180"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "금천구 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 9064.0,
+      "item_codes": {
+        "C1": "11180"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "금천구 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 8999.0,
+      "item_codes": {
+        "C1": "11180"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영등포구 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 12233.0,
+      "item_codes": {
+        "C1": "11190"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영등포구 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 11414.0,
+      "item_codes": {
+        "C1": "11190"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영등포구 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 10822.0,
+      "item_codes": {
+        "C1": "11190"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동작구 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 3290.0,
+      "item_codes": {
+        "C1": "11200"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동작구 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 3124.0,
+      "item_codes": {
+        "C1": "11200"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동작구 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 3644.0,
+      "item_codes": {
+        "C1": "11200"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "관악구 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 6609.0,
+      "item_codes": {
+        "C1": "11210"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "관악구 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 6515.0,
+      "item_codes": {
+        "C1": "11210"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "관악구 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 5480.0,
+      "item_codes": {
+        "C1": "11210"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서초구 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 8717.0,
+      "item_codes": {
+        "C1": "11220"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서초구 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 9020.0,
+      "item_codes": {
+        "C1": "11220"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서초구 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 10027.0,
+      "item_codes": {
+        "C1": "11220"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강남구 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 11093.0,
+      "item_codes": {
+        "C1": "11230"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강남구 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 11236.0,
+      "item_codes": {
+        "C1": "11230"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강남구 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 11337.0,
+      "item_codes": {
+        "C1": "11230"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "송파구 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 15124.0,
+      "item_codes": {
+        "C1": "11240"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "송파구 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 15955.0,
+      "item_codes": {
+        "C1": "11240"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "송파구 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 14813.0,
+      "item_codes": {
+        "C1": "11240"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강동구 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 9738.0,
+      "item_codes": {
+        "C1": "11250"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강동구 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 10140.0,
+      "item_codes": {
+        "C1": "11250"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강동구 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 9366.0,
+      "item_codes": {
+        "C1": "11250"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 운수업종사자수",
+      "timestamp": "2007",
+      "value": 104345.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 운수업종사자수",
+      "timestamp": "2008",
+      "value": 104079.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 운수업종사자수",
+      "timestamp": "2009",
+      "value": 105529.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 운수업종사자수",
+      "timestamp": "2010",
+      "value": 104590.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 운수업종사자수",
+      "timestamp": "2011",
+      "value": 104515.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 운수업종사자수",
+      "timestamp": "2012",
+      "value": 107464.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 운수업종사자수",
+      "timestamp": "2013",
+      "value": 105504.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 운수업종사자수",
+      "timestamp": "2014",
+      "value": 108139.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 운수업종사자수",
+      "timestamp": "2015",
+      "value": 109724.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 운수업종사자수",
+      "timestamp": "2016",
+      "value": 109787.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 110616.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 110705.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 110016.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "중구 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 20715.0,
+      "item_codes": {
+        "C1": "21010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "중구 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 20407.0,
+      "item_codes": {
+        "C1": "21010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "중구 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 19768.0,
+      "item_codes": {
+        "C1": "21010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서구 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 3330.0,
+      "item_codes": {
+        "C1": "21020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서구 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 3277.0,
+      "item_codes": {
+        "C1": "21020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서구 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 3124.0,
+      "item_codes": {
+        "C1": "21020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동구 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 9020.0,
+      "item_codes": {
+        "C1": "21030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동구 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 10174.0,
+      "item_codes": {
+        "C1": "21030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동구 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 10877.0,
+      "item_codes": {
+        "C1": "21030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영도구 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 3898.0,
+      "item_codes": {
+        "C1": "21040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영도구 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 3606.0,
+      "item_codes": {
+        "C1": "21040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영도구 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 3562.0,
+      "item_codes": {
+        "C1": "21040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산진구 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 7120.0,
+      "item_codes": {
+        "C1": "21050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산진구 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 7137.0,
+      "item_codes": {
+        "C1": "21050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산진구 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 6813.0,
+      "item_codes": {
+        "C1": "21050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동래구 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 3831.0,
+      "item_codes": {
+        "C1": "21060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동래구 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 3495.0,
+      "item_codes": {
+        "C1": "21060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동래구 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 3475.0,
+      "item_codes": {
+        "C1": "21060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "남구 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 10479.0,
+      "item_codes": {
+        "C1": "21070"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "남구 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 10199.0,
+      "item_codes": {
+        "C1": "21070"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "남구 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 9987.0,
+      "item_codes": {
+        "C1": "21070"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "북구 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 3550.0,
+      "item_codes": {
+        "C1": "21080"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "북구 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 3513.0,
+      "item_codes": {
+        "C1": "21080"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "북구 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 3397.0,
+      "item_codes": {
+        "C1": "21080"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "해운대구 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 6294.0,
+      "item_codes": {
+        "C1": "21090"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "해운대구 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 6469.0,
+      "item_codes": {
+        "C1": "21090"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "해운대구 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 6120.0,
+      "item_codes": {
+        "C1": "21090"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "사하구 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 9817.0,
+      "item_codes": {
+        "C1": "21100"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "사하구 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 9468.0,
+      "item_codes": {
+        "C1": "21100"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "사하구 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 9370.0,
+      "item_codes": {
+        "C1": "21100"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "금정구 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 8339.0,
+      "item_codes": {
+        "C1": "21110"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "금정구 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 8178.0,
+      "item_codes": {
+        "C1": "21110"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "금정구 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 7555.0,
+      "item_codes": {
+        "C1": "21110"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강서구 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 8088.0,
+      "item_codes": {
+        "C1": "21120"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강서구 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 8358.0,
+      "item_codes": {
+        "C1": "21120"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강서구 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 8639.0,
+      "item_codes": {
+        "C1": "21120"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "연제구 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 3204.0,
+      "item_codes": {
+        "C1": "21130"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "연제구 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 3686.0,
+      "item_codes": {
+        "C1": "21130"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "연제구 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 3773.0,
+      "item_codes": {
+        "C1": "21130"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "수영구 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 3243.0,
+      "item_codes": {
+        "C1": "21140"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "수영구 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 3214.0,
+      "item_codes": {
+        "C1": "21140"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "수영구 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 3298.0,
+      "item_codes": {
+        "C1": "21140"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "사상구 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 6609.0,
+      "item_codes": {
+        "C1": "21150"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "사상구 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 6286.0,
+      "item_codes": {
+        "C1": "21150"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "사상구 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 6710.0,
+      "item_codes": {
+        "C1": "21150"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "기장군 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 3079.0,
+      "item_codes": {
+        "C1": "21310"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "기장군 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 3238.0,
+      "item_codes": {
+        "C1": "21310"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "기장군 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 3548.0,
+      "item_codes": {
+        "C1": "21310"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 운수업종사자수",
+      "timestamp": "2007",
+      "value": 39096.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 운수업종사자수",
+      "timestamp": "2008",
+      "value": 40711.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 운수업종사자수",
+      "timestamp": "2009",
+      "value": 40698.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 운수업종사자수",
+      "timestamp": "2010",
+      "value": 44689.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 운수업종사자수",
+      "timestamp": "2011",
+      "value": 45147.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 운수업종사자수",
+      "timestamp": "2012",
+      "value": 44447.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 운수업종사자수",
+      "timestamp": "2013",
+      "value": 44416.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 운수업종사자수",
+      "timestamp": "2014",
+      "value": 45321.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 운수업종사자수",
+      "timestamp": "2015",
+      "value": 45911.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 운수업종사자수",
+      "timestamp": "2016",
+      "value": 46648.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 48080.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 47711.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 47975.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "중구 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 1411.0,
+      "item_codes": {
+        "C1": "22010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "중구 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 1483.0,
+      "item_codes": {
+        "C1": "22010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "중구 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 1574.0,
+      "item_codes": {
+        "C1": "22010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동구 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 9645.0,
+      "item_codes": {
+        "C1": "22020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동구 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 9736.0,
+      "item_codes": {
+        "C1": "22020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동구 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 9988.0,
+      "item_codes": {
+        "C1": "22020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서구 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 4905.0,
+      "item_codes": {
+        "C1": "22030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서구 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 4714.0,
+      "item_codes": {
+        "C1": "22030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서구 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 4318.0,
+      "item_codes": {
+        "C1": "22030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "남구 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 2039.0,
+      "item_codes": {
+        "C1": "22040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "남구 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 2165.0,
+      "item_codes": {
+        "C1": "22040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "남구 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 2105.0,
+      "item_codes": {
+        "C1": "22040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "북구 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 7713.0,
+      "item_codes": {
+        "C1": "22050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "북구 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 7557.0,
+      "item_codes": {
+        "C1": "22050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "북구 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 7953.0,
+      "item_codes": {
+        "C1": "22050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "수성구 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 4370.0,
+      "item_codes": {
+        "C1": "22060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "수성구 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 4158.0,
+      "item_codes": {
+        "C1": "22060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "수성구 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 4042.0,
+      "item_codes": {
+        "C1": "22060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "달서구 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 12781.0,
+      "item_codes": {
+        "C1": "22070"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "달서구 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 12259.0,
+      "item_codes": {
+        "C1": "22070"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "달서구 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 12712.0,
+      "item_codes": {
+        "C1": "22070"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "달성군 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 5216.0,
+      "item_codes": {
+        "C1": "22310"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "달성군 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 5639.0,
+      "item_codes": {
+        "C1": "22310"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "달성군 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 5283.0,
+      "item_codes": {
+        "C1": "22310"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 운수업종사자수",
+      "timestamp": "2007",
+      "value": 57766.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 운수업종사자수",
+      "timestamp": "2008",
+      "value": 57189.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 운수업종사자수",
+      "timestamp": "2009",
+      "value": 64115.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 운수업종사자수",
+      "timestamp": "2010",
+      "value": 62485.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 운수업종사자수",
+      "timestamp": "2011",
+      "value": 67249.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 운수업종사자수",
+      "timestamp": "2012",
+      "value": 68879.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 운수업종사자수",
+      "timestamp": "2013",
+      "value": 66874.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 운수업종사자수",
+      "timestamp": "2014",
+      "value": 72358.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 운수업종사자수",
+      "timestamp": "2015",
+      "value": 76377.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 운수업종사자수",
+      "timestamp": "2016",
+      "value": 77026.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 76998.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 84685.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 83113.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "중구 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 25997.0,
+      "item_codes": {
+        "C1": "23010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "중구 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 26764.0,
+      "item_codes": {
+        "C1": "23010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "중구 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 28591.0,
+      "item_codes": {
+        "C1": "23010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동구 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 2662.0,
+      "item_codes": {
+        "C1": "23020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동구 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 2834.0,
+      "item_codes": {
+        "C1": "23020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동구 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 3050.0,
+      "item_codes": {
+        "C1": "23020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "남구 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 9375.0,
+      "item_codes": {
+        "C1": "23030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "연수구 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 5242.0,
+      "item_codes": {
+        "C1": "23040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "연수구 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 4961.0,
+      "item_codes": {
+        "C1": "23040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "연수구 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 4875.0,
+      "item_codes": {
+        "C1": "23040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "남동구 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 7943.0,
+      "item_codes": {
+        "C1": "23050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "남동구 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 8033.0,
+      "item_codes": {
+        "C1": "23050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "남동구 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 8370.0,
+      "item_codes": {
+        "C1": "23050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부평구 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 6905.0,
+      "item_codes": {
+        "C1": "23060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부평구 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 7747.0,
+      "item_codes": {
+        "C1": "23060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부평구 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 7636.0,
+      "item_codes": {
+        "C1": "23060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "계양구 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 5444.0,
+      "item_codes": {
+        "C1": "23070"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "계양구 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 5724.0,
+      "item_codes": {
+        "C1": "23070"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "계양구 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 5562.0,
+      "item_codes": {
+        "C1": "23070"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서구 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 12635.0,
+      "item_codes": {
+        "C1": "23080"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서구 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 18029.0,
+      "item_codes": {
+        "C1": "23080"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서구 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 14740.0,
+      "item_codes": {
+        "C1": "23080"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "미추홀구 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 9642.0,
+      "item_codes": {
+        "C1": "23090"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "미추홀구 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 9173.0,
+      "item_codes": {
+        "C1": "23090"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강화군 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 590.0,
+      "item_codes": {
+        "C1": "23310"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강화군 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 747.0,
+      "item_codes": {
+        "C1": "23310"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강화군 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 835.0,
+      "item_codes": {
+        "C1": "23310"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "옹진군 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 205.0,
+      "item_codes": {
+        "C1": "23320"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "옹진군 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 204.0,
+      "item_codes": {
+        "C1": "23320"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "옹진군 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 281.0,
+      "item_codes": {
+        "C1": "23320"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 운수업종사자수",
+      "timestamp": "2007",
+      "value": 25407.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 운수업종사자수",
+      "timestamp": "2008",
+      "value": 25269.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 운수업종사자수",
+      "timestamp": "2009",
+      "value": 26484.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 운수업종사자수",
+      "timestamp": "2010",
+      "value": 27259.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 운수업종사자수",
+      "timestamp": "2011",
+      "value": 27424.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 운수업종사자수",
+      "timestamp": "2012",
+      "value": 28199.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 운수업종사자수",
+      "timestamp": "2013",
+      "value": 27991.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 운수업종사자수",
+      "timestamp": "2014",
+      "value": 26514.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 운수업종사자수",
+      "timestamp": "2015",
+      "value": 28009.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 운수업종사자수",
+      "timestamp": "2016",
+      "value": 28119.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 28701.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 29917.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 30315.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동구 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 1585.0,
+      "item_codes": {
+        "C1": "24010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동구 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 1729.0,
+      "item_codes": {
+        "C1": "24010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동구 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 1610.0,
+      "item_codes": {
+        "C1": "24010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서구 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 6325.0,
+      "item_codes": {
+        "C1": "24020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서구 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 6035.0,
+      "item_codes": {
+        "C1": "24020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서구 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 6003.0,
+      "item_codes": {
+        "C1": "24020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "남구 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 3050.0,
+      "item_codes": {
+        "C1": "24030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "남구 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 3292.0,
+      "item_codes": {
+        "C1": "24030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "남구 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 2835.0,
+      "item_codes": {
+        "C1": "24030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "북구 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 8550.0,
+      "item_codes": {
+        "C1": "24040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "북구 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 9096.0,
+      "item_codes": {
+        "C1": "24040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "북구 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 9164.0,
+      "item_codes": {
+        "C1": "24040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광산구 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 9191.0,
+      "item_codes": {
+        "C1": "24050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광산구 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 9765.0,
+      "item_codes": {
+        "C1": "24050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광산구 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 10703.0,
+      "item_codes": {
+        "C1": "24050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 운수업종사자수",
+      "timestamp": "2007",
+      "value": 23373.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 운수업종사자수",
+      "timestamp": "2008",
+      "value": 25529.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 운수업종사자수",
+      "timestamp": "2009",
+      "value": 26215.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 운수업종사자수",
+      "timestamp": "2010",
+      "value": 30215.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 운수업종사자수",
+      "timestamp": "2011",
+      "value": 27817.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 운수업종사자수",
+      "timestamp": "2012",
+      "value": 28015.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 운수업종사자수",
+      "timestamp": "2013",
+      "value": 27209.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 운수업종사자수",
+      "timestamp": "2014",
+      "value": 28345.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 운수업종사자수",
+      "timestamp": "2015",
+      "value": 30650.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 운수업종사자수",
+      "timestamp": "2016",
+      "value": 31009.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 29999.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 35058.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 30414.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동구 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 7419.0,
+      "item_codes": {
+        "C1": "25010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동구 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 11869.0,
+      "item_codes": {
+        "C1": "25010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동구 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 7451.0,
+      "item_codes": {
+        "C1": "25010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "중구 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 5698.0,
+      "item_codes": {
+        "C1": "25020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "중구 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 6035.0,
+      "item_codes": {
+        "C1": "25020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "중구 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 5423.0,
+      "item_codes": {
+        "C1": "25020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서구 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 6460.0,
+      "item_codes": {
+        "C1": "25030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서구 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 6819.0,
+      "item_codes": {
+        "C1": "25030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서구 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 6665.0,
+      "item_codes": {
+        "C1": "25030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "유성구 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 3497.0,
+      "item_codes": {
+        "C1": "25040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "유성구 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 3732.0,
+      "item_codes": {
+        "C1": "25040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "유성구 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 3918.0,
+      "item_codes": {
+        "C1": "25040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대덕구 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 6925.0,
+      "item_codes": {
+        "C1": "25050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대덕구 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 6603.0,
+      "item_codes": {
+        "C1": "25050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대덕구 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 6957.0,
+      "item_codes": {
+        "C1": "25050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 운수업종사자수",
+      "timestamp": "2007",
+      "value": 18433.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 운수업종사자수",
+      "timestamp": "2008",
+      "value": 19621.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 운수업종사자수",
+      "timestamp": "2009",
+      "value": 20520.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 운수업종사자수",
+      "timestamp": "2010",
+      "value": 21245.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 운수업종사자수",
+      "timestamp": "2011",
+      "value": 23137.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 운수업종사자수",
+      "timestamp": "2012",
+      "value": 21553.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 운수업종사자수",
+      "timestamp": "2013",
+      "value": 22505.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 운수업종사자수",
+      "timestamp": "2014",
+      "value": 22981.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 운수업종사자수",
+      "timestamp": "2015",
+      "value": 24843.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 운수업종사자수",
+      "timestamp": "2016",
+      "value": 25033.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 24347.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 24396.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 23770.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "중구 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 2629.0,
+      "item_codes": {
+        "C1": "26010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "중구 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 2743.0,
+      "item_codes": {
+        "C1": "26010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "중구 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 2870.0,
+      "item_codes": {
+        "C1": "26010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "남구 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 9260.0,
+      "item_codes": {
+        "C1": "26020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "남구 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 9701.0,
+      "item_codes": {
+        "C1": "26020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "남구 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 9655.0,
+      "item_codes": {
+        "C1": "26020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동구 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 1009.0,
+      "item_codes": {
+        "C1": "26030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동구 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 1101.0,
+      "item_codes": {
+        "C1": "26030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동구 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 1286.0,
+      "item_codes": {
+        "C1": "26030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "북구 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 4618.0,
+      "item_codes": {
+        "C1": "26040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "북구 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 4349.0,
+      "item_codes": {
+        "C1": "26040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "북구 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 4030.0,
+      "item_codes": {
+        "C1": "26040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울주군 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 6831.0,
+      "item_codes": {
+        "C1": "26310"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울주군 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 6502.0,
+      "item_codes": {
+        "C1": "26310"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울주군 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 5929.0,
+      "item_codes": {
+        "C1": "26310"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "세종특별자치시 - 운수업종사자수",
+      "timestamp": "2012",
+      "value": 1869.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "세종특별자치시 - 운수업종사자수",
+      "timestamp": "2013",
+      "value": 2203.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "세종특별자치시 - 운수업종사자수",
+      "timestamp": "2014",
+      "value": 2416.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "세종특별자치시 - 운수업종사자수",
+      "timestamp": "2015",
+      "value": 2212.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "세종특별자치시 - 운수업종사자수",
+      "timestamp": "2016",
+      "value": 2648.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "세종특별자치시 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 2842.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "세종특별자치시 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 3630.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "세종특별자치시 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 4096.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 운수업종사자수",
+      "timestamp": "2007",
+      "value": 167635.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 운수업종사자수",
+      "timestamp": "2008",
+      "value": 178417.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 운수업종사자수",
+      "timestamp": "2009",
+      "value": 186850.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 운수업종사자수",
+      "timestamp": "2010",
+      "value": 191326.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 운수업종사자수",
+      "timestamp": "2011",
+      "value": 197922.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 운수업종사자수",
+      "timestamp": "2012",
+      "value": 203674.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 운수업종사자수",
+      "timestamp": "2013",
+      "value": 212140.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 운수업종사자수",
+      "timestamp": "2014",
+      "value": 221695.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 운수업종사자수",
+      "timestamp": "2015",
+      "value": 227059.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 운수업종사자수",
+      "timestamp": "2016",
+      "value": 235783.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 237171.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 250124.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 263440.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "수원시 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 18536.0,
+      "item_codes": {
+        "C1": "31010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "수원시 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 18589.0,
+      "item_codes": {
+        "C1": "31010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "수원시 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 18099.0,
+      "item_codes": {
+        "C1": "31010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "성남시 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 15336.0,
+      "item_codes": {
+        "C1": "31020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "성남시 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 15141.0,
+      "item_codes": {
+        "C1": "31020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "성남시 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 15609.0,
+      "item_codes": {
+        "C1": "31020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "의정부시 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 5720.0,
+      "item_codes": {
+        "C1": "31030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "의정부시 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 6150.0,
+      "item_codes": {
+        "C1": "31030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "의정부시 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 5943.0,
+      "item_codes": {
+        "C1": "31030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "안양시 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 11429.0,
+      "item_codes": {
+        "C1": "31040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "안양시 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 11174.0,
+      "item_codes": {
+        "C1": "31040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "안양시 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 12708.0,
+      "item_codes": {
+        "C1": "31040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부천시 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 11039.0,
+      "item_codes": {
+        "C1": "31050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부천시 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 11041.0,
+      "item_codes": {
+        "C1": "31050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부천시 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 11358.0,
+      "item_codes": {
+        "C1": "31050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광명시 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 5689.0,
+      "item_codes": {
+        "C1": "31060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광명시 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 5579.0,
+      "item_codes": {
+        "C1": "31060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광명시 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 5410.0,
+      "item_codes": {
+        "C1": "31060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "평택시 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 12660.0,
+      "item_codes": {
+        "C1": "31070"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "평택시 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 13490.0,
+      "item_codes": {
+        "C1": "31070"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "평택시 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 14328.0,
+      "item_codes": {
+        "C1": "31070"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동두천시 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 1302.0,
+      "item_codes": {
+        "C1": "31080"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동두천시 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 1352.0,
+      "item_codes": {
+        "C1": "31080"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동두천시 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 1417.0,
+      "item_codes": {
+        "C1": "31080"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "안산시 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 12728.0,
+      "item_codes": {
+        "C1": "31090"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "안산시 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 13357.0,
+      "item_codes": {
+        "C1": "31090"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "안산시 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 14308.0,
+      "item_codes": {
+        "C1": "31090"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "고양시 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 17992.0,
+      "item_codes": {
+        "C1": "31100"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "고양시 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 19324.0,
+      "item_codes": {
+        "C1": "31100"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "고양시 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 19277.0,
+      "item_codes": {
+        "C1": "31100"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "과천시 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 926.0,
+      "item_codes": {
+        "C1": "31110"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "과천시 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 946.0,
+      "item_codes": {
+        "C1": "31110"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "과천시 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 861.0,
+      "item_codes": {
+        "C1": "31110"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "구리시 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 3791.0,
+      "item_codes": {
+        "C1": "31120"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "구리시 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 4041.0,
+      "item_codes": {
+        "C1": "31120"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "구리시 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 4106.0,
+      "item_codes": {
+        "C1": "31120"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "남양주시 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 8400.0,
+      "item_codes": {
+        "C1": "31130"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "남양주시 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 8792.0,
+      "item_codes": {
+        "C1": "31130"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "남양주시 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 8622.0,
+      "item_codes": {
+        "C1": "31130"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "오산시 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 3277.0,
+      "item_codes": {
+        "C1": "31140"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "오산시 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 3894.0,
+      "item_codes": {
+        "C1": "31140"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "오산시 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 3865.0,
+      "item_codes": {
+        "C1": "31140"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "시흥시 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 7211.0,
+      "item_codes": {
+        "C1": "31150"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "시흥시 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 7623.0,
+      "item_codes": {
+        "C1": "31150"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "시흥시 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 8492.0,
+      "item_codes": {
+        "C1": "31150"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "군포시 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 9298.0,
+      "item_codes": {
+        "C1": "31160"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "군포시 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 9972.0,
+      "item_codes": {
+        "C1": "31160"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "군포시 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 10388.0,
+      "item_codes": {
+        "C1": "31160"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "의왕시 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 4476.0,
+      "item_codes": {
+        "C1": "31170"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "의왕시 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 4954.0,
+      "item_codes": {
+        "C1": "31170"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "의왕시 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 4725.0,
+      "item_codes": {
+        "C1": "31170"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "하남시 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 4112.0,
+      "item_codes": {
+        "C1": "31180"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "하남시 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 4552.0,
+      "item_codes": {
+        "C1": "31180"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "하남시 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 4502.0,
+      "item_codes": {
+        "C1": "31180"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "용인시 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 18773.0,
+      "item_codes": {
+        "C1": "31190"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "용인시 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 20525.0,
+      "item_codes": {
+        "C1": "31190"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "용인시 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 20984.0,
+      "item_codes": {
+        "C1": "31190"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "파주시 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 9703.0,
+      "item_codes": {
+        "C1": "31200"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "파주시 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 10450.0,
+      "item_codes": {
+        "C1": "31200"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "파주시 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 11194.0,
+      "item_codes": {
+        "C1": "31200"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "이천시 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 10339.0,
+      "item_codes": {
+        "C1": "31210"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "이천시 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 11510.0,
+      "item_codes": {
+        "C1": "31210"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "이천시 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 12287.0,
+      "item_codes": {
+        "C1": "31210"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "안성시 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 4615.0,
+      "item_codes": {
+        "C1": "31220"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "안성시 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 4587.0,
+      "item_codes": {
+        "C1": "31220"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "안성시 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 4889.0,
+      "item_codes": {
+        "C1": "31220"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "김포시 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 6678.0,
+      "item_codes": {
+        "C1": "31230"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "김포시 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 6810.0,
+      "item_codes": {
+        "C1": "31230"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "김포시 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 7961.0,
+      "item_codes": {
+        "C1": "31230"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "화성시 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 12625.0,
+      "item_codes": {
+        "C1": "31240"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "화성시 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 14610.0,
+      "item_codes": {
+        "C1": "31240"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "화성시 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 18676.0,
+      "item_codes": {
+        "C1": "31240"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주시 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 9848.0,
+      "item_codes": {
+        "C1": "31250"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주시 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 10543.0,
+      "item_codes": {
+        "C1": "31250"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주시 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 10234.0,
+      "item_codes": {
+        "C1": "31250"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "양주시 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 3423.0,
+      "item_codes": {
+        "C1": "31260"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "양주시 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 3701.0,
+      "item_codes": {
+        "C1": "31260"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "양주시 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 4111.0,
+      "item_codes": {
+        "C1": "31260"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "포천시 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 3132.0,
+      "item_codes": {
+        "C1": "31270"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "포천시 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 3116.0,
+      "item_codes": {
+        "C1": "31270"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "포천시 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 3548.0,
+      "item_codes": {
+        "C1": "31270"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "여주시 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 1975.0,
+      "item_codes": {
+        "C1": "31280"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "여주시 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 2081.0,
+      "item_codes": {
+        "C1": "31280"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "여주시 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 3082.0,
+      "item_codes": {
+        "C1": "31280"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "연천군 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 400.0,
+      "item_codes": {
+        "C1": "31350"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "연천군 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 475.0,
+      "item_codes": {
+        "C1": "31350"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "연천군 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 582.0,
+      "item_codes": {
+        "C1": "31350"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "가평군 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 696.0,
+      "item_codes": {
+        "C1": "31370"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "가평군 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 746.0,
+      "item_codes": {
+        "C1": "31370"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "가평군 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 738.0,
+      "item_codes": {
+        "C1": "31370"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "양평군 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 1042.0,
+      "item_codes": {
+        "C1": "31380"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "양평군 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 999.0,
+      "item_codes": {
+        "C1": "31380"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "양평군 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 1136.0,
+      "item_codes": {
+        "C1": "31380"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 운수업종사자수",
+      "timestamp": "2007",
+      "value": 23254.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 운수업종사자수",
+      "timestamp": "2008",
+      "value": 24986.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 운수업종사자수",
+      "timestamp": "2009",
+      "value": 26265.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 운수업종사자수",
+      "timestamp": "2010",
+      "value": 24965.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 운수업종사자수",
+      "timestamp": "2011",
+      "value": 25066.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 운수업종사자수",
+      "timestamp": "2012",
+      "value": 24985.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 운수업종사자수",
+      "timestamp": "2013",
+      "value": 25515.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 운수업종사자수",
+      "timestamp": "2014",
+      "value": 25925.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 운수업종사자수",
+      "timestamp": "2015",
+      "value": 26153.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 운수업종사자수",
+      "timestamp": "2016",
+      "value": 26653.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 26928.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 26974.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 28574.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "춘천시 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 5108.0,
+      "item_codes": {
+        "C1": "32010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "춘천시 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 5116.0,
+      "item_codes": {
+        "C1": "32010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "춘천시 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 5430.0,
+      "item_codes": {
+        "C1": "32010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "원주시 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 6064.0,
+      "item_codes": {
+        "C1": "32020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "원주시 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 6395.0,
+      "item_codes": {
+        "C1": "32020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "원주시 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 6588.0,
+      "item_codes": {
+        "C1": "32020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강릉시 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 4528.0,
+      "item_codes": {
+        "C1": "32030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강릉시 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 4473.0,
+      "item_codes": {
+        "C1": "32030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강릉시 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 4610.0,
+      "item_codes": {
+        "C1": "32030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동해시 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 2678.0,
+      "item_codes": {
+        "C1": "32040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동해시 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 2415.0,
+      "item_codes": {
+        "C1": "32040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "동해시 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 2578.0,
+      "item_codes": {
+        "C1": "32040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "태백시 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 1071.0,
+      "item_codes": {
+        "C1": "32050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "태백시 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 1125.0,
+      "item_codes": {
+        "C1": "32050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "태백시 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 1150.0,
+      "item_codes": {
+        "C1": "32050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "속초시 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 1784.0,
+      "item_codes": {
+        "C1": "32060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "속초시 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 1819.0,
+      "item_codes": {
+        "C1": "32060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "속초시 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 1916.0,
+      "item_codes": {
+        "C1": "32060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "삼척시 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 833.0,
+      "item_codes": {
+        "C1": "32070"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "삼척시 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 881.0,
+      "item_codes": {
+        "C1": "32070"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "삼척시 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 935.0,
+      "item_codes": {
+        "C1": "32070"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "홍천군 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 1120.0,
+      "item_codes": {
+        "C1": "32310"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "홍천군 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 1040.0,
+      "item_codes": {
+        "C1": "32310"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "홍천군 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 1176.0,
+      "item_codes": {
+        "C1": "32310"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "횡성군 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 474.0,
+      "item_codes": {
+        "C1": "32320"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "횡성군 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 368.0,
+      "item_codes": {
+        "C1": "32320"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "횡성군 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 407.0,
+      "item_codes": {
+        "C1": "32320"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영월군 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 598.0,
+      "item_codes": {
+        "C1": "32330"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영월군 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 573.0,
+      "item_codes": {
+        "C1": "32330"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영월군 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 533.0,
+      "item_codes": {
+        "C1": "32330"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "평창군 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 445.0,
+      "item_codes": {
+        "C1": "32340"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "평창군 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 451.0,
+      "item_codes": {
+        "C1": "32340"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "평창군 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 517.0,
+      "item_codes": {
+        "C1": "32340"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "정선군 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 598.0,
+      "item_codes": {
+        "C1": "32350"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "정선군 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 606.0,
+      "item_codes": {
+        "C1": "32350"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "정선군 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 613.0,
+      "item_codes": {
+        "C1": "32350"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "철원군 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 378.0,
+      "item_codes": {
+        "C1": "32360"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "철원군 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 398.0,
+      "item_codes": {
+        "C1": "32360"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "철원군 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 382.0,
+      "item_codes": {
+        "C1": "32360"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "화천군 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 234.0,
+      "item_codes": {
+        "C1": "32370"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "화천군 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 214.0,
+      "item_codes": {
+        "C1": "32370"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "화천군 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 233.0,
+      "item_codes": {
+        "C1": "32370"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "양구군 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 206.0,
+      "item_codes": {
+        "C1": "32380"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "양구군 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 220.0,
+      "item_codes": {
+        "C1": "32380"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "양구군 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 222.0,
+      "item_codes": {
+        "C1": "32380"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인제군 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 211.0,
+      "item_codes": {
+        "C1": "32390"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인제군 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 239.0,
+      "item_codes": {
+        "C1": "32390"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인제군 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 274.0,
+      "item_codes": {
+        "C1": "32390"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "고성군 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 252.0,
+      "item_codes": {
+        "C1": "32400"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "고성군 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 242.0,
+      "item_codes": {
+        "C1": "32400"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "고성군 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 253.0,
+      "item_codes": {
+        "C1": "32400"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "양양군 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 346.0,
+      "item_codes": {
+        "C1": "32410"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "양양군 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 399.0,
+      "item_codes": {
+        "C1": "32410"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "양양군 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 757.0,
+      "item_codes": {
+        "C1": "32410"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 운수업종사자수",
+      "timestamp": "2007",
+      "value": 23327.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 운수업종사자수",
+      "timestamp": "2008",
+      "value": 24893.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 운수업종사자수",
+      "timestamp": "2009",
+      "value": 24406.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 운수업종사자수",
+      "timestamp": "2010",
+      "value": 24620.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 운수업종사자수",
+      "timestamp": "2011",
+      "value": 24997.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 운수업종사자수",
+      "timestamp": "2012",
+      "value": 25884.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 운수업종사자수",
+      "timestamp": "2013",
+      "value": 25923.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 운수업종사자수",
+      "timestamp": "2014",
+      "value": 26842.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 운수업종사자수",
+      "timestamp": "2015",
+      "value": 26622.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 운수업종사자수",
+      "timestamp": "2016",
+      "value": 28963.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 28525.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 29805.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 30878.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충주시 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 3666.0,
+      "item_codes": {
+        "C1": "33020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충주시 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 3957.0,
+      "item_codes": {
+        "C1": "33020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충주시 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 4091.0,
+      "item_codes": {
+        "C1": "33020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제천시 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 4029.0,
+      "item_codes": {
+        "C1": "33030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제천시 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 4134.0,
+      "item_codes": {
+        "C1": "33030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제천시 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 4197.0,
+      "item_codes": {
+        "C1": "33030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "청주시 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 13437.0,
+      "item_codes": {
+        "C1": "33040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "청주시 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 14168.0,
+      "item_codes": {
+        "C1": "33040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "청주시 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 14265.0,
+      "item_codes": {
+        "C1": "33040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "보은군 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 415.0,
+      "item_codes": {
+        "C1": "33320"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "보은군 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 444.0,
+      "item_codes": {
+        "C1": "33320"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "보은군 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 528.0,
+      "item_codes": {
+        "C1": "33320"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "옥천군 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 1146.0,
+      "item_codes": {
+        "C1": "33330"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "옥천군 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 1131.0,
+      "item_codes": {
+        "C1": "33330"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "옥천군 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 1210.0,
+      "item_codes": {
+        "C1": "33330"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영동군 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 730.0,
+      "item_codes": {
+        "C1": "33340"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영동군 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 726.0,
+      "item_codes": {
+        "C1": "33340"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영동군 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 712.0,
+      "item_codes": {
+        "C1": "33340"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "진천군 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 1221.0,
+      "item_codes": {
+        "C1": "33350"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "진천군 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 1309.0,
+      "item_codes": {
+        "C1": "33350"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "진천군 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 1676.0,
+      "item_codes": {
+        "C1": "33350"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "괴산군 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 418.0,
+      "item_codes": {
+        "C1": "33360"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "괴산군 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 540.0,
+      "item_codes": {
+        "C1": "33360"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "괴산군 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 606.0,
+      "item_codes": {
+        "C1": "33360"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "음성군 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 2148.0,
+      "item_codes": {
+        "C1": "33370"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "음성군 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 2024.0,
+      "item_codes": {
+        "C1": "33370"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "음성군 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 2187.0,
+      "item_codes": {
+        "C1": "33370"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "단양군 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 749.0,
+      "item_codes": {
+        "C1": "33380"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "단양군 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 808.0,
+      "item_codes": {
+        "C1": "33380"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "단양군 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 838.0,
+      "item_codes": {
+        "C1": "33380"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "증평군 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 566.0,
+      "item_codes": {
+        "C1": "33390"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "증평군 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 564.0,
+      "item_codes": {
+        "C1": "33390"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "증평군 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 568.0,
+      "item_codes": {
+        "C1": "33390"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 운수업종사자수",
+      "timestamp": "2007",
+      "value": 25343.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 운수업종사자수",
+      "timestamp": "2008",
+      "value": 27281.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 운수업종사자수",
+      "timestamp": "2009",
+      "value": 28590.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 운수업종사자수",
+      "timestamp": "2010",
+      "value": 29078.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 운수업종사자수",
+      "timestamp": "2011",
+      "value": 30118.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 운수업종사자수",
+      "timestamp": "2012",
+      "value": 29594.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 운수업종사자수",
+      "timestamp": "2013",
+      "value": 30655.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 운수업종사자수",
+      "timestamp": "2014",
+      "value": 31425.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 운수업종사자수",
+      "timestamp": "2015",
+      "value": 33740.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 운수업종사자수",
+      "timestamp": "2016",
+      "value": 35182.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 36310.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 37604.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 39701.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "천안시 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 12007.0,
+      "item_codes": {
+        "C1": "34010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "천안시 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 12590.0,
+      "item_codes": {
+        "C1": "34010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "천안시 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 12630.0,
+      "item_codes": {
+        "C1": "34010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "공주시 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 1982.0,
+      "item_codes": {
+        "C1": "34020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "공주시 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 1987.0,
+      "item_codes": {
+        "C1": "34020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "공주시 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 2367.0,
+      "item_codes": {
+        "C1": "34020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "보령시 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 1293.0,
+      "item_codes": {
+        "C1": "34030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "보령시 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 1362.0,
+      "item_codes": {
+        "C1": "34030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "보령시 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 1612.0,
+      "item_codes": {
+        "C1": "34030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "아산시 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 4920.0,
+      "item_codes": {
+        "C1": "34040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "아산시 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 5266.0,
+      "item_codes": {
+        "C1": "34040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "아산시 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 5634.0,
+      "item_codes": {
+        "C1": "34040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서산시 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 3442.0,
+      "item_codes": {
+        "C1": "34050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서산시 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 3610.0,
+      "item_codes": {
+        "C1": "34050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서산시 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 3487.0,
+      "item_codes": {
+        "C1": "34050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "논산시 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 2033.0,
+      "item_codes": {
+        "C1": "34060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "논산시 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 2046.0,
+      "item_codes": {
+        "C1": "34060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "논산시 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 2539.0,
+      "item_codes": {
+        "C1": "34060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "계룡시 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 570.0,
+      "item_codes": {
+        "C1": "34070"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "계룡시 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 606.0,
+      "item_codes": {
+        "C1": "34070"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "계룡시 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 615.0,
+      "item_codes": {
+        "C1": "34070"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "당진시 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 3672.0,
+      "item_codes": {
+        "C1": "34080"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "당진시 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 3887.0,
+      "item_codes": {
+        "C1": "34080"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "당진시 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 3878.0,
+      "item_codes": {
+        "C1": "34080"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "금산군 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 793.0,
+      "item_codes": {
+        "C1": "34310"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "금산군 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 714.0,
+      "item_codes": {
+        "C1": "34310"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "금산군 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 941.0,
+      "item_codes": {
+        "C1": "34310"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부여군 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 916.0,
+      "item_codes": {
+        "C1": "34330"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부여군 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 862.0,
+      "item_codes": {
+        "C1": "34330"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부여군 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 997.0,
+      "item_codes": {
+        "C1": "34330"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서천군 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 984.0,
+      "item_codes": {
+        "C1": "34340"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서천군 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 912.0,
+      "item_codes": {
+        "C1": "34340"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서천군 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 1028.0,
+      "item_codes": {
+        "C1": "34340"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "청양군 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 484.0,
+      "item_codes": {
+        "C1": "34350"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "청양군 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 384.0,
+      "item_codes": {
+        "C1": "34350"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "청양군 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 438.0,
+      "item_codes": {
+        "C1": "34350"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "홍성군 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 1309.0,
+      "item_codes": {
+        "C1": "34360"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "홍성군 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 1342.0,
+      "item_codes": {
+        "C1": "34360"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "홍성군 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 1321.0,
+      "item_codes": {
+        "C1": "34360"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "예산군 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 1174.0,
+      "item_codes": {
+        "C1": "34370"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "예산군 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 1250.0,
+      "item_codes": {
+        "C1": "34370"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "예산군 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 1343.0,
+      "item_codes": {
+        "C1": "34370"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "태안군 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 731.0,
+      "item_codes": {
+        "C1": "34380"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "태안군 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 786.0,
+      "item_codes": {
+        "C1": "34380"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "태안군 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 871.0,
+      "item_codes": {
+        "C1": "34380"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 운수업종사자수",
+      "timestamp": "2007",
+      "value": 25947.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 운수업종사자수",
+      "timestamp": "2008",
+      "value": 27103.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 운수업종사자수",
+      "timestamp": "2009",
+      "value": 29117.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 운수업종사자수",
+      "timestamp": "2010",
+      "value": 29050.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 운수업종사자수",
+      "timestamp": "2011",
+      "value": 28276.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 운수업종사자수",
+      "timestamp": "2012",
+      "value": 31401.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 운수업종사자수",
+      "timestamp": "2013",
+      "value": 31503.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 운수업종사자수",
+      "timestamp": "2014",
+      "value": 32384.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 운수업종사자수",
+      "timestamp": "2015",
+      "value": 32295.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 운수업종사자수",
+      "timestamp": "2016",
+      "value": 32211.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 31484.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 30926.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 31705.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전주시 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 11054.0,
+      "item_codes": {
+        "C1": "35010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전주시 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 10883.0,
+      "item_codes": {
+        "C1": "35010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전주시 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 11228.0,
+      "item_codes": {
+        "C1": "35010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "군산시 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 5689.0,
+      "item_codes": {
+        "C1": "35020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "군산시 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 5577.0,
+      "item_codes": {
+        "C1": "35020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "군산시 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 5499.0,
+      "item_codes": {
+        "C1": "35020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "익산시 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 5597.0,
+      "item_codes": {
+        "C1": "35030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "익산시 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 5780.0,
+      "item_codes": {
+        "C1": "35030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "익산시 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 5934.0,
+      "item_codes": {
+        "C1": "35030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "정읍시 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 1868.0,
+      "item_codes": {
+        "C1": "35040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "정읍시 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 1708.0,
+      "item_codes": {
+        "C1": "35040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "정읍시 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 1746.0,
+      "item_codes": {
+        "C1": "35040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "남원시 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 1084.0,
+      "item_codes": {
+        "C1": "35050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "남원시 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 1033.0,
+      "item_codes": {
+        "C1": "35050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "남원시 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 1210.0,
+      "item_codes": {
+        "C1": "35050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "김제시 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 1518.0,
+      "item_codes": {
+        "C1": "35060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "김제시 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 1484.0,
+      "item_codes": {
+        "C1": "35060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "김제시 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 1455.0,
+      "item_codes": {
+        "C1": "35060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "완주군 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 1981.0,
+      "item_codes": {
+        "C1": "35310"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "완주군 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 1810.0,
+      "item_codes": {
+        "C1": "35310"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "완주군 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 1857.0,
+      "item_codes": {
+        "C1": "35310"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "진안군 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 301.0,
+      "item_codes": {
+        "C1": "35320"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "진안군 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 361.0,
+      "item_codes": {
+        "C1": "35320"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "진안군 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 322.0,
+      "item_codes": {
+        "C1": "35320"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "무주군 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 313.0,
+      "item_codes": {
+        "C1": "35330"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "무주군 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 266.0,
+      "item_codes": {
+        "C1": "35330"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "무주군 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 384.0,
+      "item_codes": {
+        "C1": "35330"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "장수군 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 86.0,
+      "item_codes": {
+        "C1": "35340"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "장수군 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 100.0,
+      "item_codes": {
+        "C1": "35340"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "장수군 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 110.0,
+      "item_codes": {
+        "C1": "35340"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "임실군 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 344.0,
+      "item_codes": {
+        "C1": "35350"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "임실군 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 329.0,
+      "item_codes": {
+        "C1": "35350"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "임실군 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 336.0,
+      "item_codes": {
+        "C1": "35350"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "순창군 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 236.0,
+      "item_codes": {
+        "C1": "35360"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "순창군 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 235.0,
+      "item_codes": {
+        "C1": "35360"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "순창군 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 276.0,
+      "item_codes": {
+        "C1": "35360"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "고창군 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 689.0,
+      "item_codes": {
+        "C1": "35370"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "고창군 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 656.0,
+      "item_codes": {
+        "C1": "35370"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "고창군 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 643.0,
+      "item_codes": {
+        "C1": "35370"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부안군 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 724.0,
+      "item_codes": {
+        "C1": "35380"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부안군 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 704.0,
+      "item_codes": {
+        "C1": "35380"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부안군 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 705.0,
+      "item_codes": {
+        "C1": "35380"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 운수업종사자수",
+      "timestamp": "2007",
+      "value": 27211.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 운수업종사자수",
+      "timestamp": "2008",
+      "value": 28067.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 운수업종사자수",
+      "timestamp": "2009",
+      "value": 30762.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 운수업종사자수",
+      "timestamp": "2010",
+      "value": 31644.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 운수업종사자수",
+      "timestamp": "2011",
+      "value": 30794.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 운수업종사자수",
+      "timestamp": "2012",
+      "value": 32479.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 운수업종사자수",
+      "timestamp": "2013",
+      "value": 31983.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 운수업종사자수",
+      "timestamp": "2014",
+      "value": 33312.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 운수업종사자수",
+      "timestamp": "2015",
+      "value": 37941.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 운수업종사자수",
+      "timestamp": "2016",
+      "value": 37698.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 38728.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 38408.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 41685.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "목포시 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 5842.0,
+      "item_codes": {
+        "C1": "36010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "목포시 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 5546.0,
+      "item_codes": {
+        "C1": "36010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "목포시 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 5841.0,
+      "item_codes": {
+        "C1": "36010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "여수시 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 7904.0,
+      "item_codes": {
+        "C1": "36020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "여수시 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 7991.0,
+      "item_codes": {
+        "C1": "36020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "여수시 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 8484.0,
+      "item_codes": {
+        "C1": "36020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "순천시 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 5849.0,
+      "item_codes": {
+        "C1": "36030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "순천시 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 5608.0,
+      "item_codes": {
+        "C1": "36030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "순천시 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 6186.0,
+      "item_codes": {
+        "C1": "36030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "나주시 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 1195.0,
+      "item_codes": {
+        "C1": "36040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "나주시 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 1361.0,
+      "item_codes": {
+        "C1": "36040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "나주시 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 1639.0,
+      "item_codes": {
+        "C1": "36040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광양시 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 6981.0,
+      "item_codes": {
+        "C1": "36060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광양시 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 7224.0,
+      "item_codes": {
+        "C1": "36060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광양시 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 7967.0,
+      "item_codes": {
+        "C1": "36060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "담양군 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 1018.0,
+      "item_codes": {
+        "C1": "36310"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "담양군 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 1019.0,
+      "item_codes": {
+        "C1": "36310"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "담양군 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 960.0,
+      "item_codes": {
+        "C1": "36310"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "곡성군 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 410.0,
+      "item_codes": {
+        "C1": "36320"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "곡성군 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 405.0,
+      "item_codes": {
+        "C1": "36320"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "곡성군 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 631.0,
+      "item_codes": {
+        "C1": "36320"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "구례군 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 358.0,
+      "item_codes": {
+        "C1": "36330"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "구례군 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 437.0,
+      "item_codes": {
+        "C1": "36330"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "구례군 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 473.0,
+      "item_codes": {
+        "C1": "36330"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "고흥군 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 689.0,
+      "item_codes": {
+        "C1": "36350"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "고흥군 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 725.0,
+      "item_codes": {
+        "C1": "36350"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "고흥군 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 764.0,
+      "item_codes": {
+        "C1": "36350"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "보성군 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 516.0,
+      "item_codes": {
+        "C1": "36360"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "보성군 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 494.0,
+      "item_codes": {
+        "C1": "36360"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "보성군 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 653.0,
+      "item_codes": {
+        "C1": "36360"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "화순군 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 976.0,
+      "item_codes": {
+        "C1": "36370"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "화순군 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 1000.0,
+      "item_codes": {
+        "C1": "36370"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "화순군 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 1069.0,
+      "item_codes": {
+        "C1": "36370"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "장흥군 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 434.0,
+      "item_codes": {
+        "C1": "36380"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "장흥군 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 458.0,
+      "item_codes": {
+        "C1": "36380"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "장흥군 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 543.0,
+      "item_codes": {
+        "C1": "36380"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강진군 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 404.0,
+      "item_codes": {
+        "C1": "36390"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강진군 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 362.0,
+      "item_codes": {
+        "C1": "36390"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강진군 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 454.0,
+      "item_codes": {
+        "C1": "36390"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "해남군 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 821.0,
+      "item_codes": {
+        "C1": "36400"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "해남군 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 758.0,
+      "item_codes": {
+        "C1": "36400"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "해남군 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 777.0,
+      "item_codes": {
+        "C1": "36400"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영암군 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 1350.0,
+      "item_codes": {
+        "C1": "36410"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영암군 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 1021.0,
+      "item_codes": {
+        "C1": "36410"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영암군 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 1031.0,
+      "item_codes": {
+        "C1": "36410"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "무안군 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 806.0,
+      "item_codes": {
+        "C1": "36420"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "무안군 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 844.0,
+      "item_codes": {
+        "C1": "36420"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "무안군 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 784.0,
+      "item_codes": {
+        "C1": "36420"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "함평군 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 497.0,
+      "item_codes": {
+        "C1": "36430"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "함평군 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 513.0,
+      "item_codes": {
+        "C1": "36430"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "함평군 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 590.0,
+      "item_codes": {
+        "C1": "36430"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영광군 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 530.0,
+      "item_codes": {
+        "C1": "36440"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영광군 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 568.0,
+      "item_codes": {
+        "C1": "36440"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영광군 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 561.0,
+      "item_codes": {
+        "C1": "36440"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "장성군 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 876.0,
+      "item_codes": {
+        "C1": "36450"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "장성군 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 784.0,
+      "item_codes": {
+        "C1": "36450"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "장성군 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 873.0,
+      "item_codes": {
+        "C1": "36450"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "완도군 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 635.0,
+      "item_codes": {
+        "C1": "36460"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "완도군 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 697.0,
+      "item_codes": {
+        "C1": "36460"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "완도군 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 760.0,
+      "item_codes": {
+        "C1": "36460"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "진도군 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 270.0,
+      "item_codes": {
+        "C1": "36470"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "진도군 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 277.0,
+      "item_codes": {
+        "C1": "36470"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "진도군 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 258.0,
+      "item_codes": {
+        "C1": "36470"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "신안군 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 367.0,
+      "item_codes": {
+        "C1": "36480"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "신안군 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 316.0,
+      "item_codes": {
+        "C1": "36480"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "신안군 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 387.0,
+      "item_codes": {
+        "C1": "36480"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 운수업종사자수",
+      "timestamp": "2007",
+      "value": 35106.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 운수업종사자수",
+      "timestamp": "2008",
+      "value": 37499.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 운수업종사자수",
+      "timestamp": "2009",
+      "value": 37859.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 운수업종사자수",
+      "timestamp": "2010",
+      "value": 39545.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 운수업종사자수",
+      "timestamp": "2011",
+      "value": 39420.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 운수업종사자수",
+      "timestamp": "2012",
+      "value": 40028.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 운수업종사자수",
+      "timestamp": "2013",
+      "value": 40539.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 운수업종사자수",
+      "timestamp": "2014",
+      "value": 41578.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 운수업종사자수",
+      "timestamp": "2015",
+      "value": 43995.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 운수업종사자수",
+      "timestamp": "2016",
+      "value": 44811.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 46931.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 47436.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 49004.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "포항시 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 10937.0,
+      "item_codes": {
+        "C1": "37010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "포항시 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 10703.0,
+      "item_codes": {
+        "C1": "37010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "포항시 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 11409.0,
+      "item_codes": {
+        "C1": "37010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경주시 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 4257.0,
+      "item_codes": {
+        "C1": "37020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경주시 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 4578.0,
+      "item_codes": {
+        "C1": "37020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경주시 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 4692.0,
+      "item_codes": {
+        "C1": "37020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "김천시 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 3569.0,
+      "item_codes": {
+        "C1": "37030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "김천시 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 3750.0,
+      "item_codes": {
+        "C1": "37030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "김천시 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 3615.0,
+      "item_codes": {
+        "C1": "37030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "안동시 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 2254.0,
+      "item_codes": {
+        "C1": "37040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "안동시 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 2407.0,
+      "item_codes": {
+        "C1": "37040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "안동시 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 2445.0,
+      "item_codes": {
+        "C1": "37040"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "구미시 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 7242.0,
+      "item_codes": {
+        "C1": "37050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "구미시 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 7299.0,
+      "item_codes": {
+        "C1": "37050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "구미시 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 7025.0,
+      "item_codes": {
+        "C1": "37050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영주시 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 2411.0,
+      "item_codes": {
+        "C1": "37060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영주시 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 2199.0,
+      "item_codes": {
+        "C1": "37060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영주시 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 2289.0,
+      "item_codes": {
+        "C1": "37060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영천시 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 1322.0,
+      "item_codes": {
+        "C1": "37070"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영천시 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 1317.0,
+      "item_codes": {
+        "C1": "37070"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영천시 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 1449.0,
+      "item_codes": {
+        "C1": "37070"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "상주시 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 1470.0,
+      "item_codes": {
+        "C1": "37080"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "상주시 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 1387.0,
+      "item_codes": {
+        "C1": "37080"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "상주시 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 1545.0,
+      "item_codes": {
+        "C1": "37080"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "문경시 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 869.0,
+      "item_codes": {
+        "C1": "37090"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "문경시 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 895.0,
+      "item_codes": {
+        "C1": "37090"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "문경시 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 996.0,
+      "item_codes": {
+        "C1": "37090"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경산시 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 4415.0,
+      "item_codes": {
+        "C1": "37100"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경산시 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 4713.0,
+      "item_codes": {
+        "C1": "37100"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경산시 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 4954.0,
+      "item_codes": {
+        "C1": "37100"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "군위군 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 275.0,
+      "item_codes": {
+        "C1": "37310"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "군위군 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 272.0,
+      "item_codes": {
+        "C1": "37310"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "군위군 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 339.0,
+      "item_codes": {
+        "C1": "37310"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "의성군 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 446.0,
+      "item_codes": {
+        "C1": "37320"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "의성군 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 500.0,
+      "item_codes": {
+        "C1": "37320"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "의성군 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 575.0,
+      "item_codes": {
+        "C1": "37320"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "청송군 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 260.0,
+      "item_codes": {
+        "C1": "37330"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "청송군 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 282.0,
+      "item_codes": {
+        "C1": "37330"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "청송군 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 307.0,
+      "item_codes": {
+        "C1": "37330"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영양군 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 131.0,
+      "item_codes": {
+        "C1": "37340"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영양군 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 131.0,
+      "item_codes": {
+        "C1": "37340"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영양군 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 127.0,
+      "item_codes": {
+        "C1": "37340"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영덕군 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 324.0,
+      "item_codes": {
+        "C1": "37350"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영덕군 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 362.0,
+      "item_codes": {
+        "C1": "37350"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "영덕군 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 324.0,
+      "item_codes": {
+        "C1": "37350"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "청도군 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 398.0,
+      "item_codes": {
+        "C1": "37360"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "청도군 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 492.0,
+      "item_codes": {
+        "C1": "37360"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "청도군 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 461.0,
+      "item_codes": {
+        "C1": "37360"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "고령군 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 379.0,
+      "item_codes": {
+        "C1": "37370"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "고령군 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 381.0,
+      "item_codes": {
+        "C1": "37370"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "고령군 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 496.0,
+      "item_codes": {
+        "C1": "37370"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "성주군 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 620.0,
+      "item_codes": {
+        "C1": "37380"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "성주군 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 543.0,
+      "item_codes": {
+        "C1": "37380"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "성주군 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 701.0,
+      "item_codes": {
+        "C1": "37380"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "칠곡군 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 3897.0,
+      "item_codes": {
+        "C1": "37390"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "칠곡군 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 3840.0,
+      "item_codes": {
+        "C1": "37390"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "칠곡군 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 3880.0,
+      "item_codes": {
+        "C1": "37390"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "예천군 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 440.0,
+      "item_codes": {
+        "C1": "37400"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "예천군 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 441.0,
+      "item_codes": {
+        "C1": "37400"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "예천군 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 432.0,
+      "item_codes": {
+        "C1": "37400"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "봉화군 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 389.0,
+      "item_codes": {
+        "C1": "37410"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "봉화군 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 361.0,
+      "item_codes": {
+        "C1": "37410"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "봉화군 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 361.0,
+      "item_codes": {
+        "C1": "37410"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울진군 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 347.0,
+      "item_codes": {
+        "C1": "37420"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울진군 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 345.0,
+      "item_codes": {
+        "C1": "37420"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울진군 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 349.0,
+      "item_codes": {
+        "C1": "37420"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울릉군 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 279.0,
+      "item_codes": {
+        "C1": "37430"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울릉군 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 238.0,
+      "item_codes": {
+        "C1": "37430"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울릉군 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 233.0,
+      "item_codes": {
+        "C1": "37430"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 운수업종사자수",
+      "timestamp": "2007",
+      "value": 43967.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 운수업종사자수",
+      "timestamp": "2008",
+      "value": 47067.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 운수업종사자수",
+      "timestamp": "2009",
+      "value": 51390.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 운수업종사자수",
+      "timestamp": "2010",
+      "value": 50160.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 운수업종사자수",
+      "timestamp": "2011",
+      "value": 48650.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 운수업종사자수",
+      "timestamp": "2012",
+      "value": 51991.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 운수업종사자수",
+      "timestamp": "2013",
+      "value": 52279.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 운수업종사자수",
+      "timestamp": "2014",
+      "value": 56882.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 운수업종사자수",
+      "timestamp": "2015",
+      "value": 57130.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 운수업종사자수",
+      "timestamp": "2016",
+      "value": 58439.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 58738.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 60756.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 61741.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "진주시 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 7126.0,
+      "item_codes": {
+        "C1": "38030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "진주시 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 7320.0,
+      "item_codes": {
+        "C1": "38030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "진주시 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 7128.0,
+      "item_codes": {
+        "C1": "38030"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "통영시 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 1947.0,
+      "item_codes": {
+        "C1": "38050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "통영시 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 2038.0,
+      "item_codes": {
+        "C1": "38050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "통영시 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 2125.0,
+      "item_codes": {
+        "C1": "38050"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "사천시 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 1843.0,
+      "item_codes": {
+        "C1": "38060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "사천시 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 1899.0,
+      "item_codes": {
+        "C1": "38060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "사천시 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 1923.0,
+      "item_codes": {
+        "C1": "38060"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "김해시 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 8733.0,
+      "item_codes": {
+        "C1": "38070"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "김해시 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 8940.0,
+      "item_codes": {
+        "C1": "38070"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "김해시 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 9498.0,
+      "item_codes": {
+        "C1": "38070"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "밀양시 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 1633.0,
+      "item_codes": {
+        "C1": "38080"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "밀양시 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 1866.0,
+      "item_codes": {
+        "C1": "38080"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "밀양시 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 2018.0,
+      "item_codes": {
+        "C1": "38080"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "거제시 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 2835.0,
+      "item_codes": {
+        "C1": "38090"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "거제시 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 2858.0,
+      "item_codes": {
+        "C1": "38090"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "거제시 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 2791.0,
+      "item_codes": {
+        "C1": "38090"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "양산시 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 8582.0,
+      "item_codes": {
+        "C1": "38100"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "양산시 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 9536.0,
+      "item_codes": {
+        "C1": "38100"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "양산시 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 9816.0,
+      "item_codes": {
+        "C1": "38100"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "창원시 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 20036.0,
+      "item_codes": {
+        "C1": "38110"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "창원시 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 20339.0,
+      "item_codes": {
+        "C1": "38110"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "창원시 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 20176.0,
+      "item_codes": {
+        "C1": "38110"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "의령군 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 203.0,
+      "item_codes": {
+        "C1": "38310"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "의령군 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 223.0,
+      "item_codes": {
+        "C1": "38310"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "의령군 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 203.0,
+      "item_codes": {
+        "C1": "38310"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "함안군 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 1190.0,
+      "item_codes": {
+        "C1": "38320"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "함안군 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 1252.0,
+      "item_codes": {
+        "C1": "38320"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "함안군 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 1376.0,
+      "item_codes": {
+        "C1": "38320"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "창녕군 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 985.0,
+      "item_codes": {
+        "C1": "38330"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "창녕군 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 888.0,
+      "item_codes": {
+        "C1": "38330"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "창녕군 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 881.0,
+      "item_codes": {
+        "C1": "38330"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "고성군 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 695.0,
+      "item_codes": {
+        "C1": "38340"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "고성군 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 722.0,
+      "item_codes": {
+        "C1": "38340"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "고성군 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 694.0,
+      "item_codes": {
+        "C1": "38340"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "남해군 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 554.0,
+      "item_codes": {
+        "C1": "38350"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "남해군 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 513.0,
+      "item_codes": {
+        "C1": "38350"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "남해군 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 509.0,
+      "item_codes": {
+        "C1": "38350"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "하동군 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 326.0,
+      "item_codes": {
+        "C1": "38360"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "하동군 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 277.0,
+      "item_codes": {
+        "C1": "38360"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "하동군 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 426.0,
+      "item_codes": {
+        "C1": "38360"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "산청군 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 380.0,
+      "item_codes": {
+        "C1": "38370"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "산청군 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 384.0,
+      "item_codes": {
+        "C1": "38370"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "산청군 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 430.0,
+      "item_codes": {
+        "C1": "38370"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "함양군 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 519.0,
+      "item_codes": {
+        "C1": "38380"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "함양군 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 567.0,
+      "item_codes": {
+        "C1": "38380"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "함양군 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 586.0,
+      "item_codes": {
+        "C1": "38380"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "거창군 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 799.0,
+      "item_codes": {
+        "C1": "38390"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "거창군 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 804.0,
+      "item_codes": {
+        "C1": "38390"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "거창군 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 793.0,
+      "item_codes": {
+        "C1": "38390"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "합천군 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 352.0,
+      "item_codes": {
+        "C1": "38400"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "합천군 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 330.0,
+      "item_codes": {
+        "C1": "38400"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "합천군 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 368.0,
+      "item_codes": {
+        "C1": "38400"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 운수업종사자수",
+      "timestamp": "2007",
+      "value": 12460.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 운수업종사자수",
+      "timestamp": "2008",
+      "value": 12920.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 운수업종사자수",
+      "timestamp": "2009",
+      "value": 14561.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 운수업종사자수",
+      "timestamp": "2010",
+      "value": 13654.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 운수업종사자수",
+      "timestamp": "2011",
+      "value": 13562.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 운수업종사자수",
+      "timestamp": "2012",
+      "value": 13509.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 운수업종사자수",
+      "timestamp": "2013",
+      "value": 12682.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 운수업종사자수",
+      "timestamp": "2014",
+      "value": 13458.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 운수업종사자수",
+      "timestamp": "2015",
+      "value": 13511.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 운수업종사자수",
+      "timestamp": "2016",
+      "value": 14333.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 14799.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 14999.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 15357.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주시 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 12207.0,
+      "item_codes": {
+        "C1": "39010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주시 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 12468.0,
+      "item_codes": {
+        "C1": "39010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주시 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 12890.0,
+      "item_codes": {
+        "C1": "39010"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서귀포시 - 운수업종사자수",
+      "timestamp": "2017",
+      "value": 2592.0,
+      "item_codes": {
+        "C1": "39020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서귀포시 - 운수업종사자수",
+      "timestamp": "2018",
+      "value": 2531.0,
+      "item_codes": {
+        "C1": "39020"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서귀포시 - 운수업종사자수",
+      "timestamp": "2019",
+      "value": 2467.0,
+      "item_codes": {
+        "C1": "39020"
+      },
+      "itm_id": "T10"
+    }
+  ]
+}

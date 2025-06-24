@@ -1,0 +1,496 @@
+{
+  "metadata": {
+    "org_id": "101",
+    "org_name": "행정안전부",
+    "table_id": "DT_1YL202106E",
+    "table_name": "자연재해 피해현황(시도)",
+    "stat_id": "2004029",
+    "stat_name": "자연재해현황",
+    "date_range": "2020 ~ 2023",
+    "description": "시도별 연도별 피해현황 서울특별시 부산광역시 대구광역시 인천광역시 광주광역시 대전광역시 울산광역시 세종특별자치시 경기도 강원특별자치도 충청북도 충청남도 전북특별자치도 전라남도 경상북도 총계 경상남도 제주특별자치도",
+    "item_info": "■  자료제공처:  통계청 지역통계기획팀 ■자료원출처: 행정안전부(자연재해현황) ■자료제공주기: 1년 ■자료제공시기: 조사기준년도 익년12월",
+    "source_url": "http://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1YL202106E",
+    "last_updated": "2025-06-24T18:19:33.351569",
+    "period_type": "M",
+    "period_name": "월간"
+  },
+  "data": [
+    {
+      "item": "총계 - 연도별 피해현황",
+      "timestamp": "2021",
+      "value": 66053654.0,
+      "item_codes": {
+        "C1": "B01"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "총계 - 연도별 피해현황",
+      "timestamp": "2022",
+      "value": 592656221.0,
+      "item_codes": {
+        "C1": "B01"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "총계 - 연도별 피해현황",
+      "timestamp": "2023",
+      "value": 958220919.0,
+      "item_codes": {
+        "C1": "B01"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "서울특별시 - 연도별 피해현황",
+      "timestamp": "2021",
+      "value": 0.0,
+      "item_codes": {
+        "C1": "B02"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "서울특별시 - 연도별 피해현황",
+      "timestamp": "2022",
+      "value": 69630498.0,
+      "item_codes": {
+        "C1": "B02"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "서울특별시 - 연도별 피해현황",
+      "timestamp": "2023",
+      "value": 1173718.0,
+      "item_codes": {
+        "C1": "B02"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "부산광역시 - 연도별 피해현황",
+      "timestamp": "2021",
+      "value": 1834404.0,
+      "item_codes": {
+        "C1": "B03"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "부산광역시 - 연도별 피해현황",
+      "timestamp": "2022",
+      "value": 11823906.0,
+      "item_codes": {
+        "C1": "B03"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "부산광역시 - 연도별 피해현황",
+      "timestamp": "2023",
+      "value": 251881.0,
+      "item_codes": {
+        "C1": "B03"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "대구광역시 - 연도별 피해현황",
+      "timestamp": "2021",
+      "value": 35000.0,
+      "item_codes": {
+        "C1": "B04"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "대구광역시 - 연도별 피해현황",
+      "timestamp": "2022",
+      "value": 30800.0,
+      "item_codes": {
+        "C1": "B04"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "대구광역시 - 연도별 피해현황",
+      "timestamp": "2023",
+      "value": 10758115.0,
+      "item_codes": {
+        "C1": "B04"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "인천광역시 - 연도별 피해현황",
+      "timestamp": "2021",
+      "value": 301020.0,
+      "item_codes": {
+        "C1": "B05"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "인천광역시 - 연도별 피해현황",
+      "timestamp": "2022",
+      "value": 1696165.0,
+      "item_codes": {
+        "C1": "B05"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "인천광역시 - 연도별 피해현황",
+      "timestamp": "2023",
+      "value": 316013.0,
+      "item_codes": {
+        "C1": "B05"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "광주광역시 - 연도별 피해현황",
+      "timestamp": "2021",
+      "value": 150176.0,
+      "item_codes": {
+        "C1": "B06"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "광주광역시 - 연도별 피해현황",
+      "timestamp": "2022",
+      "value": 174459.0,
+      "item_codes": {
+        "C1": "B06"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "광주광역시 - 연도별 피해현황",
+      "timestamp": "2023",
+      "value": 1737788.0,
+      "item_codes": {
+        "C1": "B06"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "대전광역시 - 연도별 피해현황",
+      "timestamp": "2021",
+      "value": 4243.0,
+      "item_codes": {
+        "C1": "B07"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "대전광역시 - 연도별 피해현황",
+      "timestamp": "2022",
+      "value": 2554865.0,
+      "item_codes": {
+        "C1": "B07"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "대전광역시 - 연도별 피해현황",
+      "timestamp": "2023",
+      "value": 1302171.0,
+      "item_codes": {
+        "C1": "B07"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "울산광역시 - 연도별 피해현황",
+      "timestamp": "2021",
+      "value": 2457802.0,
+      "item_codes": {
+        "C1": "B08"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "울산광역시 - 연도별 피해현황",
+      "timestamp": "2022",
+      "value": 6931859.0,
+      "item_codes": {
+        "C1": "B08"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "울산광역시 - 연도별 피해현황",
+      "timestamp": "2023",
+      "value": 1728018.0,
+      "item_codes": {
+        "C1": "B08"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "세종특별자치시 - 연도별 피해현황",
+      "timestamp": "2022",
+      "value": 374479.0,
+      "item_codes": {
+        "C1": "B09"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "세종특별자치시 - 연도별 피해현황",
+      "timestamp": "2023",
+      "value": 25028631.0,
+      "item_codes": {
+        "C1": "B09"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경기도 - 연도별 피해현황",
+      "timestamp": "2021",
+      "value": 270786.0,
+      "item_codes": {
+        "C1": "B10"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경기도 - 연도별 피해현황",
+      "timestamp": "2022",
+      "value": 159640161.0,
+      "item_codes": {
+        "C1": "B10"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경기도 - 연도별 피해현황",
+      "timestamp": "2023",
+      "value": 14166148.0,
+      "item_codes": {
+        "C1": "B10"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "강원특별자치도 - 연도별 피해현황",
+      "timestamp": "2021",
+      "value": 3637731.0,
+      "item_codes": {
+        "C1": "B11"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "강원특별자치도 - 연도별 피해현황",
+      "timestamp": "2022",
+      "value": 37911101.0,
+      "item_codes": {
+        "C1": "B11"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "강원특별자치도 - 연도별 피해현황",
+      "timestamp": "2023",
+      "value": 25813150.0,
+      "item_codes": {
+        "C1": "B11"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "충청북도 - 연도별 피해현황",
+      "timestamp": "2021",
+      "value": 888787.0,
+      "item_codes": {
+        "C1": "B12"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "충청북도 - 연도별 피해현황",
+      "timestamp": "2022",
+      "value": 1525226.0,
+      "item_codes": {
+        "C1": "B12"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "충청북도 - 연도별 피해현황",
+      "timestamp": "2023",
+      "value": 154882327.0,
+      "item_codes": {
+        "C1": "B12"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "충청남도 - 연도별 피해현황",
+      "timestamp": "2021",
+      "value": 3424301.0,
+      "item_codes": {
+        "C1": "B13"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "충청남도 - 연도별 피해현황",
+      "timestamp": "2022",
+      "value": 62333890.0,
+      "item_codes": {
+        "C1": "B13"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "충청남도 - 연도별 피해현황",
+      "timestamp": "2023",
+      "value": 188051545.0,
+      "item_codes": {
+        "C1": "B13"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전북특별자치도 - 연도별 피해현황",
+      "timestamp": "2021",
+      "value": 1066787.0,
+      "item_codes": {
+        "C1": "B14"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전북특별자치도 - 연도별 피해현황",
+      "timestamp": "2022",
+      "value": 9264951.0,
+      "item_codes": {
+        "C1": "B14"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전북특별자치도 - 연도별 피해현황",
+      "timestamp": "2023",
+      "value": 74566625.0,
+      "item_codes": {
+        "C1": "B14"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전라남도 - 연도별 피해현황",
+      "timestamp": "2021",
+      "value": 30779345.0,
+      "item_codes": {
+        "C1": "B15"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전라남도 - 연도별 피해현황",
+      "timestamp": "2022",
+      "value": 7307692.0,
+      "item_codes": {
+        "C1": "B15"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전라남도 - 연도별 피해현황",
+      "timestamp": "2023",
+      "value": 58800665.0,
+      "item_codes": {
+        "C1": "B15"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경상북도 - 연도별 피해현황",
+      "timestamp": "2021",
+      "value": 15529209.0,
+      "item_codes": {
+        "C1": "B16"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경상북도 - 연도별 피해현황",
+      "timestamp": "2022",
+      "value": 206767796.0,
+      "item_codes": {
+        "C1": "B16"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경상북도 - 연도별 피해현황",
+      "timestamp": "2023",
+      "value": 365339498.0,
+      "item_codes": {
+        "C1": "B16"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경상남도 - 연도별 피해현황",
+      "timestamp": "2021",
+      "value": 5600090.0,
+      "item_codes": {
+        "C1": "B17"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경상남도 - 연도별 피해현황",
+      "timestamp": "2022",
+      "value": 12426789.0,
+      "item_codes": {
+        "C1": "B17"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경상남도 - 연도별 피해현황",
+      "timestamp": "2023",
+      "value": 30731556.0,
+      "item_codes": {
+        "C1": "B17"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "제주특별자치도 - 연도별 피해현황",
+      "timestamp": "2021",
+      "value": 73973.0,
+      "item_codes": {
+        "C1": "B18"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "제주특별자치도 - 연도별 피해현황",
+      "timestamp": "2022",
+      "value": 2261584.0,
+      "item_codes": {
+        "C1": "B18"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "제주특별자치도 - 연도별 피해현황",
+      "timestamp": "2023",
+      "value": 3573070.0,
+      "item_codes": {
+        "C1": "B18"
+      },
+      "itm_id": "T001"
+    }
+  ]
+}

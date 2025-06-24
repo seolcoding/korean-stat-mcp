@@ -1,0 +1,3232 @@
+{
+  "metadata": {
+    "org_id": "101",
+    "org_name": "통계청",
+    "table_id": "DT_1YL0301E",
+    "table_name": "기대여명(시도)",
+    "stat_id": "9B08007",
+    "stat_name": "e-지방지표",
+    "date_range": "2005 ~ 2023",
+    "description": "행정구역별 여 계 남 울산광역시 경기도 전북특별자치도 제주특별자치도 부산광역시 경상북도 전국 서울특별시 대전광역시 세종특별자치시 광주광역시 대구광역시 경상남도 강원특별자치도 인천광역시 충청남도 충청북도 전라남도",
+    "item_info": "■  자료제공처:  통계청 지역통계기획팀 ■  자료원출처:  통계청 인구동향과(생명표) ■  자료제공주기:  3년 ■  자료제공시기:  조사기준년도 익익년12월 □  정의  - 기대여명: 특정연령에서 주어진 연령별 사망률이 지속된다고 한다면 앞으로 생존할 평균기간(연)수 *이 지표에서는 ＇0세의 기대여명(기대수명)＇을 수록 □  의의  - 한국 인구의 기대수명은 1970년 62.3세에서 2016년 82.4세로 45여년 동안 약 20년이 늘어났다. 세계 주요 국가들과 비교했을 때 1970년에서 1975년 사이에 한국인의 기대수명은 63.1세로 일본이나 유럽 국가들에 비해 약 10세가 더 짧았다. 그러나 2010년을 전후로 한국인의 기대수명은 80세까지 상승하면서 선진국 수준에 도달하였다. 한국인의 기대수명이 단시간에 길어졌음을 알 수 있다. □  참고사항  - 2007년도에 2005년기준「시도별 생명표」를 처음으로 작성하였으며 3년 주기로 자료작성 - 2017.3. 인구총조사기준→등록센서스 기준으로 추계방식이 변경되어 2005년자료부터 소급적용",
+    "source_url": "http://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1YL0301E",
+    "last_updated": "2025-06-24T18:12:09.200173",
+    "period_type": "IR",
+    "period_name": "부정기"
+  },
+  "data": [
+    {
+      "item": "서울특별시 - 남",
+      "timestamp": "2005",
+      "value": 76.86577,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "서울특별시 - 남",
+      "timestamp": "2008",
+      "value": 78.19544,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "서울특별시 - 남",
+      "timestamp": "2011",
+      "value": 78.93114,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "서울특별시 - 남",
+      "timestamp": "2014",
+      "value": 80.12442,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "서울특별시 - 남",
+      "timestamp": "2017",
+      "value": 81.23854,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "서울특별시 - 남",
+      "timestamp": "2020",
+      "value": 81.99513,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "서울특별시 - 남",
+      "timestamp": "2023",
+      "value": 82.01711,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "서울특별시 - 여",
+      "timestamp": "2005",
+      "value": 82.76353,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "서울특별시 - 여",
+      "timestamp": "2008",
+      "value": 84.09378,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "서울특별시 - 여",
+      "timestamp": "2011",
+      "value": 85.12716,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "서울특별시 - 여",
+      "timestamp": "2014",
+      "value": 85.8076,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "서울특별시 - 여",
+      "timestamp": "2017",
+      "value": 86.98278,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "서울특별시 - 여",
+      "timestamp": "2020",
+      "value": 87.61469,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "서울특별시 - 여",
+      "timestamp": "2023",
+      "value": 87.97643,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "서울특별시 - 계",
+      "timestamp": "2005",
+      "value": 79.81436,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "서울특별시 - 계",
+      "timestamp": "2008",
+      "value": 81.14455,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "서울특별시 - 계",
+      "timestamp": "2011",
+      "value": 82.02894,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "서울특별시 - 계",
+      "timestamp": "2014",
+      "value": 82.96535,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "서울특별시 - 계",
+      "timestamp": "2017",
+      "value": 84.10975,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "서울특별시 - 계",
+      "timestamp": "2020",
+      "value": 84.80414,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "서울특별시 - 계",
+      "timestamp": "2023",
+      "value": 84.9961,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "부산광역시 - 남",
+      "timestamp": "2005",
+      "value": 74.19347,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "부산광역시 - 남",
+      "timestamp": "2008",
+      "value": 74.9189,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "부산광역시 - 남",
+      "timestamp": "2011",
+      "value": 76.41815,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "부산광역시 - 남",
+      "timestamp": "2014",
+      "value": 77.87617,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "부산광역시 - 남",
+      "timestamp": "2017",
+      "value": 78.89023,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "부산광역시 - 남",
+      "timestamp": "2020",
+      "value": 79.56799,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "부산광역시 - 남",
+      "timestamp": "2023",
+      "value": 79.73614,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "부산광역시 - 여",
+      "timestamp": "2005",
+      "value": 80.52505,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "부산광역시 - 여",
+      "timestamp": "2008",
+      "value": 81.78013,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "부산광역시 - 여",
+      "timestamp": "2011",
+      "value": 82.90285,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "부산광역시 - 여",
+      "timestamp": "2014",
+      "value": 84.10487,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "부산광역시 - 여",
+      "timestamp": "2017",
+      "value": 84.86977,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "부산광역시 - 여",
+      "timestamp": "2020",
+      "value": 85.86074,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "부산광역시 - 여",
+      "timestamp": "2023",
+      "value": 85.56003,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "부산광역시 - 계",
+      "timestamp": "2005",
+      "value": 77.35926,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "부산광역시 - 계",
+      "timestamp": "2008",
+      "value": 78.34832,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "부산광역시 - 계",
+      "timestamp": "2011",
+      "value": 79.66025,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "부산광역시 - 계",
+      "timestamp": "2014",
+      "value": 80.99052,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "부산광역시 - 계",
+      "timestamp": "2017",
+      "value": 81.87944,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "부산광역시 - 계",
+      "timestamp": "2020",
+      "value": 82.71405,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "부산광역시 - 계",
+      "timestamp": "2023",
+      "value": 82.64756,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "대구광역시 - 남",
+      "timestamp": "2005",
+      "value": 74.8725,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "대구광역시 - 남",
+      "timestamp": "2008",
+      "value": 75.71915,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "대구광역시 - 남",
+      "timestamp": "2011",
+      "value": 76.84112,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "대구광역시 - 남",
+      "timestamp": "2014",
+      "value": 78.39932,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "대구광역시 - 남",
+      "timestamp": "2017",
+      "value": 79.24255,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "대구광역시 - 남",
+      "timestamp": "2020",
+      "value": 79.90322,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "대구광역시 - 남",
+      "timestamp": "2023",
+      "value": 80.20808,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "대구광역시 - 여",
+      "timestamp": "2005",
+      "value": 81.15697,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "대구광역시 - 여",
+      "timestamp": "2008",
+      "value": 82.35755,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "대구광역시 - 여",
+      "timestamp": "2011",
+      "value": 83.16778,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "대구광역시 - 여",
+      "timestamp": "2014",
+      "value": 84.34004,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "대구광역시 - 여",
+      "timestamp": "2017",
+      "value": 85.08879,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "대구광역시 - 여",
+      "timestamp": "2020",
+      "value": 85.91437,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "대구광역시 - 여",
+      "timestamp": "2023",
+      "value": 86.15183,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "대구광역시 - 계",
+      "timestamp": "2005",
+      "value": 78.01473,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "대구광역시 - 계",
+      "timestamp": "2008",
+      "value": 79.03721,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "대구광역시 - 계",
+      "timestamp": "2011",
+      "value": 80.00393,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "대구광역시 - 계",
+      "timestamp": "2014",
+      "value": 81.36956,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "대구광역시 - 계",
+      "timestamp": "2017",
+      "value": 82.16354,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "대구광역시 - 계",
+      "timestamp": "2020",
+      "value": 82.90785,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "대구광역시 - 계",
+      "timestamp": "2023",
+      "value": 83.17887,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "인천광역시 - 남",
+      "timestamp": "2005",
+      "value": 74.7682,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "인천광역시 - 남",
+      "timestamp": "2008",
+      "value": 76.33786,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "인천광역시 - 남",
+      "timestamp": "2011",
+      "value": 77.07481,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "인천광역시 - 남",
+      "timestamp": "2014",
+      "value": 78.2655,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "인천광역시 - 남",
+      "timestamp": "2017",
+      "value": 79.26652,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "인천광역시 - 남",
+      "timestamp": "2020",
+      "value": 79.88025,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "인천광역시 - 남",
+      "timestamp": "2023",
+      "value": 80.07243,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "인천광역시 - 여",
+      "timestamp": "2005",
+      "value": 81.16866,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "인천광역시 - 여",
+      "timestamp": "2008",
+      "value": 82.72708,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "인천광역시 - 여",
+      "timestamp": "2011",
+      "value": 83.21693,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "인천광역시 - 여",
+      "timestamp": "2014",
+      "value": 84.48609,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "인천광역시 - 여",
+      "timestamp": "2017",
+      "value": 85.60962,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "인천광역시 - 여",
+      "timestamp": "2020",
+      "value": 85.98155,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "인천광역시 - 여",
+      "timestamp": "2023",
+      "value": 86.09091,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "인천광역시 - 계",
+      "timestamp": "2005",
+      "value": 77.96833,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "인천광역시 - 계",
+      "timestamp": "2008",
+      "value": 79.53247,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "인천광역시 - 계",
+      "timestamp": "2011",
+      "value": 80.14516,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "인천광역시 - 계",
+      "timestamp": "2014",
+      "value": 81.37524,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "인천광역시 - 계",
+      "timestamp": "2017",
+      "value": 82.43777,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "인천광역시 - 계",
+      "timestamp": "2020",
+      "value": 82.93018,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "인천광역시 - 계",
+      "timestamp": "2023",
+      "value": 83.08096,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "광주광역시 - 남",
+      "timestamp": "2005",
+      "value": 74.92161,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "광주광역시 - 남",
+      "timestamp": "2008",
+      "value": 76.38169,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "광주광역시 - 남",
+      "timestamp": "2011",
+      "value": 76.75135,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "광주광역시 - 남",
+      "timestamp": "2014",
+      "value": 78.31406,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "광주광역시 - 남",
+      "timestamp": "2017",
+      "value": 79.31454,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "광주광역시 - 남",
+      "timestamp": "2020",
+      "value": 80.18848,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "광주광역시 - 남",
+      "timestamp": "2023",
+      "value": 80.28508,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "광주광역시 - 여",
+      "timestamp": "2005",
+      "value": 81.68373,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "광주광역시 - 여",
+      "timestamp": "2008",
+      "value": 82.43375,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "광주광역시 - 여",
+      "timestamp": "2011",
+      "value": 83.58202,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "광주광역시 - 여",
+      "timestamp": "2014",
+      "value": 84.39491,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "광주광역시 - 여",
+      "timestamp": "2017",
+      "value": 84.75844,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "광주광역시 - 여",
+      "timestamp": "2020",
+      "value": 85.91045,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "광주광역시 - 여",
+      "timestamp": "2023",
+      "value": 85.99842,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "광주광역시 - 계",
+      "timestamp": "2005",
+      "value": 78.29878,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "광주광역시 - 계",
+      "timestamp": "2008",
+      "value": 79.40772,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "광주광역시 - 계",
+      "timestamp": "2011",
+      "value": 80.16454,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "광주광역시 - 계",
+      "timestamp": "2014",
+      "value": 81.35448,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "광주광역시 - 계",
+      "timestamp": "2017",
+      "value": 82.03596,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "광주광역시 - 계",
+      "timestamp": "2020",
+      "value": 83.04874,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "광주광역시 - 계",
+      "timestamp": "2023",
+      "value": 83.14093,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "대전광역시 - 남",
+      "timestamp": "2005",
+      "value": 75.69305,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "대전광역시 - 남",
+      "timestamp": "2008",
+      "value": 76.83269,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "대전광역시 - 남",
+      "timestamp": "2011",
+      "value": 77.56471,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "대전광역시 - 남",
+      "timestamp": "2014",
+      "value": 79.20504,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "대전광역시 - 남",
+      "timestamp": "2017",
+      "value": 80.46973,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "대전광역시 - 남",
+      "timestamp": "2020",
+      "value": 80.7056,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "대전광역시 - 남",
+      "timestamp": "2023",
+      "value": 81.05365,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "대전광역시 - 여",
+      "timestamp": "2005",
+      "value": 82.00313,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "대전광역시 - 여",
+      "timestamp": "2008",
+      "value": 82.8496,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "대전광역시 - 여",
+      "timestamp": "2011",
+      "value": 83.77993,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "대전광역시 - 여",
+      "timestamp": "2014",
+      "value": 84.80039,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "대전광역시 - 여",
+      "timestamp": "2017",
+      "value": 85.42565,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "대전광역시 - 여",
+      "timestamp": "2020",
+      "value": 86.35717,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "대전광역시 - 여",
+      "timestamp": "2023",
+      "value": 86.14403,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "대전광역시 - 계",
+      "timestamp": "2005",
+      "value": 78.84743,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "대전광역시 - 계",
+      "timestamp": "2008",
+      "value": 79.84051,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "대전광역시 - 계",
+      "timestamp": "2011",
+      "value": 80.67231,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "대전광역시 - 계",
+      "timestamp": "2014",
+      "value": 82.00148,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "대전광역시 - 계",
+      "timestamp": "2017",
+      "value": 82.94714,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "대전광역시 - 계",
+      "timestamp": "2020",
+      "value": 83.5307,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "대전광역시 - 계",
+      "timestamp": "2023",
+      "value": 83.59827,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "울산광역시 - 남",
+      "timestamp": "2005",
+      "value": 73.9559,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "울산광역시 - 남",
+      "timestamp": "2008",
+      "value": 75.83959,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "울산광역시 - 남",
+      "timestamp": "2011",
+      "value": 76.26007,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "울산광역시 - 남",
+      "timestamp": "2014",
+      "value": 78.16514,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "울산광역시 - 남",
+      "timestamp": "2017",
+      "value": 79.14308,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "울산광역시 - 남",
+      "timestamp": "2020",
+      "value": 80.3565,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "울산광역시 - 남",
+      "timestamp": "2023",
+      "value": 80.36609,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "울산광역시 - 여",
+      "timestamp": "2005",
+      "value": 80.33074,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "울산광역시 - 여",
+      "timestamp": "2008",
+      "value": 81.56192,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "울산광역시 - 여",
+      "timestamp": "2011",
+      "value": 82.87507,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "울산광역시 - 여",
+      "timestamp": "2014",
+      "value": 83.18136,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "울산광역시 - 여",
+      "timestamp": "2017",
+      "value": 84.91835,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "울산광역시 - 여",
+      "timestamp": "2020",
+      "value": 85.10106,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "울산광역시 - 여",
+      "timestamp": "2023",
+      "value": 85.45372,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "울산광역시 - 계",
+      "timestamp": "2005",
+      "value": 77.14015,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "울산광역시 - 계",
+      "timestamp": "2008",
+      "value": 78.70076,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "울산광역시 - 계",
+      "timestamp": "2011",
+      "value": 79.56697,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "울산광역시 - 계",
+      "timestamp": "2014",
+      "value": 80.67304,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "울산광역시 - 계",
+      "timestamp": "2017",
+      "value": 82.02941,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "울산광역시 - 계",
+      "timestamp": "2020",
+      "value": 82.7288,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "울산광역시 - 계",
+      "timestamp": "2023",
+      "value": 82.90972,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "세종특별자치시 - 남",
+      "timestamp": "2005",
+      "value": null,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "세종특별자치시 - 남",
+      "timestamp": "2008",
+      "value": null,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "세종특별자치시 - 남",
+      "timestamp": "2011",
+      "value": null,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "세종특별자치시 - 남",
+      "timestamp": "2014",
+      "value": 77.74488,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "세종특별자치시 - 남",
+      "timestamp": "2017",
+      "value": 79.97342,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "세종특별자치시 - 남",
+      "timestamp": "2020",
+      "value": 82.26356,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "세종특별자치시 - 남",
+      "timestamp": "2023",
+      "value": 81.26494,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "세종특별자치시 - 여",
+      "timestamp": "2005",
+      "value": null,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "세종특별자치시 - 여",
+      "timestamp": "2008",
+      "value": null,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "세종특별자치시 - 여",
+      "timestamp": "2011",
+      "value": null,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "세종특별자치시 - 여",
+      "timestamp": "2014",
+      "value": 84.78205,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "세종특별자치시 - 여",
+      "timestamp": "2017",
+      "value": 86.09095,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "세종특별자치시 - 여",
+      "timestamp": "2020",
+      "value": 86.59348,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "세종특별자치시 - 여",
+      "timestamp": "2023",
+      "value": 86.17041,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "세종특별자치시 - 계",
+      "timestamp": "2005",
+      "value": null,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "세종특별자치시 - 계",
+      "timestamp": "2008",
+      "value": null,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "세종특별자치시 - 계",
+      "timestamp": "2011",
+      "value": null,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "세종특별자치시 - 계",
+      "timestamp": "2014",
+      "value": 81.26346,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "세종특별자치시 - 계",
+      "timestamp": "2017",
+      "value": 83.03191,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "세종특별자치시 - 계",
+      "timestamp": "2020",
+      "value": 84.42845,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "세종특별자치시 - 계",
+      "timestamp": "2023",
+      "value": 83.71716,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "경기도 - 남",
+      "timestamp": "2005",
+      "value": 75.56224,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "경기도 - 남",
+      "timestamp": "2008",
+      "value": 77.09994,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "경기도 - 남",
+      "timestamp": "2011",
+      "value": 77.98818,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "경기도 - 남",
+      "timestamp": "2014",
+      "value": 79.24748,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "경기도 - 남",
+      "timestamp": "2017",
+      "value": 80.42183,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "경기도 - 남",
+      "timestamp": "2020",
+      "value": 81.15608,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "경기도 - 남",
+      "timestamp": "2023",
+      "value": 81.24499,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "경기도 - 여",
+      "timestamp": "2005",
+      "value": 81.78079,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "경기도 - 여",
+      "timestamp": "2008",
+      "value": 83.19204,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "경기도 - 여",
+      "timestamp": "2011",
+      "value": 84.15747,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "경기도 - 여",
+      "timestamp": "2014",
+      "value": 85.20653,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "경기도 - 여",
+      "timestamp": "2017",
+      "value": 85.72033,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "경기도 - 여",
+      "timestamp": "2020",
+      "value": 86.6891,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "경기도 - 여",
+      "timestamp": "2023",
+      "value": 86.58064,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "경기도 - 계",
+      "timestamp": "2005",
+      "value": 78.67152,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "경기도 - 계",
+      "timestamp": "2008",
+      "value": 80.1453,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "경기도 - 계",
+      "timestamp": "2011",
+      "value": 81.07179,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "경기도 - 계",
+      "timestamp": "2014",
+      "value": 82.22685,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "경기도 - 계",
+      "timestamp": "2017",
+      "value": 83.07018,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "경기도 - 계",
+      "timestamp": "2020",
+      "value": 83.92207,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "경기도 - 계",
+      "timestamp": "2023",
+      "value": 83.91252,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "강원특별자치도 - 남",
+      "timestamp": "2005",
+      "value": 73.35798,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "강원특별자치도 - 남",
+      "timestamp": "2008",
+      "value": 74.89159,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "강원특별자치도 - 남",
+      "timestamp": "2011",
+      "value": 76.38617,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "강원특별자치도 - 남",
+      "timestamp": "2014",
+      "value": 77.18263,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "강원특별자치도 - 남",
+      "timestamp": "2017",
+      "value": 78.41962,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "강원특별자치도 - 남",
+      "timestamp": "2020",
+      "value": 79.56191,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "강원특별자치도 - 남",
+      "timestamp": "2023",
+      "value": 79.5299,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "강원특별자치도 - 여",
+      "timestamp": "2005",
+      "value": 81.34766,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "강원특별자치도 - 여",
+      "timestamp": "2008",
+      "value": 82.29841,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "강원특별자치도 - 여",
+      "timestamp": "2011",
+      "value": 83.97597,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "강원특별자치도 - 여",
+      "timestamp": "2014",
+      "value": 84.58143,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "강원특별자치도 - 여",
+      "timestamp": "2017",
+      "value": 85.66841,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "강원특별자치도 - 여",
+      "timestamp": "2020",
+      "value": 86.03336,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "강원특별자치도 - 여",
+      "timestamp": "2023",
+      "value": 86.15352,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "강원특별자치도 - 계",
+      "timestamp": "2005",
+      "value": 77.35282,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "강원특별자치도 - 계",
+      "timestamp": "2008",
+      "value": 78.59498,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "강원특별자치도 - 계",
+      "timestamp": "2011",
+      "value": 80.17936,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "강원특별자치도 - 계",
+      "timestamp": "2014",
+      "value": 80.88009,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "강원특별자치도 - 계",
+      "timestamp": "2017",
+      "value": 82.04255,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "강원특별자치도 - 계",
+      "timestamp": "2020",
+      "value": 82.79754,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "강원특별자치도 - 계",
+      "timestamp": "2023",
+      "value": 82.84131,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "충청북도 - 남",
+      "timestamp": "2005",
+      "value": 73.50623,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "충청북도 - 남",
+      "timestamp": "2008",
+      "value": 75.14849,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "충청북도 - 남",
+      "timestamp": "2011",
+      "value": 75.95708,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "충청북도 - 남",
+      "timestamp": "2014",
+      "value": 77.56203,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "충청북도 - 남",
+      "timestamp": "2017",
+      "value": 78.7804,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "충청북도 - 남",
+      "timestamp": "2020",
+      "value": 79.5217,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "충청북도 - 남",
+      "timestamp": "2023",
+      "value": 79.40644,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "충청북도 - 여",
+      "timestamp": "2005",
+      "value": 81.05364,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "충청북도 - 여",
+      "timestamp": "2008",
+      "value": 82.43077,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "충청북도 - 여",
+      "timestamp": "2011",
+      "value": 83.26148,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "충청북도 - 여",
+      "timestamp": "2014",
+      "value": 84.78777,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "충청북도 - 여",
+      "timestamp": "2017",
+      "value": 84.92164,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "충청북도 - 여",
+      "timestamp": "2020",
+      "value": 85.69997,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "충청북도 - 여",
+      "timestamp": "2023",
+      "value": 85.42934,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "충청북도 - 계",
+      "timestamp": "2005",
+      "value": 77.27864,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "충청북도 - 계",
+      "timestamp": "2008",
+      "value": 78.78963,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "충청북도 - 계",
+      "timestamp": "2011",
+      "value": 79.60928,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "충청북도 - 계",
+      "timestamp": "2014",
+      "value": 81.17471,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "충청북도 - 계",
+      "timestamp": "2017",
+      "value": 81.85043,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "충청북도 - 계",
+      "timestamp": "2020",
+      "value": 82.60979,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "충청북도 - 계",
+      "timestamp": "2023",
+      "value": 82.41631,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "충청남도 - 남",
+      "timestamp": "2005",
+      "value": 73.96444,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "충청남도 - 남",
+      "timestamp": "2008",
+      "value": 75.65852,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "충청남도 - 남",
+      "timestamp": "2011",
+      "value": 76.92307,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "충청남도 - 남",
+      "timestamp": "2014",
+      "value": 77.77878,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "충청남도 - 남",
+      "timestamp": "2017",
+      "value": 78.87074,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "충청남도 - 남",
+      "timestamp": "2020",
+      "value": 80.07208,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "충청남도 - 남",
+      "timestamp": "2023",
+      "value": 79.97634,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "충청남도 - 여",
+      "timestamp": "2005",
+      "value": 81.25024,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "충청남도 - 여",
+      "timestamp": "2008",
+      "value": 82.99672,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "충청남도 - 여",
+      "timestamp": "2011",
+      "value": 84.20425,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "충청남도 - 여",
+      "timestamp": "2014",
+      "value": 84.8554,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "충청남도 - 여",
+      "timestamp": "2017",
+      "value": 85.57451,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "충청남도 - 여",
+      "timestamp": "2020",
+      "value": 86.25567,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "충청남도 - 여",
+      "timestamp": "2023",
+      "value": 86.09419,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "충청남도 - 계",
+      "timestamp": "2005",
+      "value": 77.60566,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "충청남도 - 계",
+      "timestamp": "2008",
+      "value": 79.32707,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "충청남도 - 계",
+      "timestamp": "2011",
+      "value": 80.56365,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "충청남도 - 계",
+      "timestamp": "2014",
+      "value": 81.31709,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "충청남도 - 계",
+      "timestamp": "2017",
+      "value": 82.22141,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "충청남도 - 계",
+      "timestamp": "2020",
+      "value": 83.16312,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "충청남도 - 계",
+      "timestamp": "2023",
+      "value": 83.03512,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "전북특별자치도 - 남",
+      "timestamp": "2005",
+      "value": 74.12636,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "전북특별자치도 - 남",
+      "timestamp": "2008",
+      "value": 75.10164,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "전북특별자치도 - 남",
+      "timestamp": "2011",
+      "value": 76.32807,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "전북특별자치도 - 남",
+      "timestamp": "2014",
+      "value": 77.84741,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "전북특별자치도 - 남",
+      "timestamp": "2017",
+      "value": 78.97548,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "전북특별자치도 - 남",
+      "timestamp": "2020",
+      "value": 80.07743,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "전북특별자치도 - 남",
+      "timestamp": "2023",
+      "value": 79.96755,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "전북특별자치도 - 여",
+      "timestamp": "2005",
+      "value": 81.1143,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "전북특별자치도 - 여",
+      "timestamp": "2008",
+      "value": 82.4924,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "전북특별자치도 - 여",
+      "timestamp": "2011",
+      "value": 83.96242,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "전북특별자치도 - 여",
+      "timestamp": "2014",
+      "value": 84.9754,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "전북특별자치도 - 여",
+      "timestamp": "2017",
+      "value": 85.52883,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "전북특별자치도 - 여",
+      "timestamp": "2020",
+      "value": 86.50722,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "전북특별자치도 - 여",
+      "timestamp": "2023",
+      "value": 86.18941,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "전북특별자치도 - 계",
+      "timestamp": "2005",
+      "value": 77.61937,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "전북특별자치도 - 계",
+      "timestamp": "2008",
+      "value": 78.79512,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "전북특별자치도 - 계",
+      "timestamp": "2011",
+      "value": 80.14494,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "전북특별자치도 - 계",
+      "timestamp": "2014",
+      "value": 81.41037,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "전북특별자치도 - 계",
+      "timestamp": "2017",
+      "value": 82.25212,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "전북특별자치도 - 계",
+      "timestamp": "2020",
+      "value": 83.29185,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "전북특별자치도 - 계",
+      "timestamp": "2023",
+      "value": 83.07814,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "전라남도 - 남",
+      "timestamp": "2005",
+      "value": 73.17143,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "전라남도 - 남",
+      "timestamp": "2008",
+      "value": 74.59056,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "전라남도 - 남",
+      "timestamp": "2011",
+      "value": 75.55574,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "전라남도 - 남",
+      "timestamp": "2014",
+      "value": 77.05755,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "전라남도 - 남",
+      "timestamp": "2017",
+      "value": 78.36103,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "전라남도 - 남",
+      "timestamp": "2020",
+      "value": 79.13731,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "전라남도 - 남",
+      "timestamp": "2023",
+      "value": 79.2884,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "전라남도 - 여",
+      "timestamp": "2005",
+      "value": 81.61742,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "전라남도 - 여",
+      "timestamp": "2008",
+      "value": 82.75348,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "전라남도 - 여",
+      "timestamp": "2011",
+      "value": 83.86741,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "전라남도 - 여",
+      "timestamp": "2014",
+      "value": 85.25308,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "전라남도 - 여",
+      "timestamp": "2017",
+      "value": 85.58155,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "전라남도 - 여",
+      "timestamp": "2020",
+      "value": 86.36659,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "전라남도 - 여",
+      "timestamp": "2023",
+      "value": 85.75148,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "전라남도 - 계",
+      "timestamp": "2005",
+      "value": 77.3929,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "전라남도 - 계",
+      "timestamp": "2008",
+      "value": 78.67202,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "전라남도 - 계",
+      "timestamp": "2011",
+      "value": 79.71099,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "전라남도 - 계",
+      "timestamp": "2014",
+      "value": 81.15481,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "전라남도 - 계",
+      "timestamp": "2017",
+      "value": 81.97097,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "전라남도 - 계",
+      "timestamp": "2020",
+      "value": 82.75145,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "전라남도 - 계",
+      "timestamp": "2023",
+      "value": 82.51923,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "경상북도 - 남",
+      "timestamp": "2005",
+      "value": 73.33086,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "경상북도 - 남",
+      "timestamp": "2008",
+      "value": 74.68671,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "경상북도 - 남",
+      "timestamp": "2011",
+      "value": 75.92732,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "경상북도 - 남",
+      "timestamp": "2014",
+      "value": 77.55741,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "경상북도 - 남",
+      "timestamp": "2017",
+      "value": 78.59422,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "경상북도 - 남",
+      "timestamp": "2020",
+      "value": 79.31566,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "경상북도 - 남",
+      "timestamp": "2023",
+      "value": 79.49728,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "경상북도 - 여",
+      "timestamp": "2005",
+      "value": 81.11377,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "경상북도 - 여",
+      "timestamp": "2008",
+      "value": 82.5188,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "경상북도 - 여",
+      "timestamp": "2011",
+      "value": 83.30555,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "경상북도 - 여",
+      "timestamp": "2014",
+      "value": 84.71836,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "경상북도 - 여",
+      "timestamp": "2017",
+      "value": 85.49903,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "경상북도 - 여",
+      "timestamp": "2020",
+      "value": 85.89479,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "경상북도 - 여",
+      "timestamp": "2023",
+      "value": 85.87444,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "경상북도 - 계",
+      "timestamp": "2005",
+      "value": 77.21971,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "경상북도 - 계",
+      "timestamp": "2008",
+      "value": 78.60268,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "경상북도 - 계",
+      "timestamp": "2011",
+      "value": 79.61601,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "경상북도 - 계",
+      "timestamp": "2014",
+      "value": 81.13709,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "경상북도 - 계",
+      "timestamp": "2017",
+      "value": 82.04401,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "경상북도 - 계",
+      "timestamp": "2020",
+      "value": 82.60457,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "경상북도 - 계",
+      "timestamp": "2023",
+      "value": 82.68311,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "경상남도 - 남",
+      "timestamp": "2005",
+      "value": 73.14286,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "경상남도 - 남",
+      "timestamp": "2008",
+      "value": 74.65116,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "경상남도 - 남",
+      "timestamp": "2011",
+      "value": 76.10577,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "경상남도 - 남",
+      "timestamp": "2014",
+      "value": 77.34621,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "경상남도 - 남",
+      "timestamp": "2017",
+      "value": 78.56956,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "경상남도 - 남",
+      "timestamp": "2020",
+      "value": 79.53367,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "경상남도 - 남",
+      "timestamp": "2023",
+      "value": 79.66107,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "경상남도 - 여",
+      "timestamp": "2005",
+      "value": 80.68205,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "경상남도 - 여",
+      "timestamp": "2008",
+      "value": 82.29129,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "경상남도 - 여",
+      "timestamp": "2011",
+      "value": 83.35996,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "경상남도 - 여",
+      "timestamp": "2014",
+      "value": 84.47271,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "경상남도 - 여",
+      "timestamp": "2017",
+      "value": 85.16912,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "경상남도 - 여",
+      "timestamp": "2020",
+      "value": 85.9932,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "경상남도 - 여",
+      "timestamp": "2023",
+      "value": 85.86539,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "경상남도 - 계",
+      "timestamp": "2005",
+      "value": 76.91061,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "경상남도 - 계",
+      "timestamp": "2008",
+      "value": 78.47118,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "경상남도 - 계",
+      "timestamp": "2011",
+      "value": 79.73178,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "경상남도 - 계",
+      "timestamp": "2014",
+      "value": 80.90946,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "경상남도 - 계",
+      "timestamp": "2017",
+      "value": 81.86868,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "경상남도 - 계",
+      "timestamp": "2020",
+      "value": 82.76267,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "경상남도 - 계",
+      "timestamp": "2023",
+      "value": 82.76214,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "제주특별자치도 - 남",
+      "timestamp": "2005",
+      "value": 74.36123,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "제주특별자치도 - 남",
+      "timestamp": "2008",
+      "value": 76.42131,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "제주특별자치도 - 남",
+      "timestamp": "2011",
+      "value": 77.12344,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "제주특별자치도 - 남",
+      "timestamp": "2014",
+      "value": 78.27766,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "제주특별자치도 - 남",
+      "timestamp": "2017",
+      "value": 78.73453,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "제주특별자치도 - 남",
+      "timestamp": "2020",
+      "value": 80.24464,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "제주특별자치도 - 남",
+      "timestamp": "2023",
+      "value": 79.68882,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "B44T16"
+    },
+    {
+      "item": "제주특별자치도 - 여",
+      "timestamp": "2005",
+      "value": 83.05335,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "제주특별자치도 - 여",
+      "timestamp": "2008",
+      "value": 84.91346,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "제주특별자치도 - 여",
+      "timestamp": "2011",
+      "value": 85.62007,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "제주특별자치도 - 여",
+      "timestamp": "2014",
+      "value": 85.88019,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "제주특별자치도 - 여",
+      "timestamp": "2017",
+      "value": 86.72033,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "제주특별자치도 - 여",
+      "timestamp": "2020",
+      "value": 87.70743,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "제주특별자치도 - 여",
+      "timestamp": "2023",
+      "value": 87.73663,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "B44T26"
+    },
+    {
+      "item": "제주특별자치도 - 계",
+      "timestamp": "2005",
+      "value": 78.70611,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "제주특별자치도 - 계",
+      "timestamp": "2008",
+      "value": 80.66613,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "제주특별자치도 - 계",
+      "timestamp": "2011",
+      "value": 81.37167,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "제주특별자치도 - 계",
+      "timestamp": "2014",
+      "value": 82.0789,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "제주특별자치도 - 계",
+      "timestamp": "2017",
+      "value": 82.72674,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "제주특별자치도 - 계",
+      "timestamp": "2020",
+      "value": 83.97536,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "B44T6"
+    },
+    {
+      "item": "제주특별자치도 - 계",
+      "timestamp": "2023",
+      "value": 83.71241,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "B44T6"
+    }
+  ]
+}

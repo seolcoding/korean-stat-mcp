@@ -1,0 +1,3187 @@
+{
+  "metadata": {
+    "org_id": "101",
+    "org_name": "통계청",
+    "table_id": "DT_1YL1101",
+    "table_name": "구인배수(시도)",
+    "stat_id": "9B08007",
+    "stat_name": "e-지방지표",
+    "date_range": "2003 ~ 2023",
+    "description": "행정구역별 구인배수 전국 서울특별시 울산광역시 전북특별자치도 경상북도 충청북도 충청남도 대전광역시 강원특별자치도 경기도 경상남도 제주특별자치도 광주광역시 세종특별자치시 인천광역시 전라남도 부산광역시 대구광역시",
+    "item_info": "■  자료제공처:  통계청 지역통계기획팀 ■  자료원출처:  한국고용정보원(구인구직통계) ■  자료제공주기:  1년 ■  다음자료현행화:  익익년 1월 □  정의  - 구인배수: 신규구인인원 대비 신규구직건수 □  의의  - 인력수급을 나타내는 지표로 구인배수가 높을수록 일자리를 구하기가 쉬워지고 낮아질수록 일자리를 구하기가 어려워짐 □  산식  - 구인배수=신규구인인원÷신규구직건수 □  참고사항  - 지역 구분은 구인구직을 등록한 지방노동관서 소재지 기준임 - 지역에서 분류불능 제외",
+    "source_url": "http://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1YL1101",
+    "last_updated": "2025-06-24T18:14:11.071971",
+    "period_type": "M",
+    "period_name": "월간"
+  },
+  "data": [
+    {
+      "item": "전국 - 구인배수",
+      "timestamp": "2004",
+      "value": 0.56,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 구인배수",
+      "timestamp": "2005",
+      "value": 0.51,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 구인배수",
+      "timestamp": "2006",
+      "value": 0.49,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 구인배수",
+      "timestamp": "2007",
+      "value": 0.52,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 구인배수",
+      "timestamp": "2008",
+      "value": 0.53,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 구인배수",
+      "timestamp": "2009",
+      "value": 0.45,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 구인배수",
+      "timestamp": "2010",
+      "value": 0.64,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 구인배수",
+      "timestamp": "2011",
+      "value": 0.66,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 구인배수",
+      "timestamp": "2012",
+      "value": 0.68,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 구인배수",
+      "timestamp": "2013",
+      "value": 0.65,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 구인배수",
+      "timestamp": "2014",
+      "value": 0.61,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 구인배수",
+      "timestamp": "2015",
+      "value": 0.59,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 구인배수",
+      "timestamp": "2016",
+      "value": 0.62,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 구인배수",
+      "timestamp": "2017",
+      "value": 0.59,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 구인배수",
+      "timestamp": "2018",
+      "value": 0.61,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 구인배수",
+      "timestamp": "2019",
+      "value": 0.52,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 구인배수",
+      "timestamp": "2020",
+      "value": 0.45,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 구인배수",
+      "timestamp": "2021",
+      "value": 0.55,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 구인배수",
+      "timestamp": "2022",
+      "value": 0.71,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 구인배수",
+      "timestamp": "2023",
+      "value": 0.61,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 구인배수",
+      "timestamp": "2004",
+      "value": 0.5,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 구인배수",
+      "timestamp": "2005",
+      "value": 0.45,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 구인배수",
+      "timestamp": "2006",
+      "value": 0.43,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 구인배수",
+      "timestamp": "2007",
+      "value": 0.5,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 구인배수",
+      "timestamp": "2008",
+      "value": 0.47,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 구인배수",
+      "timestamp": "2009",
+      "value": 0.42,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 구인배수",
+      "timestamp": "2010",
+      "value": 0.52,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 구인배수",
+      "timestamp": "2011",
+      "value": 0.5,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 구인배수",
+      "timestamp": "2012",
+      "value": 0.55,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 구인배수",
+      "timestamp": "2013",
+      "value": 0.45,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 구인배수",
+      "timestamp": "2014",
+      "value": 0.43,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 구인배수",
+      "timestamp": "2015",
+      "value": 0.38,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 구인배수",
+      "timestamp": "2016",
+      "value": 0.39,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 구인배수",
+      "timestamp": "2017",
+      "value": 0.42,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 구인배수",
+      "timestamp": "2018",
+      "value": 0.46,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 구인배수",
+      "timestamp": "2019",
+      "value": 0.41,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 구인배수",
+      "timestamp": "2020",
+      "value": 0.31,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 구인배수",
+      "timestamp": "2021",
+      "value": 0.37,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 구인배수",
+      "timestamp": "2022",
+      "value": 0.54,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 구인배수",
+      "timestamp": "2023",
+      "value": 0.48,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 구인배수",
+      "timestamp": "2004",
+      "value": 0.46,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 구인배수",
+      "timestamp": "2005",
+      "value": 0.39,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 구인배수",
+      "timestamp": "2006",
+      "value": 0.43,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 구인배수",
+      "timestamp": "2007",
+      "value": 0.43,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 구인배수",
+      "timestamp": "2008",
+      "value": 0.41,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 구인배수",
+      "timestamp": "2009",
+      "value": 0.3,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 구인배수",
+      "timestamp": "2010",
+      "value": 0.4,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 구인배수",
+      "timestamp": "2011",
+      "value": 0.47,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 구인배수",
+      "timestamp": "2012",
+      "value": 0.51,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 구인배수",
+      "timestamp": "2013",
+      "value": 0.5,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 구인배수",
+      "timestamp": "2014",
+      "value": 0.58,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 구인배수",
+      "timestamp": "2015",
+      "value": 0.6,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 구인배수",
+      "timestamp": "2016",
+      "value": 0.52,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 구인배수",
+      "timestamp": "2017",
+      "value": 0.43,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 구인배수",
+      "timestamp": "2018",
+      "value": 0.42,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 구인배수",
+      "timestamp": "2019",
+      "value": 0.38,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 구인배수",
+      "timestamp": "2020",
+      "value": 0.31,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 구인배수",
+      "timestamp": "2021",
+      "value": 0.38,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 구인배수",
+      "timestamp": "2022",
+      "value": 0.5,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 구인배수",
+      "timestamp": "2023",
+      "value": 0.45,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 구인배수",
+      "timestamp": "2004",
+      "value": 0.57,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 구인배수",
+      "timestamp": "2005",
+      "value": 0.53,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 구인배수",
+      "timestamp": "2006",
+      "value": 0.5,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 구인배수",
+      "timestamp": "2007",
+      "value": 0.58,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 구인배수",
+      "timestamp": "2008",
+      "value": 0.57,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 구인배수",
+      "timestamp": "2009",
+      "value": 0.45,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 구인배수",
+      "timestamp": "2010",
+      "value": 0.55,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 구인배수",
+      "timestamp": "2011",
+      "value": 0.69,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 구인배수",
+      "timestamp": "2012",
+      "value": 0.68,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 구인배수",
+      "timestamp": "2013",
+      "value": 0.65,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 구인배수",
+      "timestamp": "2014",
+      "value": 0.6,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 구인배수",
+      "timestamp": "2015",
+      "value": 0.54,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 구인배수",
+      "timestamp": "2016",
+      "value": 0.53,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 구인배수",
+      "timestamp": "2017",
+      "value": 0.44,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 구인배수",
+      "timestamp": "2018",
+      "value": 0.49,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 구인배수",
+      "timestamp": "2019",
+      "value": 0.4,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 구인배수",
+      "timestamp": "2020",
+      "value": 0.34,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 구인배수",
+      "timestamp": "2021",
+      "value": 0.43,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 구인배수",
+      "timestamp": "2022",
+      "value": 0.53,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 구인배수",
+      "timestamp": "2023",
+      "value": 0.44,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 구인배수",
+      "timestamp": "2004",
+      "value": 0.64,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 구인배수",
+      "timestamp": "2005",
+      "value": 0.6,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 구인배수",
+      "timestamp": "2006",
+      "value": 0.55,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 구인배수",
+      "timestamp": "2007",
+      "value": 0.52,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 구인배수",
+      "timestamp": "2008",
+      "value": 0.52,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 구인배수",
+      "timestamp": "2009",
+      "value": 0.46,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 구인배수",
+      "timestamp": "2010",
+      "value": 0.71,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 구인배수",
+      "timestamp": "2011",
+      "value": 0.63,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 구인배수",
+      "timestamp": "2012",
+      "value": 0.67,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 구인배수",
+      "timestamp": "2013",
+      "value": 0.64,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 구인배수",
+      "timestamp": "2014",
+      "value": 0.53,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 구인배수",
+      "timestamp": "2015",
+      "value": 0.56,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 구인배수",
+      "timestamp": "2016",
+      "value": 0.59,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 구인배수",
+      "timestamp": "2017",
+      "value": 0.57,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 구인배수",
+      "timestamp": "2018",
+      "value": 0.55,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 구인배수",
+      "timestamp": "2019",
+      "value": 0.41,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 구인배수",
+      "timestamp": "2020",
+      "value": 0.33,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 구인배수",
+      "timestamp": "2021",
+      "value": 0.47,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 구인배수",
+      "timestamp": "2022",
+      "value": 0.61,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 구인배수",
+      "timestamp": "2023",
+      "value": 0.52,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 구인배수",
+      "timestamp": "2004",
+      "value": 0.44,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 구인배수",
+      "timestamp": "2005",
+      "value": 0.34,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 구인배수",
+      "timestamp": "2006",
+      "value": 0.45,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 구인배수",
+      "timestamp": "2007",
+      "value": 0.44,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 구인배수",
+      "timestamp": "2008",
+      "value": 0.42,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 구인배수",
+      "timestamp": "2009",
+      "value": 0.31,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 구인배수",
+      "timestamp": "2010",
+      "value": 0.47,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 구인배수",
+      "timestamp": "2011",
+      "value": 0.56,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 구인배수",
+      "timestamp": "2012",
+      "value": 0.65,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 구인배수",
+      "timestamp": "2013",
+      "value": 0.62,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 구인배수",
+      "timestamp": "2014",
+      "value": 0.54,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 구인배수",
+      "timestamp": "2015",
+      "value": 0.55,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 구인배수",
+      "timestamp": "2016",
+      "value": 0.72,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 구인배수",
+      "timestamp": "2017",
+      "value": 0.66,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 구인배수",
+      "timestamp": "2018",
+      "value": 0.58,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 구인배수",
+      "timestamp": "2019",
+      "value": 0.53,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 구인배수",
+      "timestamp": "2020",
+      "value": 0.48,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 구인배수",
+      "timestamp": "2021",
+      "value": 0.56,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 구인배수",
+      "timestamp": "2022",
+      "value": 0.59,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 구인배수",
+      "timestamp": "2023",
+      "value": 0.44,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 구인배수",
+      "timestamp": "2004",
+      "value": 0.37,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 구인배수",
+      "timestamp": "2005",
+      "value": 0.37,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 구인배수",
+      "timestamp": "2006",
+      "value": 0.4,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 구인배수",
+      "timestamp": "2007",
+      "value": 0.36,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 구인배수",
+      "timestamp": "2008",
+      "value": 0.41,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 구인배수",
+      "timestamp": "2009",
+      "value": 0.35,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 구인배수",
+      "timestamp": "2010",
+      "value": 0.51,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 구인배수",
+      "timestamp": "2011",
+      "value": 0.49,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 구인배수",
+      "timestamp": "2012",
+      "value": 0.41,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 구인배수",
+      "timestamp": "2013",
+      "value": 0.45,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 구인배수",
+      "timestamp": "2014",
+      "value": 0.39,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 구인배수",
+      "timestamp": "2015",
+      "value": 0.45,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 구인배수",
+      "timestamp": "2016",
+      "value": 0.4,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 구인배수",
+      "timestamp": "2017",
+      "value": 0.34,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 구인배수",
+      "timestamp": "2018",
+      "value": 0.28,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 구인배수",
+      "timestamp": "2019",
+      "value": 0.28,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 구인배수",
+      "timestamp": "2020",
+      "value": 0.28,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 구인배수",
+      "timestamp": "2021",
+      "value": 0.29,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 구인배수",
+      "timestamp": "2022",
+      "value": 0.39,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 구인배수",
+      "timestamp": "2023",
+      "value": 0.31,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 구인배수",
+      "timestamp": "2004",
+      "value": 0.68,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 구인배수",
+      "timestamp": "2005",
+      "value": 0.59,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 구인배수",
+      "timestamp": "2006",
+      "value": 0.66,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 구인배수",
+      "timestamp": "2007",
+      "value": 0.74,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 구인배수",
+      "timestamp": "2008",
+      "value": 0.71,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 구인배수",
+      "timestamp": "2009",
+      "value": 0.47,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 구인배수",
+      "timestamp": "2010",
+      "value": 0.66,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 구인배수",
+      "timestamp": "2011",
+      "value": 0.86,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 구인배수",
+      "timestamp": "2012",
+      "value": 1.06,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 구인배수",
+      "timestamp": "2013",
+      "value": 1.15,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 구인배수",
+      "timestamp": "2014",
+      "value": 0.9,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 구인배수",
+      "timestamp": "2015",
+      "value": 0.86,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 구인배수",
+      "timestamp": "2016",
+      "value": 0.74,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 구인배수",
+      "timestamp": "2017",
+      "value": 0.51,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 구인배수",
+      "timestamp": "2018",
+      "value": 0.46,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 구인배수",
+      "timestamp": "2019",
+      "value": 0.41,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 구인배수",
+      "timestamp": "2020",
+      "value": 0.38,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 구인배수",
+      "timestamp": "2021",
+      "value": 0.39,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 구인배수",
+      "timestamp": "2022",
+      "value": 0.56,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 구인배수",
+      "timestamp": "2023",
+      "value": 0.54,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "세종특별자치시 - 구인배수",
+      "timestamp": "2012",
+      "value": 3.2,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "세종특별자치시 - 구인배수",
+      "timestamp": "2013",
+      "value": 2.11,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "세종특별자치시 - 구인배수",
+      "timestamp": "2014",
+      "value": 1.57,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "세종특별자치시 - 구인배수",
+      "timestamp": "2015",
+      "value": 1.6,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "세종특별자치시 - 구인배수",
+      "timestamp": "2016",
+      "value": 1.29,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "세종특별자치시 - 구인배수",
+      "timestamp": "2017",
+      "value": 1.09,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "세종특별자치시 - 구인배수",
+      "timestamp": "2018",
+      "value": 0.66,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "세종특별자치시 - 구인배수",
+      "timestamp": "2019",
+      "value": 0.38,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "세종특별자치시 - 구인배수",
+      "timestamp": "2020",
+      "value": 0.42,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "세종특별자치시 - 구인배수",
+      "timestamp": "2021",
+      "value": 0.63,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "세종특별자치시 - 구인배수",
+      "timestamp": "2022",
+      "value": 0.67,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "세종특별자치시 - 구인배수",
+      "timestamp": "2023",
+      "value": 0.62,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 구인배수",
+      "timestamp": "2004",
+      "value": 0.78,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 구인배수",
+      "timestamp": "2005",
+      "value": 0.76,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 구인배수",
+      "timestamp": "2006",
+      "value": 0.61,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 구인배수",
+      "timestamp": "2007",
+      "value": 0.62,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 구인배수",
+      "timestamp": "2008",
+      "value": 0.61,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 구인배수",
+      "timestamp": "2009",
+      "value": 0.51,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 구인배수",
+      "timestamp": "2010",
+      "value": 0.84,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 구인배수",
+      "timestamp": "2011",
+      "value": 0.74,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 구인배수",
+      "timestamp": "2012",
+      "value": 0.72,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 구인배수",
+      "timestamp": "2013",
+      "value": 0.71,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 구인배수",
+      "timestamp": "2014",
+      "value": 0.59,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 구인배수",
+      "timestamp": "2015",
+      "value": 0.58,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 구인배수",
+      "timestamp": "2016",
+      "value": 0.68,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 구인배수",
+      "timestamp": "2017",
+      "value": 0.71,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 구인배수",
+      "timestamp": "2018",
+      "value": 0.73,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 구인배수",
+      "timestamp": "2019",
+      "value": 0.57,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 구인배수",
+      "timestamp": "2020",
+      "value": 0.49,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 구인배수",
+      "timestamp": "2021",
+      "value": 0.64,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 구인배수",
+      "timestamp": "2022",
+      "value": 0.8,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 구인배수",
+      "timestamp": "2023",
+      "value": 0.65,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 구인배수",
+      "timestamp": "2004",
+      "value": 0.3,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 구인배수",
+      "timestamp": "2005",
+      "value": 0.25,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 구인배수",
+      "timestamp": "2006",
+      "value": 0.28,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 구인배수",
+      "timestamp": "2007",
+      "value": 0.32,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 구인배수",
+      "timestamp": "2008",
+      "value": 0.29,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 구인배수",
+      "timestamp": "2009",
+      "value": 0.3,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 구인배수",
+      "timestamp": "2010",
+      "value": 0.44,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 구인배수",
+      "timestamp": "2011",
+      "value": 0.46,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 구인배수",
+      "timestamp": "2012",
+      "value": 0.51,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 구인배수",
+      "timestamp": "2013",
+      "value": 0.59,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 구인배수",
+      "timestamp": "2014",
+      "value": 0.62,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 구인배수",
+      "timestamp": "2015",
+      "value": 0.69,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 구인배수",
+      "timestamp": "2016",
+      "value": 1.02,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 구인배수",
+      "timestamp": "2017",
+      "value": 0.81,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 구인배수",
+      "timestamp": "2018",
+      "value": 0.8,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 구인배수",
+      "timestamp": "2019",
+      "value": 0.69,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 구인배수",
+      "timestamp": "2020",
+      "value": 0.51,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 구인배수",
+      "timestamp": "2021",
+      "value": 0.61,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 구인배수",
+      "timestamp": "2022",
+      "value": 0.75,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 구인배수",
+      "timestamp": "2023",
+      "value": 0.68,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 구인배수",
+      "timestamp": "2004",
+      "value": 0.47,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 구인배수",
+      "timestamp": "2005",
+      "value": 0.45,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 구인배수",
+      "timestamp": "2006",
+      "value": 0.44,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 구인배수",
+      "timestamp": "2007",
+      "value": 0.48,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 구인배수",
+      "timestamp": "2008",
+      "value": 0.56,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 구인배수",
+      "timestamp": "2009",
+      "value": 0.62,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 구인배수",
+      "timestamp": "2010",
+      "value": 0.84,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 구인배수",
+      "timestamp": "2011",
+      "value": 0.86,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 구인배수",
+      "timestamp": "2012",
+      "value": 0.91,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 구인배수",
+      "timestamp": "2013",
+      "value": 0.87,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 구인배수",
+      "timestamp": "2014",
+      "value": 0.85,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 구인배수",
+      "timestamp": "2015",
+      "value": 0.88,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 구인배수",
+      "timestamp": "2016",
+      "value": 0.93,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 구인배수",
+      "timestamp": "2017",
+      "value": 0.9,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 구인배수",
+      "timestamp": "2018",
+      "value": 0.96,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 구인배수",
+      "timestamp": "2019",
+      "value": 0.95,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 구인배수",
+      "timestamp": "2020",
+      "value": 0.86,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 구인배수",
+      "timestamp": "2021",
+      "value": 0.98,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 구인배수",
+      "timestamp": "2022",
+      "value": 1.24,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 구인배수",
+      "timestamp": "2023",
+      "value": 0.91,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 구인배수",
+      "timestamp": "2004",
+      "value": 0.75,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 구인배수",
+      "timestamp": "2005",
+      "value": 0.62,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 구인배수",
+      "timestamp": "2006",
+      "value": 0.56,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 구인배수",
+      "timestamp": "2007",
+      "value": 0.53,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 구인배수",
+      "timestamp": "2008",
+      "value": 0.68,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 구인배수",
+      "timestamp": "2009",
+      "value": 0.67,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 구인배수",
+      "timestamp": "2010",
+      "value": 1.1,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 구인배수",
+      "timestamp": "2011",
+      "value": 0.98,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 구인배수",
+      "timestamp": "2012",
+      "value": 0.92,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 구인배수",
+      "timestamp": "2013",
+      "value": 0.92,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 구인배수",
+      "timestamp": "2014",
+      "value": 0.78,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 구인배수",
+      "timestamp": "2015",
+      "value": 0.78,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 구인배수",
+      "timestamp": "2016",
+      "value": 0.89,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 구인배수",
+      "timestamp": "2017",
+      "value": 0.84,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 구인배수",
+      "timestamp": "2018",
+      "value": 0.81,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 구인배수",
+      "timestamp": "2019",
+      "value": 0.71,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 구인배수",
+      "timestamp": "2020",
+      "value": 0.72,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 구인배수",
+      "timestamp": "2021",
+      "value": 0.83,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 구인배수",
+      "timestamp": "2022",
+      "value": 1.15,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 구인배수",
+      "timestamp": "2023",
+      "value": 0.91,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 구인배수",
+      "timestamp": "2004",
+      "value": 0.38,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 구인배수",
+      "timestamp": "2005",
+      "value": 0.34,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 구인배수",
+      "timestamp": "2006",
+      "value": 0.34,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 구인배수",
+      "timestamp": "2007",
+      "value": 0.36,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 구인배수",
+      "timestamp": "2008",
+      "value": 0.43,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 구인배수",
+      "timestamp": "2009",
+      "value": 0.36,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 구인배수",
+      "timestamp": "2010",
+      "value": 0.44,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 구인배수",
+      "timestamp": "2011",
+      "value": 0.57,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 구인배수",
+      "timestamp": "2012",
+      "value": 0.6,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 구인배수",
+      "timestamp": "2013",
+      "value": 0.59,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 구인배수",
+      "timestamp": "2014",
+      "value": 0.59,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 구인배수",
+      "timestamp": "2015",
+      "value": 0.54,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 구인배수",
+      "timestamp": "2016",
+      "value": 0.59,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 구인배수",
+      "timestamp": "2017",
+      "value": 0.68,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 구인배수",
+      "timestamp": "2018",
+      "value": 0.74,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 구인배수",
+      "timestamp": "2019",
+      "value": 0.67,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 구인배수",
+      "timestamp": "2020",
+      "value": 0.63,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 구인배수",
+      "timestamp": "2021",
+      "value": 0.65,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 구인배수",
+      "timestamp": "2022",
+      "value": 0.75,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 구인배수",
+      "timestamp": "2023",
+      "value": 0.67,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 구인배수",
+      "timestamp": "2004",
+      "value": 0.24,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 구인배수",
+      "timestamp": "2005",
+      "value": 0.28,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 구인배수",
+      "timestamp": "2006",
+      "value": 0.31,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 구인배수",
+      "timestamp": "2007",
+      "value": 0.4,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 구인배수",
+      "timestamp": "2008",
+      "value": 0.57,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 구인배수",
+      "timestamp": "2009",
+      "value": 0.56,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 구인배수",
+      "timestamp": "2010",
+      "value": 0.59,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 구인배수",
+      "timestamp": "2011",
+      "value": 0.83,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 구인배수",
+      "timestamp": "2012",
+      "value": 0.87,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 구인배수",
+      "timestamp": "2013",
+      "value": 0.87,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 구인배수",
+      "timestamp": "2014",
+      "value": 0.85,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 구인배수",
+      "timestamp": "2015",
+      "value": 0.94,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 구인배수",
+      "timestamp": "2016",
+      "value": 0.82,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 구인배수",
+      "timestamp": "2017",
+      "value": 0.79,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 구인배수",
+      "timestamp": "2018",
+      "value": 0.76,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 구인배수",
+      "timestamp": "2019",
+      "value": 0.87,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 구인배수",
+      "timestamp": "2020",
+      "value": 0.84,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 구인배수",
+      "timestamp": "2021",
+      "value": 0.85,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 구인배수",
+      "timestamp": "2022",
+      "value": 1.03,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 구인배수",
+      "timestamp": "2023",
+      "value": 0.97,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 구인배수",
+      "timestamp": "2004",
+      "value": 0.46,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 구인배수",
+      "timestamp": "2005",
+      "value": 0.45,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 구인배수",
+      "timestamp": "2006",
+      "value": 0.46,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 구인배수",
+      "timestamp": "2007",
+      "value": 0.48,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 구인배수",
+      "timestamp": "2008",
+      "value": 0.52,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 구인배수",
+      "timestamp": "2009",
+      "value": 0.45,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 구인배수",
+      "timestamp": "2010",
+      "value": 0.62,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 구인배수",
+      "timestamp": "2011",
+      "value": 0.65,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 구인배수",
+      "timestamp": "2012",
+      "value": 0.67,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 구인배수",
+      "timestamp": "2013",
+      "value": 0.67,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 구인배수",
+      "timestamp": "2014",
+      "value": 0.66,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 구인배수",
+      "timestamp": "2015",
+      "value": 0.63,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 구인배수",
+      "timestamp": "2016",
+      "value": 0.47,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 구인배수",
+      "timestamp": "2017",
+      "value": 0.47,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 구인배수",
+      "timestamp": "2018",
+      "value": 0.61,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 구인배수",
+      "timestamp": "2019",
+      "value": 0.56,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 구인배수",
+      "timestamp": "2020",
+      "value": 0.55,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 구인배수",
+      "timestamp": "2021",
+      "value": 0.68,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 구인배수",
+      "timestamp": "2022",
+      "value": 0.84,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 구인배수",
+      "timestamp": "2023",
+      "value": 0.72,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 구인배수",
+      "timestamp": "2004",
+      "value": 0.64,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 구인배수",
+      "timestamp": "2005",
+      "value": 0.58,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 구인배수",
+      "timestamp": "2006",
+      "value": 0.6,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 구인배수",
+      "timestamp": "2007",
+      "value": 0.67,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 구인배수",
+      "timestamp": "2008",
+      "value": 0.77,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 구인배수",
+      "timestamp": "2009",
+      "value": 0.54,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 구인배수",
+      "timestamp": "2010",
+      "value": 0.85,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 구인배수",
+      "timestamp": "2011",
+      "value": 1.04,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 구인배수",
+      "timestamp": "2012",
+      "value": 1.09,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 구인배수",
+      "timestamp": "2013",
+      "value": 1.02,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 구인배수",
+      "timestamp": "2014",
+      "value": 1.01,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 구인배수",
+      "timestamp": "2015",
+      "value": 1.03,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 구인배수",
+      "timestamp": "2016",
+      "value": 0.86,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 구인배수",
+      "timestamp": "2017",
+      "value": 0.62,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 구인배수",
+      "timestamp": "2018",
+      "value": 0.59,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 구인배수",
+      "timestamp": "2019",
+      "value": 0.54,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 구인배수",
+      "timestamp": "2020",
+      "value": 0.44,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 구인배수",
+      "timestamp": "2021",
+      "value": 0.58,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 구인배수",
+      "timestamp": "2022",
+      "value": 0.78,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 구인배수",
+      "timestamp": "2023",
+      "value": 0.78,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 구인배수",
+      "timestamp": "2004",
+      "value": 0.42,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 구인배수",
+      "timestamp": "2005",
+      "value": 0.38,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 구인배수",
+      "timestamp": "2006",
+      "value": 0.37,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 구인배수",
+      "timestamp": "2007",
+      "value": 0.47,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 구인배수",
+      "timestamp": "2008",
+      "value": 0.48,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 구인배수",
+      "timestamp": "2009",
+      "value": 0.46,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 구인배수",
+      "timestamp": "2010",
+      "value": 0.64,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 구인배수",
+      "timestamp": "2011",
+      "value": 0.8,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 구인배수",
+      "timestamp": "2012",
+      "value": 0.81,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 구인배수",
+      "timestamp": "2013",
+      "value": 0.88,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 구인배수",
+      "timestamp": "2014",
+      "value": 1.15,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 구인배수",
+      "timestamp": "2015",
+      "value": 1.25,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 구인배수",
+      "timestamp": "2016",
+      "value": 1.25,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 구인배수",
+      "timestamp": "2017",
+      "value": 1.05,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 구인배수",
+      "timestamp": "2018",
+      "value": 0.94,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 구인배수",
+      "timestamp": "2019",
+      "value": 0.7,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 구인배수",
+      "timestamp": "2020",
+      "value": 0.5,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 구인배수",
+      "timestamp": "2021",
+      "value": 0.46,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 구인배수",
+      "timestamp": "2022",
+      "value": 0.58,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 구인배수",
+      "timestamp": "2023",
+      "value": 0.67,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    }
+  ]
+}

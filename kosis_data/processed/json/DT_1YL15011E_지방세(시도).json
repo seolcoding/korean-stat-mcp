@@ -1,0 +1,7309 @@
+{
+  "metadata": {
+    "org_id": "101",
+    "org_name": "통계청",
+    "table_id": "DT_1YL15011E",
+    "table_name": "지방세(시도)",
+    "stat_id": "9B08007",
+    "stat_name": "e-지방지표",
+    "date_range": "1972 ~ 2023",
+    "description": "행정구역별 지방세 전라남도 세종특별자치시 경상북도 전국 경상남도 강원특별자치도 부산광역시 대구광역시 대전광역시 광주광역시 경기도 서울특별시 제주특별자치도 충청남도 인천광역시 울산광역시 충청북도 전북특별자치도",
+    "item_info": "■  자료제공처:  통계청 지역통계기획팀 ■  자료원출처:  행정안전부(지방세통계) ■  자료제공주기:  1년 ■  자료제공시기:  조사기준년도 익년 10월 □  정의  - 지방세: 지방자치단체가 지방재정수요에 충당하기 위하여 관할구역내의 주민·재산 또는 수익 등에 대하여 부과·징수하는 조세 □  의의  - 지방자치단체가 지방재정수요에 충당하기 위하여 관할구역내의 주민·재산 또는 수익 등에 대하여 부과·징수하는 조세로 지방자치단체의 자주재원의 근간임",
+    "source_url": "http://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1YL15011E",
+    "last_updated": "2025-06-24T18:18:47.052711",
+    "period_type": "M",
+    "period_name": "월간"
+  },
+  "data": [
+    {
+      "item": "전국 - 지방세",
+      "timestamp": "1973",
+      "value": 74134.0,
+      "item_codes": {
+        "C1": "15110AA300"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전국 - 지방세",
+      "timestamp": "1974",
+      "value": 107986.0,
+      "item_codes": {
+        "C1": "15110AA300"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전국 - 지방세",
+      "timestamp": "1975",
+      "value": 158790.0,
+      "item_codes": {
+        "C1": "15110AA300"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전국 - 지방세",
+      "timestamp": "1976",
+      "value": 220566.0,
+      "item_codes": {
+        "C1": "15110AA300"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전국 - 지방세",
+      "timestamp": "1977",
+      "value": 336575.0,
+      "item_codes": {
+        "C1": "15110AA300"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전국 - 지방세",
+      "timestamp": "1978",
+      "value": 443251.0,
+      "item_codes": {
+        "C1": "15110AA300"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전국 - 지방세",
+      "timestamp": "1979",
+      "value": 599199.0,
+      "item_codes": {
+        "C1": "15110AA300"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전국 - 지방세",
+      "timestamp": "1980",
+      "value": 767691.0,
+      "item_codes": {
+        "C1": "15110AA300"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전국 - 지방세",
+      "timestamp": "1981",
+      "value": 914372.0,
+      "item_codes": {
+        "C1": "15110AA300"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전국 - 지방세",
+      "timestamp": "1982",
+      "value": 1119206.0,
+      "item_codes": {
+        "C1": "15110AA300"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전국 - 지방세",
+      "timestamp": "1983",
+      "value": 1397167.0,
+      "item_codes": {
+        "C1": "15110AA300"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전국 - 지방세",
+      "timestamp": "1984",
+      "value": 1508354.0,
+      "item_codes": {
+        "C1": "15110AA300"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전국 - 지방세",
+      "timestamp": "1985",
+      "value": 1654635.0,
+      "item_codes": {
+        "C1": "15110AA300"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전국 - 지방세",
+      "timestamp": "1986",
+      "value": 1809753.0,
+      "item_codes": {
+        "C1": "15110AA300"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전국 - 지방세",
+      "timestamp": "1987",
+      "value": 2192323.0,
+      "item_codes": {
+        "C1": "15110AA300"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전국 - 지방세",
+      "timestamp": "1988",
+      "value": 3099969.0,
+      "item_codes": {
+        "C1": "15110AA300"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전국 - 지방세",
+      "timestamp": "1989",
+      "value": 4960844.0,
+      "item_codes": {
+        "C1": "15110AA300"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전국 - 지방세",
+      "timestamp": "1990",
+      "value": 6367366.0,
+      "item_codes": {
+        "C1": "15110AA300"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전국 - 지방세",
+      "timestamp": "1991",
+      "value": 8035143.0,
+      "item_codes": {
+        "C1": "15110AA300"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전국 - 지방세",
+      "timestamp": "1992",
+      "value": 9462217.0,
+      "item_codes": {
+        "C1": "15110AA300"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전국 - 지방세",
+      "timestamp": "1993",
+      "value": 11026067.0,
+      "item_codes": {
+        "C1": "15110AA300"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전국 - 지방세",
+      "timestamp": "1994",
+      "value": 13230911.0,
+      "item_codes": {
+        "C1": "15110AA300"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전국 - 지방세",
+      "timestamp": "1995",
+      "value": 15315965.0,
+      "item_codes": {
+        "C1": "15110AA300"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전국 - 지방세",
+      "timestamp": "1996",
+      "value": 17394685.0,
+      "item_codes": {
+        "C1": "15110AA300"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전국 - 지방세",
+      "timestamp": "1997",
+      "value": 18405681.0,
+      "item_codes": {
+        "C1": "15110AA300"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전국 - 지방세",
+      "timestamp": "1998",
+      "value": 17149712.0,
+      "item_codes": {
+        "C1": "15110AA300"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전국 - 지방세",
+      "timestamp": "1999",
+      "value": 18586101.0,
+      "item_codes": {
+        "C1": "15110AA300"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전국 - 지방세",
+      "timestamp": "2000",
+      "value": 20600603.0,
+      "item_codes": {
+        "C1": "15110AA300"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전국 - 지방세",
+      "timestamp": "2001",
+      "value": 26664879.0,
+      "item_codes": {
+        "C1": "15110AA300"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전국 - 지방세",
+      "timestamp": "2002",
+      "value": 31525744.0,
+      "item_codes": {
+        "C1": "15110AA300"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전국 - 지방세",
+      "timestamp": "2003",
+      "value": 33132943.0,
+      "item_codes": {
+        "C1": "15110AA300"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전국 - 지방세",
+      "timestamp": "2004",
+      "value": 34201705.0,
+      "item_codes": {
+        "C1": "15110AA300"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전국 - 지방세",
+      "timestamp": "2005",
+      "value": 35977359.0,
+      "item_codes": {
+        "C1": "15110AA300"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전국 - 지방세",
+      "timestamp": "2006",
+      "value": 41293702.0,
+      "item_codes": {
+        "C1": "15110AA300"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전국 - 지방세",
+      "timestamp": "2007",
+      "value": 43524289.0,
+      "item_codes": {
+        "C1": "15110AA300"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전국 - 지방세",
+      "timestamp": "2008",
+      "value": 45479732.0,
+      "item_codes": {
+        "C1": "15110AA300"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전국 - 지방세",
+      "timestamp": "2009",
+      "value": 45167790.0,
+      "item_codes": {
+        "C1": "15110AA300"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전국 - 지방세",
+      "timestamp": "2010",
+      "value": 49159805.0,
+      "item_codes": {
+        "C1": "15110AA300"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전국 - 지방세",
+      "timestamp": "2011",
+      "value": 52300144.0,
+      "item_codes": {
+        "C1": "15110AA300"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전국 - 지방세",
+      "timestamp": "2012",
+      "value": 53938064.0,
+      "item_codes": {
+        "C1": "15110AA300"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전국 - 지방세",
+      "timestamp": "2013",
+      "value": 53778881.0,
+      "item_codes": {
+        "C1": "15110AA300"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전국 - 지방세",
+      "timestamp": "2014",
+      "value": 61725013.0,
+      "item_codes": {
+        "C1": "15110AA300"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전국 - 지방세",
+      "timestamp": "2015",
+      "value": 70977794.0,
+      "item_codes": {
+        "C1": "15110AA300"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전국 - 지방세",
+      "timestamp": "2016",
+      "value": 75531651.0,
+      "item_codes": {
+        "C1": "15110AA300"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전국 - 지방세",
+      "timestamp": "2017",
+      "value": 80409137.0,
+      "item_codes": {
+        "C1": "15110AA300"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전국 - 지방세",
+      "timestamp": "2018",
+      "value": 84318258.0,
+      "item_codes": {
+        "C1": "15110AA300"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전국 - 지방세",
+      "timestamp": "2019",
+      "value": 90460408.0,
+      "item_codes": {
+        "C1": "15110AA300"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전국 - 지방세",
+      "timestamp": "2020",
+      "value": 102048782.0,
+      "item_codes": {
+        "C1": "15110AA300"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전국 - 지방세",
+      "timestamp": "2021",
+      "value": 112798430.0,
+      "item_codes": {
+        "C1": "15110AA300"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전국 - 지방세",
+      "timestamp": "2022",
+      "value": 118570661.0,
+      "item_codes": {
+        "C1": "15110AA300"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전국 - 지방세",
+      "timestamp": "2023",
+      "value": 112460899.0,
+      "item_codes": {
+        "C1": "15110AA300"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "서울특별시 - 지방세",
+      "timestamp": "1973",
+      "value": 32245.0,
+      "item_codes": {
+        "C1": "15110AA3Ac"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "서울특별시 - 지방세",
+      "timestamp": "1974",
+      "value": 46001.0,
+      "item_codes": {
+        "C1": "15110AA3Ac"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "서울특별시 - 지방세",
+      "timestamp": "1975",
+      "value": 70282.0,
+      "item_codes": {
+        "C1": "15110AA3Ac"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "서울특별시 - 지방세",
+      "timestamp": "1976",
+      "value": 97149.0,
+      "item_codes": {
+        "C1": "15110AA3Ac"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "서울특별시 - 지방세",
+      "timestamp": "1977",
+      "value": 151529.0,
+      "item_codes": {
+        "C1": "15110AA3Ac"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "서울특별시 - 지방세",
+      "timestamp": "1978",
+      "value": 203982.0,
+      "item_codes": {
+        "C1": "15110AA3Ac"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "서울특별시 - 지방세",
+      "timestamp": "1979",
+      "value": 251113.0,
+      "item_codes": {
+        "C1": "15110AA3Ac"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "서울특별시 - 지방세",
+      "timestamp": "1980",
+      "value": 300431.0,
+      "item_codes": {
+        "C1": "15110AA3Ac"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "서울특별시 - 지방세",
+      "timestamp": "1981",
+      "value": 354295.0,
+      "item_codes": {
+        "C1": "15110AA3Ac"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "서울특별시 - 지방세",
+      "timestamp": "1982",
+      "value": 458391.0,
+      "item_codes": {
+        "C1": "15110AA3Ac"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "서울특별시 - 지방세",
+      "timestamp": "1983",
+      "value": 592412.0,
+      "item_codes": {
+        "C1": "15110AA3Ac"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "서울특별시 - 지방세",
+      "timestamp": "1984",
+      "value": 607364.0,
+      "item_codes": {
+        "C1": "15110AA3Ac"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "서울특별시 - 지방세",
+      "timestamp": "1985",
+      "value": 656688.0,
+      "item_codes": {
+        "C1": "15110AA3Ac"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "서울특별시 - 지방세",
+      "timestamp": "1986",
+      "value": 706010.0,
+      "item_codes": {
+        "C1": "15110AA3Ac"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "서울특별시 - 지방세",
+      "timestamp": "1987",
+      "value": 840449.0,
+      "item_codes": {
+        "C1": "15110AA3Ac"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "서울특별시 - 지방세",
+      "timestamp": "1988",
+      "value": 1156136.0,
+      "item_codes": {
+        "C1": "15110AA3Ac"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "서울특별시 - 지방세",
+      "timestamp": "1989",
+      "value": 1757740.0,
+      "item_codes": {
+        "C1": "15110AA3Ac"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "서울특별시 - 지방세",
+      "timestamp": "1990",
+      "value": 2091676.0,
+      "item_codes": {
+        "C1": "15110AA3Ac"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "서울특별시 - 지방세",
+      "timestamp": "1991",
+      "value": 2540753.0,
+      "item_codes": {
+        "C1": "15110AA3Ac"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "서울특별시 - 지방세",
+      "timestamp": "1992",
+      "value": 2907141.0,
+      "item_codes": {
+        "C1": "15110AA3Ac"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "서울특별시 - 지방세",
+      "timestamp": "1993",
+      "value": 3259784.0,
+      "item_codes": {
+        "C1": "15110AA3Ac"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "서울특별시 - 지방세",
+      "timestamp": "1994",
+      "value": 3849973.0,
+      "item_codes": {
+        "C1": "15110AA3Ac"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "서울특별시 - 지방세",
+      "timestamp": "1995",
+      "value": 4339477.0,
+      "item_codes": {
+        "C1": "15110AA3Ac"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "서울특별시 - 지방세",
+      "timestamp": "1996",
+      "value": 4890599.0,
+      "item_codes": {
+        "C1": "15110AA3Ac"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "서울특별시 - 지방세",
+      "timestamp": "1997",
+      "value": 5332574.0,
+      "item_codes": {
+        "C1": "15110AA3Ac"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "서울특별시 - 지방세",
+      "timestamp": "1998",
+      "value": 4944434.0,
+      "item_codes": {
+        "C1": "15110AA3Ac"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "서울특별시 - 지방세",
+      "timestamp": "1999",
+      "value": 5566124.0,
+      "item_codes": {
+        "C1": "15110AA3Ac"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "서울특별시 - 지방세",
+      "timestamp": "2000",
+      "value": 6204198.0,
+      "item_codes": {
+        "C1": "15110AA3Ac"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "서울특별시 - 지방세",
+      "timestamp": "2001",
+      "value": 7934080.0,
+      "item_codes": {
+        "C1": "15110AA3Ac"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "서울특별시 - 지방세",
+      "timestamp": "2002",
+      "value": 9430644.0,
+      "item_codes": {
+        "C1": "15110AA3Ac"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "서울특별시 - 지방세",
+      "timestamp": "2003",
+      "value": 9813152.0,
+      "item_codes": {
+        "C1": "15110AA3Ac"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "서울특별시 - 지방세",
+      "timestamp": "2004",
+      "value": 9726335.0,
+      "item_codes": {
+        "C1": "15110AA3Ac"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "서울특별시 - 지방세",
+      "timestamp": "2005",
+      "value": 10011732.0,
+      "item_codes": {
+        "C1": "15110AA3Ac"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "서울특별시 - 지방세",
+      "timestamp": "2006",
+      "value": 11306413.0,
+      "item_codes": {
+        "C1": "15110AA3Ac"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "서울특별시 - 지방세",
+      "timestamp": "2007",
+      "value": 11885828.0,
+      "item_codes": {
+        "C1": "15110AA3Ac"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "서울특별시 - 지방세",
+      "timestamp": "2008",
+      "value": 12537671.0,
+      "item_codes": {
+        "C1": "15110AA3Ac"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "서울특별시 - 지방세",
+      "timestamp": "2009",
+      "value": 11922706.0,
+      "item_codes": {
+        "C1": "15110AA3Ac"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "서울특별시 - 지방세",
+      "timestamp": "2010",
+      "value": 12074840.0,
+      "item_codes": {
+        "C1": "15110AA3Ac"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "서울특별시 - 지방세",
+      "timestamp": "2011",
+      "value": 12913964.0,
+      "item_codes": {
+        "C1": "15110AA3Ac"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "서울특별시 - 지방세",
+      "timestamp": "2012",
+      "value": 13436966.0,
+      "item_codes": {
+        "C1": "15110AA3Ac"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "서울특별시 - 지방세",
+      "timestamp": "2013",
+      "value": 12980600.0,
+      "item_codes": {
+        "C1": "15110AA3Ac"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "서울특별시 - 지방세",
+      "timestamp": "2014",
+      "value": 14502519.0,
+      "item_codes": {
+        "C1": "15110AA3Ac"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "서울특별시 - 지방세",
+      "timestamp": "2015",
+      "value": 17038835.0,
+      "item_codes": {
+        "C1": "15110AA3Ac"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "서울특별시 - 지방세",
+      "timestamp": "2016",
+      "value": 18024176.0,
+      "item_codes": {
+        "C1": "15110AA3Ac"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "서울특별시 - 지방세",
+      "timestamp": "2017",
+      "value": 19296437.0,
+      "item_codes": {
+        "C1": "15110AA3Ac"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "서울특별시 - 지방세",
+      "timestamp": "2018",
+      "value": 20695311.0,
+      "item_codes": {
+        "C1": "15110AA3Ac"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "서울특별시 - 지방세",
+      "timestamp": "2019",
+      "value": 22268213.0,
+      "item_codes": {
+        "C1": "15110AA3Ac"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "서울특별시 - 지방세",
+      "timestamp": "2020",
+      "value": 25531987.0,
+      "item_codes": {
+        "C1": "15110AA3Ac"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "서울특별시 - 지방세",
+      "timestamp": "2021",
+      "value": 28382503.0,
+      "item_codes": {
+        "C1": "15110AA3Ac"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "서울특별시 - 지방세",
+      "timestamp": "2022",
+      "value": 28782134.0,
+      "item_codes": {
+        "C1": "15110AA3Ac"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "서울특별시 - 지방세",
+      "timestamp": "2023",
+      "value": 26306961.0,
+      "item_codes": {
+        "C1": "15110AA3Ac"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "부산광역시 - 지방세",
+      "timestamp": "1973",
+      "value": 8112.0,
+      "item_codes": {
+        "C1": "15110AA3AkAA"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "부산광역시 - 지방세",
+      "timestamp": "1974",
+      "value": 12345.0,
+      "item_codes": {
+        "C1": "15110AA3AkAA"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "부산광역시 - 지방세",
+      "timestamp": "1975",
+      "value": 15994.0,
+      "item_codes": {
+        "C1": "15110AA3AkAA"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "부산광역시 - 지방세",
+      "timestamp": "1976",
+      "value": 22106.0,
+      "item_codes": {
+        "C1": "15110AA3AkAA"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "부산광역시 - 지방세",
+      "timestamp": "1977",
+      "value": 35371.0,
+      "item_codes": {
+        "C1": "15110AA3AkAA"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "부산광역시 - 지방세",
+      "timestamp": "1978",
+      "value": 45355.0,
+      "item_codes": {
+        "C1": "15110AA3AkAA"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "부산광역시 - 지방세",
+      "timestamp": "1979",
+      "value": 66770.0,
+      "item_codes": {
+        "C1": "15110AA3AkAA"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "부산광역시 - 지방세",
+      "timestamp": "1980",
+      "value": 85503.0,
+      "item_codes": {
+        "C1": "15110AA3AkAA"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "부산광역시 - 지방세",
+      "timestamp": "1981",
+      "value": 96015.0,
+      "item_codes": {
+        "C1": "15110AA3AkAA"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "부산광역시 - 지방세",
+      "timestamp": "1982",
+      "value": 113204.0,
+      "item_codes": {
+        "C1": "15110AA3AkAA"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "부산광역시 - 지방세",
+      "timestamp": "1983",
+      "value": 129517.0,
+      "item_codes": {
+        "C1": "15110AA3AkAA"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "부산광역시 - 지방세",
+      "timestamp": "1984",
+      "value": 144218.0,
+      "item_codes": {
+        "C1": "15110AA3AkAA"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "부산광역시 - 지방세",
+      "timestamp": "1985",
+      "value": 153831.0,
+      "item_codes": {
+        "C1": "15110AA3AkAA"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "부산광역시 - 지방세",
+      "timestamp": "1986",
+      "value": 168963.0,
+      "item_codes": {
+        "C1": "15110AA3AkAA"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "부산광역시 - 지방세",
+      "timestamp": "1987",
+      "value": 215731.0,
+      "item_codes": {
+        "C1": "15110AA3AkAA"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "부산광역시 - 지방세",
+      "timestamp": "1988",
+      "value": 251462.0,
+      "item_codes": {
+        "C1": "15110AA3AkAA"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "부산광역시 - 지방세",
+      "timestamp": "1989",
+      "value": 447406.0,
+      "item_codes": {
+        "C1": "15110AA3AkAA"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "부산광역시 - 지방세",
+      "timestamp": "1990",
+      "value": 547630.0,
+      "item_codes": {
+        "C1": "15110AA3AkAA"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "부산광역시 - 지방세",
+      "timestamp": "1991",
+      "value": 688096.0,
+      "item_codes": {
+        "C1": "15110AA3AkAA"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "부산광역시 - 지방세",
+      "timestamp": "1992",
+      "value": 819875.0,
+      "item_codes": {
+        "C1": "15110AA3AkAA"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "부산광역시 - 지방세",
+      "timestamp": "1993",
+      "value": 953137.0,
+      "item_codes": {
+        "C1": "15110AA3AkAA"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "부산광역시 - 지방세",
+      "timestamp": "1994",
+      "value": 1071901.0,
+      "item_codes": {
+        "C1": "15110AA3AkAA"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "부산광역시 - 지방세",
+      "timestamp": "1995",
+      "value": 1214759.0,
+      "item_codes": {
+        "C1": "15110AA3AkAA"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "부산광역시 - 지방세",
+      "timestamp": "1996",
+      "value": 1423582.0,
+      "item_codes": {
+        "C1": "15110AA3AkAA"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "부산광역시 - 지방세",
+      "timestamp": "1997",
+      "value": 1407264.0,
+      "item_codes": {
+        "C1": "15110AA3AkAA"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "부산광역시 - 지방세",
+      "timestamp": "1998",
+      "value": 1311077.0,
+      "item_codes": {
+        "C1": "15110AA3AkAA"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "부산광역시 - 지방세",
+      "timestamp": "1999",
+      "value": 1383309.0,
+      "item_codes": {
+        "C1": "15110AA3AkAA"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "부산광역시 - 지방세",
+      "timestamp": "2000",
+      "value": 1433043.0,
+      "item_codes": {
+        "C1": "15110AA3AkAA"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "부산광역시 - 지방세",
+      "timestamp": "2001",
+      "value": 1795145.0,
+      "item_codes": {
+        "C1": "15110AA3AkAA"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "부산광역시 - 지방세",
+      "timestamp": "2002",
+      "value": 2159986.0,
+      "item_codes": {
+        "C1": "15110AA3AkAA"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "부산광역시 - 지방세",
+      "timestamp": "2003",
+      "value": 2255064.0,
+      "item_codes": {
+        "C1": "15110AA3AkAA"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "부산광역시 - 지방세",
+      "timestamp": "2004",
+      "value": 2183113.0,
+      "item_codes": {
+        "C1": "15110AA3AkAA"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "부산광역시 - 지방세",
+      "timestamp": "2005",
+      "value": 2265338.0,
+      "item_codes": {
+        "C1": "15110AA3AkAA"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "부산광역시 - 지방세",
+      "timestamp": "2006",
+      "value": 2579279.0,
+      "item_codes": {
+        "C1": "15110AA3AkAA"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "부산광역시 - 지방세",
+      "timestamp": "2007",
+      "value": 2580854.0,
+      "item_codes": {
+        "C1": "15110AA3AkAA"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "부산광역시 - 지방세",
+      "timestamp": "2008",
+      "value": 2594052.0,
+      "item_codes": {
+        "C1": "15110AA3AkAA"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "부산광역시 - 지방세",
+      "timestamp": "2009",
+      "value": 2739707.0,
+      "item_codes": {
+        "C1": "15110AA3AkAA"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "부산광역시 - 지방세",
+      "timestamp": "2010",
+      "value": 3062239.0,
+      "item_codes": {
+        "C1": "15110AA3AkAA"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "부산광역시 - 지방세",
+      "timestamp": "2011",
+      "value": 3352687.0,
+      "item_codes": {
+        "C1": "15110AA3AkAA"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "부산광역시 - 지방세",
+      "timestamp": "2012",
+      "value": 3386162.0,
+      "item_codes": {
+        "C1": "15110AA3AkAA"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "부산광역시 - 지방세",
+      "timestamp": "2013",
+      "value": 3401445.0,
+      "item_codes": {
+        "C1": "15110AA3AkAA"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "부산광역시 - 지방세",
+      "timestamp": "2014",
+      "value": 3973205.0,
+      "item_codes": {
+        "C1": "15110AA3AkAA"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "부산광역시 - 지방세",
+      "timestamp": "2015",
+      "value": 4784818.0,
+      "item_codes": {
+        "C1": "15110AA3AkAA"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "부산광역시 - 지방세",
+      "timestamp": "2016",
+      "value": 4625095.0,
+      "item_codes": {
+        "C1": "15110AA3AkAA"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "부산광역시 - 지방세",
+      "timestamp": "2017",
+      "value": 4947208.0,
+      "item_codes": {
+        "C1": "15110AA3AkAA"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "부산광역시 - 지방세",
+      "timestamp": "2018",
+      "value": 4935112.0,
+      "item_codes": {
+        "C1": "15110AA3AkAA"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "부산광역시 - 지방세",
+      "timestamp": "2019",
+      "value": 5191892.0,
+      "item_codes": {
+        "C1": "15110AA3AkAA"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "부산광역시 - 지방세",
+      "timestamp": "2020",
+      "value": 6199573.0,
+      "item_codes": {
+        "C1": "15110AA3AkAA"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "부산광역시 - 지방세",
+      "timestamp": "2021",
+      "value": 6468033.0,
+      "item_codes": {
+        "C1": "15110AA3AkAA"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "부산광역시 - 지방세",
+      "timestamp": "2022",
+      "value": 6806341.0,
+      "item_codes": {
+        "C1": "15110AA3AkAA"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "부산광역시 - 지방세",
+      "timestamp": "2023",
+      "value": 6573346.0,
+      "item_codes": {
+        "C1": "15110AA3AkAA"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "대구광역시 - 지방세",
+      "timestamp": "1981",
+      "value": 47091.0,
+      "item_codes": {
+        "C1": "15110AA3AkAB"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "대구광역시 - 지방세",
+      "timestamp": "1982",
+      "value": 57790.0,
+      "item_codes": {
+        "C1": "15110AA3AkAB"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "대구광역시 - 지방세",
+      "timestamp": "1983",
+      "value": 69102.0,
+      "item_codes": {
+        "C1": "15110AA3AkAB"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "대구광역시 - 지방세",
+      "timestamp": "1984",
+      "value": 74989.0,
+      "item_codes": {
+        "C1": "15110AA3AkAB"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "대구광역시 - 지방세",
+      "timestamp": "1985",
+      "value": 79415.0,
+      "item_codes": {
+        "C1": "15110AA3AkAB"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "대구광역시 - 지방세",
+      "timestamp": "1986",
+      "value": 92141.0,
+      "item_codes": {
+        "C1": "15110AA3AkAB"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "대구광역시 - 지방세",
+      "timestamp": "1987",
+      "value": 122026.0,
+      "item_codes": {
+        "C1": "15110AA3AkAB"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "대구광역시 - 지방세",
+      "timestamp": "1988",
+      "value": 146748.0,
+      "item_codes": {
+        "C1": "15110AA3AkAB"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "대구광역시 - 지방세",
+      "timestamp": "1989",
+      "value": 262836.0,
+      "item_codes": {
+        "C1": "15110AA3AkAB"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "대구광역시 - 지방세",
+      "timestamp": "1990",
+      "value": 327268.0,
+      "item_codes": {
+        "C1": "15110AA3AkAB"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "대구광역시 - 지방세",
+      "timestamp": "1991",
+      "value": 408667.0,
+      "item_codes": {
+        "C1": "15110AA3AkAB"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "대구광역시 - 지방세",
+      "timestamp": "1992",
+      "value": 484873.0,
+      "item_codes": {
+        "C1": "15110AA3AkAB"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "대구광역시 - 지방세",
+      "timestamp": "1993",
+      "value": 578199.0,
+      "item_codes": {
+        "C1": "15110AA3AkAB"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "대구광역시 - 지방세",
+      "timestamp": "1994",
+      "value": 723621.0,
+      "item_codes": {
+        "C1": "15110AA3AkAB"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "대구광역시 - 지방세",
+      "timestamp": "1995",
+      "value": 814937.0,
+      "item_codes": {
+        "C1": "15110AA3AkAB"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "대구광역시 - 지방세",
+      "timestamp": "1996",
+      "value": 925755.0,
+      "item_codes": {
+        "C1": "15110AA3AkAB"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "대구광역시 - 지방세",
+      "timestamp": "1997",
+      "value": 895670.0,
+      "item_codes": {
+        "C1": "15110AA3AkAB"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "대구광역시 - 지방세",
+      "timestamp": "1998",
+      "value": 825576.0,
+      "item_codes": {
+        "C1": "15110AA3AkAB"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "대구광역시 - 지방세",
+      "timestamp": "1999",
+      "value": 869060.0,
+      "item_codes": {
+        "C1": "15110AA3AkAB"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "대구광역시 - 지방세",
+      "timestamp": "2000",
+      "value": 931262.0,
+      "item_codes": {
+        "C1": "15110AA3AkAB"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "대구광역시 - 지방세",
+      "timestamp": "2001",
+      "value": 1107077.0,
+      "item_codes": {
+        "C1": "15110AA3AkAB"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "대구광역시 - 지방세",
+      "timestamp": "2002",
+      "value": 1292069.0,
+      "item_codes": {
+        "C1": "15110AA3AkAB"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "대구광역시 - 지방세",
+      "timestamp": "2003",
+      "value": 1466047.0,
+      "item_codes": {
+        "C1": "15110AA3AkAB"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "대구광역시 - 지방세",
+      "timestamp": "2004",
+      "value": 1402023.0,
+      "item_codes": {
+        "C1": "15110AA3AkAB"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "대구광역시 - 지방세",
+      "timestamp": "2005",
+      "value": 1523228.0,
+      "item_codes": {
+        "C1": "15110AA3AkAB"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "대구광역시 - 지방세",
+      "timestamp": "2006",
+      "value": 1659771.0,
+      "item_codes": {
+        "C1": "15110AA3AkAB"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "대구광역시 - 지방세",
+      "timestamp": "2007",
+      "value": 1598148.0,
+      "item_codes": {
+        "C1": "15110AA3AkAB"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "대구광역시 - 지방세",
+      "timestamp": "2008",
+      "value": 1627708.0,
+      "item_codes": {
+        "C1": "15110AA3AkAB"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "대구광역시 - 지방세",
+      "timestamp": "2009",
+      "value": 1573443.0,
+      "item_codes": {
+        "C1": "15110AA3AkAB"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "대구광역시 - 지방세",
+      "timestamp": "2010",
+      "value": 1818648.0,
+      "item_codes": {
+        "C1": "15110AA3AkAB"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "대구광역시 - 지방세",
+      "timestamp": "2011",
+      "value": 1924374.0,
+      "item_codes": {
+        "C1": "15110AA3AkAB"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "대구광역시 - 지방세",
+      "timestamp": "2012",
+      "value": 2073421.0,
+      "item_codes": {
+        "C1": "15110AA3AkAB"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "대구광역시 - 지방세",
+      "timestamp": "2013",
+      "value": 2148115.0,
+      "item_codes": {
+        "C1": "15110AA3AkAB"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "대구광역시 - 지방세",
+      "timestamp": "2014",
+      "value": 2591818.0,
+      "item_codes": {
+        "C1": "15110AA3AkAB"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "대구광역시 - 지방세",
+      "timestamp": "2015",
+      "value": 2862891.0,
+      "item_codes": {
+        "C1": "15110AA3AkAB"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "대구광역시 - 지방세",
+      "timestamp": "2016",
+      "value": 2979772.0,
+      "item_codes": {
+        "C1": "15110AA3AkAB"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "대구광역시 - 지방세",
+      "timestamp": "2017",
+      "value": 3156682.0,
+      "item_codes": {
+        "C1": "15110AA3AkAB"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "대구광역시 - 지방세",
+      "timestamp": "2018",
+      "value": 3227882.0,
+      "item_codes": {
+        "C1": "15110AA3AkAB"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "대구광역시 - 지방세",
+      "timestamp": "2019",
+      "value": 3476077.0,
+      "item_codes": {
+        "C1": "15110AA3AkAB"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "대구광역시 - 지방세",
+      "timestamp": "2020",
+      "value": 3959389.0,
+      "item_codes": {
+        "C1": "15110AA3AkAB"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "대구광역시 - 지방세",
+      "timestamp": "2021",
+      "value": 4246517.0,
+      "item_codes": {
+        "C1": "15110AA3AkAB"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "대구광역시 - 지방세",
+      "timestamp": "2022",
+      "value": 4363051.0,
+      "item_codes": {
+        "C1": "15110AA3AkAB"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "대구광역시 - 지방세",
+      "timestamp": "2023",
+      "value": 4186197.0,
+      "item_codes": {
+        "C1": "15110AA3AkAB"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "인천광역시 - 지방세",
+      "timestamp": "1981",
+      "value": 37618.0,
+      "item_codes": {
+        "C1": "15110AA3AkAC"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "인천광역시 - 지방세",
+      "timestamp": "1982",
+      "value": 43871.0,
+      "item_codes": {
+        "C1": "15110AA3AkAC"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "인천광역시 - 지방세",
+      "timestamp": "1983",
+      "value": 56519.0,
+      "item_codes": {
+        "C1": "15110AA3AkAC"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "인천광역시 - 지방세",
+      "timestamp": "1984",
+      "value": 67908.0,
+      "item_codes": {
+        "C1": "15110AA3AkAC"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "인천광역시 - 지방세",
+      "timestamp": "1985",
+      "value": 76410.0,
+      "item_codes": {
+        "C1": "15110AA3AkAC"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "인천광역시 - 지방세",
+      "timestamp": "1986",
+      "value": 80330.0,
+      "item_codes": {
+        "C1": "15110AA3AkAC"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "인천광역시 - 지방세",
+      "timestamp": "1987",
+      "value": 96157.0,
+      "item_codes": {
+        "C1": "15110AA3AkAC"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "인천광역시 - 지방세",
+      "timestamp": "1988",
+      "value": 122247.0,
+      "item_codes": {
+        "C1": "15110AA3AkAC"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "인천광역시 - 지방세",
+      "timestamp": "1989",
+      "value": 230637.0,
+      "item_codes": {
+        "C1": "15110AA3AkAC"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "인천광역시 - 지방세",
+      "timestamp": "1990",
+      "value": 315094.0,
+      "item_codes": {
+        "C1": "15110AA3AkAC"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "인천광역시 - 지방세",
+      "timestamp": "1991",
+      "value": 408686.0,
+      "item_codes": {
+        "C1": "15110AA3AkAC"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "인천광역시 - 지방세",
+      "timestamp": "1992",
+      "value": 475757.0,
+      "item_codes": {
+        "C1": "15110AA3AkAC"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "인천광역시 - 지방세",
+      "timestamp": "1993",
+      "value": 547764.0,
+      "item_codes": {
+        "C1": "15110AA3AkAC"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "인천광역시 - 지방세",
+      "timestamp": "1994",
+      "value": 617049.0,
+      "item_codes": {
+        "C1": "15110AA3AkAC"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "인천광역시 - 지방세",
+      "timestamp": "1995",
+      "value": 766354.0,
+      "item_codes": {
+        "C1": "15110AA3AkAC"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "인천광역시 - 지방세",
+      "timestamp": "1996",
+      "value": 852742.0,
+      "item_codes": {
+        "C1": "15110AA3AkAC"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "인천광역시 - 지방세",
+      "timestamp": "1997",
+      "value": 953300.0,
+      "item_codes": {
+        "C1": "15110AA3AkAC"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "인천광역시 - 지방세",
+      "timestamp": "1998",
+      "value": 867295.0,
+      "item_codes": {
+        "C1": "15110AA3AkAC"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "인천광역시 - 지방세",
+      "timestamp": "1999",
+      "value": 888639.0,
+      "item_codes": {
+        "C1": "15110AA3AkAC"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "인천광역시 - 지방세",
+      "timestamp": "2000",
+      "value": 1015232.0,
+      "item_codes": {
+        "C1": "15110AA3AkAC"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "인천광역시 - 지방세",
+      "timestamp": "2001",
+      "value": 1298962.0,
+      "item_codes": {
+        "C1": "15110AA3AkAC"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "인천광역시 - 지방세",
+      "timestamp": "2002",
+      "value": 1530259.0,
+      "item_codes": {
+        "C1": "15110AA3AkAC"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "인천광역시 - 지방세",
+      "timestamp": "2003",
+      "value": 1550572.0,
+      "item_codes": {
+        "C1": "15110AA3AkAC"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "인천광역시 - 지방세",
+      "timestamp": "2004",
+      "value": 1565667.0,
+      "item_codes": {
+        "C1": "15110AA3AkAC"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "인천광역시 - 지방세",
+      "timestamp": "2005",
+      "value": 1739789.0,
+      "item_codes": {
+        "C1": "15110AA3AkAC"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "인천광역시 - 지방세",
+      "timestamp": "2006",
+      "value": 1945257.0,
+      "item_codes": {
+        "C1": "15110AA3AkAC"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "인천광역시 - 지방세",
+      "timestamp": "2007",
+      "value": 2207214.0,
+      "item_codes": {
+        "C1": "15110AA3AkAC"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "인천광역시 - 지방세",
+      "timestamp": "2008",
+      "value": 2321260.0,
+      "item_codes": {
+        "C1": "15110AA3AkAC"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "인천광역시 - 지방세",
+      "timestamp": "2009",
+      "value": 2360091.0,
+      "item_codes": {
+        "C1": "15110AA3AkAC"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "인천광역시 - 지방세",
+      "timestamp": "2010",
+      "value": 2428823.0,
+      "item_codes": {
+        "C1": "15110AA3AkAC"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "인천광역시 - 지방세",
+      "timestamp": "2011",
+      "value": 2790176.0,
+      "item_codes": {
+        "C1": "15110AA3AkAC"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "인천광역시 - 지방세",
+      "timestamp": "2012",
+      "value": 2754954.0,
+      "item_codes": {
+        "C1": "15110AA3AkAC"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "인천광역시 - 지방세",
+      "timestamp": "2013",
+      "value": 2855673.0,
+      "item_codes": {
+        "C1": "15110AA3AkAC"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "인천광역시 - 지방세",
+      "timestamp": "2014",
+      "value": 3220968.0,
+      "item_codes": {
+        "C1": "15110AA3AkAC"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "인천광역시 - 지방세",
+      "timestamp": "2015",
+      "value": 3727717.0,
+      "item_codes": {
+        "C1": "15110AA3AkAC"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "인천광역시 - 지방세",
+      "timestamp": "2016",
+      "value": 4028661.0,
+      "item_codes": {
+        "C1": "15110AA3AkAC"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "인천광역시 - 지방세",
+      "timestamp": "2017",
+      "value": 4427782.0,
+      "item_codes": {
+        "C1": "15110AA3AkAC"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "인천광역시 - 지방세",
+      "timestamp": "2018",
+      "value": 4465821.0,
+      "item_codes": {
+        "C1": "15110AA3AkAC"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "인천광역시 - 지방세",
+      "timestamp": "2019",
+      "value": 4809476.0,
+      "item_codes": {
+        "C1": "15110AA3AkAC"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "인천광역시 - 지방세",
+      "timestamp": "2020",
+      "value": 5187705.0,
+      "item_codes": {
+        "C1": "15110AA3AkAC"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "인천광역시 - 지방세",
+      "timestamp": "2021",
+      "value": 5923870.0,
+      "item_codes": {
+        "C1": "15110AA3AkAC"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "인천광역시 - 지방세",
+      "timestamp": "2022",
+      "value": 6143932.0,
+      "item_codes": {
+        "C1": "15110AA3AkAC"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "인천광역시 - 지방세",
+      "timestamp": "2023",
+      "value": 5905493.0,
+      "item_codes": {
+        "C1": "15110AA3AkAC"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "광주광역시 - 지방세",
+      "timestamp": "1986",
+      "value": 5977.0,
+      "item_codes": {
+        "C1": "15110AA3AkAD"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "광주광역시 - 지방세",
+      "timestamp": "1987",
+      "value": 36532.0,
+      "item_codes": {
+        "C1": "15110AA3AkAD"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "광주광역시 - 지방세",
+      "timestamp": "1988",
+      "value": 59660.0,
+      "item_codes": {
+        "C1": "15110AA3AkAD"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "광주광역시 - 지방세",
+      "timestamp": "1989",
+      "value": 108907.0,
+      "item_codes": {
+        "C1": "15110AA3AkAD"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "광주광역시 - 지방세",
+      "timestamp": "1990",
+      "value": 146884.0,
+      "item_codes": {
+        "C1": "15110AA3AkAD"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "광주광역시 - 지방세",
+      "timestamp": "1991",
+      "value": 191700.0,
+      "item_codes": {
+        "C1": "15110AA3AkAD"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "광주광역시 - 지방세",
+      "timestamp": "1992",
+      "value": 237357.0,
+      "item_codes": {
+        "C1": "15110AA3AkAD"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "광주광역시 - 지방세",
+      "timestamp": "1993",
+      "value": 259407.0,
+      "item_codes": {
+        "C1": "15110AA3AkAD"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "광주광역시 - 지방세",
+      "timestamp": "1994",
+      "value": 322050.0,
+      "item_codes": {
+        "C1": "15110AA3AkAD"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "광주광역시 - 지방세",
+      "timestamp": "1995",
+      "value": 368392.0,
+      "item_codes": {
+        "C1": "15110AA3AkAD"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "광주광역시 - 지방세",
+      "timestamp": "1996",
+      "value": 413812.0,
+      "item_codes": {
+        "C1": "15110AA3AkAD"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "광주광역시 - 지방세",
+      "timestamp": "1997",
+      "value": 476169.0,
+      "item_codes": {
+        "C1": "15110AA3AkAD"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "광주광역시 - 지방세",
+      "timestamp": "1998",
+      "value": 445580.0,
+      "item_codes": {
+        "C1": "15110AA3AkAD"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "광주광역시 - 지방세",
+      "timestamp": "1999",
+      "value": 435397.0,
+      "item_codes": {
+        "C1": "15110AA3AkAD"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "광주광역시 - 지방세",
+      "timestamp": "2000",
+      "value": 484267.0,
+      "item_codes": {
+        "C1": "15110AA3AkAD"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "광주광역시 - 지방세",
+      "timestamp": "2001",
+      "value": 583547.0,
+      "item_codes": {
+        "C1": "15110AA3AkAD"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "광주광역시 - 지방세",
+      "timestamp": "2002",
+      "value": 673652.0,
+      "item_codes": {
+        "C1": "15110AA3AkAD"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "광주광역시 - 지방세",
+      "timestamp": "2003",
+      "value": 723552.0,
+      "item_codes": {
+        "C1": "15110AA3AkAD"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "광주광역시 - 지방세",
+      "timestamp": "2004",
+      "value": 699005.0,
+      "item_codes": {
+        "C1": "15110AA3AkAD"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "광주광역시 - 지방세",
+      "timestamp": "2005",
+      "value": 773481.0,
+      "item_codes": {
+        "C1": "15110AA3AkAD"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "광주광역시 - 지방세",
+      "timestamp": "2006",
+      "value": 885554.0,
+      "item_codes": {
+        "C1": "15110AA3AkAD"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "광주광역시 - 지방세",
+      "timestamp": "2007",
+      "value": 877200.0,
+      "item_codes": {
+        "C1": "15110AA3AkAD"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "광주광역시 - 지방세",
+      "timestamp": "2008",
+      "value": 901716.0,
+      "item_codes": {
+        "C1": "15110AA3AkAD"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "광주광역시 - 지방세",
+      "timestamp": "2009",
+      "value": 976111.0,
+      "item_codes": {
+        "C1": "15110AA3AkAD"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "광주광역시 - 지방세",
+      "timestamp": "2010",
+      "value": 1077114.0,
+      "item_codes": {
+        "C1": "15110AA3AkAD"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "광주광역시 - 지방세",
+      "timestamp": "2011",
+      "value": 1137184.0,
+      "item_codes": {
+        "C1": "15110AA3AkAD"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "광주광역시 - 지방세",
+      "timestamp": "2012",
+      "value": 1202985.0,
+      "item_codes": {
+        "C1": "15110AA3AkAD"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "광주광역시 - 지방세",
+      "timestamp": "2013",
+      "value": 1220622.0,
+      "item_codes": {
+        "C1": "15110AA3AkAD"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "광주광역시 - 지방세",
+      "timestamp": "2014",
+      "value": 1428496.0,
+      "item_codes": {
+        "C1": "15110AA3AkAD"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "광주광역시 - 지방세",
+      "timestamp": "2015",
+      "value": 1553789.0,
+      "item_codes": {
+        "C1": "15110AA3AkAD"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "광주광역시 - 지방세",
+      "timestamp": "2016",
+      "value": 1678987.0,
+      "item_codes": {
+        "C1": "15110AA3AkAD"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "광주광역시 - 지방세",
+      "timestamp": "2017",
+      "value": 1710868.0,
+      "item_codes": {
+        "C1": "15110AA3AkAD"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "광주광역시 - 지방세",
+      "timestamp": "2018",
+      "value": 1845600.0,
+      "item_codes": {
+        "C1": "15110AA3AkAD"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "광주광역시 - 지방세",
+      "timestamp": "2019",
+      "value": 2027885.0,
+      "item_codes": {
+        "C1": "15110AA3AkAD"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "광주광역시 - 지방세",
+      "timestamp": "2020",
+      "value": 2267962.0,
+      "item_codes": {
+        "C1": "15110AA3AkAD"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "광주광역시 - 지방세",
+      "timestamp": "2021",
+      "value": 2392719.0,
+      "item_codes": {
+        "C1": "15110AA3AkAD"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "광주광역시 - 지방세",
+      "timestamp": "2022",
+      "value": 2635299.0,
+      "item_codes": {
+        "C1": "15110AA3AkAD"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "광주광역시 - 지방세",
+      "timestamp": "2023",
+      "value": 2442204.0,
+      "item_codes": {
+        "C1": "15110AA3AkAD"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "대전광역시 - 지방세",
+      "timestamp": "1989",
+      "value": 123910.0,
+      "item_codes": {
+        "C1": "15110AA3AkAE"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "대전광역시 - 지방세",
+      "timestamp": "1990",
+      "value": 166352.0,
+      "item_codes": {
+        "C1": "15110AA3AkAE"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "대전광역시 - 지방세",
+      "timestamp": "1991",
+      "value": 231246.0,
+      "item_codes": {
+        "C1": "15110AA3AkAE"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "대전광역시 - 지방세",
+      "timestamp": "1992",
+      "value": 273534.0,
+      "item_codes": {
+        "C1": "15110AA3AkAE"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "대전광역시 - 지방세",
+      "timestamp": "1993",
+      "value": 351499.0,
+      "item_codes": {
+        "C1": "15110AA3AkAE"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "대전광역시 - 지방세",
+      "timestamp": "1994",
+      "value": 410748.0,
+      "item_codes": {
+        "C1": "15110AA3AkAE"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "대전광역시 - 지방세",
+      "timestamp": "1995",
+      "value": 443899.0,
+      "item_codes": {
+        "C1": "15110AA3AkAE"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "대전광역시 - 지방세",
+      "timestamp": "1996",
+      "value": 469598.0,
+      "item_codes": {
+        "C1": "15110AA3AkAE"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "대전광역시 - 지방세",
+      "timestamp": "1997",
+      "value": 488284.0,
+      "item_codes": {
+        "C1": "15110AA3AkAE"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "대전광역시 - 지방세",
+      "timestamp": "1998",
+      "value": 443743.0,
+      "item_codes": {
+        "C1": "15110AA3AkAE"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "대전광역시 - 지방세",
+      "timestamp": "1999",
+      "value": 507337.0,
+      "item_codes": {
+        "C1": "15110AA3AkAE"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "대전광역시 - 지방세",
+      "timestamp": "2000",
+      "value": 555674.0,
+      "item_codes": {
+        "C1": "15110AA3AkAE"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "대전광역시 - 지방세",
+      "timestamp": "2001",
+      "value": 687863.0,
+      "item_codes": {
+        "C1": "15110AA3AkAE"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "대전광역시 - 지방세",
+      "timestamp": "2002",
+      "value": 840070.0,
+      "item_codes": {
+        "C1": "15110AA3AkAE"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "대전광역시 - 지방세",
+      "timestamp": "2003",
+      "value": 904146.0,
+      "item_codes": {
+        "C1": "15110AA3AkAE"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "대전광역시 - 지방세",
+      "timestamp": "2004",
+      "value": 873172.0,
+      "item_codes": {
+        "C1": "15110AA3AkAE"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "대전광역시 - 지방세",
+      "timestamp": "2005",
+      "value": 919761.0,
+      "item_codes": {
+        "C1": "15110AA3AkAE"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "대전광역시 - 지방세",
+      "timestamp": "2006",
+      "value": 1080507.0,
+      "item_codes": {
+        "C1": "15110AA3AkAE"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "대전광역시 - 지방세",
+      "timestamp": "2007",
+      "value": 1022282.0,
+      "item_codes": {
+        "C1": "15110AA3AkAE"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "대전광역시 - 지방세",
+      "timestamp": "2008",
+      "value": 1064934.0,
+      "item_codes": {
+        "C1": "15110AA3AkAE"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "대전광역시 - 지방세",
+      "timestamp": "2009",
+      "value": 1000099.0,
+      "item_codes": {
+        "C1": "15110AA3AkAE"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "대전광역시 - 지방세",
+      "timestamp": "2010",
+      "value": 1162679.0,
+      "item_codes": {
+        "C1": "15110AA3AkAE"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "대전광역시 - 지방세",
+      "timestamp": "2011",
+      "value": 1332664.0,
+      "item_codes": {
+        "C1": "15110AA3AkAE"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "대전광역시 - 지방세",
+      "timestamp": "2012",
+      "value": 1320566.0,
+      "item_codes": {
+        "C1": "15110AA3AkAE"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "대전광역시 - 지방세",
+      "timestamp": "2013",
+      "value": 1258482.0,
+      "item_codes": {
+        "C1": "15110AA3AkAE"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "대전광역시 - 지방세",
+      "timestamp": "2014",
+      "value": 1549395.0,
+      "item_codes": {
+        "C1": "15110AA3AkAE"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "대전광역시 - 지방세",
+      "timestamp": "2015",
+      "value": 1626744.0,
+      "item_codes": {
+        "C1": "15110AA3AkAE"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "대전광역시 - 지방세",
+      "timestamp": "2016",
+      "value": 1683926.0,
+      "item_codes": {
+        "C1": "15110AA3AkAE"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "대전광역시 - 지방세",
+      "timestamp": "2017",
+      "value": 1713620.0,
+      "item_codes": {
+        "C1": "15110AA3AkAE"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "대전광역시 - 지방세",
+      "timestamp": "2018",
+      "value": 1735655.0,
+      "item_codes": {
+        "C1": "15110AA3AkAE"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "대전광역시 - 지방세",
+      "timestamp": "2019",
+      "value": 1991017.0,
+      "item_codes": {
+        "C1": "15110AA3AkAE"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "대전광역시 - 지방세",
+      "timestamp": "2020",
+      "value": 2252393.0,
+      "item_codes": {
+        "C1": "15110AA3AkAE"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "대전광역시 - 지방세",
+      "timestamp": "2021",
+      "value": 2511095.0,
+      "item_codes": {
+        "C1": "15110AA3AkAE"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "대전광역시 - 지방세",
+      "timestamp": "2022",
+      "value": 2635489.0,
+      "item_codes": {
+        "C1": "15110AA3AkAE"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "대전광역시 - 지방세",
+      "timestamp": "2023",
+      "value": 2465188.0,
+      "item_codes": {
+        "C1": "15110AA3AkAE"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "울산광역시 - 지방세",
+      "timestamp": "1997",
+      "value": 437244.0,
+      "item_codes": {
+        "C1": "15110AA3AkAF"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "울산광역시 - 지방세",
+      "timestamp": "1998",
+      "value": 398222.0,
+      "item_codes": {
+        "C1": "15110AA3AkAF"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "울산광역시 - 지방세",
+      "timestamp": "1999",
+      "value": 435565.0,
+      "item_codes": {
+        "C1": "15110AA3AkAF"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "울산광역시 - 지방세",
+      "timestamp": "2000",
+      "value": 465115.0,
+      "item_codes": {
+        "C1": "15110AA3AkAF"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "울산광역시 - 지방세",
+      "timestamp": "2001",
+      "value": 573814.0,
+      "item_codes": {
+        "C1": "15110AA3AkAF"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "울산광역시 - 지방세",
+      "timestamp": "2002",
+      "value": 645293.0,
+      "item_codes": {
+        "C1": "15110AA3AkAF"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "울산광역시 - 지방세",
+      "timestamp": "2003",
+      "value": 720223.0,
+      "item_codes": {
+        "C1": "15110AA3AkAF"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "울산광역시 - 지방세",
+      "timestamp": "2004",
+      "value": 787832.0,
+      "item_codes": {
+        "C1": "15110AA3AkAF"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "울산광역시 - 지방세",
+      "timestamp": "2005",
+      "value": 836498.0,
+      "item_codes": {
+        "C1": "15110AA3AkAF"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "울산광역시 - 지방세",
+      "timestamp": "2006",
+      "value": 943585.0,
+      "item_codes": {
+        "C1": "15110AA3AkAF"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "울산광역시 - 지방세",
+      "timestamp": "2007",
+      "value": 1040105.0,
+      "item_codes": {
+        "C1": "15110AA3AkAF"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "울산광역시 - 지방세",
+      "timestamp": "2008",
+      "value": 1127065.0,
+      "item_codes": {
+        "C1": "15110AA3AkAF"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "울산광역시 - 지방세",
+      "timestamp": "2009",
+      "value": 1060227.0,
+      "item_codes": {
+        "C1": "15110AA3AkAF"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "울산광역시 - 지방세",
+      "timestamp": "2010",
+      "value": 1230508.0,
+      "item_codes": {
+        "C1": "15110AA3AkAF"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "울산광역시 - 지방세",
+      "timestamp": "2011",
+      "value": 1375029.0,
+      "item_codes": {
+        "C1": "15110AA3AkAF"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "울산광역시 - 지방세",
+      "timestamp": "2012",
+      "value": 1493288.0,
+      "item_codes": {
+        "C1": "15110AA3AkAF"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "울산광역시 - 지방세",
+      "timestamp": "2013",
+      "value": 1413522.0,
+      "item_codes": {
+        "C1": "15110AA3AkAF"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "울산광역시 - 지방세",
+      "timestamp": "2014",
+      "value": 1611003.0,
+      "item_codes": {
+        "C1": "15110AA3AkAF"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "울산광역시 - 지방세",
+      "timestamp": "2015",
+      "value": 1760321.0,
+      "item_codes": {
+        "C1": "15110AA3AkAF"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "울산광역시 - 지방세",
+      "timestamp": "2016",
+      "value": 1945369.0,
+      "item_codes": {
+        "C1": "15110AA3AkAF"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "울산광역시 - 지방세",
+      "timestamp": "2017",
+      "value": 1983863.0,
+      "item_codes": {
+        "C1": "15110AA3AkAF"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "울산광역시 - 지방세",
+      "timestamp": "2018",
+      "value": 1946957.0,
+      "item_codes": {
+        "C1": "15110AA3AkAF"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "울산광역시 - 지방세",
+      "timestamp": "2019",
+      "value": 2040650.0,
+      "item_codes": {
+        "C1": "15110AA3AkAF"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "울산광역시 - 지방세",
+      "timestamp": "2020",
+      "value": 2093867.0,
+      "item_codes": {
+        "C1": "15110AA3AkAF"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "울산광역시 - 지방세",
+      "timestamp": "2021",
+      "value": 2216360.0,
+      "item_codes": {
+        "C1": "15110AA3AkAF"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "울산광역시 - 지방세",
+      "timestamp": "2022",
+      "value": 2455872.0,
+      "item_codes": {
+        "C1": "15110AA3AkAF"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "울산광역시 - 지방세",
+      "timestamp": "2023",
+      "value": 2484893.0,
+      "item_codes": {
+        "C1": "15110AA3AkAF"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "세종특별자치시 - 지방세",
+      "timestamp": "2012",
+      "value": 119099.0,
+      "item_codes": {
+        "C1": "15110AA3AkAF0"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "세종특별자치시 - 지방세",
+      "timestamp": "2013",
+      "value": 216598.0,
+      "item_codes": {
+        "C1": "15110AA3AkAF0"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "세종특별자치시 - 지방세",
+      "timestamp": "2014",
+      "value": 386816.0,
+      "item_codes": {
+        "C1": "15110AA3AkAF0"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "세종특별자치시 - 지방세",
+      "timestamp": "2015",
+      "value": 512028.0,
+      "item_codes": {
+        "C1": "15110AA3AkAF0"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "세종특별자치시 - 지방세",
+      "timestamp": "2016",
+      "value": 499626.0,
+      "item_codes": {
+        "C1": "15110AA3AkAF0"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "세종특별자치시 - 지방세",
+      "timestamp": "2017",
+      "value": 665142.0,
+      "item_codes": {
+        "C1": "15110AA3AkAF0"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "세종특별자치시 - 지방세",
+      "timestamp": "2018",
+      "value": 670652.0,
+      "item_codes": {
+        "C1": "15110AA3AkAF0"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "세종특별자치시 - 지방세",
+      "timestamp": "2019",
+      "value": 666939.0,
+      "item_codes": {
+        "C1": "15110AA3AkAF0"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "세종특별자치시 - 지방세",
+      "timestamp": "2020",
+      "value": 795242.0,
+      "item_codes": {
+        "C1": "15110AA3AkAF0"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "세종특별자치시 - 지방세",
+      "timestamp": "2021",
+      "value": 877116.0,
+      "item_codes": {
+        "C1": "15110AA3AkAF0"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "세종특별자치시 - 지방세",
+      "timestamp": "2022",
+      "value": 860541.0,
+      "item_codes": {
+        "C1": "15110AA3AkAF0"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "세종특별자치시 - 지방세",
+      "timestamp": "2023",
+      "value": 776430.0,
+      "item_codes": {
+        "C1": "15110AA3AkAF0"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경기도 - 지방세",
+      "timestamp": "1973",
+      "value": 6613.0,
+      "item_codes": {
+        "C1": "15110AA3AkAG"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경기도 - 지방세",
+      "timestamp": "1974",
+      "value": 10002.0,
+      "item_codes": {
+        "C1": "15110AA3AkAG"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경기도 - 지방세",
+      "timestamp": "1975",
+      "value": 15254.0,
+      "item_codes": {
+        "C1": "15110AA3AkAG"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경기도 - 지방세",
+      "timestamp": "1976",
+      "value": 22050.0,
+      "item_codes": {
+        "C1": "15110AA3AkAG"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경기도 - 지방세",
+      "timestamp": "1977",
+      "value": 34071.0,
+      "item_codes": {
+        "C1": "15110AA3AkAG"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경기도 - 지방세",
+      "timestamp": "1978",
+      "value": 50762.0,
+      "item_codes": {
+        "C1": "15110AA3AkAG"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경기도 - 지방세",
+      "timestamp": "1979",
+      "value": 73181.0,
+      "item_codes": {
+        "C1": "15110AA3AkAG"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경기도 - 지방세",
+      "timestamp": "1980",
+      "value": 107700.0,
+      "item_codes": {
+        "C1": "15110AA3AkAG"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경기도 - 지방세",
+      "timestamp": "1981",
+      "value": 89800.0,
+      "item_codes": {
+        "C1": "15110AA3AkAG"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경기도 - 지방세",
+      "timestamp": "1982",
+      "value": 109921.0,
+      "item_codes": {
+        "C1": "15110AA3AkAG"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경기도 - 지방세",
+      "timestamp": "1983",
+      "value": 150058.0,
+      "item_codes": {
+        "C1": "15110AA3AkAG"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경기도 - 지방세",
+      "timestamp": "1984",
+      "value": 171498.0,
+      "item_codes": {
+        "C1": "15110AA3AkAG"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경기도 - 지방세",
+      "timestamp": "1985",
+      "value": 204948.0,
+      "item_codes": {
+        "C1": "15110AA3AkAG"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경기도 - 지방세",
+      "timestamp": "1986",
+      "value": 235014.0,
+      "item_codes": {
+        "C1": "15110AA3AkAG"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경기도 - 지방세",
+      "timestamp": "1987",
+      "value": 287853.0,
+      "item_codes": {
+        "C1": "15110AA3AkAG"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경기도 - 지방세",
+      "timestamp": "1988",
+      "value": 442598.0,
+      "item_codes": {
+        "C1": "15110AA3AkAG"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경기도 - 지방세",
+      "timestamp": "1989",
+      "value": 681906.0,
+      "item_codes": {
+        "C1": "15110AA3AkAG"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경기도 - 지방세",
+      "timestamp": "1990",
+      "value": 997723.0,
+      "item_codes": {
+        "C1": "15110AA3AkAG"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경기도 - 지방세",
+      "timestamp": "1991",
+      "value": 1283473.0,
+      "item_codes": {
+        "C1": "15110AA3AkAG"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경기도 - 지방세",
+      "timestamp": "1992",
+      "value": 1572188.0,
+      "item_codes": {
+        "C1": "15110AA3AkAG"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경기도 - 지방세",
+      "timestamp": "1993",
+      "value": 2060796.0,
+      "item_codes": {
+        "C1": "15110AA3AkAG"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경기도 - 지방세",
+      "timestamp": "1994",
+      "value": 2607957.0,
+      "item_codes": {
+        "C1": "15110AA3AkAG"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경기도 - 지방세",
+      "timestamp": "1995",
+      "value": 3152939.0,
+      "item_codes": {
+        "C1": "15110AA3AkAG"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경기도 - 지방세",
+      "timestamp": "1996",
+      "value": 3561397.0,
+      "item_codes": {
+        "C1": "15110AA3AkAG"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경기도 - 지방세",
+      "timestamp": "1997",
+      "value": 3801650.0,
+      "item_codes": {
+        "C1": "15110AA3AkAG"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경기도 - 지방세",
+      "timestamp": "1998",
+      "value": 3520307.0,
+      "item_codes": {
+        "C1": "15110AA3AkAG"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경기도 - 지방세",
+      "timestamp": "1999",
+      "value": 3927530.0,
+      "item_codes": {
+        "C1": "15110AA3AkAG"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경기도 - 지방세",
+      "timestamp": "2000",
+      "value": 4568691.0,
+      "item_codes": {
+        "C1": "15110AA3AkAG"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경기도 - 지방세",
+      "timestamp": "2001",
+      "value": 6433095.0,
+      "item_codes": {
+        "C1": "15110AA3AkAG"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경기도 - 지방세",
+      "timestamp": "2002",
+      "value": 8016993.0,
+      "item_codes": {
+        "C1": "15110AA3AkAG"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경기도 - 지방세",
+      "timestamp": "2003",
+      "value": 8251187.0,
+      "item_codes": {
+        "C1": "15110AA3AkAG"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경기도 - 지방세",
+      "timestamp": "2004",
+      "value": 8585194.0,
+      "item_codes": {
+        "C1": "15110AA3AkAG"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경기도 - 지방세",
+      "timestamp": "2005",
+      "value": 8968594.0,
+      "item_codes": {
+        "C1": "15110AA3AkAG"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경기도 - 지방세",
+      "timestamp": "2006",
+      "value": 10720678.0,
+      "item_codes": {
+        "C1": "15110AA3AkAG"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경기도 - 지방세",
+      "timestamp": "2007",
+      "value": 11465307.0,
+      "item_codes": {
+        "C1": "15110AA3AkAG"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경기도 - 지방세",
+      "timestamp": "2008",
+      "value": 11723657.0,
+      "item_codes": {
+        "C1": "15110AA3AkAG"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경기도 - 지방세",
+      "timestamp": "2009",
+      "value": 11905905.0,
+      "item_codes": {
+        "C1": "15110AA3AkAG"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경기도 - 지방세",
+      "timestamp": "2010",
+      "value": 12876723.0,
+      "item_codes": {
+        "C1": "15110AA3AkAG"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경기도 - 지방세",
+      "timestamp": "2011",
+      "value": 12957501.0,
+      "item_codes": {
+        "C1": "15110AA3AkAG"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경기도 - 지방세",
+      "timestamp": "2012",
+      "value": 13288767.0,
+      "item_codes": {
+        "C1": "15110AA3AkAG"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경기도 - 지방세",
+      "timestamp": "2013",
+      "value": 13301235.0,
+      "item_codes": {
+        "C1": "15110AA3AkAG"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경기도 - 지방세",
+      "timestamp": "2014",
+      "value": 15216198.0,
+      "item_codes": {
+        "C1": "15110AA3AkAG"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경기도 - 지방세",
+      "timestamp": "2015",
+      "value": 17885557.0,
+      "item_codes": {
+        "C1": "15110AA3AkAG"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경기도 - 지방세",
+      "timestamp": "2016",
+      "value": 19245126.0,
+      "item_codes": {
+        "C1": "15110AA3AkAG"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경기도 - 지방세",
+      "timestamp": "2017",
+      "value": 20710614.0,
+      "item_codes": {
+        "C1": "15110AA3AkAG"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경기도 - 지방세",
+      "timestamp": "2018",
+      "value": 22807183.0,
+      "item_codes": {
+        "C1": "15110AA3AkAG"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경기도 - 지방세",
+      "timestamp": "2019",
+      "value": 24138048.0,
+      "item_codes": {
+        "C1": "15110AA3AkAG"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경기도 - 지방세",
+      "timestamp": "2020",
+      "value": 25801039.0,
+      "item_codes": {
+        "C1": "15110AA3AkAG"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경기도 - 지방세",
+      "timestamp": "2021",
+      "value": 29735913.0,
+      "item_codes": {
+        "C1": "15110AA3AkAG"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경기도 - 지방세",
+      "timestamp": "2022",
+      "value": 30518263.0,
+      "item_codes": {
+        "C1": "15110AA3AkAG"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경기도 - 지방세",
+      "timestamp": "2023",
+      "value": 28644318.0,
+      "item_codes": {
+        "C1": "15110AA3AkAG"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "강원특별자치도 - 지방세",
+      "timestamp": "1973",
+      "value": 1700.0,
+      "item_codes": {
+        "C1": "15110AA3AkAH"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "강원특별자치도 - 지방세",
+      "timestamp": "1974",
+      "value": 2335.0,
+      "item_codes": {
+        "C1": "15110AA3AkAH"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "강원특별자치도 - 지방세",
+      "timestamp": "1975",
+      "value": 3457.0,
+      "item_codes": {
+        "C1": "15110AA3AkAH"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "강원특별자치도 - 지방세",
+      "timestamp": "1976",
+      "value": 4729.0,
+      "item_codes": {
+        "C1": "15110AA3AkAH"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "강원특별자치도 - 지방세",
+      "timestamp": "1977",
+      "value": 6359.0,
+      "item_codes": {
+        "C1": "15110AA3AkAH"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "강원특별자치도 - 지방세",
+      "timestamp": "1978",
+      "value": 7853.0,
+      "item_codes": {
+        "C1": "15110AA3AkAH"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "강원특별자치도 - 지방세",
+      "timestamp": "1979",
+      "value": 11950.0,
+      "item_codes": {
+        "C1": "15110AA3AkAH"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "강원특별자치도 - 지방세",
+      "timestamp": "1980",
+      "value": 15925.0,
+      "item_codes": {
+        "C1": "15110AA3AkAH"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "강원특별자치도 - 지방세",
+      "timestamp": "1981",
+      "value": 20763.0,
+      "item_codes": {
+        "C1": "15110AA3AkAH"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "강원특별자치도 - 지방세",
+      "timestamp": "1982",
+      "value": 25002.0,
+      "item_codes": {
+        "C1": "15110AA3AkAH"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "강원특별자치도 - 지방세",
+      "timestamp": "1983",
+      "value": 28852.0,
+      "item_codes": {
+        "C1": "15110AA3AkAH"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "강원특별자치도 - 지방세",
+      "timestamp": "1984",
+      "value": 32453.0,
+      "item_codes": {
+        "C1": "15110AA3AkAH"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "강원특별자치도 - 지방세",
+      "timestamp": "1985",
+      "value": 37806.0,
+      "item_codes": {
+        "C1": "15110AA3AkAH"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "강원특별자치도 - 지방세",
+      "timestamp": "1986",
+      "value": 40410.0,
+      "item_codes": {
+        "C1": "15110AA3AkAH"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "강원특별자치도 - 지방세",
+      "timestamp": "1987",
+      "value": 48414.0,
+      "item_codes": {
+        "C1": "15110AA3AkAH"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "강원특별자치도 - 지방세",
+      "timestamp": "1988",
+      "value": 76067.0,
+      "item_codes": {
+        "C1": "15110AA3AkAH"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "강원특별자치도 - 지방세",
+      "timestamp": "1989",
+      "value": 131378.0,
+      "item_codes": {
+        "C1": "15110AA3AkAH"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "강원특별자치도 - 지방세",
+      "timestamp": "1990",
+      "value": 181519.0,
+      "item_codes": {
+        "C1": "15110AA3AkAH"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "강원특별자치도 - 지방세",
+      "timestamp": "1991",
+      "value": 215157.0,
+      "item_codes": {
+        "C1": "15110AA3AkAH"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "강원특별자치도 - 지방세",
+      "timestamp": "1992",
+      "value": 257018.0,
+      "item_codes": {
+        "C1": "15110AA3AkAH"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "강원특별자치도 - 지방세",
+      "timestamp": "1993",
+      "value": 276472.0,
+      "item_codes": {
+        "C1": "15110AA3AkAH"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "강원특별자치도 - 지방세",
+      "timestamp": "1994",
+      "value": 341100.0,
+      "item_codes": {
+        "C1": "15110AA3AkAH"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "강원특별자치도 - 지방세",
+      "timestamp": "1995",
+      "value": 401600.0,
+      "item_codes": {
+        "C1": "15110AA3AkAH"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "강원특별자치도 - 지방세",
+      "timestamp": "1996",
+      "value": 455980.0,
+      "item_codes": {
+        "C1": "15110AA3AkAH"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "강원특별자치도 - 지방세",
+      "timestamp": "1997",
+      "value": 500237.0,
+      "item_codes": {
+        "C1": "15110AA3AkAH"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "강원특별자치도 - 지방세",
+      "timestamp": "1998",
+      "value": 469465.0,
+      "item_codes": {
+        "C1": "15110AA3AkAH"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "강원특별자치도 - 지방세",
+      "timestamp": "1999",
+      "value": 470653.0,
+      "item_codes": {
+        "C1": "15110AA3AkAH"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "강원특별자치도 - 지방세",
+      "timestamp": "2000",
+      "value": 498217.0,
+      "item_codes": {
+        "C1": "15110AA3AkAH"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "강원특별자치도 - 지방세",
+      "timestamp": "2001",
+      "value": 643920.0,
+      "item_codes": {
+        "C1": "15110AA3AkAH"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "강원특별자치도 - 지방세",
+      "timestamp": "2002",
+      "value": 709719.0,
+      "item_codes": {
+        "C1": "15110AA3AkAH"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "강원특별자치도 - 지방세",
+      "timestamp": "2003",
+      "value": 762126.0,
+      "item_codes": {
+        "C1": "15110AA3AkAH"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "강원특별자치도 - 지방세",
+      "timestamp": "2004",
+      "value": 852116.0,
+      "item_codes": {
+        "C1": "15110AA3AkAH"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "강원특별자치도 - 지방세",
+      "timestamp": "2005",
+      "value": 889301.0,
+      "item_codes": {
+        "C1": "15110AA3AkAH"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "강원특별자치도 - 지방세",
+      "timestamp": "2006",
+      "value": 1055398.0,
+      "item_codes": {
+        "C1": "15110AA3AkAH"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "강원특별자치도 - 지방세",
+      "timestamp": "2007",
+      "value": 1097950.0,
+      "item_codes": {
+        "C1": "15110AA3AkAH"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "강원특별자치도 - 지방세",
+      "timestamp": "2008",
+      "value": 1074505.0,
+      "item_codes": {
+        "C1": "15110AA3AkAH"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "강원특별자치도 - 지방세",
+      "timestamp": "2009",
+      "value": 1065003.0,
+      "item_codes": {
+        "C1": "15110AA3AkAH"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "강원특별자치도 - 지방세",
+      "timestamp": "2010",
+      "value": 1222509.0,
+      "item_codes": {
+        "C1": "15110AA3AkAH"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "강원특별자치도 - 지방세",
+      "timestamp": "2011",
+      "value": 1272268.0,
+      "item_codes": {
+        "C1": "15110AA3AkAH"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "강원특별자치도 - 지방세",
+      "timestamp": "2012",
+      "value": 1344637.0,
+      "item_codes": {
+        "C1": "15110AA3AkAH"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "강원특별자치도 - 지방세",
+      "timestamp": "2013",
+      "value": 1330566.0,
+      "item_codes": {
+        "C1": "15110AA3AkAH"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "강원특별자치도 - 지방세",
+      "timestamp": "2014",
+      "value": 1473843.0,
+      "item_codes": {
+        "C1": "15110AA3AkAH"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "강원특별자치도 - 지방세",
+      "timestamp": "2015",
+      "value": 1594058.0,
+      "item_codes": {
+        "C1": "15110AA3AkAH"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "강원특별자치도 - 지방세",
+      "timestamp": "2016",
+      "value": 1859620.0,
+      "item_codes": {
+        "C1": "15110AA3AkAH"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "강원특별자치도 - 지방세",
+      "timestamp": "2017",
+      "value": 1944969.0,
+      "item_codes": {
+        "C1": "15110AA3AkAH"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "강원특별자치도 - 지방세",
+      "timestamp": "2018",
+      "value": 2057307.0,
+      "item_codes": {
+        "C1": "15110AA3AkAH"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "강원특별자치도 - 지방세",
+      "timestamp": "2019",
+      "value": 2168668.0,
+      "item_codes": {
+        "C1": "15110AA3AkAH"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "강원특별자치도 - 지방세",
+      "timestamp": "2020",
+      "value": 2653723.0,
+      "item_codes": {
+        "C1": "15110AA3AkAH"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "강원특별자치도 - 지방세",
+      "timestamp": "2021",
+      "value": 2875409.0,
+      "item_codes": {
+        "C1": "15110AA3AkAH"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "강원특별자치도 - 지방세",
+      "timestamp": "2022",
+      "value": 3222079.0,
+      "item_codes": {
+        "C1": "15110AA3AkAH"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "강원특별자치도 - 지방세",
+      "timestamp": "2023",
+      "value": 3075735.0,
+      "item_codes": {
+        "C1": "15110AA3AkAH"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "충청북도 - 지방세",
+      "timestamp": "1973",
+      "value": 1734.0,
+      "item_codes": {
+        "C1": "15110AA3AkAI"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "충청북도 - 지방세",
+      "timestamp": "1974",
+      "value": 2459.0,
+      "item_codes": {
+        "C1": "15110AA3AkAI"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "충청북도 - 지방세",
+      "timestamp": "1975",
+      "value": 3877.0,
+      "item_codes": {
+        "C1": "15110AA3AkAI"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "충청북도 - 지방세",
+      "timestamp": "1976",
+      "value": 5507.0,
+      "item_codes": {
+        "C1": "15110AA3AkAI"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "충청북도 - 지방세",
+      "timestamp": "1977",
+      "value": 7992.0,
+      "item_codes": {
+        "C1": "15110AA3AkAI"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "충청북도 - 지방세",
+      "timestamp": "1978",
+      "value": 9003.0,
+      "item_codes": {
+        "C1": "15110AA3AkAI"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "충청북도 - 지방세",
+      "timestamp": "1979",
+      "value": 13091.0,
+      "item_codes": {
+        "C1": "15110AA3AkAI"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "충청북도 - 지방세",
+      "timestamp": "1980",
+      "value": 16314.0,
+      "item_codes": {
+        "C1": "15110AA3AkAI"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "충청북도 - 지방세",
+      "timestamp": "1981",
+      "value": 20131.0,
+      "item_codes": {
+        "C1": "15110AA3AkAI"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "충청북도 - 지방세",
+      "timestamp": "1982",
+      "value": 23280.0,
+      "item_codes": {
+        "C1": "15110AA3AkAI"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "충청북도 - 지방세",
+      "timestamp": "1983",
+      "value": 25698.0,
+      "item_codes": {
+        "C1": "15110AA3AkAI"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "충청북도 - 지방세",
+      "timestamp": "1984",
+      "value": 30728.0,
+      "item_codes": {
+        "C1": "15110AA3AkAI"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "충청북도 - 지방세",
+      "timestamp": "1985",
+      "value": 35454.0,
+      "item_codes": {
+        "C1": "15110AA3AkAI"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "충청북도 - 지방세",
+      "timestamp": "1986",
+      "value": 37780.0,
+      "item_codes": {
+        "C1": "15110AA3AkAI"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "충청북도 - 지방세",
+      "timestamp": "1987",
+      "value": 42456.0,
+      "item_codes": {
+        "C1": "15110AA3AkAI"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "충청북도 - 지방세",
+      "timestamp": "1988",
+      "value": 67245.0,
+      "item_codes": {
+        "C1": "15110AA3AkAI"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "충청북도 - 지방세",
+      "timestamp": "1989",
+      "value": 114994.0,
+      "item_codes": {
+        "C1": "15110AA3AkAI"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "충청북도 - 지방세",
+      "timestamp": "1990",
+      "value": 150551.0,
+      "item_codes": {
+        "C1": "15110AA3AkAI"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "충청북도 - 지방세",
+      "timestamp": "1991",
+      "value": 197812.0,
+      "item_codes": {
+        "C1": "15110AA3AkAI"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "충청북도 - 지방세",
+      "timestamp": "1992",
+      "value": 231561.0,
+      "item_codes": {
+        "C1": "15110AA3AkAI"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "충청북도 - 지방세",
+      "timestamp": "1993",
+      "value": 275171.0,
+      "item_codes": {
+        "C1": "15110AA3AkAI"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "충청북도 - 지방세",
+      "timestamp": "1994",
+      "value": 316782.0,
+      "item_codes": {
+        "C1": "15110AA3AkAI"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "충청북도 - 지방세",
+      "timestamp": "1995",
+      "value": 392653.0,
+      "item_codes": {
+        "C1": "15110AA3AkAI"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "충청북도 - 지방세",
+      "timestamp": "1996",
+      "value": 452701.0,
+      "item_codes": {
+        "C1": "15110AA3AkAI"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "충청북도 - 지방세",
+      "timestamp": "1997",
+      "value": 451422.0,
+      "item_codes": {
+        "C1": "15110AA3AkAI"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "충청북도 - 지방세",
+      "timestamp": "1998",
+      "value": 415485.0,
+      "item_codes": {
+        "C1": "15110AA3AkAI"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "충청북도 - 지방세",
+      "timestamp": "1999",
+      "value": 452873.0,
+      "item_codes": {
+        "C1": "15110AA3AkAI"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "충청북도 - 지방세",
+      "timestamp": "2000",
+      "value": 474345.0,
+      "item_codes": {
+        "C1": "15110AA3AkAI"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "충청북도 - 지방세",
+      "timestamp": "2001",
+      "value": 603088.0,
+      "item_codes": {
+        "C1": "15110AA3AkAI"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "충청북도 - 지방세",
+      "timestamp": "2002",
+      "value": 670854.0,
+      "item_codes": {
+        "C1": "15110AA3AkAI"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "충청북도 - 지방세",
+      "timestamp": "2003",
+      "value": 732413.0,
+      "item_codes": {
+        "C1": "15110AA3AkAI"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "충청북도 - 지방세",
+      "timestamp": "2004",
+      "value": 817384.0,
+      "item_codes": {
+        "C1": "15110AA3AkAI"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "충청북도 - 지방세",
+      "timestamp": "2005",
+      "value": 828296.0,
+      "item_codes": {
+        "C1": "15110AA3AkAI"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "충청북도 - 지방세",
+      "timestamp": "2006",
+      "value": 1041159.0,
+      "item_codes": {
+        "C1": "15110AA3AkAI"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "충청북도 - 지방세",
+      "timestamp": "2007",
+      "value": 1077314.0,
+      "item_codes": {
+        "C1": "15110AA3AkAI"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "충청북도 - 지방세",
+      "timestamp": "2008",
+      "value": 1102913.0,
+      "item_codes": {
+        "C1": "15110AA3AkAI"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "충청북도 - 지방세",
+      "timestamp": "2009",
+      "value": 1094931.0,
+      "item_codes": {
+        "C1": "15110AA3AkAI"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "충청북도 - 지방세",
+      "timestamp": "2010",
+      "value": 1310314.0,
+      "item_codes": {
+        "C1": "15110AA3AkAI"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "충청북도 - 지방세",
+      "timestamp": "2011",
+      "value": 1371252.0,
+      "item_codes": {
+        "C1": "15110AA3AkAI"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "충청북도 - 지방세",
+      "timestamp": "2012",
+      "value": 1443528.0,
+      "item_codes": {
+        "C1": "15110AA3AkAI"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "충청북도 - 지방세",
+      "timestamp": "2013",
+      "value": 1431512.0,
+      "item_codes": {
+        "C1": "15110AA3AkAI"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "충청북도 - 지방세",
+      "timestamp": "2014",
+      "value": 1684169.0,
+      "item_codes": {
+        "C1": "15110AA3AkAI"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "충청북도 - 지방세",
+      "timestamp": "2015",
+      "value": 1884993.0,
+      "item_codes": {
+        "C1": "15110AA3AkAI"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "충청북도 - 지방세",
+      "timestamp": "2016",
+      "value": 2020649.0,
+      "item_codes": {
+        "C1": "15110AA3AkAI"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "충청북도 - 지방세",
+      "timestamp": "2017",
+      "value": 2106205.0,
+      "item_codes": {
+        "C1": "15110AA3AkAI"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "충청북도 - 지방세",
+      "timestamp": "2018",
+      "value": 2281543.0,
+      "item_codes": {
+        "C1": "15110AA3AkAI"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "충청북도 - 지방세",
+      "timestamp": "2019",
+      "value": 2573152.0,
+      "item_codes": {
+        "C1": "15110AA3AkAI"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "충청북도 - 지방세",
+      "timestamp": "2020",
+      "value": 2770501.0,
+      "item_codes": {
+        "C1": "15110AA3AkAI"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "충청북도 - 지방세",
+      "timestamp": "2021",
+      "value": 3149318.0,
+      "item_codes": {
+        "C1": "15110AA3AkAI"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "충청북도 - 지방세",
+      "timestamp": "2022",
+      "value": 3495832.0,
+      "item_codes": {
+        "C1": "15110AA3AkAI"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "충청북도 - 지방세",
+      "timestamp": "2023",
+      "value": 3403132.0,
+      "item_codes": {
+        "C1": "15110AA3AkAI"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "충청남도 - 지방세",
+      "timestamp": "1973",
+      "value": 3671.0,
+      "item_codes": {
+        "C1": "15110AA3AkAJ"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "충청남도 - 지방세",
+      "timestamp": "1974",
+      "value": 5329.0,
+      "item_codes": {
+        "C1": "15110AA3AkAJ"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "충청남도 - 지방세",
+      "timestamp": "1975",
+      "value": 8404.0,
+      "item_codes": {
+        "C1": "15110AA3AkAJ"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "충청남도 - 지방세",
+      "timestamp": "1976",
+      "value": 11822.0,
+      "item_codes": {
+        "C1": "15110AA3AkAJ"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "충청남도 - 지방세",
+      "timestamp": "1977",
+      "value": 17256.0,
+      "item_codes": {
+        "C1": "15110AA3AkAJ"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "충청남도 - 지방세",
+      "timestamp": "1978",
+      "value": 19953.0,
+      "item_codes": {
+        "C1": "15110AA3AkAJ"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "충청남도 - 지방세",
+      "timestamp": "1979",
+      "value": 29050.0,
+      "item_codes": {
+        "C1": "15110AA3AkAJ"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "충청남도 - 지방세",
+      "timestamp": "1980",
+      "value": 39417.0,
+      "item_codes": {
+        "C1": "15110AA3AkAJ"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "충청남도 - 지방세",
+      "timestamp": "1981",
+      "value": 45449.0,
+      "item_codes": {
+        "C1": "15110AA3AkAJ"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "충청남도 - 지방세",
+      "timestamp": "1982",
+      "value": 55394.0,
+      "item_codes": {
+        "C1": "15110AA3AkAJ"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "충청남도 - 지방세",
+      "timestamp": "1983",
+      "value": 65215.0,
+      "item_codes": {
+        "C1": "15110AA3AkAJ"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "충청남도 - 지방세",
+      "timestamp": "1984",
+      "value": 74303.0,
+      "item_codes": {
+        "C1": "15110AA3AkAJ"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "충청남도 - 지방세",
+      "timestamp": "1985",
+      "value": 79334.0,
+      "item_codes": {
+        "C1": "15110AA3AkAJ"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "충청남도 - 지방세",
+      "timestamp": "1986",
+      "value": 87021.0,
+      "item_codes": {
+        "C1": "15110AA3AkAJ"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "충청남도 - 지방세",
+      "timestamp": "1987",
+      "value": 98677.0,
+      "item_codes": {
+        "C1": "15110AA3AkAJ"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "충청남도 - 지방세",
+      "timestamp": "1988",
+      "value": 159705.0,
+      "item_codes": {
+        "C1": "15110AA3AkAJ"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "충청남도 - 지방세",
+      "timestamp": "1989",
+      "value": 132355.0,
+      "item_codes": {
+        "C1": "15110AA3AkAJ"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "충청남도 - 지방세",
+      "timestamp": "1990",
+      "value": 169577.0,
+      "item_codes": {
+        "C1": "15110AA3AkAJ"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "충청남도 - 지방세",
+      "timestamp": "1991",
+      "value": 232739.0,
+      "item_codes": {
+        "C1": "15110AA3AkAJ"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "충청남도 - 지방세",
+      "timestamp": "1992",
+      "value": 267178.0,
+      "item_codes": {
+        "C1": "15110AA3AkAJ"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "충청남도 - 지방세",
+      "timestamp": "1993",
+      "value": 312417.0,
+      "item_codes": {
+        "C1": "15110AA3AkAJ"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "충청남도 - 지방세",
+      "timestamp": "1994",
+      "value": 378105.0,
+      "item_codes": {
+        "C1": "15110AA3AkAJ"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "충청남도 - 지방세",
+      "timestamp": "1995",
+      "value": 466647.0,
+      "item_codes": {
+        "C1": "15110AA3AkAJ"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "충청남도 - 지방세",
+      "timestamp": "1996",
+      "value": 553099.0,
+      "item_codes": {
+        "C1": "15110AA3AkAJ"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "충청남도 - 지방세",
+      "timestamp": "1997",
+      "value": 586680.0,
+      "item_codes": {
+        "C1": "15110AA3AkAJ"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "충청남도 - 지방세",
+      "timestamp": "1998",
+      "value": 550902.0,
+      "item_codes": {
+        "C1": "15110AA3AkAJ"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "충청남도 - 지방세",
+      "timestamp": "1999",
+      "value": 576734.0,
+      "item_codes": {
+        "C1": "15110AA3AkAJ"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "충청남도 - 지방세",
+      "timestamp": "2000",
+      "value": 633958.0,
+      "item_codes": {
+        "C1": "15110AA3AkAJ"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "충청남도 - 지방세",
+      "timestamp": "2001",
+      "value": 802258.0,
+      "item_codes": {
+        "C1": "15110AA3AkAJ"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "충청남도 - 지방세",
+      "timestamp": "2002",
+      "value": 883520.0,
+      "item_codes": {
+        "C1": "15110AA3AkAJ"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "충청남도 - 지방세",
+      "timestamp": "2003",
+      "value": 1076601.0,
+      "item_codes": {
+        "C1": "15110AA3AkAJ"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "충청남도 - 지방세",
+      "timestamp": "2004",
+      "value": 1415892.0,
+      "item_codes": {
+        "C1": "15110AA3AkAJ"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "충청남도 - 지방세",
+      "timestamp": "2005",
+      "value": 1419212.0,
+      "item_codes": {
+        "C1": "15110AA3AkAJ"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "충청남도 - 지방세",
+      "timestamp": "2006",
+      "value": 1551017.0,
+      "item_codes": {
+        "C1": "15110AA3AkAJ"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "충청남도 - 지방세",
+      "timestamp": "2007",
+      "value": 1649345.0,
+      "item_codes": {
+        "C1": "15110AA3AkAJ"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "충청남도 - 지방세",
+      "timestamp": "2008",
+      "value": 1739467.0,
+      "item_codes": {
+        "C1": "15110AA3AkAJ"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "충청남도 - 지방세",
+      "timestamp": "2009",
+      "value": 1793495.0,
+      "item_codes": {
+        "C1": "15110AA3AkAJ"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "충청남도 - 지방세",
+      "timestamp": "2010",
+      "value": 2097037.0,
+      "item_codes": {
+        "C1": "15110AA3AkAJ"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "충청남도 - 지방세",
+      "timestamp": "2011",
+      "value": 2297542.0,
+      "item_codes": {
+        "C1": "15110AA3AkAJ"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "충청남도 - 지방세",
+      "timestamp": "2012",
+      "value": 2307243.0,
+      "item_codes": {
+        "C1": "15110AA3AkAJ"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "충청남도 - 지방세",
+      "timestamp": "2013",
+      "value": 2226001.0,
+      "item_codes": {
+        "C1": "15110AA3AkAJ"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "충청남도 - 지방세",
+      "timestamp": "2014",
+      "value": 2624962.0,
+      "item_codes": {
+        "C1": "15110AA3AkAJ"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "충청남도 - 지방세",
+      "timestamp": "2015",
+      "value": 2836473.0,
+      "item_codes": {
+        "C1": "15110AA3AkAJ"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "충청남도 - 지방세",
+      "timestamp": "2016",
+      "value": 3120102.0,
+      "item_codes": {
+        "C1": "15110AA3AkAJ"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "충청남도 - 지방세",
+      "timestamp": "2017",
+      "value": 3433932.0,
+      "item_codes": {
+        "C1": "15110AA3AkAJ"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "충청남도 - 지방세",
+      "timestamp": "2018",
+      "value": 3507758.0,
+      "item_codes": {
+        "C1": "15110AA3AkAJ"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "충청남도 - 지방세",
+      "timestamp": "2019",
+      "value": 3560335.0,
+      "item_codes": {
+        "C1": "15110AA3AkAJ"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "충청남도 - 지방세",
+      "timestamp": "2020",
+      "value": 4125636.0,
+      "item_codes": {
+        "C1": "15110AA3AkAJ"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "충청남도 - 지방세",
+      "timestamp": "2021",
+      "value": 4595115.0,
+      "item_codes": {
+        "C1": "15110AA3AkAJ"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "충청남도 - 지방세",
+      "timestamp": "2022",
+      "value": 5130769.0,
+      "item_codes": {
+        "C1": "15110AA3AkAJ"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "충청남도 - 지방세",
+      "timestamp": "2023",
+      "value": 5196407.0,
+      "item_codes": {
+        "C1": "15110AA3AkAJ"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전북특별자치도 - 지방세",
+      "timestamp": "1973",
+      "value": 3202.0,
+      "item_codes": {
+        "C1": "15110AA3AkAK"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전북특별자치도 - 지방세",
+      "timestamp": "1974",
+      "value": 4754.0,
+      "item_codes": {
+        "C1": "15110AA3AkAK"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전북특별자치도 - 지방세",
+      "timestamp": "1975",
+      "value": 7282.0,
+      "item_codes": {
+        "C1": "15110AA3AkAK"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전북특별자치도 - 지방세",
+      "timestamp": "1976",
+      "value": 10012.0,
+      "item_codes": {
+        "C1": "15110AA3AkAK"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전북특별자치도 - 지방세",
+      "timestamp": "1977",
+      "value": 13884.0,
+      "item_codes": {
+        "C1": "15110AA3AkAK"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전북특별자치도 - 지방세",
+      "timestamp": "1978",
+      "value": 16200.0,
+      "item_codes": {
+        "C1": "15110AA3AkAK"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전북특별자치도 - 지방세",
+      "timestamp": "1979",
+      "value": 22604.0,
+      "item_codes": {
+        "C1": "15110AA3AkAK"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전북특별자치도 - 지방세",
+      "timestamp": "1980",
+      "value": 31567.0,
+      "item_codes": {
+        "C1": "15110AA3AkAK"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전북특별자치도 - 지방세",
+      "timestamp": "1981",
+      "value": 36622.0,
+      "item_codes": {
+        "C1": "15110AA3AkAK"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전북특별자치도 - 지방세",
+      "timestamp": "1982",
+      "value": 42272.0,
+      "item_codes": {
+        "C1": "15110AA3AkAK"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전북특별자치도 - 지방세",
+      "timestamp": "1983",
+      "value": 47493.0,
+      "item_codes": {
+        "C1": "15110AA3AkAK"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전북특별자치도 - 지방세",
+      "timestamp": "1984",
+      "value": 50548.0,
+      "item_codes": {
+        "C1": "15110AA3AkAK"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전북특별자치도 - 지방세",
+      "timestamp": "1985",
+      "value": 47337.0,
+      "item_codes": {
+        "C1": "15110AA3AkAK"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전북특별자치도 - 지방세",
+      "timestamp": "1986",
+      "value": 48518.0,
+      "item_codes": {
+        "C1": "15110AA3AkAK"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전북특별자치도 - 지방세",
+      "timestamp": "1987",
+      "value": 56251.0,
+      "item_codes": {
+        "C1": "15110AA3AkAK"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전북특별자치도 - 지방세",
+      "timestamp": "1988",
+      "value": 89934.0,
+      "item_codes": {
+        "C1": "15110AA3AkAK"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전북특별자치도 - 지방세",
+      "timestamp": "1989",
+      "value": 139610.0,
+      "item_codes": {
+        "C1": "15110AA3AkAK"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전북특별자치도 - 지방세",
+      "timestamp": "1990",
+      "value": 185710.0,
+      "item_codes": {
+        "C1": "15110AA3AkAK"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전북특별자치도 - 지방세",
+      "timestamp": "1991",
+      "value": 238518.0,
+      "item_codes": {
+        "C1": "15110AA3AkAK"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전북특별자치도 - 지방세",
+      "timestamp": "1992",
+      "value": 275802.0,
+      "item_codes": {
+        "C1": "15110AA3AkAK"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전북특별자치도 - 지방세",
+      "timestamp": "1993",
+      "value": 317943.0,
+      "item_codes": {
+        "C1": "15110AA3AkAK"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전북특별자치도 - 지방세",
+      "timestamp": "1994",
+      "value": 378020.0,
+      "item_codes": {
+        "C1": "15110AA3AkAK"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전북특별자치도 - 지방세",
+      "timestamp": "1995",
+      "value": 454512.0,
+      "item_codes": {
+        "C1": "15110AA3AkAK"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전북특별자치도 - 지방세",
+      "timestamp": "1996",
+      "value": 480275.0,
+      "item_codes": {
+        "C1": "15110AA3AkAK"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전북특별자치도 - 지방세",
+      "timestamp": "1997",
+      "value": 517615.0,
+      "item_codes": {
+        "C1": "15110AA3AkAK"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전북특별자치도 - 지방세",
+      "timestamp": "1998",
+      "value": 509453.0,
+      "item_codes": {
+        "C1": "15110AA3AkAK"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전북특별자치도 - 지방세",
+      "timestamp": "1999",
+      "value": 509380.0,
+      "item_codes": {
+        "C1": "15110AA3AkAK"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전북특별자치도 - 지방세",
+      "timestamp": "2000",
+      "value": 530720.0,
+      "item_codes": {
+        "C1": "15110AA3AkAK"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전북특별자치도 - 지방세",
+      "timestamp": "2001",
+      "value": 657589.0,
+      "item_codes": {
+        "C1": "15110AA3AkAK"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전북특별자치도 - 지방세",
+      "timestamp": "2002",
+      "value": 698245.0,
+      "item_codes": {
+        "C1": "15110AA3AkAK"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전북특별자치도 - 지방세",
+      "timestamp": "2003",
+      "value": 742063.0,
+      "item_codes": {
+        "C1": "15110AA3AkAK"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전북특별자치도 - 지방세",
+      "timestamp": "2004",
+      "value": 796940.0,
+      "item_codes": {
+        "C1": "15110AA3AkAK"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전북특별자치도 - 지방세",
+      "timestamp": "2005",
+      "value": 834923.0,
+      "item_codes": {
+        "C1": "15110AA3AkAK"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전북특별자치도 - 지방세",
+      "timestamp": "2006",
+      "value": 915356.0,
+      "item_codes": {
+        "C1": "15110AA3AkAK"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전북특별자치도 - 지방세",
+      "timestamp": "2007",
+      "value": 1015355.0,
+      "item_codes": {
+        "C1": "15110AA3AkAK"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전북특별자치도 - 지방세",
+      "timestamp": "2008",
+      "value": 1126645.0,
+      "item_codes": {
+        "C1": "15110AA3AkAK"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전북특별자치도 - 지방세",
+      "timestamp": "2009",
+      "value": 1091309.0,
+      "item_codes": {
+        "C1": "15110AA3AkAK"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전북특별자치도 - 지방세",
+      "timestamp": "2010",
+      "value": 1287562.0,
+      "item_codes": {
+        "C1": "15110AA3AkAK"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전북특별자치도 - 지방세",
+      "timestamp": "2011",
+      "value": 1407180.0,
+      "item_codes": {
+        "C1": "15110AA3AkAK"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전북특별자치도 - 지방세",
+      "timestamp": "2012",
+      "value": 1456057.0,
+      "item_codes": {
+        "C1": "15110AA3AkAK"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전북특별자치도 - 지방세",
+      "timestamp": "2013",
+      "value": 1457454.0,
+      "item_codes": {
+        "C1": "15110AA3AkAK"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전북특별자치도 - 지방세",
+      "timestamp": "2014",
+      "value": 1641746.0,
+      "item_codes": {
+        "C1": "15110AA3AkAK"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전북특별자치도 - 지방세",
+      "timestamp": "2015",
+      "value": 1796926.0,
+      "item_codes": {
+        "C1": "15110AA3AkAK"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전북특별자치도 - 지방세",
+      "timestamp": "2016",
+      "value": 1896033.0,
+      "item_codes": {
+        "C1": "15110AA3AkAK"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전북특별자치도 - 지방세",
+      "timestamp": "2017",
+      "value": 2005960.0,
+      "item_codes": {
+        "C1": "15110AA3AkAK"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전북특별자치도 - 지방세",
+      "timestamp": "2018",
+      "value": 2039943.0,
+      "item_codes": {
+        "C1": "15110AA3AkAK"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전북특별자치도 - 지방세",
+      "timestamp": "2019",
+      "value": 2292195.0,
+      "item_codes": {
+        "C1": "15110AA3AkAK"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전북특별자치도 - 지방세",
+      "timestamp": "2020",
+      "value": 2921771.0,
+      "item_codes": {
+        "C1": "15110AA3AkAK"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전북특별자치도 - 지방세",
+      "timestamp": "2021",
+      "value": 3063559.0,
+      "item_codes": {
+        "C1": "15110AA3AkAK"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전북특별자치도 - 지방세",
+      "timestamp": "2022",
+      "value": 3304791.0,
+      "item_codes": {
+        "C1": "15110AA3AkAK"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전북특별자치도 - 지방세",
+      "timestamp": "2023",
+      "value": 3299782.0,
+      "item_codes": {
+        "C1": "15110AA3AkAK"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전라남도 - 지방세",
+      "timestamp": "1973",
+      "value": 3975.0,
+      "item_codes": {
+        "C1": "15110AA3AkAL"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전라남도 - 지방세",
+      "timestamp": "1974",
+      "value": 5698.0,
+      "item_codes": {
+        "C1": "15110AA3AkAL"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전라남도 - 지방세",
+      "timestamp": "1975",
+      "value": 8561.0,
+      "item_codes": {
+        "C1": "15110AA3AkAL"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전라남도 - 지방세",
+      "timestamp": "1976",
+      "value": 12938.0,
+      "item_codes": {
+        "C1": "15110AA3AkAL"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전라남도 - 지방세",
+      "timestamp": "1977",
+      "value": 18659.0,
+      "item_codes": {
+        "C1": "15110AA3AkAL"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전라남도 - 지방세",
+      "timestamp": "1978",
+      "value": 21227.0,
+      "item_codes": {
+        "C1": "15110AA3AkAL"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전라남도 - 지방세",
+      "timestamp": "1979",
+      "value": 32233.0,
+      "item_codes": {
+        "C1": "15110AA3AkAL"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전라남도 - 지방세",
+      "timestamp": "1980",
+      "value": 43416.0,
+      "item_codes": {
+        "C1": "15110AA3AkAL"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전라남도 - 지방세",
+      "timestamp": "1981",
+      "value": 48286.0,
+      "item_codes": {
+        "C1": "15110AA3AkAL"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전라남도 - 지방세",
+      "timestamp": "1982",
+      "value": 56723.0,
+      "item_codes": {
+        "C1": "15110AA3AkAL"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전라남도 - 지방세",
+      "timestamp": "1983",
+      "value": 67600.0,
+      "item_codes": {
+        "C1": "15110AA3AkAL"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전라남도 - 지방세",
+      "timestamp": "1984",
+      "value": 74134.0,
+      "item_codes": {
+        "C1": "15110AA3AkAL"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전라남도 - 지방세",
+      "timestamp": "1985",
+      "value": 77879.0,
+      "item_codes": {
+        "C1": "15110AA3AkAL"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전라남도 - 지방세",
+      "timestamp": "1986",
+      "value": 81492.0,
+      "item_codes": {
+        "C1": "15110AA3AkAL"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전라남도 - 지방세",
+      "timestamp": "1987",
+      "value": 64444.0,
+      "item_codes": {
+        "C1": "15110AA3AkAL"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전라남도 - 지방세",
+      "timestamp": "1988",
+      "value": 99890.0,
+      "item_codes": {
+        "C1": "15110AA3AkAL"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전라남도 - 지방세",
+      "timestamp": "1989",
+      "value": 148684.0,
+      "item_codes": {
+        "C1": "15110AA3AkAL"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전라남도 - 지방세",
+      "timestamp": "1990",
+      "value": 197511.0,
+      "item_codes": {
+        "C1": "15110AA3AkAL"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전라남도 - 지방세",
+      "timestamp": "1991",
+      "value": 240163.0,
+      "item_codes": {
+        "C1": "15110AA3AkAL"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전라남도 - 지방세",
+      "timestamp": "1992",
+      "value": 286568.0,
+      "item_codes": {
+        "C1": "15110AA3AkAL"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전라남도 - 지방세",
+      "timestamp": "1993",
+      "value": 306831.0,
+      "item_codes": {
+        "C1": "15110AA3AkAL"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전라남도 - 지방세",
+      "timestamp": "1994",
+      "value": 346028.0,
+      "item_codes": {
+        "C1": "15110AA3AkAL"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전라남도 - 지방세",
+      "timestamp": "1995",
+      "value": 411099.0,
+      "item_codes": {
+        "C1": "15110AA3AkAL"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전라남도 - 지방세",
+      "timestamp": "1996",
+      "value": 502836.0,
+      "item_codes": {
+        "C1": "15110AA3AkAL"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전라남도 - 지방세",
+      "timestamp": "1997",
+      "value": 506554.0,
+      "item_codes": {
+        "C1": "15110AA3AkAL"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전라남도 - 지방세",
+      "timestamp": "1998",
+      "value": 479466.0,
+      "item_codes": {
+        "C1": "15110AA3AkAL"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전라남도 - 지방세",
+      "timestamp": "1999",
+      "value": 521585.0,
+      "item_codes": {
+        "C1": "15110AA3AkAL"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전라남도 - 지방세",
+      "timestamp": "2000",
+      "value": 562042.0,
+      "item_codes": {
+        "C1": "15110AA3AkAL"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전라남도 - 지방세",
+      "timestamp": "2001",
+      "value": 702574.0,
+      "item_codes": {
+        "C1": "15110AA3AkAL"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전라남도 - 지방세",
+      "timestamp": "2002",
+      "value": 766044.0,
+      "item_codes": {
+        "C1": "15110AA3AkAL"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전라남도 - 지방세",
+      "timestamp": "2003",
+      "value": 773130.0,
+      "item_codes": {
+        "C1": "15110AA3AkAL"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전라남도 - 지방세",
+      "timestamp": "2004",
+      "value": 845210.0,
+      "item_codes": {
+        "C1": "15110AA3AkAL"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전라남도 - 지방세",
+      "timestamp": "2005",
+      "value": 921700.0,
+      "item_codes": {
+        "C1": "15110AA3AkAL"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전라남도 - 지방세",
+      "timestamp": "2006",
+      "value": 1060644.0,
+      "item_codes": {
+        "C1": "15110AA3AkAL"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전라남도 - 지방세",
+      "timestamp": "2007",
+      "value": 1127642.0,
+      "item_codes": {
+        "C1": "15110AA3AkAL"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전라남도 - 지방세",
+      "timestamp": "2008",
+      "value": 1248968.0,
+      "item_codes": {
+        "C1": "15110AA3AkAL"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전라남도 - 지방세",
+      "timestamp": "2009",
+      "value": 1288287.0,
+      "item_codes": {
+        "C1": "15110AA3AkAL"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전라남도 - 지방세",
+      "timestamp": "2010",
+      "value": 1434292.0,
+      "item_codes": {
+        "C1": "15110AA3AkAL"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전라남도 - 지방세",
+      "timestamp": "2011",
+      "value": 1580286.0,
+      "item_codes": {
+        "C1": "15110AA3AkAL"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전라남도 - 지방세",
+      "timestamp": "2012",
+      "value": 1622293.0,
+      "item_codes": {
+        "C1": "15110AA3AkAL"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전라남도 - 지방세",
+      "timestamp": "2013",
+      "value": 1599464.0,
+      "item_codes": {
+        "C1": "15110AA3AkAL"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전라남도 - 지방세",
+      "timestamp": "2014",
+      "value": 1751096.0,
+      "item_codes": {
+        "C1": "15110AA3AkAL"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전라남도 - 지방세",
+      "timestamp": "2015",
+      "value": 2002617.0,
+      "item_codes": {
+        "C1": "15110AA3AkAL"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전라남도 - 지방세",
+      "timestamp": "2016",
+      "value": 2243786.0,
+      "item_codes": {
+        "C1": "15110AA3AkAL"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전라남도 - 지방세",
+      "timestamp": "2017",
+      "value": 2319014.0,
+      "item_codes": {
+        "C1": "15110AA3AkAL"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전라남도 - 지방세",
+      "timestamp": "2018",
+      "value": 2392217.0,
+      "item_codes": {
+        "C1": "15110AA3AkAL"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전라남도 - 지방세",
+      "timestamp": "2019",
+      "value": 2714787.0,
+      "item_codes": {
+        "C1": "15110AA3AkAL"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전라남도 - 지방세",
+      "timestamp": "2020",
+      "value": 3564716.0,
+      "item_codes": {
+        "C1": "15110AA3AkAL"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전라남도 - 지방세",
+      "timestamp": "2021",
+      "value": 3730749.0,
+      "item_codes": {
+        "C1": "15110AA3AkAL"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전라남도 - 지방세",
+      "timestamp": "2022",
+      "value": 4252686.0,
+      "item_codes": {
+        "C1": "15110AA3AkAL"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "전라남도 - 지방세",
+      "timestamp": "2023",
+      "value": 4088712.0,
+      "item_codes": {
+        "C1": "15110AA3AkAL"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경상북도 - 지방세",
+      "timestamp": "1973",
+      "value": 8126.0,
+      "item_codes": {
+        "C1": "15110AA3AkAM"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경상북도 - 지방세",
+      "timestamp": "1974",
+      "value": 11080.0,
+      "item_codes": {
+        "C1": "15110AA3AkAM"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경상북도 - 지방세",
+      "timestamp": "1975",
+      "value": 15020.0,
+      "item_codes": {
+        "C1": "15110AA3AkAM"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경상북도 - 지방세",
+      "timestamp": "1976",
+      "value": 19574.0,
+      "item_codes": {
+        "C1": "15110AA3AkAM"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경상북도 - 지방세",
+      "timestamp": "1977",
+      "value": 28460.0,
+      "item_codes": {
+        "C1": "15110AA3AkAM"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경상북도 - 지방세",
+      "timestamp": "1978",
+      "value": 38233.0,
+      "item_codes": {
+        "C1": "15110AA3AkAM"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경상북도 - 지방세",
+      "timestamp": "1979",
+      "value": 54748.0,
+      "item_codes": {
+        "C1": "15110AA3AkAM"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경상북도 - 지방세",
+      "timestamp": "1980",
+      "value": 68777.0,
+      "item_codes": {
+        "C1": "15110AA3AkAM"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경상북도 - 지방세",
+      "timestamp": "1981",
+      "value": 45417.0,
+      "item_codes": {
+        "C1": "15110AA3AkAM"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경상북도 - 지방세",
+      "timestamp": "1982",
+      "value": 50608.0,
+      "item_codes": {
+        "C1": "15110AA3AkAM"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경상북도 - 지방세",
+      "timestamp": "1983",
+      "value": 60749.0,
+      "item_codes": {
+        "C1": "15110AA3AkAM"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경상북도 - 지방세",
+      "timestamp": "1984",
+      "value": 67275.0,
+      "item_codes": {
+        "C1": "15110AA3AkAM"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경상북도 - 지방세",
+      "timestamp": "1985",
+      "value": 76618.0,
+      "item_codes": {
+        "C1": "15110AA3AkAM"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경상북도 - 지방세",
+      "timestamp": "1986",
+      "value": 83971.0,
+      "item_codes": {
+        "C1": "15110AA3AkAM"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경상북도 - 지방세",
+      "timestamp": "1987",
+      "value": 101644.0,
+      "item_codes": {
+        "C1": "15110AA3AkAM"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경상북도 - 지방세",
+      "timestamp": "1988",
+      "value": 155096.0,
+      "item_codes": {
+        "C1": "15110AA3AkAM"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경상북도 - 지방세",
+      "timestamp": "1989",
+      "value": 242142.0,
+      "item_codes": {
+        "C1": "15110AA3AkAM"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경상북도 - 지방세",
+      "timestamp": "1990",
+      "value": 316979.0,
+      "item_codes": {
+        "C1": "15110AA3AkAM"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경상북도 - 지방세",
+      "timestamp": "1991",
+      "value": 407807.0,
+      "item_codes": {
+        "C1": "15110AA3AkAM"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경상북도 - 지방세",
+      "timestamp": "1992",
+      "value": 475797.0,
+      "item_codes": {
+        "C1": "15110AA3AkAM"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경상북도 - 지방세",
+      "timestamp": "1993",
+      "value": 538627.0,
+      "item_codes": {
+        "C1": "15110AA3AkAM"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경상북도 - 지방세",
+      "timestamp": "1994",
+      "value": 656207.0,
+      "item_codes": {
+        "C1": "15110AA3AkAM"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경상북도 - 지방세",
+      "timestamp": "1995",
+      "value": 723593.0,
+      "item_codes": {
+        "C1": "15110AA3AkAM"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경상북도 - 지방세",
+      "timestamp": "1996",
+      "value": 845789.0,
+      "item_codes": {
+        "C1": "15110AA3AkAM"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경상북도 - 지방세",
+      "timestamp": "1997",
+      "value": 864497.0,
+      "item_codes": {
+        "C1": "15110AA3AkAM"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경상북도 - 지방세",
+      "timestamp": "1998",
+      "value": 804326.0,
+      "item_codes": {
+        "C1": "15110AA3AkAM"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경상북도 - 지방세",
+      "timestamp": "1999",
+      "value": 859060.0,
+      "item_codes": {
+        "C1": "15110AA3AkAM"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경상북도 - 지방세",
+      "timestamp": "2000",
+      "value": 948694.0,
+      "item_codes": {
+        "C1": "15110AA3AkAM"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경상북도 - 지방세",
+      "timestamp": "2001",
+      "value": 1151561.0,
+      "item_codes": {
+        "C1": "15110AA3AkAM"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경상북도 - 지방세",
+      "timestamp": "2002",
+      "value": 1196264.0,
+      "item_codes": {
+        "C1": "15110AA3AkAM"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경상북도 - 지방세",
+      "timestamp": "2003",
+      "value": 1261304.0,
+      "item_codes": {
+        "C1": "15110AA3AkAM"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경상북도 - 지방세",
+      "timestamp": "2004",
+      "value": 1404386.0,
+      "item_codes": {
+        "C1": "15110AA3AkAM"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경상북도 - 지방세",
+      "timestamp": "2005",
+      "value": 1583213.0,
+      "item_codes": {
+        "C1": "15110AA3AkAM"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경상북도 - 지방세",
+      "timestamp": "2006",
+      "value": 1798727.0,
+      "item_codes": {
+        "C1": "15110AA3AkAM"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경상북도 - 지방세",
+      "timestamp": "2007",
+      "value": 1867464.0,
+      "item_codes": {
+        "C1": "15110AA3AkAM"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경상북도 - 지방세",
+      "timestamp": "2008",
+      "value": 1915009.0,
+      "item_codes": {
+        "C1": "15110AA3AkAM"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경상북도 - 지방세",
+      "timestamp": "2009",
+      "value": 2001834.0,
+      "item_codes": {
+        "C1": "15110AA3AkAM"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경상북도 - 지방세",
+      "timestamp": "2010",
+      "value": 2220366.0,
+      "item_codes": {
+        "C1": "15110AA3AkAM"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경상북도 - 지방세",
+      "timestamp": "2011",
+      "value": 2397531.0,
+      "item_codes": {
+        "C1": "15110AA3AkAM"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경상북도 - 지방세",
+      "timestamp": "2012",
+      "value": 2499249.0,
+      "item_codes": {
+        "C1": "15110AA3AkAM"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경상북도 - 지방세",
+      "timestamp": "2013",
+      "value": 2563701.0,
+      "item_codes": {
+        "C1": "15110AA3AkAM"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경상북도 - 지방세",
+      "timestamp": "2014",
+      "value": 2963881.0,
+      "item_codes": {
+        "C1": "15110AA3AkAM"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경상북도 - 지방세",
+      "timestamp": "2015",
+      "value": 3450733.0,
+      "item_codes": {
+        "C1": "15110AA3AkAM"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경상북도 - 지방세",
+      "timestamp": "2016",
+      "value": 3567765.0,
+      "item_codes": {
+        "C1": "15110AA3AkAM"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경상북도 - 지방세",
+      "timestamp": "2017",
+      "value": 3719931.0,
+      "item_codes": {
+        "C1": "15110AA3AkAM"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경상북도 - 지방세",
+      "timestamp": "2018",
+      "value": 3634277.0,
+      "item_codes": {
+        "C1": "15110AA3AkAM"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경상북도 - 지방세",
+      "timestamp": "2019",
+      "value": 3922794.0,
+      "item_codes": {
+        "C1": "15110AA3AkAM"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경상북도 - 지방세",
+      "timestamp": "2020",
+      "value": 4589594.0,
+      "item_codes": {
+        "C1": "15110AA3AkAM"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경상북도 - 지방세",
+      "timestamp": "2021",
+      "value": 4898316.0,
+      "item_codes": {
+        "C1": "15110AA3AkAM"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경상북도 - 지방세",
+      "timestamp": "2022",
+      "value": 5406745.0,
+      "item_codes": {
+        "C1": "15110AA3AkAM"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경상북도 - 지방세",
+      "timestamp": "2023",
+      "value": 5316604.0,
+      "item_codes": {
+        "C1": "15110AA3AkAM"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경상남도 - 지방세",
+      "timestamp": "1973",
+      "value": 4038.0,
+      "item_codes": {
+        "C1": "15110AA3AkAN"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경상남도 - 지방세",
+      "timestamp": "1974",
+      "value": 6979.0,
+      "item_codes": {
+        "C1": "15110AA3AkAN"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경상남도 - 지방세",
+      "timestamp": "1975",
+      "value": 9209.0,
+      "item_codes": {
+        "C1": "15110AA3AkAN"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경상남도 - 지방세",
+      "timestamp": "1976",
+      "value": 12725.0,
+      "item_codes": {
+        "C1": "15110AA3AkAN"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경상남도 - 지방세",
+      "timestamp": "1977",
+      "value": 20273.0,
+      "item_codes": {
+        "C1": "15110AA3AkAN"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경상남도 - 지방세",
+      "timestamp": "1978",
+      "value": 26788.0,
+      "item_codes": {
+        "C1": "15110AA3AkAN"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경상남도 - 지방세",
+      "timestamp": "1979",
+      "value": 38527.0,
+      "item_codes": {
+        "C1": "15110AA3AkAN"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경상남도 - 지방세",
+      "timestamp": "1980",
+      "value": 50931.0,
+      "item_codes": {
+        "C1": "15110AA3AkAN"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경상남도 - 지방세",
+      "timestamp": "1981",
+      "value": 63715.0,
+      "item_codes": {
+        "C1": "15110AA3AkAN"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경상남도 - 지방세",
+      "timestamp": "1982",
+      "value": 74660.0,
+      "item_codes": {
+        "C1": "15110AA3AkAN"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경상남도 - 지방세",
+      "timestamp": "1983",
+      "value": 91410.0,
+      "item_codes": {
+        "C1": "15110AA3AkAN"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경상남도 - 지방세",
+      "timestamp": "1984",
+      "value": 100335.0,
+      "item_codes": {
+        "C1": "15110AA3AkAN"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경상남도 - 지방세",
+      "timestamp": "1985",
+      "value": 114656.0,
+      "item_codes": {
+        "C1": "15110AA3AkAN"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경상남도 - 지방세",
+      "timestamp": "1986",
+      "value": 127087.0,
+      "item_codes": {
+        "C1": "15110AA3AkAN"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경상남도 - 지방세",
+      "timestamp": "1987",
+      "value": 164121.0,
+      "item_codes": {
+        "C1": "15110AA3AkAN"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경상남도 - 지방세",
+      "timestamp": "1988",
+      "value": 246270.0,
+      "item_codes": {
+        "C1": "15110AA3AkAN"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경상남도 - 지방세",
+      "timestamp": "1989",
+      "value": 392531.0,
+      "item_codes": {
+        "C1": "15110AA3AkAN"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경상남도 - 지방세",
+      "timestamp": "1990",
+      "value": 505622.0,
+      "item_codes": {
+        "C1": "15110AA3AkAN"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경상남도 - 지방세",
+      "timestamp": "1991",
+      "value": 660687.0,
+      "item_codes": {
+        "C1": "15110AA3AkAN"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경상남도 - 지방세",
+      "timestamp": "1992",
+      "value": 787918.0,
+      "item_codes": {
+        "C1": "15110AA3AkAN"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경상남도 - 지방세",
+      "timestamp": "1993",
+      "value": 867135.0,
+      "item_codes": {
+        "C1": "15110AA3AkAN"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경상남도 - 지방세",
+      "timestamp": "1994",
+      "value": 1069002.0,
+      "item_codes": {
+        "C1": "15110AA3AkAN"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경상남도 - 지방세",
+      "timestamp": "1995",
+      "value": 1195510.0,
+      "item_codes": {
+        "C1": "15110AA3AkAN"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경상남도 - 지방세",
+      "timestamp": "1996",
+      "value": 1387078.0,
+      "item_codes": {
+        "C1": "15110AA3AkAN"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경상남도 - 지방세",
+      "timestamp": "1997",
+      "value": 990847.0,
+      "item_codes": {
+        "C1": "15110AA3AkAN"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경상남도 - 지방세",
+      "timestamp": "1998",
+      "value": 963432.0,
+      "item_codes": {
+        "C1": "15110AA3AkAN"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경상남도 - 지방세",
+      "timestamp": "1999",
+      "value": 971730.0,
+      "item_codes": {
+        "C1": "15110AA3AkAN"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경상남도 - 지방세",
+      "timestamp": "2000",
+      "value": 1060249.0,
+      "item_codes": {
+        "C1": "15110AA3AkAN"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경상남도 - 지방세",
+      "timestamp": "2001",
+      "value": 1362762.0,
+      "item_codes": {
+        "C1": "15110AA3AkAN"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경상남도 - 지방세",
+      "timestamp": "2002",
+      "value": 1636180.0,
+      "item_codes": {
+        "C1": "15110AA3AkAN"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경상남도 - 지방세",
+      "timestamp": "2003",
+      "value": 1714012.0,
+      "item_codes": {
+        "C1": "15110AA3AkAN"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경상남도 - 지방세",
+      "timestamp": "2004",
+      "value": 1841713.0,
+      "item_codes": {
+        "C1": "15110AA3AkAN"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경상남도 - 지방세",
+      "timestamp": "2005",
+      "value": 2061172.0,
+      "item_codes": {
+        "C1": "15110AA3AkAN"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경상남도 - 지방세",
+      "timestamp": "2006",
+      "value": 2316613.0,
+      "item_codes": {
+        "C1": "15110AA3AkAN"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경상남도 - 지방세",
+      "timestamp": "2007",
+      "value": 2565187.0,
+      "item_codes": {
+        "C1": "15110AA3AkAN"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경상남도 - 지방세",
+      "timestamp": "2008",
+      "value": 2929103.0,
+      "item_codes": {
+        "C1": "15110AA3AkAN"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경상남도 - 지방세",
+      "timestamp": "2009",
+      "value": 2880091.0,
+      "item_codes": {
+        "C1": "15110AA3AkAN"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경상남도 - 지방세",
+      "timestamp": "2010",
+      "value": 3334664.0,
+      "item_codes": {
+        "C1": "15110AA3AkAN"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경상남도 - 지방세",
+      "timestamp": "2011",
+      "value": 3609075.0,
+      "item_codes": {
+        "C1": "15110AA3AkAN"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경상남도 - 지방세",
+      "timestamp": "2012",
+      "value": 3504746.0,
+      "item_codes": {
+        "C1": "15110AA3AkAN"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경상남도 - 지방세",
+      "timestamp": "2013",
+      "value": 3605279.0,
+      "item_codes": {
+        "C1": "15110AA3AkAN"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경상남도 - 지방세",
+      "timestamp": "2014",
+      "value": 4195428.0,
+      "item_codes": {
+        "C1": "15110AA3AkAN"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경상남도 - 지방세",
+      "timestamp": "2015",
+      "value": 4535227.0,
+      "item_codes": {
+        "C1": "15110AA3AkAN"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경상남도 - 지방세",
+      "timestamp": "2016",
+      "value": 4736834.0,
+      "item_codes": {
+        "C1": "15110AA3AkAN"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경상남도 - 지방세",
+      "timestamp": "2017",
+      "value": 4818215.0,
+      "item_codes": {
+        "C1": "15110AA3AkAN"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경상남도 - 지방세",
+      "timestamp": "2018",
+      "value": 4616070.0,
+      "item_codes": {
+        "C1": "15110AA3AkAN"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경상남도 - 지방세",
+      "timestamp": "2019",
+      "value": 5098712.0,
+      "item_codes": {
+        "C1": "15110AA3AkAN"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경상남도 - 지방세",
+      "timestamp": "2020",
+      "value": 5731861.0,
+      "item_codes": {
+        "C1": "15110AA3AkAN"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경상남도 - 지방세",
+      "timestamp": "2021",
+      "value": 6046173.0,
+      "item_codes": {
+        "C1": "15110AA3AkAN"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경상남도 - 지방세",
+      "timestamp": "2022",
+      "value": 6585873.0,
+      "item_codes": {
+        "C1": "15110AA3AkAN"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "경상남도 - 지방세",
+      "timestamp": "2023",
+      "value": 6426449.0,
+      "item_codes": {
+        "C1": "15110AA3AkAN"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "제주특별자치도 - 지방세",
+      "timestamp": "1973",
+      "value": 718.0,
+      "item_codes": {
+        "C1": "15110AA3AkAO"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "제주특별자치도 - 지방세",
+      "timestamp": "1974",
+      "value": 1004.0,
+      "item_codes": {
+        "C1": "15110AA3AkAO"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "제주특별자치도 - 지방세",
+      "timestamp": "1975",
+      "value": 1450.0,
+      "item_codes": {
+        "C1": "15110AA3AkAO"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "제주특별자치도 - 지방세",
+      "timestamp": "1976",
+      "value": 1954.0,
+      "item_codes": {
+        "C1": "15110AA3AkAO"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "제주특별자치도 - 지방세",
+      "timestamp": "1977",
+      "value": 2721.0,
+      "item_codes": {
+        "C1": "15110AA3AkAO"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "제주특별자치도 - 지방세",
+      "timestamp": "1978",
+      "value": 3895.0,
+      "item_codes": {
+        "C1": "15110AA3AkAO"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "제주특별자치도 - 지방세",
+      "timestamp": "1979",
+      "value": 5932.0,
+      "item_codes": {
+        "C1": "15110AA3AkAO"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "제주특별자치도 - 지방세",
+      "timestamp": "1980",
+      "value": 7712.0,
+      "item_codes": {
+        "C1": "15110AA3AkAO"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "제주특별자치도 - 지방세",
+      "timestamp": "1981",
+      "value": 9170.0,
+      "item_codes": {
+        "C1": "15110AA3AkAO"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "제주특별자치도 - 지방세",
+      "timestamp": "1982",
+      "value": 8090.0,
+      "item_codes": {
+        "C1": "15110AA3AkAO"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "제주특별자치도 - 지방세",
+      "timestamp": "1983",
+      "value": 12542.0,
+      "item_codes": {
+        "C1": "15110AA3AkAO"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "제주특별자치도 - 지방세",
+      "timestamp": "1984",
+      "value": 12601.0,
+      "item_codes": {
+        "C1": "15110AA3AkAO"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "제주특별자치도 - 지방세",
+      "timestamp": "1985",
+      "value": 14260.0,
+      "item_codes": {
+        "C1": "15110AA3AkAO"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "제주특별자치도 - 지방세",
+      "timestamp": "1986",
+      "value": 15039.0,
+      "item_codes": {
+        "C1": "15110AA3AkAO"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "제주특별자치도 - 지방세",
+      "timestamp": "1987",
+      "value": 17568.0,
+      "item_codes": {
+        "C1": "15110AA3AkAO"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "제주특별자치도 - 지방세",
+      "timestamp": "1988",
+      "value": 26911.0,
+      "item_codes": {
+        "C1": "15110AA3AkAO"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "제주특별자치도 - 지방세",
+      "timestamp": "1989",
+      "value": 45808.0,
+      "item_codes": {
+        "C1": "15110AA3AkAO"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "제주특별자치도 - 지방세",
+      "timestamp": "1990",
+      "value": 67270.0,
+      "item_codes": {
+        "C1": "15110AA3AkAO"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "제주특별자치도 - 지방세",
+      "timestamp": "1991",
+      "value": 89639.0,
+      "item_codes": {
+        "C1": "15110AA3AkAO"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "제주특별자치도 - 지방세",
+      "timestamp": "1992",
+      "value": 109650.0,
+      "item_codes": {
+        "C1": "15110AA3AkAO"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "제주특별자치도 - 지방세",
+      "timestamp": "1993",
+      "value": 120885.0,
+      "item_codes": {
+        "C1": "15110AA3AkAO"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "제주특별자치도 - 지방세",
+      "timestamp": "1994",
+      "value": 142368.0,
+      "item_codes": {
+        "C1": "15110AA3AkAO"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "제주특별자치도 - 지방세",
+      "timestamp": "1995",
+      "value": 169592.0,
+      "item_codes": {
+        "C1": "15110AA3AkAO"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "제주특별자치도 - 지방세",
+      "timestamp": "1996",
+      "value": 179442.0,
+      "item_codes": {
+        "C1": "15110AA3AkAO"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "제주특별자치도 - 지방세",
+      "timestamp": "1997",
+      "value": 195674.0,
+      "item_codes": {
+        "C1": "15110AA3AkAO"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "제주특별자치도 - 지방세",
+      "timestamp": "1998",
+      "value": 200949.0,
+      "item_codes": {
+        "C1": "15110AA3AkAO"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "제주특별자치도 - 지방세",
+      "timestamp": "1999",
+      "value": 211125.0,
+      "item_codes": {
+        "C1": "15110AA3AkAO"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "제주특별자치도 - 지방세",
+      "timestamp": "2000",
+      "value": 234896.0,
+      "item_codes": {
+        "C1": "15110AA3AkAO"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "제주특별자치도 - 지방세",
+      "timestamp": "2001",
+      "value": 327544.0,
+      "item_codes": {
+        "C1": "15110AA3AkAO"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "제주특별자치도 - 지방세",
+      "timestamp": "2002",
+      "value": 375952.0,
+      "item_codes": {
+        "C1": "15110AA3AkAO"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "제주특별자치도 - 지방세",
+      "timestamp": "2003",
+      "value": 387351.0,
+      "item_codes": {
+        "C1": "15110AA3AkAO"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "제주특별자치도 - 지방세",
+      "timestamp": "2004",
+      "value": 405723.0,
+      "item_codes": {
+        "C1": "15110AA3AkAO"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "제주특별자치도 - 지방세",
+      "timestamp": "2005",
+      "value": 401121.0,
+      "item_codes": {
+        "C1": "15110AA3AkAO"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "제주특별자치도 - 지방세",
+      "timestamp": "2006",
+      "value": 433744.0,
+      "item_codes": {
+        "C1": "15110AA3AkAO"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "제주특별자치도 - 지방세",
+      "timestamp": "2007",
+      "value": 447094.0,
+      "item_codes": {
+        "C1": "15110AA3AkAO"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "제주특별자치도 - 지방세",
+      "timestamp": "2008",
+      "value": 445059.0,
+      "item_codes": {
+        "C1": "15110AA3AkAO"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "제주특별자치도 - 지방세",
+      "timestamp": "2009",
+      "value": 414551.0,
+      "item_codes": {
+        "C1": "15110AA3AkAO"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "제주특별자치도 - 지방세",
+      "timestamp": "2010",
+      "value": 521487.0,
+      "item_codes": {
+        "C1": "15110AA3AkAO"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "제주특별자치도 - 지방세",
+      "timestamp": "2011",
+      "value": 581431.0,
+      "item_codes": {
+        "C1": "15110AA3AkAO"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "제주특별자치도 - 지방세",
+      "timestamp": "2012",
+      "value": 684103.0,
+      "item_codes": {
+        "C1": "15110AA3AkAO"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "제주특별자치도 - 지방세",
+      "timestamp": "2013",
+      "value": 768612.0,
+      "item_codes": {
+        "C1": "15110AA3AkAO"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "제주특별자치도 - 지방세",
+      "timestamp": "2014",
+      "value": 909470.0,
+      "item_codes": {
+        "C1": "15110AA3AkAO"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "제주특별자치도 - 지방세",
+      "timestamp": "2015",
+      "value": 1124068.0,
+      "item_codes": {
+        "C1": "15110AA3AkAO"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "제주특별자치도 - 지방세",
+      "timestamp": "2016",
+      "value": 1376124.0,
+      "item_codes": {
+        "C1": "15110AA3AkAO"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "제주특별자치도 - 지방세",
+      "timestamp": "2017",
+      "value": 1448695.0,
+      "item_codes": {
+        "C1": "15110AA3AkAO"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "제주특별자치도 - 지방세",
+      "timestamp": "2018",
+      "value": 1458970.0,
+      "item_codes": {
+        "C1": "15110AA3AkAO"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "제주특별자치도 - 지방세",
+      "timestamp": "2019",
+      "value": 1519568.0,
+      "item_codes": {
+        "C1": "15110AA3AkAO"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "제주특별자치도 - 지방세",
+      "timestamp": "2020",
+      "value": 1601823.0,
+      "item_codes": {
+        "C1": "15110AA3AkAO"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "제주특별자치도 - 지방세",
+      "timestamp": "2021",
+      "value": 1685665.0,
+      "item_codes": {
+        "C1": "15110AA3AkAO"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "제주특별자치도 - 지방세",
+      "timestamp": "2022",
+      "value": 1970964.0,
+      "item_codes": {
+        "C1": "15110AA3AkAO"
+      },
+      "itm_id": "16110AAE2"
+    },
+    {
+      "item": "제주특별자치도 - 지방세",
+      "timestamp": "2023",
+      "value": 1869048.0,
+      "item_codes": {
+        "C1": "15110AA3AkAO"
+      },
+      "itm_id": "16110AAE2"
+    }
+  ]
+}

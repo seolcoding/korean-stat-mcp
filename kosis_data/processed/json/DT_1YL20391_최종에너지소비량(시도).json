@@ -1,0 +1,2116 @@
+{
+  "metadata": {
+    "org_id": "101",
+    "org_name": "통계청",
+    "table_id": "DT_1YL20391",
+    "table_name": "최종에너지소비량(시도)",
+    "stat_id": "9B08007",
+    "stat_name": "e-지방지표",
+    "date_range": "2010 ~ 2023",
+    "description": "행정구역별 소비량 충청북도 충청남도 제주특별자치도 부산광역시 전라남도 대구광역시 광주광역시 경상북도 전북특별자치도 전국 서울특별시 울산광역시 인천광역시 강원특별자치도 대전광역시 경기도 경상남도 세종특별자치시",
+    "item_info": "■  자료제공처:  통계청 지역통계기획팀 ■  자료원출처:  에너지경제연구원(지역에너지통계연보) ■  자료제공주기:  1년 ■  다음자료현행화:  작성기준년도 익익년 4월 □  정의  - 최종에너지 소비량: 최종에너지 소비부문에서 사용하는 에너지 사용량 □  의의  - 에너지 수요전망, 에너지 효율 분석 등 각종 에너지 정책 수립을 위한 기초자료 제공 □  용어  - 최종에너지: 산업, 수성, 가정 및 상업부문 등 최종에너지 소비부문에서 사용하는 에너지로, 최종소비자가 직접 사용한 1차 에너지와 전환과정을 거친 2차 에너지가 여기에 해당 현 국가통계에서 전력과 열에너지는 한전 및 지역난방 사업자가 공급하는 양만 최종에너지소비에 포함 자가생산자가 생산한 전력과 열에너지는 생산부문 및 업종의 연료소비로 최종소비에 포함되나, 전력거래소에 판매된 자가발전은 전력으로 최종소비에 포함 ※ 2018년 에너지통계연보는 일부 에너지원의 업종 및 용도 분류 방법 개선, 과거 석유제품 시계열의 갱신(2018년 5월 기준의 석유류수급통계 기준 일괄 적용) 등으로 에너지밸런스의 신뢰성을 제고한 수치가 반영되었음. 그러나 지역별 자료는 소급 수정하는데 상당 기간이 소요됨에 따라, 2019년 지역에너지통계연보에 해당 내용을 수록할 예정입니다.",
+    "source_url": "http://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1YL20391",
+    "last_updated": "2025-06-24T18:20:35.611180",
+    "period_type": "M",
+    "period_name": "월간"
+  },
+  "data": [
+    {
+      "item": "전국 - 소비량",
+      "timestamp": "2011",
+      "value": 205241.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 소비량",
+      "timestamp": "2012",
+      "value": 206974.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 소비량",
+      "timestamp": "2013",
+      "value": 208376.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 소비량",
+      "timestamp": "2014",
+      "value": 210477.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 소비량",
+      "timestamp": "2015",
+      "value": 215447.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 소비량",
+      "timestamp": "2016",
+      "value": 222027.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 소비량",
+      "timestamp": "2017",
+      "value": 231179.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 소비량",
+      "timestamp": "2018",
+      "value": 233585.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 소비량",
+      "timestamp": "2019",
+      "value": 231621.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 소비량",
+      "timestamp": "2020",
+      "value": 222563.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 소비량",
+      "timestamp": "2021",
+      "value": 236030.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 소비량",
+      "timestamp": "2022",
+      "value": 234667.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 소비량",
+      "timestamp": "2023",
+      "value": 232193.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 소비량",
+      "timestamp": "2011",
+      "value": 15491.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 소비량",
+      "timestamp": "2012",
+      "value": 15203.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 소비량",
+      "timestamp": "2013",
+      "value": 15014.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 소비량",
+      "timestamp": "2014",
+      "value": 14680.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 소비량",
+      "timestamp": "2015",
+      "value": 14966.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 소비량",
+      "timestamp": "2016",
+      "value": 15214.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 소비량",
+      "timestamp": "2017",
+      "value": 15095.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 소비량",
+      "timestamp": "2018",
+      "value": 14746.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 소비량",
+      "timestamp": "2019",
+      "value": 14463.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 소비량",
+      "timestamp": "2020",
+      "value": 13316.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 소비량",
+      "timestamp": "2021",
+      "value": 13388.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 소비량",
+      "timestamp": "2022",
+      "value": 13227.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 소비량",
+      "timestamp": "2023",
+      "value": 12380.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 소비량",
+      "timestamp": "2011",
+      "value": 6535.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 소비량",
+      "timestamp": "2012",
+      "value": 6500.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 소비량",
+      "timestamp": "2013",
+      "value": 6182.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 소비량",
+      "timestamp": "2014",
+      "value": 5722.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 소비량",
+      "timestamp": "2015",
+      "value": 5899.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 소비량",
+      "timestamp": "2016",
+      "value": 6311.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 소비량",
+      "timestamp": "2017",
+      "value": 6275.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 소비량",
+      "timestamp": "2018",
+      "value": 6375.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 소비량",
+      "timestamp": "2019",
+      "value": 6349.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 소비량",
+      "timestamp": "2020",
+      "value": 5910.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 소비량",
+      "timestamp": "2021",
+      "value": 5808.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 소비량",
+      "timestamp": "2022",
+      "value": 6021.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 소비량",
+      "timestamp": "2023",
+      "value": 5985.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 소비량",
+      "timestamp": "2011",
+      "value": 4512.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 소비량",
+      "timestamp": "2012",
+      "value": 4382.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 소비량",
+      "timestamp": "2013",
+      "value": 4378.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 소비량",
+      "timestamp": "2014",
+      "value": 4322.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 소비량",
+      "timestamp": "2015",
+      "value": 4306.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 소비량",
+      "timestamp": "2016",
+      "value": 4379.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 소비량",
+      "timestamp": "2017",
+      "value": 4402.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 소비량",
+      "timestamp": "2018",
+      "value": 4461.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 소비량",
+      "timestamp": "2019",
+      "value": 4392.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 소비량",
+      "timestamp": "2020",
+      "value": 4062.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 소비량",
+      "timestamp": "2021",
+      "value": 4309.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 소비량",
+      "timestamp": "2022",
+      "value": 4548.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 소비량",
+      "timestamp": "2023",
+      "value": 4435.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 소비량",
+      "timestamp": "2011",
+      "value": 10260.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 소비량",
+      "timestamp": "2012",
+      "value": 10859.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 소비량",
+      "timestamp": "2013",
+      "value": 10479.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 소비량",
+      "timestamp": "2014",
+      "value": 11212.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 소비량",
+      "timestamp": "2015",
+      "value": 12370.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 소비량",
+      "timestamp": "2016",
+      "value": 12646.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 소비량",
+      "timestamp": "2017",
+      "value": 13422.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 소비량",
+      "timestamp": "2018",
+      "value": 13769.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 소비량",
+      "timestamp": "2019",
+      "value": 13425.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 소비량",
+      "timestamp": "2020",
+      "value": 11226.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 소비량",
+      "timestamp": "2021",
+      "value": 10732.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 소비량",
+      "timestamp": "2022",
+      "value": 10654.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 소비량",
+      "timestamp": "2023",
+      "value": 12960.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 소비량",
+      "timestamp": "2011",
+      "value": 2349.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 소비량",
+      "timestamp": "2012",
+      "value": 2433.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 소비량",
+      "timestamp": "2013",
+      "value": 2570.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 소비량",
+      "timestamp": "2014",
+      "value": 2541.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 소비량",
+      "timestamp": "2015",
+      "value": 2487.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 소비량",
+      "timestamp": "2016",
+      "value": 2528.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 소비량",
+      "timestamp": "2017",
+      "value": 2555.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 소비량",
+      "timestamp": "2018",
+      "value": 2543.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 소비량",
+      "timestamp": "2019",
+      "value": 2492.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 소비량",
+      "timestamp": "2020",
+      "value": 2420.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 소비량",
+      "timestamp": "2021",
+      "value": 2458.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 소비량",
+      "timestamp": "2022",
+      "value": 2476.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 소비량",
+      "timestamp": "2023",
+      "value": 2375.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 소비량",
+      "timestamp": "2011",
+      "value": 2529.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 소비량",
+      "timestamp": "2012",
+      "value": 2640.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 소비량",
+      "timestamp": "2013",
+      "value": 2676.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 소비량",
+      "timestamp": "2014",
+      "value": 2631.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 소비량",
+      "timestamp": "2015",
+      "value": 2660.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 소비량",
+      "timestamp": "2016",
+      "value": 2729.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 소비량",
+      "timestamp": "2017",
+      "value": 2736.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 소비량",
+      "timestamp": "2018",
+      "value": 2760.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 소비량",
+      "timestamp": "2019",
+      "value": 2680.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 소비량",
+      "timestamp": "2020",
+      "value": 2558.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 소비량",
+      "timestamp": "2021",
+      "value": 2569.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 소비량",
+      "timestamp": "2022",
+      "value": 2640.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 소비량",
+      "timestamp": "2023",
+      "value": 2456.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 소비량",
+      "timestamp": "2011",
+      "value": 24734.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 소비량",
+      "timestamp": "2012",
+      "value": 26075.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 소비량",
+      "timestamp": "2013",
+      "value": 25955.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 소비량",
+      "timestamp": "2014",
+      "value": 25321.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 소비량",
+      "timestamp": "2015",
+      "value": 23686.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 소비량",
+      "timestamp": "2016",
+      "value": 26946.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 소비량",
+      "timestamp": "2017",
+      "value": 27988.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 소비량",
+      "timestamp": "2018",
+      "value": 29905.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 소비량",
+      "timestamp": "2019",
+      "value": 28616.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 소비량",
+      "timestamp": "2020",
+      "value": 28684.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 소비량",
+      "timestamp": "2021",
+      "value": 29928.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 소비량",
+      "timestamp": "2022",
+      "value": 30020.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 소비량",
+      "timestamp": "2023",
+      "value": 30192.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "세종특별자치시 - 소비량",
+      "timestamp": "2012",
+      "value": 141.0,
+      "item_codes": {
+        "C1": "27"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "세종특별자치시 - 소비량",
+      "timestamp": "2013",
+      "value": 397.0,
+      "item_codes": {
+        "C1": "27"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "세종특별자치시 - 소비량",
+      "timestamp": "2014",
+      "value": 472.0,
+      "item_codes": {
+        "C1": "27"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "세종특별자치시 - 소비량",
+      "timestamp": "2015",
+      "value": 551.0,
+      "item_codes": {
+        "C1": "27"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "세종특별자치시 - 소비량",
+      "timestamp": "2016",
+      "value": 558.0,
+      "item_codes": {
+        "C1": "27"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "세종특별자치시 - 소비량",
+      "timestamp": "2017",
+      "value": 599.0,
+      "item_codes": {
+        "C1": "27"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "세종특별자치시 - 소비량",
+      "timestamp": "2018",
+      "value": 637.0,
+      "item_codes": {
+        "C1": "27"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "세종특별자치시 - 소비량",
+      "timestamp": "2019",
+      "value": 666.0,
+      "item_codes": {
+        "C1": "27"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "세종특별자치시 - 소비량",
+      "timestamp": "2020",
+      "value": 728.0,
+      "item_codes": {
+        "C1": "27"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "세종특별자치시 - 소비량",
+      "timestamp": "2021",
+      "value": 789.0,
+      "item_codes": {
+        "C1": "27"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "세종특별자치시 - 소비량",
+      "timestamp": "2022",
+      "value": 748.0,
+      "item_codes": {
+        "C1": "27"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "세종특별자치시 - 소비량",
+      "timestamp": "2023",
+      "value": 839.0,
+      "item_codes": {
+        "C1": "27"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 소비량",
+      "timestamp": "2011",
+      "value": 25830.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 소비량",
+      "timestamp": "2012",
+      "value": 26172.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 소비량",
+      "timestamp": "2013",
+      "value": 26248.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 소비량",
+      "timestamp": "2014",
+      "value": 25355.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 소비량",
+      "timestamp": "2015",
+      "value": 27052.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 소비량",
+      "timestamp": "2016",
+      "value": 28645.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 소비량",
+      "timestamp": "2017",
+      "value": 29613.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 소비량",
+      "timestamp": "2018",
+      "value": 30692.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 소비량",
+      "timestamp": "2019",
+      "value": 30179.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 소비량",
+      "timestamp": "2020",
+      "value": 30176.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 소비량",
+      "timestamp": "2021",
+      "value": 31479.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 소비량",
+      "timestamp": "2022",
+      "value": 32145.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 소비량",
+      "timestamp": "2023",
+      "value": 31873.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 소비량",
+      "timestamp": "2011",
+      "value": 8169.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 소비량",
+      "timestamp": "2012",
+      "value": 5969.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 소비량",
+      "timestamp": "2013",
+      "value": 6064.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 소비량",
+      "timestamp": "2014",
+      "value": 5997.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 소비량",
+      "timestamp": "2015",
+      "value": 6154.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 소비량",
+      "timestamp": "2016",
+      "value": 5975.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 소비량",
+      "timestamp": "2017",
+      "value": 5870.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 소비량",
+      "timestamp": "2018",
+      "value": 5882.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 소비량",
+      "timestamp": "2019",
+      "value": 5968.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 소비량",
+      "timestamp": "2020",
+      "value": 5645.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 소비량",
+      "timestamp": "2021",
+      "value": 6016.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 소비량",
+      "timestamp": "2022",
+      "value": 6110.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 소비량",
+      "timestamp": "2023",
+      "value": 6126.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 소비량",
+      "timestamp": "2011",
+      "value": 6317.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 소비량",
+      "timestamp": "2012",
+      "value": 6416.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 소비량",
+      "timestamp": "2013",
+      "value": 6408.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 소비량",
+      "timestamp": "2014",
+      "value": 5971.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 소비량",
+      "timestamp": "2015",
+      "value": 6233.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 소비량",
+      "timestamp": "2016",
+      "value": 6742.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 소비량",
+      "timestamp": "2017",
+      "value": 6996.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 소비량",
+      "timestamp": "2018",
+      "value": 6970.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 소비량",
+      "timestamp": "2019",
+      "value": 7126.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 소비량",
+      "timestamp": "2020",
+      "value": 6984.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 소비량",
+      "timestamp": "2021",
+      "value": 7208.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 소비량",
+      "timestamp": "2022",
+      "value": 7393.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 소비량",
+      "timestamp": "2023",
+      "value": 7598.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 소비량",
+      "timestamp": "2011",
+      "value": 25926.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 소비량",
+      "timestamp": "2012",
+      "value": 28125.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 소비량",
+      "timestamp": "2013",
+      "value": 29106.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 소비량",
+      "timestamp": "2014",
+      "value": 32232.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 소비량",
+      "timestamp": "2015",
+      "value": 32643.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 소비량",
+      "timestamp": "2016",
+      "value": 34139.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 소비량",
+      "timestamp": "2017",
+      "value": 35968.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 소비량",
+      "timestamp": "2018",
+      "value": 37374.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 소비량",
+      "timestamp": "2019",
+      "value": 37244.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 소비량",
+      "timestamp": "2020",
+      "value": 37167.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 소비량",
+      "timestamp": "2021",
+      "value": 37224.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 소비량",
+      "timestamp": "2022",
+      "value": 39528.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 소비량",
+      "timestamp": "2023",
+      "value": 38721.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 소비량",
+      "timestamp": "2011",
+      "value": 5201.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 소비량",
+      "timestamp": "2012",
+      "value": 5138.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 소비량",
+      "timestamp": "2013",
+      "value": 5321.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 소비량",
+      "timestamp": "2014",
+      "value": 5339.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 소비량",
+      "timestamp": "2015",
+      "value": 5625.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 소비량",
+      "timestamp": "2016",
+      "value": 5801.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 소비량",
+      "timestamp": "2017",
+      "value": 5894.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 소비량",
+      "timestamp": "2018",
+      "value": 5806.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 소비량",
+      "timestamp": "2019",
+      "value": 5551.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 소비량",
+      "timestamp": "2020",
+      "value": 5309.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 소비량",
+      "timestamp": "2021",
+      "value": 5514.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 소비량",
+      "timestamp": "2022",
+      "value": 5978.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 소비량",
+      "timestamp": "2023",
+      "value": 5400.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 소비량",
+      "timestamp": "2011",
+      "value": 38403.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 소비량",
+      "timestamp": "2012",
+      "value": 37573.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 소비량",
+      "timestamp": "2013",
+      "value": 38009.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 소비량",
+      "timestamp": "2014",
+      "value": 37776.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 소비량",
+      "timestamp": "2015",
+      "value": 39242.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 소비량",
+      "timestamp": "2016",
+      "value": 38862.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 소비량",
+      "timestamp": "2017",
+      "value": 42020.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 소비량",
+      "timestamp": "2018",
+      "value": 40013.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 소비량",
+      "timestamp": "2019",
+      "value": 41030.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 소비량",
+      "timestamp": "2020",
+      "value": 37540.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 소비량",
+      "timestamp": "2021",
+      "value": 46306.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 소비량",
+      "timestamp": "2022",
+      "value": 42969.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 소비량",
+      "timestamp": "2023",
+      "value": 41016.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 소비량",
+      "timestamp": "2011",
+      "value": 18911.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 소비량",
+      "timestamp": "2012",
+      "value": 19130.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 소비량",
+      "timestamp": "2013",
+      "value": 19406.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 소비량",
+      "timestamp": "2014",
+      "value": 20975.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 소비량",
+      "timestamp": "2015",
+      "value": 20185.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 소비량",
+      "timestamp": "2016",
+      "value": 20677.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 소비량",
+      "timestamp": "2017",
+      "value": 20539.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 소비량",
+      "timestamp": "2018",
+      "value": 20493.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 소비량",
+      "timestamp": "2019",
+      "value": 21237.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 소비량",
+      "timestamp": "2020",
+      "value": 20942.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 소비량",
+      "timestamp": "2021",
+      "value": 22026.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 소비량",
+      "timestamp": "2022",
+      "value": 19916.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 소비량",
+      "timestamp": "2023",
+      "value": 19541.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 소비량",
+      "timestamp": "2011",
+      "value": 8966.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 소비량",
+      "timestamp": "2012",
+      "value": 9110.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 소비량",
+      "timestamp": "2013",
+      "value": 8957.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 소비량",
+      "timestamp": "2014",
+      "value": 8690.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 소비량",
+      "timestamp": "2015",
+      "value": 8831.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 소비량",
+      "timestamp": "2016",
+      "value": 9141.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 소비량",
+      "timestamp": "2017",
+      "value": 9538.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 소비량",
+      "timestamp": "2018",
+      "value": 9394.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 소비량",
+      "timestamp": "2019",
+      "value": 8656.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 소비량",
+      "timestamp": "2020",
+      "value": 8451.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 소비량",
+      "timestamp": "2021",
+      "value": 8724.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 소비량",
+      "timestamp": "2022",
+      "value": 8722.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 소비량",
+      "timestamp": "2023",
+      "value": 8721.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 소비량",
+      "timestamp": "2011",
+      "value": 1095.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 소비량",
+      "timestamp": "2012",
+      "value": 1087.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 소비량",
+      "timestamp": "2013",
+      "value": 1181.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 소비량",
+      "timestamp": "2014",
+      "value": 1195.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 소비량",
+      "timestamp": "2015",
+      "value": 1297.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 소비량",
+      "timestamp": "2016",
+      "value": 1399.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 소비량",
+      "timestamp": "2017",
+      "value": 1513.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 소비량",
+      "timestamp": "2018",
+      "value": 1547.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 소비량",
+      "timestamp": "2019",
+      "value": 1547.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 소비량",
+      "timestamp": "2020",
+      "value": 1445.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 소비량",
+      "timestamp": "2021",
+      "value": 1554.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 소비량",
+      "timestamp": "2022",
+      "value": 1571.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 소비량",
+      "timestamp": "2023",
+      "value": 1576.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+# KOSIS Data Processor Configuration
+
+api:
+  # KOSIS API Key - Set either here or as KOSIS_API_KEY in .env file
+  api_key: "<YOUR_API_KEY_HERE>"  # Will use KOSIS_API_KEY from .env if available
+  base_url: "https://kosis.kr/openapi/Param/statisticsParameterData.do"
+  timeout: 60  # Request timeout in seconds
+  retry_count: 3  # Number of retries for failed requests
+  rate_limit: 1.0  # Seconds between API requests
+
+processing:
+  # Number of concurrent workers (1 recommended due to API rate limits)
+  max_workers: 1
+  batch_size: 10  # Number of tables to process before saving progress
+  save_intermediate: true  # Save intermediate results
+
+output:
+  # Base output directory
+  base_dir: "kosis_data"
+  
+  # Output formats to generate
+  formats:
+    - json    # Long format with full metadata
+    - csv     # Wide format for analysis
+    - parquet # Efficient storage format
+  
+  # Include metadata in output files
+  include_metadata: true
+  
+  # Don't pad missing years with null values
+  wide_format_padding: false
+
+logging:
+  level: "DEBUG"  # DEBUG, INFO, WARNING, ERROR
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file: "kosis_processor.log"
+
+# Input file paths
+input:
+  csv_path: "data/regional_index_data_list.csv"
+  metadata_path: "kosis_data/kosis_metadata_final.json"

@@ -1,0 +1,3493 @@
+{
+  "metadata": {
+    "org_id": "101",
+    "org_name": "통계청",
+    "table_id": "DT_1YL13801E",
+    "table_name": "국민기초생활보장 수급자수(시도)",
+    "stat_id": "9B08007",
+    "stat_name": "e-지방지표",
+    "date_range": "2001 ~ 2023",
+    "description": "행정구역별 국민기초생활보장 수급자수 인천광역시 제주특별자치도 경기도 광주광역시 전라남도 전국 대구광역시 충청북도 전북특별자치도 경상북도 경상남도 서울특별시 부산광역시 충청남도 대전광역시 울산광역시 세종특별자치시 강원특별자치도",
+    "item_info": "■  자료제공처:  통계청 지역통계기획팀 ■  자료원출처:  보건복지부(국민기초생활보장수급자현황) ■  자료제공주기:  1년 □  의의  - 국가의 보호를 필요로 하는 최저생계비 이하의 저소득층에 대한 정책적 지원을 위한 기초자료로 활용 ■  자료제공시기:  조사기준년도 익년7월 □  정의  - 국민기초생활보장 수급자수: 가구의 소득인정액이 최저생계비 이하인 계층으로서 생계, 주거, 교육, 해산, 장제급여 등의 기초생활보장 급여 수급자의 수 □  용어  - 수급자: 일반수급자, 조건부수급자, 시설수급자, 특례수급자, 기타수급자",
+    "source_url": "http://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1YL13801E",
+    "last_updated": "2025-06-24T18:20:50.980805",
+    "period_type": "M",
+    "period_name": "월간"
+  },
+  "data": [
+    {
+      "item": "전국 - 국민기초생활보장 수급자수",
+      "timestamp": "2002",
+      "value": 1351185.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "전국 - 국민기초생활보장 수급자수",
+      "timestamp": "2003",
+      "value": 1374405.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "전국 - 국민기초생활보장 수급자수",
+      "timestamp": "2004",
+      "value": 1424088.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "전국 - 국민기초생활보장 수급자수",
+      "timestamp": "2005",
+      "value": 1513352.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "전국 - 국민기초생활보장 수급자수",
+      "timestamp": "2006",
+      "value": 1534950.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "전국 - 국민기초생활보장 수급자수",
+      "timestamp": "2007",
+      "value": 1549848.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "전국 - 국민기초생활보장 수급자수",
+      "timestamp": "2008",
+      "value": 1529939.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "전국 - 국민기초생활보장 수급자수",
+      "timestamp": "2009",
+      "value": 1568533.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "전국 - 국민기초생활보장 수급자수",
+      "timestamp": "2010",
+      "value": 1549820.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "전국 - 국민기초생활보장 수급자수",
+      "timestamp": "2011",
+      "value": 1469254.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "전국 - 국민기초생활보장 수급자수",
+      "timestamp": "2012",
+      "value": 1394042.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "전국 - 국민기초생활보장 수급자수",
+      "timestamp": "2013",
+      "value": 1350891.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "전국 - 국민기초생활보장 수급자수",
+      "timestamp": "2014",
+      "value": 1328713.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "전국 - 국민기초생활보장 수급자수",
+      "timestamp": "2015",
+      "value": 1646363.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "전국 - 국민기초생활보장 수급자수",
+      "timestamp": "2016",
+      "value": 1630614.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "전국 - 국민기초생활보장 수급자수",
+      "timestamp": "2017",
+      "value": 1581646.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "전국 - 국민기초생활보장 수급자수",
+      "timestamp": "2018",
+      "value": 1743690.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "전국 - 국민기초생활보장 수급자수",
+      "timestamp": "2019",
+      "value": 1881357.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "전국 - 국민기초생활보장 수급자수",
+      "timestamp": "2020",
+      "value": 2134186.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "전국 - 국민기초생활보장 수급자수",
+      "timestamp": "2021",
+      "value": 2359672.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "전국 - 국민기초생활보장 수급자수",
+      "timestamp": "2022",
+      "value": 2451458.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "전국 - 국민기초생활보장 수급자수",
+      "timestamp": "2023",
+      "value": 2554627.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "서울특별시 - 국민기초생활보장 수급자수",
+      "timestamp": "2002",
+      "value": 160784.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "서울특별시 - 국민기초생활보장 수급자수",
+      "timestamp": "2003",
+      "value": 166166.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "서울특별시 - 국민기초생활보장 수급자수",
+      "timestamp": "2004",
+      "value": 177370.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "서울특별시 - 국민기초생활보장 수급자수",
+      "timestamp": "2005",
+      "value": 192423.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "서울특별시 - 국민기초생활보장 수급자수",
+      "timestamp": "2006",
+      "value": 200359.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "서울특별시 - 국민기초생활보장 수급자수",
+      "timestamp": "2007",
+      "value": 205876.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "서울특별시 - 국민기초생활보장 수급자수",
+      "timestamp": "2008",
+      "value": 206133.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "서울특별시 - 국민기초생활보장 수급자수",
+      "timestamp": "2009",
+      "value": 215016.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "서울특별시 - 국민기초생활보장 수급자수",
+      "timestamp": "2010",
+      "value": 214256.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "서울특별시 - 국민기초생활보장 수급자수",
+      "timestamp": "2011",
+      "value": 206808.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "서울특별시 - 국민기초생활보장 수급자수",
+      "timestamp": "2012",
+      "value": 199310.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "서울특별시 - 국민기초생활보장 수급자수",
+      "timestamp": "2013",
+      "value": 201958.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "서울특별시 - 국민기초생활보장 수급자수",
+      "timestamp": "2014",
+      "value": 206687.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "서울특별시 - 국민기초생활보장 수급자수",
+      "timestamp": "2015",
+      "value": 258427.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "서울특별시 - 국민기초생활보장 수급자수",
+      "timestamp": "2016",
+      "value": 267023.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "서울특별시 - 국민기초생활보장 수급자수",
+      "timestamp": "2017",
+      "value": 263347.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "서울특별시 - 국민기초생활보장 수급자수",
+      "timestamp": "2018",
+      "value": 289342.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "서울특별시 - 국민기초생활보장 수급자수",
+      "timestamp": "2019",
+      "value": 317269.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "서울특별시 - 국민기초생활보장 수급자수",
+      "timestamp": "2020",
+      "value": 369518.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "서울특별시 - 국민기초생활보장 수급자수",
+      "timestamp": "2021",
+      "value": 402632.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "서울특별시 - 국민기초생활보장 수급자수",
+      "timestamp": "2022",
+      "value": 412409.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "서울특별시 - 국민기초생활보장 수급자수",
+      "timestamp": "2023",
+      "value": 427880.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "부산광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2002",
+      "value": 104251.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "부산광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2003",
+      "value": 109355.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "부산광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2004",
+      "value": 116347.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "부산광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2005",
+      "value": 128135.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "부산광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2006",
+      "value": 135407.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "부산광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2007",
+      "value": 139693.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "부산광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2008",
+      "value": 138890.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "부산광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2009",
+      "value": 144860.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "부산광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2010",
+      "value": 145198.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "부산광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2011",
+      "value": 141597.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "부산광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2012",
+      "value": 135973.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "부산광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2013",
+      "value": 130835.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "부산광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2014",
+      "value": 126962.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "부산광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2015",
+      "value": 152389.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "부산광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2016",
+      "value": 149528.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "부산광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2017",
+      "value": 145113.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "부산광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2018",
+      "value": 159031.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "부산광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2019",
+      "value": 172439.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "부산광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2020",
+      "value": 196299.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "부산광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2021",
+      "value": 217335.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "부산광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2022",
+      "value": 227066.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "부산광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2023",
+      "value": 234657.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "대구광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2002",
+      "value": 70635.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "대구광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2003",
+      "value": 74996.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "대구광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2004",
+      "value": 81269.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "대구광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2005",
+      "value": 90713.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "대구광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2006",
+      "value": 93475.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "대구광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2007",
+      "value": 97036.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "대구광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2008",
+      "value": 100113.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "대구광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2009",
+      "value": 107918.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "대구광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2010",
+      "value": 108586.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "대구광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2011",
+      "value": 104532.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "대구광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2012",
+      "value": 99473.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "대구광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2013",
+      "value": 96803.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "대구광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2014",
+      "value": 93539.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "대구광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2015",
+      "value": 113152.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "대구광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2016",
+      "value": 107763.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "대구광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2017",
+      "value": 103132.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "대구광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2018",
+      "value": 110495.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "대구광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2019",
+      "value": 117594.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "대구광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2020",
+      "value": 131374.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "대구광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2021",
+      "value": 144092.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "대구광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2022",
+      "value": 148146.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "대구광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2023",
+      "value": 154802.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "인천광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2002",
+      "value": 56247.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "인천광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2003",
+      "value": 57065.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "인천광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2004",
+      "value": 60158.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "인천광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2005",
+      "value": 65479.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "인천광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2006",
+      "value": 69525.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "인천광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2007",
+      "value": 70988.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "인천광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2008",
+      "value": 69786.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "인천광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2009",
+      "value": 73055.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "인천광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2010",
+      "value": 73749.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "인천광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2011",
+      "value": 71700.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "인천광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2012",
+      "value": 70860.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "인천광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2013",
+      "value": 70984.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "인천광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2014",
+      "value": 72113.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "인천광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2015",
+      "value": 97334.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "인천광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2016",
+      "value": 100301.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "인천광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2017",
+      "value": 98789.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "인천광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2018",
+      "value": 110257.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "인천광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2019",
+      "value": 122027.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "인천광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2020",
+      "value": 142628.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "인천광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2021",
+      "value": 159186.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "인천광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2022",
+      "value": 166083.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "인천광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2023",
+      "value": 174116.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "광주광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2002",
+      "value": 47078.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "광주광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2003",
+      "value": 49507.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "광주광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2004",
+      "value": 53595.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "광주광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2005",
+      "value": 58916.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "광주광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2006",
+      "value": 60804.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "광주광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2007",
+      "value": 61309.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "광주광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2008",
+      "value": 61339.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "광주광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2009",
+      "value": 65487.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "광주광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2010",
+      "value": 65821.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "광주광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2011",
+      "value": 62482.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "광주광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2012",
+      "value": 60684.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "광주광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2013",
+      "value": 59962.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "광주광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2014",
+      "value": 59598.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "광주광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2015",
+      "value": 71683.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "광주광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2016",
+      "value": 69420.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "광주광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2017",
+      "value": 65712.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "광주광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2018",
+      "value": 72757.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "광주광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2019",
+      "value": 76193.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "광주광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2020",
+      "value": 84762.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "광주광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2021",
+      "value": 91548.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "광주광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2022",
+      "value": 94137.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "광주광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2023",
+      "value": 96473.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "대전광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2002",
+      "value": 37560.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "대전광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2003",
+      "value": 38386.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "대전광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2004",
+      "value": 40415.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "대전광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2005",
+      "value": 43870.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "대전광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2006",
+      "value": 45026.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "대전광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2007",
+      "value": 46766.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "대전광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2008",
+      "value": 46635.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "대전광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2009",
+      "value": 48633.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "대전광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2010",
+      "value": 48338.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "대전광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2011",
+      "value": 46549.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "대전광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2012",
+      "value": 44992.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "대전광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2013",
+      "value": 44066.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "대전광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2014",
+      "value": 43469.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "대전광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2015",
+      "value": 53930.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "대전광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2016",
+      "value": 54490.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "대전광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2017",
+      "value": 52357.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "대전광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2018",
+      "value": 56324.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "대전광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2019",
+      "value": 59317.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "대전광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2020",
+      "value": 66775.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "대전광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2021",
+      "value": 72908.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "대전광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2022",
+      "value": 75140.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "대전광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2023",
+      "value": 77554.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "울산광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2002",
+      "value": 15604.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "울산광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2003",
+      "value": 15897.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "울산광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2004",
+      "value": 17367.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "울산광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2005",
+      "value": 19251.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "울산광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2006",
+      "value": 19632.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "울산광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2007",
+      "value": 19452.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "울산광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2008",
+      "value": 18741.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "울산광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2009",
+      "value": 19393.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "울산광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2010",
+      "value": 18851.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "울산광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2011",
+      "value": 17191.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "울산광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2012",
+      "value": 15804.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "울산광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2013",
+      "value": 15353.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "울산광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2014",
+      "value": 15363.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "울산광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2015",
+      "value": 21375.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "울산광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2016",
+      "value": 18776.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "울산광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2017",
+      "value": 18821.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "울산광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2018",
+      "value": 22939.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "울산광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2019",
+      "value": 26594.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "울산광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2020",
+      "value": 33232.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "울산광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2021",
+      "value": 38575.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "울산광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2022",
+      "value": 41510.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "울산광역시 - 국민기초생활보장 수급자수",
+      "timestamp": "2023",
+      "value": 43817.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "세종특별자치시 - 국민기초생활보장 수급자수",
+      "timestamp": "2012",
+      "value": 3442.0,
+      "item_codes": {
+        "C1": "27"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "세종특별자치시 - 국민기초생활보장 수급자수",
+      "timestamp": "2013",
+      "value": 3304.0,
+      "item_codes": {
+        "C1": "27"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "세종특별자치시 - 국민기초생활보장 수급자수",
+      "timestamp": "2014",
+      "value": 3274.0,
+      "item_codes": {
+        "C1": "27"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "세종특별자치시 - 국민기초생활보장 수급자수",
+      "timestamp": "2015",
+      "value": 4192.0,
+      "item_codes": {
+        "C1": "27"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "세종특별자치시 - 국민기초생활보장 수급자수",
+      "timestamp": "2016",
+      "value": 4286.0,
+      "item_codes": {
+        "C1": "27"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "세종특별자치시 - 국민기초생활보장 수급자수",
+      "timestamp": "2017",
+      "value": 4284.0,
+      "item_codes": {
+        "C1": "27"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "세종특별자치시 - 국민기초생활보장 수급자수",
+      "timestamp": "2018",
+      "value": 4862.0,
+      "item_codes": {
+        "C1": "27"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "세종특별자치시 - 국민기초생활보장 수급자수",
+      "timestamp": "2019",
+      "value": 5749.0,
+      "item_codes": {
+        "C1": "27"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "세종특별자치시 - 국민기초생활보장 수급자수",
+      "timestamp": "2020",
+      "value": 7107.0,
+      "item_codes": {
+        "C1": "27"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "세종특별자치시 - 국민기초생활보장 수급자수",
+      "timestamp": "2021",
+      "value": 7880.0,
+      "item_codes": {
+        "C1": "27"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "세종특별자치시 - 국민기초생활보장 수급자수",
+      "timestamp": "2022",
+      "value": 8165.0,
+      "item_codes": {
+        "C1": "27"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "세종특별자치시 - 국민기초생활보장 수급자수",
+      "timestamp": "2023",
+      "value": 8607.0,
+      "item_codes": {
+        "C1": "27"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "경기도 - 국민기초생활보장 수급자수",
+      "timestamp": "2002",
+      "value": 180925.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "경기도 - 국민기초생활보장 수급자수",
+      "timestamp": "2003",
+      "value": 184205.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "경기도 - 국민기초생활보장 수급자수",
+      "timestamp": "2004",
+      "value": 190957.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "경기도 - 국민기초생활보장 수급자수",
+      "timestamp": "2005",
+      "value": 204285.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "경기도 - 국민기초생활보장 수급자수",
+      "timestamp": "2006",
+      "value": 207258.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "경기도 - 국민기초생활보장 수급자수",
+      "timestamp": "2007",
+      "value": 210875.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "경기도 - 국민기초생활보장 수급자수",
+      "timestamp": "2008",
+      "value": 207821.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "경기도 - 국민기초생활보장 수급자수",
+      "timestamp": "2009",
+      "value": 212037.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "경기도 - 국민기초생활보장 수급자수",
+      "timestamp": "2010",
+      "value": 209175.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "경기도 - 국민기초생활보장 수급자수",
+      "timestamp": "2011",
+      "value": 199335.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "경기도 - 국민기초생활보장 수급자수",
+      "timestamp": "2012",
+      "value": 192170.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "경기도 - 국민기초생활보장 수급자수",
+      "timestamp": "2013",
+      "value": 189259.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "경기도 - 국민기초생활보장 수급자수",
+      "timestamp": "2014",
+      "value": 189400.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "경기도 - 국민기초생활보장 수급자수",
+      "timestamp": "2015",
+      "value": 257850.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "경기도 - 국민기초생활보장 수급자수",
+      "timestamp": "2016",
+      "value": 263841.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "경기도 - 국민기초생활보장 수급자수",
+      "timestamp": "2017",
+      "value": 261050.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "경기도 - 국민기초생활보장 수급자수",
+      "timestamp": "2018",
+      "value": 297122.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "경기도 - 국민기초생활보장 수급자수",
+      "timestamp": "2019",
+      "value": 328752.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "경기도 - 국민기초생활보장 수급자수",
+      "timestamp": "2020",
+      "value": 379725.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "경기도 - 국민기초생활보장 수급자수",
+      "timestamp": "2021",
+      "value": 422615.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "경기도 - 국민기초생활보장 수급자수",
+      "timestamp": "2022",
+      "value": 443985.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "경기도 - 국민기초생활보장 수급자수",
+      "timestamp": "2023",
+      "value": 474086.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "강원특별자치도 - 국민기초생활보장 수급자수",
+      "timestamp": "2002",
+      "value": 59712.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "강원특별자치도 - 국민기초생활보장 수급자수",
+      "timestamp": "2003",
+      "value": 57700.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "강원특별자치도 - 국민기초생활보장 수급자수",
+      "timestamp": "2004",
+      "value": 59625.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "강원특별자치도 - 국민기초생활보장 수급자수",
+      "timestamp": "2005",
+      "value": 62778.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "강원특별자치도 - 국민기초생활보장 수급자수",
+      "timestamp": "2006",
+      "value": 64184.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "강원특별자치도 - 국민기초생활보장 수급자수",
+      "timestamp": "2007",
+      "value": 64850.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "강원특별자치도 - 국민기초생활보장 수급자수",
+      "timestamp": "2008",
+      "value": 64679.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "강원특별자치도 - 국민기초생활보장 수급자수",
+      "timestamp": "2009",
+      "value": 66973.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "강원특별자치도 - 국민기초생활보장 수급자수",
+      "timestamp": "2010",
+      "value": 66503.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "강원특별자치도 - 국민기초생활보장 수급자수",
+      "timestamp": "2011",
+      "value": 62543.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "강원특별자치도 - 국민기초생활보장 수급자수",
+      "timestamp": "2012",
+      "value": 58820.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "강원특별자치도 - 국민기초생활보장 수급자수",
+      "timestamp": "2013",
+      "value": 56184.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "강원특별자치도 - 국민기초생활보장 수급자수",
+      "timestamp": "2014",
+      "value": 54841.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "강원특별자치도 - 국민기초생활보장 수급자수",
+      "timestamp": "2015",
+      "value": 63448.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "강원특별자치도 - 국민기초생활보장 수급자수",
+      "timestamp": "2016",
+      "value": 62509.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "강원특별자치도 - 국민기초생활보장 수급자수",
+      "timestamp": "2017",
+      "value": 60627.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "강원특별자치도 - 국민기초생활보장 수급자수",
+      "timestamp": "2018",
+      "value": 67064.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "강원특별자치도 - 국민기초생활보장 수급자수",
+      "timestamp": "2019",
+      "value": 71493.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "강원특별자치도 - 국민기초생활보장 수급자수",
+      "timestamp": "2020",
+      "value": 78554.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "강원특별자치도 - 국민기초생활보장 수급자수",
+      "timestamp": "2021",
+      "value": 84114.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "강원특별자치도 - 국민기초생활보장 수급자수",
+      "timestamp": "2022",
+      "value": 85681.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "강원특별자치도 - 국민기초생활보장 수급자수",
+      "timestamp": "2023",
+      "value": 86667.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "충청북도 - 국민기초생활보장 수급자수",
+      "timestamp": "2002",
+      "value": 52530.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "충청북도 - 국민기초생활보장 수급자수",
+      "timestamp": "2003",
+      "value": 54268.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "충청북도 - 국민기초생활보장 수급자수",
+      "timestamp": "2004",
+      "value": 55292.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "충청북도 - 국민기초생활보장 수급자수",
+      "timestamp": "2005",
+      "value": 57599.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "충청북도 - 국민기초생활보장 수급자수",
+      "timestamp": "2006",
+      "value": 57238.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "충청북도 - 국민기초생활보장 수급자수",
+      "timestamp": "2007",
+      "value": 57265.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "충청북도 - 국민기초생활보장 수급자수",
+      "timestamp": "2008",
+      "value": 57400.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "충청북도 - 국민기초생활보장 수급자수",
+      "timestamp": "2009",
+      "value": 58505.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "충청북도 - 국민기초생활보장 수급자수",
+      "timestamp": "2010",
+      "value": 57408.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "충청북도 - 국민기초생활보장 수급자수",
+      "timestamp": "2011",
+      "value": 53370.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "충청북도 - 국민기초생활보장 수급자수",
+      "timestamp": "2012",
+      "value": 49669.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "충청북도 - 국민기초생활보장 수급자수",
+      "timestamp": "2013",
+      "value": 46372.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "충청북도 - 국민기초생활보장 수급자수",
+      "timestamp": "2014",
+      "value": 44964.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "충청북도 - 국민기초생활보장 수급자수",
+      "timestamp": "2015",
+      "value": 55359.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "충청북도 - 국민기초생활보장 수급자수",
+      "timestamp": "2016",
+      "value": 53748.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "충청북도 - 국민기초생활보장 수급자수",
+      "timestamp": "2017",
+      "value": 51505.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "충청북도 - 국민기초생활보장 수급자수",
+      "timestamp": "2018",
+      "value": 59109.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "충청북도 - 국민기초생활보장 수급자수",
+      "timestamp": "2019",
+      "value": 62507.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "충청북도 - 국민기초생활보장 수급자수",
+      "timestamp": "2020",
+      "value": 69262.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "충청북도 - 국민기초생활보장 수급자수",
+      "timestamp": "2021",
+      "value": 76619.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "충청북도 - 국민기초생활보장 수급자수",
+      "timestamp": "2022",
+      "value": 78709.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "충청북도 - 국민기초생활보장 수급자수",
+      "timestamp": "2023",
+      "value": 81577.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "충청남도 - 국민기초생활보장 수급자수",
+      "timestamp": "2002",
+      "value": 82320.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "충청남도 - 국민기초생활보장 수급자수",
+      "timestamp": "2003",
+      "value": 81224.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "충청남도 - 국민기초생활보장 수급자수",
+      "timestamp": "2004",
+      "value": 80490.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "충청남도 - 국민기초생활보장 수급자수",
+      "timestamp": "2005",
+      "value": 81380.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "충청남도 - 국민기초생활보장 수급자수",
+      "timestamp": "2006",
+      "value": 77902.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "충청남도 - 국민기초생활보장 수급자수",
+      "timestamp": "2007",
+      "value": 76614.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "충청남도 - 국민기초생활보장 수급자수",
+      "timestamp": "2008",
+      "value": 74105.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "충청남도 - 국민기초생활보장 수급자수",
+      "timestamp": "2009",
+      "value": 74780.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "충청남도 - 국민기초생활보장 수급자수",
+      "timestamp": "2010",
+      "value": 72989.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "충청남도 - 국민기초생활보장 수급자수",
+      "timestamp": "2011",
+      "value": 66884.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "충청남도 - 국민기초생활보장 수급자수",
+      "timestamp": "2012",
+      "value": 58363.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "충청남도 - 국민기초생활보장 수급자수",
+      "timestamp": "2013",
+      "value": 54970.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "충청남도 - 국민기초생활보장 수급자수",
+      "timestamp": "2014",
+      "value": 53288.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "충청남도 - 국민기초생활보장 수급자수",
+      "timestamp": "2015",
+      "value": 64120.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "충청남도 - 국민기초생활보장 수급자수",
+      "timestamp": "2016",
+      "value": 62677.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "충청남도 - 국민기초생활보장 수급자수",
+      "timestamp": "2017",
+      "value": 60411.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "충청남도 - 국민기초생활보장 수급자수",
+      "timestamp": "2018",
+      "value": 65692.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "충청남도 - 국민기초생활보장 수급자수",
+      "timestamp": "2019",
+      "value": 69022.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "충청남도 - 국민기초생활보장 수급자수",
+      "timestamp": "2020",
+      "value": 75720.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "충청남도 - 국민기초생활보장 수급자수",
+      "timestamp": "2021",
+      "value": 84802.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "충청남도 - 국민기초생활보장 수급자수",
+      "timestamp": "2022",
+      "value": 88800.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "충청남도 - 국민기초생활보장 수급자수",
+      "timestamp": "2023",
+      "value": 92992.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "전북특별자치도 - 국민기초생활보장 수급자수",
+      "timestamp": "2002",
+      "value": 110169.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "전북특별자치도 - 국민기초생활보장 수급자수",
+      "timestamp": "2003",
+      "value": 111021.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "전북특별자치도 - 국민기초생활보장 수급자수",
+      "timestamp": "2004",
+      "value": 113169.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "전북특별자치도 - 국민기초생활보장 수급자수",
+      "timestamp": "2005",
+      "value": 118533.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "전북특별자치도 - 국민기초생활보장 수급자수",
+      "timestamp": "2006",
+      "value": 119016.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "전북특별자치도 - 국민기초생활보장 수급자수",
+      "timestamp": "2007",
+      "value": 118917.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "전북특별자치도 - 국민기초생활보장 수급자수",
+      "timestamp": "2008",
+      "value": 115093.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "전북특별자치도 - 국민기초생활보장 수급자수",
+      "timestamp": "2009",
+      "value": 113782.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "전북특별자치도 - 국민기초생활보장 수급자수",
+      "timestamp": "2010",
+      "value": 110894.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "전북특별자치도 - 국민기초생활보장 수급자수",
+      "timestamp": "2011",
+      "value": 103085.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "전북특별자치도 - 국민기초생활보장 수급자수",
+      "timestamp": "2012",
+      "value": 95656.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "전북특별자치도 - 국민기초생활보장 수급자수",
+      "timestamp": "2013",
+      "value": 90280.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "전북특별자치도 - 국민기초생활보장 수급자수",
+      "timestamp": "2014",
+      "value": 87008.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "전북특별자치도 - 국민기초생활보장 수급자수",
+      "timestamp": "2015",
+      "value": 103248.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "전북특별자치도 - 국민기초생활보장 수급자수",
+      "timestamp": "2016",
+      "value": 99708.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "전북특별자치도 - 국민기초생활보장 수급자수",
+      "timestamp": "2017",
+      "value": 94639.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "전북특별자치도 - 국민기초생활보장 수급자수",
+      "timestamp": "2018",
+      "value": 101228.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "전북특별자치도 - 국민기초생활보장 수급자수",
+      "timestamp": "2019",
+      "value": 105955.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "전북특별자치도 - 국민기초생활보장 수급자수",
+      "timestamp": "2020",
+      "value": 115182.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "전북특별자치도 - 국민기초생활보장 수급자수",
+      "timestamp": "2021",
+      "value": 125438.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "전북특별자치도 - 국민기초생활보장 수급자수",
+      "timestamp": "2022",
+      "value": 128522.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "전북특별자치도 - 국민기초생활보장 수급자수",
+      "timestamp": "2023",
+      "value": 131557.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "전라남도 - 국민기초생활보장 수급자수",
+      "timestamp": "2002",
+      "value": 137884.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "전라남도 - 국민기초생활보장 수급자수",
+      "timestamp": "2003",
+      "value": 135115.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "전라남도 - 국민기초생활보장 수급자수",
+      "timestamp": "2004",
+      "value": 133225.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "전라남도 - 국민기초생활보장 수급자수",
+      "timestamp": "2005",
+      "value": 133143.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "전라남도 - 국민기초생활보장 수급자수",
+      "timestamp": "2006",
+      "value": 126372.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "전라남도 - 국민기초생활보장 수급자수",
+      "timestamp": "2007",
+      "value": 120995.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "전라남도 - 국민기초생활보장 수급자수",
+      "timestamp": "2008",
+      "value": 114922.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "전라남도 - 국민기초생활보장 수급자수",
+      "timestamp": "2009",
+      "value": 110725.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "전라남도 - 국민기초생활보장 수급자수",
+      "timestamp": "2010",
+      "value": 106210.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "전라남도 - 국민기초생활보장 수급자수",
+      "timestamp": "2011",
+      "value": 96503.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "전라남도 - 국민기초생활보장 수급자수",
+      "timestamp": "2012",
+      "value": 87670.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "전라남도 - 국민기초생활보장 수급자수",
+      "timestamp": "2013",
+      "value": 80315.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "전라남도 - 국민기초생활보장 수급자수",
+      "timestamp": "2014",
+      "value": 75501.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "전라남도 - 국민기초생활보장 수급자수",
+      "timestamp": "2015",
+      "value": 88568.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "전라남도 - 국민기초생활보장 수급자수",
+      "timestamp": "2016",
+      "value": 83850.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "전라남도 - 국민기초생활보장 수급자수",
+      "timestamp": "2017",
+      "value": 79196.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "전라남도 - 국민기초생활보장 수급자수",
+      "timestamp": "2018",
+      "value": 84819.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "전라남도 - 국민기초생활보장 수급자수",
+      "timestamp": "2019",
+      "value": 87003.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "전라남도 - 국민기초생활보장 수급자수",
+      "timestamp": "2020",
+      "value": 92666.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "전라남도 - 국민기초생활보장 수급자수",
+      "timestamp": "2021",
+      "value": 101475.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "전라남도 - 국민기초생활보장 수급자수",
+      "timestamp": "2022",
+      "value": 104064.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "전라남도 - 국민기초생활보장 수급자수",
+      "timestamp": "2023",
+      "value": 107240.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "경상북도 - 국민기초생활보장 수급자수",
+      "timestamp": "2002",
+      "value": 120753.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "경상북도 - 국민기초생활보장 수급자수",
+      "timestamp": "2003",
+      "value": 121776.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "경상북도 - 국민기초생활보장 수급자수",
+      "timestamp": "2004",
+      "value": 123243.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "경상북도 - 국민기초생활보장 수급자수",
+      "timestamp": "2005",
+      "value": 127612.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "경상북도 - 국민기초생활보장 수급자수",
+      "timestamp": "2006",
+      "value": 127581.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "경상북도 - 국민기초생활보장 수급자수",
+      "timestamp": "2007",
+      "value": 127450.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "경상북도 - 국민기초생활보장 수급자수",
+      "timestamp": "2008",
+      "value": 124538.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "경상북도 - 국민기초생활보장 수급자수",
+      "timestamp": "2009",
+      "value": 125702.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "경상북도 - 국민기초생활보장 수급자수",
+      "timestamp": "2010",
+      "value": 122450.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "경상북도 - 국민기초생활보장 수급자수",
+      "timestamp": "2011",
+      "value": 113990.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "경상북도 - 국민기초생활보장 수급자수",
+      "timestamp": "2012",
+      "value": 105193.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "경상북도 - 국민기초생활보장 수급자수",
+      "timestamp": "2013",
+      "value": 99437.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "경상북도 - 국민기초생활보장 수급자수",
+      "timestamp": "2014",
+      "value": 95609.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "경상북도 - 국민기초생활보장 수급자수",
+      "timestamp": "2015",
+      "value": 109627.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "경상북도 - 국민기초생활보장 수급자수",
+      "timestamp": "2016",
+      "value": 105146.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "경상북도 - 국민기초생활보장 수급자수",
+      "timestamp": "2017",
+      "value": 99822.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "경상북도 - 국민기초생활보장 수급자수",
+      "timestamp": "2018",
+      "value": 107309.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "경상북도 - 국민기초생활보장 수급자수",
+      "timestamp": "2019",
+      "value": 113845.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "경상북도 - 국민기초생활보장 수급자수",
+      "timestamp": "2020",
+      "value": 125106.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "경상북도 - 국민기초생활보장 수급자수",
+      "timestamp": "2021",
+      "value": 141175.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "경상북도 - 국민기초생활보장 수급자수",
+      "timestamp": "2022",
+      "value": 147353.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "경상북도 - 국민기초생활보장 수급자수",
+      "timestamp": "2023",
+      "value": 151253.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "경상남도 - 국민기초생활보장 수급자수",
+      "timestamp": "2002",
+      "value": 95592.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "경상남도 - 국민기초생활보장 수급자수",
+      "timestamp": "2003",
+      "value": 97952.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "경상남도 - 국민기초생활보장 수급자수",
+      "timestamp": "2004",
+      "value": 100880.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "경상남도 - 국민기초생활보장 수급자수",
+      "timestamp": "2005",
+      "value": 107186.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "경상남도 - 국민기초생활보장 수급자수",
+      "timestamp": "2006",
+      "value": 108721.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "경상남도 - 국민기초생활보장 수급자수",
+      "timestamp": "2007",
+      "value": 108859.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "경상남도 - 국민기초생활보장 수급자수",
+      "timestamp": "2008",
+      "value": 106597.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "경상남도 - 국민기초생활보장 수급자수",
+      "timestamp": "2009",
+      "value": 107294.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "경상남도 - 국민기초생활보장 수급자수",
+      "timestamp": "2010",
+      "value": 104797.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "경상남도 - 국민기초생활보장 수급자수",
+      "timestamp": "2011",
+      "value": 98939.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "경상남도 - 국민기초생활보장 수급자수",
+      "timestamp": "2012",
+      "value": 93977.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "경상남도 - 국민기초생활보장 수급자수",
+      "timestamp": "2013",
+      "value": 89622.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "경상남도 - 국민기초생활보장 수급자수",
+      "timestamp": "2014",
+      "value": 86996.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "경상남도 - 국민기초생활보장 수급자수",
+      "timestamp": "2015",
+      "value": 107148.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "경상남도 - 국민기초생활보장 수급자수",
+      "timestamp": "2016",
+      "value": 104213.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "경상남도 - 국민기초생활보장 수급자수",
+      "timestamp": "2017",
+      "value": 100904.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "경상남도 - 국민기초생활보장 수급자수",
+      "timestamp": "2018",
+      "value": 112183.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "경상남도 - 국민기초생활보장 수급자수",
+      "timestamp": "2019",
+      "value": 121275.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "경상남도 - 국민기초생활보장 수급자수",
+      "timestamp": "2020",
+      "value": 137605.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "경상남도 - 국민기초생활보장 수급자수",
+      "timestamp": "2021",
+      "value": 156832.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "경상남도 - 국민기초생활보장 수급자수",
+      "timestamp": "2022",
+      "value": 168197.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "경상남도 - 국민기초생활보장 수급자수",
+      "timestamp": "2023",
+      "value": 176280.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "제주특별자치도 - 국민기초생활보장 수급자수",
+      "timestamp": "2002",
+      "value": 19141.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "제주특별자치도 - 국민기초생활보장 수급자수",
+      "timestamp": "2003",
+      "value": 19772.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "제주특별자치도 - 국민기초생활보장 수급자수",
+      "timestamp": "2004",
+      "value": 20686.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "제주특별자치도 - 국민기초생활보장 수급자수",
+      "timestamp": "2005",
+      "value": 22049.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "제주특별자치도 - 국민기초생활보장 수급자수",
+      "timestamp": "2006",
+      "value": 22450.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "제주특별자치도 - 국민기초생활보장 수급자수",
+      "timestamp": "2007",
+      "value": 22903.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "제주특별자치도 - 국민기초생활보장 수급자수",
+      "timestamp": "2008",
+      "value": 23147.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "제주특별자치도 - 국민기초생활보장 수급자수",
+      "timestamp": "2009",
+      "value": 24373.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "제주특별자치도 - 국민기초생활보장 수급자수",
+      "timestamp": "2010",
+      "value": 24595.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "제주특별자치도 - 국민기초생활보장 수급자수",
+      "timestamp": "2011",
+      "value": 23746.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "제주특별자치도 - 국민기초생활보장 수급자수",
+      "timestamp": "2012",
+      "value": 21986.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "제주특별자치도 - 국민기초생활보장 수급자수",
+      "timestamp": "2013",
+      "value": 21187.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "제주특별자치도 - 국민기초생활보장 수급자수",
+      "timestamp": "2014",
+      "value": 20101.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "제주특별자치도 - 국민기초생활보장 수급자수",
+      "timestamp": "2015",
+      "value": 24513.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "제주특별자치도 - 국민기초생활보장 수급자수",
+      "timestamp": "2016",
+      "value": 23335.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "제주특별자치도 - 국민기초생활보장 수급자수",
+      "timestamp": "2017",
+      "value": 21937.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "제주특별자치도 - 국민기초생활보장 수급자수",
+      "timestamp": "2018",
+      "value": 23157.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "제주특별자치도 - 국민기초생활보장 수급자수",
+      "timestamp": "2019",
+      "value": 24323.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "제주특별자치도 - 국민기초생활보장 수급자수",
+      "timestamp": "2020",
+      "value": 28671.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "제주특별자치도 - 국민기초생활보장 수급자수",
+      "timestamp": "2021",
+      "value": 32446.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "제주특별자치도 - 국민기초생활보장 수급자수",
+      "timestamp": "2022",
+      "value": 33491.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "TT"
+    },
+    {
+      "item": "제주특별자치도 - 국민기초생활보장 수급자수",
+      "timestamp": "2023",
+      "value": 35069.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "TT"
+    }
+  ]
+}

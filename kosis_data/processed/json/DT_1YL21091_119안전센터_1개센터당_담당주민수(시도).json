@@ -1,0 +1,7687 @@
+{
+  "metadata": {
+    "org_id": "101",
+    "org_name": "통계청",
+    "table_id": "DT_1YL21091",
+    "table_name": "119안전센터 1개센터당 담당주민수(시도)",
+    "stat_id": "9B08007",
+    "stat_name": "e-지방지표",
+    "date_range": "2007 ~ 2023",
+    "description": "행정구역별 119안전센터 1개센터당 담당주민수  (A÷B) 주민등록인구  (A) 119안전센터 수  (B) 부산광역시 광주광역시 울산광역시 세종특별자치시 경상북도 대구광역시 전라남도 전국 서울특별시 강원특별자치도 충청남도 전북특별자치도 인천광역시 경기도 충청북도 제주특별자치도 경상남도 대전광역시",
+    "item_info": "■  자료제공처:  통계청 지역통계기획팀 ■  자료원출처:  소방청(소방청통계연보)        행정안전부(주민등록인구현황) ■  자료제공주기:  1년 ■  다음자료현행화:  조사기준년도 익년11월 □  정의  - 119안전센터 1개센터 당 담당주민수: 1개의 119안전센터가 담당하는 주민의 수 □  의의  - 소방, 구조, 구급 등 주민의 안전과 직결된 업무의 처리를 담당하는 119안전센터의 업무범위를 나타내는 지표로, 숫자가 클수록 1개의 119안전센터가 담당해야할 주민수가 많다는 의미 □  산식  - 119안전센터 1개 센터당 담당 주민수=주민수÷119안전센터의 수 □  용어  - 주민수 : 주민등록상 해당 지역에 거주하고 있는 주민의 수",
+    "source_url": "http://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1YL21091",
+    "last_updated": "2025-06-24T18:18:58.418507",
+    "period_type": "M",
+    "period_name": "월간"
+  },
+  "data": [
+    {
+      "item": "전국 - 주민등록인구＜br＞(A)",
+      "timestamp": "2008",
+      "value": 49540367.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전국 - 주민등록인구＜br＞(A)",
+      "timestamp": "2009",
+      "value": 49773145.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전국 - 주민등록인구＜br＞(A)",
+      "timestamp": "2010",
+      "value": 50515666.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전국 - 주민등록인구＜br＞(A)",
+      "timestamp": "2011",
+      "value": 50734284.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전국 - 주민등록인구＜br＞(A)",
+      "timestamp": "2012",
+      "value": 50948272.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전국 - 주민등록인구＜br＞(A)",
+      "timestamp": "2013",
+      "value": 51141463.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전국 - 주민등록인구＜br＞(A)",
+      "timestamp": "2014",
+      "value": 51327916.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전국 - 주민등록인구＜br＞(A)",
+      "timestamp": "2015",
+      "value": 51529338.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전국 - 주민등록인구＜br＞(A)",
+      "timestamp": "2016",
+      "value": 51696216.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전국 - 주민등록인구＜br＞(A)",
+      "timestamp": "2017",
+      "value": 51778544.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전국 - 주민등록인구＜br＞(A)",
+      "timestamp": "2018",
+      "value": 51826059.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전국 - 주민등록인구＜br＞(A)",
+      "timestamp": "2019",
+      "value": 51849861.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전국 - 주민등록인구＜br＞(A)",
+      "timestamp": "2020",
+      "value": 51829023.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전국 - 주민등록인구＜br＞(A)",
+      "timestamp": "2021",
+      "value": 51638809.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전국 - 주민등록인구＜br＞(A)",
+      "timestamp": "2022",
+      "value": 51439038.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전국 - 주민등록인구＜br＞(A)",
+      "timestamp": "2023",
+      "value": 51325329.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전국 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2008",
+      "value": 915.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전국 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2009",
+      "value": 927.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전국 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2010",
+      "value": 933.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전국 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2011",
+      "value": 928.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전국 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2012",
+      "value": 937.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전국 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2013",
+      "value": 953.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전국 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2014",
+      "value": 966.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전국 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2015",
+      "value": 981.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전국 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2016",
+      "value": 1002.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전국 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2017",
+      "value": 1029.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전국 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2018",
+      "value": 1055.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전국 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2019",
+      "value": 1067.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전국 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2020",
+      "value": 1085.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전국 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2021",
+      "value": 1100.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전국 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2022",
+      "value": 1118.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전국 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2023",
+      "value": 1131.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전국 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2008",
+      "value": 54142.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2009",
+      "value": 53693.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2010",
+      "value": 54143.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2011",
+      "value": 54671.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2012",
+      "value": 54374.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2013",
+      "value": 53664.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2014",
+      "value": 53134.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2015",
+      "value": 52527.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2016",
+      "value": 51593.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2017",
+      "value": 50319.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2018",
+      "value": 49124.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2019",
+      "value": 48594.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2020",
+      "value": 47769.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2021",
+      "value": 46944.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2022",
+      "value": 46010.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2023",
+      "value": 45380.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2008",
+      "value": 10200827.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "서울특별시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2009",
+      "value": 10208302.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "서울특별시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2010",
+      "value": 10312545.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "서울특별시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2011",
+      "value": 10249679.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "서울특별시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2012",
+      "value": 10195318.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "서울특별시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2013",
+      "value": 10143645.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "서울특별시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2014",
+      "value": 10103233.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "서울특별시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2015",
+      "value": 10022181.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "서울특별시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2016",
+      "value": 9930616.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "서울특별시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2017",
+      "value": 9857426.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "서울특별시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2018",
+      "value": 9765623.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "서울특별시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2019",
+      "value": 9729107.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "서울특별시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2020",
+      "value": 9668465.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "서울특별시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2021",
+      "value": 9509458.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "서울특별시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2022",
+      "value": 9428372.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "서울특별시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2023",
+      "value": 9386034.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "서울특별시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2008",
+      "value": 114.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "서울특별시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2009",
+      "value": 114.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "서울특별시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2010",
+      "value": 114.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "서울특별시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2011",
+      "value": 114.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "서울특별시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2012",
+      "value": 115.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "서울특별시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2013",
+      "value": 115.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "서울특별시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2014",
+      "value": 115.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "서울특별시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2015",
+      "value": 116.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "서울특별시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2016",
+      "value": 116.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "서울특별시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2017",
+      "value": 116.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "서울특별시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2018",
+      "value": 117.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "서울특별시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2019",
+      "value": 118.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "서울특별시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2020",
+      "value": 119.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "서울특별시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2021",
+      "value": 119.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "서울특별시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2022",
+      "value": 119.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "서울특별시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2023",
+      "value": 119.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "서울특별시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2008",
+      "value": 89481.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2009",
+      "value": 89547.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2010",
+      "value": 90461.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2011",
+      "value": 89909.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2012",
+      "value": 88655.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2013",
+      "value": 88206.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2014",
+      "value": 87854.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2015",
+      "value": 86398.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2016",
+      "value": 85609.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2017",
+      "value": 84978.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2018",
+      "value": 83467.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2019",
+      "value": 82450.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2020",
+      "value": 81248.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2021",
+      "value": 79911.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2022",
+      "value": 79230.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2023",
+      "value": 78874.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2008",
+      "value": 3564577.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "부산광역시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2009",
+      "value": 3543030.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "부산광역시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2010",
+      "value": 3567910.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "부산광역시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2011",
+      "value": 3550963.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "부산광역시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2012",
+      "value": 3538484.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "부산광역시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2013",
+      "value": 3527635.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "부산광역시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2014",
+      "value": 3519401.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "부산광역시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2015",
+      "value": 3513777.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "부산광역시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2016",
+      "value": 3498529.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "부산광역시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2017",
+      "value": 3470653.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "부산광역시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2018",
+      "value": 3441453.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "부산광역시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2019",
+      "value": 3413841.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "부산광역시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2020",
+      "value": 3391946.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "부산광역시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2021",
+      "value": 3350380.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "부산광역시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2022",
+      "value": 3317812.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "부산광역시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2023",
+      "value": 3293362.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "부산광역시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2008",
+      "value": 53.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "부산광역시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2009",
+      "value": 53.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "부산광역시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2010",
+      "value": 53.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "부산광역시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2011",
+      "value": 53.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "부산광역시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2012",
+      "value": 53.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "부산광역시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2013",
+      "value": 54.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "부산광역시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2014",
+      "value": 54.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "부산광역시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2015",
+      "value": 54.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "부산광역시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2016",
+      "value": 54.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "부산광역시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2017",
+      "value": 58.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "부산광역시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2018",
+      "value": 58.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "부산광역시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2019",
+      "value": 58.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "부산광역시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2020",
+      "value": 59.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "부산광역시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2021",
+      "value": 59.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "부산광역시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2022",
+      "value": 60.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "부산광역시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2023",
+      "value": 60.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "부산광역시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2008",
+      "value": 67256.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2009",
+      "value": 66850.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2010",
+      "value": 67319.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2011",
+      "value": 66999.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2012",
+      "value": 66764.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2013",
+      "value": 65327.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2014",
+      "value": 65174.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2015",
+      "value": 65070.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2016",
+      "value": 64788.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2017",
+      "value": 59839.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2018",
+      "value": 59335.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2019",
+      "value": 58859.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2020",
+      "value": 57491.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2021",
+      "value": 56786.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2022",
+      "value": 55297.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2023",
+      "value": 54889.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2008",
+      "value": 2492724.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "대구광역시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2009",
+      "value": 2489781.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "대구광역시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2010",
+      "value": 2511676.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "대구광역시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2011",
+      "value": 2507271.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "대구광역시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2012",
+      "value": 2505644.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "대구광역시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2013",
+      "value": 2501588.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "대구광역시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2014",
+      "value": 2493264.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "대구광역시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2015",
+      "value": 2487829.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "대구광역시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2016",
+      "value": 2484557.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "대구광역시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2017",
+      "value": 2475231.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "대구광역시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2018",
+      "value": 2461769.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "대구광역시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2019",
+      "value": 2438031.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "대구광역시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2020",
+      "value": 2418346.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "대구광역시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2021",
+      "value": 2385412.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "대구광역시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2022",
+      "value": 2363691.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "대구광역시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2023",
+      "value": 2374960.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "대구광역시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2008",
+      "value": 45.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "대구광역시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2009",
+      "value": 45.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "대구광역시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2010",
+      "value": 45.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "대구광역시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2011",
+      "value": 45.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "대구광역시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2012",
+      "value": 45.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "대구광역시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2013",
+      "value": 46.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "대구광역시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2014",
+      "value": 46.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "대구광역시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2015",
+      "value": 47.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "대구광역시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2016",
+      "value": 48.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "대구광역시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2017",
+      "value": 48.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "대구광역시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2018",
+      "value": 48.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "대구광역시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2019",
+      "value": 48.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "대구광역시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2020",
+      "value": 48.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "대구광역시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2021",
+      "value": 49.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "대구광역시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2022",
+      "value": 49.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "대구광역시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2023",
+      "value": 51.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "대구광역시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2008",
+      "value": 55394.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2009",
+      "value": 55328.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2010",
+      "value": 55815.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2011",
+      "value": 55717.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2012",
+      "value": 55681.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2013",
+      "value": 54382.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2014",
+      "value": 54201.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2015",
+      "value": 52933.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2016",
+      "value": 51762.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2017",
+      "value": 51567.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2018",
+      "value": 51287.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2019",
+      "value": 50792.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2020",
+      "value": 50382.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2021",
+      "value": 48682.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2022",
+      "value": 48239.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2023",
+      "value": 46568.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2008",
+      "value": 2692696.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "인천광역시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2009",
+      "value": 2710579.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "인천광역시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2010",
+      "value": 2758296.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "인천광역시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2011",
+      "value": 2801274.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "인천광역시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2012",
+      "value": 2843981.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "인천광역시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2013",
+      "value": 2879782.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "인천광역시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2014",
+      "value": 2902608.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "인천광역시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2015",
+      "value": 2925815.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "인천광역시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2016",
+      "value": 2943069.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "인천광역시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2017",
+      "value": 2948542.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "인천광역시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2018",
+      "value": 2954642.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "인천광역시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2019",
+      "value": 2957026.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "인천광역시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2020",
+      "value": 2942828.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "인천광역시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2021",
+      "value": 2948375.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "인천광역시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2022",
+      "value": 2967314.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "인천광역시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2023",
+      "value": 2997410.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "인천광역시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2008",
+      "value": 44.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "인천광역시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2009",
+      "value": 46.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "인천광역시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2010",
+      "value": 47.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "인천광역시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2011",
+      "value": 46.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "인천광역시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2012",
+      "value": 47.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "인천광역시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2013",
+      "value": 46.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "인천광역시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2014",
+      "value": 46.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "인천광역시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2015",
+      "value": 47.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "인천광역시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2016",
+      "value": 48.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "인천광역시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2017",
+      "value": 49.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "인천광역시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2018",
+      "value": 52.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "인천광역시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2019",
+      "value": 52.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "인천광역시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2020",
+      "value": 54.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "인천광역시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2021",
+      "value": 55.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "인천광역시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2022",
+      "value": 55.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "인천광역시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2023",
+      "value": 56.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "인천광역시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2008",
+      "value": 61198.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2009",
+      "value": 58926.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2010",
+      "value": 58687.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2011",
+      "value": 60897.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2012",
+      "value": 60510.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2013",
+      "value": 62604.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2014",
+      "value": 63100.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2015",
+      "value": 62251.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2016",
+      "value": 61314.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2017",
+      "value": 60174.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2018",
+      "value": 56820.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2019",
+      "value": 56866.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2020",
+      "value": 54497.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2021",
+      "value": 53607.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2022",
+      "value": 53951.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2023",
+      "value": 53525.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2008",
+      "value": 1422702.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "광주광역시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2009",
+      "value": 1433640.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "광주광역시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2010",
+      "value": 1454636.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "광주광역시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2011",
+      "value": 1463464.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "광주광역시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2012",
+      "value": 1469216.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "광주광역시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2013",
+      "value": 1472910.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "광주광역시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2014",
+      "value": 1475884.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "광주광역시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2015",
+      "value": 1472199.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "광주광역시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2016",
+      "value": 1469214.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "광주광역시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2017",
+      "value": 1463770.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "광주광역시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2018",
+      "value": 1459336.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "광주광역시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2019",
+      "value": 1456468.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "광주광역시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2020",
+      "value": 1450062.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "광주광역시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2021",
+      "value": 1441611.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "광주광역시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2022",
+      "value": 1431050.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "광주광역시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2023",
+      "value": 1419237.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "광주광역시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2008",
+      "value": 21.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "광주광역시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2009",
+      "value": 22.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "광주광역시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2010",
+      "value": 22.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "광주광역시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2011",
+      "value": 22.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "광주광역시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2012",
+      "value": 22.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "광주광역시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2013",
+      "value": 23.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "광주광역시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2014",
+      "value": 23.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "광주광역시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2015",
+      "value": 23.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "광주광역시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2016",
+      "value": 23.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "광주광역시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2017",
+      "value": 24.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "광주광역시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2018",
+      "value": 24.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "광주광역시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2019",
+      "value": 24.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "광주광역시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2020",
+      "value": 24.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "광주광역시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2021",
+      "value": 24.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "광주광역시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2022",
+      "value": 27.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "광주광역시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2023",
+      "value": 27.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "광주광역시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2008",
+      "value": 67748.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2009",
+      "value": 65165.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2010",
+      "value": 66120.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2011",
+      "value": 66521.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2012",
+      "value": 66783.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2013",
+      "value": 64040.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2014",
+      "value": 64169.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2015",
+      "value": 64009.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2016",
+      "value": 63879.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2017",
+      "value": 60990.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2018",
+      "value": 60806.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2019",
+      "value": 60686.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2020",
+      "value": 60419.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2021",
+      "value": 60067.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2022",
+      "value": 53002.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2023",
+      "value": 52564.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2008",
+      "value": 1480895.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "대전광역시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2009",
+      "value": 1484180.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "대전광역시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2010",
+      "value": 1503664.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "대전광역시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2011",
+      "value": 1515603.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "대전광역시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2012",
+      "value": 1524583.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "대전광역시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2013",
+      "value": 1532811.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "대전광역시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2014",
+      "value": 1531809.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "대전광역시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2015",
+      "value": 1518775.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "대전광역시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2016",
+      "value": 1514370.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "대전광역시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2017",
+      "value": 1502227.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "대전광역시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2018",
+      "value": 1489936.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "대전광역시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2019",
+      "value": 1474870.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "대전광역시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2020",
+      "value": 1463882.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "대전광역시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2021",
+      "value": 1452251.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "대전광역시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2022",
+      "value": 1446072.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "대전광역시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2023",
+      "value": 1442216.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "대전광역시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2008",
+      "value": 25.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "대전광역시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2009",
+      "value": 25.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "대전광역시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2010",
+      "value": 25.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "대전광역시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2011",
+      "value": 25.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "대전광역시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2012",
+      "value": 25.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "대전광역시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2013",
+      "value": 26.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "대전광역시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2014",
+      "value": 26.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "대전광역시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2015",
+      "value": 26.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "대전광역시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2016",
+      "value": 26.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "대전광역시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2017",
+      "value": 26.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "대전광역시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2018",
+      "value": 26.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "대전광역시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2019",
+      "value": 26.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "대전광역시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2020",
+      "value": 26.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "대전광역시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2021",
+      "value": 26.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "대전광역시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2022",
+      "value": 27.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "대전광역시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2023",
+      "value": 27.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "대전광역시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2008",
+      "value": 59236.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2009",
+      "value": 59367.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2010",
+      "value": 60147.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2011",
+      "value": 60624.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2012",
+      "value": 60983.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2013",
+      "value": 58954.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2014",
+      "value": 58916.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2015",
+      "value": 58414.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2016",
+      "value": 58245.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2017",
+      "value": 57778.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2018",
+      "value": 57305.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2019",
+      "value": 56726.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2020",
+      "value": 56303.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2021",
+      "value": 55856.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2022",
+      "value": 53558.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2023",
+      "value": 53415.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2008",
+      "value": 1112407.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "울산광역시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2009",
+      "value": 1114866.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "울산광역시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2010",
+      "value": 1126298.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "울산광역시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2011",
+      "value": 1135494.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "울산광역시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2012",
+      "value": 1147256.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "울산광역시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2013",
+      "value": 1156480.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "울산광역시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2014",
+      "value": 1166377.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "울산광역시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2015",
+      "value": 1173534.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "울산광역시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2016",
+      "value": 1172304.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "울산광역시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2017",
+      "value": 1165132.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "울산광역시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2018",
+      "value": 1155623.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "울산광역시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2019",
+      "value": 1148019.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "울산광역시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2020",
+      "value": 1136017.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "울산광역시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2021",
+      "value": 1121592.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "울산광역시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2022",
+      "value": 1110663.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "울산광역시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2023",
+      "value": 1103661.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "울산광역시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2008",
+      "value": 20.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "울산광역시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2009",
+      "value": 20.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "울산광역시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2010",
+      "value": 20.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "울산광역시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2011",
+      "value": 20.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "울산광역시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2012",
+      "value": 20.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "울산광역시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2013",
+      "value": 20.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "울산광역시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2014",
+      "value": 21.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "울산광역시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2015",
+      "value": 21.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "울산광역시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2016",
+      "value": 23.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "울산광역시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2017",
+      "value": 24.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "울산광역시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2018",
+      "value": 25.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "울산광역시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2019",
+      "value": 25.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "울산광역시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2020",
+      "value": 25.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "울산광역시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2021",
+      "value": 26.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "울산광역시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2022",
+      "value": 26.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "울산광역시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2023",
+      "value": 26.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "울산광역시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2008",
+      "value": 55620.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2009",
+      "value": 55743.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2010",
+      "value": 56315.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2011",
+      "value": 56775.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2012",
+      "value": 57363.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2013",
+      "value": 57824.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2014",
+      "value": 55542.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2015",
+      "value": 55883.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2016",
+      "value": 50970.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2017",
+      "value": 48547.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2018",
+      "value": 46225.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2019",
+      "value": 45921.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2020",
+      "value": 45441.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2021",
+      "value": 43138.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2022",
+      "value": 42718.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2023",
+      "value": 42449.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "세종특별자치시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2012",
+      "value": 113117.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "세종특별자치시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2013",
+      "value": 122153.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "세종특별자치시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2014",
+      "value": 156125.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "세종특별자치시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2015",
+      "value": 210884.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "세종특별자치시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2016",
+      "value": 243048.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "세종특별자치시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2017",
+      "value": 280100.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "세종특별자치시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2018",
+      "value": 314126.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "세종특별자치시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2019",
+      "value": 340575.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "세종특별자치시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2020",
+      "value": 355831.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "세종특별자치시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2021",
+      "value": 371895.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "세종특별자치시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2022",
+      "value": 383591.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "세종특별자치시 - 주민등록인구＜br＞(A)",
+      "timestamp": "2023",
+      "value": 386525.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "세종특별자치시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2012",
+      "value": 4.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "세종특별자치시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2013",
+      "value": 5.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "세종특별자치시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2014",
+      "value": 5.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "세종특별자치시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2015",
+      "value": 6.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "세종특별자치시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2016",
+      "value": 8.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "세종특별자치시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2017",
+      "value": 8.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "세종특별자치시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2018",
+      "value": 8.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "세종특별자치시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2019",
+      "value": 9.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "세종특별자치시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2020",
+      "value": 9.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "세종특별자치시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2021",
+      "value": 9.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "세종특별자치시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2022",
+      "value": 9.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "세종특별자치시 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2023",
+      "value": 9.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "세종특별자치시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2012",
+      "value": 28279.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "세종특별자치시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2013",
+      "value": 24431.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "세종특별자치시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2014",
+      "value": 31225.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "세종특별자치시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2015",
+      "value": 35147.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "세종특별자치시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2016",
+      "value": 30381.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "세종특별자치시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2017",
+      "value": 35013.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "세종특별자치시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2018",
+      "value": 39266.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "세종특별자치시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2019",
+      "value": 37842.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "세종특별자치시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2020",
+      "value": 39537.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "세종특별자치시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2021",
+      "value": 41322.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "세종특별자치시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2022",
+      "value": 42621.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "세종특별자치시 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2023",
+      "value": 42947.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2008",
+      "value": 11292264.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경기도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2009",
+      "value": 11460610.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경기도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2010",
+      "value": 11786622.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경기도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2011",
+      "value": 11937415.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경기도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2012",
+      "value": 12093299.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경기도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2013",
+      "value": 12234630.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경기도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2014",
+      "value": 12357830.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경기도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2015",
+      "value": 12522606.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경기도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2016",
+      "value": 12716780.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경기도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2017",
+      "value": 12873895.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경기도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2018",
+      "value": 13077153.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경기도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2019",
+      "value": 13239666.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경기도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2020",
+      "value": 13427014.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경기도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2021",
+      "value": 13565450.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경기도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2022",
+      "value": 13589432.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경기도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2023",
+      "value": 13630821.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경기도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2008",
+      "value": 169.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경기도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2009",
+      "value": 172.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경기도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2010",
+      "value": 174.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경기도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2011",
+      "value": 161.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경기도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2012",
+      "value": 161.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경기도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2013",
+      "value": 161.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경기도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2014",
+      "value": 163.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경기도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2015",
+      "value": 163.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경기도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2016",
+      "value": 166.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경기도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2017",
+      "value": 171.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경기도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2018",
+      "value": 181.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경기도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2019",
+      "value": 182.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경기도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2020",
+      "value": 186.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경기도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2021",
+      "value": 189.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경기도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2022",
+      "value": 199.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경기도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2023",
+      "value": 205.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경기도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2008",
+      "value": 66818.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2009",
+      "value": 66631.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2010",
+      "value": 67739.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2011",
+      "value": 74145.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2012",
+      "value": 75114.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2013",
+      "value": 75991.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2014",
+      "value": 75815.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2015",
+      "value": 76826.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2016",
+      "value": 76607.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2017",
+      "value": 75286.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2018",
+      "value": 72249.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2019",
+      "value": 72745.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2020",
+      "value": 72188.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2021",
+      "value": 71775.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2022",
+      "value": 68289.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2023",
+      "value": 66492.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2008",
+      "value": 1508575.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "강원특별자치도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2009",
+      "value": 1512870.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "강원특별자치도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2010",
+      "value": 1529818.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "강원특별자치도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2011",
+      "value": 1536448.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "강원특별자치도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2012",
+      "value": 1538630.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "강원특별자치도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2013",
+      "value": 1542263.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "강원특별자치도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2014",
+      "value": 1544442.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "강원특별자치도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2015",
+      "value": 1549507.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "강원특별자치도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2016",
+      "value": 1550806.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "강원특별자치도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2017",
+      "value": 1550142.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "강원특별자치도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2018",
+      "value": 1543052.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "강원특별자치도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2019",
+      "value": 1541502.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "강원특별자치도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2020",
+      "value": 1542840.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "강원특별자치도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2021",
+      "value": 1538492.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "강원특별자치도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2022",
+      "value": 1536498.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "강원특별자치도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2023",
+      "value": 1527807.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "강원특별자치도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2008",
+      "value": 57.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "강원특별자치도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2009",
+      "value": 57.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "강원특별자치도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2010",
+      "value": 59.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "강원특별자치도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2011",
+      "value": 62.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "강원특별자치도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2012",
+      "value": 62.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "강원특별자치도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2013",
+      "value": 65.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "강원특별자치도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2014",
+      "value": 66.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "강원특별자치도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2015",
+      "value": 66.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "강원특별자치도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2016",
+      "value": 69.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "강원특별자치도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2017",
+      "value": 69.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "강원특별자치도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2018",
+      "value": 71.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "강원특별자치도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2019",
+      "value": 72.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "강원특별자치도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2020",
+      "value": 73.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "강원특별자치도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2021",
+      "value": 75.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "강원특별자치도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2022",
+      "value": 75.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "강원특별자치도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2023",
+      "value": 75.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "강원특별자치도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2008",
+      "value": 26466.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2009",
+      "value": 26542.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2010",
+      "value": 25929.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2011",
+      "value": 24781.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2012",
+      "value": 24817.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2013",
+      "value": 23727.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2014",
+      "value": 23401.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2015",
+      "value": 23477.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2016",
+      "value": 22475.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2017",
+      "value": 22466.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2018",
+      "value": 21733.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2019",
+      "value": 21410.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2020",
+      "value": 21135.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2021",
+      "value": 20513.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2022",
+      "value": 20487.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2023",
+      "value": 20371.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2008",
+      "value": 1519587.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "충청북도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2009",
+      "value": 1527478.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "충청북도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2010",
+      "value": 1549528.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "충청북도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2011",
+      "value": 1562903.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "충청북도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2012",
+      "value": 1565628.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "충청북도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2013",
+      "value": 1572732.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "충청북도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2014",
+      "value": 1578933.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "충청북도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2015",
+      "value": 1583952.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "충청북도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2016",
+      "value": 1591625.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "충청북도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2017",
+      "value": 1594432.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "충청북도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2018",
+      "value": 1599252.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "충청북도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2019",
+      "value": 1600007.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "충청북도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2020",
+      "value": 1600837.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "충청북도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2021",
+      "value": 1597427.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "충청북도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2022",
+      "value": 1595058.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "충청북도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2023",
+      "value": 1593469.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "충청북도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2008",
+      "value": 35.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "충청북도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2009",
+      "value": 36.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "충청북도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2010",
+      "value": 36.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "충청북도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2011",
+      "value": 36.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "충청북도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2012",
+      "value": 38.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "충청북도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2013",
+      "value": 38.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "충청북도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2014",
+      "value": 39.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "충청북도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2015",
+      "value": 39.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "충청북도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2016",
+      "value": 39.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "충청북도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2017",
+      "value": 40.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "충청북도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2018",
+      "value": 42.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "충청북도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2019",
+      "value": 42.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "충청북도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2020",
+      "value": 43.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "충청북도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2021",
+      "value": 43.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "충청북도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2022",
+      "value": 43.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "충청북도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2023",
+      "value": 44.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "충청북도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2008",
+      "value": 43417.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2009",
+      "value": 42430.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2010",
+      "value": 43042.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2011",
+      "value": 43414.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2012",
+      "value": 41201.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2013",
+      "value": 41388.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2014",
+      "value": 40485.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2015",
+      "value": 40614.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2016",
+      "value": 40811.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2017",
+      "value": 39861.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2018",
+      "value": 38077.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2019",
+      "value": 38095.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2020",
+      "value": 37229.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2021",
+      "value": 37149.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2022",
+      "value": 37094.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2023",
+      "value": 36215.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2008",
+      "value": 2018537.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "충청남도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2009",
+      "value": 2037582.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "충청남도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2010",
+      "value": 2075514.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "충청남도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2011",
+      "value": 2101284.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "충청남도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2012",
+      "value": 2028777.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "충청남도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2013",
+      "value": 2047631.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "충청남도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2014",
+      "value": 2062273.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "충청남도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2015",
+      "value": 2077649.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "충청남도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2016",
+      "value": 2096727.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "충청남도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2017",
+      "value": 2116770.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "충청남도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2018",
+      "value": 2126282.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "충청남도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2019",
+      "value": 2123709.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "충청남도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2020",
+      "value": 2121029.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "충청남도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2021",
+      "value": 2119257.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "충청남도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2022",
+      "value": 2123037.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "충청남도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2023",
+      "value": 2130119.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "충청남도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2008",
+      "value": 58.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "충청남도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2009",
+      "value": 60.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "충청남도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2010",
+      "value": 61.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "충청남도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2011",
+      "value": 62.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "충청남도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2012",
+      "value": 62.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "충청남도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2013",
+      "value": 63.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "충청남도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2014",
+      "value": 66.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "충청남도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2015",
+      "value": 71.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "충청남도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2016",
+      "value": 73.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "충청남도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2017",
+      "value": 78.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "충청남도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2018",
+      "value": 78.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "충청남도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2019",
+      "value": 78.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "충청남도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2020",
+      "value": 80.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "충청남도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2021",
+      "value": 80.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "충청남도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2022",
+      "value": 80.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "충청남도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2023",
+      "value": 80.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "충청남도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2008",
+      "value": 34802.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2009",
+      "value": 33960.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2010",
+      "value": 34025.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2011",
+      "value": 33892.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2012",
+      "value": 32722.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2013",
+      "value": 32502.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2014",
+      "value": 31247.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2015",
+      "value": 29263.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2016",
+      "value": 28722.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2017",
+      "value": 27138.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2018",
+      "value": 27260.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2019",
+      "value": 27227.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2020",
+      "value": 26513.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2021",
+      "value": 26491.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2022",
+      "value": 26538.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2023",
+      "value": 26626.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2008",
+      "value": 1855772.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전북특별자치도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2009",
+      "value": 1854508.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전북특별자치도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2010",
+      "value": 1868963.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전북특별자치도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2011",
+      "value": 1874031.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전북특별자치도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2012",
+      "value": 1873341.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전북특별자치도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2013",
+      "value": 1872965.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전북특별자치도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2014",
+      "value": 1871560.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전북특별자치도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2015",
+      "value": 1869711.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전북특별자치도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2016",
+      "value": 1864791.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전북특별자치도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2017",
+      "value": 1854607.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전북특별자치도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2018",
+      "value": 1836832.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전북특별자치도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2019",
+      "value": 1818917.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전북특별자치도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2020",
+      "value": 1804104.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전북특별자치도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2021",
+      "value": 1786855.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전북특별자치도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2022",
+      "value": 1769607.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전북특별자치도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2023",
+      "value": 1754757.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전북특별자치도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2008",
+      "value": 48.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전북특별자치도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2009",
+      "value": 48.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전북특별자치도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2010",
+      "value": 48.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전북특별자치도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2011",
+      "value": 49.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전북특별자치도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2012",
+      "value": 49.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전북특별자치도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2013",
+      "value": 49.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전북특별자치도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2014",
+      "value": 49.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전북특별자치도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2015",
+      "value": 50.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전북특별자치도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2016",
+      "value": 51.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전북특별자치도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2017",
+      "value": 51.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전북특별자치도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2018",
+      "value": 51.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전북특별자치도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2019",
+      "value": 51.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전북특별자치도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2020",
+      "value": 53.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전북특별자치도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2021",
+      "value": 54.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전북특별자치도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2022",
+      "value": 54.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전북특별자치도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2023",
+      "value": 55.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전북특별자치도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2008",
+      "value": 38662.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2009",
+      "value": 38636.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2010",
+      "value": 38937.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2011",
+      "value": 38246.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2012",
+      "value": 38231.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2013",
+      "value": 38224.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2014",
+      "value": 38195.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2015",
+      "value": 37394.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2016",
+      "value": 36565.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2017",
+      "value": 36365.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2018",
+      "value": 36016.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2019",
+      "value": 35665.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2020",
+      "value": 34040.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2021",
+      "value": 33090.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2022",
+      "value": 32771.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2023",
+      "value": 31905.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2008",
+      "value": 1919000.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전라남도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2009",
+      "value": 1913004.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전라남도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2010",
+      "value": 1918485.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전라남도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2011",
+      "value": 1914339.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전라남도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2012",
+      "value": 1909618.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전라남도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2013",
+      "value": 1907172.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전라남도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2014",
+      "value": 1905780.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전라남도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2015",
+      "value": 1908996.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전라남도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2016",
+      "value": 1903914.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전라남도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2017",
+      "value": 1896424.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전라남도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2018",
+      "value": 1882970.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전라남도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2019",
+      "value": 1868745.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전라남도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2020",
+      "value": 1851549.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전라남도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2021",
+      "value": 1832803.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전라남도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2022",
+      "value": 1817697.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전라남도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2023",
+      "value": 1804217.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "전라남도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2008",
+      "value": 49.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전라남도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2009",
+      "value": 49.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전라남도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2010",
+      "value": 49.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전라남도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2011",
+      "value": 53.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전라남도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2012",
+      "value": 53.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전라남도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2013",
+      "value": 53.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전라남도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2014",
+      "value": 55.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전라남도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2015",
+      "value": 56.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전라남도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2016",
+      "value": 58.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전라남도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2017",
+      "value": 60.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전라남도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2018",
+      "value": 60.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전라남도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2019",
+      "value": 62.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전라남도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2020",
+      "value": 64.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전라남도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2021",
+      "value": 66.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전라남도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2022",
+      "value": 68.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전라남도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2023",
+      "value": 68.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "전라남도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2008",
+      "value": 39163.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2009",
+      "value": 39041.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2010",
+      "value": 39153.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2011",
+      "value": 36120.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2012",
+      "value": 36031.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2013",
+      "value": 35984.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2014",
+      "value": 34651.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2015",
+      "value": 34089.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2016",
+      "value": 32826.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2017",
+      "value": 31607.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2018",
+      "value": 31383.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2019",
+      "value": 30141.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2020",
+      "value": 28930.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2021",
+      "value": 27770.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2022",
+      "value": 26731.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2023",
+      "value": 26533.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2008",
+      "value": 2673931.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경상북도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2009",
+      "value": 2669876.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경상북도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2010",
+      "value": 2689920.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경상북도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2011",
+      "value": 2699195.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경상북도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2012",
+      "value": 2698353.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경상북도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2013",
+      "value": 2699440.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경상북도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2014",
+      "value": 2700794.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경상북도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2015",
+      "value": 2702826.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경상북도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2016",
+      "value": 2700398.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경상북도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2017",
+      "value": 2691706.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경상북도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2018",
+      "value": 2676831.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경상북도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2019",
+      "value": 2665836.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경상북도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2020",
+      "value": 2639422.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경상북도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2021",
+      "value": 2626609.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경상북도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2022",
+      "value": 2600492.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경상북도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2023",
+      "value": 2554324.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경상북도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2008",
+      "value": 79.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경상북도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2009",
+      "value": 79.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경상북도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2010",
+      "value": 79.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경상북도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2011",
+      "value": 79.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경상북도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2012",
+      "value": 79.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경상북도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2013",
+      "value": 84.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경상북도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2014",
+      "value": 86.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경상북도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2015",
+      "value": 88.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경상북도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2016",
+      "value": 91.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경상북도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2017",
+      "value": 94.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경상북도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2018",
+      "value": 97.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경상북도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2019",
+      "value": 98.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경상북도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2020",
+      "value": 99.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경상북도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2021",
+      "value": 100.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경상북도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2022",
+      "value": 100.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경상북도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2023",
+      "value": 101.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경상북도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2008",
+      "value": 33847.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2009",
+      "value": 33796.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2010",
+      "value": 34050.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2011",
+      "value": 34167.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2012",
+      "value": 34156.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2013",
+      "value": 32136.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2014",
+      "value": 31405.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2015",
+      "value": 30714.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2016",
+      "value": 29675.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2017",
+      "value": 28635.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2018",
+      "value": 27596.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2019",
+      "value": 27202.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2020",
+      "value": 26661.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2021",
+      "value": 26266.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2022",
+      "value": 26005.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2023",
+      "value": 25290.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2008",
+      "value": 3225255.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경상남도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2009",
+      "value": 3250176.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경상남도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2010",
+      "value": 3290536.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경상남도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2011",
+      "value": 3308765.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경상남도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2012",
+      "value": 3319314.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경상남도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2013",
+      "value": 3333820.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경상남도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2014",
+      "value": 3350257.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경상남도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2015",
+      "value": 3364702.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경상남도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2016",
+      "value": 3373871.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경상남도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2017",
+      "value": 3380404.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경상남도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2018",
+      "value": 3373988.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경상남도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2019",
+      "value": 3362553.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경상남도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2020",
+      "value": 3340216.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경상남도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2021",
+      "value": 3314183.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경상남도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2022",
+      "value": 3280493.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경상남도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2023",
+      "value": 3251158.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "경상남도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2008",
+      "value": 77.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경상남도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2009",
+      "value": 80.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경상남도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2010",
+      "value": 80.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경상남도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2011",
+      "value": 80.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경상남도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2012",
+      "value": 81.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경상남도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2013",
+      "value": 84.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경상남도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2014",
+      "value": 84.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경상남도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2015",
+      "value": 86.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경상남도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2016",
+      "value": 87.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경상남도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2017",
+      "value": 90.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경상남도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2018",
+      "value": 94.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경상남도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2019",
+      "value": 98.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경상남도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2020",
+      "value": 99.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경상남도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2021",
+      "value": 102.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경상남도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2022",
+      "value": 103.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경상남도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2023",
+      "value": 104.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "경상남도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2008",
+      "value": 41886.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2009",
+      "value": 40627.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2010",
+      "value": 41132.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2011",
+      "value": 41360.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2012",
+      "value": 40979.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2013",
+      "value": 39688.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2014",
+      "value": 39884.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2015",
+      "value": 39124.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2016",
+      "value": 38780.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2017",
+      "value": 37560.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2018",
+      "value": 35893.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2019",
+      "value": 34312.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2020",
+      "value": 33740.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2021",
+      "value": 32492.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2022",
+      "value": 31849.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2023",
+      "value": 31261.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2008",
+      "value": 560618.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "제주특별자치도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2009",
+      "value": 562663.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "제주특별자치도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2010",
+      "value": 571255.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "제주특별자치도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2011",
+      "value": 576156.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "제주특별자치도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2012",
+      "value": 583713.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "제주특별자치도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2013",
+      "value": 593806.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "제주특별자치도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2014",
+      "value": 607346.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "제주특별자치도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2015",
+      "value": 624395.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "제주특별자치도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2016",
+      "value": 641597.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "제주특별자치도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2017",
+      "value": 657083.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "제주특별자치도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2018",
+      "value": 667191.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "제주특별자치도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2019",
+      "value": 670989.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "제주특별자치도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2020",
+      "value": 674635.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "제주특별자치도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2021",
+      "value": 676759.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "제주특별자치도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2022",
+      "value": 678159.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "제주특별자치도 - 주민등록인구＜br＞(A)",
+      "timestamp": "2023",
+      "value": 675252.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T001"
+    },
+    {
+      "item": "제주특별자치도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2008",
+      "value": 21.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "제주특별자치도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2009",
+      "value": 21.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "제주특별자치도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2010",
+      "value": 21.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "제주특별자치도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2011",
+      "value": 21.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "제주특별자치도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2012",
+      "value": 21.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "제주특별자치도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2013",
+      "value": 21.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "제주특별자치도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2014",
+      "value": 22.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "제주특별자치도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2015",
+      "value": 22.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "제주특별자치도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2016",
+      "value": 22.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "제주특별자치도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2017",
+      "value": 23.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "제주특별자치도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2018",
+      "value": 23.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "제주특별자치도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2019",
+      "value": 24.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "제주특별자치도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2020",
+      "value": 24.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "제주특별자치도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2021",
+      "value": 24.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "제주특별자치도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2022",
+      "value": 24.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "제주특별자치도 - 119안전센터 수＜br＞(B)",
+      "timestamp": "2023",
+      "value": 24.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T002"
+    },
+    {
+      "item": "제주특별자치도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2008",
+      "value": 26696.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2009",
+      "value": 26793.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2010",
+      "value": 27203.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2011",
+      "value": 27436.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2012",
+      "value": 27796.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2013",
+      "value": 28276.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2014",
+      "value": 27607.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2015",
+      "value": 28382.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2016",
+      "value": 29164.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2017",
+      "value": 28569.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2018",
+      "value": 29008.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2019",
+      "value": 27958.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2020",
+      "value": 28110.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2021",
+      "value": 28198.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2022",
+      "value": 28257.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 119안전센터 1개센터당 담당주민수＜br＞(A÷B)",
+      "timestamp": "2023",
+      "value": 28136.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    }
+  ]
+}

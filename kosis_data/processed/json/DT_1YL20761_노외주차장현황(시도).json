@@ -1,0 +1,5311 @@
+{
+  "metadata": {
+    "org_id": "101",
+    "org_name": "통계청",
+    "table_id": "DT_1YL20761",
+    "table_name": "노외주차장현황(시도)",
+    "stat_id": "9B08007",
+    "stat_name": "e-지방지표",
+    "date_range": "2003 ~ 2022",
+    "description": "행정구역별 개소 면수 대구광역시 서울특별시 경기도 충청북도 전라남도 전국 인천광역시 대전광역시 울산광역시 전북특별자치도 제주특별자치도 충청남도 세종특별자치시 광주광역시 경상남도 부산광역시 강원특별자치도 경상북도",
+    "item_info": "■  자료제공처:  통계청 지역통계기획팀 ■  자료원출처:  시도통계연보 ■  자료제공주기:  1년 ■  다음자료현행화:  연중 □  정의  - 노외주차장 현황: 도로의 노면 및 교통광장 외의 장소에 설치된 주차장의 현황 □  의의  - 교통 및 주거정책 등의 기초자료로 활용",
+    "source_url": "http://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1YL20761",
+    "last_updated": "2025-06-24T18:15:10.705557",
+    "period_type": "M",
+    "period_name": "월간"
+  },
+  "data": [
+    {
+      "item": "전국 - 개소",
+      "timestamp": "2004",
+      "value": 26880.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 개소",
+      "timestamp": "2005",
+      "value": 24611.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 개소",
+      "timestamp": "2006",
+      "value": 26081.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 개소",
+      "timestamp": "2007",
+      "value": 22988.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 개소",
+      "timestamp": "2008",
+      "value": 22818.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 개소",
+      "timestamp": "2009",
+      "value": 22090.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 개소",
+      "timestamp": "2010",
+      "value": 22721.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 개소",
+      "timestamp": "2011",
+      "value": 24969.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 개소",
+      "timestamp": "2012",
+      "value": 21944.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 개소",
+      "timestamp": "2013",
+      "value": 24635.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 개소",
+      "timestamp": "2014",
+      "value": 23832.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 개소",
+      "timestamp": "2015",
+      "value": 21738.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 개소",
+      "timestamp": "2016",
+      "value": 22565.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 개소",
+      "timestamp": "2017",
+      "value": 23000.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 개소",
+      "timestamp": "2018",
+      "value": 23286.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 개소",
+      "timestamp": "2019",
+      "value": 23924.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전국 - 면수",
+      "timestamp": "2004",
+      "value": 1053927.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "전국 - 면수",
+      "timestamp": "2005",
+      "value": 1071452.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "전국 - 면수",
+      "timestamp": "2006",
+      "value": 1113754.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "전국 - 면수",
+      "timestamp": "2007",
+      "value": 1100047.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "전국 - 면수",
+      "timestamp": "2008",
+      "value": 1058784.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "전국 - 면수",
+      "timestamp": "2009",
+      "value": 1073780.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "전국 - 면수",
+      "timestamp": "2010",
+      "value": 1085415.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "전국 - 면수",
+      "timestamp": "2011",
+      "value": 1070389.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "전국 - 면수",
+      "timestamp": "2012",
+      "value": 1111300.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "전국 - 면수",
+      "timestamp": "2013",
+      "value": 1116809.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "전국 - 면수",
+      "timestamp": "2014",
+      "value": 1118867.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "전국 - 면수",
+      "timestamp": "2015",
+      "value": 1110790.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "전국 - 면수",
+      "timestamp": "2016",
+      "value": 1131635.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "전국 - 면수",
+      "timestamp": "2017",
+      "value": 1166828.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "전국 - 면수",
+      "timestamp": "2018",
+      "value": 1167666.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "전국 - 면수",
+      "timestamp": "2019",
+      "value": 1231977.0,
+      "item_codes": {
+        "C1": "00"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "서울특별시 - 개소",
+      "timestamp": "2004",
+      "value": 3148.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 개소",
+      "timestamp": "2005",
+      "value": 3231.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 개소",
+      "timestamp": "2006",
+      "value": 3341.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 개소",
+      "timestamp": "2007",
+      "value": 3633.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 개소",
+      "timestamp": "2008",
+      "value": 3068.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 개소",
+      "timestamp": "2009",
+      "value": 2910.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 개소",
+      "timestamp": "2010",
+      "value": 3006.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 개소",
+      "timestamp": "2011",
+      "value": 2399.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 개소",
+      "timestamp": "2012",
+      "value": 2538.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 개소",
+      "timestamp": "2013",
+      "value": 2064.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 개소",
+      "timestamp": "2014",
+      "value": 2157.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 개소",
+      "timestamp": "2015",
+      "value": 2081.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 개소",
+      "timestamp": "2016",
+      "value": 2019.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 개소",
+      "timestamp": "2017",
+      "value": 1977.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 개소",
+      "timestamp": "2018",
+      "value": 2045.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 개소",
+      "timestamp": "2019",
+      "value": 2074.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 개소",
+      "timestamp": "2020",
+      "value": 1907.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 개소",
+      "timestamp": "2021",
+      "value": 1956.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 개소",
+      "timestamp": "2022",
+      "value": 1857.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "서울특별시 - 면수",
+      "timestamp": "2004",
+      "value": 122890.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "서울특별시 - 면수",
+      "timestamp": "2005",
+      "value": 131986.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "서울특별시 - 면수",
+      "timestamp": "2006",
+      "value": 140000.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "서울특별시 - 면수",
+      "timestamp": "2007",
+      "value": 123891.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "서울특별시 - 면수",
+      "timestamp": "2008",
+      "value": 134560.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "서울특별시 - 면수",
+      "timestamp": "2009",
+      "value": 126226.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "서울특별시 - 면수",
+      "timestamp": "2010",
+      "value": 132093.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "서울특별시 - 면수",
+      "timestamp": "2011",
+      "value": 116949.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "서울특별시 - 면수",
+      "timestamp": "2012",
+      "value": 122564.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "서울특별시 - 면수",
+      "timestamp": "2013",
+      "value": 104303.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "서울특별시 - 면수",
+      "timestamp": "2014",
+      "value": 111495.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "서울특별시 - 면수",
+      "timestamp": "2015",
+      "value": 109306.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "서울특별시 - 면수",
+      "timestamp": "2016",
+      "value": 110575.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "서울특별시 - 면수",
+      "timestamp": "2017",
+      "value": 112782.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "서울특별시 - 면수",
+      "timestamp": "2018",
+      "value": 110172.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "서울특별시 - 면수",
+      "timestamp": "2019",
+      "value": 100773.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "서울특별시 - 면수",
+      "timestamp": "2020",
+      "value": 100489.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "서울특별시 - 면수",
+      "timestamp": "2021",
+      "value": 106862.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "서울특별시 - 면수",
+      "timestamp": "2022",
+      "value": 101064.0,
+      "item_codes": {
+        "C1": "11"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "부산광역시 - 개소",
+      "timestamp": "2004",
+      "value": 3367.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 개소",
+      "timestamp": "2005",
+      "value": 3787.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 개소",
+      "timestamp": "2006",
+      "value": 4021.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 개소",
+      "timestamp": "2007",
+      "value": 3563.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 개소",
+      "timestamp": "2008",
+      "value": 3695.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 개소",
+      "timestamp": "2009",
+      "value": 3650.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 개소",
+      "timestamp": "2010",
+      "value": 3483.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 개소",
+      "timestamp": "2011",
+      "value": 3894.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 개소",
+      "timestamp": "2012",
+      "value": 3405.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 개소",
+      "timestamp": "2013",
+      "value": 3266.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 개소",
+      "timestamp": "2014",
+      "value": 3238.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 개소",
+      "timestamp": "2015",
+      "value": 3379.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 개소",
+      "timestamp": "2016",
+      "value": 3665.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 개소",
+      "timestamp": "2017",
+      "value": 3834.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 개소",
+      "timestamp": "2018",
+      "value": 3749.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 개소",
+      "timestamp": "2019",
+      "value": 3764.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "부산광역시 - 면수",
+      "timestamp": "2004",
+      "value": 72230.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "부산광역시 - 면수",
+      "timestamp": "2005",
+      "value": 76917.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "부산광역시 - 면수",
+      "timestamp": "2006",
+      "value": 79862.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "부산광역시 - 면수",
+      "timestamp": "2007",
+      "value": 77751.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "부산광역시 - 면수",
+      "timestamp": "2008",
+      "value": 81276.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "부산광역시 - 면수",
+      "timestamp": "2009",
+      "value": 86390.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "부산광역시 - 면수",
+      "timestamp": "2010",
+      "value": 91109.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "부산광역시 - 면수",
+      "timestamp": "2011",
+      "value": 87913.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "부산광역시 - 면수",
+      "timestamp": "2012",
+      "value": 81476.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "부산광역시 - 면수",
+      "timestamp": "2013",
+      "value": 83385.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "부산광역시 - 면수",
+      "timestamp": "2014",
+      "value": 83514.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "부산광역시 - 면수",
+      "timestamp": "2015",
+      "value": 82554.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "부산광역시 - 면수",
+      "timestamp": "2016",
+      "value": 89204.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "부산광역시 - 면수",
+      "timestamp": "2017",
+      "value": 90090.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "부산광역시 - 면수",
+      "timestamp": "2018",
+      "value": 92743.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "부산광역시 - 면수",
+      "timestamp": "2019",
+      "value": 98028.0,
+      "item_codes": {
+        "C1": "21"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "대구광역시 - 개소",
+      "timestamp": "2004",
+      "value": 957.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 개소",
+      "timestamp": "2005",
+      "value": 1010.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 개소",
+      "timestamp": "2006",
+      "value": 1066.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 개소",
+      "timestamp": "2007",
+      "value": 1121.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 개소",
+      "timestamp": "2008",
+      "value": 1135.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 개소",
+      "timestamp": "2009",
+      "value": 1180.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 개소",
+      "timestamp": "2010",
+      "value": 685.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 개소",
+      "timestamp": "2011",
+      "value": 694.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 개소",
+      "timestamp": "2012",
+      "value": 709.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 개소",
+      "timestamp": "2013",
+      "value": 712.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 개소",
+      "timestamp": "2014",
+      "value": 714.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 개소",
+      "timestamp": "2015",
+      "value": 722.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 개소",
+      "timestamp": "2016",
+      "value": 725.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 개소",
+      "timestamp": "2017",
+      "value": 725.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 개소",
+      "timestamp": "2018",
+      "value": 713.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 개소",
+      "timestamp": "2019",
+      "value": 727.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대구광역시 - 면수",
+      "timestamp": "2004",
+      "value": 36488.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "대구광역시 - 면수",
+      "timestamp": "2005",
+      "value": 38337.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "대구광역시 - 면수",
+      "timestamp": "2006",
+      "value": 39425.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "대구광역시 - 면수",
+      "timestamp": "2007",
+      "value": 40876.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "대구광역시 - 면수",
+      "timestamp": "2008",
+      "value": 39616.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "대구광역시 - 면수",
+      "timestamp": "2009",
+      "value": 41118.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "대구광역시 - 면수",
+      "timestamp": "2010",
+      "value": 29718.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "대구광역시 - 면수",
+      "timestamp": "2011",
+      "value": 30300.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "대구광역시 - 면수",
+      "timestamp": "2012",
+      "value": 31260.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "대구광역시 - 면수",
+      "timestamp": "2013",
+      "value": 31218.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "대구광역시 - 면수",
+      "timestamp": "2014",
+      "value": 31318.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "대구광역시 - 면수",
+      "timestamp": "2015",
+      "value": 31675.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "대구광역시 - 면수",
+      "timestamp": "2016",
+      "value": 31580.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "대구광역시 - 면수",
+      "timestamp": "2017",
+      "value": 31580.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "대구광역시 - 면수",
+      "timestamp": "2018",
+      "value": 31408.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "대구광역시 - 면수",
+      "timestamp": "2019",
+      "value": 29657.0,
+      "item_codes": {
+        "C1": "22"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "인천광역시 - 개소",
+      "timestamp": "2004",
+      "value": 655.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 개소",
+      "timestamp": "2005",
+      "value": 620.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 개소",
+      "timestamp": "2006",
+      "value": 643.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 개소",
+      "timestamp": "2007",
+      "value": 711.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 개소",
+      "timestamp": "2008",
+      "value": 752.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 개소",
+      "timestamp": "2009",
+      "value": 779.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 개소",
+      "timestamp": "2010",
+      "value": 834.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 개소",
+      "timestamp": "2011",
+      "value": 859.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 개소",
+      "timestamp": "2012",
+      "value": 951.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 개소",
+      "timestamp": "2013",
+      "value": 979.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 개소",
+      "timestamp": "2014",
+      "value": 965.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 개소",
+      "timestamp": "2015",
+      "value": 933.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 개소",
+      "timestamp": "2016",
+      "value": 819.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 개소",
+      "timestamp": "2017",
+      "value": 864.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 개소",
+      "timestamp": "2018",
+      "value": 911.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 개소",
+      "timestamp": "2019",
+      "value": 901.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "인천광역시 - 면수",
+      "timestamp": "2004",
+      "value": 31559.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "인천광역시 - 면수",
+      "timestamp": "2005",
+      "value": 32666.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "인천광역시 - 면수",
+      "timestamp": "2006",
+      "value": 33837.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "인천광역시 - 면수",
+      "timestamp": "2007",
+      "value": 37121.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "인천광역시 - 면수",
+      "timestamp": "2008",
+      "value": 38723.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "인천광역시 - 면수",
+      "timestamp": "2009",
+      "value": 39339.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "인천광역시 - 면수",
+      "timestamp": "2010",
+      "value": 40901.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "인천광역시 - 면수",
+      "timestamp": "2011",
+      "value": 42837.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "인천광역시 - 면수",
+      "timestamp": "2012",
+      "value": 48774.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "인천광역시 - 면수",
+      "timestamp": "2013",
+      "value": 49133.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "인천광역시 - 면수",
+      "timestamp": "2014",
+      "value": 48764.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "인천광역시 - 면수",
+      "timestamp": "2015",
+      "value": 48563.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "인천광역시 - 면수",
+      "timestamp": "2016",
+      "value": 42915.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "인천광역시 - 면수",
+      "timestamp": "2017",
+      "value": 45259.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "인천광역시 - 면수",
+      "timestamp": "2018",
+      "value": 47130.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "인천광역시 - 면수",
+      "timestamp": "2019",
+      "value": 47707.0,
+      "item_codes": {
+        "C1": "23"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "광주광역시 - 개소",
+      "timestamp": "2004",
+      "value": 555.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 개소",
+      "timestamp": "2005",
+      "value": 602.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 개소",
+      "timestamp": "2006",
+      "value": 589.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 개소",
+      "timestamp": "2007",
+      "value": 605.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 개소",
+      "timestamp": "2008",
+      "value": 620.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 개소",
+      "timestamp": "2009",
+      "value": 632.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 개소",
+      "timestamp": "2010",
+      "value": 639.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 개소",
+      "timestamp": "2011",
+      "value": 658.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 개소",
+      "timestamp": "2012",
+      "value": 684.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 개소",
+      "timestamp": "2013",
+      "value": 709.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 개소",
+      "timestamp": "2014",
+      "value": 749.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 개소",
+      "timestamp": "2015",
+      "value": 841.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 개소",
+      "timestamp": "2016",
+      "value": 875.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 개소",
+      "timestamp": "2017",
+      "value": 897.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 개소",
+      "timestamp": "2018",
+      "value": 740.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 개소",
+      "timestamp": "2019",
+      "value": 728.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "광주광역시 - 면수",
+      "timestamp": "2004",
+      "value": 19997.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "광주광역시 - 면수",
+      "timestamp": "2005",
+      "value": 26717.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "광주광역시 - 면수",
+      "timestamp": "2006",
+      "value": 26654.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "광주광역시 - 면수",
+      "timestamp": "2007",
+      "value": 27218.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "광주광역시 - 면수",
+      "timestamp": "2008",
+      "value": 27821.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "광주광역시 - 면수",
+      "timestamp": "2009",
+      "value": 28136.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "광주광역시 - 면수",
+      "timestamp": "2010",
+      "value": 29038.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "광주광역시 - 면수",
+      "timestamp": "2011",
+      "value": 30059.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "광주광역시 - 면수",
+      "timestamp": "2012",
+      "value": 30301.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "광주광역시 - 면수",
+      "timestamp": "2013",
+      "value": 29494.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "광주광역시 - 면수",
+      "timestamp": "2014",
+      "value": 34931.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "광주광역시 - 면수",
+      "timestamp": "2015",
+      "value": 36373.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "광주광역시 - 면수",
+      "timestamp": "2016",
+      "value": 38000.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "광주광역시 - 면수",
+      "timestamp": "2017",
+      "value": 36445.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "광주광역시 - 면수",
+      "timestamp": "2018",
+      "value": 28225.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "광주광역시 - 면수",
+      "timestamp": "2019",
+      "value": 30188.0,
+      "item_codes": {
+        "C1": "24"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "대전광역시 - 개소",
+      "timestamp": "2004",
+      "value": 459.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 개소",
+      "timestamp": "2005",
+      "value": 460.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 개소",
+      "timestamp": "2006",
+      "value": 459.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 개소",
+      "timestamp": "2007",
+      "value": 486.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 개소",
+      "timestamp": "2008",
+      "value": 515.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 개소",
+      "timestamp": "2009",
+      "value": 341.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 개소",
+      "timestamp": "2010",
+      "value": 358.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 개소",
+      "timestamp": "2011",
+      "value": 380.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 개소",
+      "timestamp": "2012",
+      "value": 390.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 개소",
+      "timestamp": "2013",
+      "value": 397.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 개소",
+      "timestamp": "2014",
+      "value": 494.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 개소",
+      "timestamp": "2015",
+      "value": 425.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 개소",
+      "timestamp": "2016",
+      "value": 430.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 개소",
+      "timestamp": "2017",
+      "value": 445.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 개소",
+      "timestamp": "2018",
+      "value": 522.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 개소",
+      "timestamp": "2019",
+      "value": 516.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 개소",
+      "timestamp": "2020",
+      "value": 527.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 개소",
+      "timestamp": "2021",
+      "value": 548.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "대전광역시 - 면수",
+      "timestamp": "2004",
+      "value": 23758.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "대전광역시 - 면수",
+      "timestamp": "2005",
+      "value": 24135.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "대전광역시 - 면수",
+      "timestamp": "2006",
+      "value": 25375.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "대전광역시 - 면수",
+      "timestamp": "2007",
+      "value": 26792.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "대전광역시 - 면수",
+      "timestamp": "2008",
+      "value": 27779.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "대전광역시 - 면수",
+      "timestamp": "2009",
+      "value": 23168.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "대전광역시 - 면수",
+      "timestamp": "2010",
+      "value": 23480.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "대전광역시 - 면수",
+      "timestamp": "2011",
+      "value": 25128.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "대전광역시 - 면수",
+      "timestamp": "2012",
+      "value": 26004.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "대전광역시 - 면수",
+      "timestamp": "2013",
+      "value": 23048.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "대전광역시 - 면수",
+      "timestamp": "2014",
+      "value": 29066.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "대전광역시 - 면수",
+      "timestamp": "2015",
+      "value": 24915.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "대전광역시 - 면수",
+      "timestamp": "2016",
+      "value": 24149.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "대전광역시 - 면수",
+      "timestamp": "2017",
+      "value": 24712.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "대전광역시 - 면수",
+      "timestamp": "2018",
+      "value": 27585.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "대전광역시 - 면수",
+      "timestamp": "2019",
+      "value": 27088.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "대전광역시 - 면수",
+      "timestamp": "2020",
+      "value": 27259.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "대전광역시 - 면수",
+      "timestamp": "2021",
+      "value": 28028.0,
+      "item_codes": {
+        "C1": "25"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "울산광역시 - 개소",
+      "timestamp": "2004",
+      "value": 624.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 개소",
+      "timestamp": "2005",
+      "value": 632.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 개소",
+      "timestamp": "2006",
+      "value": 1336.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 개소",
+      "timestamp": "2007",
+      "value": 1366.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 개소",
+      "timestamp": "2008",
+      "value": 1365.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 개소",
+      "timestamp": "2009",
+      "value": 780.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 개소",
+      "timestamp": "2010",
+      "value": 806.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 개소",
+      "timestamp": "2011",
+      "value": 777.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 개소",
+      "timestamp": "2012",
+      "value": 811.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 개소",
+      "timestamp": "2013",
+      "value": 793.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 개소",
+      "timestamp": "2014",
+      "value": 808.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 개소",
+      "timestamp": "2015",
+      "value": 909.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 개소",
+      "timestamp": "2016",
+      "value": 824.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 개소",
+      "timestamp": "2017",
+      "value": 840.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 개소",
+      "timestamp": "2018",
+      "value": 1057.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 개소",
+      "timestamp": "2019",
+      "value": 1069.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "울산광역시 - 면수",
+      "timestamp": "2004",
+      "value": 33341.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "울산광역시 - 면수",
+      "timestamp": "2005",
+      "value": 31492.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "울산광역시 - 면수",
+      "timestamp": "2006",
+      "value": 39120.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "울산광역시 - 면수",
+      "timestamp": "2007",
+      "value": 41125.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "울산광역시 - 면수",
+      "timestamp": "2008",
+      "value": 40710.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "울산광역시 - 면수",
+      "timestamp": "2009",
+      "value": 29985.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "울산광역시 - 면수",
+      "timestamp": "2010",
+      "value": 31392.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "울산광역시 - 면수",
+      "timestamp": "2011",
+      "value": 30643.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "울산광역시 - 면수",
+      "timestamp": "2012",
+      "value": 35302.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "울산광역시 - 면수",
+      "timestamp": "2013",
+      "value": 35724.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "울산광역시 - 면수",
+      "timestamp": "2014",
+      "value": 36632.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "울산광역시 - 면수",
+      "timestamp": "2015",
+      "value": 59286.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "울산광역시 - 면수",
+      "timestamp": "2016",
+      "value": 37031.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "울산광역시 - 면수",
+      "timestamp": "2017",
+      "value": 38674.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "울산광역시 - 면수",
+      "timestamp": "2018",
+      "value": 42533.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "울산광역시 - 면수",
+      "timestamp": "2019",
+      "value": 44336.0,
+      "item_codes": {
+        "C1": "26"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "세종특별자치시 - 개소",
+      "timestamp": "2012",
+      "value": 32.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "세종특별자치시 - 개소",
+      "timestamp": "2013",
+      "value": 22.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "세종특별자치시 - 개소",
+      "timestamp": "2014",
+      "value": 24.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "세종특별자치시 - 개소",
+      "timestamp": "2015",
+      "value": 32.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "세종특별자치시 - 개소",
+      "timestamp": "2016",
+      "value": 41.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "세종특별자치시 - 개소",
+      "timestamp": "2017",
+      "value": 44.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "세종특별자치시 - 개소",
+      "timestamp": "2018",
+      "value": 47.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "세종특별자치시 - 개소",
+      "timestamp": "2019",
+      "value": 77.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "세종특별자치시 - 면수",
+      "timestamp": "2012",
+      "value": 1092.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "세종특별자치시 - 면수",
+      "timestamp": "2013",
+      "value": 845.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "세종특별자치시 - 면수",
+      "timestamp": "2014",
+      "value": 697.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "세종특별자치시 - 면수",
+      "timestamp": "2015",
+      "value": 1082.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "세종특별자치시 - 면수",
+      "timestamp": "2016",
+      "value": 1564.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "세종특별자치시 - 면수",
+      "timestamp": "2017",
+      "value": 3167.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "세종특별자치시 - 면수",
+      "timestamp": "2018",
+      "value": 3431.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "세종특별자치시 - 면수",
+      "timestamp": "2019",
+      "value": 7589.0,
+      "item_codes": {
+        "C1": "29"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "경기도 - 개소",
+      "timestamp": "2004",
+      "value": 6398.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 개소",
+      "timestamp": "2005",
+      "value": 3334.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 개소",
+      "timestamp": "2006",
+      "value": 3603.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 개소",
+      "timestamp": "2007",
+      "value": 3016.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 개소",
+      "timestamp": "2008",
+      "value": 2835.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 개소",
+      "timestamp": "2009",
+      "value": 2593.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 개소",
+      "timestamp": "2010",
+      "value": 2645.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 개소",
+      "timestamp": "2011",
+      "value": 2700.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 개소",
+      "timestamp": "2012",
+      "value": 2804.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 개소",
+      "timestamp": "2013",
+      "value": 6041.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 개소",
+      "timestamp": "2014",
+      "value": 2954.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 개소",
+      "timestamp": "2015",
+      "value": 2616.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 개소",
+      "timestamp": "2016",
+      "value": 2977.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 개소",
+      "timestamp": "2017",
+      "value": 2995.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 개소",
+      "timestamp": "2018",
+      "value": 3053.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 개소",
+      "timestamp": "2019",
+      "value": 2947.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 개소",
+      "timestamp": "2020",
+      "value": 3026.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 개소",
+      "timestamp": "2021",
+      "value": 3253.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 개소",
+      "timestamp": "2022",
+      "value": 3217.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경기도 - 면수",
+      "timestamp": "2004",
+      "value": 238395.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "경기도 - 면수",
+      "timestamp": "2005",
+      "value": 237671.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "경기도 - 면수",
+      "timestamp": "2006",
+      "value": 261924.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "경기도 - 면수",
+      "timestamp": "2007",
+      "value": 259001.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "경기도 - 면수",
+      "timestamp": "2008",
+      "value": 198847.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "경기도 - 면수",
+      "timestamp": "2009",
+      "value": 198681.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "경기도 - 면수",
+      "timestamp": "2010",
+      "value": 205735.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "경기도 - 면수",
+      "timestamp": "2011",
+      "value": 189875.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "경기도 - 면수",
+      "timestamp": "2012",
+      "value": 206046.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "경기도 - 면수",
+      "timestamp": "2013",
+      "value": 227319.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "경기도 - 면수",
+      "timestamp": "2014",
+      "value": 209345.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "경기도 - 면수",
+      "timestamp": "2015",
+      "value": 187159.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "경기도 - 면수",
+      "timestamp": "2016",
+      "value": 209389.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "경기도 - 면수",
+      "timestamp": "2017",
+      "value": 216720.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "경기도 - 면수",
+      "timestamp": "2018",
+      "value": 202279.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "경기도 - 면수",
+      "timestamp": "2019",
+      "value": 202526.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "경기도 - 면수",
+      "timestamp": "2020",
+      "value": 213477.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "경기도 - 면수",
+      "timestamp": "2021",
+      "value": 219876.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "경기도 - 면수",
+      "timestamp": "2022",
+      "value": 227700.0,
+      "item_codes": {
+        "C1": "31"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "강원특별자치도 - 개소",
+      "timestamp": "2004",
+      "value": 649.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 개소",
+      "timestamp": "2005",
+      "value": 663.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 개소",
+      "timestamp": "2006",
+      "value": 670.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 개소",
+      "timestamp": "2007",
+      "value": 675.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 개소",
+      "timestamp": "2008",
+      "value": 722.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 개소",
+      "timestamp": "2009",
+      "value": 755.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 개소",
+      "timestamp": "2010",
+      "value": 777.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 개소",
+      "timestamp": "2011",
+      "value": 790.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 개소",
+      "timestamp": "2012",
+      "value": 814.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 개소",
+      "timestamp": "2013",
+      "value": 840.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 개소",
+      "timestamp": "2014",
+      "value": 919.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 개소",
+      "timestamp": "2015",
+      "value": 921.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 개소",
+      "timestamp": "2016",
+      "value": 985.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 개소",
+      "timestamp": "2017",
+      "value": 1065.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 개소",
+      "timestamp": "2018",
+      "value": 1053.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 개소",
+      "timestamp": "2019",
+      "value": 1177.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "강원특별자치도 - 면수",
+      "timestamp": "2004",
+      "value": 55531.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "강원특별자치도 - 면수",
+      "timestamp": "2005",
+      "value": 54102.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "강원특별자치도 - 면수",
+      "timestamp": "2006",
+      "value": 53571.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "강원특별자치도 - 면수",
+      "timestamp": "2007",
+      "value": 54058.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "강원특별자치도 - 면수",
+      "timestamp": "2008",
+      "value": 54551.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "강원특별자치도 - 면수",
+      "timestamp": "2009",
+      "value": 54323.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "강원특별자치도 - 면수",
+      "timestamp": "2010",
+      "value": 56919.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "강원특별자치도 - 면수",
+      "timestamp": "2011",
+      "value": 58025.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "강원특별자치도 - 면수",
+      "timestamp": "2012",
+      "value": 63468.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "강원특별자치도 - 면수",
+      "timestamp": "2013",
+      "value": 66446.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "강원특별자치도 - 면수",
+      "timestamp": "2014",
+      "value": 68009.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "강원특별자치도 - 면수",
+      "timestamp": "2015",
+      "value": 68445.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "강원특별자치도 - 면수",
+      "timestamp": "2016",
+      "value": 71480.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "강원특별자치도 - 면수",
+      "timestamp": "2017",
+      "value": 74676.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "강원특별자치도 - 면수",
+      "timestamp": "2018",
+      "value": 72638.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "강원특별자치도 - 면수",
+      "timestamp": "2019",
+      "value": 76263.0,
+      "item_codes": {
+        "C1": "32"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "충청북도 - 개소",
+      "timestamp": "2004",
+      "value": 573.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 개소",
+      "timestamp": "2005",
+      "value": 586.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 개소",
+      "timestamp": "2006",
+      "value": 673.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 개소",
+      "timestamp": "2007",
+      "value": 668.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 개소",
+      "timestamp": "2008",
+      "value": 676.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 개소",
+      "timestamp": "2009",
+      "value": 674.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 개소",
+      "timestamp": "2010",
+      "value": 678.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 개소",
+      "timestamp": "2011",
+      "value": 692.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 개소",
+      "timestamp": "2012",
+      "value": 703.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 개소",
+      "timestamp": "2013",
+      "value": 726.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 개소",
+      "timestamp": "2014",
+      "value": 1142.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 개소",
+      "timestamp": "2015",
+      "value": 596.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 개소",
+      "timestamp": "2016",
+      "value": 599.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 개소",
+      "timestamp": "2017",
+      "value": 642.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 개소",
+      "timestamp": "2018",
+      "value": 632.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 개소",
+      "timestamp": "2019",
+      "value": 558.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청북도 - 면수",
+      "timestamp": "2004",
+      "value": 34828.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "충청북도 - 면수",
+      "timestamp": "2005",
+      "value": 32959.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "충청북도 - 면수",
+      "timestamp": "2006",
+      "value": 41113.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "충청북도 - 면수",
+      "timestamp": "2007",
+      "value": 39494.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "충청북도 - 면수",
+      "timestamp": "2008",
+      "value": 39681.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "충청북도 - 면수",
+      "timestamp": "2009",
+      "value": 40673.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "충청북도 - 면수",
+      "timestamp": "2010",
+      "value": 40990.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "충청북도 - 면수",
+      "timestamp": "2011",
+      "value": 41114.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "충청북도 - 면수",
+      "timestamp": "2012",
+      "value": 43528.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "충청북도 - 면수",
+      "timestamp": "2013",
+      "value": 44953.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "충청북도 - 면수",
+      "timestamp": "2014",
+      "value": 36955.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "충청북도 - 면수",
+      "timestamp": "2015",
+      "value": 30544.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "충청북도 - 면수",
+      "timestamp": "2016",
+      "value": 31569.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "충청북도 - 면수",
+      "timestamp": "2017",
+      "value": 32585.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "충청북도 - 면수",
+      "timestamp": "2018",
+      "value": 33437.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "충청북도 - 면수",
+      "timestamp": "2019",
+      "value": 35086.0,
+      "item_codes": {
+        "C1": "33"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "충청남도 - 개소",
+      "timestamp": "2004",
+      "value": 681.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 개소",
+      "timestamp": "2005",
+      "value": 826.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 개소",
+      "timestamp": "2006",
+      "value": 665.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 개소",
+      "timestamp": "2007",
+      "value": 664.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 개소",
+      "timestamp": "2008",
+      "value": 698.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 개소",
+      "timestamp": "2009",
+      "value": 774.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 개소",
+      "timestamp": "2010",
+      "value": 593.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 개소",
+      "timestamp": "2011",
+      "value": 3753.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 개소",
+      "timestamp": "2012",
+      "value": 810.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 개소",
+      "timestamp": "2013",
+      "value": 845.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 개소",
+      "timestamp": "2014",
+      "value": 2524.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 개소",
+      "timestamp": "2015",
+      "value": 935.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 개소",
+      "timestamp": "2016",
+      "value": 907.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 개소",
+      "timestamp": "2017",
+      "value": 838.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 개소",
+      "timestamp": "2018",
+      "value": 935.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 개소",
+      "timestamp": "2019",
+      "value": 1018.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 개소",
+      "timestamp": "2020",
+      "value": 1179.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 개소",
+      "timestamp": "2021",
+      "value": 1233.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 개소",
+      "timestamp": "2022",
+      "value": 1121.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "충청남도 - 면수",
+      "timestamp": "2004",
+      "value": 44395.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "충청남도 - 면수",
+      "timestamp": "2005",
+      "value": 51464.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "충청남도 - 면수",
+      "timestamp": "2006",
+      "value": 41902.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "충청남도 - 면수",
+      "timestamp": "2007",
+      "value": 42932.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "충청남도 - 면수",
+      "timestamp": "2008",
+      "value": 46124.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "충청남도 - 면수",
+      "timestamp": "2009",
+      "value": 49498.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "충청남도 - 면수",
+      "timestamp": "2010",
+      "value": 39634.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "충청남도 - 면수",
+      "timestamp": "2011",
+      "value": 48181.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "충청남도 - 면수",
+      "timestamp": "2012",
+      "value": 52177.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "충청남도 - 면수",
+      "timestamp": "2013",
+      "value": 52539.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "충청남도 - 면수",
+      "timestamp": "2014",
+      "value": 58934.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "충청남도 - 면수",
+      "timestamp": "2015",
+      "value": 52603.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "충청남도 - 면수",
+      "timestamp": "2016",
+      "value": 54750.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "충청남도 - 면수",
+      "timestamp": "2017",
+      "value": 53205.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "충청남도 - 면수",
+      "timestamp": "2018",
+      "value": 56298.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "충청남도 - 면수",
+      "timestamp": "2019",
+      "value": 107718.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "충청남도 - 면수",
+      "timestamp": "2020",
+      "value": 109418.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "충청남도 - 면수",
+      "timestamp": "2021",
+      "value": 62847.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "충청남도 - 면수",
+      "timestamp": "2022",
+      "value": 62386.0,
+      "item_codes": {
+        "C1": "34"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "전북특별자치도 - 개소",
+      "timestamp": "2004",
+      "value": 929.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 개소",
+      "timestamp": "2005",
+      "value": 1002.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 개소",
+      "timestamp": "2006",
+      "value": 1114.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 개소",
+      "timestamp": "2007",
+      "value": 1208.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 개소",
+      "timestamp": "2008",
+      "value": 1248.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 개소",
+      "timestamp": "2009",
+      "value": 1277.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 개소",
+      "timestamp": "2010",
+      "value": 1311.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 개소",
+      "timestamp": "2011",
+      "value": 1351.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 개소",
+      "timestamp": "2012",
+      "value": 1244.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 개소",
+      "timestamp": "2013",
+      "value": 1322.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 개소",
+      "timestamp": "2014",
+      "value": 1308.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 개소",
+      "timestamp": "2015",
+      "value": 1367.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 개소",
+      "timestamp": "2016",
+      "value": 1350.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 개소",
+      "timestamp": "2017",
+      "value": 1366.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 개소",
+      "timestamp": "2018",
+      "value": 1373.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 개소",
+      "timestamp": "2019",
+      "value": 1336.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전북특별자치도 - 면수",
+      "timestamp": "2004",
+      "value": 51808.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "전북특별자치도 - 면수",
+      "timestamp": "2005",
+      "value": 58292.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "전북특별자치도 - 면수",
+      "timestamp": "2006",
+      "value": 61930.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "전북특별자치도 - 면수",
+      "timestamp": "2007",
+      "value": 65286.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "전북특별자치도 - 면수",
+      "timestamp": "2008",
+      "value": 67316.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "전북특별자치도 - 면수",
+      "timestamp": "2009",
+      "value": 72597.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "전북특별자치도 - 면수",
+      "timestamp": "2010",
+      "value": 73582.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "전북특별자치도 - 면수",
+      "timestamp": "2011",
+      "value": 77157.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "전북특별자치도 - 면수",
+      "timestamp": "2012",
+      "value": 71673.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "전북특별자치도 - 면수",
+      "timestamp": "2013",
+      "value": 72568.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "전북특별자치도 - 면수",
+      "timestamp": "2014",
+      "value": 71200.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "전북특별자치도 - 면수",
+      "timestamp": "2015",
+      "value": 79531.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "전북특별자치도 - 면수",
+      "timestamp": "2016",
+      "value": 78177.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "전북특별자치도 - 면수",
+      "timestamp": "2017",
+      "value": 80063.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "전북특별자치도 - 면수",
+      "timestamp": "2018",
+      "value": 79209.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "전북특별자치도 - 면수",
+      "timestamp": "2019",
+      "value": 75513.0,
+      "item_codes": {
+        "C1": "35"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "전라남도 - 개소",
+      "timestamp": "2004",
+      "value": 878.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 개소",
+      "timestamp": "2005",
+      "value": 824.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 개소",
+      "timestamp": "2006",
+      "value": 917.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 개소",
+      "timestamp": "2007",
+      "value": 984.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 개소",
+      "timestamp": "2008",
+      "value": 982.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 개소",
+      "timestamp": "2009",
+      "value": 1170.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 개소",
+      "timestamp": "2010",
+      "value": 1205.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 개소",
+      "timestamp": "2011",
+      "value": 1297.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 개소",
+      "timestamp": "2012",
+      "value": 1373.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 개소",
+      "timestamp": "2013",
+      "value": 1351.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 개소",
+      "timestamp": "2014",
+      "value": 1260.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 개소",
+      "timestamp": "2015",
+      "value": 1382.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 개소",
+      "timestamp": "2016",
+      "value": 1471.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 개소",
+      "timestamp": "2017",
+      "value": 1538.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 개소",
+      "timestamp": "2018",
+      "value": 1494.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 개소",
+      "timestamp": "2019",
+      "value": 1700.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "전라남도 - 면수",
+      "timestamp": "2004",
+      "value": 72967.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "전라남도 - 면수",
+      "timestamp": "2005",
+      "value": 70411.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "전라남도 - 면수",
+      "timestamp": "2006",
+      "value": 62399.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "전라남도 - 면수",
+      "timestamp": "2007",
+      "value": 68913.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "전라남도 - 면수",
+      "timestamp": "2008",
+      "value": 61563.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "전라남도 - 면수",
+      "timestamp": "2009",
+      "value": 81063.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "전라남도 - 면수",
+      "timestamp": "2010",
+      "value": 87829.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "전라남도 - 면수",
+      "timestamp": "2011",
+      "value": 89437.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "전라남도 - 면수",
+      "timestamp": "2012",
+      "value": 95269.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "전라남도 - 면수",
+      "timestamp": "2013",
+      "value": 91904.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "전라남도 - 면수",
+      "timestamp": "2014",
+      "value": 83481.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "전라남도 - 면수",
+      "timestamp": "2015",
+      "value": 91877.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "전라남도 - 면수",
+      "timestamp": "2016",
+      "value": 95273.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "전라남도 - 면수",
+      "timestamp": "2017",
+      "value": 97923.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "전라남도 - 면수",
+      "timestamp": "2018",
+      "value": 114422.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "전라남도 - 면수",
+      "timestamp": "2019",
+      "value": 112768.0,
+      "item_codes": {
+        "C1": "36"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "경상북도 - 개소",
+      "timestamp": "2004",
+      "value": 4175.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 개소",
+      "timestamp": "2005",
+      "value": 4056.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 개소",
+      "timestamp": "2006",
+      "value": 4042.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 개소",
+      "timestamp": "2007",
+      "value": 1476.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 개소",
+      "timestamp": "2008",
+      "value": 1492.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 개소",
+      "timestamp": "2009",
+      "value": 1580.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 개소",
+      "timestamp": "2010",
+      "value": 2534.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 개소",
+      "timestamp": "2011",
+      "value": 1570.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 개소",
+      "timestamp": "2012",
+      "value": 1327.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 개소",
+      "timestamp": "2013",
+      "value": 1200.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 개소",
+      "timestamp": "2014",
+      "value": 1150.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 개소",
+      "timestamp": "2015",
+      "value": 1109.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 개소",
+      "timestamp": "2016",
+      "value": 1381.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 개소",
+      "timestamp": "2017",
+      "value": 1345.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 개소",
+      "timestamp": "2018",
+      "value": 1451.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 개소",
+      "timestamp": "2019",
+      "value": 1361.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 개소",
+      "timestamp": "2020",
+      "value": 1699.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 개소",
+      "timestamp": "2021",
+      "value": 1511.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 개소",
+      "timestamp": "2022",
+      "value": 2077.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상북도 - 면수",
+      "timestamp": "2004",
+      "value": 80623.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "경상북도 - 면수",
+      "timestamp": "2005",
+      "value": 80195.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "경상북도 - 면수",
+      "timestamp": "2006",
+      "value": 77832.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "경상북도 - 면수",
+      "timestamp": "2007",
+      "value": 63595.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "경상북도 - 면수",
+      "timestamp": "2008",
+      "value": 64564.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "경상북도 - 면수",
+      "timestamp": "2009",
+      "value": 69388.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "경상북도 - 면수",
+      "timestamp": "2010",
+      "value": 68582.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "경상북도 - 면수",
+      "timestamp": "2011",
+      "value": 68769.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "경상북도 - 면수",
+      "timestamp": "2012",
+      "value": 67963.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "경상북도 - 면수",
+      "timestamp": "2013",
+      "value": 67917.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "경상북도 - 면수",
+      "timestamp": "2014",
+      "value": 70698.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "경상북도 - 면수",
+      "timestamp": "2015",
+      "value": 65124.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "경상북도 - 면수",
+      "timestamp": "2016",
+      "value": 64323.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "경상북도 - 면수",
+      "timestamp": "2017",
+      "value": 74978.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "경상북도 - 면수",
+      "timestamp": "2018",
+      "value": 78413.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "경상북도 - 면수",
+      "timestamp": "2019",
+      "value": 73638.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "경상북도 - 면수",
+      "timestamp": "2020",
+      "value": 85872.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "경상북도 - 면수",
+      "timestamp": "2021",
+      "value": 80621.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "경상북도 - 면수",
+      "timestamp": "2022",
+      "value": 94753.0,
+      "item_codes": {
+        "C1": "37"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "경상남도 - 개소",
+      "timestamp": "2004",
+      "value": 2013.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 개소",
+      "timestamp": "2005",
+      "value": 2098.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 개소",
+      "timestamp": "2006",
+      "value": 2143.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 개소",
+      "timestamp": "2007",
+      "value": 1963.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 개소",
+      "timestamp": "2008",
+      "value": 2065.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 개소",
+      "timestamp": "2009",
+      "value": 2265.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 개소",
+      "timestamp": "2010",
+      "value": 2195.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 개소",
+      "timestamp": "2011",
+      "value": 2226.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 개소",
+      "timestamp": "2012",
+      "value": 2343.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 개소",
+      "timestamp": "2013",
+      "value": 2358.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 개소",
+      "timestamp": "2014",
+      "value": 2399.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 개소",
+      "timestamp": "2015",
+      "value": 2378.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 개소",
+      "timestamp": "2016",
+      "value": 2375.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 개소",
+      "timestamp": "2017",
+      "value": 2380.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 개소",
+      "timestamp": "2018",
+      "value": 2527.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 개소",
+      "timestamp": "2019",
+      "value": 2601.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "경상남도 - 면수",
+      "timestamp": "2004",
+      "value": 103857.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "경상남도 - 면수",
+      "timestamp": "2005",
+      "value": 90381.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "경상남도 - 면수",
+      "timestamp": "2006",
+      "value": 94798.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "경상남도 - 면수",
+      "timestamp": "2007",
+      "value": 96122.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "경상남도 - 면수",
+      "timestamp": "2008",
+      "value": 99826.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "경상남도 - 면수",
+      "timestamp": "2009",
+      "value": 105707.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "경상남도 - 면수",
+      "timestamp": "2010",
+      "value": 98194.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "경상남도 - 면수",
+      "timestamp": "2011",
+      "value": 97923.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "경상남도 - 면수",
+      "timestamp": "2012",
+      "value": 100126.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "경상남도 - 면수",
+      "timestamp": "2013",
+      "value": 101711.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "경상남도 - 면수",
+      "timestamp": "2014",
+      "value": 109076.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "경상남도 - 면수",
+      "timestamp": "2015",
+      "value": 102538.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "경상남도 - 면수",
+      "timestamp": "2016",
+      "value": 111816.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "경상남도 - 면수",
+      "timestamp": "2017",
+      "value": 112578.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "경상남도 - 면수",
+      "timestamp": "2018",
+      "value": 113446.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "경상남도 - 면수",
+      "timestamp": "2019",
+      "value": 118349.0,
+      "item_codes": {
+        "C1": "38"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "제주특별자치도 - 개소",
+      "timestamp": "2004",
+      "value": 819.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 개소",
+      "timestamp": "2005",
+      "value": 880.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 개소",
+      "timestamp": "2006",
+      "value": 799.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 개소",
+      "timestamp": "2007",
+      "value": 849.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 개소",
+      "timestamp": "2008",
+      "value": 950.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 개소",
+      "timestamp": "2009",
+      "value": 730.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 개소",
+      "timestamp": "2010",
+      "value": 972.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 개소",
+      "timestamp": "2011",
+      "value": 929.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 개소",
+      "timestamp": "2012",
+      "value": 1006.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 개소",
+      "timestamp": "2013",
+      "value": 1010.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 개소",
+      "timestamp": "2014",
+      "value": 1027.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 개소",
+      "timestamp": "2015",
+      "value": 1112.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 개소",
+      "timestamp": "2016",
+      "value": 1122.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 개소",
+      "timestamp": "2017",
+      "value": 1205.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 개소",
+      "timestamp": "2018",
+      "value": 984.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 개소",
+      "timestamp": "2019",
+      "value": 1370.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T10"
+    },
+    {
+      "item": "제주특별자치도 - 면수",
+      "timestamp": "2004",
+      "value": 31260.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "제주특별자치도 - 면수",
+      "timestamp": "2005",
+      "value": 33727.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "제주특별자치도 - 면수",
+      "timestamp": "2006",
+      "value": 34012.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "제주특별자치도 - 면수",
+      "timestamp": "2007",
+      "value": 35872.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "제주특별자치도 - 면수",
+      "timestamp": "2008",
+      "value": 35827.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "제주특별자치도 - 면수",
+      "timestamp": "2009",
+      "value": 27488.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "제주특별자치도 - 면수",
+      "timestamp": "2010",
+      "value": 36219.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "제주특별자치도 - 면수",
+      "timestamp": "2011",
+      "value": 36079.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "제주특별자치도 - 면수",
+      "timestamp": "2012",
+      "value": 34277.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "제주특별자치도 - 면수",
+      "timestamp": "2013",
+      "value": 34302.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "제주특별자치도 - 면수",
+      "timestamp": "2014",
+      "value": 34752.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "제주특별자치도 - 면수",
+      "timestamp": "2015",
+      "value": 39215.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "제주특별자치도 - 면수",
+      "timestamp": "2016",
+      "value": 39840.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "제주특별자치도 - 면수",
+      "timestamp": "2017",
+      "value": 41391.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "제주특별자치도 - 면수",
+      "timestamp": "2018",
+      "value": 34297.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T20"
+    },
+    {
+      "item": "제주특별자치도 - 면수",
+      "timestamp": "2019",
+      "value": 44750.0,
+      "item_codes": {
+        "C1": "39"
+      },
+      "itm_id": "T20"
+    }
+  ]
+}
