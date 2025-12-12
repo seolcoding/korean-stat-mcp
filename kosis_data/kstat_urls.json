@@ -1,0 +1,23 @@
+[
+  {
+    "org_id": "101",
+    "tbl_id": "DT_1IN1503",
+    "stats_confm_no": "101001",
+    "kstat_url": "https://www.k-stat.go.kr/metasvc/msba100/statsdcdta?statsConfmNo=101001",
+    "name": "주민등록인구"
+  },
+  {
+    "org_id": "101",
+    "tbl_id": "DT_1B040A3",
+    "stats_confm_no": "110026",
+    "kstat_url": "https://www.k-stat.go.kr/metasvc/msba100/statsdcdta?statsConfmNo=110026",
+    "name": "총인구(인구총조사)"
+  },
+  {
+    "org_id": "101",
+    "tbl_id": "DT_1DA7002S",
+    "stats_confm_no": "101004",
+    "kstat_url": "https://www.k-stat.go.kr/metasvc/msba100/statsdcdta?statsConfmNo=101004",
+    "name": "성별 인구수"
+  }
+]
