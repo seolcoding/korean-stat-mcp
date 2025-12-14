@@ -52,7 +52,7 @@ class TestStatisticsSearch:
         """성공적인 검색."""
         responses.add(
             responses.GET,
-            "https://kosis.kr/openapi/statisticsList.do",
+            "https://kosis.kr/openapi/statisticsSearch.do",
             body=sample_search_response,
             status=200,
         )
@@ -69,7 +69,7 @@ class TestStatisticsSearch:
         """기관 필터링 검색."""
         responses.add(
             responses.GET,
-            "https://kosis.kr/openapi/statisticsList.do",
+            "https://kosis.kr/openapi/statisticsSearch.do",
             body=sample_search_response,
             status=200,
         )
@@ -85,7 +85,7 @@ class TestStatisticsSearch:
         """단일 결과 검색 (dict 반환을 list로 변환)."""
         responses.add(
             responses.GET,
-            "https://kosis.kr/openapi/statisticsList.do",
+            "https://kosis.kr/openapi/statisticsSearch.do",
             body=single_result_response,
             status=200,
         )
@@ -101,7 +101,7 @@ class TestStatisticsSearch:
         """검색 결과 없음 (API 에러 응답)."""
         responses.add(
             responses.GET,
-            "https://kosis.kr/openapi/statisticsList.do",
+            "https://kosis.kr/openapi/statisticsSearch.do",
             json={"errMsg": "데이터가 없습니다", "errCode": "ERR001"},
             status=200,
         )
@@ -115,7 +115,7 @@ class TestStatisticsSearch:
         """HTTP 에러 시 빈 리스트 반환."""
         responses.add(
             responses.GET,
-            "https://kosis.kr/openapi/statisticsList.do",
+            "https://kosis.kr/openapi/statisticsSearch.do",
             status=500,
         )
 
@@ -128,7 +128,7 @@ class TestStatisticsSearch:
         """요청에 API 키가 포함되어야 함."""
         responses.add(
             responses.GET,
-            "https://kosis.kr/openapi/statisticsList.do",
+            "https://kosis.kr/openapi/statisticsSearch.do",
             body=sample_search_response,
             status=200,
         )
@@ -151,7 +151,7 @@ class TestSearchByTableId:
         """테이블 ID 정확히 일치하는 결과 반환."""
         responses.add(
             responses.GET,
-            "https://kosis.kr/openapi/statisticsList.do",
+            "https://kosis.kr/openapi/statisticsSearch.do",
             body=sample_search_response,
             status=200,
         )
@@ -167,7 +167,7 @@ class TestSearchByTableId:
         """테이블을 찾지 못한 경우 None 반환."""
         responses.add(
             responses.GET,
-            "https://kosis.kr/openapi/statisticsList.do",
+            "https://kosis.kr/openapi/statisticsSearch.do",
             json={"errMsg": "데이터가 없습니다"},
             status=200,
         )

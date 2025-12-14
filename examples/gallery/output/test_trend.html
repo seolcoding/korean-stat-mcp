@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>인구 추이 분석</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+
+        .header h1 {
+            font-size: 2rem;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .header .subtitle {
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        .query-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            margin-top: 15px;
+            font-size: 0.9rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 16px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+
+        .card h2 {
+            font-size: 1.4rem;
+            color: #333;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .stat-item {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #667eea;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        .chart-container {
+            margin: 20px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        th {
+            background: #f8f9fa;
+            font-weight: 600;
+            color: #333;
+        }
+
+        tr:hover {
+            background: #f8f9fa;
+        }
+
+        .insight-box {
+            background: linear-gradient(135deg, #fff9c4 0%, #fff59d 100%);
+            padding: 20px;
+            border-radius: 12px;
+            margin: 15px 0;
+        }
+
+        .insight-box h3 {
+            color: #f57f17;
+            margin-bottom: 10px;
+        }
+
+        .footer {
+            text-align: center;
+            color: white;
+            padding: 20px;
+            font-size: 0.9rem;
+        }
+
+        .footer a {
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📊 인구 추이 분석</h1>
+            <p class="subtitle">KOSIS 데이터 기반 자동 생성 분석 보고서</p>
+        </div>
+
+
+        <div class="card">
+            <h2>📋 데이터 요약</h2>
+            <div class="query-badge">분석 요청: 전체 인구 추이 분석</div>
+            <div class="stats-grid" style="margin-top: 20px;">
+                <div class="stat-item">
+                    <div class="stat-value">12</div>
+                    <div class="stat-label">총 데이터 건수</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">4</div>
+                    <div class="stat-label">기간 (2020 ~ 2023)</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">3</div>
+                    <div class="stat-label">분류 항목</div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="card">
+            <h2>🔍 데이터 구조 탐색</h2>
+            <table>
+                <thead>
+                    <tr><th>필드명</th><th>데이터 타입</th><th>고유값 수</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>PRD_DE</td><td>object</td><td>4</td></tr><tr><td>C1_NM</td><td>object</td><td>3</td></tr><tr><td>DT</td><td>int64</td><td>12</td></tr><tr><td>ITM_NM</td><td>object</td><td>1</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+
+        <div class="card">
+            <h2>📊 부산 추이 분석</h2>
+            <table>
+                <thead>
+                    <tr><th>기간</th><th>값</th><th>변동률</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>2020</td><td>3,500,000</td><td style='color:gray'>+nan%</td></tr><tr><td>2021</td><td>3,400,000</td><td style='color:red'>-2.86%</td></tr><tr><td>2022</td><td>3,300,000</td><td style='color:red'>-2.94%</td></tr><tr><td>2023</td><td>3,200,000</td><td style='color:red'>-3.03%</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+
+        <div class="card">
+            <h2>📈 주요 통계</h2>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-value">20,766,667</div>
+                    <div class="stat-label">평균</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">3,200,000</div>
+                    <div class="stat-label">최소값</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">50,000,000</div>
+                    <div class="stat-label">최대값</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">21,213,089</div>
+                    <div class="stat-label">표준편차</div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="card">
+            <h2>📊 인터랙티브 시각화</h2>
+            <div class="chart-container"><div>                            <div id="219a114b-472f-4810-8b50-7db2318356f3" class="plotly-graph-div" style="height:500px; width:900px;"></div>            <script type="text/javascript">                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("219a114b-472f-4810-8b50-7db2318356f3")) {                    Plotly.newPlot(                        "219a114b-472f-4810-8b50-7db2318356f3",                        [{"hovertemplate":"C1_NM=전국\u003cbr\u003ePRD_DE=%{x}\u003cbr\u003eDT=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"전국","line":{"color":"#636efa","dash":"solid","shape":"linear"},"marker":{"symbol":"circle"},"mode":"lines+markers","name":"전국","orientation":"v","showlegend":true,"x":["2020","2021","2022","2023"],"xaxis":"x","y":{"dtype":"i4","bdata":"gPD6AmBP8wJArusCIA3kAg=="},"yaxis":"y","type":"scatter"},{"hovertemplate":"C1_NM=서울\u003cbr\u003ePRD_DE=%{x}\u003cbr\u003eDT=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"서울","line":{"color":"#EF553B","dash":"solid","shape":"linear"},"marker":{"symbol":"circle"},"mode":"lines+markers","name":"서울","orientation":"v","showlegend":true,"x":["2020","2021","2022","2023"],"xaxis":"x","y":{"dtype":"i4","bdata":"gJaYAECJlQAAfJIAwG6PAA=="},"yaxis":"y","type":"scatter"},{"hovertemplate":"C1_NM=부산\u003cbr\u003ePRD_DE=%{x}\u003cbr\u003eDT=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"부산","line":{"color":"#00cc96","dash":"solid","shape":"linear"},"marker":{"symbol":"circle"},"mode":"lines+markers","name":"부산","orientation":"v","showlegend":true,"x":["2020","2021","2022","2023"],"xaxis":"x","y":{"dtype":"i4","bdata":"4Gc1AEDhMwCgWjIAANQwAA=="},"yaxis":"y","type":"scatter"}],                        {"template":{"data":{"barpolar":[{"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"#C8D4E3","linecolor":"#C8D4E3","minorgridcolor":"#C8D4E3","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"#C8D4E3","linecolor":"#C8D4E3","minorgridcolor":"#C8D4E3","startlinecolor":"#2a3f5f"},"type":"carpet"}],"choropleth":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"choropleth"}],"contourcarpet":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"contourcarpet"}],"contour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"contour"}],"heatmap":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"heatmap"}],"histogram2dcontour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2dcontour"}],"histogram2d":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2d"}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"mesh3d":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"mesh3d"}],"parcoords":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"parcoords"}],"pie":[{"automargin":true,"type":"pie"}],"scatter3d":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatter3d"}],"scattercarpet":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattercarpet"}],"scattergeo":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergeo"}],"scattergl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergl"}],"scattermapbox":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattermapbox"}],"scattermap":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattermap"}],"scatterpolargl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolargl"}],"scatterpolar":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolar"}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"scatterternary":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterternary"}],"surface":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"surface"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}]},"layout":{"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"autotypenumbers":"strict","coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]],"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]},"colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"geo":{"bgcolor":"white","lakecolor":"white","landcolor":"white","showlakes":true,"showland":true,"subunitcolor":"#C8D4E3"},"hoverlabel":{"align":"left"},"hovermode":"closest","mapbox":{"style":"light"},"paper_bgcolor":"white","plot_bgcolor":"white","polar":{"angularaxis":{"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":""},"bgcolor":"white","radialaxis":{"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":""}},"scene":{"xaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"},"yaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"},"zaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"ternary":{"aaxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""},"baxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""},"bgcolor":"white","caxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""}},"title":{"x":0.05},"xaxis":{"automargin":true,"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":"","title":{"standoff":15},"zerolinecolor":"#EBF0F8","zerolinewidth":2},"yaxis":{"automargin":true,"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":"","title":{"standoff":15},"zerolinecolor":"#EBF0F8","zerolinewidth":2}}},"xaxis":{"anchor":"y","domain":[0.0,1.0],"title":{}},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{}},"legend":{"title":{"text":"C1_NM"},"tracegroupgap":0,"font":{"family":"Malgun Gothic, 맑은 고딕, Apple SD Gothic Neo, AppleGothic, NanumGothic, 나눔고딕, Noto Sans KR, sans-serif"}},"margin":{"t":60},"font":{"family":"Malgun Gothic, 맑은 고딕, Apple SD Gothic Neo, AppleGothic, NanumGothic, 나눔고딕, Noto Sans KR, sans-serif"},"title":{"font":{"size":18,"family":"Malgun Gothic, 맑은 고딕, Apple SD Gothic Neo, AppleGothic, NanumGothic, 나눔고딕, Noto Sans KR, sans-serif"},"text":"시계열 추이"},"hoverlabel":{"font":{"family":"Malgun Gothic, 맑은 고딕, Apple SD Gothic Neo, AppleGothic, NanumGothic, 나눔고딕, Noto Sans KR, sans-serif"}},"height":500,"width":900},                        {"responsive": true}                    )                };            </script>        </div></div>
+        </div>
+
+
+        <div class="footer">
+            <p>Generated by KOSIS Data Processor | 2025-12-13 05:19:18</p>
+            <p>Data Source: <a href="https://kosis.kr" target="_blank">KOSIS (국가통계포털)</a></p>
+        </div>
+    </div>
+</body>
+</html>

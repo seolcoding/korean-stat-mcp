@@ -76,6 +76,7 @@ class StatisticsSearch(KosisBaseClient):
         org_id: Optional[str] = None,
         start_date: Optional[str] = None,
         end_date: Optional[str] = None,
+        result_count: int = 100,
     ) -> List[Dict[str, Any]]:
         """
         통계표를 키워드로 검색합니다.
@@ -104,6 +105,9 @@ class StatisticsSearch(KosisBaseClient):
             end_date: 수록기간 종료일 필터 (선택사항).
                       형식: "YYYY" 또는 "YYYYMM"
                       예: "2023", "202312"
+
+            result_count: 최대 결과 개수 (기본값: 100, 최대: 5000).
+                          검색 결과가 많을 경우 제한하여 성능 향상.
 
         Returns:
             통계표 목록. 각 항목의 구조:
@@ -169,6 +173,7 @@ class StatisticsSearch(KosisBaseClient):
             "method": "getList",
             "format": "json",
             "searchNm": keyword.strip(),
+            "resultCount": str(min(result_count, 5000)),  # 최대 5000
         }
 
         if org_id:
@@ -182,7 +187,7 @@ class StatisticsSearch(KosisBaseClient):
 
         logger.info(f"통계표 검색: '{keyword}'" + (f" (기관: {org_id})" if org_id else ""))
 
-        result = self._request("GET", Endpoints.STATISTICS_LIST, params)
+        result = self._request("GET", Endpoints.STATISTICS_SEARCH, params)
 
         if result is None:
             logger.debug("검색 결과 없음 또는 API 에러")
@@ -240,7 +245,7 @@ class StatisticsSearch(KosisBaseClient):
 
         logger.debug(f"테이블 ID 검색: {tbl_id}")
 
-        result = self._request("GET", Endpoints.STATISTICS_LIST, params)
+        result = self._request("GET", Endpoints.STATISTICS_SEARCH, params)
 
         if result is None:
             return None

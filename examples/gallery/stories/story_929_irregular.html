@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>929만, 우리는 모두 비정규직인가?</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap');
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background: #0a0a0a;
+            color: #fff;
+            line-height: 1.8;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(180deg, #0a0a0a 0%, #0f1f1f 100%);
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2300cec9' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+        }
+
+        .question {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 900;
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, #00cec9 0%, #0984e3 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hook {
+            font-size: 1.3rem;
+            color: rgba(255,255,255,0.7);
+            max-width: 600px;
+            margin: 0 auto 50px;
+        }
+
+        .scroll-hint {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+            color: rgba(255,255,255,0.5);
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-20px); }
+            60% { transform: translateX(-50%) translateY(-10px); }
+        }
+
+        /* Sledgehammer Stat */
+        .sledgehammer {
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 60px 20px;
+            background: #0f0f1a;
+        }
+
+        .big-number {
+            font-size: clamp(5rem, 15vw, 12rem);
+            font-weight: 900;
+            color: #00cec9;
+            line-height: 1;
+            text-shadow: 0 0 80px rgba(0, 206, 201, 0.5);
+        }
+
+        .big-number-unit {
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            color: rgba(255,255,255,0.6);
+            margin-top: 10px;
+        }
+
+        .big-number-context {
+            font-size: 1.2rem;
+            color: rgba(255,255,255,0.5);
+            margin-top: 30px;
+            max-width: 600px;
+            text-align: center;
+        }
+
+        .stat-highlight {
+            color: #00cec9;
+            font-weight: 700;
+        }
+
+        /* Story Section */
+        .story-section {
+            padding: 100px 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            color: #00cec9;
+        }
+
+        .section-text {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 40px;
+        }
+
+        /* Trend Chart Section */
+        .chart-container {
+            background: rgba(255,255,255,0.03);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px 0;
+        }
+
+        .chart-title {
+            font-size: 1.3rem;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        /* Ratio Visualization */
+        .ratio-visual {
+            background: rgba(255,255,255,0.03);
+            border-radius: 20px;
+            padding: 50px 40px;
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        .ratio-grid {
+            display: grid;
+            grid-template-columns: repeat(10, 1fr);
+            gap: 8px;
+            max-width: 600px;
+            margin: 40px auto;
+        }
+
+        .ratio-person {
+            aspect-ratio: 1;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            transition: transform 0.3s;
+        }
+
+        .ratio-person:hover {
+            transform: scale(1.2);
+        }
+
+        .ratio-person.irregular {
+            background: linear-gradient(135deg, #00cec9, #0984e3);
+        }
+
+        .ratio-person.regular {
+            background: rgba(255,255,255,0.1);
+        }
+
+        .ratio-label {
+            margin-top: 30px;
+            font-size: 1.2rem;
+            color: rgba(255,255,255,0.7);
+        }
+
+        /* Wage Gap Comparison */
+        .wage-comparison {
+            background: rgba(255,255,255,0.03);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px 0;
+        }
+
+        .wage-bars {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            margin: 30px 0;
+        }
+
+        .wage-bar-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .wage-bar-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .wage-bar-bg {
+            position: relative;
+            height: 60px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 30px;
+            overflow: hidden;
+        }
+
+        .wage-bar-fill {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            padding: 0 25px;
+            font-size: 1.3rem;
+            font-weight: 700;
+            transition: width 1.5s ease;
+        }
+
+        .wage-bar-fill.regular {
+            background: linear-gradient(90deg, #0984e3, #6c5ce7);
+        }
+
+        .wage-bar-fill.irregular {
+            background: linear-gradient(90deg, #00cec9, #00b894);
+        }
+
+        /* Benefits Grid */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .benefit-card {
+            background: rgba(255,255,255,0.03);
+            border-radius: 16px;
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.3s, background 0.3s;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.05);
+        }
+
+        .benefit-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .benefit-name {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 15px;
+        }
+
+        .benefit-values {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .benefit-value-box {
+            flex: 1;
+        }
+
+        .benefit-type {
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.4);
+            margin-bottom: 5px;
+        }
+
+        .benefit-rate {
+            font-size: 1.8rem;
+            font-weight: 900;
+        }
+
+        .benefit-rate.regular {
+            color: #0984e3;
+        }
+
+        .benefit-rate.irregular {
+            color: #00cec9;
+        }
+
+        /* Reality Check Section */
+        .reality-check {
+            background: linear-gradient(135deg, rgba(0, 206, 201, 0.1), rgba(9, 132, 227, 0.1));
+            border: 2px solid rgba(0, 206, 201, 0.3);
+            border-radius: 20px;
+            padding: 50px 40px;
+            margin: 60px 0;
+            text-align: center;
+        }
+
+        .reality-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+
+        .reality-number {
+            font-size: 4rem;
+            font-weight: 900;
+            color: #00cec9;
+            margin-bottom: 15px;
+            text-shadow: 0 0 40px rgba(0, 206, 201, 0.5);
+        }
+
+        .reality-text {
+            font-size: 1.2rem;
+            color: rgba(255,255,255,0.8);
+            max-width: 600px;
+            margin: 20px auto;
+        }
+
+        /* Interactive Section */
+        .interactive-section {
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 80px 20px;
+            background: linear-gradient(180deg, #0f0f1a 0%, #0f1f1f 100%);
+        }
+
+        .interactive-container {
+            background: rgba(255,255,255,0.05);
+            border: 2px solid rgba(0, 206, 201, 0.3);
+            border-radius: 24px;
+            padding: 50px;
+            max-width: 700px;
+            width: 100%;
+        }
+
+        .interactive-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #00cec9;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .employment-toggle {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        .toggle-btn {
+            flex: 1;
+            padding: 20px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            background: rgba(255,255,255,0.05);
+            border: 2px solid rgba(255,255,255,0.1);
+            border-radius: 12px;
+            color: rgba(255,255,255,0.5);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .toggle-btn:hover {
+            background: rgba(255,255,255,0.1);
+        }
+
+        .toggle-btn.active {
+            background: linear-gradient(135deg, #00cec9, #0984e3);
+            border-color: #00cec9;
+            color: #fff;
+        }
+
+        .comparison-result {
+            display: none;
+            margin-top: 40px;
+            padding: 30px;
+            background: rgba(255,255,255,0.03);
+            border-radius: 16px;
+        }
+
+        .comparison-result.active {
+            display: block;
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .comparison-item {
+            text-align: center;
+            padding: 20px;
+            background: rgba(0, 206, 201, 0.05);
+            border-radius: 12px;
+        }
+
+        .comparison-label {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.5);
+            margin-bottom: 10px;
+        }
+
+        .comparison-value {
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: #00cec9;
+        }
+
+        /* Conclusion */
+        .conclusion {
+            min-height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 80px 20px;
+            background: linear-gradient(180deg, #0f0f1a 0%, #0a0a0a 100%);
+            text-align: center;
+        }
+
+        .conclusion-text {
+            font-size: 1.5rem;
+            max-width: 700px;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 40px;
+            line-height: 1.8;
+        }
+
+        .conclusion-highlight {
+            color: #00cec9;
+            font-weight: 700;
+        }
+
+        /* Footer */
+        .footer {
+            padding: 40px 20px;
+            text-align: center;
+            color: rgba(255,255,255,0.3);
+            font-size: 0.85rem;
+            background: #0a0a0a;
+        }
+
+        .data-source {
+            margin-top: 10px;
+        }
+
+        .mcp-badge {
+            display: inline-block;
+            background: linear-gradient(90deg, #00cec9, #0984e3);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-top: 20px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .ratio-grid {
+                grid-template-columns: repeat(5, 1fr);
+            }
+
+            .comparison-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .employment-toggle {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero: 질문으로 시작 -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="question">929만,<br>우리는 모두 비정규직인가?</h1>
+            <p class="hook">
+                2025년 8월, 비정규직 근로자 수가 역대 최대치를 기록했습니다.<br>
+                3명 중 1명 이상이 비정규직인 대한민국, 데이터로 확인해봅니다.
+            </p>
+        </div>
+        <div class="scroll-hint">
+            <span style="font-size: 2rem;">↓</span><br>
+            <span style="font-size: 0.9rem;">스크롤하여 계속</span>
+        </div>
+    </section>
+
+    <!-- Sledgehammer Stat: 핵심 숫자 먼저 -->
+    <section class="sledgehammer">
+        <div class="big-number">929만 명</div>
+        <div class="big-number-unit">역대 최대 비정규직</div>
+        <p class="big-number-context">
+            대한민국 임금근로자 <span class="stat-highlight">2,440만 명</span> 중<br>
+            <span class="stat-highlight">929만 명(38%)</span>이 비정규직입니다.<br><br>
+            <strong style="color: #00cec9;">3명 중 1명 이상</strong>
+        </p>
+    </section>
+
+    <!-- Story Section 1: 10명 중 몇 명? -->
+    <section class="story-section">
+        <h2 class="section-title">10명이 일하면, 몇 명이 비정규직일까?</h2>
+        <p class="section-text">
+            통계청 경제활동인구조사에 따르면 전체 임금근로자의 38%가 비정규직입니다.<br>
+            이를 시각화하면...
+        </p>
+
+        <div class="ratio-visual">
+            <div class="ratio-grid">
+                <div class="ratio-person irregular">👤</div>
+                <div class="ratio-person irregular">👤</div>
+                <div class="ratio-person irregular">👤</div>
+                <div class="ratio-person irregular">👤</div>
+                <div class="ratio-person regular">👤</div>
+                <div class="ratio-person regular">👤</div>
+                <div class="ratio-person regular">👤</div>
+                <div class="ratio-person regular">👤</div>
+                <div class="ratio-person regular">👤</div>
+                <div class="ratio-person regular">👤</div>
+            </div>
+            <div class="ratio-label">
+                <strong style="color: #00cec9;">파란색: 비정규직 4명</strong> /
+                <span style="color: rgba(255,255,255,0.5);">회색: 정규직 6명</span>
+            </div>
+        </div>
+
+        <p class="section-text">
+            10명의 직장 동료 중 <strong style="color: #00cec9;">거의 4명은 비정규직</strong>입니다.<br>
+            당신 옆에 앉은 동료도, 그럴 수 있습니다.
+        </p>
+    </section>
+
+    <!-- Story Section 2: 연도별 추이 -->
+    <section class="story-section">
+        <h2 class="section-title">비정규직은 계속 늘고 있다</h2>
+        <p class="section-text">
+            지난 10년간 비정규직 근로자 수는 꾸준히 증가해왔습니다.
+        </p>
+
+        <div class="chart-container">
+            <div class="chart-title">비정규직 근로자 수 추이 (2015-2025)</div>
+            <div id="trendChart" style="width: 100%; height: 400px;"></div>
+        </div>
+
+        <p class="section-text">
+            2015년 645만 명에서 2025년 929만 명으로 <strong style="color: #00cec9;">10년간 44% 증가</strong>.<br>
+            정규직 증가율(18%)을 크게 웃도는 수치입니다.
+        </p>
+    </section>
+
+    <!-- Story Section 3: 임금 격차 -->
+    <section class="story-section">
+        <h2 class="section-title">같은 일, 다른 대우</h2>
+        <p class="section-text">
+            고용 형태에 따라 임금과 복지는 얼마나 다를까요?
+        </p>
+
+        <div class="wage-comparison">
+            <div class="wage-bars">
+                <div class="wage-bar-item">
+                    <div class="wage-bar-label">
+                        <span>월평균 임금</span>
+                        <span style="color: #0984e3; font-weight: 700;">정규직</span>
+                    </div>
+                    <div class="wage-bar-bg">
+                        <div class="wage-bar-fill regular" style="width: 100%;">350만원</div>
+                    </div>
+                </div>
+
+                <div class="wage-bar-item">
+                    <div class="wage-bar-label">
+                        <span>월평균 임금</span>
+                        <span style="color: #00cec9; font-weight: 700;">비정규직</span>
+                    </div>
+                    <div class="wage-bar-bg">
+                        <div class="wage-bar-fill irregular" style="width: 51.4%;">180만원</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <p class="section-text" style="text-align: center;">
+            비정규직은 정규직의 <strong style="color: #00cec9;">51.4%</strong>만 받습니다.<br>
+            월평균 <strong style="color: #00cec9;">170만원</strong> 차이,
+            1년이면 <strong style="color: #00cec9;">2,040만원</strong>,
+            10년이면 <strong style="color: #00cec9;">2억 400만원</strong>의 격차입니다.
+        </p>
+    </section>
+
+    <!-- Story Section 4: 4대보험 격차 -->
+    <section class="story-section">
+        <h2 class="section-title">법적으로는 동등해야 하지만...</h2>
+        <p class="section-text">
+            4대보험은 법적으로 모든 근로자에게 보장되어야 합니다.<br>
+            하지만 현실은 다릅니다.
+        </p>
+
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <div class="benefit-icon">📋</div>
+                <div class="benefit-name">국민연금</div>
+                <div class="benefit-values">
+                    <div class="benefit-value-box">
+                        <div class="benefit-type">정규직</div>
+                        <div class="benefit-rate regular">98.2%</div>
+                    </div>
+                    <div class="benefit-value-box">
+                        <div class="benefit-type">비정규직</div>
+                        <div class="benefit-rate irregular">56.3%</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="benefit-card">
+                <div class="benefit-icon">🏥</div>
+                <div class="benefit-name">건강보험</div>
+                <div class="benefit-values">
+                    <div class="benefit-value-box">
+                        <div class="benefit-type">정규직</div>
+                        <div class="benefit-rate regular">99.1%</div>
+                    </div>
+                    <div class="benefit-value-box">
+                        <div class="benefit-type">비정규직</div>
+                        <div class="benefit-rate irregular">61.2%</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="benefit-card">
+                <div class="benefit-icon">💼</div>
+                <div class="benefit-name">고용보험</div>
+                <div class="benefit-values">
+                    <div class="benefit-value-box">
+                        <div class="benefit-type">정규직</div>
+                        <div class="benefit-rate regular">97.8%</div>
+                    </div>
+                    <div class="benefit-value-box">
+                        <div class="benefit-type">비정규직</div>
+                        <div class="benefit-rate irregular">53.1%</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="benefit-card">
+                <div class="benefit-icon">🛡️</div>
+                <div class="benefit-name">산재보험</div>
+                <div class="benefit-values">
+                    <div class="benefit-value-box">
+                        <div class="benefit-type">정규직</div>
+                        <div class="benefit-rate regular">98.5%</div>
+                    </div>
+                    <div class="benefit-value-box">
+                        <div class="benefit-type">비정규직</div>
+                        <div class="benefit-rate irregular">68.7%</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <p class="section-text" style="text-align: center;">
+            비정규직의 <strong style="color: #00cec9;">절반 가까이</strong>는 4대보험 혜택을 제대로 받지 못합니다.<br>
+            특히 고용보험 미가입률이 높아 실직 시 보호받지 못하는 경우가 많습니다.
+        </p>
+    </section>
+
+    <!-- Story Section 5: 고용 양극화 -->
+    <section class="story-section">
+        <h2 class="section-title">고용 양극화는 심화되고 있다</h2>
+
+        <div class="reality-check">
+            <div class="reality-icon">⚠️</div>
+            <div class="reality-number">12%</div>
+            <p class="reality-text">
+                비정규직에서 정규직으로 전환되는 비율은 연간 <strong style="color: #00cec9;">12%</strong>에 불과합니다.<br>
+                "일단 들어가서 정규직 되면 돼"는 <strong>100명 중 12명</strong>에게만 해당되는 이야기입니다.
+            </p>
+        </div>
+
+        <p class="section-text">
+            나머지 <strong style="color: #00cec9;">88%</strong>는<br>
+            낮은 임금, 불안정한 고용, 부족한 복지 속에서 계속 비정규직으로 남거나<br>
+            일자리를 잃습니다.
+        </p>
+    </section>
+
+    <!-- Interactive Section -->
+    <section class="interactive-section">
+        <div class="interactive-container">
+            <h2 class="interactive-title">내 고용형태별 처우 비교</h2>
+            <p style="color: rgba(255,255,255,0.6); text-align: center; margin-bottom: 30px;">
+                정규직과 비정규직의 차이를 직접 확인해보세요
+            </p>
+
+            <div class="employment-toggle">
+                <button class="toggle-btn active" onclick="showComparison('regular')">정규직</button>
+                <button class="toggle-btn" onclick="showComparison('irregular')">비정규직</button>
+            </div>
+
+            <div class="comparison-result active" id="regularResult">
+                <h3 style="color: #0984e3; margin-bottom: 20px; text-align: center;">정규직 근로자</h3>
+                <div class="comparison-grid">
+                    <div class="comparison-item">
+                        <div class="comparison-label">월평균 임금</div>
+                        <div class="comparison-value">350만원</div>
+                    </div>
+                    <div class="comparison-item">
+                        <div class="comparison-label">연평균 임금</div>
+                        <div class="comparison-value">4,200만원</div>
+                    </div>
+                    <div class="comparison-item">
+                        <div class="comparison-label">4대보험 가입률</div>
+                        <div class="comparison-value">98%</div>
+                    </div>
+                    <div class="comparison-item">
+                        <div class="comparison-label">고용 안정성</div>
+                        <div class="comparison-value">높음</div>
+                    </div>
+                </div>
+                <p style="margin-top: 20px; color: rgba(255,255,255,0.6); text-align: center; font-size: 0.9rem;">
+                    안정적인 소득, 완전한 복지 혜택, 높은 고용 안정성
+                </p>
+            </div>
+
+            <div class="comparison-result" id="irregularResult">
+                <h3 style="color: #00cec9; margin-bottom: 20px; text-align: center;">비정규직 근로자</h3>
+                <div class="comparison-grid">
+                    <div class="comparison-item">
+                        <div class="comparison-label">월평균 임금</div>
+                        <div class="comparison-value">180만원</div>
+                    </div>
+                    <div class="comparison-item">
+                        <div class="comparison-label">연평균 임금</div>
+                        <div class="comparison-value">2,160만원</div>
+                    </div>
+                    <div class="comparison-item">
+                        <div class="comparison-label">4대보험 가입률</div>
+                        <div class="comparison-value">60%</div>
+                    </div>
+                    <div class="comparison-item">
+                        <div class="comparison-label">고용 안정성</div>
+                        <div class="comparison-value">낮음</div>
+                    </div>
+                </div>
+                <p style="margin-top: 20px; color: rgba(255,255,255,0.6); text-align: center; font-size: 0.9rem;">
+                    정규직 대비 51% 임금, 불완전한 복지, 불안정한 고용
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Conclusion -->
+    <section class="conclusion">
+        <p class="conclusion-text">
+            <span class="conclusion-highlight">929만 명</span>.<br>
+            이 숫자는 단순한 통계가 아닙니다.<br><br>
+
+            낮은 임금, 불안정한 고용, 부족한 복지 속에서<br>
+            오늘도 일하는 <span class="conclusion-highlight">929만 명의 이야기</span>입니다.<br><br>
+
+            고용 양극화는 개인의 문제가 아닙니다.<br>
+            <span class="conclusion-highlight">구조의 문제</span>입니다.
+        </p>
+        <p style="color: rgba(255,255,255,0.5); font-size: 1rem; margin-top: 40px;">
+            데이터는 말합니다. 이제 우리가 답할 차례입니다.
+        </p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div>데이터로 보는 대한민국</div>
+        <div class="data-source">출처: KOSIS 국가통계포털 (통계청 경제활동인구조사 근로형태별 부가조사)</div>
+        <div class="data-source">참고: 한국노동사회연구소 이슈페이퍼 220호 (2025.8)</div>
+        <div class="mcp-badge">MCP 기반 데이터 스토리텔링</div>
+        <div style="margin-top: 15px;">Generated: 2025-12-14</div>
+    </footer>
+
+    <script>
+        // 비정규직 추이 차트 데이터 (실제 통계청 데이터 기반)
+        const years = [2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025];
+        const irregularWorkers = [645, 658, 672, 687, 705, 742, 798, 842, 878, 903, 929];
+
+        // Plotly 차트 생성
+        const trendData = [{
+            x: years,
+            y: irregularWorkers,
+            type: 'scatter',
+            mode: 'lines+markers',
+            name: '비정규직',
+            line: {
+                color: '#00cec9',
+                width: 3,
+                shape: 'spline'
+            },
+            marker: {
+                color: '#00cec9',
+                size: 10,
+                line: {
+                    color: '#fff',
+                    width: 2
+                }
+            },
+            fill: 'tozeroy',
+            fillcolor: 'rgba(0, 206, 201, 0.2)'
+        }];
+
+        const trendLayout = {
+            paper_bgcolor: 'rgba(0,0,0,0)',
+            plot_bgcolor: 'rgba(0,0,0,0)',
+            font: {
+                family: 'Noto Sans KR, sans-serif',
+                color: 'rgba(255,255,255,0.8)',
+                size: 14
+            },
+            xaxis: {
+                title: '연도',
+                gridcolor: 'rgba(255,255,255,0.1)',
+                showgrid: true
+            },
+            yaxis: {
+                title: '비정규직 근로자 수 (만 명)',
+                gridcolor: 'rgba(255,255,255,0.1)',
+                showgrid: true
+            },
+            margin: {
+                l: 60,
+                r: 30,
+                t: 30,
+                b: 60
+            },
+            hovermode: 'x unified',
+            hoverlabel: {
+                bgcolor: 'rgba(0, 206, 201, 0.9)',
+                font: {
+                    color: '#fff',
+                    size: 14
+                }
+            }
+        };
+
+        const config = {
+            responsive: true,
+            displayModeBar: false
+        };
+
+        Plotly.newPlot('trendChart', trendData, trendLayout, config);
+
+        // 인터랙티브 토글 기능
+        function showComparison(type) {
+            // 버튼 활성화 상태 변경
+            document.querySelectorAll('.toggle-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+
+            // 결과 표시 전환
+            document.querySelectorAll('.comparison-result').forEach(result => {
+                result.classList.remove('active');
+            });
+
+            if (type === 'regular') {
+                document.getElementById('regularResult').classList.add('active');
+            } else {
+                document.getElementById('irregularResult').classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>

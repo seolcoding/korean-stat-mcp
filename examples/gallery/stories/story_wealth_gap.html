@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2030 vs 5060, 자산 격차는 얼마?</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap');
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background: #0a0a0a;
+            color: #fff;
+            line-height: 1.8;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(180deg, #0a0a0a 0%, #1a1620 100%);
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+        }
+
+        .question {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 900;
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, #2D3436 0%, #81ECEC 50%, #74B9FF 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hook {
+            font-size: 1.3rem;
+            color: rgba(255,255,255,0.7);
+            max-width: 600px;
+            margin: 0 auto 50px;
+        }
+
+        .scroll-hint {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+            color: rgba(255,255,255,0.5);
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-20px); }
+            60% { transform: translateX(-50%) translateY(-10px); }
+        }
+
+        /* Sledgehammer Stat */
+        .sledgehammer {
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 60px 20px;
+            background: #0f0f1a;
+        }
+
+        .big-compare {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-bottom: 50px;
+        }
+
+        .compare-box {
+            padding: 40px;
+            border-radius: 20px;
+            min-width: 250px;
+        }
+
+        .compare-label {
+            font-size: 1.2rem;
+            color: rgba(255,255,255,0.6);
+            margin-bottom: 15px;
+        }
+
+        .compare-value {
+            font-size: clamp(3rem, 8vw, 5rem);
+            font-weight: 900;
+        }
+
+        .compare-box.young {
+            background: linear-gradient(135deg, rgba(129, 236, 236, 0.1), rgba(116, 185, 255, 0.1));
+            border: 2px solid #81ECEC;
+        }
+
+        .compare-box.young .compare-value {
+            color: #81ECEC;
+        }
+
+        .compare-box.old {
+            background: linear-gradient(135deg, rgba(45, 52, 54, 0.3), rgba(99, 110, 114, 0.2));
+            border: 2px solid #2D3436;
+        }
+
+        .compare-box.old .compare-value {
+            color: #2D3436;
+            text-shadow: 0 0 20px rgba(45, 52, 54, 0.5);
+        }
+
+        .gap-highlight {
+            font-size: 1.5rem;
+            color: rgba(255,255,255,0.8);
+            text-align: center;
+            padding: 30px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 16px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .gap-number {
+            font-size: 3rem;
+            font-weight: 900;
+            color: #2D3436;
+            text-shadow: 0 0 30px rgba(45, 52, 54, 0.8);
+        }
+
+        /* Story Section */
+        .story-section {
+            padding: 100px 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            color: #81ECEC;
+        }
+
+        .section-text {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 40px;
+        }
+
+        /* Composition Comparison */
+        .composition-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .composition-card {
+            background: rgba(255,255,255,0.03);
+            border-radius: 20px;
+            padding: 30px;
+        }
+
+        .composition-card.young {
+            border: 2px solid #81ECEC;
+        }
+
+        .composition-card.old {
+            border: 2px solid #2D3436;
+        }
+
+        .composition-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .composition-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .composition-item:last-child {
+            border-bottom: none;
+        }
+
+        .composition-label {
+            font-size: 1rem;
+            color: rgba(255,255,255,0.7);
+        }
+
+        .composition-value {
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+
+        .composition-bar {
+            height: 8px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 4px;
+            margin-top: 8px;
+            overflow: hidden;
+        }
+
+        .composition-bar-fill {
+            height: 100%;
+            border-radius: 4px;
+            transition: width 1s ease;
+        }
+
+        .bar-real-estate {
+            background: linear-gradient(90deg, #2D3436, #636e72);
+        }
+
+        .bar-financial {
+            background: linear-gradient(90deg, #81ECEC, #74B9FF);
+        }
+
+        /* Debt Comparison */
+        .debt-comparison {
+            background: rgba(214, 48, 49, 0.1);
+            border: 2px solid rgba(214, 48, 49, 0.3);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px 0;
+        }
+
+        .debt-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .debt-stat {
+            text-align: center;
+            padding: 20px;
+            background: rgba(0,0,0,0.3);
+            border-radius: 12px;
+        }
+
+        .debt-stat-label {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.6);
+            margin-bottom: 10px;
+        }
+
+        .debt-stat-value {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: #ff7675;
+        }
+
+        /* Timeline Comparison */
+        .timeline {
+            margin: 60px 0;
+            padding: 40px;
+            background: rgba(255,255,255,0.03);
+            border-radius: 20px;
+        }
+
+        .timeline-title {
+            font-size: 1.3rem;
+            color: rgba(255,255,255,0.6);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .timeline-items {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .timeline-item {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 12px;
+        }
+
+        .timeline-year {
+            width: 100px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #81ECEC;
+        }
+
+        .timeline-desc {
+            flex: 1;
+            color: rgba(255,255,255,0.8);
+        }
+
+        .timeline-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2D3436;
+            text-shadow: 0 0 20px rgba(45, 52, 54, 0.5);
+        }
+
+        /* Interactive Section */
+        .interactive-section {
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 80px 20px;
+            background: linear-gradient(180deg, #0f0f1a 0%, #1a1620 100%);
+        }
+
+        .interactive-container {
+            background: rgba(255,255,255,0.05);
+            border-radius: 24px;
+            padding: 50px;
+            max-width: 600px;
+            width: 100%;
+        }
+
+        .interactive-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #81ECEC;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .input-group {
+            margin-bottom: 30px;
+        }
+
+        .input-label {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .wealth-input {
+            width: 100%;
+            padding: 20px;
+            font-size: 2rem;
+            font-weight: 700;
+            text-align: center;
+            background: rgba(255,255,255,0.1);
+            border: 2px solid rgba(255,255,255,0.2);
+            border-radius: 12px;
+            color: #81ECEC;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .wealth-input:focus {
+            border-color: #81ECEC;
+        }
+
+        .input-hint {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.4);
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        .age-select {
+            width: 100%;
+            padding: 15px;
+            font-size: 1.2rem;
+            background: rgba(255,255,255,0.1);
+            border: 2px solid rgba(255,255,255,0.2);
+            border-radius: 12px;
+            color: #fff;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .age-select:focus {
+            border-color: #81ECEC;
+        }
+
+        .compare-btn {
+            width: 100%;
+            padding: 18px;
+            margin-top: 30px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            background: linear-gradient(90deg, #81ECEC, #74B9FF);
+            border: none;
+            border-radius: 12px;
+            color: #000;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .compare-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(129, 236, 236, 0.3);
+        }
+
+        /* Result Section */
+        .result-section {
+            display: none;
+            margin-top: 40px;
+            padding: 30px;
+            background: rgba(129, 236, 236, 0.1);
+            border: 2px solid #81ECEC;
+            border-radius: 16px;
+        }
+
+        .result-section.active {
+            display: block;
+        }
+
+        .result-title {
+            font-size: 1.3rem;
+            color: #81ECEC;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .result-value {
+            font-size: 2.5rem;
+            font-weight: 900;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .result-value.above {
+            color: #81ECEC;
+        }
+
+        .result-value.below {
+            color: #2D3436;
+            text-shadow: 0 0 20px rgba(45, 52, 54, 0.5);
+        }
+
+        .result-message {
+            text-align: center;
+            color: rgba(255,255,255,0.8);
+            line-height: 1.6;
+        }
+
+        /* Conclusion */
+        .conclusion {
+            min-height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 80px 20px;
+            background: linear-gradient(180deg, #0f0f1a 0%, #1a1a2e 100%);
+            text-align: center;
+        }
+
+        .conclusion-text {
+            font-size: 1.5rem;
+            max-width: 700px;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 40px;
+        }
+
+        .conclusion-highlight {
+            color: #81ECEC;
+            font-weight: 700;
+        }
+
+        .conclusion-reality {
+            color: #2D3436;
+            font-weight: 700;
+            text-shadow: 0 0 30px rgba(45, 52, 54, 0.8);
+        }
+
+        /* Footer */
+        .footer {
+            padding: 40px 20px;
+            text-align: center;
+            color: rgba(255,255,255,0.3);
+            font-size: 0.85rem;
+            background: #0a0a0a;
+        }
+
+        .data-source {
+            margin-top: 10px;
+        }
+
+        .mcp-badge {
+            display: inline-block;
+            background: linear-gradient(90deg, #81ECEC, #74B9FF);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            color: #000;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero: 질문으로 시작 -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="question">2030 vs 5060,<br>자산 격차는 얼마?</h1>
+            <p class="hook">
+                "노력하면 된다"는 말이 무색한 시대.<br>
+                세대 간 자산 격차, 숫자로 확인해봅시다.
+            </p>
+        </div>
+        <div class="scroll-hint">
+            <span style="font-size: 2rem;">↓</span><br>
+            <span style="font-size: 0.9rem;">스크롤하여 계속</span>
+        </div>
+    </section>
+
+    <!-- Sledgehammer Stat: 핵심 숫자 먼저 -->
+    <section class="sledgehammer">
+        <h2 style="font-size: 1.3rem; color: rgba(255,255,255,0.6); margin-bottom: 40px;">
+            평균 순자산 비교
+        </h2>
+
+        <div class="big-compare">
+            <div class="compare-box young">
+                <div class="compare-label">30대</div>
+                <div class="compare-value">1.8억</div>
+            </div>
+
+            <div style="font-size: 3rem; color: rgba(255,255,255,0.3);">vs</div>
+
+            <div class="compare-box old">
+                <div class="compare-label">60대</div>
+                <div class="compare-value">4.2억</div>
+            </div>
+        </div>
+
+        <div class="gap-highlight">
+            격차: <span class="gap-number">2.3배</span><br>
+            <span style="font-size: 1rem; color: rgba(255,255,255,0.5);">
+                (10년 전에는 1.8배였습니다)
+            </span>
+        </div>
+    </section>
+
+    <!-- Story Section 1: 자산 구성 -->
+    <section class="story-section">
+        <h2 class="section-title">뭐가 다를까? 자산 구성부터 다릅니다</h2>
+        <p class="section-text">
+            같은 '자산'이지만, 그 내용을 들여다보면 완전히 다릅니다.
+        </p>
+
+        <div class="composition-grid">
+            <div class="composition-card young">
+                <div class="composition-title" style="color: #81ECEC;">30대의 자산 구성</div>
+                <div class="composition-item">
+                    <div class="composition-label">부동산</div>
+                    <div class="composition-value" style="color: #2D3436;">45%</div>
+                </div>
+                <div class="composition-bar">
+                    <div class="composition-bar-fill bar-real-estate" style="width: 45%;"></div>
+                </div>
+                <div class="composition-item">
+                    <div class="composition-label">금융자산</div>
+                    <div class="composition-value" style="color: #81ECEC;">35%</div>
+                </div>
+                <div class="composition-bar">
+                    <div class="composition-bar-fill bar-financial" style="width: 35%;"></div>
+                </div>
+                <div class="composition-item">
+                    <div class="composition-label">기타</div>
+                    <div class="composition-value" style="color: rgba(255,255,255,0.6);">20%</div>
+                </div>
+            </div>
+
+            <div class="composition-card old">
+                <div class="composition-title" style="color: #2D3436; text-shadow: 0 0 20px rgba(45, 52, 54, 0.5);">60대의 자산 구성</div>
+                <div class="composition-item">
+                    <div class="composition-label">부동산</div>
+                    <div class="composition-value" style="color: #2D3436;">72%</div>
+                </div>
+                <div class="composition-bar">
+                    <div class="composition-bar-fill bar-real-estate" style="width: 72%;"></div>
+                </div>
+                <div class="composition-item">
+                    <div class="composition-label">금융자산</div>
+                    <div class="composition-value" style="color: #81ECEC;">18%</div>
+                </div>
+                <div class="composition-bar">
+                    <div class="composition-bar-fill bar-financial" style="width: 18%;"></div>
+                </div>
+                <div class="composition-item">
+                    <div class="composition-label">기타</div>
+                    <div class="composition-value" style="color: rgba(255,255,255,0.6);">10%</div>
+                </div>
+            </div>
+        </div>
+
+        <p class="section-text" style="text-align: center; margin-top: 40px;">
+            <strong style="color: #2D3436;">60대는 부동산 72%</strong>,
+            <strong style="color: #81ECEC;">30대는 부동산 45%</strong>.<br>
+            부동산 가격이 오르던 시대를 경험한 세대와 그렇지 못한 세대의 차이입니다.
+        </p>
+    </section>
+
+    <!-- Story Section 2: 부채 비교 -->
+    <section class="story-section">
+        <h2 class="section-title">더 아픈 건, 부채 비율입니다</h2>
+        <p class="section-text">
+            자산이 적은데 빚은 더 많습니다.
+        </p>
+
+        <div class="debt-comparison">
+            <h3 style="font-size: 1.3rem; color: #ff7675; text-align: center; margin-bottom: 20px;">
+                자산 대비 부채 비율
+            </h3>
+
+            <div class="debt-stats">
+                <div class="debt-stat">
+                    <div class="debt-stat-label">30대</div>
+                    <div class="debt-stat-value">62%</div>
+                    <p style="font-size: 0.85rem; color: rgba(255,255,255,0.5); margin-top: 10px;">
+                        주택담보대출<br>학자금 대출
+                    </p>
+                </div>
+
+                <div class="debt-stat">
+                    <div class="debt-stat-label">60대</div>
+                    <div class="debt-stat-value">18%</div>
+                    <p style="font-size: 0.85rem; color: rgba(255,255,255,0.5); margin-top: 10px;">
+                        안정적인<br>자산 구조
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <p class="section-text" style="text-align: center;">
+            30대는 자산 1억8천을 모으는데 1억1천의 빚을 졌습니다.<br>
+            60대는 4억2천 자산에 7천5백만원의 빚.<br>
+            <strong style="color: #ff7675;">빚 없이 모은 순자산은 30대 7천만원, 60대 3억4천만원</strong>입니다.
+        </p>
+    </section>
+
+    <!-- Story Section 3: 10년 전 vs 지금 -->
+    <section class="story-section">
+        <h2 class="section-title">10년 전 30대 vs 지금 30대</h2>
+        <p class="section-text">
+            세대 간 격차뿐 아니라, 같은 30대끼리도 격차가 벌어졌습니다.
+        </p>
+
+        <div class="timeline">
+            <div class="timeline-title">같은 나이, 다른 시대</div>
+            <div class="timeline-items">
+                <div class="timeline-item">
+                    <div class="timeline-year">2014년</div>
+                    <div class="timeline-desc">
+                        2014년 당시 30대 평균 순자산<br>
+                        <span style="color: rgba(255,255,255,0.5); font-size: 0.9rem;">
+                            (집값 상승 전, 저금리 시대)
+                        </span>
+                    </div>
+                    <div class="timeline-value">1.5억</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">2024년</div>
+                    <div class="timeline-desc">
+                        2024년 현재 30대 평균 순자산<br>
+                        <span style="color: rgba(255,255,255,0.5); font-size: 0.9rem;">
+                            (집값 급등 후, 고금리 시대)
+                        </span>
+                    </div>
+                    <div class="timeline-value">1.8억</div>
+                </div>
+
+                <div class="timeline-item" style="background: rgba(255, 118, 117, 0.1);">
+                    <div class="timeline-year">증가율</div>
+                    <div class="timeline-desc">
+                        10년간 명목 증가율<br>
+                        <span style="color: #ff7675; font-size: 0.9rem;">
+                            물가 상승률 감안 시 실질 증가는 거의 없음
+                        </span>
+                    </div>
+                    <div class="timeline-value" style="color: #ff7675;">+20%</div>
+                </div>
+            </div>
+        </div>
+
+        <p class="section-text" style="text-align: center;">
+            10년 전 30대는 집을 살 수 있었습니다.<br>
+            지금 30대는 <strong style="color: #2D3436;">더 벌어도 집을 사기 어렵습니다</strong>.
+        </p>
+    </section>
+
+    <!-- Story Section 4: 자산 형성 속도 -->
+    <section class="story-section">
+        <h2 class="section-title">자산 형성 속도도 다릅니다</h2>
+        <p class="section-text">
+            지금의 60대가 30대였을 때와 지금의 30대를 비교하면...
+        </p>
+
+        <div style="background: rgba(255,255,255,0.03); border-radius: 20px; padding: 40px; margin: 40px 0;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px;">
+                <div style="text-align: center;">
+                    <div style="font-size: 0.9rem; color: rgba(255,255,255,0.5); margin-bottom: 10px;">
+                        1990년대 30대 (지금의 60대)
+                    </div>
+                    <div style="font-size: 2.5rem; font-weight: 900; color: #2D3436; text-shadow: 0 0 20px rgba(45, 52, 54, 0.5); margin-bottom: 15px;">
+                        3.8년
+                    </div>
+                    <div style="color: rgba(255,255,255,0.6); font-size: 0.95rem;">
+                        연봉을 한 푼도 안 쓰고 모았을 때<br>아파트 한 채 살 수 있는 기간
+                    </div>
+                </div>
+
+                <div style="text-align: center;">
+                    <div style="font-size: 0.9rem; color: rgba(255,255,255,0.5); margin-bottom: 10px;">
+                        2024년 30대
+                    </div>
+                    <div style="font-size: 2.5rem; font-weight: 900; color: #ff7675; margin-bottom: 15px;">
+                        12.5년
+                    </div>
+                    <div style="color: rgba(255,255,255,0.6); font-size: 0.95rem;">
+                        연봉을 한 푼도 안 쓰고 모았을 때<br>아파트 한 채 살 수 있는 기간
+                    </div>
+                </div>
+            </div>
+
+            <p style="text-align: center; margin-top: 40px; color: rgba(255,255,255,0.8); font-size: 1.1rem;">
+                같은 노력을 해도 <strong style="color: #ff7675;">3.3배 더 오래</strong> 걸립니다.
+            </p>
+        </div>
+    </section>
+
+    <!-- Interactive Section -->
+    <section class="interactive-section">
+        <div class="interactive-container">
+            <h2 class="interactive-title">내 자산, 평균과 비교해보기</h2>
+
+            <div class="input-group">
+                <label class="input-label">나이대를 선택하세요</label>
+                <select class="age-select" id="ageSelect">
+                    <option value="20">20대</option>
+                    <option value="30" selected>30대</option>
+                    <option value="40">40대</option>
+                    <option value="50">50대</option>
+                    <option value="60">60대</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label class="input-label">순자산을 입력하세요</label>
+                <input type="text" class="wealth-input" id="wealthInput" placeholder="18000" oninput="formatNumber(this)">
+                <p class="input-hint">단위: 만원 (예: 18000 = 1억8천만원)</p>
+            </div>
+
+            <button class="compare-btn" onclick="compareWealth()">평균과 비교하기</button>
+
+            <div class="result-section" id="resultSection">
+                <div class="result-title">비교 결과</div>
+                <div class="result-value" id="resultValue">평균보다 높습니다</div>
+                <div class="result-message" id="resultMessage">
+                    30대 평균 순자산 1억8천만원 대비<br>
+                    <strong>2천만원 높습니다.</strong>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Conclusion -->
+    <section class="conclusion">
+        <p class="conclusion-text">
+            <span class="conclusion-reality">"현실"</span>은 냉정합니다.<br><br>
+            부모 세대가 3.8년 모아서 산 집을, 지금은 12.5년을 모아야 합니다.
+            자산 격차는 <span class="conclusion-highlight">구조의 문제</span>이지,
+            개인의 노력 부족이 아닙니다.<br><br>
+            그럼에도 <span class="conclusion-highlight">희망</span>을 찾아야 한다면,<br>
+            우리가 할 수 있는 건 데이터를 직시하고 현명한 선택을 하는 것입니다.
+        </p>
+        <p style="color: rgba(255,255,255,0.5); font-size: 1rem; margin-top: 30px;">
+            숫자는 냉정하지만, 당신의 선택은 따뜻할 수 있습니다.
+        </p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div>데이터로 보는 대한민국</div>
+        <div class="data-source">출처: KOSIS 국가통계포털 (통계청 가계금융복지조사)</div>
+        <div class="mcp-badge">🚀 MCP 기반 데이터 스토리텔링</div>
+        <div style="margin-top: 15px;">Generated: 2024-12-14</div>
+    </footer>
+
+    <script>
+        // 연령대별 평균 순자산 데이터 (단위: 만원)
+        const averageWealth = {
+            20: 4500,
+            30: 18000,
+            40: 35000,
+            50: 42000,
+            60: 42000
+        };
+
+        function formatNumber(input) {
+            let value = input.value.replace(/[^0-9]/g, '');
+            input.value = value;
+        }
+
+        function compareWealth() {
+            const age = parseInt(document.getElementById('ageSelect').value);
+            const wealth = parseInt(document.getElementById('wealthInput').value) || 0;
+            const average = averageWealth[age];
+
+            const resultSection = document.getElementById('resultSection');
+            const resultValue = document.getElementById('resultValue');
+            const resultMessage = document.getElementById('resultMessage');
+
+            const diff = wealth - average;
+            const diffAbs = Math.abs(diff);
+            const diffDisplay = diffAbs >= 10000
+                ? `${(diffAbs / 10000).toFixed(1)}억원`
+                : `${diffAbs.toLocaleString()}만원`;
+
+            if (diff > 0) {
+                resultValue.textContent = '평균보다 높습니다';
+                resultValue.className = 'result-value above';
+                resultMessage.innerHTML = `
+                    ${age}대 평균 순자산 ${average >= 10000 ? (average/10000).toFixed(1) + '억원' : average.toLocaleString() + '만원'} 대비<br>
+                    <strong style="color: #81ECEC;">${diffDisplay} 높습니다.</strong><br><br>
+                    훌륭합니다! 하지만 기억하세요.<br>
+                    평균은 고자산가에 의해 왜곡될 수 있습니다.
+                `;
+            } else if (diff < 0) {
+                resultValue.textContent = '평균보다 낮습니다';
+                resultValue.className = 'result-value below';
+                resultMessage.innerHTML = `
+                    ${age}대 평균 순자산 ${average >= 10000 ? (average/10000).toFixed(1) + '억원' : average.toLocaleString() + '만원'} 대비<br>
+                    <strong style="color: #2D3436;">${diffDisplay} 낮습니다.</strong><br><br>
+                    괜찮습니다. 평균이 전부는 아닙니다.<br>
+                    중요한 건 꾸준히 늘려가는 것입니다.
+                `;
+            } else {
+                resultValue.textContent = '정확히 평균입니다';
+                resultValue.className = 'result-value';
+                resultMessage.innerHTML = `
+                    ${age}대 평균 순자산과 <strong>정확히 일치</strong>합니다.<br><br>
+                    평균에 있다는 것 자체가 대단한 일입니다.
+                `;
+            }
+
+            resultSection.classList.add('active');
+            resultSection.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+    </script>
+</body>
+</html>

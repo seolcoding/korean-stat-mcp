@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💵 임금 현황</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 30px 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+
+        .content {
+            background: white;
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+
+        .footer {
+            text-align: center;
+            color: rgba(255,255,255,0.7);
+            margin-top: 30px;
+            font-size: 0.85rem;
+        }
+
+        .chart-container {
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>💵 임금 현황</h1>
+            
+        </div>
+
+        <div class="content">
+            
+    <div style="text-align: center; margin-bottom: 30px; padding: 30px;
+                background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+                border-radius: 16px; color: white;">
+        <div style="font-size: 3rem; margin-bottom: 10px;">💵</div>
+        <h1 style="font-size: 2rem; margin: 0 0 10px 0;
+                   background: linear-gradient(90deg, #00d4ff, #7c3aed);
+                   -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+            임금 현황 분석 리포트
+        </h1>
+        <p style="color: rgba(255,255,255,0.8); margin: 0 0 15px 0;">산업별 평균 임금 비교</p>
+        <div style="display: flex; justify-content: center; gap: 20px; font-size: 0.9rem; color: rgba(255,255,255,0.6);">
+            <span>📋 통계표: 101/DT_1ES3A01</span>
+            <span>📅 기간: 2019 ~ 2023</span>
+            <span>🕐 생성: 2025.12.13</span>
+        </div>
+    </div>
+    
+
+    <div style="
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        margin: 20px 0;
+    ">
+        
+    <div class="kpi-card" style="
+        background: white;
+        border-radius: 12px;
+        padding: 20px;
+        text-align: center;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        min-width: 150px;
+    ">
+        <span style="font-size: 1.5rem;">📊</span>
+        <div style="font-size: 2rem; font-weight: 700; color: #667eea;">
+            40
+        </div>
+        <div style="color: #666; font-size: 0.9rem; margin-top: 5px;">
+            총 데이터
+        </div>
+        
+    </div>
+    
+
+    <div class="kpi-card" style="
+        background: white;
+        border-radius: 12px;
+        padding: 20px;
+        text-align: center;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        min-width: 150px;
+    ">
+        <span style="font-size: 1.5rem;">📅</span>
+        <div style="font-size: 2rem; font-weight: 700; color: #667eea;">
+            5
+        </div>
+        <div style="color: #666; font-size: 0.9rem; margin-top: 5px;">
+            기간 (2019~2023)
+        </div>
+        
+    </div>
+    
+
+    <div class="kpi-card" style="
+        background: white;
+        border-radius: 12px;
+        padding: 20px;
+        text-align: center;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        min-width: 150px;
+    ">
+        <span style="font-size: 1.5rem;">📍</span>
+        <div style="font-size: 2rem; font-weight: 700; color: #667eea;">
+            8
+        </div>
+        <div style="color: #666; font-size: 0.9rem; margin-top: 5px;">
+            분류 항목
+        </div>
+        
+    </div>
+    
+    </div>
+    
+<div class="chart-container"><div>                            <div id="1d86312d-9682-4378-a096-1975099312ae" class="plotly-graph-div" style="height:500px; width:900px;"></div>            <script type="text/javascript">                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("1d86312d-9682-4378-a096-1975099312ae")) {                    Plotly.newPlot(                        "1d86312d-9682-4378-a096-1975099312ae",                        [{"hovertemplate":"분류=제조업\u003cbr\u003e기간=%{x}\u003cbr\u003e월평균임금=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"제조업","line":{"color":"#636efa","dash":"solid","shape":"linear"},"marker":{"symbol":"circle"},"mode":"lines+markers","name":"제조업","orientation":"v","showlegend":true,"x":["2019","2020","2021","2022","2023"],"y":[4200000.0,4347000.0,4494000.0,4641000.0,4788000.0],"type":"scatter"},{"hovertemplate":"분류=건설업\u003cbr\u003e기간=%{x}\u003cbr\u003e월평균임금=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"건설업","line":{"color":"#EF553B","dash":"solid","shape":"linear"},"marker":{"symbol":"circle"},"mode":"lines+markers","name":"건설업","orientation":"v","showlegend":true,"x":["2019","2020","2021","2022","2023"],"y":[3800000.0,3932000.0,4066000.0,4199000.0,4332000.0],"type":"scatter"},{"hovertemplate":"분류=금융보험업\u003cbr\u003e기간=%{x}\u003cbr\u003e월평균임금=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"금융보험업","line":{"color":"#00cc96","dash":"solid","shape":"linear"},"marker":{"symbol":"circle"},"mode":"lines+markers","name":"금융보험업","orientation":"v","showlegend":true,"x":["2019","2020","2021","2022","2023"],"y":[6500000.0,6727000.0,6955000.0,7182000.0,7410000.0],"type":"scatter"},{"hovertemplate":"분류=정보통신업\u003cbr\u003e기간=%{x}\u003cbr\u003e월평균임금=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"정보통신업","line":{"color":"#ab63fa","dash":"solid","shape":"linear"},"marker":{"symbol":"circle"},"mode":"lines+markers","name":"정보통신업","orientation":"v","showlegend":true,"x":["2019","2020","2021","2022","2023"],"y":[5800000.0,6002000.0,6206000.0,6409000.0,6612000.0],"type":"scatter"},{"hovertemplate":"분류=도소매업\u003cbr\u003e기간=%{x}\u003cbr\u003e월평균임금=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"도소매업","line":{"color":"#FFA15A","dash":"solid","shape":"linear"},"marker":{"symbol":"circle"},"mode":"lines+markers","name":"도소매업","orientation":"v","showlegend":true,"x":["2019","2020","2021","2022","2023"],"y":[3200000.0,3311000.0,3424000.0,3536000.0,3648000.0],"type":"scatter"},{"hovertemplate":"분류=숙박음식업\u003cbr\u003e기간=%{x}\u003cbr\u003e월평균임금=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"숙박음식업","line":{"color":"#19d3f3","dash":"solid","shape":"linear"},"marker":{"symbol":"circle"},"mode":"lines+markers","name":"숙박음식업","orientation":"v","showlegend":true,"x":["2019","2020","2021","2022","2023"],"y":[2400000.0,2484000.0,2568000.0,2652000.0,2736000.0],"type":"scatter"},{"hovertemplate":"분류=교육서비스업\u003cbr\u003e기간=%{x}\u003cbr\u003e월평균임금=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"교육서비스업","line":{"color":"#FF6692","dash":"solid","shape":"linear"},"marker":{"symbol":"circle"},"mode":"lines+markers","name":"교육서비스업","orientation":"v","showlegend":true,"x":["2019","2020","2021","2022","2023"],"y":[4100000.0,4243000.0,4387000.0,4530000.0,4674000.0],"type":"scatter"},{"hovertemplate":"분류=보건복지업\u003cbr\u003e기간=%{x}\u003cbr\u003e월평균임금=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"보건복지업","line":{"color":"#B6E880","dash":"solid","shape":"linear"},"marker":{"symbol":"circle"},"mode":"lines+markers","name":"보건복지업","orientation":"v","showlegend":true,"x":["2019","2020","2021","2022","2023"],"y":[3500000.0,3622000.0,3745000.0,3867000.0,3990000.0],"type":"scatter"}],                        {"font":{"family":"Malgun Gothic, 맑은 고딕, Apple SD Gothic Neo, AppleGothic, NanumGothic, 나눔고딕, Noto Sans KR, sans-serif"},"height":500,"hoverlabel":{"font":{"family":"Malgun Gothic, 맑은 고딕, Apple SD Gothic Neo, AppleGothic, NanumGothic, 나눔고딕, Noto Sans KR, sans-serif"}},"legend":{"font":{"family":"Malgun Gothic, 맑은 고딕, Apple SD Gothic Neo, AppleGothic, NanumGothic, 나눔고딕, Noto Sans KR, sans-serif"},"title":{"text":"분류"},"tracegroupgap":0},"margin":{"t":60},"template":{"data":{"barpolar":[{"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"#C8D4E3","linecolor":"#C8D4E3","minorgridcolor":"#C8D4E3","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"#C8D4E3","linecolor":"#C8D4E3","minorgridcolor":"#C8D4E3","startlinecolor":"#2a3f5f"},"type":"carpet"}],"choropleth":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"choropleth"}],"contourcarpet":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"contourcarpet"}],"contour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"contour"}],"heatmap":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"heatmap"}],"histogram2dcontour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2dcontour"}],"histogram2d":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2d"}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"mesh3d":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"mesh3d"}],"parcoords":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"parcoords"}],"pie":[{"automargin":true,"type":"pie"}],"scatter3d":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatter3d"}],"scattercarpet":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattercarpet"}],"scattergeo":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergeo"}],"scattergl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergl"}],"scattermapbox":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattermapbox"}],"scattermap":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattermap"}],"scatterpolargl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolargl"}],"scatterpolar":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolar"}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"scatterternary":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterternary"}],"surface":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"surface"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}]},"layout":{"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"autotypenumbers":"strict","coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]],"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]},"colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"geo":{"bgcolor":"white","lakecolor":"white","landcolor":"white","showlakes":true,"showland":true,"subunitcolor":"#C8D4E3"},"hoverlabel":{"align":"left"},"hovermode":"closest","mapbox":{"style":"light"},"paper_bgcolor":"white","plot_bgcolor":"white","polar":{"angularaxis":{"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":""},"bgcolor":"white","radialaxis":{"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":""}},"scene":{"xaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"},"yaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"},"zaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"ternary":{"aaxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""},"baxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""},"bgcolor":"white","caxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""}},"title":{"x":0.05},"xaxis":{"automargin":true,"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":"","title":{"standoff":15},"zerolinecolor":"#EBF0F8","zerolinewidth":2},"yaxis":{"automargin":true,"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":"","title":{"standoff":15},"zerolinecolor":"#EBF0F8","zerolinewidth":2}}},"title":{"font":{"family":"Malgun Gothic, 맑은 고딕, Apple SD Gothic Neo, AppleGothic, NanumGothic, 나눔고딕, Noto Sans KR, sans-serif","size":18},"text":"임금 현황 추이"},"width":900,"xaxis":{"anchor":"y","domain":[0.0,1.0],"title":{"text":"기간"}},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{"text":"월평균임금"}}},                        {"responsive": true}                    )                };            </script>        </div></div>
+<div class="chart-container"><div>                            <div id="30f2a97d-e92e-4f4a-a65d-cc2dcc79984f" class="plotly-graph-div" style="height:500px; width:900px;"></div>            <script type="text/javascript">                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("30f2a97d-e92e-4f4a-a65d-cc2dcc79984f")) {                    Plotly.newPlot(                        "30f2a97d-e92e-4f4a-a65d-cc2dcc79984f",                        [{"hovertemplate":"분류=%{x}\u003cbr\u003e월평균임금=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"","marker":{"color":"#636efa","pattern":{"shape":""}},"name":"","orientation":"v","showlegend":false,"textposition":"auto","x":["금융보험업","정보통신업","제조업","교육서비스업","건설업","보건복지업","도소매업","숙박음식업"],"y":[7410000,6612000,4788000,4674000,4332000,3990000,3648000,2736000],"type":"bar"}],                        {"barmode":"group","font":{"family":"Malgun Gothic, 맑은 고딕, Apple SD Gothic Neo, AppleGothic, NanumGothic, 나눔고딕, Noto Sans KR, sans-serif"},"height":500,"hoverlabel":{"font":{"family":"Malgun Gothic, 맑은 고딕, Apple SD Gothic Neo, AppleGothic, NanumGothic, 나눔고딕, Noto Sans KR, sans-serif"}},"legend":{"font":{"family":"Malgun Gothic, 맑은 고딕, Apple SD Gothic Neo, AppleGothic, NanumGothic, 나눔고딕, Noto Sans KR, sans-serif"},"tracegroupgap":0},"margin":{"t":60},"template":{"data":{"barpolar":[{"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"#C8D4E3","linecolor":"#C8D4E3","minorgridcolor":"#C8D4E3","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"#C8D4E3","linecolor":"#C8D4E3","minorgridcolor":"#C8D4E3","startlinecolor":"#2a3f5f"},"type":"carpet"}],"choropleth":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"choropleth"}],"contourcarpet":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"contourcarpet"}],"contour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"contour"}],"heatmap":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"heatmap"}],"histogram2dcontour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2dcontour"}],"histogram2d":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2d"}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"mesh3d":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"mesh3d"}],"parcoords":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"parcoords"}],"pie":[{"automargin":true,"type":"pie"}],"scatter3d":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatter3d"}],"scattercarpet":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattercarpet"}],"scattergeo":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergeo"}],"scattergl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergl"}],"scattermapbox":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattermapbox"}],"scattermap":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattermap"}],"scatterpolargl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolargl"}],"scatterpolar":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolar"}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"scatterternary":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterternary"}],"surface":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"surface"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}]},"layout":{"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"autotypenumbers":"strict","coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]],"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]},"colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"geo":{"bgcolor":"white","lakecolor":"white","landcolor":"white","showlakes":true,"showland":true,"subunitcolor":"#C8D4E3"},"hoverlabel":{"align":"left"},"hovermode":"closest","mapbox":{"style":"light"},"paper_bgcolor":"white","plot_bgcolor":"white","polar":{"angularaxis":{"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":""},"bgcolor":"white","radialaxis":{"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":""}},"scene":{"xaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"},"yaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"},"zaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"ternary":{"aaxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""},"baxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""},"bgcolor":"white","caxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""}},"title":{"x":0.05},"xaxis":{"automargin":true,"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":"","title":{"standoff":15},"zerolinecolor":"#EBF0F8","zerolinewidth":2},"yaxis":{"automargin":true,"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":"","title":{"standoff":15},"zerolinecolor":"#EBF0F8","zerolinewidth":2}}},"title":{"font":{"family":"Malgun Gothic, 맑은 고딕, Apple SD Gothic Neo, AppleGothic, NanumGothic, 나눔고딕, Noto Sans KR, sans-serif","size":18},"text":"2023 월평균임금 비교"},"width":900,"xaxis":{"anchor":"y","domain":[0.0,1.0],"title":{"text":"분류"}},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{"text":"월평균임금"}}},                        {"responsive": true}                    )                };            </script>        </div></div>
+
+    <div style="overflow-x: auto; margin: 20px 0;">
+        <style>
+            .report-table {
+                width: 100%;
+                border-collapse: collapse;
+                font-size: 0.9rem;
+            }
+            .report-table th {
+                background: #f8f9fa;
+                padding: 12px;
+                text-align: left;
+                border-bottom: 2px solid #dee2e6;
+                font-weight: 600;
+            }
+            .report-table td {
+                padding: 10px 12px;
+                border-bottom: 1px solid #eee;
+            }
+            .report-table tr:hover {
+                background: #f8f9fa;
+            }
+        </style>
+        <table border="1" class="dataframe report-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>기간</th>
+      <th>분류</th>
+      <th>값</th>
+      <th>항목</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>2019</td>
+      <td>제조업</td>
+      <td>4200000</td>
+      <td>월평균임금</td>
+    </tr>
+    <tr>
+      <td>2019</td>
+      <td>건설업</td>
+      <td>3800000</td>
+      <td>월평균임금</td>
+    </tr>
+    <tr>
+      <td>2019</td>
+      <td>금융보험업</td>
+      <td>6500000</td>
+      <td>월평균임금</td>
+    </tr>
+    <tr>
+      <td>2019</td>
+      <td>정보통신업</td>
+      <td>5800000</td>
+      <td>월평균임금</td>
+    </tr>
+    <tr>
+      <td>2019</td>
+      <td>도소매업</td>
+      <td>3200000</td>
+      <td>월평균임금</td>
+    </tr>
+    <tr>
+      <td>2019</td>
+      <td>숙박음식업</td>
+      <td>2400000</td>
+      <td>월평균임금</td>
+    </tr>
+    <tr>
+      <td>2019</td>
+      <td>교육서비스업</td>
+      <td>4100000</td>
+      <td>월평균임금</td>
+    </tr>
+    <tr>
+      <td>2019</td>
+      <td>보건복지업</td>
+      <td>3500000</td>
+      <td>월평균임금</td>
+    </tr>
+    <tr>
+      <td>2020</td>
+      <td>제조업</td>
+      <td>4347000</td>
+      <td>월평균임금</td>
+    </tr>
+    <tr>
+      <td>2020</td>
+      <td>건설업</td>
+      <td>3932000</td>
+      <td>월평균임금</td>
+    </tr>
+    <tr>
+      <td>2020</td>
+      <td>금융보험업</td>
+      <td>6727000</td>
+      <td>월평균임금</td>
+    </tr>
+    <tr>
+      <td>2020</td>
+      <td>정보통신업</td>
+      <td>6002000</td>
+      <td>월평균임금</td>
+    </tr>
+    <tr>
+      <td>2020</td>
+      <td>도소매업</td>
+      <td>3311000</td>
+      <td>월평균임금</td>
+    </tr>
+    <tr>
+      <td>2020</td>
+      <td>숙박음식업</td>
+      <td>2484000</td>
+      <td>월평균임금</td>
+    </tr>
+    <tr>
+      <td>2020</td>
+      <td>교육서비스업</td>
+      <td>4243000</td>
+      <td>월평균임금</td>
+    </tr>
+    <tr>
+      <td>2020</td>
+      <td>보건복지업</td>
+      <td>3622000</td>
+      <td>월평균임금</td>
+    </tr>
+    <tr>
+      <td>2021</td>
+      <td>제조업</td>
+      <td>4494000</td>
+      <td>월평균임금</td>
+    </tr>
+    <tr>
+      <td>2021</td>
+      <td>건설업</td>
+      <td>4066000</td>
+      <td>월평균임금</td>
+    </tr>
+    <tr>
+      <td>2021</td>
+      <td>금융보험업</td>
+      <td>6955000</td>
+      <td>월평균임금</td>
+    </tr>
+    <tr>
+      <td>2021</td>
+      <td>정보통신업</td>
+      <td>6206000</td>
+      <td>월평균임금</td>
+    </tr>
+  </tbody>
+</table>
+    </div>
+    
+
+    <div style="
+        background: linear-gradient(135deg, #f6f9fc 0%, #eef2f7 100%);
+        border-left: 4px solid #667eea;
+        padding: 20px;
+        margin: 20px 0;
+        border-radius: 0 8px 8px 0;
+    ">
+        <h4 style="color: #667eea; margin-bottom: 10px;">💡 인사이트</h4>
+        <p style="color: #4a4a4a; line-height: 1.8; margin: 0;">
+            꾸준한 증가 추세를 보이고 있습니다 (연평균 -0.1%).
+        </p>
+    </div>
+    
+
+                    <div style="background: #f8f9fa; padding: 20px; border-radius: 12px; margin: 20px 0;">
+                        <h3 style="margin: 0 0 15px 0; color: #333;">🏆 순위 분석</h3>
+                        <ul><li>1위: 금융보험업 (7,410,000)</li><li>2위: 정보통신업 (6,612,000)</li><li>3위: 제조업 (4,788,000)</li><li>4위: 교육서비스업 (4,674,000)</li><li>5위: 건설업 (4,332,000)</li></ul>
+                    </div>
+                    
+
+    <div style="
+        font-size: 0.85rem;
+        color: #888;
+        margin-top: 30px;
+        padding-top: 15px;
+        border-top: 1px solid #eee;
+    ">
+        출처: KOSIS (국가통계포털) | 기간: 2019 ~ 2023
+    </div>
+    
+
+        <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                    padding: 25px; border-radius: 12px; margin: 20px 0; color: white;">
+            <h3 style="margin: 0 0 15px 0;">💡 MCP 패턴 안내</h3>
+            <p>이 리포트는 MCP(Model Context Protocol) 패턴을 따라 생성되었습니다.</p>
+            <div style="background: rgba(0,0,0,0.2); padding: 15px; border-radius: 8px; margin: 15px 0;">
+                <strong>사용된 패턴:</strong>
+                <ul style="margin: 10px 0 0 0; padding-left: 20px;">
+                    <li><code>view="summary"</code>: 메타데이터만 조회 (토큰 98% 절약)</li>
+                    <li><code>analyze_*</code>: 서버사이드 분석 (데이터 미전송)</li>
+                    <li><code>viz_*</code>: 서버사이드 시각화 (결과만 반환)</li>
+                </ul>
+            </div>
+            <div style="background: rgba(0,0,0,0.2); padding: 15px; border-radius: 8px;">
+                <strong>LLM 호출 예시:</strong>
+                <pre style="margin: 10px 0 0 0; font-size: 0.85rem; overflow-x: auto;"><code># 1. 요약 조회
+summary = get_statistics_data("101", "DT_1B040A3", "2019", "2023", view="summary")
+
+# 2. 서버사이드 분석
+trend = analyze_data_trend(data)
+
+# 3. 리포트 생성
+report = create_quick_report(data, "인구 분석")</code></pre>
+            </div>
+        </div>
+        
+        </div>
+
+        <div class="footer">
+            <p>Generated by KOSIS Data Processor | 2025-12-13 23:02</p>
+            <p>Data Source: <a href="https://kosis.kr" style="color: rgba(255,255,255,0.9);">KOSIS (국가통계포털)</a></p>
+        </div>
+    </div>
+</body>
+</html>

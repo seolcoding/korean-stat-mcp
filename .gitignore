@@ -224,3 +224,13 @@ kosis_data/reports/
 # Test artifacts
 ai-docs/
 logos/
+
+# Large metadata files (use LFS or regenerate)
+data/metadata/
+data/metadata_api/
+data/metadata_files/
+docs/kosis_official_manual.pdf
+docs/kosis_official_manual_raw.md
+
+# Playwright MCP
+.playwright-mcp/

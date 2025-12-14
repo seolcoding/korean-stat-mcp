@@ -1,0 +1,60 @@
+{
+  "generated_at": "2025-12-13T22:42:35.918031",
+  "total_reports": 9,
+  "reports": [
+    {
+      "id": "sample_trend",
+      "name": "인구 추이 분석 (샘플)",
+      "category": "샘플",
+      "type": "hardcoded"
+    },
+    {
+      "id": "sample_compare",
+      "name": "도시 인구 비교 (샘플)",
+      "category": "샘플",
+      "type": "hardcoded"
+    },
+    {
+      "id": "sample_ranking",
+      "name": "인구 순위 (샘플)",
+      "category": "샘플",
+      "type": "hardcoded"
+    },
+    {
+      "id": "trade_ranking",
+      "name": "수출 품목 순위 (샘플)",
+      "category": "샘플",
+      "type": "hardcoded"
+    },
+    {
+      "id": "edge_single",
+      "name": "단일 레코드 처리",
+      "category": "엣지케이스",
+      "type": "hardcoded"
+    },
+    {
+      "id": "edge_null",
+      "name": "결측치 처리",
+      "category": "엣지케이스",
+      "type": "hardcoded"
+    },
+    {
+      "id": "edge_extreme",
+      "name": "극단값 처리",
+      "category": "엣지케이스",
+      "type": "hardcoded"
+    },
+    {
+      "id": "edge_long_query",
+      "name": "긴 쿼리 처리",
+      "category": "엣지케이스",
+      "type": "hardcoded"
+    },
+    {
+      "id": "edge_ambiguous",
+      "name": "모호한 쿼리 처리",
+      "category": "엣지케이스",
+      "type": "hardcoded"
+    }
+  ]
+}

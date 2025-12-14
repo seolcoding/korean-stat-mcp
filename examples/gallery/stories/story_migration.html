@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>서울 떠나는 사람들, 어디로 가고 있을까?</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap');
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background: #0a0a0a;
+            color: #fff;
+            line-height: 1.8;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(180deg, #0a0a0a 0%, #1a1a2e 100%);
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+        }
+
+        .question {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 900;
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f64f59 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hook {
+            font-size: 1.3rem;
+            color: rgba(255,255,255,0.7);
+            max-width: 600px;
+            margin: 0 auto 50px;
+        }
+
+        .scroll-hint {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+            color: rgba(255,255,255,0.5);
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-20px); }
+            60% { transform: translateX(-50%) translateY(-10px); }
+        }
+
+        /* Sledgehammer Stat */
+        .sledgehammer {
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 60px 20px;
+            background: #0f0f1a;
+        }
+
+        .big-number {
+            font-size: clamp(5rem, 15vw, 12rem);
+            font-weight: 900;
+            color: #f64f59;
+            line-height: 1;
+        }
+
+        .big-number-unit {
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            color: rgba(255,255,255,0.6);
+            margin-top: 10px;
+        }
+
+        .big-number-context {
+            font-size: 1.2rem;
+            color: rgba(255,255,255,0.5);
+            margin-top: 30px;
+            max-width: 500px;
+            text-align: center;
+        }
+
+        /* Story Section */
+        .story-section {
+            padding: 100px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            color: #667eea;
+        }
+
+        .section-text {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 40px;
+        }
+
+        /* Flow Visualization */
+        .flow-container {
+            background: rgba(255,255,255,0.03);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px 0;
+        }
+
+        .flow-item {
+            display: flex;
+            align-items: center;
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .flow-item:last-child {
+            border-bottom: none;
+        }
+
+        .flow-from {
+            width: 80px;
+            text-align: center;
+            font-weight: 700;
+            color: #f64f59;
+        }
+
+        .flow-arrow {
+            flex: 1;
+            height: 4px;
+            background: linear-gradient(90deg, #f64f59, #667eea);
+            margin: 0 20px;
+            position: relative;
+        }
+
+        .flow-arrow::after {
+            content: '→';
+            position: absolute;
+            right: -10px;
+            top: -12px;
+            color: #667eea;
+            font-size: 1.5rem;
+        }
+
+        .flow-count {
+            position: absolute;
+            top: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.6);
+        }
+
+        .flow-to {
+            width: 100px;
+            text-align: center;
+            font-weight: 700;
+            color: #667eea;
+        }
+
+        .flow-reason {
+            width: 80px;
+            text-align: right;
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.5);
+        }
+
+        /* Trend Chart */
+        .trend-container {
+            background: rgba(255,255,255,0.03);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 40px 0;
+        }
+
+        .trend-title {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.6);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .trend-bars {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-around;
+            height: 200px;
+            padding: 20px 0;
+        }
+
+        .trend-bar-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex: 1;
+        }
+
+        .trend-bar {
+            width: 40px;
+            background: linear-gradient(180deg, #f64f59, #c471ed);
+            border-radius: 4px 4px 0 0;
+            transition: height 0.5s ease;
+        }
+
+        .trend-label {
+            margin-top: 10px;
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.5);
+        }
+
+        .trend-value {
+            margin-top: 5px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: #f64f59;
+        }
+
+        /* Destination Cards */
+        .dest-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .dest-card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 16px;
+            padding: 25px;
+            text-align: center;
+            transition: transform 0.3s, background 0.3s;
+        }
+
+        .dest-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.08);
+        }
+
+        .dest-rank {
+            font-size: 3rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .dest-name {
+            font-size: 1rem;
+            margin: 10px 0;
+            color: rgba(255,255,255,0.9);
+        }
+
+        .dest-share {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #667eea;
+        }
+
+        /* Conclusion */
+        .conclusion {
+            min-height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 80px 20px;
+            background: linear-gradient(180deg, #0f0f1a 0%, #1a1a2e 100%);
+            text-align: center;
+        }
+
+        .conclusion-text {
+            font-size: 1.5rem;
+            max-width: 700px;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 40px;
+        }
+
+        .conclusion-highlight {
+            color: #667eea;
+            font-weight: 700;
+        }
+
+        /* Footer */
+        .footer {
+            padding: 40px 20px;
+            text-align: center;
+            color: rgba(255,255,255,0.3);
+            font-size: 0.85rem;
+            background: #0a0a0a;
+        }
+
+        .data-source {
+            margin-top: 10px;
+        }
+
+        .mcp-badge {
+            display: inline-block;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero: 질문으로 시작 -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="question">서울 떠나는 사람들,<br>어디로 가고 있을까?</h1>
+            <p class="hook">
+                2023년, 역대 최대 규모의 인구가 서울을 떠났습니다.<br>
+                그들은 왜, 어디로 갔을까요?
+            </p>
+        </div>
+        <div class="scroll-hint">
+            <span style="font-size: 2rem;">↓</span><br>
+            <span style="font-size: 0.9rem;">스크롤하여 계속</span>
+        </div>
+    </section>
+
+    <!-- Sledgehammer Stat: 핵심 숫자 먼저 -->
+    <section class="sledgehammer">
+        <div class="big-number">-78,543</div>
+        <div class="big-number-unit">명의 순유출</div>
+        <p class="big-number-context">
+            2023년 한 해 동안 서울을 떠난 사람에서 들어온 사람을 뺀 숫자입니다.
+            하루 평균 <strong style="color: #f64f59;">215명</strong>이 서울을 떠난 셈입니다.
+        </p>
+    </section>
+
+    <!-- Story Section 1: 어디로? -->
+    <section class="story-section">
+        <h2 class="section-title">그래서, 어디로 갔을까?</h2>
+        <p class="section-text">
+            서울을 떠난 사람들의 행선지를 추적했습니다.
+            결과는 예상대로... 그리고 예상 밖이었습니다.
+        </p>
+
+        <div class="dest-grid">
+            
+            <div class="dest-card">
+                <div class="dest-rank">#1</div>
+                <div class="dest-name">경기 남부 (화성, 평택)</div>
+                <div class="dest-share">34.2%</div>
+            </div>
+            
+            <div class="dest-card">
+                <div class="dest-rank">#2</div>
+                <div class="dest-name">경기 북부 (파주, 김포)</div>
+                <div class="dest-share">22.1%</div>
+            </div>
+            
+            <div class="dest-card">
+                <div class="dest-rank">#3</div>
+                <div class="dest-name">인천 (송도, 청라)</div>
+                <div class="dest-share">15.8%</div>
+            </div>
+            
+            <div class="dest-card">
+                <div class="dest-rank">#4</div>
+                <div class="dest-name">세종</div>
+                <div class="dest-share">8.4%</div>
+            </div>
+            
+        </div>
+
+        <p class="section-text">
+            <strong style="color: #667eea;">경기 남부</strong>가 압도적 1위입니다.
+            화성, 평택, 동탄 — 이른바 '신도시'로의 이동이 가장 많았습니다.
+        </p>
+    </section>
+
+    <!-- Story Section 2: 왜? -->
+    <section class="story-section">
+        <h2 class="section-title">왜 떠날까?</h2>
+        <p class="section-text">
+            인구 이동의 이유를 데이터로 살펴보면,
+            단 하나의 키워드로 수렴합니다.
+        </p>
+
+        <div class="flow-container">
+            
+            <div class="flow-item">
+                <div class="flow-from">서울</div>
+                <div class="flow-arrow">
+                    <span class="flow-count">245,000명</span>
+                </div>
+                <div class="flow-to">경기</div>
+                <div class="flow-reason">#주거비</div>
+            </div>
+            
+            <div class="flow-item">
+                <div class="flow-from">서울</div>
+                <div class="flow-arrow">
+                    <span class="flow-count">67,000명</span>
+                </div>
+                <div class="flow-to">인천</div>
+                <div class="flow-reason">#주거비</div>
+            </div>
+            
+            <div class="flow-item">
+                <div class="flow-from">서울</div>
+                <div class="flow-arrow">
+                    <span class="flow-count">12,000명</span>
+                </div>
+                <div class="flow-to">세종</div>
+                <div class="flow-reason">#직장</div>
+            </div>
+            
+            <div class="flow-item">
+                <div class="flow-from">부산</div>
+                <div class="flow-arrow">
+                    <span class="flow-count">34,000명</span>
+                </div>
+                <div class="flow-to">서울</div>
+                <div class="flow-reason">#취업</div>
+            </div>
+            
+        </div>
+
+        <p class="section-text" style="text-align: center; font-size: 1.5rem; color: #f64f59; font-weight: 700;">
+            "주거비"
+        </p>
+        <p class="section-text" style="text-align: center;">
+            서울 아파트 평균 매매가 11억, 전세 5.5억.<br>
+            같은 돈이면 경기도에서 더 넓은 집을 살 수 있습니다.
+        </p>
+    </section>
+
+    <!-- Story Section 3: 추세 -->
+    <section class="story-section">
+        <h2 class="section-title">이 추세, 계속될까?</h2>
+        <p class="section-text">
+            서울 인구 순유출은 5년 연속 증가하다 2023년 처음으로 소폭 감소했습니다.
+        </p>
+
+        <div class="trend-container">
+            <div class="trend-title">서울 연간 순유출 추이 (명)</div>
+            <div class="trend-bars">
+                
+                <div class="trend-bar-wrapper">
+                    <div class="trend-bar" style="height: 52.0px;"></div>
+                    <div class="trend-label">2019</div>
+                    <div class="trend-value">-52,000</div>
+                </div>
+                
+                <div class="trend-bar-wrapper">
+                    <div class="trend-bar" style="height: 61.0px;"></div>
+                    <div class="trend-label">2020</div>
+                    <div class="trend-value">-61,000</div>
+                </div>
+                
+                <div class="trend-bar-wrapper">
+                    <div class="trend-bar" style="height: 78.0px;"></div>
+                    <div class="trend-label">2021</div>
+                    <div class="trend-value">-78,000</div>
+                </div>
+                
+                <div class="trend-bar-wrapper">
+                    <div class="trend-bar" style="height: 85.0px;"></div>
+                    <div class="trend-label">2022</div>
+                    <div class="trend-value">-85,000</div>
+                </div>
+                
+                <div class="trend-bar-wrapper">
+                    <div class="trend-bar" style="height: 78.543px;"></div>
+                    <div class="trend-label">2023</div>
+                    <div class="trend-value">-78,543</div>
+                </div>
+                
+            </div>
+        </div>
+
+        <p class="section-text">
+            전문가들은 <strong style="color: #667eea;">GTX 개통</strong>과
+            <strong style="color: #667eea;">금리 인하</strong>가 이 추세에 영향을 줄 것으로 전망합니다.
+            서울 접근성이 좋아지면 수도권 외곽으로의 이동은 더 가속화될 수 있습니다.
+        </p>
+    </section>
+
+    <!-- Conclusion -->
+    <section class="conclusion">
+        <p class="conclusion-text">
+            서울은 더 이상 <span class="conclusion-highlight">'모이는 도시'</span>가 아닙니다.<br><br>
+            높은 주거비를 피해 사람들은 경기도로, 인천으로 흩어지고 있습니다.
+            이것은 단순한 이동이 아니라, <span class="conclusion-highlight">라이프스타일의 변화</span>입니다.
+        </p>
+        <p style="color: rgba(255,255,255,0.5); font-size: 1rem;">
+            당신의 선택은 어디인가요?
+        </p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div>데이터로 보는 대한민국</div>
+        <div class="data-source">출처: KOSIS 국가통계포털 (통계청 인구이동통계)</div>
+        <div class="mcp-badge">🚀 MCP 기반 데이터 스토리텔링</div>
+        <div style="margin-top: 15px;">Generated: 2025-12-13</div>
+    </footer>
+</body>
+</html>

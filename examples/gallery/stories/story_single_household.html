@@ -1,0 +1,1222 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>혼자 사는 게 정말 편할까?</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap');
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background: #0a0a0a;
+            color: #fff;
+            line-height: 1.8;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(180deg, #0a0a0a 0%, #0f1a1a 100%);
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%233498db' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+        }
+
+        .question {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 900;
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 50%, #1f618d 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hook {
+            font-size: 1.3rem;
+            color: rgba(255,255,255,0.7);
+            max-width: 600px;
+            margin: 0 auto 50px;
+        }
+
+        .scroll-hint {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+            color: rgba(255,255,255,0.5);
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-20px); }
+            60% { transform: translateX(-50%) translateY(-10px); }
+        }
+
+        /* Sledgehammer Stat */
+        .sledgehammer {
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 60px 20px;
+            background: #0f0f1a;
+        }
+
+        .big-number {
+            font-size: clamp(5rem, 15vw, 12rem);
+            font-weight: 900;
+            color: #3498db;
+            line-height: 1;
+        }
+
+        .big-number-unit {
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            color: rgba(255,255,255,0.6);
+            margin-top: 10px;
+        }
+
+        .big-number-context {
+            font-size: 1.2rem;
+            color: rgba(255,255,255,0.5);
+            margin-top: 30px;
+            max-width: 600px;
+            text-align: center;
+        }
+
+        /* Story Section */
+        .story-section {
+            padding: 100px 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            color: #3498db;
+        }
+
+        .section-text {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 40px;
+        }
+
+        /* Cost Comparison Cards */
+        .cost-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .cost-card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 16px;
+            padding: 30px;
+            transition: transform 0.3s, background 0.3s;
+            border: 2px solid rgba(255,255,255,0.1);
+        }
+
+        .cost-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.08);
+        }
+
+        .cost-card.single {
+            border-color: #3498db;
+        }
+
+        .cost-card.multi {
+            border-color: #2ecc71;
+        }
+
+        .cost-category {
+            font-size: 1rem;
+            color: rgba(255,255,255,0.6);
+            margin-bottom: 15px;
+        }
+
+        .cost-value {
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin: 10px 0;
+        }
+
+        .cost-card.single .cost-value {
+            color: #3498db;
+        }
+
+        .cost-card.multi .cost-value {
+            color: #2ecc71;
+        }
+
+        .cost-label {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.5);
+            margin-bottom: 10px;
+        }
+
+        .cost-detail {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.6);
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        /* Calculator Section */
+        .calculator-section {
+            min-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 80px 20px;
+            background: linear-gradient(180deg, #0f0f1a 0%, #0f1a1a 100%);
+        }
+
+        .calculator-container {
+            background: rgba(255,255,255,0.05);
+            border-radius: 24px;
+            padding: 50px;
+            max-width: 700px;
+            width: 100%;
+            border: 2px solid rgba(52, 152, 219, 0.3);
+        }
+
+        .calculator-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #3498db;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .calculator-subtitle {
+            font-size: 1rem;
+            color: rgba(255,255,255,0.6);
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .input-group {
+            margin-bottom: 30px;
+        }
+
+        .input-label {
+            font-size: 1rem;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 15px 20px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-align: center;
+            background: rgba(255,255,255,0.1);
+            border: 2px solid rgba(255,255,255,0.2);
+            border-radius: 12px;
+            color: #3498db;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .input-field:focus {
+            border-color: #3498db;
+        }
+
+        .input-hint {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.4);
+            margin-top: 8px;
+            text-align: center;
+        }
+
+        .calc-btn {
+            width: 100%;
+            padding: 18px;
+            margin-top: 20px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            background: linear-gradient(90deg, #3498db, #2980b9);
+            border: none;
+            border-radius: 12px;
+            color: #fff;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .calc-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(52, 152, 219, 0.3);
+        }
+
+        .result-box {
+            display: none;
+            margin-top: 40px;
+            padding: 30px;
+            background: rgba(52, 152, 219, 0.1);
+            border-radius: 16px;
+            border-left: 4px solid #3498db;
+        }
+
+        .result-box.active {
+            display: block;
+        }
+
+        .result-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .result-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .result-item {
+            text-align: center;
+        }
+
+        .result-item-label {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.5);
+            margin-bottom: 8px;
+        }
+
+        .result-item-value {
+            font-size: 2rem;
+            font-weight: 900;
+            color: #3498db;
+        }
+
+        .result-message {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.8);
+            text-align: center;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+        }
+
+        /* Isolation Stats */
+        .isolation-container {
+            background: rgba(255,255,255,0.03);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px 0;
+        }
+
+        .stat-boxes {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .stat-box {
+            background: rgba(255,255,255,0.05);
+            border-radius: 16px;
+            padding: 30px;
+            text-align: center;
+            border: 2px solid rgba(255,255,255,0.1);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 900;
+            color: #3498db;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: rgba(255,255,255,0.7);
+        }
+
+        .stat-detail {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.5);
+            margin-top: 10px;
+        }
+
+        /* Chart Container */
+        .chart-container {
+            background: rgba(255,255,255,0.03);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 40px 0;
+        }
+
+        .chart-title {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.6);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        /* Info Box */
+        .info-box {
+            background: rgba(46, 204, 113, 0.1);
+            border-left: 4px solid #2ecc71;
+            border-radius: 8px;
+            padding: 20px 25px;
+            margin: 30px 0;
+        }
+
+        .info-box-title {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #2ecc71;
+            margin-bottom: 10px;
+        }
+
+        .info-box-text {
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.7);
+            line-height: 1.6;
+        }
+
+        /* Warning Box */
+        .warning-box {
+            background: rgba(52, 152, 219, 0.1);
+            border-left: 4px solid #3498db;
+            border-radius: 8px;
+            padding: 20px 25px;
+            margin: 30px 0;
+        }
+
+        .warning-box-title {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #3498db;
+            margin-bottom: 10px;
+        }
+
+        .warning-box-text {
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.7);
+            line-height: 1.6;
+        }
+
+        /* Comparison Bars */
+        .comparison-container {
+            background: rgba(255,255,255,0.03);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px 0;
+        }
+
+        .comparison-bars {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .comparison-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .comparison-label {
+            width: 120px;
+            font-weight: 700;
+            color: rgba(255,255,255,0.8);
+        }
+
+        .comparison-bar-bg {
+            flex: 1;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .comparison-bar-fill {
+            height: 100%;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 15px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            transition: width 1s ease;
+            background: linear-gradient(90deg, #3498db, #2980b9);
+        }
+
+        /* Conclusion */
+        .conclusion {
+            min-height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 80px 20px;
+            background: linear-gradient(180deg, #0f0f1a 0%, #0f1a1a 100%);
+            text-align: center;
+        }
+
+        .conclusion-text {
+            font-size: 1.5rem;
+            max-width: 700px;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 40px;
+        }
+
+        .conclusion-highlight {
+            color: #3498db;
+            font-weight: 700;
+        }
+
+        /* Footer */
+        .footer {
+            padding: 40px 20px;
+            text-align: center;
+            color: rgba(255,255,255,0.3);
+            font-size: 0.85rem;
+            background: #0a0a0a;
+        }
+
+        .data-source {
+            margin-top: 10px;
+        }
+
+        .mcp-badge {
+            display: inline-block;
+            background: linear-gradient(90deg, #3498db, #2980b9);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-top: 20px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .result-grid {
+                grid-template-columns: 1fr;
+            }
+            .comparison-label {
+                width: 80px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero: 질문으로 시작 -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="question">혼자 사는 게<br>정말 편할까?</h1>
+            <p class="hook">
+                자유로운 1인 가구 생활.<br>
+                그 이면에 감춰진 비용과 고독을 아시나요?
+            </p>
+        </div>
+        <div class="scroll-hint">
+            <span style="font-size: 2rem;">↓</span><br>
+            <span style="font-size: 0.9rem;">스크롤하여 계속</span>
+        </div>
+    </section>
+
+    <!-- Sledgehammer Stat: 핵심 숫자 먼저 -->
+    <section class="sledgehammer">
+        <div class="big-number">750<span style="font-size: 0.5em;">만</span></div>
+        <div class="big-number-unit">1인 가구</div>
+        <p class="big-number-context">
+            대한민국 전체 가구의 <strong style="color: #3498db;">34.5%</strong>가 1인 가구입니다.<br>
+            2000년 15.5%에서 20년 만에 2배 이상 증가했습니다.
+        </p>
+    </section>
+
+    <!-- Story Section 1: 1인 가구 증가 추이 -->
+    <section class="story-section">
+        <h2 class="section-title">급증하는 1인 가구</h2>
+        <p class="section-text">
+            1인 가구는 이제 대한민국에서 가장 흔한 가구 형태가 되었습니다.
+            2000년 222만 가구에서 2023년 750만 가구로 급증했습니다.
+        </p>
+
+        <div class="chart-container">
+            <div id="trendChart"></div>
+        </div>
+
+        <p class="section-text" style="margin-top: 30px;">
+            2035년에는 <strong style="color: #3498db;">38.2%</strong>까지 증가할 것으로 예상됩니다.
+            곧 10명 중 4명이 혼자 살게 됩니다.
+        </p>
+
+        <div class="info-box">
+            <div class="info-box-title">왜 1인 가구가 늘어날까?</div>
+            <div class="info-box-text">
+                1. <strong>비혼 증가</strong>: 결혼 필수 시대의 종말<br>
+                2. <strong>고령화</strong>: 배우자 사별 증가<br>
+                3. <strong>청년 독립</strong>: 일자리를 위한 지역 이동<br>
+                4. <strong>가치관 변화</strong>: 개인주의, 라이프스타일 다양화
+            </div>
+        </div>
+    </section>
+
+    <!-- Story Section 2: 1인 가구 비용 분석 -->
+    <section class="story-section">
+        <h2 class="section-title">1인 가구가 감수하는 비용</h2>
+        <p class="section-text">
+            혼자 산다는 것은 모든 고정비를 혼자 부담한다는 뜻입니다.
+            <strong style="color: #3498db;">"규모의 경제"</strong>를 누릴 수 없습니다.
+        </p>
+
+        <div class="cost-grid">
+            <div class="cost-card single">
+                <div class="cost-category">주거비 (1인)</div>
+                <div class="cost-value">65<span style="font-size: 1.2rem;">만원</span></div>
+                <div class="cost-label">월평균 주거비</div>
+                <div class="cost-detail">
+                    월세 + 관리비 + 공과금<br>
+                    1인당 부담
+                </div>
+            </div>
+
+            <div class="cost-card multi">
+                <div class="cost-category">주거비 (2인 이상)</div>
+                <div class="cost-value">38<span style="font-size: 1.2rem;">만원</span></div>
+                <div class="cost-label">월평균 주거비 (1인당)</div>
+                <div class="cost-detail">
+                    총 주거비를 인원수로 나눔<br>
+                    1.7배 저렴
+                </div>
+            </div>
+
+            <div class="cost-card single">
+                <div class="cost-category">식비 (1인)</div>
+                <div class="cost-value">42<span style="font-size: 1.2rem;">만원</span></div>
+                <div class="cost-label">월평균 식비</div>
+                <div class="cost-detail">
+                    외식 + 배달 + 장보기<br>
+                    소량 구매로 단가 높음
+                </div>
+            </div>
+
+            <div class="cost-card multi">
+                <div class="cost-category">식비 (2인 이상)</div>
+                <div class="cost-value">28<span style="font-size: 1.2rem;">만원</span></div>
+                <div class="cost-label">월평균 식비 (1인당)</div>
+                <div class="cost-detail">
+                    대량 구매 가능<br>
+                    1.5배 저렴
+                </div>
+            </div>
+
+            <div class="cost-card single">
+                <div class="cost-category">공과금 (1인)</div>
+                <div class="cost-value">12<span style="font-size: 1.2rem;">만원</span></div>
+                <div class="cost-label">월평균 공과금</div>
+                <div class="cost-detail">
+                    전기 + 수도 + 가스 + 인터넷<br>
+                    기본요금 전부 부담
+                </div>
+            </div>
+
+            <div class="cost-card multi">
+                <div class="cost-category">공과금 (2인 이상)</div>
+                <div class="cost-value">6<span style="font-size: 1.2rem;">만원</span></div>
+                <div class="cost-label">월평균 공과금 (1인당)</div>
+                <div class="cost-detail">
+                    기본요금 분담<br>
+                    2배 저렴
+                </div>
+            </div>
+        </div>
+
+        <div class="warning-box">
+            <div class="warning-box-title">1인 가구 비용 부담</div>
+            <div class="warning-box-text">
+                1인 가구의 월평균 생활비는 <strong>119만원</strong>입니다.
+                2인 이상 가구(1인당 72만원)보다 <strong>65% 더 많은</strong> 비용이 듭니다.
+                같은 삶의 질을 유지하려면 훨씬 더 많은 돈이 필요합니다.
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Calculator -->
+    <section class="calculator-section">
+        <div class="calculator-container">
+            <h2 class="calculator-title">나의 1인가구 비용 계산하기</h2>
+            <p class="calculator-subtitle">
+                매달 얼마나 더 부담하고 있는지 확인해보세요
+            </p>
+
+            <div class="input-group">
+                <label class="input-label">월 주거비 (월세 + 관리비)</label>
+                <input type="text" class="input-field" id="rentInput" placeholder="65" oninput="formatNumber(this)">
+                <p class="input-hint">단위: 만원 (예: 65 = 65만원)</p>
+            </div>
+
+            <div class="input-group">
+                <label class="input-label">월 식비</label>
+                <input type="text" class="input-field" id="foodInput" placeholder="42" oninput="formatNumber(this)">
+                <p class="input-hint">단위: 만원 (예: 42 = 42만원)</p>
+            </div>
+
+            <div class="input-group">
+                <label class="input-label">월 공과금 (전기/수도/가스/인터넷)</label>
+                <input type="text" class="input-field" id="utilityInput" placeholder="12" oninput="formatNumber(this)">
+                <p class="input-hint">단위: 만원 (예: 12 = 12만원)</p>
+            </div>
+
+            <button class="calc-btn" onclick="calculateCost()">1인가구 추가 비용 확인하기</button>
+
+            <div class="result-box" id="resultBox">
+                <div class="result-title">나의 1인가구 비용 분석</div>
+                <div class="result-grid">
+                    <div class="result-item">
+                        <div class="result-item-label">내 월 생활비</div>
+                        <div class="result-item-value" id="totalCost">0만원</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-item-label">2인 가구라면</div>
+                        <div class="result-item-value" id="multiCost" style="color: #2ecc71;">0만원</div>
+                    </div>
+                </div>
+                <div class="result-message" id="resultMessage"></div>
+            </div>
+        </div>
+
+        <div style="max-width: 600px; margin: 40px auto 0; text-align: center;">
+            <div class="info-box">
+                <div class="info-box-title">1인가구 비용 절감 팁</div>
+                <div class="info-box-text">
+                    <strong>주거비</strong>: 셰어하우스, 역세권 외곽 지역 고려<br>
+                    <strong>식비</strong>: 밀키트 활용, 주말 meal prep<br>
+                    <strong>공과금</strong>: 절약형 요금제, 에너지 절약<br>
+                    <strong>구독 서비스</strong>: 가족/친구와 공유
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Story Section 3: 연령대별 1인 가구 -->
+    <section class="story-section">
+        <h2 class="section-title">누가 혼자 살까?</h2>
+        <p class="section-text">
+            1인 가구는 특정 연령대만의 문제가 아닙니다.
+            청년부터 노인까지 전 연령대에서 증가하고 있습니다.
+        </p>
+
+        <div class="chart-container">
+            <div id="ageChart"></div>
+        </div>
+
+        <p class="section-text" style="margin-top: 30px;">
+            <strong style="color: #3498db;">30대</strong> 1인 가구가 가장 많지만(170만),
+            <strong style="color: #3498db;">70대 이상</strong> 1인 가구도 150만 명에 달합니다.
+        </p>
+
+        <div class="comparison-container">
+            <div class="chart-title">연령대별 1인가구 비율 (전체 가구 중)</div>
+            <div class="comparison-bars">
+                <div class="comparison-item">
+                    <div class="comparison-label">20대</div>
+                    <div class="comparison-bar-bg">
+                        <div class="comparison-bar-fill" style="width: 0%;" data-width="45">45%</div>
+                    </div>
+                </div>
+                <div class="comparison-item">
+                    <div class="comparison-label">30대</div>
+                    <div class="comparison-bar-bg">
+                        <div class="comparison-bar-fill" style="width: 0%;" data-width="38">38%</div>
+                    </div>
+                </div>
+                <div class="comparison-item">
+                    <div class="comparison-label">40대</div>
+                    <div class="comparison-bar-bg">
+                        <div class="comparison-bar-fill" style="width: 0%;" data-width="22">22%</div>
+                    </div>
+                </div>
+                <div class="comparison-item">
+                    <div class="comparison-label">50대</div>
+                    <div class="comparison-bar-bg">
+                        <div class="comparison-bar-fill" style="width: 0%;" data-width="28">28%</div>
+                    </div>
+                </div>
+                <div class="comparison-item">
+                    <div class="comparison-label">60대</div>
+                    <div class="comparison-bar-bg">
+                        <div class="comparison-bar-fill" style="width: 0%;" data-width="35">35%</div>
+                    </div>
+                </div>
+                <div class="comparison-item">
+                    <div class="comparison-label">70대+</div>
+                    <div class="comparison-bar-bg">
+                        <div class="comparison-bar-fill" style="width: 0%;" data-width="42">42%</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Story Section 4: 고독사 및 사회적 고립 -->
+    <section class="story-section">
+        <h2 class="section-title">1인 가구의 그림자: 고독사와 사회적 고립</h2>
+        <p class="section-text">
+            1인 가구 증가는 새로운 사회 문제를 낳고 있습니다.
+            <strong style="color: #3498db;">고독사</strong>와 <strong style="color: #3498db;">사회적 고립</strong>입니다.
+        </p>
+
+        <div class="isolation-container">
+            <div class="stat-boxes">
+                <div class="stat-box">
+                    <div class="stat-number">3,378<span style="font-size: 0.6em;">명</span></div>
+                    <div class="stat-label">연간 고독사 추정치 (2022)</div>
+                    <div class="stat-detail">하루 평균 9.3명</div>
+                </div>
+
+                <div class="stat-box">
+                    <div class="stat-number">67<span style="font-size: 0.6em;">%</span></div>
+                    <div class="stat-label">고독사 중 1인가구 비율</div>
+                    <div class="stat-detail">2,263명이 1인가구</div>
+                </div>
+
+                <div class="stat-box">
+                    <div class="stat-number">52<span style="font-size: 0.6em;">세</span></div>
+                    <div class="stat-label">평균 고독사 연령</div>
+                    <div class="stat-detail">50-60대가 가장 많음</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="warning-box">
+            <div class="warning-box-title">사회적 고립의 위험</div>
+            <div class="warning-box-text">
+                1인 가구의 <strong>23.5%</strong>가 "친한 사람이 없다"고 응답했습니다.
+                정기적인 사회적 교류가 없는 1인 가구는 <strong>38.7%</strong>에 달합니다.
+                사회적 고립은 우울증, 불안장애, 심혈관 질환 위험을 높입니다.
+            </div>
+        </div>
+
+        <div class="chart-container">
+            <div id="isolationChart"></div>
+        </div>
+
+        <div class="info-box" style="margin-top: 40px;">
+            <div class="info-box-title">대응 방안</div>
+            <div class="info-box-text">
+                <strong>개인 차원</strong>: 정기적인 모임, 취미 활동, 자원봉사<br>
+                <strong>지역사회</strong>: 커뮤니티 센터, 독거노인 돌봄 서비스<br>
+                <strong>정부 정책</strong>: 고독사 예방 시스템, 1인 가구 지원 정책<br>
+                <strong>기술 활용</strong>: IoT 기반 안전 확인 시스템
+            </div>
+        </div>
+    </section>
+
+    <!-- Story Section 5: 지역별 분포 -->
+    <section class="story-section">
+        <h2 class="section-title">어디에 1인 가구가 많을까?</h2>
+        <p class="section-text">
+            1인 가구는 대도시에 집중되어 있습니다.
+            일자리와 생활 편의성을 따라 움직입니다.
+        </p>
+
+        <div class="chart-container">
+            <div id="regionChart"></div>
+        </div>
+
+        <p class="section-text" style="margin-top: 30px;">
+            <strong style="color: #3498db;">서울</strong>에만 126만 1인 가구가 있습니다.
+            서울 전체 가구의 <strong>35.8%</strong>가 1인 가구입니다.
+        </p>
+    </section>
+
+    <!-- Conclusion -->
+    <section class="conclusion">
+        <p class="conclusion-text">
+            <span class="conclusion-highlight">"혼자 사는 게 정말 편할까?"</span><br><br>
+            자유로움과 독립성을 얻는 대신,<br>
+            더 높은 비용과 고독을 감수해야 합니다.<br><br>
+            1인 가구는 이제 선택이 아닌 <span class="conclusion-highlight">현실</span>입니다.<br>
+            우리 사회는 750만 1인 가구를 위해 무엇을 준비하고 있을까요?
+        </p>
+        <p style="color: rgba(255,255,255,0.5); font-size: 1rem; margin-top: 30px;">
+            당신의 1인가구 비용은 얼마인가요?
+        </p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div>데이터로 보는 대한민국</div>
+        <div class="data-source">출처: KOSIS 국가통계포털 (통계청 인구총조사, 가계금융복지조사, 1인가구 현황 통계)</div>
+        <div class="mcp-badge">MCP 기반 데이터 스토리텔링</div>
+        <div style="margin-top: 15px;">Generated: 2024-12-14</div>
+    </footer>
+
+    <script>
+        // Number formatting
+        function formatNumber(input) {
+            let value = input.value.replace(/[^0-9]/g, '');
+            input.value = value;
+        }
+
+        // Cost Calculator
+        function calculateCost() {
+            const rent = parseInt(document.getElementById('rentInput').value) || 0;
+            const food = parseInt(document.getElementById('foodInput').value) || 0;
+            const utility = parseInt(document.getElementById('utilityInput').value) || 0;
+            const resultBox = document.getElementById('resultBox');
+
+            if (rent === 0 && food === 0 && utility === 0) {
+                alert('최소 한 항목의 비용을 입력해주세요.');
+                return;
+            }
+
+            const total = rent + food + utility;
+
+            // 2인 가구 추정: 주거비 60%, 식비 65%, 공과금 50%
+            const multiRent = Math.round(rent * 0.6);
+            const multiFood = Math.round(food * 0.65);
+            const multiUtility = Math.round(utility * 0.5);
+            const multiTotal = multiRent + multiFood + multiUtility;
+
+            const savings = total - multiTotal;
+            const savingsPercent = Math.round((savings / total) * 100);
+
+            // Update display
+            document.getElementById('totalCost').textContent = total + '만원';
+            document.getElementById('multiCost').textContent = multiTotal + '만원';
+
+            const message = `
+                2인 가구라면 <strong style="color: #2ecc71;">${multiTotal}만원</strong>만 쓸 것을
+                1인 가구라서 <strong style="color: #3498db;">${total}만원</strong>을 씁니다.<br><br>
+                매달 <strong style="color: #3498db;">${savings}만원 (${savingsPercent}%)</strong>을 더 부담하고 있습니다.<br>
+                1년이면 <strong style="color: #3498db;">${savings * 12}만원</strong>의 추가 비용입니다.
+            `;
+
+            document.getElementById('resultMessage').innerHTML = message;
+
+            // Show result
+            resultBox.classList.add('active');
+            resultBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        // Animate comparison bars on scroll
+        const observerOptions = {
+            threshold: 0.5,
+            rootMargin: '0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const fills = entry.target.querySelectorAll('.comparison-bar-fill');
+                    fills.forEach(fill => {
+                        const targetWidth = fill.getAttribute('data-width');
+                        setTimeout(() => {
+                            fill.style.width = targetWidth + '%';
+                        }, 100);
+                    });
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const comparisonContainer = document.querySelector('.comparison-container');
+            if (comparisonContainer) {
+                observer.observe(comparisonContainer);
+            }
+
+            // Create charts
+            createTrendChart();
+            createAgeChart();
+            createIsolationChart();
+            createRegionChart();
+        });
+
+        // Trend Chart: 1인 가구 증가 추이
+        function createTrendChart() {
+            const data = [{
+                type: 'scatter',
+                mode: 'lines+markers',
+                x: [2000, 2005, 2010, 2015, 2020, 2023, 2035],
+                y: [15.5, 20.0, 23.9, 27.2, 31.7, 34.5, 38.2],
+                line: {
+                    color: '#3498db',
+                    width: 3
+                },
+                marker: {
+                    size: 10,
+                    color: '#3498db',
+                    line: {
+                        color: '#fff',
+                        width: 2
+                    }
+                },
+                text: ['15.5%', '20.0%', '23.9%', '27.2%', '31.7%', '34.5%', '38.2%'],
+                textposition: 'top center',
+                textfont: {
+                    color: 'rgba(255,255,255,0.9)',
+                    size: 12,
+                    family: 'Noto Sans KR'
+                }
+            }];
+
+            const layout = {
+                paper_bgcolor: 'rgba(0,0,0,0)',
+                plot_bgcolor: 'rgba(0,0,0,0)',
+                font: {
+                    color: 'rgba(255,255,255,0.8)',
+                    family: 'Noto Sans KR'
+                },
+                xaxis: {
+                    title: '연도',
+                    gridcolor: 'rgba(255,255,255,0.1)',
+                    tickfont: { size: 11 }
+                },
+                yaxis: {
+                    title: '1인가구 비율 (%)',
+                    gridcolor: 'rgba(255,255,255,0.1)',
+                    tickfont: { size: 11 },
+                    range: [10, 42]
+                },
+                margin: { l: 60, r: 30, t: 20, b: 60 },
+                hovermode: 'closest',
+                shapes: [{
+                    type: 'line',
+                    x0: 2023,
+                    x1: 2023,
+                    y0: 10,
+                    y1: 42,
+                    line: {
+                        color: 'rgba(255,255,255,0.3)',
+                        width: 2,
+                        dash: 'dash'
+                    }
+                }],
+                annotations: [{
+                    x: 2023,
+                    y: 40,
+                    text: '현재',
+                    showarrow: false,
+                    font: {
+                        color: 'rgba(255,255,255,0.5)',
+                        size: 10
+                    },
+                    xshift: 25
+                }, {
+                    x: 2035,
+                    y: 40,
+                    text: '예측',
+                    showarrow: false,
+                    font: {
+                        color: 'rgba(255,255,255,0.5)',
+                        size: 10
+                    }
+                }]
+            };
+
+            const config = {
+                responsive: true,
+                displayModeBar: false
+            };
+
+            Plotly.newPlot('trendChart', data, layout, config);
+        }
+
+        // Age Chart: 연령대별 1인 가구 수
+        function createAgeChart() {
+            const data = [{
+                type: 'bar',
+                x: ['20대', '30대', '40대', '50대', '60대', '70대+'],
+                y: [125, 170, 95, 110, 135, 150],
+                marker: {
+                    color: ['#3498db', '#2980b9', '#5dade2', '#85c1e9', '#aed6f1', '#d6eaf8'],
+                    line: {
+                        color: 'rgba(255,255,255,0.2)',
+                        width: 1
+                    }
+                },
+                text: ['125만', '170만', '95만', '110만', '135만', '150만'],
+                textposition: 'outside',
+                textfont: {
+                    color: 'rgba(255,255,255,0.9)',
+                    size: 13,
+                    family: 'Noto Sans KR'
+                }
+            }];
+
+            const layout = {
+                paper_bgcolor: 'rgba(0,0,0,0)',
+                plot_bgcolor: 'rgba(0,0,0,0)',
+                font: {
+                    color: 'rgba(255,255,255,0.8)',
+                    family: 'Noto Sans KR'
+                },
+                xaxis: {
+                    gridcolor: 'rgba(255,255,255,0.1)',
+                    showgrid: false,
+                    tickfont: { size: 12 }
+                },
+                yaxis: {
+                    title: '1인가구 수 (만명)',
+                    gridcolor: 'rgba(255,255,255,0.1)',
+                    tickfont: { size: 11 }
+                },
+                margin: { l: 60, r: 30, t: 20, b: 50 },
+                bargap: 0.3,
+                hovermode: 'closest'
+            };
+
+            const config = {
+                responsive: true,
+                displayModeBar: false
+            };
+
+            Plotly.newPlot('ageChart', data, layout, config);
+        }
+
+        // Isolation Chart: 사회적 교류 빈도
+        function createIsolationChart() {
+            const data = [{
+                type: 'pie',
+                values: [23.5, 38.7, 27.3, 10.5],
+                labels: ['친한 사람 없음', '월 1회 미만 교류', '주 1회 정도 교류', '거의 매일 교류'],
+                marker: {
+                    colors: ['#e74c3c', '#e67e22', '#3498db', '#2ecc71'],
+                    line: {
+                        color: '#0a0a0a',
+                        width: 2
+                    }
+                },
+                textinfo: 'label+percent',
+                textfont: {
+                    color: '#fff',
+                    size: 13,
+                    family: 'Noto Sans KR'
+                },
+                hoverinfo: 'label+percent+value',
+                hole: 0.4
+            }];
+
+            const layout = {
+                paper_bgcolor: 'rgba(0,0,0,0)',
+                plot_bgcolor: 'rgba(0,0,0,0)',
+                font: {
+                    color: 'rgba(255,255,255,0.8)',
+                    family: 'Noto Sans KR'
+                },
+                margin: { l: 20, r: 20, t: 40, b: 20 },
+                showlegend: false,
+                annotations: [{
+                    font: {
+                        size: 14,
+                        color: 'rgba(255,255,255,0.7)'
+                    },
+                    showarrow: false,
+                    text: '1인가구<br>사회적 교류',
+                    x: 0.5,
+                    y: 0.5
+                }]
+            };
+
+            const config = {
+                responsive: true,
+                displayModeBar: false
+            };
+
+            Plotly.newPlot('isolationChart', data, layout, config);
+        }
+
+        // Region Chart: 지역별 1인 가구 비율
+        function createRegionChart() {
+            const data = [{
+                type: 'bar',
+                x: ['서울', '부산', '대구', '인천', '광주', '대전', '울산', '세종', '경기', '강원'],
+                y: [35.8, 37.2, 35.1, 32.5, 34.8, 36.2, 31.8, 28.5, 30.2, 33.5],
+                marker: {
+                    color: '#3498db',
+                    line: {
+                        color: 'rgba(255,255,255,0.2)',
+                        width: 1
+                    }
+                },
+                text: ['35.8%', '37.2%', '35.1%', '32.5%', '34.8%', '36.2%', '31.8%', '28.5%', '30.2%', '33.5%'],
+                textposition: 'outside',
+                textfont: {
+                    color: 'rgba(255,255,255,0.9)',
+                    size: 12,
+                    family: 'Noto Sans KR'
+                }
+            }];
+
+            const layout = {
+                paper_bgcolor: 'rgba(0,0,0,0)',
+                plot_bgcolor: 'rgba(0,0,0,0)',
+                font: {
+                    color: 'rgba(255,255,255,0.8)',
+                    family: 'Noto Sans KR'
+                },
+                xaxis: {
+                    gridcolor: 'rgba(255,255,255,0.1)',
+                    showgrid: false,
+                    tickfont: { size: 11 }
+                },
+                yaxis: {
+                    title: '1인가구 비율 (%)',
+                    gridcolor: 'rgba(255,255,255,0.1)',
+                    tickfont: { size: 11 },
+                    range: [0, 42]
+                },
+                margin: { l: 60, r: 30, t: 20, b: 60 },
+                bargap: 0.2,
+                hovermode: 'closest'
+            };
+
+            const config = {
+                responsive: true,
+                displayModeBar: false
+            };
+
+            Plotly.newPlot('regionChart', data, layout, config);
+        }
+    </script>
+</body>
+</html>

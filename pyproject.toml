@@ -1,24 +1,42 @@
 [project]
-name = "kosis-data-processor"
+name = "kosis-mcp"
 version = "0.1.0"
-description = "Add your description here"
+description = "KOSIS(국가통계포털) MCP Server - Korean Statistical Data API Tools"
 readme = "README.md"
 requires-python = ">=3.12"
-dependencies = [
-    "bs4>=0.0.2",
-    "ipykernel>=6.29.5",
-    "openai>=1.90.0",
-    "openpyxl>=3.1.5",
-    "pandas>=2.3.0",
-    "python-dotenv>=1.1.0",
-    "requests>=2.32.4",
-    "selenium>=4.33.0",
-    "webdriver-manager>=4.0.2",
-    "pyyaml>=6.0.1",
-    "tqdm>=4.66.0",
-    "pyarrow>=15.0.0",
-    "colorlog>=6.7.0",
+license = "MIT"
+authors = [
+    { name = "SDH", email = "sdh@example.com" }
 ]
+keywords = ["kosis", "mcp", "statistics", "korea", "llm", "claude", "fastmcp"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Information Analysis",
+]
+dependencies = [
+    "fastmcp>=2.14.0",
+    "requests>=2.32.4",
+    "pandas>=2.3.0",
+    "plotly>=6.5.0",
+    "kaleido>=1.2.0",
+    "python-dotenv>=1.1.0",
+    "pyyaml>=6.0.1",
+    "bs4>=0.0.2",
+    "json5>=0.12.1",
+    "pymupdf>=1.26.7",
+    "xlrd>=2.0.2",
+    "aiohttp>=3.13.2",
+]
+
+[project.urls]
+Homepage = "https://github.com/sdh/kosis-mcp"
+Documentation = "https://github.com/sdh/kosis-mcp#readme"
+Repository = "https://github.com/sdh/kosis-mcp"
+
+[project.scripts]
+kosis-mcp = "mcp_server.server:main"
 
 [dependency-groups]
 dev = [

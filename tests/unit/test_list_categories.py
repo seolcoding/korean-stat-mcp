@@ -94,7 +94,9 @@ class TestCategoryListByOrg:
 
         assert len(result) == 3
         assert result[0]["ORG_ID"] == "101"
-        assert "orgId=101" in responses.calls[0].request.url
+        # vwCd=MT_OTITLE (기관별)과 parentListId=101 확인
+        assert "vwCd=MT_OTITLE" in responses.calls[0].request.url
+        assert "parentListId=101" in responses.calls[0].request.url
 
     @responses.activate
     def test_list_by_org_with_parent_stat_id(self, category_client: CategoryList, sample_list_response: str):
@@ -108,7 +110,8 @@ class TestCategoryListByOrg:
 
         category_client.list_by_org("101", parent_stat_id="1992001")
 
-        assert "parentStatId=1992001" in responses.calls[0].request.url
+        # parent_stat_id가 지정되면 parentListId가 해당 값으로 덮어씀
+        assert "parentListId=1992001" in responses.calls[0].request.url
 
     @responses.activate
     def test_list_by_org_empty_result(self, category_client: CategoryList):
@@ -146,7 +149,9 @@ class TestCategoryListByTheme:
         result = category_client.list_by_theme("A")
 
         assert len(result) == 3
-        assert "vwCd=A" in responses.calls[0].request.url
+        # vwCd=MT_ZTITLE (주제별)과 parentListId=A 확인
+        assert "vwCd=MT_ZTITLE" in responses.calls[0].request.url
+        assert "parentListId=A" in responses.calls[0].request.url
 
     @responses.activate
     def test_list_by_theme_with_constant(self, category_client: CategoryList, sample_list_response: str):
@@ -186,5 +191,6 @@ class TestCategoryListStatistics:
         assert len(result) == 2
         assert result[0]["STAT_ID"] == "1992001"
         assert result[0]["STAT_NM"] == "주민등록인구현황"
-        # getStatList 메서드 사용 확인
-        assert "method=getStatList" in responses.calls[0].request.url
+        # getList 메서드와 MT_OTITLE 뷰 사용 확인
+        assert "method=getList" in responses.calls[0].request.url
+        assert "vwCd=MT_OTITLE" in responses.calls[0].request.url

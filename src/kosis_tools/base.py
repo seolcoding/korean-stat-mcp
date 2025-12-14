@@ -28,10 +28,10 @@ from __future__ import annotations
 
 import json
 import logging
-import re
 import time
 from typing import Any, Dict, List, Optional, Union
 
+import json5
 import requests
 from requests.exceptions import RequestException
 
@@ -78,18 +78,10 @@ def fix_malformed_json(response_text: str) -> Optional[Union[Dict, List]]:
         return None
 
     try:
-        # 키에 따옴표가 없는 경우를 처리하는 정규표현식
-        # {TBL_ID: -> {"TBL_ID":
-        # ,TBL_NM: -> ,"TBL_NM":
-        corrected_text = re.sub(
-            r"([{,])\s*([a-zA-Z_][a-zA-Z0-9_]*)\s*:", r'"\1"\2":', response_text
-        )
-        # 위 정규식이 잘못됨. 수정:
-        corrected_text = re.sub(
-            r"([{,])\s*([a-zA-Z_][a-zA-Z0-9_]*)\s*:", r'\1"\2":', response_text
-        )
-        return json.loads(corrected_text)
-    except json.JSONDecodeError as e:
+        # json5 라이브러리 사용: 따옴표 없는 키 등 비표준 JSON을 자동 처리
+        # KOSIS API는 {TBL_ID:"값"} 형태의 비표준 JSON을 반환하므로 json5 사용
+        return json5.loads(response_text)
+    except (json.JSONDecodeError, ValueError) as e:
         logger.error(f"JSON 파싱 실패: {e}")
         logger.debug(f"응답 미리보기: {response_text[:500]}...")
         return None

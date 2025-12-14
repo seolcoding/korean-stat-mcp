@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>내 고향은 언제 사라질까?</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap');
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background: #0a0a0a;
+            color: #fff;
+            line-height: 1.8;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(180deg, #0a0a0a 0%, #1a0a0a 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23e74c3c' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+        }
+
+        .warning-badge {
+            display: inline-block;
+            background: linear-gradient(90deg, #e74c3c, #c0392b);
+            padding: 10px 25px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        .question {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 900;
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, #e74c3c 0%, #ff6b6b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hook {
+            font-size: 1.3rem;
+            color: rgba(255,255,255,0.7);
+            max-width: 650px;
+            margin: 0 auto 50px;
+            line-height: 2;
+        }
+
+        .scroll-hint {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+            color: rgba(255,255,255,0.5);
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-20px); }
+            60% { transform: translateX(-50%) translateY(-10px); }
+        }
+
+        /* Sledgehammer Stat */
+        .sledgehammer {
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 60px 20px;
+            background: #0f0a0a;
+        }
+
+        .big-number {
+            font-size: clamp(6rem, 15vw, 14rem);
+            font-weight: 900;
+            color: #e74c3c;
+            line-height: 1;
+        }
+
+        .big-number-unit {
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            color: rgba(255,255,255,0.6);
+            margin-top: 20px;
+        }
+
+        .big-number-context {
+            font-size: 1.2rem;
+            color: rgba(255,255,255,0.5);
+            margin-top: 30px;
+            max-width: 600px;
+            text-align: center;
+            line-height: 2;
+        }
+
+        /* Story Section */
+        .story-section {
+            padding: 100px 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            color: #e74c3c;
+        }
+
+        .section-text {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 40px;
+            line-height: 2;
+        }
+
+        /* Chart Container */
+        .chart-container {
+            background: rgba(255,255,255,0.03);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px 0;
+        }
+
+        .chart-title {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.6);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        /* Regional Risk Grid */
+        .risk-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .risk-card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 16px;
+            padding: 25px;
+            text-align: center;
+            transition: transform 0.3s, background 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .risk-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+        }
+
+        .risk-card.critical::before {
+            background: linear-gradient(90deg, #e74c3c, #c0392b);
+        }
+
+        .risk-card.high::before {
+            background: linear-gradient(90deg, #f39c12, #e67e22);
+        }
+
+        .risk-card.moderate::before {
+            background: linear-gradient(90deg, #f1c40f, #f39c12);
+        }
+
+        .risk-card.low::before {
+            background: linear-gradient(90deg, #95a5a6, #7f8c8d);
+        }
+
+        .risk-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.08);
+        }
+
+        .risk-region {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: rgba(255,255,255,0.9);
+        }
+
+        .risk-index {
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-bottom: 10px;
+        }
+
+        .risk-card.critical .risk-index {
+            color: #e74c3c;
+        }
+
+        .risk-card.high .risk-index {
+            color: #f39c12;
+        }
+
+        .risk-card.moderate .risk-index {
+            color: #f1c40f;
+        }
+
+        .risk-card.low .risk-index {
+            color: #95a5a6;
+        }
+
+        .risk-label {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.5);
+        }
+
+        /* Interactive Section */
+        .interactive-section {
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 80px 20px;
+            background: #0f1a1a;
+        }
+
+        .interactive-container {
+            background: rgba(255,255,255,0.05);
+            border-radius: 24px;
+            padding: 50px;
+            max-width: 700px;
+            width: 100%;
+        }
+
+        .interactive-title {
+            font-size: 1.8rem;
+            color: #e74c3c;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .region-selector {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 15px;
+            margin: 30px 0;
+        }
+
+        .region-btn {
+            background: rgba(255,255,255,0.1);
+            border: 2px solid rgba(255,255,255,0.2);
+            color: rgba(255,255,255,0.7);
+            padding: 15px 10px;
+            border-radius: 12px;
+            font-size: 0.95rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+
+        .region-btn:hover {
+            background: rgba(255,255,255,0.15);
+            border-color: #e74c3c;
+        }
+
+        .region-btn.active {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            border-color: #e74c3c;
+            color: #fff;
+        }
+
+        .result-box {
+            background: rgba(231, 76, 60, 0.1);
+            border-left: 4px solid #e74c3c;
+            border-radius: 12px;
+            padding: 30px;
+            margin-top: 40px;
+            min-height: 200px;
+        }
+
+        .result-status {
+            font-size: 2rem;
+            font-weight: 900;
+            color: #e74c3c;
+            margin-bottom: 15px;
+        }
+
+        .result-details {
+            color: rgba(255,255,255,0.7);
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+
+        /* Emotional Images Section */
+        .images-section {
+            padding: 100px 20px;
+            background: rgba(0,0,0,0.3);
+        }
+
+        .images-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .image-card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 16px;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .image-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            opacity: 0.7;
+        }
+
+        .image-caption {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.8);
+            line-height: 1.6;
+        }
+
+        /* Cause Analysis */
+        .cause-section {
+            padding: 100px 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .cause-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .cause-card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 20px;
+            padding: 35px;
+            position: relative;
+        }
+
+        .cause-number {
+            font-size: 3rem;
+            font-weight: 900;
+            color: #e74c3c;
+            opacity: 0.3;
+            position: absolute;
+            top: 20px;
+            right: 25px;
+        }
+
+        .cause-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #e74c3c;
+            margin-bottom: 20px;
+        }
+
+        .cause-text {
+            color: rgba(255,255,255,0.7);
+            line-height: 1.8;
+        }
+
+        .cause-stat {
+            background: rgba(231, 76, 60, 0.1);
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 15px;
+            font-weight: 700;
+            color: #e74c3c;
+        }
+
+        /* Conclusion */
+        .conclusion {
+            min-height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 80px 20px;
+            background: linear-gradient(180deg, #0f0a0a 0%, #1a0a0a 100%);
+            text-align: center;
+        }
+
+        .conclusion-text {
+            font-size: 1.5rem;
+            max-width: 700px;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 40px;
+            line-height: 2;
+        }
+
+        .conclusion-highlight {
+            color: #e74c3c;
+            font-weight: 700;
+        }
+
+        /* Footer */
+        .footer {
+            padding: 40px 20px;
+            text-align: center;
+            color: rgba(255,255,255,0.3);
+            font-size: 0.85rem;
+            background: #0a0a0a;
+        }
+
+        .data-source {
+            margin-top: 10px;
+        }
+
+        .mcp-badge {
+            display: inline-block;
+            background: linear-gradient(90deg, #e74c3c, #c0392b);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .risk-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .region-selector {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .image-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cause-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero: 감정적 질문 -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="warning-badge">지방소멸 위기</div>
+            <h1 class="question">내 고향은<br>언제 사라질까?</h1>
+            <p class="hook">
+                빈 학교, 폐업하는 상점, 떠나는 청년들.<br>
+                당신의 고향이 사라지고 있습니다.<br>
+                <strong style="color: #e74c3c;">113개 시군구가 이미 소멸위험지역</strong>입니다.
+            </p>
+        </div>
+        <div class="scroll-hint">
+            <span style="font-size: 2rem;">↓</span><br>
+            <span style="font-size: 0.9rem;">현실을 확인하세요</span>
+        </div>
+    </section>
+
+    <!-- Sledgehammer Stat -->
+    <section class="sledgehammer">
+        <div class="big-number">113개</div>
+        <div class="big-number-unit">소멸위험지역</div>
+        <p class="big-number-context">
+            전국 228개 시군구 중 <strong style="color: #e74c3c;">49.6%</strong>가 위험.<br>
+            2개 중 1개 지역이 사라질 위기에 처했습니다.<br><br>
+            <span style="color: rgba(255,255,255,0.4); font-size: 0.95rem;">
+                소멸위험지수 1.0 미만 기준 (2023년)
+            </span>
+        </p>
+    </section>
+
+    <!-- Story Section 1: 소멸위험지수란? -->
+    <section class="story-section">
+        <h2 class="section-title">소멸위험지수란?</h2>
+        <p class="section-text">
+            <strong style="color: #e74c3c;">소멸위험지수 = 청년 여성 인구(20-39세) ÷ 노인 인구(65세 이상)</strong><br><br>
+
+            지수가 1.0 미만이면 젊은 세대보다 노인이 더 많다는 뜻입니다.<br>
+            출산 가능 인구가 줄어들고, 인구 감소가 가속화됩니다.<br><br>
+
+            <strong>0.5 미만</strong>: 소멸 고위험<br>
+            <strong>0.5~1.0</strong>: 소멸 위험 진입<br>
+            <strong>1.0 이상</strong>: 상대적 안정
+        </p>
+
+        <div class="chart-container">
+            <div class="chart-title">전국 시군구 소멸위험지수 분포 (2023)</div>
+            <div id="riskDistChart" style="width: 100%; height: 400px;"></div>
+        </div>
+
+        <p class="section-text" style="margin-top: 40px;">
+            <strong style="color: #e74c3c;">89개 지역이 0.5 미만</strong> (소멸 고위험)<br>
+            이 지역들은 이미 되돌릴 수 없는 단계에 진입했습니다.
+        </p>
+    </section>
+
+    <!-- Regional Risk Cards -->
+    <section class="story-section" style="background: rgba(255,255,255,0.02);">
+        <h2 class="section-title">지역별 소멸위험지수 (2023)</h2>
+        <p class="section-text">
+            수도권과 비수도권의 격차가 극심합니다.<br>
+            특히 <strong style="color: #e74c3c;">전남, 경북, 강원</strong>의 농촌 지역이 위험합니다.
+        </p>
+
+        <div class="risk-grid">
+            <div class="risk-card critical">
+                <div class="risk-region">경북 의성군</div>
+                <div class="risk-index">0.14</div>
+                <div class="risk-label">극심한 위험</div>
+            </div>
+
+            <div class="risk-card critical">
+                <div class="risk-region">경북 군위군</div>
+                <div class="risk-index">0.15</div>
+                <div class="risk-label">극심한 위험</div>
+            </div>
+
+            <div class="risk-card critical">
+                <div class="risk-region">전남 고흥군</div>
+                <div class="risk-index">0.17</div>
+                <div class="risk-label">극심한 위험</div>
+            </div>
+
+            <div class="risk-card critical">
+                <div class="risk-region">경북 청송군</div>
+                <div class="risk-index">0.18</div>
+                <div class="risk-label">소멸 고위험</div>
+            </div>
+
+            <div class="risk-card high">
+                <div class="risk-region">강원 양구군</div>
+                <div class="risk-index">0.43</div>
+                <div class="risk-label">소멸 위험</div>
+            </div>
+
+            <div class="risk-card high">
+                <div class="risk-region">전북 임실군</div>
+                <div class="risk-index">0.38</div>
+                <div class="risk-label">소멸 위험</div>
+            </div>
+
+            <div class="risk-card moderate">
+                <div class="risk-region">부산 동구</div>
+                <div class="risk-index">0.74</div>
+                <div class="risk-label">위험 진입</div>
+            </div>
+
+            <div class="risk-card low">
+                <div class="risk-region">서울 강남구</div>
+                <div class="risk-index">2.31</div>
+                <div class="risk-label">상대적 안정</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Section -->
+    <section class="interactive-section">
+        <div class="interactive-container">
+            <h2 class="interactive-title">우리 지역 소멸위험도 확인</h2>
+            <p style="text-align: center; color: rgba(255,255,255,0.6); margin-bottom: 30px;">
+                당신이 살고 있는 지역의 소멸위험지수를 확인해보세요
+            </p>
+
+            <div class="region-selector">
+                <button class="region-btn active" data-region="경북 의성군" data-index="0.14" data-status="극심한 위험">경북 의성군</button>
+                <button class="region-btn" data-region="전남 고흥군" data-index="0.17" data-status="극심한 위험">전남 고흥군</button>
+                <button class="region-btn" data-region="강원 평창군" data-index="0.29" data-status="소멸 고위험">강원 평창군</button>
+                <button class="region-btn" data-region="부산 동구" data-index="0.74" data-status="위험 진입">부산 동구</button>
+                <button class="region-btn" data-region="대전 동구" data-index="1.12" data-status="상대적 안정">대전 동구</button>
+                <button class="region-btn" data-region="서울 강남구" data-index="2.31" data-status="안정">서울 강남구</button>
+            </div>
+
+            <div class="result-box" id="regionResult">
+                <div class="result-status" id="resultStatus">소멸위험지수: 0.14</div>
+                <div class="result-details" id="resultDetails">
+                    <strong style="color: #e74c3c;">경북 의성군</strong>은 전국에서 가장 심각한 소멸위험지역입니다.<br><br>
+
+                    <strong>현재 상황:</strong><br>
+                    • 청년 여성 100명당 노인 714명<br>
+                    • 전국 평균(1.0)의 1/7 수준<br>
+                    • 출산 가능 인구 급감 중<br><br>
+
+                    <strong>예상:</strong> 현재 추세라면 20년 내 지역 소멸 가능성 높음
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Emotional Images Section -->
+    <section class="images-section">
+        <div class="images-container">
+            <h2 class="section-title" style="text-align: center;">소멸의 풍경</h2>
+            <p class="section-text" style="text-align: center;">
+                데이터 뒤에는 사라져가는 삶의 터전이 있습니다.
+            </p>
+
+            <div class="image-grid">
+                <div class="image-card">
+                    <div class="image-icon">🏫</div>
+                    <div class="image-caption">
+                        <strong>빈 학교</strong><br>
+                        학생이 없어<br>
+                        문 닫는 초등학교
+                    </div>
+                </div>
+
+                <div class="image-card">
+                    <div class="image-icon">🏪</div>
+                    <div class="image-caption">
+                        <strong>폐업 상점</strong><br>
+                        손님이 없어<br>
+                        셔터 내린 가게들
+                    </div>
+                </div>
+
+                <div class="image-card">
+                    <div class="image-icon">🚶</div>
+                    <div class="image-caption">
+                        <strong>떠나는 청년</strong><br>
+                        일자리를 찾아<br>
+                        도시로 떠나는 젊은이들
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cause Analysis Section -->
+    <section class="cause-section">
+        <h2 class="section-title">왜 지방이 소멸하는가?</h2>
+        <p class="section-text">
+            지방소멸은 단순히 인구가 줄어드는 문제가 아닙니다.<br>
+            경제, 교육, 일자리가 복합적으로 얽힌 구조적 문제입니다.
+        </p>
+
+        <div class="cause-grid">
+            <div class="cause-card">
+                <div class="cause-number">01</div>
+                <div class="cause-title">청년 유출</div>
+                <div class="cause-text">
+                    대학 진학과 취업을 위해 20대가 수도권으로 떠납니다.<br><br>
+                    한 번 떠난 청년은 돌아오지 않습니다.
+                </div>
+                <div class="cause-stat">
+                    20~30대 지방 유출률: 연 평균 3~5%
+                </div>
+            </div>
+
+            <div class="cause-card">
+                <div class="cause-number">02</div>
+                <div class="cause-title">일자리 부족</div>
+                <div class="cause-text">
+                    양질의 일자리는 수도권과 대도시에 집중되어 있습니다.<br><br>
+                    농업 외 산업 기반이 취약합니다.
+                </div>
+                <div class="cause-stat">
+                    수도권 일자리 집중도: 50.3%
+                </div>
+            </div>
+
+            <div class="cause-card">
+                <div class="cause-number">03</div>
+                <div class="cause-title">초고령화</div>
+                <div class="cause-text">
+                    청년이 떠나고 노인만 남아 있습니다.<br><br>
+                    출산율 하락으로 인구 회복 불가능.
+                </div>
+                <div class="cause-stat">
+                    농촌 평균 고령화율: 28.3%
+                </div>
+            </div>
+        </div>
+
+        <p class="section-text" style="margin-top: 60px; text-align: center;">
+            <strong style="color: #e74c3c;">악순환의 고리</strong><br><br>
+            청년 유출 → 출산율 감소 → 학교 폐교 → 인프라 붕괴 → 더 많은 청년 유출<br><br>
+            이 고리를 끊지 못하면 지방소멸은 현실이 됩니다.
+        </p>
+    </section>
+
+    <!-- Chart Section: 시도별 소멸위험지수 -->
+    <section class="story-section">
+        <h2 class="section-title">시도별 평균 소멸위험지수 (2023)</h2>
+        <p class="section-text">
+            광역시와 도 단위로 보면 지역 격차가 더욱 극명합니다.
+        </p>
+
+        <div class="chart-container">
+            <div id="provincialChart" style="width: 100%; height: 500px;"></div>
+        </div>
+
+        <p class="section-text" style="margin-top: 40px;">
+            <strong style="color: #e74c3c;">경북, 전남, 강원</strong>은 도 전체가 소멸위험 상태입니다.<br>
+            반면 <strong>서울, 세종, 울산</strong>은 상대적으로 안정적입니다.
+        </p>
+    </section>
+
+    <!-- Conclusion -->
+    <section class="conclusion">
+        <p class="conclusion-text">
+            당신의 고향은 <span class="conclusion-highlight">안녕하십니까?</span><br><br>
+
+            113개 지역이 <span class="conclusion-highlight">소멸위험</span>에 처했습니다.<br>
+            이것은 통계가 아니라 <span class="conclusion-highlight">누군가의 삶</span>입니다.<br><br>
+
+            빈 학교, 폐업한 가게, 사라진 버스 노선.<br>
+            고향이 조용히 사라지고 있습니다.<br><br>
+
+            <span class="conclusion-highlight">우리는 무엇을 할 수 있을까요?</span>
+        </p>
+        <p style="color: rgba(255,255,255,0.5); font-size: 1rem; margin-top: 40px;">
+            지금 행동하지 않으면, 당신의 고향도 사라질 수 있습니다.
+        </p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div>데이터로 보는 대한민국</div>
+        <div class="data-source">출처: KOSIS 국가통계포털 (행정안전부 주민등록인구통계, 2023)</div>
+        <div class="mcp-badge">🚀 MCP 기반 데이터 스토리텔링</div>
+        <div style="margin-top: 15px;">Generated: 2024-12-14</div>
+    </footer>
+
+    <script>
+        // 지역별 소멸위험지수 데이터
+        const regionData = {
+            '경북 의성군': {
+                index: 0.14,
+                status: '극심한 위험',
+                color: '#e74c3c',
+                details: `<strong style="color: #e74c3c;">경북 의성군</strong>은 전국에서 가장 심각한 소멸위험지역입니다.<br><br>
+
+                <strong>현재 상황:</strong><br>
+                • 청년 여성 100명당 노인 714명<br>
+                • 전국 평균(1.0)의 1/7 수준<br>
+                • 출산 가능 인구 급감 중<br><br>
+
+                <strong>예상:</strong> 현재 추세라면 20년 내 지역 소멸 가능성 높음`
+            },
+            '전남 고흥군': {
+                index: 0.17,
+                status: '극심한 위험',
+                color: '#e74c3c',
+                details: `<strong style="color: #e74c3c;">전남 고흥군</strong>은 소멸 고위험 지역입니다.<br><br>
+
+                <strong>현재 상황:</strong><br>
+                • 청년 여성 100명당 노인 588명<br>
+                • 고령화율 30% 이상<br>
+                • 인구 10년간 25% 감소<br><br>
+
+                <strong>예상:</strong> 지속적인 청년 유출로 인구 회복 불가능`
+            },
+            '강원 평창군': {
+                index: 0.29,
+                status: '소멸 고위험',
+                color: '#e74c3c',
+                details: `<strong style="color: #e74c3c;">강원 평창군</strong>은 소멸 고위험 지역입니다.<br><br>
+
+                <strong>현재 상황:</strong><br>
+                • 청년 여성 100명당 노인 345명<br>
+                • 동계올림픽 이후 인구 감소 가속<br>
+                • 관광 외 일자리 부족<br><br>
+
+                <strong>예상:</strong> 특단의 대책 없이는 소멸 진행`
+            },
+            '부산 동구': {
+                index: 0.74,
+                status: '위험 진입',
+                color: '#f39c12',
+                details: `<strong style="color: #f39c12;">부산 동구</strong>는 대도시 내 소멸위험지역입니다.<br><br>
+
+                <strong>현재 상황:</strong><br>
+                • 청년 여성 100명당 노인 135명<br>
+                • 원도심 공동화 현상<br>
+                • 젊은 세대 신도시 이동<br><br>
+
+                <strong>예상:</strong> 도심 재생 정책 성공 여부가 핵심`
+            },
+            '대전 동구': {
+                index: 1.12,
+                status: '상대적 안정',
+                color: '#95a5a6',
+                details: `<strong style="color: #95a5a6;">대전 동구</strong>는 상대적으로 안정적입니다.<br><br>
+
+                <strong>현재 상황:</strong><br>
+                • 청년 여성 100명당 노인 89명<br>
+                • 소멸위험지수 1.0 이상 유지<br>
+                • 대학, 연구기관 집적<br><br>
+
+                <strong>평가:</strong> 단기적으로는 안정, 장기 추세 주시 필요`
+            },
+            '서울 강남구': {
+                index: 2.31,
+                status: '안정',
+                color: '#27ae60',
+                details: `<strong style="color: #27ae60;">서울 강남구</strong>는 전국 최상위 안정 지역입니다.<br><br>
+
+                <strong>현재 상황:</strong><br>
+                • 청년 여성 100명당 노인 43명<br>
+                • 소멸위험지수 2.0 이상<br>
+                • 지속적인 청년 인구 유입<br><br>
+
+                <strong>평가:</strong> 교육, 일자리, 인프라 집중으로 인구 유지`
+            }
+        };
+
+        // 지역 선택 버튼 이벤트
+        const regionBtns = document.querySelectorAll('.region-btn');
+        const resultStatus = document.getElementById('resultStatus');
+        const resultDetails = document.getElementById('resultDetails');
+
+        regionBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                // 활성화 상태 변경
+                regionBtns.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+
+                // 데이터 가져오기
+                const region = this.dataset.region;
+                const data = regionData[region];
+
+                // 결과 업데이트
+                resultStatus.textContent = `소멸위험지수: ${data.index}`;
+                resultStatus.style.color = data.color;
+                resultDetails.innerHTML = data.details;
+            });
+        });
+
+        // Plotly Chart 1: 소멸위험지수 분포
+        const distributionData = [{
+            x: ['0.2 미만', '0.2~0.5', '0.5~1.0', '1.0~1.5', '1.5 이상'],
+            y: [24, 65, 24, 58, 57],
+            type: 'bar',
+            marker: {
+                color: ['#c0392b', '#e74c3c', '#f39c12', '#f1c40f', '#95a5a6'],
+            },
+            text: ['24개', '65개', '24개', '58개', '57개'],
+            textposition: 'outside',
+        }];
+
+        const distributionLayout = {
+            title: {
+                text: '',
+                font: { color: '#fff' }
+            },
+            xaxis: {
+                title: '소멸위험지수 구간',
+                color: '#fff',
+                gridcolor: 'rgba(255,255,255,0.1)'
+            },
+            yaxis: {
+                title: '시군구 수',
+                color: '#fff',
+                gridcolor: 'rgba(255,255,255,0.1)'
+            },
+            plot_bgcolor: 'rgba(0,0,0,0)',
+            paper_bgcolor: 'rgba(0,0,0,0)',
+            font: { color: '#fff', family: 'Noto Sans KR' },
+            margin: { t: 30, b: 80, l: 60, r: 30 }
+        };
+
+        Plotly.newPlot('riskDistChart', distributionData, distributionLayout, {responsive: true});
+
+        // Plotly Chart 2: 시도별 평균 소멸위험지수
+        const provincialData = [{
+            x: [0.52, 0.58, 0.63, 0.71, 0.78, 0.82, 0.89, 0.94, 1.08, 1.15, 1.19, 1.24, 1.31, 1.47, 1.58, 1.73, 2.18],
+            y: ['경북', '전남', '강원', '전북', '경남', '충북', '충남', '제주', '부산', '대구', '광주', '인천', '경기', '대전', '울산', '세종', '서울'],
+            type: 'bar',
+            orientation: 'h',
+            marker: {
+                color: [
+                    '#c0392b', '#e74c3c', '#e74c3c', '#f39c12', '#f39c12',
+                    '#f39c12', '#f1c40f', '#f1c40f', '#95a5a6', '#95a5a6',
+                    '#95a5a6', '#95a5a6', '#95a5a6', '#95a5a6', '#95a5a6',
+                    '#7f8c8d', '#7f8c8d'
+                ],
+            },
+            text: ['0.52', '0.58', '0.63', '0.71', '0.78', '0.82', '0.89', '0.94', '1.08', '1.15', '1.19', '1.24', '1.31', '1.47', '1.58', '1.73', '2.18'],
+            textposition: 'outside',
+        }];
+
+        const provincialLayout = {
+            title: {
+                text: '',
+                font: { color: '#fff' }
+            },
+            xaxis: {
+                title: '소멸위험지수',
+                color: '#fff',
+                gridcolor: 'rgba(255,255,255,0.1)',
+                range: [0, 2.5]
+            },
+            yaxis: {
+                color: '#fff',
+                gridcolor: 'rgba(255,255,255,0.1)'
+            },
+            plot_bgcolor: 'rgba(0,0,0,0)',
+            paper_bgcolor: 'rgba(0,0,0,0)',
+            font: { color: '#fff', family: 'Noto Sans KR' },
+            margin: { t: 30, b: 60, l: 60, r: 80 },
+            shapes: [{
+                type: 'line',
+                x0: 1.0,
+                y0: -0.5,
+                x1: 1.0,
+                y1: 16.5,
+                line: {
+                    color: '#e74c3c',
+                    width: 2,
+                    dash: 'dash'
+                }
+            }],
+            annotations: [{
+                x: 1.0,
+                y: 17,
+                text: '소멸위험 기준선 (1.0)',
+                showarrow: false,
+                font: {
+                    color: '#e74c3c',
+                    size: 11
+                },
+                xanchor: 'left'
+            }]
+        };
+
+        Plotly.newPlot('provincialChart', provincialData, provincialLayout, {responsive: true});
+    </script>
+</body>
+</html>

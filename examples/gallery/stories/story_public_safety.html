@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>밤길이 무섭지 않은 나라?</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap');
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background: #0a0a0a;
+            color: #fff;
+            line-height: 1.8;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(180deg, #0a0a0a 0%, #1a1a25 100%);
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%232c3e50' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+        }
+
+        .question {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 900;
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 50%, #5dade2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hook {
+            font-size: 1.3rem;
+            color: rgba(255,255,255,0.7);
+            max-width: 600px;
+            margin: 0 auto 50px;
+        }
+
+        .scroll-hint {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+            color: rgba(255,255,255,0.5);
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-20px); }
+            60% { transform: translateX(-50%) translateY(-10px); }
+        }
+
+        /* Sledgehammer Stat */
+        .sledgehammer {
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 60px 20px;
+            background: #0f0f1a;
+        }
+
+        .big-number {
+            font-size: clamp(5rem, 15vw, 12rem);
+            font-weight: 900;
+            color: #2c3e50;
+            line-height: 1;
+        }
+
+        .big-number-unit {
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            color: rgba(255,255,255,0.6);
+            margin-top: 10px;
+        }
+
+        .big-number-context {
+            font-size: 1.2rem;
+            color: rgba(255,255,255,0.5);
+            margin-top: 30px;
+            max-width: 600px;
+            text-align: center;
+        }
+
+        .shock-emoji {
+            font-size: 5rem;
+            margin-bottom: 30px;
+        }
+
+        /* Story Section */
+        .story-section {
+            padding: 100px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            color: #2c3e50;
+        }
+
+        .section-text {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 40px;
+        }
+
+        /* Comparison Chart */
+        .comparison-container {
+            background: rgba(255,255,255,0.03);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px 0;
+        }
+
+        .chart-placeholder {
+            min-height: 400px;
+            background: rgba(255,255,255,0.02);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Safety Perception Split */
+        .split-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        @media (max-width: 768px) {
+            .split-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .split-card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 16px;
+            padding: 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .split-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #2c3e50, #3498db);
+        }
+
+        .split-card.danger::before {
+            background: linear-gradient(90deg, #e74c3c, #c0392b);
+        }
+
+        .split-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .split-percent {
+            font-size: 4rem;
+            font-weight: 900;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .split-card.danger .split-percent {
+            color: #e74c3c;
+        }
+
+        .split-label {
+            font-size: 1.2rem;
+            color: rgba(255,255,255,0.7);
+        }
+
+        /* Crime Type Grid */
+        .crime-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .crime-card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 16px;
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.3s, background 0.3s;
+        }
+
+        .crime-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.08);
+        }
+
+        .crime-card.decrease {
+            border-left: 4px solid #27ae60;
+        }
+
+        .crime-card.increase {
+            border-left: 4px solid #e74c3c;
+        }
+
+        .crime-icon {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        .crime-name {
+            font-size: 1rem;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 10px;
+        }
+
+        .crime-change {
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        .crime-card.decrease .crime-change {
+            color: #27ae60;
+        }
+
+        .crime-card.increase .crime-change {
+            color: #e74c3c;
+        }
+
+        .crime-period {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.5);
+            margin-top: 5px;
+        }
+
+        /* CCTV Stats */
+        .cctv-container {
+            background: linear-gradient(135deg, rgba(44,62,80,0.2), rgba(52,152,219,0.2));
+            border-radius: 20px;
+            padding: 50px;
+            margin: 40px 0;
+            text-align: center;
+            border: 1px solid rgba(44,62,80,0.3);
+        }
+
+        .cctv-number {
+            font-size: 5rem;
+            font-weight: 900;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .cctv-description {
+            font-size: 1.2rem;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 30px;
+        }
+
+        .cctv-ratio {
+            font-size: 1rem;
+            color: rgba(255,255,255,0.5);
+            padding: 15px 30px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 50px;
+            display: inline-block;
+        }
+
+        .insight-box {
+            background: rgba(44, 62, 80, 0.2);
+            border-left: 4px solid #2c3e50;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 30px 0;
+        }
+
+        .insight-box strong {
+            color: #3498db;
+        }
+
+        /* Gender Safety Bar */
+        .gender-safety-container {
+            margin: 40px 0;
+        }
+
+        .gender-item {
+            margin-bottom: 30px;
+        }
+
+        .gender-label {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .gender-bar-bg {
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gender-bar-fill {
+            height: 100%;
+            border-radius: 20px;
+            transition: width 1s ease;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 15px;
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+
+        .gender-bar-fill.male {
+            background: linear-gradient(90deg, #2c3e50, #3498db);
+            color: #fff;
+        }
+
+        .gender-bar-fill.female {
+            background: linear-gradient(90deg, #e74c3c, #c0392b);
+            color: #fff;
+        }
+
+        /* Conclusion */
+        .conclusion {
+            min-height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 80px 20px;
+            background: linear-gradient(180deg, #0f0f1a 0%, #1a1a25 100%);
+            text-align: center;
+        }
+
+        .conclusion-text {
+            font-size: 1.5rem;
+            max-width: 700px;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 40px;
+        }
+
+        .conclusion-highlight {
+            color: #3498db;
+            font-weight: 700;
+        }
+
+        /* Footer */
+        .footer {
+            padding: 40px 20px;
+            text-align: center;
+            color: rgba(255,255,255,0.3);
+            font-size: 0.85rem;
+            background: #0a0a0a;
+        }
+
+        .data-source {
+            margin-top: 10px;
+        }
+
+        .mcp-badge {
+            display: inline-block;
+            background: linear-gradient(90deg, #2c3e50, #3498db);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            color: #fff;
+            margin-top: 20px;
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+
+        .stat-box {
+            background: rgba(255,255,255,0.05);
+            border-radius: 16px;
+            padding: 35px;
+            text-align: center;
+            border-top: 3px solid #2c3e50;
+        }
+
+        .stat-value {
+            font-size: 3rem;
+            font-weight: 900;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .stat-box.warning .stat-value {
+            color: #e74c3c;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: rgba(255,255,255,0.7);
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero: 질문으로 시작 -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="question">밤길이 무섭지 않은<br>나라?</h1>
+            <p class="hook">
+                한국의 치안, 숫자로는 세계 최고 수준.<br>
+                하지만 체감 안전도는 다르다고 합니다.
+            </p>
+        </div>
+        <div class="scroll-hint">
+            <span style="font-size: 2rem;">↓</span><br>
+            <span style="font-size: 0.9rem;">스크롤하여 계속</span>
+        </div>
+    </section>
+
+    <!-- Sledgehammer Stat: 살인율 -->
+    <section class="sledgehammer">
+        <div class="shock-emoji">🚔</div>
+        <div class="big-number">0.8건</div>
+        <div class="big-number-unit">/ 10만명당</div>
+        <p class="big-number-context">
+            한국의 살인 발생률입니다.<br>
+            <strong style="color: #2c3e50;">OECD 국가 중 최저 수준</strong>을 자랑합니다.
+        </p>
+    </section>
+
+    <!-- Story Section 1: OECD 비교 -->
+    <section class="story-section">
+        <h2 class="section-title">OECD 국가 중 가장 안전한 나라</h2>
+        <p class="section-text">
+            살인율로 보면 한국은 명백히 안전한 나라입니다.<br>
+            미국(5.0건), 일본(0.9건)과 비교해도 월등히 낮은 수치죠.
+        </p>
+
+        <div class="comparison-container">
+            <div id="oecdChart" class="chart-placeholder"></div>
+        </div>
+
+        <div class="insight-box">
+            <p style="margin: 0; font-size: 1rem; line-height: 1.7;">
+                📊 <strong>국가별 살인율 비교 (인구 10만명당)</strong><br>
+                • 한국: 0.8건 (OECD 최저)<br>
+                • 일본: 0.9건<br>
+                • 독일: 1.0건<br>
+                • 영국: 1.2건<br>
+                • 미국: 5.0건
+            </p>
+        </div>
+
+        <p class="section-text">
+            객관적 수치만 보면, 한국은 세계에서 가장 안전한 나라 중 하나입니다.
+        </p>
+    </section>
+
+    <!-- Story Section 2: 체감 안전도의 역설 -->
+    <section class="story-section">
+        <h2 class="section-title">숫자로는 안전, 체감은 불안</h2>
+        <p class="section-text">
+            그런데 이상한 일이 벌어집니다.<br>
+            "밤길을 안전하게 걸을 수 있다"고 답한 비율을 보면...
+        </p>
+
+        <div class="split-container">
+            <div class="split-card">
+                <div class="split-icon">👨</div>
+                <div class="split-percent">78%</div>
+                <div class="split-label">남성</div>
+            </div>
+
+            <div class="split-card danger">
+                <div class="split-icon">👩</div>
+                <div class="split-percent">56%</div>
+                <div class="split-label">여성</div>
+            </div>
+        </div>
+
+        <div class="insight-box">
+            <p style="margin: 0; font-size: 1rem; line-height: 1.7;">
+                ⚠️ <strong>성별 체감 안전도 격차</strong><br>
+                남성의 78%는 밤길이 안전하다고 느끼지만,<br>
+                여성의 경우 56%에 불과합니다.<br>
+                <strong>같은 나라, 다른 안전</strong>을 체감하고 있습니다.
+            </p>
+        </div>
+
+        <div class="gender-safety-container">
+            <div class="gender-item">
+                <div class="gender-label">
+                    <span>남성 체감 안전도</span>
+                    <span>78%</span>
+                </div>
+                <div class="gender-bar-bg">
+                    <div class="gender-bar-fill male" style="width: 78%;">78%</div>
+                </div>
+            </div>
+
+            <div class="gender-item">
+                <div class="gender-label">
+                    <span>여성 체감 안전도</span>
+                    <span>56%</span>
+                </div>
+                <div class="gender-bar-bg">
+                    <div class="gender-bar-fill female" style="width: 56%;">56%</div>
+                </div>
+            </div>
+        </div>
+
+        <p class="section-text">
+            통계는 안전하다고 말하지만,<br>
+            체감하는 안전은 <strong style="color: #e74c3c;">성별에 따라 크게 다릅니다.</strong>
+        </p>
+    </section>
+
+    <!-- Story Section 3: 5대 범죄 현황 -->
+    <section class="story-section">
+        <h2 class="section-title">연간 180만 건의 5대 범죄</h2>
+        <p class="section-text">
+            살인율은 낮지만, 다른 범죄는 어떨까요?<br>
+            5대 범죄(살인, 강도, 강간, 절도, 폭력) 발생 현황입니다.
+        </p>
+
+        <div class="stats-grid">
+            <div class="stat-box">
+                <div class="stat-value">180만</div>
+                <div class="stat-label">연간 5대 범죄 발생 건수</div>
+            </div>
+
+            <div class="stat-box warning">
+                <div class="stat-value">3.8만</div>
+                <div class="stat-label">여성 대상 범죄 (연간)</div>
+            </div>
+        </div>
+
+        <p class="section-text">
+            매년 180만 건 이상의 5대 범죄가 발생하고 있으며,<br>
+            그 중 여성을 대상으로 한 범죄는 연간 3.8만 건에 달합니다.
+        </p>
+    </section>
+
+    <!-- Story Section 4: 범죄 유형별 추이 -->
+    <section class="story-section">
+        <h2 class="section-title">감소하는 범죄 vs 증가하는 범죄</h2>
+        <p class="section-text">
+            최근 5년간 범죄 유형별 추이를 보면 흥미로운 패턴이 보입니다.
+        </p>
+
+        <div class="crime-grid">
+            <div class="crime-card decrease">
+                <div class="crime-icon">📉</div>
+                <div class="crime-name">살인</div>
+                <div class="crime-change">-12%</div>
+                <div class="crime-period">5년간</div>
+            </div>
+
+            <div class="crime-card decrease">
+                <div class="crime-icon">📉</div>
+                <div class="crime-name">강도</div>
+                <div class="crime-change">-28%</div>
+                <div class="crime-period">5년간</div>
+            </div>
+
+            <div class="crime-card decrease">
+                <div class="crime-icon">📉</div>
+                <div class="crime-name">절도</div>
+                <div class="crime-change">-15%</div>
+                <div class="crime-period">5년간</div>
+            </div>
+
+            <div class="crime-card increase">
+                <div class="crime-icon">📈</div>
+                <div class="crime-name">묻지마 범죄</div>
+                <div class="crime-change">+40%</div>
+                <div class="crime-period">5년간</div>
+            </div>
+
+            <div class="crime-card increase">
+                <div class="crime-icon">📈</div>
+                <div class="crime-name">스토킹</div>
+                <div class="crime-change">+65%</div>
+                <div class="crime-period">5년간</div>
+            </div>
+
+            <div class="crime-card increase">
+                <div class="crime-icon">📈</div>
+                <div class="crime-name">디지털 성범죄</div>
+                <div class="crime-change">+83%</div>
+                <div class="crime-period">5년간</div>
+            </div>
+        </div>
+
+        <div class="insight-box">
+            <p style="margin: 0; font-size: 1rem; line-height: 1.7;">
+                🔍 <strong>범죄의 변화</strong><br>
+                전통적 범죄(살인, 강도, 절도)는 감소하는 추세이지만,<br>
+                <strong>묻지마 범죄, 스토킹, 디지털 성범죄 등 신종 범죄는 급증</strong>하고 있습니다.<br>
+                특히 묻지마 범죄는 5년간 40% 증가하며 불안감을 키우고 있습니다.
+            </p>
+        </div>
+    </section>
+
+    <!-- Story Section 5: CCTV와 치안 -->
+    <section class="story-section">
+        <h2 class="section-title">CCTV 공화국</h2>
+        <p class="section-text">
+            한국의 치안을 지키는 또 다른 주역, CCTV.
+        </p>
+
+        <div class="cctv-container">
+            <div class="cctv-number">130만 대</div>
+            <div class="cctv-description">전국에 설치된 공공 CCTV 대수</div>
+            <div class="cctv-ratio">인구 40명당 1대 수준</div>
+        </div>
+
+        <div class="comparison-container">
+            <div id="cctvChart" class="chart-placeholder"></div>
+        </div>
+
+        <div class="insight-box">
+            <p style="margin: 0; font-size: 1rem; line-height: 1.7;">
+                📹 <strong>CCTV와 범죄율의 상관관계</strong><br>
+                CCTV 설치가 급증한 지역에서 범죄 발생률이 평균 18% 감소했습니다.<br>
+                하지만 프라이버시 침해 우려도 함께 증가하고 있습니다.<br>
+                <strong>안전과 자유, 어디까지 허용할 것인가?</strong>
+            </p>
+        </div>
+    </section>
+
+    <!-- Conclusion -->
+    <section class="conclusion">
+        <p class="conclusion-text">
+            한국은 <span class="conclusion-highlight">통계적으로는 안전</span>하지만,<br>
+            <span class="conclusion-highlight">체감 안전도</span>는 그렇지 않습니다.
+        </p>
+        <p class="conclusion-text">
+            살인율 0.8건, OECD 최저. 하지만 그것만으로는 부족합니다.<br>
+            진정한 안전은 <span class="conclusion-highlight">모두가 두려움 없이 걸을 수 있을 때</span> 완성됩니다.
+        </p>
+        <p style="color: rgba(255,255,255,0.5); font-size: 1rem; margin-top: 40px;">
+            당신은 오늘 밤 안전하게 집에 돌아갈 수 있나요?
+        </p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div>데이터로 보는 대한민국</div>
+        <div class="data-source">출처: 경찰청 범죄통계, OECD Crime Statistics, KOSIS 사회조사</div>
+        <div class="mcp-badge">MCP 기반 데이터 스토리텔링</div>
+        <div style="margin-top: 15px;">Generated: 2025-12-14</div>
+    </footer>
+
+    <script>
+        // OECD Crime Rate Comparison Chart
+        const oecdData = {
+            x: ['한국', '일본', '독일', '영국', '프랑스', '캐나다', '미국'],
+            y: [0.8, 0.9, 1.0, 1.2, 1.3, 1.8, 5.0],
+            type: 'bar',
+            marker: {
+                color: ['#2c3e50', '#3498db', '#95a5a6', '#95a5a6', '#95a5a6', '#95a5a6', '#e74c3c'],
+                line: {
+                    color: '#34495e',
+                    width: 1.5
+                }
+            }
+        };
+
+        const oecdLayout = {
+            title: {
+                text: 'OECD 국가별 살인율 비교 (인구 10만명당)',
+                font: {
+                    color: 'rgba(255,255,255,0.8)',
+                    size: 16
+                }
+            },
+            xaxis: {
+                title: '국가',
+                color: 'rgba(255,255,255,0.6)',
+                gridcolor: 'rgba(255,255,255,0.1)'
+            },
+            yaxis: {
+                title: '살인 발생 건수',
+                color: 'rgba(255,255,255,0.6)',
+                gridcolor: 'rgba(255,255,255,0.1)'
+            },
+            plot_bgcolor: 'rgba(255,255,255,0.02)',
+            paper_bgcolor: 'transparent',
+            font: {
+                color: 'rgba(255,255,255,0.8)'
+            }
+        };
+
+        Plotly.newPlot('oecdChart', [oecdData], oecdLayout, {
+            responsive: true,
+            displayModeBar: false
+        });
+
+        // CCTV Installation Trend Chart
+        const cctvData = {
+            x: ['2015', '2017', '2019', '2021', '2023'],
+            y: [45, 68, 89, 108, 130],
+            type: 'scatter',
+            mode: 'lines+markers',
+            marker: {
+                color: '#2c3e50',
+                size: 12,
+                line: {
+                    color: '#3498db',
+                    width: 2
+                }
+            },
+            line: {
+                color: '#2c3e50',
+                width: 3,
+                shape: 'spline'
+            },
+            fill: 'tozeroy',
+            fillcolor: 'rgba(44,62,80,0.2)'
+        };
+
+        const cctvLayout = {
+            title: {
+                text: 'CCTV 설치 대수 증가 추이 (단위: 만 대)',
+                font: {
+                    color: 'rgba(255,255,255,0.8)',
+                    size: 16
+                }
+            },
+            xaxis: {
+                title: '연도',
+                color: 'rgba(255,255,255,0.6)',
+                gridcolor: 'rgba(255,255,255,0.1)'
+            },
+            yaxis: {
+                title: 'CCTV 대수 (만 대)',
+                color: 'rgba(255,255,255,0.6)',
+                gridcolor: 'rgba(255,255,255,0.1)'
+            },
+            plot_bgcolor: 'rgba(255,255,255,0.02)',
+            paper_bgcolor: 'transparent',
+            font: {
+                color: 'rgba(255,255,255,0.8)'
+            }
+        };
+
+        Plotly.newPlot('cctvChart', [cctvData], cctvLayout, {
+            responsive: true,
+            displayModeBar: false
+        });
+    </script>
+</body>
+</html>

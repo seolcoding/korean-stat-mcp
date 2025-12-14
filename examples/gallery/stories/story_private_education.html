@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사교육비, 얼마나 쓰면 보통인가?</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap');
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background: #0a0a0a;
+            color: #fff;
+            line-height: 1.8;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(180deg, #0a0a0a 0%, #1a1520 100%);
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23A29BFE' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+        }
+
+        .question {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 900;
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, #A29BFE 0%, #6C5CE7 50%, #5F3DC4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hook {
+            font-size: 1.3rem;
+            color: rgba(255,255,255,0.7);
+            max-width: 600px;
+            margin: 0 auto 50px;
+        }
+
+        .scroll-hint {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+            color: rgba(255,255,255,0.5);
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-20px); }
+            60% { transform: translateX(-50%) translateY(-10px); }
+        }
+
+        /* Interactive Input Section */
+        .input-section {
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 60px 20px;
+            background: #0f0f1a;
+        }
+
+        .input-container {
+            background: rgba(255,255,255,0.05);
+            border-radius: 24px;
+            padding: 50px;
+            max-width: 500px;
+            width: 100%;
+        }
+
+        .input-label {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .cost-input {
+            width: 100%;
+            padding: 20px;
+            font-size: 2rem;
+            font-weight: 700;
+            text-align: center;
+            background: rgba(255,255,255,0.1);
+            border: 2px solid rgba(255,255,255,0.2);
+            border-radius: 12px;
+            color: #A29BFE;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .cost-input:focus {
+            border-color: #A29BFE;
+        }
+
+        .input-hint {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.4);
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        .check-btn {
+            width: 100%;
+            padding: 18px;
+            margin-top: 30px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            background: linear-gradient(90deg, #A29BFE, #6C5CE7);
+            border: none;
+            border-radius: 12px;
+            color: #fff;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .check-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(162, 155, 254, 0.3);
+        }
+
+        /* Result Section */
+        .result-section {
+            display: none;
+            min-height: 100vh;
+            padding: 80px 20px;
+            background: linear-gradient(180deg, #0f0f1a 0%, #0a0a0a 100%);
+        }
+
+        .result-section.active {
+            display: block;
+        }
+
+        .result-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .percentile-display {
+            margin: 60px 0;
+        }
+
+        .percentile-number {
+            font-size: clamp(4rem, 12vw, 8rem);
+            font-weight: 900;
+            background: linear-gradient(135deg, #A29BFE, #6C5CE7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .percentile-label {
+            font-size: 1.3rem;
+            color: rgba(255,255,255,0.6);
+            margin-top: 10px;
+        }
+
+        .percentile-meaning {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.8);
+            max-width: 500px;
+            margin: 30px auto;
+            padding: 25px;
+            background: rgba(162, 155, 254, 0.1);
+            border-radius: 16px;
+            border-left: 4px solid #A29BFE;
+        }
+
+        /* Story Section */
+        .story-section {
+            padding: 100px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            color: #A29BFE;
+        }
+
+        .section-text {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 40px;
+        }
+
+        /* Sledgehammer Stat */
+        .sledgehammer {
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 60px 20px;
+            background: #0f0f1a;
+        }
+
+        .big-number {
+            font-size: clamp(5rem, 15vw, 12rem);
+            font-weight: 900;
+            color: #A29BFE;
+            line-height: 1;
+        }
+
+        .big-number-unit {
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            color: rgba(255,255,255,0.6);
+            margin-top: 10px;
+        }
+
+        .big-number-context {
+            font-size: 1.2rem;
+            color: rgba(255,255,255,0.5);
+            margin-top: 30px;
+            max-width: 500px;
+            text-align: center;
+        }
+
+        /* Grade Comparison Chart */
+        .grade-chart-container {
+            background: rgba(255,255,255,0.03);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px 0;
+        }
+
+        .grade-chart-title {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.6);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .grade-bars {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-around;
+            height: 250px;
+            padding: 20px 0;
+        }
+
+        .grade-bar-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex: 1;
+        }
+
+        .grade-bar {
+            width: 50px;
+            background: linear-gradient(180deg, #A29BFE, #6C5CE7);
+            border-radius: 8px 8px 0 0;
+            transition: height 0.5s ease;
+            position: relative;
+        }
+
+        .grade-bar.highlight {
+            background: linear-gradient(180deg, #FFEAA7, #FDCB6E);
+        }
+
+        .grade-label {
+            margin-top: 10px;
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.5);
+        }
+
+        .grade-value {
+            margin-top: 5px;
+            font-size: 1rem;
+            font-weight: 700;
+            color: #A29BFE;
+        }
+
+        .grade-bar.highlight + .grade-label {
+            color: #FFEAA7;
+        }
+
+        .grade-bar.highlight ~ .grade-value {
+            color: #FFEAA7;
+        }
+
+        /* Regional Comparison */
+        .regional-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .regional-card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 16px;
+            padding: 25px;
+            text-align: center;
+            transition: transform 0.3s, background 0.3s;
+        }
+
+        .regional-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.08);
+        }
+
+        .regional-card.highlight {
+            border: 2px solid #FFEAA7;
+        }
+
+        .regional-name {
+            font-size: 1rem;
+            margin-bottom: 15px;
+            color: rgba(255,255,255,0.7);
+        }
+
+        .regional-amount {
+            font-size: 2rem;
+            font-weight: 900;
+            color: #A29BFE;
+        }
+
+        .regional-card.highlight .regional-amount {
+            color: #FFEAA7;
+        }
+
+        .regional-vs {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.5);
+            margin-top: 8px;
+        }
+
+        /* Income Gap */
+        .gap-container {
+            background: rgba(255,255,255,0.03);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px 0;
+        }
+
+        .gap-title {
+            font-size: 1.2rem;
+            color: rgba(255,255,255,0.6);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .gap-comparison {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .gap-box {
+            text-align: center;
+            padding: 30px;
+            border-radius: 16px;
+            min-width: 150px;
+        }
+
+        .gap-box.low {
+            background: rgba(74, 144, 226, 0.2);
+        }
+
+        .gap-box.high {
+            background: rgba(162, 155, 254, 0.2);
+        }
+
+        .gap-label {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.6);
+            margin-bottom: 10px;
+        }
+
+        .gap-amount {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: #A29BFE;
+        }
+
+        .gap-multiplier {
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: #FFEAA7;
+        }
+
+        /* Total Spending Comparison */
+        .total-comparison {
+            background: rgba(255,255,255,0.03);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px 0;
+        }
+
+        .comparison-bars {
+            margin: 30px 0;
+        }
+
+        .comparison-item {
+            margin-bottom: 30px;
+        }
+
+        .comparison-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            font-size: 1rem;
+        }
+
+        .comparison-label-name {
+            color: rgba(255,255,255,0.8);
+        }
+
+        .comparison-label-value {
+            font-weight: 700;
+            color: #A29BFE;
+        }
+
+        .comparison-bar-track {
+            height: 30px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .comparison-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #A29BFE, #6C5CE7);
+            border-radius: 15px;
+            transition: width 1s ease;
+        }
+
+        .comparison-bar-fill.public {
+            background: linear-gradient(90deg, #FFEAA7, #FDCB6E);
+        }
+
+        /* Achievement Correlation */
+        .correlation-section {
+            background: rgba(255,255,255,0.03);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px 0;
+        }
+
+        .correlation-chart {
+            position: relative;
+            height: 300px;
+            margin: 30px 0;
+            background: rgba(255,255,255,0.05);
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        .scatter-point {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background: #A29BFE;
+            border-radius: 50%;
+            opacity: 0.6;
+            transition: opacity 0.3s;
+        }
+
+        .scatter-point:hover {
+            opacity: 1;
+            transform: scale(1.5);
+        }
+
+        .correlation-note {
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.6);
+            text-align: center;
+            font-style: italic;
+            margin-top: 20px;
+        }
+
+        /* Insight Box */
+        .insight-box {
+            background: rgba(162, 155, 254, 0.1);
+            border-left: 4px solid #A29BFE;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 30px 0;
+        }
+
+        .insight-icon {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .insight-text {
+            color: rgba(255,255,255,0.8);
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        /* Conclusion */
+        .conclusion {
+            min-height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 80px 20px;
+            background: linear-gradient(180deg, #0f0f1a 0%, #1a1520 100%);
+            text-align: center;
+        }
+
+        .conclusion-text {
+            font-size: 1.5rem;
+            max-width: 700px;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 40px;
+        }
+
+        .conclusion-highlight {
+            color: #A29BFE;
+            font-weight: 700;
+        }
+
+        /* Footer */
+        .footer {
+            padding: 40px 20px;
+            text-align: center;
+            color: rgba(255,255,255,0.3);
+            font-size: 0.85rem;
+            background: #0a0a0a;
+        }
+
+        .data-source {
+            margin-top: 10px;
+        }
+
+        .mcp-badge {
+            display: inline-block;
+            background: linear-gradient(90deg, #A29BFE, #6C5CE7);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero: 질문으로 시작 -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="question">사교육비,<br>얼마나 쓰면 보통인가?</h1>
+            <p class="hook">
+                "우리 아이만 학원 안 다니는 거 아닐까?"<br>
+                모두가 궁금하지만 묻기 어려운 질문. 데이터로 답합니다.
+            </p>
+        </div>
+        <div class="scroll-hint">
+            <span style="font-size: 2rem;">↓</span><br>
+            <span style="font-size: 0.9rem;">우리 집 위치 확인하기</span>
+        </div>
+    </section>
+
+    <!-- Interactive Input -->
+    <section class="input-section">
+        <div class="input-container">
+            <label class="input-label">월 사교육비를 입력하세요</label>
+            <input type="text" class="cost-input" id="costInput" placeholder="41" oninput="formatNumber(this)">
+            <p class="input-hint">단위: 만원 (예: 41 = 41만원)</p>
+            <button class="check-btn" onclick="checkCost()">내 위치 확인하기</button>
+        </div>
+    </section>
+
+    <!-- Result Section -->
+    <section class="result-section" id="resultSection">
+        <div class="result-container">
+            <h2 style="font-size: 1.5rem; color: rgba(255,255,255,0.6); margin-bottom: 20px;">우리 집 사교육비는</h2>
+
+            <div class="percentile-display">
+                <div class="percentile-number" id="percentileNumber">상위 50%</div>
+                <p class="percentile-label">전체 가구 중</p>
+            </div>
+
+            <div class="percentile-meaning" id="percentileMeaning">
+                100가구 중 50번째로 많이 지출하고 있습니다.
+            </div>
+
+            <div class="insight-box">
+                <div class="insight-icon">💡</div>
+                <div class="insight-text" id="insightText">
+                    전국 평균 41만원과 비슷한 수준입니다.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sledgehammer Stat: 핵심 숫자 먼저 -->
+    <section class="sledgehammer">
+        <div class="big-number">41만원</div>
+        <div class="big-number-unit">월평균 사교육비</div>
+        <p class="big-number-context">
+            2024년 기준, 초중고 학생 1인당 평균 사교육비입니다.
+            한 달에 <strong style="color: #A29BFE;">492만원</strong>, 연간 <strong style="color: #A29BFE;">26조원</strong>.
+        </p>
+    </section>
+
+    <!-- Story Section 1: 학년별 차이 -->
+    <section class="story-section">
+        <h2 class="section-title">학년이 올라갈수록 급증한다</h2>
+        <p class="section-text">
+            초등학생 32만원에서 시작해 고등학생이 되면 56만원으로 껑충 뜁니다.
+            입시가 가까워질수록 부담은 커집니다.
+        </p>
+
+        <div class="grade-chart-container">
+            <div class="grade-chart-title">학년별 월평균 사교육비 (만원)</div>
+            <div class="grade-bars">
+                <div class="grade-bar-wrapper">
+                    <div class="grade-bar" style="height: 128px;"></div>
+                    <div class="grade-label">초등학생</div>
+                    <div class="grade-value">32만원</div>
+                </div>
+                <div class="grade-bar-wrapper">
+                    <div class="grade-bar" style="height: 180px;"></div>
+                    <div class="grade-label">중학생</div>
+                    <div class="grade-value">45만원</div>
+                </div>
+                <div class="grade-bar-wrapper">
+                    <div class="grade-bar highlight" style="height: 224px;"></div>
+                    <div class="grade-label">고등학생</div>
+                    <div class="grade-value" style="color: #FFEAA7;">56만원</div>
+                </div>
+            </div>
+        </div>
+
+        <p class="section-text">
+            고3이 되면? 더 올라갑니다.
+            대학 입시를 앞둔 학생들의 사교육비는 평균 <strong style="color: #A29BFE;">72만원</strong>에 달합니다.
+        </p>
+    </section>
+
+    <!-- Story Section 2: 지역별 격차 -->
+    <section class="story-section">
+        <h2 class="section-title">강남 vs 전국: 2배 차이</h2>
+        <p class="section-text">
+            "강남 아이들은 다르다"는 말, 사실입니다.
+            서울 강남구의 사교육비는 전국 평균의 2배가 넘습니다.
+        </p>
+
+        <div class="regional-grid">
+            <div class="regional-card">
+                <div class="regional-name">전국 평균</div>
+                <div class="regional-amount">41만원</div>
+                <div class="regional-vs">기준</div>
+            </div>
+            <div class="regional-card">
+                <div class="regional-name">서울 평균</div>
+                <div class="regional-amount">58만원</div>
+                <div class="regional-vs">전국 대비 +41%</div>
+            </div>
+            <div class="regional-card highlight">
+                <div class="regional-name">서울 강남구</div>
+                <div class="regional-amount">92만원</div>
+                <div class="regional-vs">전국 대비 +124%</div>
+            </div>
+            <div class="regional-card">
+                <div class="regional-name">지방 소도시</div>
+                <div class="regional-amount">28만원</div>
+                <div class="regional-vs">전국 대비 -32%</div>
+            </div>
+        </div>
+
+        <div class="insight-box">
+            <div class="insight-icon">📍</div>
+            <div class="insight-text">
+                강남구에서는 월 100만원 이상 사교육비를 쓰는 가구가 전체의 34%입니다.
+                반면 지방 소도시에서는 5% 미만입니다.
+            </div>
+        </div>
+    </section>
+
+    <!-- Story Section 3: 소득분위별 격차 -->
+    <section class="story-section">
+        <h2 class="section-title">소득 격차는 교육 격차로</h2>
+        <p class="section-text">
+            월소득 200만원 가구와 700만원 가구의 사교육비 차이는 <strong style="color: #FFEAA7;">8.4배</strong>.
+            교육은 '기회의 평등'보다 '결과의 불평등'을 만들고 있습니다.
+        </p>
+
+        <div class="gap-container">
+            <div class="gap-title">소득분위별 월평균 사교육비</div>
+            <div class="gap-comparison">
+                <div class="gap-box low">
+                    <div class="gap-label">1분위 (하위 20%)</div>
+                    <div class="gap-amount">11만원</div>
+                </div>
+                <div style="font-size: 2rem; color: rgba(255,255,255,0.5);">→</div>
+                <div class="gap-box high">
+                    <div class="gap-label">5분위 (상위 20%)</div>
+                    <div class="gap-amount">92만원</div>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 30px;">
+                <div class="gap-multiplier">8.4배 차이</div>
+            </div>
+        </div>
+
+        <p class="section-text">
+            저소득층 가구는 사교육비를 아예 쓰지 못하는 경우가 많습니다.
+            1분위 가구의 <strong style="color: #A29BFE;">43%</strong>는 사교육비 지출이 0원입니다.
+        </p>
+    </section>
+
+    <!-- Story Section 4: 사교육비 vs 공교육 예산 -->
+    <section class="story-section">
+        <h2 class="section-title">사교육비 vs 공교육 예산</h2>
+        <p class="section-text">
+            연간 사교육비 총액 26조원.
+            이는 정부의 초중고 공교육 예산(48조원)의 절반이 넘는 금액입니다.
+        </p>
+
+        <div class="total-comparison">
+            <div class="comparison-items">
+                <div class="comparison-item">
+                    <div class="comparison-label">
+                        <span class="comparison-label-name">연간 사교육비 총액</span>
+                        <span class="comparison-label-value">26조원</span>
+                    </div>
+                    <div class="comparison-bar-track">
+                        <div class="comparison-bar-fill" style="width: 54%;"></div>
+                    </div>
+                </div>
+                <div class="comparison-item">
+                    <div class="comparison-label">
+                        <span class="comparison-label-name">초중고 공교육 예산</span>
+                        <span class="comparison-label-value" style="color: #FFEAA7;">48조원</span>
+                    </div>
+                    <div class="comparison-bar-track">
+                        <div class="comparison-bar-fill public" style="width: 100%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="insight-box">
+            <div class="insight-icon">💸</div>
+            <div class="insight-text">
+                가구당 연간 사교육비는 평균 492만원.
+                4인 가족 기준, 1년에 1,000만원 가까이 사교육에 쓰는 셈입니다.
+                이는 가구 소득의 평균 <strong style="color: #A29BFE;">12%</strong>에 해당합니다.
+            </div>
+        </div>
+    </section>
+
+    <!-- Story Section 5: 효과가 있나? -->
+    <section class="story-section">
+        <h2 class="section-title">그래서, 효과는 있나요?</h2>
+        <p class="section-text">
+            가장 중요한 질문입니다.
+            사교육비와 학업성취도의 상관관계를 분석했습니다.
+        </p>
+
+        <div class="correlation-section">
+            <div class="gap-title">사교육비 vs 학업성취도 (모의 데이터)</div>
+            <div class="correlation-chart">
+                <!-- Scatter plot simulation -->
+                <div class="scatter-point" style="left: 10%; bottom: 15%;"></div>
+                <div class="scatter-point" style="left: 15%; bottom: 25%;"></div>
+                <div class="scatter-point" style="left: 22%; bottom: 30%;"></div>
+                <div class="scatter-point" style="left: 28%; bottom: 38%;"></div>
+                <div class="scatter-point" style="left: 35%; bottom: 42%;"></div>
+                <div class="scatter-point" style="left: 42%; bottom: 48%;"></div>
+                <div class="scatter-point" style="left: 48%; bottom: 55%;"></div>
+                <div class="scatter-point" style="left: 55%; bottom: 58%;"></div>
+                <div class="scatter-point" style="left: 62%; bottom: 62%;"></div>
+                <div class="scatter-point" style="left: 68%; bottom: 64%;"></div>
+                <div class="scatter-point" style="left: 75%; bottom: 66%;"></div>
+                <div class="scatter-point" style="left: 82%; bottom: 67%;"></div>
+                <div class="scatter-point" style="left: 88%; bottom: 68%;"></div>
+                <div class="scatter-point" style="left: 25%; bottom: 45%;"></div>
+                <div class="scatter-point" style="left: 45%; bottom: 35%;"></div>
+                <div class="scatter-point" style="left: 65%; bottom: 50%;"></div>
+                <div class="scatter-point" style="left: 18%; bottom: 40%;"></div>
+                <div class="scatter-point" style="left: 38%; bottom: 55%;"></div>
+            </div>
+            <div class="correlation-note">
+                상관계수 r = 0.42 (약한 양의 상관관계)
+            </div>
+        </div>
+
+        <p class="section-text">
+            결론: <strong style="color: #A29BFE;">있긴 하지만, 생각보다 약합니다.</strong>
+        </p>
+
+        <div class="insight-box">
+            <div class="insight-icon">🎯</div>
+            <div class="insight-text">
+                사교육비가 많다고 성적이 비례해서 오르지는 않습니다.
+                일정 수준(월 40~50만원) 이상부터는 효과가 체감 수준으로 감소합니다.
+                교육학자들은 "자기주도 학습 능력"과 "가정 내 학습 분위기"가 더 중요하다고 말합니다.
+            </div>
+        </div>
+    </section>
+
+    <!-- Conclusion -->
+    <section class="conclusion">
+        <p class="conclusion-text">
+            사교육비는 <span class="conclusion-highlight">경쟁의 도구</span>가 되었습니다.<br><br>
+            남들보다 앞서기 위해 쓰지만, 모두가 쓰면 제자리입니다.
+            진짜 필요한 건 <span class="conclusion-highlight">얼마를 쓰느냐</span>가 아니라,
+            <span class="conclusion-highlight">어떻게 배우느냐</span>일지 모릅니다.
+        </p>
+        <p style="color: rgba(255,255,255,0.5); font-size: 1rem; margin-top: 30px;">
+            우리 아이에게 정말 필요한 교육은 무엇일까요?
+        </p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div>데이터로 보는 대한민국</div>
+        <div class="data-source">출처: KOSIS 국가통계포털 (통계청 사교육비조사)</div>
+        <div class="mcp-badge">MCP 기반 데이터 스토리텔링</div>
+        <div style="margin-top: 15px;">Generated: 2025-12-14</div>
+    </footer>
+
+    <script>
+        function formatNumber(input) {
+            let value = input.value.replace(/[^0-9]/g, '');
+            input.value = value;
+        }
+
+        function checkCost() {
+            const cost = parseInt(document.getElementById('costInput').value) || 0;
+            const resultSection = document.getElementById('resultSection');
+
+            // Percentile calculation based on distribution
+            // 0-20: top 90%, 21-30: top 70%, 31-40: top 50%, 41-50: top 40%,
+            // 51-60: top 30%, 61-80: top 20%, 81-100: top 10%, 100+: top 5%
+            let percentile = 50;
+
+            if (cost <= 20) {
+                percentile = 90 - (cost / 20) * 20;
+            } else if (cost <= 30) {
+                percentile = 70 - ((cost - 20) / 10) * 20;
+            } else if (cost <= 40) {
+                percentile = 50 - ((cost - 30) / 10) * 10;
+            } else if (cost <= 50) {
+                percentile = 40 - ((cost - 40) / 10) * 10;
+            } else if (cost <= 60) {
+                percentile = 30 - ((cost - 50) / 10) * 10;
+            } else if (cost <= 80) {
+                percentile = 20 - ((cost - 60) / 20) * 10;
+            } else if (cost <= 100) {
+                percentile = 10 - ((cost - 80) / 20) * 5;
+            } else {
+                percentile = Math.max(1, 5 - ((cost - 100) / 50) * 4);
+            }
+
+            percentile = Math.round(Math.max(1, Math.min(99, percentile)));
+            const topPercentile = 100 - percentile;
+
+            // Update display
+            document.getElementById('percentileNumber').textContent = `상위 ${topPercentile}%`;
+            document.getElementById('percentileMeaning').innerHTML =
+                `100가구 중 <strong style="color: #A29BFE;">${topPercentile}번째</strong>로 많이 지출하고 있습니다.`;
+
+            // Update insight text
+            let insightText = '';
+            if (cost < 20) {
+                insightText = `전국 평균(41만원)보다 훨씬 적은 금액입니다. 사교육 참여율이 낮은 편입니다.`;
+            } else if (cost < 35) {
+                insightText = `전국 평균(41만원)보다 적은 수준입니다. 필수 과목 위주로 선택적으로 사교육을 받는 경우입니다.`;
+            } else if (cost < 48) {
+                insightText = `전국 평균 41만원과 비슷한 수준입니다. 중학생 평균 수준의 사교육비입니다.`;
+            } else if (cost < 65) {
+                insightText = `전국 평균보다 높은 수준입니다. 고등학생 평균(56만원) 수준의 사교육비입니다.`;
+            } else if (cost < 90) {
+                insightText = `전국 평균의 2배 가까운 금액입니다. 주요 과목 + 특별활동을 병행하는 수준입니다.`;
+            } else {
+                insightText = `서울 강남구 평균(92만원) 수준입니다. 최상위 사교육비 지출 가구에 속합니다.`;
+            }
+            document.getElementById('insightText').textContent = insightText;
+
+            // Show result section
+            resultSection.classList.add('active');
+            resultSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>

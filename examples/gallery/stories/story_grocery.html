@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>장바구니 물가, 1년 전과 얼마나 달라졌나</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap');
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background: #fffbf5;
+            color: #2d2d2d;
+            line-height: 1.8;
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(180deg, #fff8ee 0%, #fffbf5 100%);
+        }
+
+        .question {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 900;
+            margin-bottom: 30px;
+            color: #d63031;
+        }
+
+        .hook {
+            font-size: 1.2rem;
+            color: #636363;
+            max-width: 500px;
+            margin-bottom: 50px;
+        }
+
+        .basket-icon {
+            font-size: 5rem;
+            margin-bottom: 30px;
+        }
+
+        /* Sledgehammer */
+        .sledgehammer {
+            padding: 100px 20px;
+            text-align: center;
+            background: #fff;
+        }
+
+        .big-compare {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .compare-box {
+            padding: 40px;
+            border-radius: 20px;
+        }
+
+        .compare-label {
+            font-size: 1rem;
+            color: #888;
+            margin-bottom: 10px;
+        }
+
+        .compare-value {
+            font-size: 3.5rem;
+            font-weight: 900;
+        }
+
+        .compare-box.before {
+            background: #f5f5f5;
+        }
+
+        .compare-box.before .compare-value {
+            color: #666;
+        }
+
+        .compare-box.after {
+            background: linear-gradient(135deg, #ff7675, #d63031);
+            color: white;
+        }
+
+        .compare-arrow {
+            font-size: 3rem;
+            color: #d63031;
+        }
+
+        .increase-badge {
+            display: inline-block;
+            background: #d63031;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 30px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-top: 40px;
+        }
+
+        /* Items Section */
+        .items-section {
+            padding: 80px 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #2d2d2d;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .item-grid {
+            display: grid;
+            gap: 15px;
+        }
+
+        .item-card {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .item-icon {
+            font-size: 2.5rem;
+            margin-right: 20px;
+        }
+
+        .item-info {
+            flex: 1;
+        }
+
+        .item-name {
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .item-prices {
+            font-size: 0.9rem;
+            color: #888;
+        }
+
+        .item-change {
+            text-align: right;
+        }
+
+        .change-value {
+            font-size: 1.5rem;
+            font-weight: 900;
+        }
+
+        .change-value.up {
+            color: #d63031;
+        }
+
+        .change-value.down {
+            color: #00b894;
+        }
+
+        .change-bar {
+            width: 100px;
+            height: 8px;
+            background: #eee;
+            border-radius: 4px;
+            margin-top: 8px;
+            overflow: hidden;
+        }
+
+        .change-bar-fill {
+            height: 100%;
+            border-radius: 4px;
+        }
+
+        .change-bar-fill.up {
+            background: linear-gradient(90deg, #ff7675, #d63031);
+        }
+
+        .change-bar-fill.down {
+            background: #00b894;
+        }
+
+        /* Impact Section */
+        .impact-section {
+            padding: 80px 20px;
+            background: #2d2d2d;
+            color: white;
+        }
+
+        .impact-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .impact-title {
+            font-size: 1.8rem;
+            margin-bottom: 50px;
+        }
+
+        .impact-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .impact-card {
+            background: rgba(255,255,255,0.1);
+            border-radius: 16px;
+            padding: 30px;
+        }
+
+        .impact-emoji {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .impact-label {
+            color: rgba(255,255,255,0.6);
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+
+        .impact-value {
+            font-size: 2rem;
+            font-weight: 900;
+            color: #ff7675;
+        }
+
+        .impact-desc {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.5);
+            margin-top: 10px;
+        }
+
+        /* Footer */
+        .footer {
+            padding: 40px 20px;
+            text-align: center;
+            color: #888;
+            font-size: 0.85rem;
+        }
+
+        .mcp-badge {
+            display: inline-block;
+            background: linear-gradient(90deg, #ff7675, #d63031);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            color: white;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero -->
+    <section class="hero">
+        <div class="basket-icon">🛒</div>
+        <h1 class="question">장바구니 물가,<br>1년 전과 얼마나 달라졌나</h1>
+        <p class="hook">
+            마트에 갈 때마다 "또 올랐네..." 하는 느낌.<br>
+            진짜 그런지, 데이터로 확인해봤습니다.
+        </p>
+    </section>
+
+    <!-- Sledgehammer -->
+    <section class="sledgehammer">
+        <h2 style="font-size: 1.3rem; color: #888; margin-bottom: 40px;">일주일치 장보기 비용</h2>
+
+        <div class="big-compare">
+            <div class="compare-box before">
+                <div class="compare-label">1년 전</div>
+                <div class="compare-value">45,000원</div>
+            </div>
+
+            <div class="compare-arrow">→</div>
+
+            <div class="compare-box after">
+                <div class="compare-label">지금</div>
+                <div class="compare-value">52,800원</div>
+            </div>
+        </div>
+
+        <div class="increase-badge">+17.3% 상승</div>
+
+        <p style="margin-top: 40px; color: #888; max-width: 500px; margin-left: auto; margin-right: auto;">
+            같은 품목을 같은 양만큼 샀을 때,<br>
+            1년 전보다 <strong style="color: #d63031;">7,800원</strong>을 더 내야 합니다.
+        </p>
+    </section>
+
+    <!-- Items -->
+    <section class="items-section">
+        <h2 class="section-title">품목별로 보면</h2>
+
+        <div class="item-grid">
+            
+            <div class="item-card">
+                <div class="item-icon">🍎</div>
+                <div class="item-info">
+                    <div class="item-name">사과</div>
+                    <div class="item-prices">8,300원 → 12,000원</div>
+                </div>
+                <div class="item-change">
+                    <div class="change-value up">
+                        +45.2%
+                    </div>
+                    <div class="change-bar">
+                        <div class="change-bar-fill up"
+                             style="width: 90.4%;"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="item-card">
+                <div class="item-icon">🥬</div>
+                <div class="item-info">
+                    <div class="item-name">배추</div>
+                    <div class="item-prices">6,400원 → 8,500원</div>
+                </div>
+                <div class="item-change">
+                    <div class="change-value up">
+                        +32.1%
+                    </div>
+                    <div class="change-bar">
+                        <div class="change-bar-fill up"
+                             style="width: 64.2%;"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="item-card">
+                <div class="item-icon">🥚</div>
+                <div class="item-info">
+                    <div class="item-name">계란 30구</div>
+                    <div class="item-prices">7,500원 → 8,900원</div>
+                </div>
+                <div class="item-change">
+                    <div class="change-value up">
+                        +18.5%
+                    </div>
+                    <div class="change-bar">
+                        <div class="change-bar-fill up"
+                             style="width: 37.0%;"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="item-card">
+                <div class="item-icon">🥓</div>
+                <div class="item-info">
+                    <div class="item-name">삼겹살 100g</div>
+                    <div class="item-prices">2,500원 → 2,800원</div>
+                </div>
+                <div class="item-change">
+                    <div class="change-value up">
+                        +12.3%
+                    </div>
+                    <div class="change-bar">
+                        <div class="change-bar-fill up"
+                             style="width: 24.6%;"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="item-card">
+                <div class="item-icon">🍚</div>
+                <div class="item-info">
+                    <div class="item-name">쌀 10kg</div>
+                    <div class="item-prices">29,500원 → 32,000원</div>
+                </div>
+                <div class="item-change">
+                    <div class="change-value up">
+                        +8.7%
+                    </div>
+                    <div class="change-bar">
+                        <div class="change-bar-fill up"
+                             style="width: 17.4%;"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="item-card">
+                <div class="item-icon">🥛</div>
+                <div class="item-info">
+                    <div class="item-name">우유 1L</div>
+                    <div class="item-prices">2,660원 → 2,800원</div>
+                </div>
+                <div class="item-change">
+                    <div class="change-value up">
+                        +5.2%
+                    </div>
+                    <div class="change-bar">
+                        <div class="change-bar-fill up"
+                             style="width: 10.4%;"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="item-card">
+                <div class="item-icon">🍜</div>
+                <div class="item-info">
+                    <div class="item-name">라면 5개입</div>
+                    <div class="item-prices">4,600원 → 4,500원</div>
+                </div>
+                <div class="item-change">
+                    <div class="change-value down">
+                        -2.1%
+                    </div>
+                    <div class="change-bar">
+                        <div class="change-bar-fill down"
+                             style="width: 4.2%;"></div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+        <p style="text-align: center; margin-top: 40px; color: #888;">
+            🍎 사과가 <strong style="color: #d63031;">+45.2%</strong>로 가장 많이 올랐습니다.<br>
+            기후변화로 인한 작황 부진이 원인입니다.
+        </p>
+    </section>
+
+    <!-- Impact -->
+    <section class="impact-section">
+        <div class="impact-container">
+            <h2 class="impact-title">누구에게 더 아플까?</h2>
+
+            <div class="impact-cards">
+                <div class="impact-card">
+                    <div class="impact-emoji">😰</div>
+                    <div class="impact-label">최저임금 근로자</div>
+                    <div class="impact-value">+8.2%</div>
+                    <div class="impact-desc">소득 대비 식비 증가분</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-emoji">😐</div>
+                    <div class="impact-label">평균 소득자</div>
+                    <div class="impact-value">+3.1%</div>
+                    <div class="impact-desc">소득 대비 식비 증가분</div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-emoji">😊</div>
+                    <div class="impact-label">고소득자</div>
+                    <div class="impact-value">+1.2%</div>
+                    <div class="impact-desc">소득 대비 식비 증가분</div>
+                </div>
+            </div>
+
+            <p style="margin-top: 50px; color: rgba(255,255,255,0.7); max-width: 600px; margin-left: auto; margin-right: auto;">
+                물가 상승은 <strong style="color: #ff7675;">저소득층에게 더 큰 타격</strong>을 줍니다.<br>
+                소득의 더 많은 부분을 식비에 쓰기 때문입니다.
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div>데이터로 보는 대한민국</div>
+        <div style="margin-top: 10px;">출처: KOSIS 국가통계포털 (통계청 소비자물가조사)</div>
+        <div class="mcp-badge">🚀 MCP 기반 데이터 스토리텔링</div>
+    </footer>
+</body>
+</html>

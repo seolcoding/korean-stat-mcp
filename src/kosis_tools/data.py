@@ -74,7 +74,8 @@ class StatisticsData(KosisBaseClient):
     API Reference:
         - Endpoint: Param/statisticsParameterData.do
         - 응답 형식: 비표준 JSON (키에 따옴표 없음)
-        - Rate Limit: 1 request/second (권장)
+        - Rate Limit: 없음 (계정/IP 제한 없음)
+        - 1회 호출당 최대: 40,000건 (셀 수 기준)
     """
 
     def get_data(
@@ -449,3 +450,222 @@ class StatisticsData(KosisBaseClient):
 
         else:
             return date_clean
+
+    def get_data_paginated(
+        self,
+        org_id: str,
+        tbl_id: str,
+        start_date: str,
+        end_date: str,
+        prd_se: str = "Y",
+        obj_l1: str = "ALL",
+        obj_l2: Optional[str] = None,
+        itm_id: str = "ALL",
+        max_records_per_call: int = 35000,
+    ) -> List[Dict[str, Any]]:
+        """
+        대용량 데이터를 기간 분할하여 조회합니다.
+
+        KOSIS API는 1회 호출당 최대 40,000건까지만 반환합니다.
+        이 메서드는 기간을 자동으로 분할하여 여러 번 호출하고
+        결과를 병합하여 반환합니다.
+
+        Args:
+            org_id: 기관 ID
+            tbl_id: 테이블 ID
+            start_date: 시작 기간 (YYYY 형식)
+            end_date: 종료 기간 (YYYY 형식)
+            prd_se: 수록주기 (기본: "Y")
+            obj_l1: 분류항목 1 (기본: "ALL")
+            obj_l2: 분류항목 2 (기본: None)
+            itm_id: 항목 ID (기본: "ALL")
+            max_records_per_call: 1회 호출당 최대 레코드 수 (기본: 35,000)
+                                  40,000건 제한에 여유를 두어 35,000으로 설정
+
+        Returns:
+            병합된 전체 데이터 레코드 목록
+
+        Example:
+            >>> data = StatisticsData()
+            >>> # 50년치 대용량 데이터 조회
+            >>> records = data.get_data_paginated(
+            ...     org_id="101",
+            ...     tbl_id="DT_1B040A3",
+            ...     start_date="1970",
+            ...     end_date="2023",
+            ...     prd_se="Y"
+            ... )
+            >>> print(f"총 {len(records)}건 조회됨")
+
+        Note:
+            - 연간(Y) 데이터 기준으로 기간을 분할합니다.
+            - 월간(M) 데이터는 년도 단위로 분할됩니다.
+            - 각 분할 호출 사이에 rate limiting이 적용됩니다.
+        """
+        # 먼저 1회 호출 시도
+        first_result = self.get_data(
+            org_id=org_id,
+            tbl_id=tbl_id,
+            start_date=start_date,
+            end_date=end_date,
+            prd_se=prd_se,
+            obj_l1=obj_l1,
+            obj_l2=obj_l2,
+            itm_id=itm_id,
+        )
+
+        # 40,000건 미만이면 그대로 반환
+        if len(first_result) < max_records_per_call:
+            if len(first_result) >= 35000:
+                logger.warning(
+                    f"결과가 {len(first_result)}건으로 40,000건 제한에 근접합니다. "
+                    "일부 데이터가 누락되었을 수 있습니다."
+                )
+            return first_result
+
+        # 40,000건에 근접하면 기간 분할 필요
+        logger.info(
+            f"결과가 {len(first_result)}건으로 40,000건 제한에 도달. "
+            "기간을 분할하여 재조회합니다."
+        )
+
+        return self._fetch_with_period_split(
+            org_id=org_id,
+            tbl_id=tbl_id,
+            start_date=start_date,
+            end_date=end_date,
+            prd_se=prd_se,
+            obj_l1=obj_l1,
+            obj_l2=obj_l2,
+            itm_id=itm_id,
+            max_records_per_call=max_records_per_call,
+        )
+
+    def _fetch_with_period_split(
+        self,
+        org_id: str,
+        tbl_id: str,
+        start_date: str,
+        end_date: str,
+        prd_se: str,
+        obj_l1: str,
+        obj_l2: Optional[str],
+        itm_id: str,
+        max_records_per_call: int,
+    ) -> List[Dict[str, Any]]:
+        """
+        기간을 분할하여 데이터를 조회하고 병합합니다.
+
+        Args:
+            (get_data_paginated와 동일)
+
+        Returns:
+            병합된 전체 데이터 레코드 목록
+        """
+        all_data: List[Dict[str, Any]] = []
+
+        # 연도 추출
+        start_year = int(re.sub(r"[^0-9]", "", start_date)[:4])
+        end_year = int(re.sub(r"[^0-9]", "", end_date)[:4])
+
+        # 주기에 따른 분할 단위 결정
+        if prd_se == "M":
+            # 월간: 1년씩 분할
+            chunk_years = 1
+        elif prd_se == "Q":
+            # 분기: 2년씩 분할
+            chunk_years = 2
+        elif prd_se == "S":
+            # 반기: 3년씩 분할
+            chunk_years = 3
+        else:
+            # 연간/다년/부정기: 10년씩 분할
+            chunk_years = 10
+
+        current_start = start_year
+        chunk_num = 1
+
+        while current_start <= end_year:
+            current_end = min(current_start + chunk_years - 1, end_year)
+
+            # 날짜 형식 조정
+            chunk_start_str = self._format_date_for_period(str(current_start), prd_se)
+            chunk_end_str = self._format_date_for_period(str(current_end), prd_se)
+
+            # 종료일이 월간/분기인 경우 12월/4분기로 설정
+            if prd_se == "M":
+                chunk_end_str = f"{current_end}12"
+            elif prd_se == "Q":
+                chunk_end_str = f"{current_end}04"
+            elif prd_se == "S":
+                chunk_end_str = f"{current_end}02"
+
+            logger.info(
+                f"분할 조회 #{chunk_num}: {chunk_start_str} ~ {chunk_end_str}"
+            )
+
+            chunk_data = self.get_data(
+                org_id=org_id,
+                tbl_id=tbl_id,
+                start_date=chunk_start_str,
+                end_date=chunk_end_str,
+                prd_se=prd_se,
+                obj_l1=obj_l1,
+                obj_l2=obj_l2,
+                itm_id=itm_id,
+            )
+
+            if chunk_data:
+                all_data.extend(chunk_data)
+                logger.info(f"분할 #{chunk_num}: {len(chunk_data)}건 조회됨")
+
+                # 이 분할에서도 한계에 도달하면 더 작게 분할
+                if len(chunk_data) >= max_records_per_call:
+                    logger.warning(
+                        f"분할 #{chunk_num}에서도 {len(chunk_data)}건으로 한계 도달. "
+                        "더 작은 기간으로 분할이 필요할 수 있습니다."
+                    )
+
+            current_start = current_end + 1
+            chunk_num += 1
+
+        # 중복 제거 (PRD_DE + 모든 분류 키 기준)
+        unique_data = self._deduplicate_records(all_data)
+
+        logger.info(f"분할 조회 완료: 총 {len(unique_data)}건 (중복 제거 전: {len(all_data)}건)")
+        return unique_data
+
+    def _deduplicate_records(
+        self, records: List[Dict[str, Any]]
+    ) -> List[Dict[str, Any]]:
+        """
+        데이터 레코드에서 중복을 제거합니다.
+
+        PRD_DE, C1~C8, ITM_ID 조합을 키로 사용하여 중복을 판별합니다.
+
+        Args:
+            records: 데이터 레코드 목록
+
+        Returns:
+            중복이 제거된 레코드 목록
+        """
+        seen = set()
+        unique = []
+
+        for record in records:
+            # 고유 키 생성
+            key_parts = [
+                record.get("PRD_DE", ""),
+                record.get("ITM_ID", ""),
+            ]
+            # 분류 코드 추가 (C1 ~ C8)
+            for i in range(1, 9):
+                key_parts.append(record.get(f"C{i}", ""))
+
+            key = tuple(key_parts)
+
+            if key not in seen:
+                seen.add(key)
+                unique.append(record)
+
+        return unique

@@ -1,0 +1,107 @@
+{
+  "report_id": "5ff2f597-f17b-411c-a7b4-5b5d26cb6afa",
+  "timestamp": "2025-12-13T22:42:35.917582",
+  "user_query": "뭔가 분석해줘",
+  "parsed_query": {
+    "raw_query": "뭔가 분석해줘",
+    "target_regions": [],
+    "target_periods": [],
+    "target_items": [],
+    "comparison_type": "temporal",
+    "analysis_depth": "standard",
+    "include_visualization": true
+  },
+  "sections_determined": [
+    "summary",
+    "eda",
+    "trend",
+    "stats",
+    "visualization"
+  ],
+  "processing_steps": [
+    {
+      "step": "parse_query",
+      "detail": "쿼리 파싱: '뭔가 분석해줘'",
+      "duration_ms": 0.3492079849820584
+    },
+    {
+      "step": "determine_sections",
+      "detail": "섹션 결정: summary, eda, trend, stats, visualization",
+      "sections": [
+        "summary",
+        "eda",
+        "trend",
+        "stats",
+        "visualization"
+      ],
+      "duration_ms": 0.0012500095181167126
+    },
+    {
+      "step": "filter_data",
+      "detail": "데이터 필터링: 20건 → 20건",
+      "records_before": 20,
+      "records_after": 20,
+      "duration_ms": 0.001374981366097927
+    },
+    {
+      "step": "generate_header",
+      "detail": "HTML 헤더 생성",
+      "duration_ms": 0.0014170072972774506
+    },
+    {
+      "step": "generate_summary_card",
+      "detail": "요약 카드 생성",
+      "duration_ms": 0.053333002142608166
+    },
+    {
+      "step": "generate_section_summary",
+      "detail": "섹션 생성: summary",
+      "success": false,
+      "duration_ms": 0.0015830155462026596
+    },
+    {
+      "step": "generate_section_eda",
+      "detail": "섹션 생성: eda",
+      "success": true,
+      "duration_ms": 0.4783329786732793
+    },
+    {
+      "step": "generate_section_trend",
+      "detail": "섹션 생성: trend",
+      "success": true,
+      "duration_ms": 0.9872500086203218
+    },
+    {
+      "step": "generate_section_stats",
+      "detail": "섹션 생성: stats",
+      "success": true,
+      "duration_ms": 0.40904199704527855
+    },
+    {
+      "step": "generate_section_visualization",
+      "detail": "섹션 생성: visualization",
+      "success": true,
+      "duration_ms": 20.27308300603181
+    },
+    {
+      "step": "generate_footer",
+      "detail": "HTML 푸터 생성",
+      "duration_ms": 0.016624981071799994
+    }
+  ],
+  "data_info": {
+    "total_records": 20,
+    "filtered_records": 20,
+    "columns": [
+      "PRD_DE",
+      "C1_NM",
+      "DT",
+      "ITM_NM",
+      "UNIT_NM"
+    ],
+    "unique_regions": 5,
+    "unique_periods": 4
+  },
+  "output_path": "edge_ambiguous.html",
+  "total_duration_ms": 22.578832984436303
+}

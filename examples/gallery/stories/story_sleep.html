@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>어젯밤 몇 시간 잤나요?</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap');
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background: #0a0a0a;
+            color: #fff;
+            line-height: 1.8;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(180deg, #0a0a0a 0%, #1a1a2e 100%);
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%232c3e50' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+        }
+
+        .question {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 900;
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 50%, #5F6368 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hook {
+            font-size: 1.3rem;
+            color: rgba(255,255,255,0.7);
+            max-width: 600px;
+            margin: 0 auto 50px;
+        }
+
+        .scroll-hint {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+            color: rgba(255,255,255,0.5);
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-20px); }
+            60% { transform: translateX(-50%) translateY(-10px); }
+        }
+
+        /* Sledgehammer Stat */
+        .sledgehammer {
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 60px 20px;
+            background: #0f0f1a;
+        }
+
+        .big-number {
+            font-size: clamp(6rem, 18vw, 14rem);
+            font-weight: 900;
+            color: #2c3e50;
+            line-height: 1;
+        }
+
+        .big-number-unit {
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            color: rgba(255,255,255,0.6);
+            margin-top: 10px;
+        }
+
+        .big-number-context {
+            font-size: 1.2rem;
+            color: rgba(255,255,255,0.5);
+            margin-top: 30px;
+            max-width: 500px;
+            text-align: center;
+        }
+
+        .shock-emoji {
+            font-size: 5rem;
+            margin-bottom: 30px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* Story Section */
+        .story-section {
+            padding: 100px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            color: #2c3e50;
+        }
+
+        .section-text {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 40px;
+        }
+
+        /* Comparison Cards */
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .comparison-card {
+            background: rgba(44, 62, 80, 0.1);
+            border-radius: 16px;
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.3s, background 0.3s;
+            border-left: 4px solid #2c3e50;
+        }
+
+        .comparison-card:hover {
+            transform: translateY(-5px);
+            background: rgba(44, 62, 80, 0.15);
+        }
+
+        .comparison-label {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.6);
+            margin-bottom: 15px;
+        }
+
+        .comparison-number {
+            font-size: 3rem;
+            font-weight: 900;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .comparison-unit {
+            font-size: 1rem;
+            color: rgba(255,255,255,0.7);
+        }
+
+        .comparison-rank {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.5);
+            margin-top: 10px;
+        }
+
+        /* Age/Job Breakdown */
+        .breakdown-container {
+            background: rgba(255,255,255,0.03);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px 0;
+        }
+
+        .breakdown-bars {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .breakdown-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .breakdown-label {
+            width: 120px;
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.8);
+        }
+
+        .breakdown-bar-bg {
+            flex: 1;
+            height: 30px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .breakdown-bar-fill {
+            height: 100%;
+            border-radius: 15px;
+            transition: width 1s ease;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 12px;
+            font-size: 0.85rem;
+            font-weight: 700;
+        }
+
+        .breakdown-bar-fill.good {
+            background: linear-gradient(90deg, #27ae60, #2ecc71);
+            color: #fff;
+        }
+
+        .breakdown-bar-fill.medium {
+            background: linear-gradient(90deg, #f39c12, #f1c40f);
+            color: #000;
+        }
+
+        .breakdown-bar-fill.bad {
+            background: linear-gradient(90deg, #2c3e50, #34495e);
+            color: #fff;
+        }
+
+        .breakdown-value {
+            width: 80px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.5);
+        }
+
+        /* Interactive Sleep Calculator */
+        .interactive-section {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 80px 20px;
+            background: linear-gradient(180deg, #0f0f1a 0%, #1a1a2e 100%);
+        }
+
+        .interactive-container {
+            max-width: 600px;
+            width: 100%;
+            background: rgba(255,255,255,0.05);
+            border-radius: 24px;
+            padding: 50px;
+        }
+
+        .interactive-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .sleep-input-group {
+            margin-bottom: 30px;
+        }
+
+        .input-label {
+            font-size: 1rem;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .time-input {
+            width: 100%;
+            padding: 15px;
+            font-size: 1.1rem;
+            background: rgba(255,255,255,0.1);
+            border: 2px solid rgba(44, 62, 80, 0.3);
+            border-radius: 12px;
+            color: #fff;
+            text-align: center;
+        }
+
+        .time-input:focus {
+            outline: none;
+            border-color: #2c3e50;
+        }
+
+        .calculate-btn {
+            width: 100%;
+            padding: 18px;
+            margin-top: 30px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            background: linear-gradient(90deg, #2c3e50, #34495e);
+            border: none;
+            border-radius: 12px;
+            color: #fff;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .calculate-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(44, 62, 80, 0.4);
+        }
+
+        .result-display {
+            display: none;
+            margin-top: 40px;
+            padding: 30px;
+            background: rgba(44, 62, 80, 0.15);
+            border-radius: 16px;
+            border-left: 4px solid #2c3e50;
+            text-align: center;
+        }
+
+        .result-display.active {
+            display: block;
+        }
+
+        .result-score {
+            font-size: 4rem;
+            font-weight: 900;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .result-label {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.7);
+        }
+
+        .result-comparison {
+            margin-top: 20px;
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.6);
+            line-height: 1.6;
+        }
+
+        /* Economic Cost Section */
+        .cost-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .cost-card {
+            background: rgba(231, 76, 60, 0.1);
+            border-left: 4px solid #e74c3c;
+            border-radius: 16px;
+            padding: 30px;
+        }
+
+        .cost-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .cost-value {
+            font-size: 2rem;
+            font-weight: 900;
+            color: #e74c3c;
+            margin-bottom: 10px;
+        }
+
+        .cost-description {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.7);
+            line-height: 1.6;
+        }
+
+        .insight-box {
+            background: rgba(44, 62, 80, 0.15);
+            border-left: 4px solid #2c3e50;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 30px 0;
+        }
+
+        .insight-box strong {
+            color: #2c3e50;
+        }
+
+        /* Conclusion */
+        .conclusion {
+            min-height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 80px 20px;
+            background: linear-gradient(180deg, #0f0f1a 0%, #1a1a2e 100%);
+            text-align: center;
+        }
+
+        .conclusion-text {
+            font-size: 1.5rem;
+            max-width: 700px;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 40px;
+        }
+
+        .conclusion-highlight {
+            color: #2c3e50;
+            font-weight: 700;
+        }
+
+        /* Footer */
+        .footer {
+            padding: 40px 20px;
+            text-align: center;
+            color: rgba(255,255,255,0.3);
+            font-size: 0.85rem;
+            background: #0a0a0a;
+        }
+
+        .data-source {
+            margin-top: 10px;
+        }
+
+        .mcp-badge {
+            display: inline-block;
+            background: linear-gradient(90deg, #2c3e50, #34495e);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            color: #fff;
+            margin-top: 20px;
+        }
+
+        .chart-container {
+            background: rgba(255,255,255,0.03);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px 0;
+        }
+
+        .chart-placeholder {
+            min-height: 400px;
+            background: rgba(255,255,255,0.02);
+            border-radius: 12px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero: 질문으로 시작 -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="question">어젯밤<br>몇 시간 잤나요?</h1>
+            <p class="hook">
+                매일 밤 당신은 충분한 잠을 자고 있나요?<br>
+                한국인의 수면시간, OECD 국가 중 몇 위일까요?
+            </p>
+        </div>
+        <div class="scroll-hint">
+            <span style="font-size: 2rem;">↓</span><br>
+            <span style="font-size: 0.9rem;">스크롤하여 계속</span>
+        </div>
+    </section>
+
+    <!-- Sledgehammer Stat: 충격적인 숫자 -->
+    <section class="sledgehammer">
+        <div class="shock-emoji">😴</div>
+        <div class="big-number">6.8</div>
+        <div class="big-number-unit">시간</div>
+        <p class="big-number-context">
+            한국인의 하루 평균 수면시간입니다.<br>
+            <strong style="color: #e74c3c;">OECD 38개국 중 최하위</strong>를 기록했습니다.
+        </p>
+    </section>
+
+    <!-- Story Section 1: OECD 비교 -->
+    <section class="story-section">
+        <h2 class="section-title">OECD 최하위, 6.8시간</h2>
+        <p class="section-text">
+            전 세계 사람들은 얼마나 잘까요?<br>
+            OECD 평균 수면시간은 <strong style="color: #2c3e50;">8.5시간</strong>.<br>
+            한국은 이보다 무려 <strong style="color: #e74c3c;">1.7시간</strong>이나 부족합니다.
+        </p>
+
+        <div class="comparison-grid">
+            <div class="comparison-card">
+                <div class="comparison-label">OECD 1위</div>
+                <div class="comparison-number">9.2</div>
+                <div class="comparison-unit">시간</div>
+                <div class="comparison-rank">프랑스</div>
+            </div>
+
+            <div class="comparison-card">
+                <div class="comparison-label">OECD 평균</div>
+                <div class="comparison-number">8.5</div>
+                <div class="comparison-unit">시간</div>
+                <div class="comparison-rank">38개국 평균</div>
+            </div>
+
+            <div class="comparison-card">
+                <div class="comparison-label">한국</div>
+                <div class="comparison-number">6.8</div>
+                <div class="comparison-unit">시간</div>
+                <div class="comparison-rank" style="color: #e74c3c;">38위 (최하위)</div>
+            </div>
+        </div>
+
+        <div class="insight-box">
+            <p style="margin: 0; font-size: 1rem; line-height: 1.7;">
+                💤 <strong>1.7시간의 의미</strong><br>
+                매일 1.7시간씩 덜 자면, 일주일에 거의 <strong>12시간</strong>의 수면 부족.<br>
+                이는 하루 반나절을 잃는 것과 같습니다.
+            </p>
+        </div>
+    </section>
+
+    <!-- Story Section 2: 연령별 수면시간 -->
+    <section class="story-section">
+        <h2 class="section-title">연령별 수면시간: 누가 가장 부족할까?</h2>
+        <p class="section-text">
+            나이가 들수록 잠이 줄어든다는 말, 정말일까요?<br>
+            한국의 연령별 수면시간을 분석했습니다.
+        </p>
+
+        <div class="breakdown-container">
+            <div style="text-align: center; color: rgba(255,255,255,0.6); margin-bottom: 20px;">
+                연령대별 평균 수면시간
+            </div>
+
+            <div class="breakdown-bars">
+                <div class="breakdown-item">
+                    <div class="breakdown-label">10대</div>
+                    <div class="breakdown-bar-bg">
+                        <div class="breakdown-bar-fill medium" style="width: 88%;">7.8시간</div>
+                    </div>
+                    <div class="breakdown-value">7.8시간</div>
+                </div>
+
+                <div class="breakdown-item">
+                    <div class="breakdown-label">20대</div>
+                    <div class="breakdown-bar-bg">
+                        <div class="breakdown-bar-fill medium" style="width: 82%;">7.3시간</div>
+                    </div>
+                    <div class="breakdown-value">7.3시간</div>
+                </div>
+
+                <div class="breakdown-item">
+                    <div class="breakdown-label">30대</div>
+                    <div class="breakdown-bar-bg">
+                        <div class="breakdown-bar-fill bad" style="width: 72%;">6.4시간</div>
+                    </div>
+                    <div class="breakdown-value">6.4시간</div>
+                </div>
+
+                <div class="breakdown-item">
+                    <div class="breakdown-label">40대</div>
+                    <div class="breakdown-bar-bg">
+                        <div class="breakdown-bar-fill bad" style="width: 68%;">6.0시간</div>
+                    </div>
+                    <div class="breakdown-value">6.0시간</div>
+                </div>
+
+                <div class="breakdown-item">
+                    <div class="breakdown-label">50대</div>
+                    <div class="breakdown-bar-bg">
+                        <div class="breakdown-bar-fill bad" style="width: 74%;">6.6시간</div>
+                    </div>
+                    <div class="breakdown-value">6.6시간</div>
+                </div>
+
+                <div class="breakdown-item">
+                    <div class="breakdown-label">60대 이상</div>
+                    <div class="breakdown-bar-bg">
+                        <div class="breakdown-bar-fill good" style="width: 86%;">7.6시간</div>
+                    </div>
+                    <div class="breakdown-value">7.6시간</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="insight-box">
+            <p style="margin: 0; font-size: 1rem; line-height: 1.7;">
+                ⚠️ <strong>30-40대의 수면 부족</strong><br>
+                경력과 육아로 가장 바쁜 30-40대의 수면시간이 최저.<br>
+                40대는 <strong>6시간</strong>으로, 만성 수면 부족 상태입니다.
+            </p>
+        </div>
+    </section>
+
+    <!-- Story Section 3: 직업별 수면시간 -->
+    <section class="story-section">
+        <h2 class="section-title">직업별 수면시간: 누가 가장 못 잘까?</h2>
+        <p class="section-text">
+            직업에 따라 수면시간도 달라집니다.<br>
+            가장 수면이 부족한 직업군은?
+        </p>
+
+        <div class="breakdown-container">
+            <div style="text-align: center; color: rgba(255,255,255,0.6); margin-bottom: 20px;">
+                직업별 평균 수면시간
+            </div>
+
+            <div class="breakdown-bars">
+                <div class="breakdown-item">
+                    <div class="breakdown-label">전문직</div>
+                    <div class="breakdown-bar-bg">
+                        <div class="breakdown-bar-fill medium" style="width: 80%;">7.1시간</div>
+                    </div>
+                    <div class="breakdown-value">7.1시간</div>
+                </div>
+
+                <div class="breakdown-item">
+                    <div class="breakdown-label">사무직</div>
+                    <div class="breakdown-bar-bg">
+                        <div class="breakdown-bar-fill medium" style="width: 76%;">6.8시간</div>
+                    </div>
+                    <div class="breakdown-value">6.8시간</div>
+                </div>
+
+                <div class="breakdown-item">
+                    <div class="breakdown-label">서비스직</div>
+                    <div class="breakdown-bar-bg">
+                        <div class="breakdown-bar-fill bad" style="width: 72%;">6.4시간</div>
+                    </div>
+                    <div class="breakdown-value">6.4시간</div>
+                </div>
+
+                <div class="breakdown-item">
+                    <div class="breakdown-label">판매직</div>
+                    <div class="breakdown-bar-bg">
+                        <div class="breakdown-bar-fill bad" style="width: 70%;">6.2시간</div>
+                    </div>
+                    <div class="breakdown-value">6.2시간</div>
+                </div>
+
+                <div class="breakdown-item">
+                    <div class="breakdown-label">자영업자</div>
+                    <div class="breakdown-bar-bg">
+                        <div class="breakdown-bar-fill bad" style="width: 64%;">5.7시간</div>
+                    </div>
+                    <div class="breakdown-value">5.7시간</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="insight-box">
+            <p style="margin: 0; font-size: 1rem; line-height: 1.7;">
+                🏪 <strong>자영업자의 수면 부족</strong><br>
+                자영업자의 평균 수면시간은 <strong>5.7시간</strong>.<br>
+                긴 영업시간과 불규칙한 근무로 인해 가장 낮은 수면시간을 기록했습니다.
+            </p>
+        </div>
+    </section>
+
+    <!-- Chart Section: 수면시간 추이 -->
+    <section class="story-section">
+        <h2 class="section-title">시간이 지날수록 줄어드는 수면</h2>
+        <p class="section-text">
+            2014년부터 2024년까지 10년간 한국인의 수면시간 변화를 추적했습니다.
+        </p>
+
+        <div class="chart-container">
+            <div id="trendChart" class="chart-placeholder"></div>
+        </div>
+
+        <div class="insight-box">
+            <p style="margin: 0; font-size: 1rem; line-height: 1.7;">
+                📉 <strong>10년간 20분 감소</strong><br>
+                2014년 7.0시간 → 2024년 6.8시간<br>
+                스마트폰 보급, 야근 문화, 배달 앱 등으로 인해 수면시간이 지속적으로 감소하고 있습니다.
+            </p>
+        </div>
+    </section>
+
+    <!-- Interactive Section: 수면 점수 계산 -->
+    <section class="interactive-section">
+        <div class="interactive-container">
+            <h2 class="interactive-title">나의 수면 점수는?</h2>
+            <p style="text-align: center; color: rgba(255,255,255,0.6); margin-bottom: 40px;">
+                평일과 주말 수면시간을 입력해보세요
+            </p>
+
+            <div class="sleep-input-group">
+                <label class="input-label">평일 평균 수면시간 (시간)</label>
+                <input type="number" class="time-input" id="weekdaySleep" min="0" max="24" step="0.5" value="6.5" placeholder="6.5">
+            </div>
+
+            <div class="sleep-input-group">
+                <label class="input-label">주말 평균 수면시간 (시간)</label>
+                <input type="number" class="time-input" id="weekendSleep" min="0" max="24" step="0.5" value="8" placeholder="8">
+            </div>
+
+            <button class="calculate-btn" onclick="calculateSleepScore()">수면 점수 계산하기</button>
+
+            <div class="result-display" id="resultDisplay">
+                <div class="result-score" id="resultScore">6.9시간</div>
+                <div class="result-label">주간 평균 수면시간</div>
+                <div class="result-comparison" id="resultComparison"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Story Section 4: 수면 부족의 경제적 비용 -->
+    <section class="story-section">
+        <h2 class="section-title">수면 부족의 경제적 비용</h2>
+        <p class="section-text">
+            잠을 덜 자면 어떤 일이 벌어질까요?<br>
+            수면 부족은 개인의 건강뿐만 아니라 국가 경제에도 막대한 손실을 초래합니다.
+        </p>
+
+        <div class="cost-cards">
+            <div class="cost-card">
+                <div class="cost-icon">💸</div>
+                <div class="cost-value">53조원</div>
+                <div class="cost-description">
+                    한국의 수면 부족으로 인한 연간 경제 손실 추정치<br>
+                    (GDP의 약 2.9%)
+                </div>
+            </div>
+
+            <div class="cost-card">
+                <div class="cost-icon">📉</div>
+                <div class="cost-value">-20%</div>
+                <div class="cost-description">
+                    수면 부족 시 업무 생산성 감소율<br>
+                    집중력 저하, 실수 증가
+                </div>
+            </div>
+
+            <div class="cost-card">
+                <div class="cost-icon">⚠️</div>
+                <div class="cost-value">+3배</div>
+                <div class="cost-description">
+                    만성 수면 부족자의 산업재해 발생률<br>
+                    졸음운전 사고도 급증
+                </div>
+            </div>
+        </div>
+
+        <div class="insight-box">
+            <p style="margin: 0; font-size: 1rem; line-height: 1.7;">
+                🏥 <strong>건강 리스크</strong><br>
+                만성 수면 부족은 비만, 당뇨, 심혈관 질환 위험을 크게 높입니다.<br>
+                6시간 미만 수면 시 조기 사망 위험이 <strong>12% 증가</strong>한다는 연구 결과도 있습니다.
+            </p>
+        </div>
+    </section>
+
+    <!-- Conclusion -->
+    <section class="conclusion">
+        <p class="conclusion-text">
+            <span class="conclusion-highlight">6.8시간</span>.<br>
+            이것은 단순한 숫자가 아닙니다.
+        </p>
+        <p class="conclusion-text">
+            이는 우리의 <span class="conclusion-highlight">삶의 질</span>,<br>
+            우리의 <span class="conclusion-highlight">건강</span>,<br>
+            우리의 <span class="conclusion-highlight">행복</span>을 보여주는 지표입니다.
+        </p>
+        <p class="conclusion-text">
+            오늘 밤, 조금 더 일찍 눈을 감아보는 건 어떨까요?
+        </p>
+        <p style="color: rgba(255,255,255,0.5); font-size: 1rem; margin-top: 40px;">
+            당신은 오늘 밤 몇 시간 잘 예정인가요?
+        </p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div>데이터로 보는 대한민국</div>
+        <div class="data-source">출처: OECD Time Use Database, KOSIS 생활시간조사, 통계청 사회조사</div>
+        <div class="mcp-badge">MCP 기반 데이터 스토리텔링</div>
+        <div style="margin-top: 15px;">Generated: 2025-12-14</div>
+    </footer>
+
+    <script>
+        // Calculate sleep score
+        function calculateSleepScore() {
+            const weekday = parseFloat(document.getElementById('weekdaySleep').value) || 0;
+            const weekend = parseFloat(document.getElementById('weekendSleep').value) || 0;
+
+            // Weekly average: (weekday * 5 + weekend * 2) / 7
+            const average = ((weekday * 5 + weekend * 2) / 7).toFixed(1);
+
+            const resultDisplay = document.getElementById('resultDisplay');
+            const resultScore = document.getElementById('resultScore');
+            const resultComparison = document.getElementById('resultComparison');
+
+            resultScore.textContent = average + '시간';
+
+            let comparison = '';
+            const avgNum = parseFloat(average);
+
+            if (avgNum >= 8.0) {
+                comparison = '😊 훌륭합니다! 권장 수면시간(7-9시간)을 충족하고 있습니다.<br>한국 평균(6.8시간)보다 ' + (avgNum - 6.8).toFixed(1) + '시간 더 많이 주무십니다.';
+            } else if (avgNum >= 7.0) {
+                comparison = '👍 양호합니다. 권장 수면시간에 가깝습니다.<br>한국 평균(6.8시간)보다 ' + (avgNum - 6.8).toFixed(1) + '시간 더 많이 주무십니다.';
+            } else if (avgNum >= 6.5) {
+                comparison = '😐 한국 평균(6.8시간) 수준입니다.<br>조금 더 일찍 주무시는 것을 권장합니다.';
+            } else if (avgNum >= 6.0) {
+                comparison = '⚠️ 수면 부족 상태입니다. 한국 평균(6.8시간)보다도 낮습니다.<br>만성 피로와 건강 문제가 우려됩니다.';
+            } else {
+                comparison = '🚨 심각한 수면 부족입니다!<br>건강을 위해 수면시간을 늘리는 것이 시급합니다.';
+            }
+
+            resultComparison.innerHTML = comparison;
+            resultDisplay.classList.add('active');
+            resultDisplay.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        // Trend Chart
+        const trendData = {
+            x: ['2014', '2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024'],
+            y: [7.0, 6.95, 6.92, 6.88, 6.85, 6.82, 6.81, 6.79, 6.77, 6.75, 6.8],
+            type: 'scatter',
+            mode: 'lines+markers',
+            marker: {
+                color: '#2c3e50',
+                size: 10,
+                line: {
+                    color: '#34495e',
+                    width: 2
+                }
+            },
+            line: {
+                color: '#2c3e50',
+                width: 3,
+                shape: 'spline'
+            }
+        };
+
+        const oecdAvgLine = {
+            x: ['2014', '2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024'],
+            y: [8.5, 8.5, 8.5, 8.5, 8.5, 8.5, 8.5, 8.5, 8.5, 8.5, 8.5],
+            type: 'scatter',
+            mode: 'lines',
+            name: 'OECD 평균',
+            line: {
+                color: '#27ae60',
+                width: 2,
+                dash: 'dash'
+            }
+        };
+
+        const layout = {
+            title: {
+                text: '한국인 평균 수면시간 추이 (2014-2024)',
+                font: {
+                    color: 'rgba(255,255,255,0.8)',
+                    size: 16
+                }
+            },
+            xaxis: {
+                title: '연도',
+                color: 'rgba(255,255,255,0.6)',
+                gridcolor: 'rgba(255,255,255,0.1)'
+            },
+            yaxis: {
+                title: '수면시간 (시간)',
+                range: [5, 9],
+                color: 'rgba(255,255,255,0.6)',
+                gridcolor: 'rgba(255,255,255,0.1)'
+            },
+            plot_bgcolor: 'rgba(255,255,255,0.02)',
+            paper_bgcolor: 'transparent',
+            font: {
+                color: 'rgba(255,255,255,0.8)'
+            },
+            showlegend: true,
+            legend: {
+                font: {
+                    color: 'rgba(255,255,255,0.6)'
+                }
+            }
+        };
+
+        Plotly.newPlot('trendChart', [trendData, oecdAvgLine], layout, {
+            responsive: true,
+            displayModeBar: false
+        });
+    </script>
+</body>
+</html>

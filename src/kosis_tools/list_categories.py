@@ -185,11 +185,12 @@ class CategoryList(KosisBaseClient):
         params: Dict[str, Any] = {
             "method": "getList",
             "format": "json",
-            "orgId": org_id.strip(),
+            "vwCd": "MT_OTITLE",  # 기관별 통계 뷰
+            "parentListId": org_id.strip(),  # 기관 ID를 parentListId로 전달
         }
 
         if parent_stat_id:
-            params["parentStatId"] = parent_stat_id
+            params["parentListId"] = parent_stat_id  # 하위 통계 조회 시 덮어씀
 
         logger.info(f"기관별 통계 목록 조회: org_id={org_id}")
 
@@ -251,7 +252,8 @@ class CategoryList(KosisBaseClient):
         params: Dict[str, Any] = {
             "method": "getList",
             "format": "json",
-            "vwCd": vw_cd.strip(),
+            "vwCd": "MT_ZTITLE",  # 주제별 통계 뷰
+            "parentListId": vw_cd.strip(),  # 주제 코드를 parentListId로 전달
         }
 
         logger.info(f"주제별 통계 목록 조회: vw_cd={vw_cd}")
@@ -307,9 +309,10 @@ class CategoryList(KosisBaseClient):
             return []
 
         params: Dict[str, Any] = {
-            "method": "getStatList",  # 통계 목록 조회 메서드
+            "method": "getList",
             "format": "json",
-            "orgId": org_id.strip(),
+            "vwCd": "MT_OTITLE",  # 기관별 통계 뷰
+            "parentListId": org_id.strip(),  # 기관 ID를 parentListId로 전달
         }
 
         logger.info(f"기관 통계 목록 조회: org_id={org_id}")

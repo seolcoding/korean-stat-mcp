@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회사 가기 싫은 건 나만 그런가?</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap');
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background: #0a0a0a;
+            color: #fff;
+            line-height: 1.8;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(180deg, #0a0a0a 0%, #1a0f1e 100%);
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%238e44ad' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+        }
+
+        .question {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 900;
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, #8e44ad 0%, #c0392b 50%, #e74c3c 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hook {
+            font-size: 1.3rem;
+            color: rgba(255,255,255,0.7);
+            max-width: 600px;
+            margin: 0 auto 50px;
+        }
+
+        .scroll-hint {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+            color: rgba(255,255,255,0.5);
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-20px); }
+            60% { transform: translateX(-50%) translateY(-10px); }
+        }
+
+        /* Sledgehammer Stat */
+        .sledgehammer {
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 60px 20px;
+            background: #0f0f1a;
+        }
+
+        .big-number {
+            font-size: clamp(5rem, 15vw, 12rem);
+            font-weight: 900;
+            color: #8e44ad;
+            line-height: 1;
+        }
+
+        .big-number-unit {
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            color: rgba(255,255,255,0.6);
+            margin-top: 10px;
+        }
+
+        .big-number-context {
+            font-size: 1.2rem;
+            color: rgba(255,255,255,0.5);
+            margin-top: 30px;
+            max-width: 600px;
+            text-align: center;
+        }
+
+        .shock-emoji {
+            font-size: 5rem;
+            margin-bottom: 30px;
+            animation: shake 0.5s ease-in-out infinite;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(-5deg); }
+            75% { transform: rotate(5deg); }
+        }
+
+        /* Story Section */
+        .story-section {
+            padding: 100px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            color: #8e44ad;
+        }
+
+        .section-text {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 40px;
+        }
+
+        /* Bullying Types */
+        .bullying-types {
+            background: rgba(255,255,255,0.03);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px 0;
+        }
+
+        .type-bars {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .type-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .type-icon {
+            font-size: 2rem;
+            width: 50px;
+            text-align: center;
+        }
+
+        .type-content {
+            flex: 1;
+        }
+
+        .type-label {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .type-bar-bg {
+            height: 35px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 18px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .type-bar-fill {
+            height: 100%;
+            border-radius: 18px;
+            transition: width 1s ease;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 15px;
+            font-size: 0.95rem;
+            font-weight: 700;
+            background: linear-gradient(90deg, #8e44ad, #9b59b6);
+            color: #fff;
+        }
+
+        /* Interactive Checklist */
+        .interactive-section {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 80px 20px;
+            background: linear-gradient(180deg, #0f0f1a 0%, #1a0f1e 100%);
+        }
+
+        .interactive-container {
+            max-width: 700px;
+            width: 100%;
+            background: rgba(255,255,255,0.05);
+            border-radius: 24px;
+            padding: 50px;
+        }
+
+        .interactive-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #8e44ad;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .interactive-subtitle {
+            font-size: 1rem;
+            color: rgba(255,255,255,0.6);
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .checklist-item {
+            background: rgba(255,255,255,0.03);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+            user-select: none;
+        }
+
+        .checklist-item:hover {
+            background: rgba(255,255,255,0.08);
+            transform: translateX(5px);
+        }
+
+        .checklist-item.checked {
+            background: rgba(142, 68, 173, 0.2);
+            border-left: 4px solid #8e44ad;
+        }
+
+        .checkbox {
+            width: 24px;
+            height: 24px;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+
+        .checklist-item.checked .checkbox {
+            background: #8e44ad;
+            border-color: #8e44ad;
+        }
+
+        .checklist-text {
+            flex: 1;
+            font-size: 1rem;
+            color: rgba(255,255,255,0.8);
+        }
+
+        .result-display {
+            display: none;
+            margin-top: 40px;
+            padding: 30px;
+            background: rgba(142, 68, 173, 0.1);
+            border-radius: 16px;
+            border-left: 4px solid #8e44ad;
+            text-align: center;
+        }
+
+        .result-display.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .result-count {
+            font-size: 4rem;
+            font-weight: 900;
+            color: #8e44ad;
+            margin-bottom: 15px;
+        }
+
+        .result-label {
+            font-size: 1.2rem;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 20px;
+        }
+
+        .result-message {
+            font-size: 1rem;
+            color: rgba(255,255,255,0.6);
+            line-height: 1.7;
+        }
+
+        /* Response Stats */
+        .response-container {
+            background: rgba(255,255,255,0.03);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px 0;
+        }
+
+        .response-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .response-card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 16px;
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.3s, background 0.3s;
+        }
+
+        .response-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.08);
+        }
+
+        .response-number {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: #8e44ad;
+            margin-bottom: 10px;
+        }
+
+        .response-label {
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.7);
+            line-height: 1.5;
+        }
+
+        /* System Stats */
+        .system-container {
+            background: rgba(255,255,255,0.03);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px 0;
+        }
+
+        .system-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .system-card {
+            background: rgba(142, 68, 173, 0.1);
+            border-radius: 16px;
+            padding: 30px;
+            border-left: 4px solid #8e44ad;
+        }
+
+        .system-title {
+            font-size: 1.1rem;
+            color: #8e44ad;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .system-stat {
+            font-size: 2rem;
+            font-weight: 900;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        .system-desc {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.6);
+            line-height: 1.6;
+        }
+
+        .insight-box {
+            background: rgba(142, 68, 173, 0.1);
+            border-left: 4px solid #8e44ad;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 30px 0;
+        }
+
+        .insight-box strong {
+            color: #8e44ad;
+        }
+
+        /* Conclusion */
+        .conclusion {
+            min-height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 80px 20px;
+            background: linear-gradient(180deg, #0f0f1a 0%, #1a0f1e 100%);
+            text-align: center;
+        }
+
+        .conclusion-text {
+            font-size: 1.5rem;
+            max-width: 700px;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 40px;
+        }
+
+        .conclusion-highlight {
+            color: #8e44ad;
+            font-weight: 700;
+        }
+
+        /* Footer */
+        .footer {
+            padding: 40px 20px;
+            text-align: center;
+            color: rgba(255,255,255,0.3);
+            font-size: 0.85rem;
+            background: #0a0a0a;
+        }
+
+        .data-source {
+            margin-top: 10px;
+        }
+
+        .mcp-badge {
+            display: inline-block;
+            background: linear-gradient(90deg, #8e44ad, #9b59b6);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            color: #fff;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero: 질문으로 시작 -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="question">회사 가기 싫은 건<br>나만 그런가?</h1>
+            <p class="hook">
+                매일 아침 출근길이 괴로운 당신.<br>
+                당신만의 문제가 아닐지도 모릅니다.
+            </p>
+        </div>
+        <div class="scroll-hint">
+            <span style="font-size: 2rem;">↓</span><br>
+            <span style="font-size: 0.9rem;">스크롤하여 계속</span>
+        </div>
+    </section>
+
+    <!-- Sledgehammer Stat: 충격적인 숫자 -->
+    <section class="sledgehammer">
+        <div class="shock-emoji">😰</div>
+        <div class="big-number">28.4%</div>
+        <div class="big-number-unit">직장 내 괴롭힘 경험률</div>
+        <p class="big-number-context">
+            대한민국 직장인 <strong style="color: #8e44ad;">3명 중 1명</strong>은<br>
+            직장 내 괴롭힘을 경험했습니다.
+        </p>
+    </section>
+
+    <!-- Story Section 1: 괴롭힘의 실체 -->
+    <section class="story-section">
+        <h2 class="section-title">어떤 괴롭힘을 당했을까?</h2>
+        <p class="section-text">
+            "그냥 참으면 돼", "회사 생활 다 그런 거야"<br>
+            과연 그럴까요? 피해자들이 겪은 괴롭힘의 실체를 들여다봤습니다.
+        </p>
+
+        <div class="bullying-types">
+            <div style="text-align: center; color: rgba(255,255,255,0.6); margin-bottom: 20px;">
+                직장 내 괴롭힘 유형별 경험률 (복수응답)
+            </div>
+
+            <div class="type-bars">
+                <div class="type-item">
+                    <div class="type-icon">💬</div>
+                    <div class="type-content">
+                        <div class="type-label">언어적 폭력 (폭언, 욕설, 모욕)</div>
+                        <div class="type-bar-bg">
+                            <div class="type-bar-fill" style="width: 68%;">68.2%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="type-item">
+                    <div class="type-icon">📋</div>
+                    <div class="type-content">
+                        <div class="type-label">부당한 업무지시 (과도한 업무, 업무 배제)</div>
+                        <div class="type-bar-bg">
+                            <div class="type-bar-fill" style="width: 52%;">52.3%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="type-item">
+                    <div class="type-icon">🚫</div>
+                    <div class="type-content">
+                        <div class="type-label">사회적 고립 (무시, 따돌림)</div>
+                        <div class="type-bar-bg">
+                            <div class="type-bar-fill" style="width: 38%;">38.1%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="type-item">
+                    <div class="type-icon">👊</div>
+                    <div class="type-content">
+                        <div class="type-label">신체적 폭력 또는 위협</div>
+                        <div class="type-bar-bg">
+                            <div class="type-bar-fill" style="width: 15%;">15.4%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="type-item">
+                    <div class="type-icon">🔒</div>
+                    <div class="type-content">
+                        <div class="type-label">사생활 침해</div>
+                        <div class="type-bar-bg">
+                            <div class="type-bar-fill" style="width: 24%;">24.7%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="insight-box">
+            <p style="margin: 0; font-size: 1rem; line-height: 1.7;">
+                💔 <strong>가장 흔한 괴롭힘</strong><br>
+                폭언과 욕설이 68.2%로 가장 많습니다.<br>
+                "이것도 못해?", "회사 그만둬", "너 때문에 다 망쳤어"<br>
+                이런 말들이 일상이 된 직장이 많습니다.
+            </p>
+        </div>
+
+        <p class="section-text">
+            단순히 한두 가지만 경험하는 것이 아닙니다.<br>
+            피해자들은 평균 <strong style="color: #8e44ad;">2.6가지</strong>의 괴롭힘을 동시에 겪고 있습니다.
+        </p>
+    </section>
+
+    <!-- Interactive Section: 자가진단 -->
+    <section class="interactive-section">
+        <div class="interactive-container">
+            <h2 class="interactive-title">내 직장 환경 점검</h2>
+            <p class="interactive-subtitle">
+                지난 1년간 다음과 같은 일을 경험한 적이 있나요?<br>
+                해당되는 항목을 클릭해보세요.
+            </p>
+
+            <div class="checklist-item" onclick="toggleCheck(this)">
+                <div class="checkbox"></div>
+                <div class="checklist-text">상사나 동료로부터 폭언, 욕설, 모욕적 발언을 들었다</div>
+            </div>
+
+            <div class="checklist-item" onclick="toggleCheck(this)">
+                <div class="checkbox"></div>
+                <div class="checklist-text">업무 능력과 무관하게 과도한 업무를 지시받았다</div>
+            </div>
+
+            <div class="checklist-item" onclick="toggleCheck(this)">
+                <div class="checkbox"></div>
+                <div class="checklist-text">업무에서 의도적으로 배제되거나 일을 주지 않았다</div>
+            </div>
+
+            <div class="checklist-item" onclick="toggleCheck(this)">
+                <div class="checkbox"></div>
+                <div class="checklist-text">동료들로부터 따돌림이나 무시를 당했다</div>
+            </div>
+
+            <div class="checklist-item" onclick="toggleCheck(this)">
+                <div class="checkbox"></div>
+                <div class="checklist-text">사적인 심부름이나 업무 외 일을 강요당했다</div>
+            </div>
+
+            <div class="checklist-item" onclick="toggleCheck(this)">
+                <div class="checkbox"></div>
+                <div class="checklist-text">회식, 야근 등 개인 시간 참여를 강요받았다</div>
+            </div>
+
+            <div class="checklist-item" onclick="toggleCheck(this)">
+                <div class="checkbox"></div>
+                <div class="checklist-text">휴가 사용이나 업무 외 시간에 간섭받았다</div>
+            </div>
+
+            <div class="checklist-item" onclick="toggleCheck(this)">
+                <div class="checkbox"></div>
+                <div class="checklist-text">위협적인 언행이나 신체적 위협을 받았다</div>
+            </div>
+
+            <div class="result-display" id="resultDisplay">
+                <div class="result-count" id="resultCount">0</div>
+                <div class="result-label">항목에 해당됩니다</div>
+                <div class="result-message" id="resultMessage"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Story Section 2: 피해자는 어떻게 대응했을까? -->
+    <section class="story-section">
+        <h2 class="section-title">피해자는 어떻게 대응했을까?</h2>
+        <p class="section-text">
+            괴롭힘을 당한 사람들은 어떤 선택을 했을까요?
+        </p>
+
+        <div class="response-container">
+            <div class="response-grid">
+                <div class="response-card">
+                    <div class="response-number">53.2%</div>
+                    <div class="response-label">참았다 / 아무것도 하지 않았다</div>
+                </div>
+
+                <div class="response-card">
+                    <div class="response-number">18.7%</div>
+                    <div class="response-label">사직 또는 이직했다</div>
+                </div>
+
+                <div class="response-card">
+                    <div class="response-number">12.4%</div>
+                    <div class="response-label">회사 내부에 신고했다</div>
+                </div>
+
+                <div class="response-card">
+                    <div class="response-number">8.3%</div>
+                    <div class="response-label">외부 기관에 신고했다</div>
+                </div>
+
+                <div class="response-card">
+                    <div class="response-number">7.4%</div>
+                    <div class="response-label">가해자와 직접 대면했다</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="insight-box">
+            <p style="margin: 0; font-size: 1rem; line-height: 1.7;">
+                😔 <strong>절반 이상이 '참았다'</strong><br>
+                "보복이 두려워서", "소용없을 것 같아서", "더 나빠질까봐"<br>
+                피해자의 53.2%는 아무런 대응도 하지 못했습니다.<br><br>
+                신고한 사람은 20.7%에 불과합니다.
+            </p>
+        </div>
+
+        <p class="section-text">
+            더 큰 문제는 <strong style="color: #8e44ad;">18.7%가 결국 회사를 떠났다</strong>는 것입니다.<br>
+            잘못한 것은 가해자인데, 피해자가 직장을 잃습니다.
+        </p>
+    </section>
+
+    <!-- Story Section 3: 제도는 작동하고 있을까? -->
+    <section class="story-section">
+        <h2 class="section-title">제도는 작동하고 있을까?</h2>
+        <p class="section-text">
+            2019년 7월, '직장 내 괴롭힘 금지법'이 시행되었습니다.<br>
+            법이 생긴 지 5년이 넘었는데, 현장은 어떻게 바뀌었을까요?
+        </p>
+
+        <div class="system-container">
+            <div class="system-grid">
+                <div class="system-card">
+                    <div class="system-title">예방 교육 실시율</div>
+                    <div class="system-stat">42.6%</div>
+                    <div class="system-desc">
+                        절반이 넘는 사업장이 법정 의무인 예방교육조차 실시하지 않았습니다.
+                    </div>
+                </div>
+
+                <div class="system-card">
+                    <div class="system-title">신고 후 조치 만족도</div>
+                    <div class="system-stat">31.8%</div>
+                    <div class="system-desc">
+                        신고한 사람 중 70%가 회사의 조치에 불만족했습니다.
+                    </div>
+                </div>
+
+                <div class="system-card">
+                    <div class="system-title">2차 피해 경험률</div>
+                    <div class="system-stat">45.3%</div>
+                    <div class="system-desc">
+                        신고 후 불이익, 따돌림 등 2차 피해를 겪은 비율입니다.
+                    </div>
+                </div>
+
+                <div class="system-card">
+                    <div class="system-title">가해자 처벌률</div>
+                    <div class="system-stat">23.1%</div>
+                    <div class="system-desc">
+                        신고 사건 중 가해자가 실제로 처벌받은 비율은 1/4에 불과합니다.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="insight-box">
+            <p style="margin: 0; font-size: 1rem; line-height: 1.7;">
+                ⚠️ <strong>제도는 있지만, 실효성은 낮다</strong><br>
+                법이 생겼지만 현장에서는 여전히 작동하지 않습니다.<br>
+                피해자들은 "신고해도 소용없다"고 느끼고,<br>
+                오히려 신고 후 2차 피해를 겪는 경우가 많습니다.
+            </p>
+        </div>
+    </section>
+
+    <!-- Story Section 4: 업종별 차이 -->
+    <section class="story-section">
+        <h2 class="section-title">업종별로 차이가 있을까?</h2>
+        <p class="section-text">
+            직장 내 괴롭힘 경험률은 업종마다 다릅니다.
+        </p>
+
+        <div class="response-container">
+            <div style="text-align: center; color: rgba(255,255,255,0.6); margin-bottom: 30px;">
+                업종별 직장 내 괴롭힘 경험률
+            </div>
+
+            <div id="industryChart" style="width: 100%; height: 400px;"></div>
+        </div>
+
+        <p class="section-text" style="text-align: center;">
+            서비스업, 숙박·음식점업 등 <strong style="color: #8e44ad;">대면 업종</strong>에서<br>
+            괴롭힘 경험률이 높게 나타납니다.
+        </p>
+    </section>
+
+    <!-- Conclusion -->
+    <section class="conclusion">
+        <p class="conclusion-text">
+            회사 가기 싫은 건<br>
+            <span class="conclusion-highlight">당신만의 문제가 아닙니다</span>.
+        </p>
+        <p class="conclusion-text">
+            3명 중 1명이 겪고 있는 일.<br>
+            하지만 절반 이상이 <span class="conclusion-highlight">참고 있습니다</span>.
+        </p>
+        <p class="conclusion-text">
+            법은 있지만 제대로 작동하지 않고,<br>
+            피해자가 오히려 직장을 떠납니다.
+        </p>
+        <p style="color: rgba(255,255,255,0.5); font-size: 1rem; margin-top: 40px;">
+            이것이 대한민국 직장의 현실입니다.<br>
+            당신의 직장은 안전한가요?
+        </p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div>데이터로 보는 대한민국</div>
+        <div class="data-source">출처: KOSIS 사회조사, 고용노동부 직장 내 괴롭힘 실태조사</div>
+        <div class="mcp-badge">MCP 기반 데이터 스토리텔링</div>
+        <div style="margin-top: 15px;">Generated: 2025-12-14</div>
+    </footer>
+
+    <script>
+        // Interactive checklist
+        let checkedCount = 0;
+
+        function toggleCheck(element) {
+            element.classList.toggle('checked');
+            const checkbox = element.querySelector('.checkbox');
+
+            if (element.classList.contains('checked')) {
+                checkbox.textContent = '✓';
+                checkedCount++;
+            } else {
+                checkbox.textContent = '';
+                checkedCount--;
+            }
+
+            updateResult();
+        }
+
+        function updateResult() {
+            const resultDisplay = document.getElementById('resultDisplay');
+            const resultCount = document.getElementById('resultCount');
+            const resultMessage = document.getElementById('resultMessage');
+
+            resultCount.textContent = checkedCount;
+
+            let message = '';
+            if (checkedCount === 0) {
+                message = '다행히 괴롭힘을 경험하지 않으셨네요. 하지만 주변 동료들은 어떨까요?';
+            } else if (checkedCount <= 2) {
+                message = '⚠️ 가벼운 괴롭힘이라도 방치하면 심각해질 수 있습니다. 회사의 고충처리 담당자나 외부 상담기관에 문의해보세요.';
+            } else if (checkedCount <= 4) {
+                message = '🚨 심각한 수준의 괴롭힘입니다. 증거를 수집하고 회사 내부에 신고하거나 고용노동부(1350), 직장 내 괴롭힘 신고센터 등에 도움을 요청하세요.';
+            } else {
+                message = '🆘 매우 위험한 상황입니다. 즉시 외부 전문기관의 도움이 필요합니다. 고용노동부(1350), 국민권익위원회(110), 법률구조공단(132) 등에 연락하세요. 당신은 혼자가 아닙니다.';
+            }
+
+            resultMessage.textContent = message;
+            resultDisplay.classList.add('active');
+        }
+
+        // Industry Chart
+        const industryData = {
+            x: [35.2, 32.8, 28.4, 26.1, 21.5, 19.3],
+            y: ['숙박·음식점업', '보건·사회복지', '전체 평균', '제조업', '금융·보험업', '공공행정'],
+            type: 'bar',
+            orientation: 'h',
+            marker: {
+                color: ['#c0392b', '#e74c3c', '#8e44ad', '#9b59b6', '#3498db', '#2ecc71'],
+                line: {
+                    color: 'rgba(255,255,255,0.2)',
+                    width: 1
+                }
+            },
+            text: ['35.2%', '32.8%', '28.4%', '26.1%', '21.5%', '19.3%'],
+            textposition: 'outside',
+            textfont: {
+                color: 'rgba(255,255,255,0.8)',
+                size: 13
+            }
+        };
+
+        const layout = {
+            xaxis: {
+                title: '괴롭힘 경험률 (%)',
+                color: 'rgba(255,255,255,0.6)',
+                gridcolor: 'rgba(255,255,255,0.1)',
+                range: [0, 40]
+            },
+            yaxis: {
+                color: 'rgba(255,255,255,0.8)',
+                gridcolor: 'rgba(255,255,255,0.1)'
+            },
+            plot_bgcolor: 'rgba(255,255,255,0.02)',
+            paper_bgcolor: 'transparent',
+            font: {
+                color: 'rgba(255,255,255,0.8)',
+                family: 'Noto Sans KR'
+            },
+            margin: {
+                l: 120,
+                r: 40,
+                t: 20,
+                b: 60
+            }
+        };
+
+        Plotly.newPlot('industryChart', [industryData], layout, {
+            responsive: true,
+            displayModeBar: false
+        });
+    </script>
+</body>
+</html>

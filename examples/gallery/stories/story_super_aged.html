@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>초고령사회 대한민국 - 2025</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap');
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background: #0a0a0a;
+            color: #fff;
+            line-height: 1.8;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(180deg, #0a0a0a 0%, #1a1520 100%);
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23a29bfe' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+        }
+
+        .year-badge {
+            display: inline-block;
+            background: linear-gradient(90deg, #a29bfe, #6c5ce7);
+            padding: 10px 25px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        .question {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 900;
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, #a29bfe 0%, #6c5ce7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hook {
+            font-size: 1.3rem;
+            color: rgba(255,255,255,0.7);
+            max-width: 600px;
+            margin: 0 auto 50px;
+        }
+
+        .scroll-hint {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+            color: rgba(255,255,255,0.5);
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-20px); }
+            60% { transform: translateX(-50%) translateY(-10px); }
+        }
+
+        /* Sledgehammer Stat */
+        .sledgehammer {
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 60px 20px;
+            background: #0f0f1a;
+        }
+
+        .big-number {
+            font-size: clamp(5rem, 15vw, 12rem);
+            font-weight: 900;
+            color: #a29bfe;
+            line-height: 1;
+        }
+
+        .big-number-unit {
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            color: rgba(255,255,255,0.6);
+            margin-top: 10px;
+        }
+
+        .big-number-context {
+            font-size: 1.2rem;
+            color: rgba(255,255,255,0.5);
+            margin-top: 30px;
+            max-width: 500px;
+            text-align: center;
+        }
+
+        /* Story Section */
+        .story-section {
+            padding: 100px 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            color: #a29bfe;
+        }
+
+        .section-text {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 40px;
+        }
+
+        /* Comparison Chart */
+        .comparison-container {
+            background: rgba(255,255,255,0.03);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px 0;
+        }
+
+        .comparison-title {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.6);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .country-rows {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .country-row {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .country-label {
+            width: 100px;
+            font-weight: 700;
+            color: rgba(255,255,255,0.8);
+        }
+
+        .country-bar {
+            flex: 1;
+            height: 40px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            padding: 0 15px;
+            color: white;
+            font-weight: 700;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .country-bar::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            width: var(--bar-width);
+            background: linear-gradient(90deg, #a29bfe, #6c5ce7);
+            border-radius: 8px;
+            z-index: 1;
+        }
+
+        .country-bar-text {
+            position: relative;
+            z-index: 2;
+        }
+
+        .years-label {
+            width: 60px;
+            text-align: right;
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.5);
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .stat-card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 16px;
+            padding: 25px;
+            text-align: center;
+            transition: transform 0.3s, background 0.3s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.08);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #a29bfe, #6c5ce7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.6);
+            margin-top: 10px;
+        }
+
+        /* Interactive Calculator */
+        .calculator-section {
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 80px 20px;
+            background: #0f1520;
+        }
+
+        .calculator-container {
+            background: rgba(255,255,255,0.05);
+            border-radius: 24px;
+            padding: 50px;
+            max-width: 600px;
+            width: 100%;
+        }
+
+        .calculator-title {
+            font-size: 1.5rem;
+            color: #a29bfe;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .slider-container {
+            margin: 30px 0;
+        }
+
+        .slider-label {
+            font-size: 1rem;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .slider {
+            width: 100%;
+            height: 8px;
+            border-radius: 4px;
+            background: rgba(255,255,255,0.1);
+            outline: none;
+            -webkit-appearance: none;
+        }
+
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #a29bfe, #6c5ce7);
+            cursor: pointer;
+        }
+
+        .slider-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #a29bfe;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .calculator-result {
+            background: rgba(162, 155, 254, 0.15);
+            border-left: 4px solid #a29bfe;
+            border-radius: 12px;
+            padding: 30px;
+            margin-top: 40px;
+        }
+
+        .result-main {
+            font-size: 2rem;
+            font-weight: 900;
+            color: #a29bfe;
+            margin-bottom: 15px;
+        }
+
+        .result-desc {
+            color: rgba(255,255,255,0.7);
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        /* Dependency Ratio Chart */
+        .dependency-section {
+            padding: 100px 20px;
+            background: rgba(255,255,255,0.02);
+        }
+
+        .dependency-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .timeline-bars {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .timeline-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .timeline-year {
+            width: 80px;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .timeline-year.past {
+            color: #74b9ff;
+        }
+
+        .timeline-year.present {
+            color: #a29bfe;
+        }
+
+        .timeline-year.future {
+            color: #6c5ce7;
+        }
+
+        .timeline-bar-container {
+            flex: 1;
+            position: relative;
+        }
+
+        .timeline-bar {
+            height: 50px;
+            border-radius: 8px;
+            background: linear-gradient(90deg, rgba(162, 155, 254, 0.3), rgba(108, 92, 231, 0.5));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: white;
+            position: relative;
+        }
+
+        .timeline-value {
+            width: 100px;
+            text-align: right;
+            font-size: 1rem;
+            color: rgba(255,255,255,0.6);
+        }
+
+        /* Conclusion */
+        .conclusion {
+            min-height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 80px 20px;
+            background: linear-gradient(180deg, #0f0f1a 0%, #1a1520 100%);
+            text-align: center;
+        }
+
+        .conclusion-text {
+            font-size: 1.5rem;
+            max-width: 700px;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 40px;
+        }
+
+        .conclusion-highlight {
+            color: #a29bfe;
+            font-weight: 700;
+        }
+
+        /* Footer */
+        .footer {
+            padding: 40px 20px;
+            text-align: center;
+            color: rgba(255,255,255,0.3);
+            font-size: 0.85rem;
+            background: #0a0a0a;
+        }
+
+        .data-source {
+            margin-top: 10px;
+        }
+
+        .mcp-badge {
+            display: inline-block;
+            background: linear-gradient(90deg, #a29bfe, #6c5ce7);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-top: 20px;
+        }
+
+        /* People Icons Visualization */
+        .people-grid {
+            display: grid;
+            grid-template-columns: repeat(10, 1fr);
+            gap: 15px;
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 30px;
+            background: rgba(255,255,255,0.03);
+            border-radius: 20px;
+        }
+
+        .person-icon {
+            font-size: 2rem;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .person-icon:hover {
+            transform: scale(1.2);
+        }
+
+        .person-icon.elderly {
+            filter: grayscale(0.3) brightness(0.8);
+        }
+
+        @media (max-width: 768px) {
+            .country-row {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .country-label, .years-label {
+                width: 100%;
+            }
+
+            .people-grid {
+                grid-template-columns: repeat(5, 1fr);
+                gap: 10px;
+            }
+
+            .person-icon {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero: 초고령사회 진입 -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="year-badge">2025년 대한민국</div>
+            <h1 class="question">초고령사회,<br>무엇이 달라지나?</h1>
+            <p class="hook">
+                2025년, 대한민국은 초고령사회에 진입했습니다.<br>
+                국민 5명 중 1명이 65세 이상 노인입니다.<br>
+                이것은 통계가 아니라, 우리가 사는 현실입니다.
+            </p>
+        </div>
+        <div class="scroll-hint">
+            <span style="font-size: 2rem;">↓</span><br>
+            <span style="font-size: 0.9rem;">현실을 확인하세요</span>
+        </div>
+    </section>
+
+    <!-- Sledgehammer Stat -->
+    <section class="sledgehammer">
+        <div class="big-number">20.3%</div>
+        <div class="big-number-unit">65세 이상 인구 비율</div>
+        <p class="big-number-context">
+            2025년 기준 <strong style="color: #a29bfe;">1,051만 명</strong>.<br>
+            5명 중 1명이 노인인 사회가 시작되었습니다.
+        </p>
+    </section>
+
+    <!-- Story Section 1: 5명 중 1명 시각화 -->
+    <section class="story-section">
+        <h2 class="section-title">5명 중 1명이 노인</h2>
+        <p class="section-text">
+            숫자로 보면 실감이 안 나시나요?<br>
+            20명을 모아놓으면, 그 중 4명이 65세 이상입니다.
+        </p>
+
+        <div class="people-grid">
+            <div class="person-icon elderly">👴</div>
+            <div class="person-icon">👨</div>
+            <div class="person-icon">👩</div>
+            <div class="person-icon">👨‍💼</div>
+            <div class="person-icon elderly">👵</div>
+            <div class="person-icon">👩‍💼</div>
+            <div class="person-icon">👨‍🎓</div>
+            <div class="person-icon">👩‍🎓</div>
+            <div class="person-icon elderly">👴</div>
+            <div class="person-icon">👨‍🏫</div>
+            <div class="person-icon">👩‍⚕️</div>
+            <div class="person-icon">👨‍🔧</div>
+            <div class="person-icon">👩‍🍳</div>
+            <div class="person-icon elderly">👵</div>
+            <div class="person-icon">👨‍💻</div>
+            <div class="person-icon">👩‍🔬</div>
+            <div class="person-icon">👨‍🎨</div>
+            <div class="person-icon">👩‍✈️</div>
+            <div class="person-icon">👨‍🚒</div>
+            <div class="person-icon">👩‍🏭</div>
+        </div>
+
+        <p class="section-text" style="text-align: center; margin-top: 30px;">
+            지하철, 마트, 병원... 어디서든 체감하는 숫자입니다.<br>
+            <strong style="color: #a29bfe;">이것이 2025년 대한민국의 모습입니다.</strong>
+        </p>
+    </section>
+
+    <!-- Story Section 2: 핵심 통계 -->
+    <section class="story-section" style="background: rgba(255,255,255,0.02);">
+        <h2 class="section-title">2025 고령자 통계 핵심 수치</h2>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">1,051만</div>
+                <div class="stat-label">65세 이상 인구<br>(전체 20.3%)</div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-number">523만</div>
+                <div class="stat-label">남성 고령인구<br>(49.8%)</div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-number">528만</div>
+                <div class="stat-label">여성 고령인구<br>(50.2%)</div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-number">7년</div>
+                <div class="stat-label">고령사회→초고령사회<br>(세계 최단기간)</div>
+            </div>
+        </div>
+
+        <p class="section-text" style="text-align: center; margin-top: 40px;">
+            2000년 고령화사회 진입 후 <strong style="color: #a29bfe;">단 25년</strong> 만에 초고령사회.<br>
+            프랑스가 155년 걸린 길을 우리는 <strong style="color: #a29bfe;">1/6 시간</strong>에 주파했습니다.
+        </p>
+    </section>
+
+    <!-- Story Section 3: 국제 비교 - 고령화 속도 -->
+    <section class="story-section">
+        <h2 class="section-title">세계에서 가장 빠른 고령화</h2>
+        <p class="section-text">
+            고령화사회(7%)에서 초고령사회(20%)까지 걸린 시간을 비교하면,<br>
+            대한민국의 고령화 속도가 얼마나 빠른지 알 수 있습니다.
+        </p>
+
+        <div class="comparison-container">
+            <div class="comparison-title">고령화사회 → 초고령사회 소요 기간 국제 비교</div>
+            <div class="country-rows">
+                <div class="country-row">
+                    <div class="country-label">🇫🇷 프랑스</div>
+                    <div class="country-bar" style="--bar-width: 100%;">
+                        <span class="country-bar-text">155년</span>
+                    </div>
+                    <div class="years-label">1864-2019</div>
+                </div>
+                <div class="country-row">
+                    <div class="country-label">🇺🇸 미국</div>
+                    <div class="country-bar" style="--bar-width: 58%;">
+                        <span class="country-bar-text">90년</span>
+                    </div>
+                    <div class="years-label">1942-2032</div>
+                </div>
+                <div class="country-row">
+                    <div class="country-label">🇩🇪 독일</div>
+                    <div class="country-bar" style="--bar-width: 42%;">
+                        <span class="country-bar-text">65년</span>
+                    </div>
+                    <div class="years-label">1932-1997</div>
+                </div>
+                <div class="country-row">
+                    <div class="country-label">🇯🇵 일본</div>
+                    <div class="country-bar" style="--bar-width: 23%;">
+                        <span class="country-bar-text">36년</span>
+                    </div>
+                    <div class="years-label">1970-2006</div>
+                </div>
+                <div class="country-row">
+                    <div class="country-label">🇰🇷 한국</div>
+                    <div class="country-bar" style="--bar-width: 16%; background: rgba(162, 155, 254, 0.3);">
+                        <span class="country-bar-text" style="color: #a29bfe; font-size: 1.2rem;">25년</span>
+                    </div>
+                    <div class="years-label" style="color: #a29bfe; font-weight: 700;">2000-2025</div>
+                </div>
+            </div>
+        </div>
+
+        <p class="section-text" style="margin-top: 40px;">
+            우리는 <strong style="color: #a29bfe;">일본보다 11년 빠르게</strong> 초고령사회에 진입했습니다.<br>
+            이런 속도는 인류 역사상 전례가 없습니다.
+        </p>
+    </section>
+
+    <!-- Dependency Ratio Section -->
+    <section class="dependency-section">
+        <div class="dependency-container">
+            <h2 class="section-title" style="text-align: center;">부양비의 폭발적 증가</h2>
+            <p class="section-text" style="text-align: center;">
+                생산가능인구(15-64세) 100명이 부양해야 하는 비생산인구 수.<br>
+                <strong style="color: #a29bfe;">일하는 사람의 부담이 급격히 증가</strong>하고 있습니다.
+            </p>
+
+            <div class="timeline-bars">
+                <div class="timeline-item">
+                    <div class="timeline-year past">1970</div>
+                    <div class="timeline-bar-container">
+                        <div class="timeline-bar" style="width: 30%;">82.7</div>
+                    </div>
+                    <div class="timeline-value">생산인구 100명</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year past">2000</div>
+                    <div class="timeline-bar-container">
+                        <div class="timeline-bar" style="width: 25%;">39.5</div>
+                    </div>
+                    <div class="timeline-value">생산인구 100명</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year present">2025</div>
+                    <div class="timeline-bar-container">
+                        <div class="timeline-bar" style="width: 45%; background: linear-gradient(90deg, rgba(162, 155, 254, 0.5), rgba(108, 92, 231, 0.7));">47.6</div>
+                    </div>
+                    <div class="timeline-value" style="color: #a29bfe; font-weight: 700;">생산인구 100명</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year future">2050</div>
+                    <div class="timeline-bar-container">
+                        <div class="timeline-bar" style="width: 100%; background: linear-gradient(90deg, rgba(162, 155, 254, 0.6), rgba(108, 92, 231, 0.9));">116.8</div>
+                    </div>
+                    <div class="timeline-value" style="color: #6c5ce7; font-weight: 700;">생산인구 100명</div>
+                </div>
+            </div>
+
+            <p class="section-text" style="text-align: center; margin-top: 40px;">
+                1970년대에는 일하는 사람 <strong style="color: #74b9ff;">1.2명당 1명</strong> 부양.<br>
+                2025년 현재는 일하는 사람 <strong style="color: #a29bfe;">2.1명당 1명</strong> 부양.<br>
+                2050년이 되면 일하는 사람 <strong style="color: #6c5ce7;">1명당 1명 이상</strong> 부양해야 합니다.
+            </p>
+        </div>
+    </section>
+
+    <!-- Interactive Section: 은퇴 시뮬레이터 -->
+    <section class="calculator-section">
+        <div class="calculator-container">
+            <h2 class="calculator-title">내가 은퇴할 때 부양비는?</h2>
+            <p style="text-align: center; color: rgba(255,255,255,0.6); margin-bottom: 30px;">
+                당신이 태어난 연도를 선택하면, 65세 은퇴 시점의 부양비를 계산합니다.
+            </p>
+
+            <div class="slider-container">
+                <label class="slider-label">출생연도 선택</label>
+                <input type="range" min="1960" max="2010" value="1990" class="slider" id="birthYearSlider">
+                <div class="slider-value" id="birthYearValue">1990년생</div>
+            </div>
+
+            <div class="calculator-result" id="calculatorResult">
+                <div class="result-main" id="resultMain">은퇴연도: 2055년</div>
+                <div class="result-desc" id="resultDesc">
+                    당신이 은퇴할 때 부양비는 <strong>약 125명</strong>입니다.<br><br>
+                    생산가능인구 100명이 125명을 부양해야 합니다.<br>
+                    즉, 일하는 사람 <strong>1명이 1.25명</strong>을 책임지게 됩니다.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Story Section 4: 무엇이 달라지나 -->
+    <section class="story-section">
+        <h2 class="section-title">초고령사회, 무엇이 달라지나?</h2>
+        <p class="section-text">
+            20% 선을 넘는 것은 단순히 통계적 의미만 있는 것이 아닙니다.<br>
+            사회 시스템 전체가 재설계되어야 하는 <strong style="color: #a29bfe;">구조적 전환점</strong>입니다.
+        </p>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number" style="font-size: 2rem;">연금 고갈</div>
+                <div class="stat-label">국민연금 기금 고갈<br>2055년 예상</div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-number" style="font-size: 2rem;">의료비 폭증</div>
+                <div class="stat-label">건강보험 재정 압박<br>노인 의료비 급증</div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-number" style="font-size: 2rem;">노동력 부족</div>
+                <div class="stat-label">생산가능인구 감소<br>경제성장 둔화</div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-number" style="font-size: 2rem;">지방소멸</div>
+                <div class="stat-label">농어촌 고령화 심화<br>지역 균형 붕괴</div>
+            </div>
+        </div>
+
+        <p class="section-text" style="margin-top: 40px;">
+            초고령사회는 <strong style="color: #a29bfe;">'복지 확대'</strong>와 <strong style="color: #a29bfe;">'재정 건전성'</strong> 사이의<br>
+            치열한 선택을 요구합니다. 모든 세대가 함께 고민해야 할 문제입니다.
+        </p>
+    </section>
+
+    <!-- Story Section 5: 2050년 전망 -->
+    <section class="story-section" style="background: rgba(255,255,255,0.02);">
+        <h2 class="section-title">2050년, 세계 최고령 국가</h2>
+        <p class="section-text">
+            현재 진행 속도대로라면, 2050년 대한민국은<br>
+            <strong style="color: #a29bfe;">세계에서 가장 늙은 나라</strong>가 됩니다.
+        </p>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">46.4%</div>
+                <div class="stat-label">2050년 고령인구 비율<br>(현재의 2.3배)</div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-number">62.7세</div>
+                <div class="stat-label">2050년 중위연령<br>(인구의 절반 연령)</div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-number">1,900만</div>
+                <div class="stat-label">2050년 65세 이상<br>(현재의 1.8배)</div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-number">46.1%</div>
+                <div class="stat-label">2050년 생산인구 비율<br>(노인보다 적음)</div>
+            </div>
+        </div>
+
+        <p class="section-text" style="text-align: center; margin-top: 40px;">
+            2050년이 되면 <strong style="color: #a29bfe;">노인 인구가 생산가능인구를 넘어섭니다.</strong><br>
+            인류 역사상 전례가 없는 사회구조입니다.
+        </p>
+    </section>
+
+    <!-- Conclusion -->
+    <section class="conclusion">
+        <p class="conclusion-text">
+            초고령사회 진입은 <span class="conclusion-highlight">피할 수 없는 현실</span>입니다.<br><br>
+
+            하지만 우리에게는 아직 <span class="conclusion-highlight">선택권</span>이 있습니다.<br>
+            어떤 사회를 만들 것인가?<br>
+            어떻게 준비할 것인가?<br><br>
+
+            일본의 실패를 반복할 것인가,<br>
+            새로운 모델을 만들어낼 것인가?<br><br>
+
+            <span class="conclusion-highlight">지금 우리의 선택이 2050년을 결정합니다.</span>
+        </p>
+        <p style="color: rgba(255,255,255,0.5); font-size: 1rem; margin-top: 40px;">
+            데이터는 미래를 말합니다.
+        </p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div>데이터로 보는 대한민국</div>
+        <div class="data-source">출처: KOSIS 국가통계포털 (2025 고령자통계, 통계청 장래인구추계)</div>
+        <div class="mcp-badge">🚀 MCP 기반 데이터 스토리텔링</div>
+        <div style="margin-top: 15px;">Generated: 2025-12-14</div>
+    </footer>
+
+    <script>
+        // 은퇴 시뮬레이터
+        const birthYearSlider = document.getElementById('birthYearSlider');
+        const birthYearValue = document.getElementById('birthYearValue');
+        const resultMain = document.getElementById('resultMain');
+        const resultDesc = document.getElementById('resultDesc');
+
+        // 연도별 부양비 데이터 (통계청 기준 + 선형 추정)
+        const dependencyRatioByYear = {
+            2025: 47.6,
+            2030: 53.0,
+            2035: 61.8,
+            2040: 78.0,
+            2045: 97.8,
+            2050: 116.8,
+            2055: 125.0,
+            2060: 128.7,
+            2065: 130.5,
+            2070: 131.2,
+            2075: 131.5
+        };
+
+        function getDependencyRatio(year) {
+            if (dependencyRatioByYear[year]) {
+                return dependencyRatioByYear[year];
+            }
+
+            // 선형 보간
+            const years = Object.keys(dependencyRatioByYear).map(Number).sort((a, b) => a - b);
+            for (let i = 0; i < years.length - 1; i++) {
+                if (year >= years[i] && year < years[i + 1]) {
+                    const ratio = (year - years[i]) / (years[i + 1] - years[i]);
+                    return dependencyRatioByYear[years[i]] +
+                           (dependencyRatioByYear[years[i + 1]] - dependencyRatioByYear[years[i]]) * ratio;
+                }
+            }
+            return dependencyRatioByYear[years[years.length - 1]];
+        }
+
+        birthYearSlider.addEventListener('input', function() {
+            const birthYear = parseInt(this.value);
+            const retirementYear = birthYear + 65;
+
+            birthYearValue.textContent = birthYear + '년생';
+
+            const ratio = getDependencyRatio(retirementYear);
+            const workersPerDependent = (100 / ratio).toFixed(2);
+
+            let emoji = '😊';
+            let severity = '관리 가능';
+            if (ratio > 120) {
+                emoji = '😱';
+                severity = '극심한 위기';
+            } else if (ratio > 100) {
+                emoji = '😰';
+                severity = '심각한 부담';
+            } else if (ratio > 70) {
+                emoji = '😐';
+                severity = '높은 부담';
+            } else if (ratio > 50) {
+                emoji = '🤔';
+                severity = '부담 증가';
+            }
+
+            resultMain.textContent = '은퇴연도: ' + retirementYear + '년';
+            resultDesc.innerHTML = `
+                당신이 은퇴할 때 부양비는 <strong style="color: #a29bfe;">약 ${Math.round(ratio)}명</strong>입니다.<br><br>
+                생산가능인구 100명이 ${Math.round(ratio)}명을 부양해야 합니다.<br>
+                즉, 일하는 사람 <strong style="color: #a29bfe;">${workersPerDependent}명당 1명</strong>을 책임지게 됩니다.<br><br>
+                ${emoji} <strong style="color: #a29bfe;">${severity}</strong> 수준입니다.
+            `;
+        });
+
+        // 초기값 트리거
+        birthYearSlider.dispatchEvent(new Event('input'));
+    </script>
+</body>
+</html>

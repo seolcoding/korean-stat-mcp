@@ -168,18 +168,28 @@ class Endpoints:
         "https://kosis.kr/openapi/statisticsList.do"
 
     Attributes:
-        STATISTICS_LIST: 통계 목록 조회 (검색, 카테고리 목록)
+        STATISTICS_SEARCH: 통계표 키워드 검색 (통합검색)
+        STATISTICS_LIST: 통계 목록 조회 (카테고리별 목록)
         STATISTICS_DATA: 통계 데이터 조회
         STATISTICS_META: 통계표 메타데이터 조회
         STATISTICS_EXPLANATION: 통계설명 조회
         STAT_HTML_CONTENT: HTML 콘텐츠 (k-stat URL 추출용)
     """
 
-    STATISTICS_LIST = "statisticsList.do"
-    STATISTICS_DATA = "Param/statisticsParameterData.do"
-    STATISTICS_META = "statisticsMetaData.do"
-    STATISTICS_EXPLANATION = "statisticsExplanation.do"
-    STAT_HTML_CONTENT = "statHtml/statHtmlContent.do"
+    STATISTICS_SEARCH = "statisticsSearch.do"  # 키워드 검색
+    STATISTICS_LIST = "statisticsList.do"  # 목록 조회 (vwCd 필수)
+    STATISTICS_DATA = "Param/statisticsParameterData.do"  # 데이터 조회
+    STATISTICS_TABLE_META = "statisticsData.do"  # 통계표 메타 (getMeta)
+    STATISTICS_EXPLANATION = "statisticsExplData.do"  # 통계설명 (조사 메타)
+    STAT_HTML_CONTENT = "statHtml/statHtmlContent.do"  # HTML (k-stat URL)
+    STATISTICS_BIG_DATA = "statisticsBigData.do"  # 대용량 통계자료 (userStatsId 필요)
+    # 통계주요지표 (Phase C)
+    PK_NUMBER_SERVICE = "pkNumberService.do"  # 지표 고유번호별 설명
+    IND_EXP_SERVICE = "indExpService.do"  # 지표명별 설명
+    INDI_LIST_SERVICE = "indiListService.do"  # 목록별 지표
+    IND_LIST_SEARCH = "indListSearchRequest.do"  # 지표명/고유번호별 목록
+    IND_ID_DETAIL_SEARCH = "indIdDetailSearchRequest.do"  # 고유번호별 상세
+    PR_LIST_SEARCH = "prListSearchRequest.do"  # 수록주기별 목록
 
 
 # 수록주기 상수
@@ -229,3 +239,29 @@ class PeriodType:
         MULTI_YEAR: "다년",
         IRREGULAR: "부정기",
     }
+
+
+# 데이터 저장 설정
+class DataStorageConfig:
+    """
+    원본 데이터 파일 저장 설정.
+
+    MCP 패턴에 따라 원본 데이터를 파일로 저장하고
+    요약만 LLM에 전달합니다.
+
+    Attributes:
+        DATA_DIR: 데이터 저장 디렉토리 (환경변수 KOSIS_DATA_DIR로 오버라이드 가능)
+        MAX_AGE_HOURS: 파일 보존 시간 (기본 24시간)
+        FILE_FORMAT: 저장 형식 (json, csv)
+    """
+    DATA_DIR = os.getenv("KOSIS_DATA_DIR", "/tmp/kosis_data")
+    MAX_AGE_HOURS = int(os.getenv("KOSIS_DATA_MAX_AGE", "24"))
+    FILE_FORMAT = "json"
+
+    @classmethod
+    def get_data_dir(cls) -> str:
+        """데이터 저장 디렉토리를 반환하고, 없으면 생성합니다."""
+        from pathlib import Path
+        data_dir = Path(cls.DATA_DIR)
+        data_dir.mkdir(parents=True, exist_ok=True)
+        return str(data_dir)

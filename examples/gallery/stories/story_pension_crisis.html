@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>내가 받을 연금은 남아있을까?</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap');
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background: #0a0a0a;
+            color: #fff;
+            line-height: 1.8;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(180deg, #0a0a0a 0%, #0d2847 100%);
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%230984e3' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+        }
+
+        .year-badge {
+            display: inline-block;
+            background: linear-gradient(90deg, #0984e3, #74b9ff);
+            padding: 10px 25px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        .question {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 900;
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, #0984e3 0%, #74b9ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hook {
+            font-size: 1.3rem;
+            color: rgba(255,255,255,0.7);
+            max-width: 600px;
+            margin: 0 auto 50px;
+        }
+
+        .scroll-hint {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+            color: rgba(255,255,255,0.5);
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-20px); }
+            60% { transform: translateX(-50%) translateY(-10px); }
+        }
+
+        /* Sledgehammer Stat */
+        .sledgehammer {
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 60px 20px;
+            background: #0f0f1a;
+        }
+
+        .big-number {
+            font-size: clamp(5rem, 15vw, 12rem);
+            font-weight: 900;
+            color: #0984e3;
+            line-height: 1;
+        }
+
+        .big-number-unit {
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            color: rgba(255,255,255,0.6);
+            margin-top: 10px;
+        }
+
+        .big-number-context {
+            font-size: 1.2rem;
+            color: rgba(255,255,255,0.5);
+            margin-top: 30px;
+            max-width: 500px;
+            text-align: center;
+        }
+
+        /* Story Section */
+        .story-section {
+            padding: 100px 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            color: #74b9ff;
+        }
+
+        .section-text {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 40px;
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .stat-card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 16px;
+            padding: 25px;
+            text-align: center;
+            transition: transform 0.3s, background 0.3s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.08);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #0984e3, #74b9ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.6);
+            margin-top: 10px;
+        }
+
+        /* Chart Container */
+        .chart-container {
+            background: rgba(255,255,255,0.03);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px 0;
+        }
+
+        .chart-title {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.6);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        /* Generation Comparison */
+        .generation-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .generation-card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 16px;
+            padding: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .generation-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #0984e3, #74b9ff);
+        }
+
+        .generation-name {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #74b9ff;
+            margin-bottom: 20px;
+        }
+
+        .generation-stat {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .generation-stat:last-child {
+            border-bottom: none;
+        }
+
+        .generation-stat-label {
+            color: rgba(255,255,255,0.6);
+        }
+
+        .generation-stat-value {
+            font-weight: 700;
+            color: #0984e3;
+        }
+
+        /* Reform Scenarios */
+        .scenario-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+
+        .scenario-card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 16px;
+            padding: 30px;
+            position: relative;
+        }
+
+        .scenario-badge {
+            display: inline-block;
+            background: linear-gradient(90deg, #0984e3, #74b9ff);
+            color: #fff;
+            padding: 6px 16px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .scenario-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: rgba(255,255,255,0.9);
+        }
+
+        .scenario-detail {
+            margin: 15px 0;
+            padding-left: 20px;
+            border-left: 3px solid rgba(9, 132, 227, 0.3);
+        }
+
+        .scenario-detail-label {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.5);
+            margin-bottom: 5px;
+        }
+
+        .scenario-detail-value {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #0984e3;
+        }
+
+        /* Interactive Calculator */
+        .calculator-section {
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 80px 20px;
+            background: #0d2847;
+        }
+
+        .calculator-container {
+            background: rgba(255,255,255,0.05);
+            border-radius: 24px;
+            padding: 50px;
+            max-width: 700px;
+            width: 100%;
+        }
+
+        .calculator-title {
+            font-size: 1.5rem;
+            color: #74b9ff;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .input-group {
+            margin: 25px 0;
+        }
+
+        .input-label {
+            font-size: 1rem;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .slider {
+            width: 100%;
+            height: 8px;
+            border-radius: 4px;
+            background: rgba(255,255,255,0.1);
+            outline: none;
+            -webkit-appearance: none;
+        }
+
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #0984e3, #74b9ff);
+            cursor: pointer;
+        }
+
+        .slider-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #0984e3;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .calculator-result {
+            background: rgba(9, 132, 227, 0.15);
+            border-left: 4px solid #0984e3;
+            border-radius: 12px;
+            padding: 30px;
+            margin-top: 40px;
+        }
+
+        .result-main {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: #0984e3;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .result-desc {
+            color: rgba(255,255,255,0.7);
+            font-size: 1rem;
+            line-height: 1.8;
+            text-align: center;
+        }
+
+        /* Timeline */
+        .timeline-container {
+            position: relative;
+            margin: 60px 0;
+        }
+
+        .timeline-line {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg, #0984e3, #74b9ff);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin: 40px 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .timeline-item.left {
+            justify-content: flex-start;
+        }
+
+        .timeline-item.right {
+            justify-content: flex-end;
+        }
+
+        .timeline-content {
+            width: 45%;
+            background: rgba(255,255,255,0.05);
+            border-radius: 16px;
+            padding: 25px;
+        }
+
+        .timeline-year {
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: #0984e3;
+            margin-bottom: 10px;
+        }
+
+        .timeline-text {
+            color: rgba(255,255,255,0.7);
+            line-height: 1.6;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            width: 16px;
+            height: 16px;
+            background: #0984e3;
+            border-radius: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 0 20px rgba(9, 132, 227, 0.5);
+        }
+
+        /* Conclusion */
+        .conclusion {
+            min-height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 80px 20px;
+            background: linear-gradient(180deg, #0f0f1a 0%, #0d2847 100%);
+            text-align: center;
+        }
+
+        .conclusion-text {
+            font-size: 1.5rem;
+            max-width: 700px;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 40px;
+        }
+
+        .conclusion-highlight {
+            color: #0984e3;
+            font-weight: 700;
+        }
+
+        /* Footer */
+        .footer {
+            padding: 40px 20px;
+            text-align: center;
+            color: rgba(255,255,255,0.3);
+            font-size: 0.85rem;
+            background: #0a0a0a;
+        }
+
+        .data-source {
+            margin-top: 10px;
+        }
+
+        .mcp-badge {
+            display: inline-block;
+            background: linear-gradient(90deg, #0984e3, #74b9ff);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .generation-grid, .scenario-container {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline-item {
+                justify-content: flex-start !important;
+            }
+
+            .timeline-content {
+                width: 85%;
+            }
+
+            .timeline-line {
+                left: 20px;
+            }
+
+            .timeline-dot {
+                left: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero: 2055년 고갈 -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="year-badge">🏦 국민연금 위기</div>
+            <h1 class="question">내가 받을 연금은<br>남아있을까?</h1>
+            <p class="hook">
+                2055년, 국민연금 기금 고갈 예상.<br>
+                지금 30대라면 당신이 65세가 되는 해입니다.<br>
+                노후 준비, 지금 시작해야 하는 이유.
+            </p>
+        </div>
+        <div class="scroll-hint">
+            <span style="font-size: 2rem;">↓</span><br>
+            <span style="font-size: 0.9rem;">현실을 확인하세요</span>
+        </div>
+    </section>
+
+    <!-- Sledgehammer Stat -->
+    <section class="sledgehammer">
+        <div class="big-number">2055년</div>
+        <div class="big-number-unit">국민연금 기금 고갈 예상</div>
+        <p class="big-number-context">
+            그때 나는 몇 살일까?<br>
+            <strong style="color: #0984e3;">1990년생 = 65세 (수령 시작)</strong><br>
+            당신의 노후는 준비되어 있나요?
+        </p>
+    </section>
+
+    <!-- Story Section 1: 현재 국민연금 현황 -->
+    <section class="story-section">
+        <h2 class="section-title">국민연금, 지금은 든든하지만...</h2>
+        <p class="section-text">
+            2024년 현재 국민연금 기금은 약 1,000조원.<br>
+            세계 3위 규모의 연기금입니다.<br>
+            하지만 저출산·고령화로 <strong style="color: #0984e3;">받는 사람은 늘고, 내는 사람은 줄고</strong> 있습니다.
+        </p>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">1,000조</div>
+                <div class="stat-label">2024 기금 규모<br>(세계 3위)</div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-number">62만원</div>
+                <div class="stat-label">평균 수령액<br>(월)</div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-number">40%</div>
+                <div class="stat-label">소득대체율<br>(OECD 평균 52%)</div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-number">65세</div>
+                <div class="stat-label">수령 시작 연령<br>(1969년생부터)</div>
+            </div>
+        </div>
+
+        <p class="section-text" style="text-align: center; margin-top: 40px;">
+            평균 수령액 <strong style="color: #0984e3;">62만원</strong>으로는<br>
+            노후를 버티기 어렵습니다.
+        </p>
+    </section>
+
+    <!-- Chart Section: 기금 추이 -->
+    <section class="story-section" style="background: rgba(255,255,255,0.02);">
+        <h2 class="section-title" style="text-align: center;">국민연금 기금 추이</h2>
+        <p class="section-text" style="text-align: center;">
+            2041년까지 적립금 증가, 이후 급속 감소
+        </p>
+
+        <div class="chart-container">
+            <div id="fundChart"></div>
+        </div>
+
+        <p class="section-text" style="text-align: center; margin-top: 40px;">
+            <strong style="color: #0984e3;">2041년 1,755조원 정점</strong>을 찍은 후<br>
+            불과 14년 만에 바닥을 칩니다.
+        </p>
+    </section>
+
+    <!-- Story Section 2: 세대별 납부액 vs 수령액 -->
+    <section class="story-section">
+        <h2 class="section-title">세대별 형평성 논란</h2>
+        <p class="section-text">
+            초기 가입자는 내는 것보다 훨씬 많이 받고,<br>
+            젊은 세대는 <strong style="color: #0984e3;">낸 것만큼도 못 받을</strong> 가능성이 큽니다.
+        </p>
+
+        <div class="generation-grid">
+            <div class="generation-card">
+                <div class="generation-name">1950년대생 (현재 수령)</div>
+                <div class="generation-stat">
+                    <span class="generation-stat-label">평생 납부액</span>
+                    <span class="generation-stat-value">약 3,000만원</span>
+                </div>
+                <div class="generation-stat">
+                    <span class="generation-stat-label">예상 수령액</span>
+                    <span class="generation-stat-value">약 1억 5천만원</span>
+                </div>
+                <div class="generation-stat">
+                    <span class="generation-stat-label">수익비</span>
+                    <span class="generation-stat-value" style="color: #00b894;">5.0배</span>
+                </div>
+            </div>
+
+            <div class="generation-card">
+                <div class="generation-name">1970년대생 (납부 중)</div>
+                <div class="generation-stat">
+                    <span class="generation-stat-label">평생 납부액</span>
+                    <span class="generation-stat-value">약 8,000만원</span>
+                </div>
+                <div class="generation-stat">
+                    <span class="generation-stat-label">예상 수령액</span>
+                    <span class="generation-stat-value">약 1억 6천만원</span>
+                </div>
+                <div class="generation-stat">
+                    <span class="generation-stat-label">수익비</span>
+                    <span class="generation-stat-value" style="color: #fdcb6e;">2.0배</span>
+                </div>
+            </div>
+
+            <div class="generation-card">
+                <div class="generation-name">1990년대생 (납부 초기)</div>
+                <div class="generation-stat">
+                    <span class="generation-stat-label">평생 납부액</span>
+                    <span class="generation-stat-value">약 1억 2천만원</span>
+                </div>
+                <div class="generation-stat">
+                    <span class="generation-stat-label">예상 수령액</span>
+                    <span class="generation-stat-value">약 9,000만원 (개혁 시)</span>
+                </div>
+                <div class="generation-stat">
+                    <span class="generation-stat-label">수익비</span>
+                    <span class="generation-stat-value" style="color: #d63031;">0.75배</span>
+                </div>
+            </div>
+        </div>
+
+        <p class="section-text" style="text-align: center; margin-top: 40px;">
+            젊은 세대일수록 <strong style="color: #0984e3;">낸 돈보다 적게 받게</strong> 됩니다.<br>
+            이대로라면 세대 간 갈등은 불가피합니다.
+        </p>
+    </section>
+
+    <!-- Story Section 3: 연금개혁 시나리오 -->
+    <section class="story-section" style="background: rgba(255,255,255,0.02);">
+        <h2 class="section-title">연금 개혁 시나리오</h2>
+        <p class="section-text">
+            기금 고갈을 막으려면 <strong style="color: #0984e3;">보험료 인상</strong> 또는 <strong style="color: #0984e3;">급여 삭감</strong>이 필요합니다.<br>
+            하지만 정치권은 아직 결정을 미루고 있습니다.
+        </p>
+
+        <div class="scenario-container">
+            <div class="scenario-card">
+                <div class="scenario-badge">시나리오 A</div>
+                <div class="scenario-title">보험료율 인상</div>
+                <div class="scenario-detail">
+                    <div class="scenario-detail-label">현재 보험료율</div>
+                    <div class="scenario-detail-value">9%</div>
+                </div>
+                <div class="scenario-detail">
+                    <div class="scenario-detail-label">개혁안</div>
+                    <div class="scenario-detail-value">13% (4%p↑)</div>
+                </div>
+                <div class="scenario-detail">
+                    <div class="scenario-detail-label">월급 300만원 기준</div>
+                    <div class="scenario-detail-value">+12만원/월</div>
+                </div>
+                <p style="margin-top: 20px; color: rgba(255,255,255,0.6); font-size: 0.9rem;">
+                    근로자 부담 증가로 소비 위축 우려
+                </p>
+            </div>
+
+            <div class="scenario-card">
+                <div class="scenario-badge">시나리오 B</div>
+                <div class="scenario-title">소득대체율 하향</div>
+                <div class="scenario-detail">
+                    <div class="scenario-detail-label">현재 소득대체율</div>
+                    <div class="scenario-detail-value">40%</div>
+                </div>
+                <div class="scenario-detail">
+                    <div class="scenario-detail-label">개혁안</div>
+                    <div class="scenario-detail-value">30% (10%p↓)</div>
+                </div>
+                <div class="scenario-detail">
+                    <div class="scenario-detail-label">평균 수령액 감소</div>
+                    <div class="scenario-detail-value">62만원 → 46만원</div>
+                </div>
+                <p style="margin-top: 20px; color: rgba(255,255,255,0.6); font-size: 0.9rem;">
+                    노후 빈곤 심화 우려
+                </p>
+            </div>
+
+            <div class="scenario-card">
+                <div class="scenario-badge">시나리오 C</div>
+                <div class="scenario-title">수령 연령 상향</div>
+                <div class="scenario-detail">
+                    <div class="scenario-detail-label">현재 수령 연령</div>
+                    <div class="scenario-detail-value">65세</div>
+                </div>
+                <div class="scenario-detail">
+                    <div class="scenario-detail-label">개혁안</div>
+                    <div class="scenario-detail-value">68세 (3년↑)</div>
+                </div>
+                <div class="scenario-detail">
+                    <div class="scenario-detail-label">수령 기간 단축</div>
+                    <div class="scenario-detail-value">3년분 손실</div>
+                </div>
+                <p style="margin-top: 20px; color: rgba(255,255,255,0.6); font-size: 0.9rem;">
+                    고령자 고용 문제 미해결
+                </p>
+            </div>
+        </div>
+
+        <p class="section-text" style="text-align: center; margin-top: 40px;">
+            어떤 시나리오도 쉽지 않습니다.<br>
+            <strong style="color: #0984e3;">빠른 결정이 필요</strong>하지만, 정치권은 표를 의식해 미루고 있습니다.
+        </p>
+    </section>
+
+    <!-- Interactive Section: 내 예상 연금 계산기 -->
+    <section class="calculator-section">
+        <div class="calculator-container">
+            <h2 class="calculator-title">내 예상 연금 수령액 계산기</h2>
+            <p style="text-align: center; color: rgba(255,255,255,0.6); margin-bottom: 30px;">
+                현재 나이와 월급을 입력하면 예상 연금액을 확인할 수 있습니다.
+            </p>
+
+            <div class="input-group">
+                <label class="input-label">현재 나이</label>
+                <input type="range" min="20" max="60" value="35" class="slider" id="ageSlider">
+                <div class="slider-value" id="ageValue">35세</div>
+            </div>
+
+            <div class="input-group">
+                <label class="input-label">월 소득 (만원)</label>
+                <input type="range" min="200" max="600" step="50" value="350" class="slider" id="salarySlider">
+                <div class="slider-value" id="salaryValue">350만원</div>
+            </div>
+
+            <div class="calculator-result" id="calculatorResult">
+                <div class="result-main" id="resultMain">월 약 95만원</div>
+                <div class="result-desc" id="resultDesc">
+                    65세부터 수령 가능 (30년 후)<br><br>
+                    하지만 기금 고갈 시 <strong>30% 삭감</strong> 가능성 있음.<br>
+                    실제 수령액: <strong style="color: #d63031;">월 약 67만원</strong><br><br>
+                    국민연금만으로는 부족합니다. 추가 노후 대비가 필요합니다.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="story-section">
+        <h2 class="section-title" style="text-align: center;">국민연금 타임라인</h2>
+        <p class="section-text" style="text-align: center;">
+            1988년 도입 이후 줄곧 개혁을 미뤄왔습니다.
+        </p>
+
+        <div class="timeline-container">
+            <div class="timeline-line"></div>
+
+            <div class="timeline-item left">
+                <div class="timeline-content">
+                    <div class="timeline-year">1988년</div>
+                    <div class="timeline-text">
+                        국민연금 제도 도입<br>
+                        소득대체율 70% (매우 관대)
+                    </div>
+                </div>
+                <div class="timeline-dot"></div>
+            </div>
+
+            <div class="timeline-item right">
+                <div class="timeline-content">
+                    <div class="timeline-year">1998년</div>
+                    <div class="timeline-text">
+                        1차 개혁 (소득대체율 70→60%)<br>
+                        외환위기 직후 강제 시행
+                    </div>
+                </div>
+                <div class="timeline-dot"></div>
+            </div>
+
+            <div class="timeline-item left">
+                <div class="timeline-content">
+                    <div class="timeline-year">2007년</div>
+                    <div class="timeline-text">
+                        2차 개혁 (소득대체율 60→40%)<br>
+                        점진적 인하 결정
+                    </div>
+                </div>
+                <div class="timeline-dot"></div>
+            </div>
+
+            <div class="timeline-item right">
+                <div class="timeline-content">
+                    <div class="timeline-year">2024년</div>
+                    <div class="timeline-text">
+                        현재 (소득대체율 40%)<br>
+                        개혁안 논의 중, 합의 실패
+                    </div>
+                </div>
+                <div class="timeline-dot"></div>
+            </div>
+
+            <div class="timeline-item left">
+                <div class="timeline-content">
+                    <div class="timeline-year">2041년</div>
+                    <div class="timeline-text">
+                        기금 정점 (1,755조원)<br>
+                        이후 급속 감소 시작
+                    </div>
+                </div>
+                <div class="timeline-dot"></div>
+            </div>
+
+            <div class="timeline-item right">
+                <div class="timeline-content">
+                    <div class="timeline-year">2055년</div>
+                    <div class="timeline-text">
+                        기금 고갈 예상<br>
+                        개혁 실패 시 지급 불가
+                    </div>
+                </div>
+                <div class="timeline-dot"></div>
+            </div>
+        </div>
+
+        <p class="section-text" style="text-align: center; margin-top: 60px;">
+            <strong style="color: #0984e3;">지금 결정하지 않으면</strong><br>
+            미래 세대가 더 큰 고통을 받습니다.
+        </p>
+    </section>
+
+    <!-- Conclusion -->
+    <section class="conclusion">
+        <p class="conclusion-text">
+            국민연금만 믿고 있다가는<br>
+            <span class="conclusion-highlight">노후 빈곤</span>을 피할 수 없습니다.<br><br>
+
+            개인연금, 퇴직연금, 부동산, 금융자산...<br>
+            <span class="conclusion-highlight">다층 노후 대비</span>가 필수입니다.<br><br>
+
+            그리고 우리는 <span class="conclusion-highlight">연금 개혁</span>을 요구해야 합니다.<br>
+            정치권이 미룰수록 부담은 더 커집니다.
+        </p>
+        <p style="color: rgba(255,255,255,0.5); font-size: 1rem; margin-top: 40px;">
+            노후 준비, 20대부터 시작해도 늦지 않습니다.
+        </p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div>데이터로 보는 대한민국</div>
+        <div class="data-source">출처: KOSIS 국가통계포털 (국민연금공단 통계, 보건복지부 재정추계)</div>
+        <div class="mcp-badge">MCP 기반 데이터 스토리텔링</div>
+        <div style="margin-top: 15px;">Generated: 2025-12-14</div>
+    </footer>
+
+    <script>
+        // 국민연금 기금 추이 차트
+        const fundData = {
+            years: [2024, 2030, 2035, 2040, 2041, 2045, 2050, 2055],
+            funds: [1000, 1400, 1650, 1740, 1755, 1500, 800, 0]
+        };
+
+        const fundTrace = {
+            x: fundData.years,
+            y: fundData.funds,
+            type: 'scatter',
+            mode: 'lines+markers',
+            name: '기금 적립금',
+            line: {
+                color: '#0984e3',
+                width: 3
+            },
+            marker: {
+                size: 10,
+                color: '#0984e3'
+            },
+            fill: 'tozeroy',
+            fillcolor: 'rgba(9, 132, 227, 0.2)'
+        };
+
+        const fundLayout = {
+            title: {
+                text: '국민연금 적립금 추이 (조원)',
+                font: { color: '#fff', size: 16 }
+            },
+            paper_bgcolor: 'rgba(0,0,0,0)',
+            plot_bgcolor: 'rgba(0,0,0,0)',
+            xaxis: {
+                title: '연도',
+                color: '#fff',
+                gridcolor: 'rgba(255,255,255,0.1)'
+            },
+            yaxis: {
+                title: '적립금 (조원)',
+                color: '#fff',
+                gridcolor: 'rgba(255,255,255,0.1)'
+            },
+            annotations: [
+                {
+                    x: 2041,
+                    y: 1755,
+                    xref: 'x',
+                    yref: 'y',
+                    text: '정점 1,755조원',
+                    showarrow: true,
+                    arrowhead: 2,
+                    ax: -40,
+                    ay: -40,
+                    font: { color: '#0984e3', size: 12 }
+                },
+                {
+                    x: 2055,
+                    y: 0,
+                    xref: 'x',
+                    yref: 'y',
+                    text: '고갈',
+                    showarrow: true,
+                    arrowhead: 2,
+                    ax: 40,
+                    ay: 40,
+                    font: { color: '#d63031', size: 12 }
+                }
+            ]
+        };
+
+        Plotly.newPlot('fundChart', [fundTrace], fundLayout, {responsive: true});
+
+        // 연금 계산기
+        const ageSlider = document.getElementById('ageSlider');
+        const ageValue = document.getElementById('ageValue');
+        const salarySlider = document.getElementById('salarySlider');
+        const salaryValue = document.getElementById('salaryValue');
+        const resultMain = document.getElementById('resultMain');
+        const resultDesc = document.getElementById('resultDesc');
+
+        function updateCalculator() {
+            const age = parseInt(ageSlider.value);
+            const salary = parseInt(salarySlider.value);
+
+            ageValue.textContent = age + '세';
+            salaryValue.textContent = salary + '만원';
+
+            // 간단한 연금 계산식 (실제와 다를 수 있음)
+            // 소득대체율 40% 기준, 40년 가입 가정
+            const yearsToRetirement = 65 - age;
+            const yearsOfContribution = Math.min(40, age - 25 + (65 - age));
+            const expectedPension = Math.round(salary * 0.4 * (yearsOfContribution / 40) * 10) / 10;
+            const reducedPension = Math.round(expectedPension * 0.7 * 10) / 10; // 30% 삭감 가정
+
+            resultMain.textContent = `월 약 ${Math.round(expectedPension)}만원`;
+
+            let warningText = '';
+            if (yearsToRetirement > 30) {
+                warningText = `<br><br><span style="color: #d63031;">⚠️ 기금 고갈 가능성 매우 높음</span><br>실제 수령액이 크게 줄어들 수 있습니다.`;
+            } else if (yearsToRetirement > 20) {
+                warningText = `<br><br><span style="color: #fdcb6e;">⚠️ 기금 고갈 위험 있음</span><br>연금 개혁에 따라 수령액 변동 가능.`;
+            }
+
+            resultDesc.innerHTML = `
+                65세부터 수령 가능 (${yearsToRetirement}년 후)<br>
+                예상 가입 기간: ${yearsOfContribution}년<br><br>
+                하지만 기금 고갈 시 <strong>30% 삭감</strong> 가능성 있음.<br>
+                실제 수령액: <strong style="color: #d63031;">월 약 ${Math.round(reducedPension)}만원</strong>
+                ${warningText}
+                <br><br>
+                💡 <strong>개인연금</strong> 월 ${Math.round(salary * 0.1)}만원씩 준비하면<br>
+                노후에 월 ${Math.round(expectedPension + salary * 0.1)}만원 이상 가능합니다.
+            `;
+        }
+
+        ageSlider.addEventListener('input', updateCalculator);
+        salarySlider.addEventListener('input', updateCalculator);
+
+        // 초기 계산
+        updateCalculator();
+    </script>
+</body>
+</html>

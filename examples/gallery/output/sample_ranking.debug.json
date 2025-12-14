@@ -1,0 +1,107 @@
+{
+  "report_id": "9c095d43-017e-4f76-bec7-6276fb8f6c87",
+  "timestamp": "2025-12-13T22:42:35.785055",
+  "user_query": "인구 상위 지역 순위",
+  "parsed_query": {
+    "raw_query": "인구 상위 지역 순위",
+    "target_regions": [],
+    "target_periods": [],
+    "target_items": [],
+    "comparison_type": "ranking",
+    "analysis_depth": "standard",
+    "include_visualization": true
+  },
+  "sections_determined": [
+    "summary",
+    "eda",
+    "ranking",
+    "stats",
+    "visualization"
+  ],
+  "processing_steps": [
+    {
+      "step": "parse_query",
+      "detail": "쿼리 파싱: '인구 상위 지역 순위'",
+      "duration_ms": 0.3623749944381416
+    },
+    {
+      "step": "determine_sections",
+      "detail": "섹션 결정: summary, eda, ranking, stats, visualization",
+      "sections": [
+        "summary",
+        "eda",
+        "ranking",
+        "stats",
+        "visualization"
+      ],
+      "duration_ms": 0.0018750142771750689
+    },
+    {
+      "step": "filter_data",
+      "detail": "데이터 필터링: 20건 → 20건",
+      "records_before": 20,
+      "records_after": 20,
+      "duration_ms": 0.0014159886632114649
+    },
+    {
+      "step": "generate_header",
+      "detail": "HTML 헤더 생성",
+      "duration_ms": 0.001334003172814846
+    },
+    {
+      "step": "generate_summary_card",
+      "detail": "요약 카드 생성",
+      "duration_ms": 0.05691699334420264
+    },
+    {
+      "step": "generate_section_summary",
+      "detail": "섹션 생성: summary",
+      "success": false,
+      "duration_ms": 0.0018750142771750689
+    },
+    {
+      "step": "generate_section_eda",
+      "detail": "섹션 생성: eda",
+      "success": true,
+      "duration_ms": 0.4913329903502017
+    },
+    {
+      "step": "generate_section_ranking",
+      "detail": "섹션 생성: ranking",
+      "success": true,
+      "duration_ms": 0.7917920011095703
+    },
+    {
+      "step": "generate_section_stats",
+      "detail": "섹션 생성: stats",
+      "success": true,
+      "duration_ms": 0.4319160070735961
+    },
+    {
+      "step": "generate_section_visualization",
+      "detail": "섹션 생성: visualization",
+      "success": true,
+      "duration_ms": 17.039875005139038
+    },
+    {
+      "step": "generate_footer",
+      "detail": "HTML 푸터 생성",
+      "duration_ms": 0.015291996533051133
+    }
+  ],
+  "data_info": {
+    "total_records": 20,
+    "filtered_records": 20,
+    "columns": [
+      "PRD_DE",
+      "C1_NM",
+      "DT",
+      "ITM_NM",
+      "UNIT_NM"
+    ],
+    "unique_regions": 5,
+    "unique_periods": 4
+  },
+  "output_path": "sample_ranking.html",
+  "total_duration_ms": 19.202291005058214
+}

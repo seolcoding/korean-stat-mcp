@@ -1,0 +1,1109 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>월급의 절반이 집세?</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap');
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background: #0a0a0a;
+            color: #fff;
+            line-height: 1.8;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(180deg, #0a0a0a 0%, #1a0f0f 100%);
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23E17055' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+        }
+
+        .question {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 900;
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, #E17055 0%, #d63031 50%, #a8201a 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hook {
+            font-size: 1.3rem;
+            color: rgba(255,255,255,0.7);
+            max-width: 600px;
+            margin: 0 auto 50px;
+        }
+
+        .scroll-hint {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+            color: rgba(255,255,255,0.5);
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-20px); }
+            60% { transform: translateX(-50%) translateY(-10px); }
+        }
+
+        /* Sledgehammer Stat */
+        .sledgehammer {
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 60px 20px;
+            background: #0f0f1a;
+        }
+
+        .big-number {
+            font-size: clamp(5rem, 15vw, 12rem);
+            font-weight: 900;
+            color: #E17055;
+            line-height: 1;
+        }
+
+        .big-number-unit {
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            color: rgba(255,255,255,0.6);
+            margin-top: 10px;
+        }
+
+        .big-number-context {
+            font-size: 1.2rem;
+            color: rgba(255,255,255,0.5);
+            margin-top: 30px;
+            max-width: 600px;
+            text-align: center;
+        }
+
+        /* Story Section */
+        .story-section {
+            padding: 100px 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            color: #E17055;
+        }
+
+        .section-text {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 40px;
+        }
+
+        /* PIR Comparison Cards */
+        .pir-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .pir-card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 16px;
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.3s, background 0.3s;
+            border: 2px solid rgba(255,255,255,0.1);
+        }
+
+        .pir-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.08);
+        }
+
+        .pir-card.seoul {
+            border-color: #E17055;
+        }
+
+        .pir-card.national {
+            border-color: #00B894;
+        }
+
+        .pir-location {
+            font-size: 1rem;
+            color: rgba(255,255,255,0.6);
+            margin-bottom: 15px;
+        }
+
+        .pir-value {
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin: 10px 0;
+        }
+
+        .pir-card.seoul .pir-value {
+            color: #E17055;
+        }
+
+        .pir-card.national .pir-value {
+            color: #00B894;
+        }
+
+        .pir-label {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.5);
+        }
+
+        .pir-meaning {
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.7);
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        /* RIR Calculator */
+        .calculator-section {
+            min-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 80px 20px;
+            background: linear-gradient(180deg, #0f0f1a 0%, #1a0f0f 100%);
+        }
+
+        .calculator-container {
+            background: rgba(255,255,255,0.05);
+            border-radius: 24px;
+            padding: 50px;
+            max-width: 600px;
+            width: 100%;
+            border: 2px solid rgba(225, 112, 85, 0.3);
+        }
+
+        .calculator-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #E17055;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .calculator-subtitle {
+            font-size: 1rem;
+            color: rgba(255,255,255,0.6);
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .input-group {
+            margin-bottom: 30px;
+        }
+
+        .input-label {
+            font-size: 1rem;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 15px 20px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-align: center;
+            background: rgba(255,255,255,0.1);
+            border: 2px solid rgba(255,255,255,0.2);
+            border-radius: 12px;
+            color: #E17055;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .input-field:focus {
+            border-color: #E17055;
+        }
+
+        .input-hint {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.4);
+            margin-top: 8px;
+            text-align: center;
+        }
+
+        .calc-btn {
+            width: 100%;
+            padding: 18px;
+            margin-top: 20px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            background: linear-gradient(90deg, #E17055, #d63031);
+            border: none;
+            border-radius: 12px;
+            color: #fff;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .calc-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(225, 112, 85, 0.3);
+        }
+
+        .result-box {
+            display: none;
+            margin-top: 40px;
+            padding: 30px;
+            background: rgba(225, 112, 85, 0.1);
+            border-radius: 16px;
+            border-left: 4px solid #E17055;
+        }
+
+        .result-box.active {
+            display: block;
+        }
+
+        .result-rir {
+            font-size: 3rem;
+            font-weight: 900;
+            color: #E17055;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .result-message {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.8);
+            text-align: center;
+        }
+
+        .result-benchmark {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.6);
+            text-align: center;
+        }
+
+        /* Regional Comparison */
+        .region-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 40px 0;
+        }
+
+        .region-card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .region-card:hover {
+            transform: translateY(-3px);
+        }
+
+        .region-name {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.6);
+            margin-bottom: 10px;
+        }
+
+        .region-rent {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #E17055;
+            margin-bottom: 5px;
+        }
+
+        .region-change {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.5);
+        }
+
+        /* Generation Comparison */
+        .gen-container {
+            background: rgba(255,255,255,0.03);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px 0;
+        }
+
+        .gen-bars {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .gen-bar-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .gen-label {
+            width: 80px;
+            font-weight: 700;
+            color: rgba(255,255,255,0.8);
+        }
+
+        .gen-bar-bg {
+            flex: 1;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gen-bar-fill {
+            height: 100%;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 15px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            transition: width 1s ease;
+        }
+
+        .gen-bar-fill.burden {
+            background: linear-gradient(90deg, #E17055, #d63031);
+        }
+
+        .gen-bar-fill.ok {
+            background: linear-gradient(90deg, #00B894, #00d4aa);
+        }
+
+        /* Timeline Comparison */
+        .timeline-container {
+            background: rgba(255,255,255,0.03);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px 0;
+        }
+
+        .timeline-title {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.6);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .timeline-compare {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .timeline-box {
+            padding: 30px;
+            border-radius: 16px;
+            text-align: center;
+        }
+
+        .timeline-box.past {
+            background: rgba(0, 184, 148, 0.15);
+            border: 2px solid #00B894;
+        }
+
+        .timeline-box.present {
+            background: rgba(225, 112, 85, 0.15);
+            border: 2px solid #E17055;
+        }
+
+        .timeline-year {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.6);
+            margin-bottom: 15px;
+        }
+
+        .timeline-stat {
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin: 10px 0;
+        }
+
+        .timeline-box.past .timeline-stat {
+            color: #00B894;
+        }
+
+        .timeline-box.present .timeline-stat {
+            color: #E17055;
+        }
+
+        .timeline-label {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.5);
+        }
+
+        .timeline-meaning {
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.7);
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+        }
+
+        /* Chart Container */
+        .chart-container {
+            background: rgba(255,255,255,0.03);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 40px 0;
+        }
+
+        .chart-title {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.6);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        /* Info Box */
+        .info-box {
+            background: rgba(0, 184, 148, 0.1);
+            border-left: 4px solid #00B894;
+            border-radius: 8px;
+            padding: 20px 25px;
+            margin: 30px 0;
+        }
+
+        .info-box-title {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #00B894;
+            margin-bottom: 10px;
+        }
+
+        .info-box-text {
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.7);
+            line-height: 1.6;
+        }
+
+        /* Warning Box */
+        .warning-box {
+            background: rgba(225, 112, 85, 0.1);
+            border-left: 4px solid #E17055;
+            border-radius: 8px;
+            padding: 20px 25px;
+            margin: 30px 0;
+        }
+
+        .warning-box-title {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #E17055;
+            margin-bottom: 10px;
+        }
+
+        .warning-box-text {
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.7);
+            line-height: 1.6;
+        }
+
+        /* Conclusion */
+        .conclusion {
+            min-height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 80px 20px;
+            background: linear-gradient(180deg, #0f0f1a 0%, #1a0f0f 100%);
+            text-align: center;
+        }
+
+        .conclusion-text {
+            font-size: 1.5rem;
+            max-width: 700px;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 40px;
+        }
+
+        .conclusion-highlight {
+            color: #E17055;
+            font-weight: 700;
+        }
+
+        /* Footer */
+        .footer {
+            padding: 40px 20px;
+            text-align: center;
+            color: rgba(255,255,255,0.3);
+            font-size: 0.85rem;
+            background: #0a0a0a;
+        }
+
+        .data-source {
+            margin-top: 10px;
+        }
+
+        .mcp-badge {
+            display: inline-block;
+            background: linear-gradient(90deg, #E17055, #d63031);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-top: 20px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .timeline-compare {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero: 질문으로 시작 -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="question">당신은 월급의 몇 %를<br>집에 쓰나요?</h1>
+            <p class="hook">
+                월급날 통장에 찍힌 돈.<br>
+                그 절반이 집세로 나가는 건 당연한 일이 아닙니다.
+            </p>
+        </div>
+        <div class="scroll-hint">
+            <span style="font-size: 2rem;">↓</span><br>
+            <span style="font-size: 0.9rem;">스크롤하여 계속</span>
+        </div>
+    </section>
+
+    <!-- Sledgehammer Stat: 핵심 숫자 먼저 -->
+    <section class="sledgehammer">
+        <div class="big-number">18.5</div>
+        <div class="big-number-unit">배</div>
+        <p class="big-number-context">
+            서울에서 아파트를 사려면 연봉의 <strong style="color: #E17055;">18.5배</strong>가 필요합니다.<br>
+            한 푼도 안 쓰고 모아도 <strong>18년</strong>이 걸립니다.
+        </p>
+    </section>
+
+    <!-- Story Section 1: PIR 설명 -->
+    <section class="story-section">
+        <h2 class="section-title">PIR (Price to Income Ratio)</h2>
+        <p class="section-text">
+            <strong>소득 대비 집값 비율</strong>을 뜻합니다.
+            국제적으로 PIR 5배 이하가 적정 수준으로 권장됩니다.
+        </p>
+
+        <div class="pir-grid">
+            <div class="pir-card seoul">
+                <div class="pir-location">서울</div>
+                <div class="pir-value">18.5<span style="font-size: 1.5rem;">배</span></div>
+                <div class="pir-label">연봉 대비 집값</div>
+                <div class="pir-meaning">
+                    평균 아파트 가격: 11억원<br>
+                    평균 가구소득: 5,950만원
+                </div>
+            </div>
+
+            <div class="pir-card national">
+                <div class="pir-location">전국 평균</div>
+                <div class="pir-value">9.2<span style="font-size: 1.5rem;">배</span></div>
+                <div class="pir-label">연봉 대비 집값</div>
+                <div class="pir-meaning">
+                    평균 아파트 가격: 4.6억원<br>
+                    평균 가구소득: 5,000만원
+                </div>
+            </div>
+
+            <div class="pir-card" style="border-color: rgba(255,255,255,0.3);">
+                <div class="pir-location">적정 수준</div>
+                <div class="pir-value" style="color: #00B894;">5.0<span style="font-size: 1.5rem;">배</span></div>
+                <div class="pir-label">국제 권장 기준</div>
+                <div class="pir-meaning">
+                    5배 이하: 안정적<br>
+                    5-10배: 부담<br>
+                    10배 이상: 심각한 부담
+                </div>
+            </div>
+        </div>
+
+        <div class="warning-box">
+            <div class="warning-box-title">⚠️ 서울의 주거비 부담</div>
+            <div class="warning-box-text">
+                서울의 PIR 18.5배는 전국 평균(9.2배)의 2배, 국제 권장 기준(5배)의 3.7배입니다.
+                OECD 주요국 중에서도 매우 높은 수준입니다.
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Calculator: RIR -->
+    <section class="calculator-section">
+        <div class="calculator-container">
+            <h2 class="calculator-title">나의 RIR 계산하기</h2>
+            <p class="calculator-subtitle">
+                RIR (Rent to Income Ratio) - 소득 대비 임대료 비율
+            </p>
+
+            <div class="input-group">
+                <label class="input-label">월 소득 (세전)</label>
+                <input type="text" class="input-field" id="incomeInput" placeholder="350" oninput="formatNumber(this)">
+                <p class="input-hint">단위: 만원 (예: 350 = 350만원)</p>
+            </div>
+
+            <div class="input-group">
+                <label class="input-label">월 주거비 (월세 + 관리비)</label>
+                <input type="text" class="input-field" id="rentInput" placeholder="85" oninput="formatNumber(this)">
+                <p class="input-hint">단위: 만원 (예: 85 = 85만원)</p>
+            </div>
+
+            <button class="calc-btn" onclick="calculateRIR()">내 주거비 부담률 확인하기</button>
+
+            <div class="result-box" id="resultBox">
+                <div class="result-rir" id="resultRIR">0%</div>
+                <div class="result-message" id="resultMessage">결과가 여기 표시됩니다</div>
+                <div class="result-benchmark" id="resultBenchmark"></div>
+            </div>
+        </div>
+
+        <div style="max-width: 600px; margin: 40px auto 0; text-align: center;">
+            <div class="info-box">
+                <div class="info-box-title">💡 RIR 기준</div>
+                <div class="info-box-text">
+                    <strong>20% 이하</strong>: 적정 수준<br>
+                    <strong>20-30%</strong>: 약간 부담<br>
+                    <strong>30-40%</strong>: 심각한 부담<br>
+                    <strong>40% 이상</strong>: 과도한 부담 (소득 개선 또는 주거비 절감 필요)
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Story Section 2: 지역별 비교 -->
+    <section class="story-section">
+        <h2 class="section-title">지역별 평균 월세, 얼마나 다를까?</h2>
+        <p class="section-text">
+            같은 대한민국이지만, 지역에 따라 주거비 부담은 천차만별입니다.
+        </p>
+
+        <div class="region-grid">
+            <div class="region-card">
+                <div class="region-name">서울</div>
+                <div class="region-rent">85만원</div>
+                <div class="region-change">전년 대비 +8.2%</div>
+            </div>
+
+            <div class="region-card">
+                <div class="region-name">경기</div>
+                <div class="region-rent">62만원</div>
+                <div class="region-change">전년 대비 +6.5%</div>
+            </div>
+
+            <div class="region-card">
+                <div class="region-name">인천</div>
+                <div class="region-rent">54만원</div>
+                <div class="region-change">전년 대비 +5.8%</div>
+            </div>
+
+            <div class="region-card">
+                <div class="region-name">부산</div>
+                <div class="region-rent">48만원</div>
+                <div class="region-change">전년 대비 +4.2%</div>
+            </div>
+
+            <div class="region-card">
+                <div class="region-name">대구</div>
+                <div class="region-rent">42만원</div>
+                <div class="region-change">전년 대비 +3.5%</div>
+            </div>
+
+            <div class="region-card">
+                <div class="region-name">지방 평균</div>
+                <div class="region-rent">38만원</div>
+                <div class="region-change">전년 대비 +2.8%</div>
+            </div>
+        </div>
+
+        <p class="section-text" style="margin-top: 30px;">
+            서울의 평균 월세 <strong style="color: #E17055;">85만원</strong>은
+            지방 평균 <strong style="color: #00B894;">38만원</strong>의 2.2배입니다.
+        </p>
+    </section>
+
+    <!-- Story Section 3: 세대별 비교 -->
+    <section class="story-section">
+        <h2 class="section-title">2030 vs 5060, 누가 더 힘들까?</h2>
+        <p class="section-text">
+            같은 집세라도, 소득 수준에 따라 체감하는 부담은 다릅니다.
+        </p>
+
+        <div class="gen-container">
+            <div class="chart-title">연령대별 평균 RIR (소득 대비 주거비 비율)</div>
+            <div class="gen-bars">
+                <div class="gen-bar-item">
+                    <div class="gen-label">20대</div>
+                    <div class="gen-bar-bg">
+                        <div class="gen-bar-fill burden" style="width: 0%;" data-width="32">32%</div>
+                    </div>
+                </div>
+
+                <div class="gen-bar-item">
+                    <div class="gen-label">30대</div>
+                    <div class="gen-bar-bg">
+                        <div class="gen-bar-fill burden" style="width: 0%;" data-width="28">28%</div>
+                    </div>
+                </div>
+
+                <div class="gen-bar-item">
+                    <div class="gen-label">40대</div>
+                    <div class="gen-bar-bg">
+                        <div class="gen-bar-fill ok" style="width: 0%;" data-width="22">22%</div>
+                    </div>
+                </div>
+
+                <div class="gen-bar-item">
+                    <div class="gen-label">50대</div>
+                    <div class="gen-bar-bg">
+                        <div class="gen-bar-fill ok" style="width: 0%;" data-width="19">19%</div>
+                    </div>
+                </div>
+
+                <div class="gen-bar-item">
+                    <div class="gen-label">60대</div>
+                    <div class="gen-bar-bg">
+                        <div class="gen-bar-fill ok" style="width: 0%;" data-width="15">15%</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <p class="section-text">
+            <strong style="color: #E17055;">20대 청년</strong>의 평균 RIR은 32%로,
+            50-60대(15-19%)보다 훨씬 높습니다.<br>
+            낮은 초봉과 높은 주거비가 만나 청년층의 주거 부담이 가중되고 있습니다.
+        </p>
+
+        <div class="warning-box">
+            <div class="warning-box-title">⚠️ 청년 주거 위기</div>
+            <div class="warning-box-text">
+                서울 거주 20대 1인 가구의 경우 RIR이 <strong>38%</strong>에 달합니다.
+                월급 300만원이라면 114만원을 집세로 내는 셈입니다.
+            </div>
+        </div>
+    </section>
+
+    <!-- Story Section 4: 10년 전 vs 지금 -->
+    <section class="story-section">
+        <h2 class="section-title">10년 전과 비교하면?</h2>
+        <p class="section-text">
+            2014년과 2024년을 비교해보면, 주거비 부담이 얼마나 커졌는지 명확히 보입니다.
+        </p>
+
+        <div class="timeline-container">
+            <div class="timeline-title">서울 아파트 평균 PIR 변화</div>
+            <div class="timeline-compare">
+                <div class="timeline-box past">
+                    <div class="timeline-year">2014년</div>
+                    <div class="timeline-stat">8.2배</div>
+                    <div class="timeline-label">연봉 대비 집값</div>
+                    <div class="timeline-meaning">
+                        평균 아파트: 5.3억원<br>
+                        평균 가구소득: 6,450만원
+                    </div>
+                </div>
+
+                <div class="timeline-box present">
+                    <div class="timeline-year">2024년</div>
+                    <div class="timeline-stat">18.5배</div>
+                    <div class="timeline-label">연봉 대비 집값</div>
+                    <div class="timeline-meaning">
+                        평균 아파트: 11억원<br>
+                        평균 가구소득: 5,950만원
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <p class="section-text" style="text-align: center; font-size: 1.3rem;">
+            10년 사이 집값은 <strong style="color: #E17055;">2.1배</strong> 올랐지만,<br>
+            소득은 <strong style="color: #00B894;">8%</strong>밖에 오르지 않았습니다.
+        </p>
+
+        <div class="timeline-container">
+            <div class="timeline-title">월세 RIR 변화</div>
+            <div class="timeline-compare">
+                <div class="timeline-box past">
+                    <div class="timeline-year">2014년</div>
+                    <div class="timeline-stat">18%</div>
+                    <div class="timeline-label">평균 RIR</div>
+                    <div class="timeline-meaning">
+                        평균 월세: 55만원
+                    </div>
+                </div>
+
+                <div class="timeline-box present">
+                    <div class="timeline-year">2024년</div>
+                    <div class="timeline-stat">28%</div>
+                    <div class="timeline-label">평균 RIR</div>
+                    <div class="timeline-meaning">
+                        평균 월세: 85만원
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <p class="section-text">
+            10년 전에는 <strong style="color: #00B894;">"적정 수준"</strong>이었던 주거비 부담이,
+            지금은 <strong style="color: #E17055;">"약간 부담"</strong> 단계로 악화되었습니다.
+        </p>
+    </section>
+
+    <!-- Story Section 5: 차트 -->
+    <section class="story-section">
+        <h2 class="section-title">주요 도시 PIR 국제 비교</h2>
+        <p class="section-text">
+            서울의 주거비 부담, 전 세계적으로 봐도 높은 수준일까요?
+        </p>
+
+        <div class="chart-container">
+            <div id="pirChart"></div>
+        </div>
+
+        <p class="section-text" style="margin-top: 30px;">
+            서울의 PIR은 <strong style="color: #E17055;">홍콩(23.2배)</strong> 다음으로 높고,
+            런던(13.1배), 뉴욕(9.4배)보다 훨씬 높습니다.
+        </p>
+
+        <div class="info-box">
+            <div class="info-box-title">💡 왜 이렇게 높을까?</div>
+            <div class="info-box-text">
+                1. <strong>공급 부족</strong>: 신규 주택 공급이 수요를 따라가지 못함<br>
+                2. <strong>집중 현상</strong>: 일자리, 교육이 수도권에 집중<br>
+                3. <strong>투자 수단</strong>: 부동산이 자산 증식 수단으로 선호됨<br>
+                4. <strong>저금리 기조</strong>: 낮은 금리로 대출이 용이했던 시기
+            </div>
+        </div>
+    </section>
+
+    <!-- Conclusion -->
+    <section class="conclusion">
+        <p class="conclusion-text">
+            <span class="conclusion-highlight">"월급의 절반이 집세"</span><br><br>
+            이것은 단순한 비유가 아니라, 많은 청년들의 현실입니다.<br><br>
+            주거비 부담은 <span class="conclusion-highlight">삶의 질</span>을 결정합니다.<br>
+            집 걱정 없이 살 수 있는 날이 올까요?
+        </p>
+        <p style="color: rgba(255,255,255,0.5); font-size: 1rem; margin-top: 30px;">
+            당신의 주거비 부담률은 몇 %인가요?
+        </p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div>데이터로 보는 대한민국</div>
+        <div class="data-source">출처: KOSIS 국가통계포털 (국토교통부 주택가격동향조사, 통계청 가계금융복지조사)</div>
+        <div class="mcp-badge">🚀 MCP 기반 데이터 스토리텔링</div>
+        <div style="margin-top: 15px;">Generated: 2024-12-14</div>
+    </footer>
+
+    <script>
+        // Number formatting
+        function formatNumber(input) {
+            let value = input.value.replace(/[^0-9]/g, '');
+            input.value = value;
+        }
+
+        // RIR Calculator
+        function calculateRIR() {
+            const income = parseInt(document.getElementById('incomeInput').value) || 0;
+            const rent = parseInt(document.getElementById('rentInput').value) || 0;
+            const resultBox = document.getElementById('resultBox');
+
+            if (income === 0 || rent === 0) {
+                alert('월 소득과 주거비를 모두 입력해주세요.');
+                return;
+            }
+
+            const rir = Math.round((rent / income) * 100);
+
+            // Update display
+            document.getElementById('resultRIR').textContent = rir + '%';
+
+            let message = '';
+            let benchmark = '';
+
+            if (rir <= 20) {
+                message = '✅ 적정 수준입니다!';
+                benchmark = '국제 권장 기준(20% 이하)을 충족합니다. 안정적인 주거 생활을 유지하고 계십니다.';
+            } else if (rir <= 30) {
+                message = '⚠️ 약간 부담되는 수준입니다.';
+                benchmark = '권장 기준(20%)을 다소 초과했습니다. 전국 평균(24%)과 유사한 수준입니다.';
+            } else if (rir <= 40) {
+                message = '🚨 심각한 부담 수준입니다.';
+                benchmark = '주거비 부담이 상당히 높습니다. 서울 20대 평균(32%)과 유사한 수준입니다.';
+            } else {
+                message = '🆘 과도한 부담 수준입니다!';
+                benchmark = '소득 개선이나 주거비 절감을 진지하게 고려해야 합니다. 장기적으로 지속 가능하지 않은 수준입니다.';
+            }
+
+            document.getElementById('resultMessage').textContent = message;
+            document.getElementById('resultBenchmark').textContent = benchmark;
+
+            // Show result
+            resultBox.classList.add('active');
+            resultBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        // Animate generation bars on scroll
+        const observerOptions = {
+            threshold: 0.5,
+            rootMargin: '0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const fills = entry.target.querySelectorAll('.gen-bar-fill');
+                    fills.forEach(fill => {
+                        const targetWidth = fill.getAttribute('data-width');
+                        setTimeout(() => {
+                            fill.style.width = targetWidth + '%';
+                        }, 100);
+                    });
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const genContainer = document.querySelector('.gen-container');
+            if (genContainer) {
+                observer.observe(genContainer);
+            }
+
+            // Create PIR comparison chart
+            createPIRChart();
+        });
+
+        // PIR Chart
+        function createPIRChart() {
+            const data = [{
+                type: 'bar',
+                x: ['홍콩', '서울', '런던', '도쿄', '뉴욕', '베를린', '시카고'],
+                y: [23.2, 18.5, 13.1, 11.8, 9.4, 7.6, 5.8],
+                marker: {
+                    color: ['#d63031', '#E17055', '#ff7675', '#fab1a0', '#74b9ff', '#55efc4', '#00B894'],
+                    line: {
+                        color: 'rgba(255,255,255,0.2)',
+                        width: 1
+                    }
+                },
+                text: ['23.2배', '18.5배', '13.1배', '11.8배', '9.4배', '7.6배', '5.8배'],
+                textposition: 'outside',
+                textfont: {
+                    color: 'rgba(255,255,255,0.9)',
+                    size: 14,
+                    family: 'Noto Sans KR'
+                }
+            }];
+
+            const layout = {
+                paper_bgcolor: 'rgba(0,0,0,0)',
+                plot_bgcolor: 'rgba(0,0,0,0)',
+                font: {
+                    color: 'rgba(255,255,255,0.8)',
+                    family: 'Noto Sans KR'
+                },
+                xaxis: {
+                    gridcolor: 'rgba(255,255,255,0.1)',
+                    showgrid: false,
+                    tickfont: {
+                        size: 12
+                    }
+                },
+                yaxis: {
+                    title: 'PIR (배)',
+                    gridcolor: 'rgba(255,255,255,0.1)',
+                    tickfont: {
+                        size: 11
+                    }
+                },
+                margin: {
+                    l: 50,
+                    r: 30,
+                    t: 20,
+                    b: 50
+                },
+                bargap: 0.3,
+                hovermode: 'closest',
+                shapes: [{
+                    type: 'line',
+                    x0: -0.5,
+                    x1: 6.5,
+                    y0: 5,
+                    y1: 5,
+                    line: {
+                        color: '#00B894',
+                        width: 2,
+                        dash: 'dash'
+                    }
+                }],
+                annotations: [{
+                    x: 6,
+                    y: 5.5,
+                    text: '적정 수준 (5배)',
+                    showarrow: false,
+                    font: {
+                        color: '#00B894',
+                        size: 11
+                    }
+                }]
+            };
+
+            const config = {
+                responsive: true,
+                displayModeBar: false
+            };
+
+            Plotly.newPlot('pirChart', data, layout, config);
+        }
+    </script>
+</body>
+</html>

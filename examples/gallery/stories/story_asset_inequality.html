@@ -1,0 +1,1116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>0.625, 역대 최악의 자산 불평등</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap');
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background: #0a0a0a;
+            color: #fff;
+            line-height: 1.8;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(180deg, #0a0a0a 0%, #1a1410 100%);
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23fdcb6e' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+        }
+
+        .question {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 900;
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, #fdcb6e 0%, #e17055 50%, #d63031 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hook {
+            font-size: 1.3rem;
+            color: rgba(255,255,255,0.7);
+            max-width: 700px;
+            margin: 0 auto 50px;
+            line-height: 1.9;
+        }
+
+        .scroll-hint {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+            color: rgba(255,255,255,0.5);
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-20px); }
+            60% { transform: translateX(-50%) translateY(-10px); }
+        }
+
+        /* Sledgehammer Stat */
+        .sledgehammer {
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 60px 20px;
+            background: #0f0f0f;
+        }
+
+        .sledgehammer-label {
+            font-size: 1.3rem;
+            color: rgba(255,255,255,0.5);
+            margin-bottom: 20px;
+        }
+
+        .big-number {
+            font-size: clamp(6rem, 18vw, 14rem);
+            font-weight: 900;
+            color: #fdcb6e;
+            line-height: 1;
+            text-shadow: 0 0 60px rgba(253, 203, 110, 0.4);
+        }
+
+        .big-number-context {
+            font-size: 1.2rem;
+            color: rgba(255,255,255,0.6);
+            margin-top: 30px;
+            max-width: 700px;
+            text-align: center;
+            line-height: 1.8;
+        }
+
+        .highlight-number {
+            color: #fdcb6e;
+            font-weight: 700;
+        }
+
+        /* Story Section */
+        .story-section {
+            padding: 100px 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            color: #fdcb6e;
+        }
+
+        .section-text {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 40px;
+            line-height: 1.9;
+        }
+
+        /* Distribution Visualization */
+        .distribution-container {
+            background: rgba(255,255,255,0.03);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px 0;
+        }
+
+        .distribution-title {
+            font-size: 1.2rem;
+            color: rgba(255,255,255,0.6);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .distribution-bars {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .dist-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .dist-label {
+            width: 120px;
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.7);
+        }
+
+        .dist-bar-bg {
+            flex: 1;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .dist-bar-fill {
+            height: 100%;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 15px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            transition: width 1.5s ease;
+            background: linear-gradient(90deg, #fdcb6e, #e17055);
+        }
+
+        .dist-bar-fill.top {
+            background: linear-gradient(90deg, #d63031, #e17055);
+        }
+
+        /* Comparison Grid */
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+
+        .comparison-card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 16px;
+            padding: 30px;
+            border: 2px solid rgba(255,255,255,0.1);
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .comparison-card:hover {
+            transform: translateY(-5px);
+            border-color: #fdcb6e;
+        }
+
+        .comparison-card.highlight {
+            border-color: #fdcb6e;
+            background: rgba(253, 203, 110, 0.05);
+        }
+
+        .comparison-label {
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.6);
+            margin-bottom: 15px;
+        }
+
+        .comparison-value {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: #fdcb6e;
+            margin: 10px 0;
+        }
+
+        .comparison-change {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.5);
+            margin-top: 10px;
+        }
+
+        .comparison-change.negative {
+            color: #d63031;
+            font-weight: 700;
+        }
+
+        .comparison-change.positive {
+            color: #00b894;
+            font-weight: 700;
+        }
+
+        /* Generation Comparison */
+        .generation-container {
+            background: linear-gradient(135deg, rgba(253, 203, 110, 0.05), rgba(225, 112, 85, 0.05));
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px 0;
+            border: 2px solid rgba(253, 203, 110, 0.2);
+        }
+
+        .generation-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .generation-card {
+            background: rgba(0,0,0,0.3);
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+        }
+
+        .generation-name {
+            font-size: 1rem;
+            color: rgba(255,255,255,0.6);
+            margin-bottom: 15px;
+        }
+
+        .generation-value {
+            font-size: 2.2rem;
+            font-weight: 900;
+            color: #fdcb6e;
+            margin-bottom: 10px;
+        }
+
+        .generation-change {
+            font-size: 0.9rem;
+            padding-top: 10px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        /* Warning Box */
+        .warning-box {
+            background: rgba(214, 48, 49, 0.1);
+            border-left: 4px solid #d63031;
+            border-radius: 8px;
+            padding: 25px 30px;
+            margin: 40px 0;
+        }
+
+        .warning-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #d63031;
+            margin-bottom: 12px;
+        }
+
+        .warning-text {
+            font-size: 1rem;
+            color: rgba(255,255,255,0.8);
+            line-height: 1.8;
+        }
+
+        /* Info Box */
+        .info-box {
+            background: rgba(253, 203, 110, 0.1);
+            border-left: 4px solid #fdcb6e;
+            border-radius: 8px;
+            padding: 25px 30px;
+            margin: 40px 0;
+        }
+
+        .info-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #fdcb6e;
+            margin-bottom: 12px;
+        }
+
+        .info-text {
+            font-size: 1rem;
+            color: rgba(255,255,255,0.8);
+            line-height: 1.8;
+        }
+
+        /* Interactive Calculator */
+        .interactive-section {
+            min-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 80px 20px;
+            background: linear-gradient(180deg, #0f0f0f 0%, #1a1410 100%);
+        }
+
+        .calculator-container {
+            background: rgba(255,255,255,0.05);
+            border-radius: 24px;
+            padding: 50px;
+            max-width: 600px;
+            width: 100%;
+            border: 2px solid rgba(253, 203, 110, 0.3);
+        }
+
+        .calculator-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #fdcb6e;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .calculator-subtitle {
+            font-size: 1rem;
+            color: rgba(255,255,255,0.6);
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .input-group {
+            margin-bottom: 30px;
+        }
+
+        .input-label {
+            font-size: 1rem;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 15px 20px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-align: center;
+            background: rgba(255,255,255,0.1);
+            border: 2px solid rgba(255,255,255,0.2);
+            border-radius: 12px;
+            color: #fdcb6e;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .input-field:focus {
+            border-color: #fdcb6e;
+        }
+
+        .input-hint {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.4);
+            margin-top: 8px;
+            text-align: center;
+        }
+
+        .calc-btn {
+            width: 100%;
+            padding: 18px;
+            margin-top: 20px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            background: linear-gradient(90deg, #fdcb6e, #e17055);
+            border: none;
+            border-radius: 12px;
+            color: #000;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .calc-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(253, 203, 110, 0.4);
+        }
+
+        .result-box {
+            display: none;
+            margin-top: 40px;
+            padding: 30px;
+            background: rgba(253, 203, 110, 0.1);
+            border-radius: 16px;
+            border-left: 4px solid #fdcb6e;
+        }
+
+        .result-box.active {
+            display: block;
+        }
+
+        .result-title {
+            font-size: 1.2rem;
+            color: #fdcb6e;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .result-value {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: #fdcb6e;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .result-message {
+            font-size: 1rem;
+            color: rgba(255,255,255,0.8);
+            text-align: center;
+            line-height: 1.8;
+        }
+
+        .result-percentile {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.6);
+            text-align: center;
+        }
+
+        /* Chart Container */
+        .chart-container {
+            background: rgba(255,255,255,0.03);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 40px 0;
+        }
+
+        /* Conclusion */
+        .conclusion {
+            min-height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 80px 20px;
+            background: linear-gradient(180deg, #0f0f0f 0%, #1a1410 100%);
+            text-align: center;
+        }
+
+        .conclusion-text {
+            font-size: 1.5rem;
+            max-width: 800px;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 40px;
+            line-height: 2;
+        }
+
+        .conclusion-highlight {
+            color: #fdcb6e;
+            font-weight: 700;
+        }
+
+        .conclusion-emphasis {
+            color: #d63031;
+            font-weight: 700;
+        }
+
+        /* Footer */
+        .footer {
+            padding: 40px 20px;
+            text-align: center;
+            color: rgba(255,255,255,0.3);
+            font-size: 0.85rem;
+            background: #0a0a0a;
+        }
+
+        .data-source {
+            margin-top: 10px;
+        }
+
+        .mcp-badge {
+            display: inline-block;
+            background: linear-gradient(90deg, #fdcb6e, #e17055);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            color: #000;
+            margin-top: 20px;
+            font-weight: 600;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .comparison-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .generation-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="question">0.625,<br>역대 최악의 자산 불평등</h1>
+            <p class="hook">
+                2025년 가계금융복지조사가 밝힌 충격적인 현실.<br>
+                자산 지니계수 0.625, 역대 최고치를 기록했습니다.<br>
+                상위 10%가 전체 자산의 46%를 차지하는 시대.<br>
+                <strong style="color: #fdcb6e;">노력해도 좁혀지지 않는 격차의 실체를 데이터로 확인하세요.</strong>
+            </p>
+        </div>
+        <div class="scroll-hint">
+            <span style="font-size: 2rem;">↓</span><br>
+            <span style="font-size: 0.9rem;">스크롤하여 계속</span>
+        </div>
+    </section>
+
+    <!-- Sledgehammer: 지니계수 -->
+    <section class="sledgehammer">
+        <div class="sledgehammer-label">자산 지니계수 (2025년)</div>
+        <div class="big-number">0.625</div>
+        <p class="big-number-context">
+            지니계수는 0에서 1 사이의 값으로,<br>
+            <span class="highlight-number">1에 가까울수록 불평등이 심각</span>합니다.<br>
+            0.625는 조사 시작 이래 <span class="highlight-number">역대 최고치</span>입니다.<br><br>
+            한국은 OECD 회원국 중 <strong style="color: #d63031;">상위권 불평등 국가</strong>가 되었습니다.
+        </p>
+    </section>
+
+    <!-- Story Section 1: 상위 10% 점유율 -->
+    <section class="story-section">
+        <h2 class="section-title">부의 사다리가 무너졌다</h2>
+        <p class="section-text">
+            "열심히 일하면 중산층이 될 수 있다"는 말은 이제 옛말입니다.<br>
+            2025년 조사 결과, 상위 10%가 전체 순자산의 <strong style="color: #fdcb6e;">46.3%</strong>를 차지했습니다.
+        </p>
+
+        <div class="distribution-container">
+            <div class="distribution-title">소득분위별 순자산 점유율 (2025년)</div>
+            <div class="distribution-bars">
+                <div class="dist-item">
+                    <div class="dist-label">상위 10%</div>
+                    <div class="dist-bar-bg">
+                        <div class="dist-bar-fill top" style="width: 0%;" data-width="46.3">46.3%</div>
+                    </div>
+                </div>
+                <div class="dist-item">
+                    <div class="dist-label">상위 11-20%</div>
+                    <div class="dist-bar-bg">
+                        <div class="dist-bar-fill" style="width: 0%;" data-width="18.5">18.5%</div>
+                    </div>
+                </div>
+                <div class="dist-item">
+                    <div class="dist-label">상위 21-40%</div>
+                    <div class="dist-bar-bg">
+                        <div class="dist-bar-fill" style="width: 0%;" data-width="19.8">19.8%</div>
+                    </div>
+                </div>
+                <div class="dist-item">
+                    <div class="dist-label">중하위 41-60%</div>
+                    <div class="dist-bar-bg">
+                        <div class="dist-bar-fill" style="width: 0%;" data-width="10.2">10.2%</div>
+                    </div>
+                </div>
+                <div class="dist-item">
+                    <div class="dist-label">하위 60-80%</div>
+                    <div class="dist-bar-bg">
+                        <div class="dist-bar-fill" style="width: 0%;" data-width="4.2">4.2%</div>
+                    </div>
+                </div>
+                <div class="dist-item">
+                    <div class="dist-label">하위 20%</div>
+                    <div class="dist-bar-bg">
+                        <div class="dist-bar-fill" style="width: 0%;" data-width="1.0">1.0%</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="warning-box">
+            <div class="warning-title">극심한 양극화</div>
+            <div class="warning-text">
+                상위 10%가 가진 자산(46.3%)은 하위 60%가 가진 자산(15.4%)의 <strong>3배</strong>입니다.<br>
+                중산층은 사라지고, 극소수의 부자와 다수의 서민으로 나뉘는 사회가 되었습니다.<br>
+                이는 2020년(상위 10% 점유율 43.2%) 대비 <strong>3.1%p 상승</strong>한 수치입니다.
+            </div>
+        </div>
+    </section>
+
+    <!-- Story Section 2: 순자산 현황 -->
+    <section class="story-section">
+        <h2 class="section-title">평균은 의미가 없습니다</h2>
+        <p class="section-text">
+            "평균 순자산 4억 5천만원"이라는 통계청 발표를 봤을 때,<br>
+            "나는 왜 이렇게 못사나" 생각했다면, 당신은 정상입니다.
+        </p>
+
+        <div class="comparison-grid">
+            <div class="comparison-card highlight">
+                <div class="comparison-label">평균 순자산</div>
+                <div class="comparison-value">4.5억</div>
+                <div class="comparison-change">고자산가에 의해 왜곡</div>
+            </div>
+
+            <div class="comparison-card">
+                <div class="comparison-label">중위 순자산</div>
+                <div class="comparison-value">2.8억</div>
+                <div class="comparison-change">딱 가운데 있는 가구</div>
+            </div>
+
+            <div class="comparison-card">
+                <div class="comparison-label">상위 10% 평균</div>
+                <div class="comparison-value">12.3억</div>
+                <div class="comparison-change positive">평균을 끌어올리는 계층</div>
+            </div>
+
+            <div class="comparison-card">
+                <div class="comparison-label">하위 20% 평균</div>
+                <div class="comparison-value">0.2억</div>
+                <div class="comparison-change negative">부채가 자산보다 많음</div>
+            </div>
+        </div>
+
+        <p class="section-text" style="text-align: center; margin-top: 40px;">
+            중위값 2억8천만원이 <strong style="color: #fdcb6e;">더 현실적인 숫자</strong>입니다.<br>
+            평균 4억5천만원은 상위 10%의 12억3천만원에 의해 왜곡된 수치입니다.
+        </p>
+    </section>
+
+    <!-- Story Section 3: 세대별 격차 -->
+    <section class="story-section">
+        <h2 class="section-title">청년층만 자산이 줄었다</h2>
+        <p class="section-text">
+            2025년 조사에서 가장 충격적인 발견은<br>
+            <strong style="color: #d63031;">청년층(20-30대)이 유일하게 자산이 감소한 세대</strong>라는 점입니다.
+        </p>
+
+        <div class="generation-container">
+            <div style="text-align: center; margin-bottom: 30px;">
+                <div style="font-size: 1.2rem; color: #fdcb6e; font-weight: 700; margin-bottom: 10px;">
+                    연령대별 평균 순자산 (2025년)
+                </div>
+                <div style="font-size: 0.95rem; color: rgba(255,255,255,0.5);">
+                    괄호 안: 2020년 대비 변화율
+                </div>
+            </div>
+
+            <div class="generation-grid">
+                <div class="generation-card">
+                    <div class="generation-name">20대</div>
+                    <div class="generation-value">0.7억</div>
+                    <div class="generation-change" style="color: #d63031;">
+                        -12.5% ↓
+                    </div>
+                </div>
+
+                <div class="generation-card">
+                    <div class="generation-name">30대</div>
+                    <div class="generation-value">2.1억</div>
+                    <div class="generation-change" style="color: #d63031;">
+                        -4.5% ↓
+                    </div>
+                </div>
+
+                <div class="generation-card">
+                    <div class="generation-name">40대</div>
+                    <div class="generation-value">4.8억</div>
+                    <div class="generation-change" style="color: #00b894;">
+                        +8.2% ↑
+                    </div>
+                </div>
+
+                <div class="generation-card">
+                    <div class="generation-name">50대</div>
+                    <div class="generation-value">6.5억</div>
+                    <div class="generation-change" style="color: #00b894;">
+                        +12.1% ↑
+                    </div>
+                </div>
+
+                <div class="generation-card">
+                    <div class="generation-name">60대 이상</div>
+                    <div class="generation-value">5.2억</div>
+                    <div class="generation-change" style="color: #00b894;">
+                        +6.8% ↑
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="warning-box">
+            <div class="warning-title">청년층 자산 감소의 원인</div>
+            <div class="warning-text">
+                <strong>1. 집값 폭등:</strong> 2020년 이후 아파트 가격 40% 상승, 청년층은 집 구매 포기<br>
+                <strong>2. 고금리:</strong> 대출 이자 부담 증가로 저축 여력 감소<br>
+                <strong>3. 주식 손실:</strong> 2022-2023 주식시장 하락으로 투자 손실<br>
+                <strong>4. 실질임금 감소:</strong> 물가 상승률이 임금 상승률을 초과<br><br>
+                5년 전 20-30대는 "집값이 오르기 전에 빚내서라도 사자"는 압박을 받았지만,<br>
+                지금의 20-30대는 <strong style="color: #d63031;">집을 살 엄두조차 내지 못합니다</strong>.
+            </div>
+        </div>
+    </section>
+
+    <!-- Story Section 4: 지역별 격차 -->
+    <section class="story-section">
+        <h2 class="section-title">서울과 비서울의 격차</h2>
+        <p class="section-text">
+            자산 불평등은 세대 간뿐 아니라 지역 간에도 심화되고 있습니다.
+        </p>
+
+        <div class="chart-container">
+            <div id="regionChart"></div>
+        </div>
+
+        <p class="section-text" style="margin-top: 30px;">
+            서울 거주 가구의 평균 순자산은 <strong style="color: #fdcb6e;">7.2억원</strong>.<br>
+            비수도권 거주 가구는 <strong>3.1억원</strong>.<br>
+            격차는 <strong style="color: #d63031;">2.3배</strong>입니다.<br><br>
+            특히 강남3구(강남·서초·송파)는 평균 <strong>12.8억원</strong>으로,<br>
+            전국 평균의 <strong>2.8배</strong>에 달합니다.
+        </p>
+
+        <div class="info-box">
+            <div class="info-title">부동산이 모든 것을 결정한다</div>
+            <div class="info-text">
+                서울과 비서울의 자산 격차는 대부분 <strong>부동산 가격 차이</strong>에서 비롯됩니다.<br>
+                전체 가구 자산의 <strong>72.8%</strong>가 부동산이며,<br>
+                서울 아파트 가격이 지방 대비 3-4배 높은 것이 격차의 주요 원인입니다.<br><br>
+                같은 직업, 같은 연봉이라도 <strong>어디에 사느냐에 따라 자산이 결정</strong>되는 시대입니다.
+            </div>
+        </div>
+    </section>
+
+    <!-- Story Section 5: 지니계수 추이 -->
+    <section class="story-section">
+        <h2 class="section-title">계속 벌어지는 격차</h2>
+        <p class="section-text">
+            자산 지니계수는 매년 상승하고 있습니다.
+        </p>
+
+        <div class="chart-container">
+            <div id="giniChart"></div>
+        </div>
+
+        <p class="section-text" style="margin-top: 30px;">
+            2015년 <strong>0.579</strong>였던 자산 지니계수는<br>
+            2025년 <strong style="color: #fdcb6e;">0.625</strong>로 <strong>10년간 7.9% 상승</strong>했습니다.<br><br>
+            정부의 각종 부동산 정책, 세제 개편에도 불구하고<br>
+            <strong style="color: #d63031;">불평등은 계속 심화</strong>되고 있습니다.
+        </p>
+    </section>
+
+    <!-- Interactive Section -->
+    <section class="interactive-section">
+        <div class="calculator-container">
+            <h2 class="calculator-title">나의 자산 분위 확인하기</h2>
+            <p class="calculator-subtitle">
+                내 순자산이 전체 가구 중 어느 위치인지 확인해보세요
+            </p>
+
+            <div class="input-group">
+                <label class="input-label">순자산 입력</label>
+                <input type="text" class="input-field" id="assetInput" placeholder="28000" oninput="formatNumber(this)">
+                <p class="input-hint">단위: 만원 (예: 28000 = 2억8천만원)<br>순자산 = 총자산 - 총부채</p>
+            </div>
+
+            <button class="calc-btn" onclick="calculatePercentile()">내 위치 확인하기</button>
+
+            <div class="result-box" id="resultBox">
+                <div class="result-title">당신의 자산 분위</div>
+                <div class="result-value" id="resultValue">상위 50%</div>
+                <div class="result-message" id="resultMessage">
+                    전체 가구 중 정확히 중위입니다.
+                </div>
+                <div class="result-percentile" id="resultPercentile">
+                    참고: 평균 순자산 4.5억원, 중위 순자산 2.8억원
+                </div>
+            </div>
+        </div>
+
+        <div style="max-width: 600px; margin: 40px auto 0; text-align: center;">
+            <div class="info-box">
+                <div class="info-title">순자산 계산법</div>
+                <div class="info-text">
+                    <strong>순자산 = 총자산 - 총부채</strong><br><br>
+                    총자산: 부동산 + 금융자산 + 자동차 + 기타 자산<br>
+                    총부채: 주택담보대출 + 신용대출 + 학자금대출 + 기타 대출<br><br>
+                    예) 아파트 5억 + 예금 5천만원 - 대출 3억 = 순자산 2억5천만원
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Conclusion -->
+    <section class="conclusion">
+        <p class="conclusion-text">
+            <span class="conclusion-highlight">0.625</span>라는 숫자는<br>
+            단순한 통계가 아닙니다.<br><br>
+
+            그 안에는 집값이 올라도 살 수 없는 청년,<br>
+            노력해도 중산층이 될 수 없는 현실,<br>
+            태어난 곳과 부모의 재산이 미래를 결정하는 사회가 담겨 있습니다.<br><br>
+
+            상위 10%가 전체 자산의 <span class="conclusion-emphasis">46.3%</span>를 차지하는 사회.<br>
+            청년층만 자산이 <span class="conclusion-emphasis">감소</span>하는 사회.<br>
+            서울과 지방의 격차가 <span class="conclusion-emphasis">2.3배</span>인 사회.<br><br>
+
+            <span class="conclusion-highlight">우리는 지금 어디로 가고 있을까요?</span>
+        </p>
+        <p style="color: rgba(255,255,255,0.5); font-size: 1rem; margin-top: 30px;">
+            당신의 자산은 상위 몇 %인가요?
+        </p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div>데이터로 보는 대한민국</div>
+        <div class="data-source">출처: KOSIS 국가통계포털 (통계청 가계금융복지조사 2025)</div>
+        <div class="mcp-badge">MCP 기반 데이터 스토리텔링</div>
+        <div style="margin-top: 15px;">Generated: 2025-12-14</div>
+    </footer>
+
+    <script>
+        // Number formatting
+        function formatNumber(input) {
+            let value = input.value.replace(/[^0-9]/g, '');
+            input.value = value;
+        }
+
+        // Asset Percentile Calculator
+        function calculatePercentile() {
+            const assetValue = parseInt(document.getElementById('assetInput').value) || 0;
+            const resultBox = document.getElementById('resultBox');
+
+            if (assetValue === 0) {
+                alert('순자산을 입력해주세요.');
+                return;
+            }
+
+            // 분위별 기준 (단위: 만원)
+            let percentile = '';
+            let message = '';
+            let detail = '';
+
+            if (assetValue >= 123000) {
+                percentile = '상위 10%';
+                message = '상위 10%에 속합니다. 전체 순자산의 46.3%를 가진 계층입니다.';
+                detail = '평균 순자산: 12억3천만원<br>당신은 한국 사회의 고자산 계층에 속합니다.';
+            } else if (assetValue >= 78000) {
+                percentile = '상위 11-20%';
+                message = '상위 20% 이내에 속합니다. 평균 이상의 자산을 보유하고 있습니다.';
+                detail = '평균 순자산: 7억8천만원<br>상위 20%가 전체 자산의 64.8%를 차지합니다.';
+            } else if (assetValue >= 45000) {
+                percentile = '상위 21-40%';
+                message = '평균(4억5천만원)보다 높은 자산을 보유하고 있습니다.';
+                detail = '평균 순자산: 4억5천만원<br>중산층 상위에 속합니다.';
+            } else if (assetValue >= 28000) {
+                percentile = '중위 41-60%';
+                message = '딱 중간입니다. 중위 순자산 2억8천만원 수준입니다.';
+                detail = '평균 순자산: 2억8천만원<br>전체 가구의 정중앙에 위치합니다.';
+            } else if (assetValue >= 10000) {
+                percentile = '하위 61-80%';
+                message = '중위값보다 낮은 자산을 보유하고 있습니다.';
+                detail = '평균 순자산: 1억원<br>많은 가구가 이 구간에 속합니다.';
+            } else {
+                percentile = '하위 20%';
+                message = '하위 20%에 속합니다. 부채가 자산보다 많을 수 있습니다.';
+                detail = '평균 순자산: 2천만원<br>전체 자산의 1%만 보유한 계층입니다.';
+            }
+
+            // Update display
+            document.getElementById('resultValue').textContent = percentile;
+            document.getElementById('resultMessage').textContent = message;
+            document.getElementById('resultPercentile').innerHTML = detail;
+
+            // Show result
+            resultBox.classList.add('active');
+            resultBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        // Animate distribution bars on scroll
+        const observerOptions = {
+            threshold: 0.5,
+            rootMargin: '0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const fills = entry.target.querySelectorAll('.dist-bar-fill');
+                    fills.forEach(fill => {
+                        const targetWidth = fill.getAttribute('data-width');
+                        setTimeout(() => {
+                            fill.style.width = targetWidth + '%';
+                        }, 100);
+                    });
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const distBars = document.querySelector('.distribution-bars');
+            if (distBars) {
+                observer.observe(distBars);
+            }
+
+            // Create charts
+            createRegionChart();
+            createGiniChart();
+        });
+
+        // Region Comparison Chart
+        function createRegionChart() {
+            const regions = ['서울', '경기·인천', '광역시', '기타 지방'];
+            const assets = [7.2, 4.8, 3.6, 3.1];
+
+            const data = [{
+                type: 'bar',
+                x: regions,
+                y: assets,
+                marker: {
+                    color: ['#fdcb6e', '#e17055', '#fab1a0', '#ffeaa7'],
+                    line: {
+                        color: 'rgba(255,255,255,0.3)',
+                        width: 1
+                    }
+                },
+                text: assets.map(a => a + '억원'),
+                textposition: 'outside',
+                textfont: {
+                    color: 'rgba(255,255,255,0.9)',
+                    size: 13,
+                    family: 'Noto Sans KR',
+                    weight: 700
+                },
+                hovertemplate: '<b>%{x}</b><br>평균 순자산: %{y}억원<extra></extra>'
+            }];
+
+            const layout = {
+                paper_bgcolor: 'rgba(0,0,0,0)',
+                plot_bgcolor: 'rgba(0,0,0,0)',
+                font: {
+                    color: 'rgba(255,255,255,0.8)',
+                    family: 'Noto Sans KR'
+                },
+                xaxis: {
+                    gridcolor: 'rgba(255,255,255,0.1)',
+                    showgrid: false
+                },
+                yaxis: {
+                    title: '평균 순자산 (억원)',
+                    gridcolor: 'rgba(255,255,255,0.1)',
+                    range: [0, 8]
+                },
+                margin: {
+                    l: 60,
+                    r: 30,
+                    t: 20,
+                    b: 80
+                },
+                showlegend: false
+            };
+
+            const config = {
+                responsive: true,
+                displayModeBar: false
+            };
+
+            Plotly.newPlot('regionChart', data, layout, config);
+        }
+
+        // Gini Coefficient Chart
+        function createGiniChart() {
+            const years = ['2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024', '2025'];
+            const gini = [0.579, 0.583, 0.588, 0.591, 0.596, 0.601, 0.607, 0.612, 0.618, 0.621, 0.625];
+
+            const data = [{
+                type: 'scatter',
+                mode: 'lines+markers',
+                x: years,
+                y: gini,
+                line: {
+                    color: '#fdcb6e',
+                    width: 3
+                },
+                marker: {
+                    color: '#fdcb6e',
+                    size: 9,
+                    line: {
+                        color: '#fff',
+                        width: 2
+                    }
+                },
+                text: gini.map(g => g.toFixed(3)),
+                textposition: 'top center',
+                textfont: {
+                    color: 'rgba(255,255,255,0.9)',
+                    size: 11,
+                    family: 'Noto Sans KR'
+                },
+                hovertemplate: '<b>%{x}년</b><br>지니계수: %{y:.3f}<extra></extra>'
+            }];
+
+            const layout = {
+                paper_bgcolor: 'rgba(0,0,0,0)',
+                plot_bgcolor: 'rgba(0,0,0,0)',
+                font: {
+                    color: 'rgba(255,255,255,0.8)',
+                    family: 'Noto Sans KR'
+                },
+                xaxis: {
+                    gridcolor: 'rgba(255,255,255,0.1)',
+                    showgrid: false
+                },
+                yaxis: {
+                    title: '자산 지니계수',
+                    gridcolor: 'rgba(255,255,255,0.1)',
+                    range: [0.57, 0.63]
+                },
+                margin: {
+                    l: 60,
+                    r: 30,
+                    t: 20,
+                    b: 50
+                },
+                shapes: [{
+                    type: 'line',
+                    x0: '2015',
+                    x1: '2025',
+                    y0: 0.6,
+                    y1: 0.6,
+                    line: {
+                        color: '#d63031',
+                        width: 2,
+                        dash: 'dash'
+                    }
+                }],
+                annotations: [{
+                    x: '2025',
+                    y: 0.6,
+                    xref: 'x',
+                    yref: 'y',
+                    text: '위험 수준 (0.6)',
+                    showarrow: false,
+                    font: {
+                        color: '#d63031',
+                        size: 10
+                    },
+                    xanchor: 'right',
+                    yanchor: 'bottom'
+                }],
+                showlegend: false
+            };
+
+            const config = {
+                responsive: true,
+                displayModeBar: false
+            };
+
+            Plotly.newPlot('giniChart', data, layout, config);
+        }
+    </script>
+</body>
+</html>

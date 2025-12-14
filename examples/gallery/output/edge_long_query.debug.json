@@ -1,0 +1,123 @@
+{
+  "report_id": "ec34f035-abf3-45b8-ad3a-65651b3b5c06",
+  "timestamp": "2025-12-13T22:42:35.894435",
+  "user_query": "서울특별시와 부산광역시 및 대구광역시와 인천광역시의 2020년부터 2023년까지의 인구 변화 추이를 상세히 비교 분석하고 각 지역별 증감률과 순위 변동을 시각화해주세요",
+  "parsed_query": {
+    "raw_query": "서울특별시와 부산광역시 및 대구광역시와 인천광역시의 2020년부터 2023년까지의 인구 변화 추이를 상세히 비교 분석하고 각 지역별 증감률과 순위 변동을 시각화해주세요",
+    "target_regions": [
+      "대구광역시",
+      "부산광역시",
+      "서울특별시",
+      "인천광역시"
+    ],
+    "target_periods": [
+      "2020",
+      "2023"
+    ],
+    "target_items": [],
+    "comparison_type": "regional",
+    "analysis_depth": "deep",
+    "include_visualization": true
+  },
+  "sections_determined": [
+    "summary",
+    "eda",
+    "comparison",
+    "stats",
+    "visualization",
+    "insight"
+  ],
+  "processing_steps": [
+    {
+      "step": "parse_query",
+      "detail": "쿼리 파싱: '서울특별시와 부산광역시 및 대구광역시와 인천광역시의 2020년부터 2023년까지의 인구 변화 추이를 상세히 비교 분석하고 각 지역별 증감률과 순위 변동을 시각화해주세요'",
+      "duration_ms": 0.377874996047467
+    },
+    {
+      "step": "determine_sections",
+      "detail": "섹션 결정: summary, eda, comparison, stats, visualization, insight",
+      "sections": [
+        "summary",
+        "eda",
+        "comparison",
+        "stats",
+        "visualization",
+        "insight"
+      ],
+      "duration_ms": 0.0016669800970703363
+    },
+    {
+      "step": "filter_data",
+      "detail": "데이터 필터링: 20건 → 8건",
+      "records_before": 20,
+      "records_after": 8,
+      "duration_ms": 0.7515000179409981
+    },
+    {
+      "step": "generate_header",
+      "detail": "HTML 헤더 생성",
+      "duration_ms": 0.0014999823179095984
+    },
+    {
+      "step": "generate_summary_card",
+      "detail": "요약 카드 생성",
+      "duration_ms": 0.07666600868105888
+    },
+    {
+      "step": "generate_section_summary",
+      "detail": "섹션 생성: summary",
+      "success": false,
+      "duration_ms": 0.0026249908842146397
+    },
+    {
+      "step": "generate_section_eda",
+      "detail": "섹션 생성: eda",
+      "success": true,
+      "duration_ms": 0.4447080136742443
+    },
+    {
+      "step": "generate_section_comparison",
+      "detail": "섹션 생성: comparison",
+      "success": true,
+      "duration_ms": 0.820874993223697
+    },
+    {
+      "step": "generate_section_stats",
+      "detail": "섹션 생성: stats",
+      "success": true,
+      "duration_ms": 0.5498749960679561
+    },
+    {
+      "step": "generate_section_visualization",
+      "detail": "섹션 생성: visualization",
+      "success": true,
+      "duration_ms": 18.19708399125375
+    },
+    {
+      "step": "generate_section_insight",
+      "detail": "섹션 생성: insight",
+      "success": true,
+      "duration_ms": 0.17641598242335021
+    },
+    {
+      "step": "generate_footer",
+      "detail": "HTML 푸터 생성",
+      "duration_ms": 0.015332974726334214
+    }
+  ],
+  "data_info": {
+    "total_records": 20,
+    "filtered_records": 8,
+    "columns": [
+      "PRD_DE",
+      "C1_NM",
+      "DT",
+      "ITM_NM",
+      "UNIT_NM"
+    ],
+    "unique_regions": 5,
+    "unique_periods": 4
+  },
+  "output_path": "edge_long_query.html",
+  "total_duration_ms": 21.423582977149636
+}

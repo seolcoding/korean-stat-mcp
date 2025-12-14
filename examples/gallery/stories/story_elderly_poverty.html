@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>은퇴 후에도 일해야 하는 이유</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap');
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background: #0a0a0a;
+            color: #fff;
+            line-height: 1.8;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(180deg, #0a0a0a 0%, #1a1a1a 100%);
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23636e72' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+        }
+
+        .icon-badge {
+            font-size: 5rem;
+            margin-bottom: 20px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.7; transform: scale(0.95); }
+        }
+
+        .question {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 900;
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, #636e72 0%, #2d3436 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hook {
+            font-size: 1.3rem;
+            color: rgba(255,255,255,0.7);
+            max-width: 600px;
+            margin: 0 auto 50px;
+        }
+
+        .scroll-hint {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+            color: rgba(255,255,255,0.5);
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-20px); }
+            60% { transform: translateX(-50%) translateY(-10px); }
+        }
+
+        /* Sledgehammer Stat */
+        .sledgehammer {
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 60px 20px;
+            background: #0f0f1a;
+        }
+
+        .big-number {
+            font-size: clamp(5rem, 15vw, 12rem);
+            font-weight: 900;
+            color: #636e72;
+            line-height: 1;
+        }
+
+        .big-number-unit {
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            color: rgba(255,255,255,0.6);
+            margin-top: 10px;
+        }
+
+        .big-number-context {
+            font-size: 1.2rem;
+            color: rgba(255,255,255,0.5);
+            margin-top: 30px;
+            max-width: 500px;
+            text-align: center;
+        }
+
+        /* Story Section */
+        .story-section {
+            padding: 100px 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            color: #636e72;
+        }
+
+        .section-text {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 40px;
+        }
+
+        /* Chart Container */
+        .chart-container {
+            background: rgba(255,255,255,0.03);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px 0;
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .stat-card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 16px;
+            padding: 25px;
+            text-align: center;
+            transition: transform 0.3s, background 0.3s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.08);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #636e72, #2d3436);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.6);
+            margin-top: 10px;
+        }
+
+        /* Story Card */
+        .story-card {
+            background: rgba(255,255,255,0.03);
+            border-left: 4px solid #636e72;
+            border-radius: 12px;
+            padding: 30px;
+            margin: 40px 0;
+        }
+
+        .story-time {
+            font-size: 0.9rem;
+            color: #636e72;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .story-text {
+            color: rgba(255,255,255,0.8);
+            line-height: 1.8;
+        }
+
+        /* Solution Section */
+        .solution-section {
+            padding: 100px 20px;
+            background: rgba(255,255,255,0.02);
+        }
+
+        .solution-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .solution-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .solution-card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 16px;
+            padding: 30px;
+            transition: transform 0.3s;
+        }
+
+        .solution-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .solution-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .solution-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #636e72;
+            margin-bottom: 15px;
+        }
+
+        .solution-desc {
+            color: rgba(255,255,255,0.7);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Comparison Table */
+        .comparison-table {
+            background: rgba(255,255,255,0.03);
+            border-radius: 16px;
+            overflow: hidden;
+            margin: 40px 0;
+        }
+
+        .table-row {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 20px;
+            padding: 20px 30px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .table-row:last-child {
+            border-bottom: none;
+        }
+
+        .table-row.header {
+            background: rgba(99,110,114,0.2);
+            font-weight: 700;
+            color: #636e72;
+        }
+
+        .table-cell {
+            color: rgba(255,255,255,0.8);
+        }
+
+        .table-cell.highlight {
+            color: #636e72;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        /* Conclusion */
+        .conclusion {
+            min-height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 80px 20px;
+            background: linear-gradient(180deg, #0f0f1a 0%, #1a1a1a 100%);
+            text-align: center;
+        }
+
+        .conclusion-text {
+            font-size: 1.5rem;
+            max-width: 700px;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 40px;
+        }
+
+        .conclusion-highlight {
+            color: #636e72;
+            font-weight: 700;
+        }
+
+        /* Footer */
+        .footer {
+            padding: 40px 20px;
+            text-align: center;
+            color: rgba(255,255,255,0.3);
+            font-size: 0.85rem;
+            background: #0a0a0a;
+        }
+
+        .data-source {
+            margin-top: 10px;
+        }
+
+        .mcp-badge {
+            display: inline-block;
+            background: linear-gradient(90deg, #636e72, #2d3436);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .table-row {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+
+            .solution-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero: 충격적인 현실 -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="icon-badge">👴</div>
+            <h1 class="question">은퇴 후에도<br>일해야 하는 이유</h1>
+            <p class="hook">
+                한국 노인의 40.4%가 빈곤합니다.<br>
+                OECD 1위, 평균의 3배입니다.<br>
+                이것이 우리 부모님이 마주한 현실입니다.
+            </p>
+        </div>
+        <div class="scroll-hint">
+            <span style="font-size: 2rem;">↓</span><br>
+            <span style="font-size: 0.9rem;">현실을 확인하세요</span>
+        </div>
+    </section>
+
+    <!-- Sledgehammer Stat -->
+    <section class="sledgehammer">
+        <div class="big-number">40.4%</div>
+        <div class="big-number-unit">한국 노인 빈곤율</div>
+        <p class="big-number-context">
+            OECD 1위, 부끄러운 기록.<br>
+            <strong style="color: #636e72;">OECD 평균 14.2%의 3배</strong>입니다.
+        </p>
+    </section>
+
+    <!-- Story Section 1: OECD 비교 -->
+    <section class="story-section">
+        <h2 class="section-title">세계에서 가장 가난한 노인들</h2>
+        <p class="section-text">
+            한국의 노인 빈곤율은 OECD 38개국 중 압도적 1위입니다.<br>
+            선진국 대열에 합류했지만, 노인들만큼은 <strong style="color: #636e72;">개발도상국 수준</strong>입니다.
+        </p>
+
+        <div class="chart-container">
+            <div id="oecdChart"></div>
+        </div>
+
+        <p class="section-text" style="margin-top: 40px;">
+            2위 에스토니아(32.7%)와도 7.7%p 차이.<br>
+            독일(9.1%), 일본(20.0%)과 비교하면 격차는 더욱 벌어집니다.
+        </p>
+    </section>
+
+    <!-- Story Section 2: 왜 가난한가 -->
+    <section class="story-section" style="background: rgba(255,255,255,0.02);">
+        <h2 class="section-title">노인들은 왜 가난할까?</h2>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">32만원</div>
+                <div class="stat-label">기초연금 월 수령액<br>(2024년 기준)</div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-number">62만원</div>
+                <div class="stat-label">국민연금 평균 수령액<br>(월 기준)</div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-number">36.2%</div>
+                <div class="stat-label">65세 이상 고용률<br>(OECD 1위)</div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-number">175만명</div>
+                <div class="stat-label">폐지 줍는 노인<br>(추정치)</div>
+            </div>
+        </div>
+
+        <div class="comparison-table">
+            <div class="table-row header">
+                <div class="table-cell">소득원</div>
+                <div class="table-cell">비율</div>
+                <div class="table-cell">현실</div>
+            </div>
+            <div class="table-row">
+                <div class="table-cell">국민연금</div>
+                <div class="table-cell highlight">43.5%</div>
+                <div class="table-cell">평균 62만원, 생활비로 부족</div>
+            </div>
+            <div class="table-row">
+                <div class="table-cell">근로소득</div>
+                <div class="table-cell highlight">26.8%</div>
+                <div class="table-cell">경비, 청소, 폐지 수집 등</div>
+            </div>
+            <div class="table-row">
+                <div class="table-cell">자녀 지원</div>
+                <div class="table-cell highlight">18.2%</div>
+                <div class="table-cell">자녀도 생활이 어려워</div>
+            </div>
+            <div class="table-row">
+                <div class="table-cell">기초연금</div>
+                <div class="table-cell highlight">11.5%</div>
+                <div class="table-cell">32만원으로는 생존 불가</div>
+            </div>
+        </div>
+
+        <p class="section-text" style="margin-top: 40px; text-align: center;">
+            <strong style="color: #636e72; font-size: 1.2rem;">연금만으로는 살 수 없습니다.</strong><br>
+            그래서 노인들은 죽을 때까지 일해야 합니다.
+        </p>
+    </section>
+
+    <!-- Story Section 3: 하루 -->
+    <section class="story-section">
+        <h2 class="section-title">폐지 줍는 노인의 하루</h2>
+        <p class="section-text">
+            서울 시내 곳곳에서 리어카를 끌고 다니는 노인들.<br>
+            그들의 하루를 따라가 봤습니다.
+        </p>
+
+        <div class="story-card">
+            <div class="story-time">오전 5시</div>
+            <div class="story-text">
+                날이 밝기 전 나섭니다. 다른 사람들보다 일찍 움직여야 폐지를 더 모을 수 있습니다.
+                리어카를 끌고 10km 이상 걷습니다.
+            </div>
+        </div>
+
+        <div class="story-card">
+            <div class="story-time">오전 6시 - 오후 2시</div>
+            <div class="story-text">
+                상가 뒤, 아파트 재활용 수거장을 돌며 폐지를 모읍니다.
+                무게 80kg의 리어카를 끌며 8시간을 걷습니다. 허리는 아프지만 쉴 수 없습니다.
+            </div>
+        </div>
+
+        <div class="story-card">
+            <div class="story-time">오후 3시</div>
+            <div class="story-text">
+                고물상에 폐지를 팝니다. 하루 종일 모은 폐지 80kg.<br>
+                <strong style="color: #636e72;">받은 돈은 8,000원.</strong><br>
+                kg당 100원. 편의점 김밥 하나 값입니다.
+            </div>
+        </div>
+
+        <div class="story-card">
+            <div class="story-time">오후 4시</div>
+            <div class="story-text">
+                집에 돌아와 찬밥에 김치로 저녁을 먹습니다.<br>
+                온몸이 쑤시지만 내일도 나가야 합니다.<br>
+                한 달 수입 24만원으로는 월세도 내기 어렵습니다.
+            </div>
+        </div>
+
+        <p class="section-text" style="margin-top: 40px; text-align: center;">
+            이것이 <strong style="color: #636e72;">OECD 10위권 경제대국</strong>의<br>
+            노인들이 마주한 현실입니다.
+        </p>
+    </section>
+
+    <!-- Story Section 4: 자살률 -->
+    <section class="story-section" style="background: rgba(255,255,255,0.02);">
+        <h2 class="section-title">그리고 극단적 선택</h2>
+        <p class="section-text">
+            한국 노인 자살률도 OECD 1위입니다.<br>
+            빈곤은 단순히 경제적 문제가 아닙니다. <strong style="color: #636e72;">생명의 문제</strong>입니다.
+        </p>
+
+        <div class="chart-container">
+            <div id="suicideChart"></div>
+        </div>
+
+        <p class="section-text" style="margin-top: 40px;">
+            65세 이상 인구 10만명당 자살자 수 46.6명.<br>
+            OECD 평균 18.8명의 <strong style="color: #636e72;">2.5배</strong>입니다.<br><br>
+            가장 큰 이유는 <strong style="color: #636e72;">경제적 어려움</strong>과 <strong style="color: #636e72;">질병</strong>입니다.
+        </p>
+    </section>
+
+    <!-- Solution Section -->
+    <section class="solution-section">
+        <div class="solution-container">
+            <h2 class="section-title" style="text-align: center;">어떻게 해결할 것인가?</h2>
+            <p class="section-text" style="text-align: center;">
+                노인 빈곤은 개인의 문제가 아닙니다.<br>
+                <strong style="color: #636e72;">국가 차원의 구조적 해결</strong>이 필요합니다.
+            </p>
+
+            <div class="solution-grid">
+                <div class="solution-card">
+                    <div class="solution-icon">💰</div>
+                    <div class="solution-title">기초연금 현실화</div>
+                    <div class="solution-desc">
+                        현재 32만원 → 최소 50만원 이상으로 인상.<br>
+                        최소 생계비를 보장해야 합니다.
+                    </div>
+                </div>
+
+                <div class="solution-card">
+                    <div class="solution-icon">🏥</div>
+                    <div class="solution-title">의료비 부담 경감</div>
+                    <div class="solution-desc">
+                        노인 의료비 본인부담금 감면 확대.<br>
+                        건강보험 보장성 강화가 필요합니다.
+                    </div>
+                </div>
+
+                <div class="solution-card">
+                    <div class="solution-icon">🏠</div>
+                    <div class="solution-title">주거 안정 지원</div>
+                    <div class="solution-desc">
+                        공공임대주택 확대, 주거급여 인상.<br>
+                        집 걱정 없는 노후를 보장해야 합니다.
+                    </div>
+                </div>
+
+                <div class="solution-card">
+                    <div class="solution-icon">📈</div>
+                    <div class="solution-title">국민연금 개혁</div>
+                    <div class="solution-desc">
+                        보험료율 인상 + 소득대체율 상향.<br>
+                        지속가능한 연금 시스템 구축이 시급합니다.
+                    </div>
+                </div>
+
+                <div class="solution-card">
+                    <div class="solution-icon">💼</div>
+                    <div class="solution-title">노인 일자리 질 개선</div>
+                    <div class="solution-desc">
+                        단순 노무직 탈피, 양질의 일자리 제공.<br>
+                        존엄한 노동 환경을 만들어야 합니다.
+                    </div>
+                </div>
+
+                <div class="solution-card">
+                    <div class="solution-icon">🤝</div>
+                    <div class="solution-title">세대 간 연대</div>
+                    <div class="solution-desc">
+                        청년-노인 갈등 해소, 상생 정책 마련.<br>
+                        함께 사는 사회를 만들어야 합니다.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Conclusion -->
+    <section class="conclusion">
+        <p class="conclusion-text">
+            이것은 <span class="conclusion-highlight">우리 부모님</span>의 이야기입니다.<br>
+            그리고 곧 <span class="conclusion-highlight">우리의 이야기</span>가 될 것입니다.<br><br>
+
+            경제 성장의 과실은<br>
+            그것을 일궈낸 세대에게 돌아가야 합니다.<br><br>
+
+            노인 빈곤은 <span class="conclusion-highlight">국가의 책임</span>입니다.<br>
+            더 이상 외면할 수 없습니다.
+        </p>
+        <p style="color: rgba(255,255,255,0.5); font-size: 1rem; margin-top: 40px;">
+            존엄한 노후는 모두의 권리입니다.
+        </p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div>데이터로 보는 대한민국</div>
+        <div class="data-source">출처: KOSIS 국가통계포털, OECD Stat, 통계청</div>
+        <div class="mcp-badge">MCP 기반 데이터 스토리텔링</div>
+        <div style="margin-top: 15px;">Generated: 2025-12-14</div>
+    </footer>
+
+    <script>
+        // OECD 노인 빈곤율 비교 차트
+        const oecdData = [
+            {country: '한국', rate: 40.4},
+            {country: '에스토니아', rate: 32.7},
+            {country: '라트비아', rate: 28.1},
+            {country: '리투아니아', rate: 25.2},
+            {country: '멕시코', rate: 24.7},
+            {country: '일본', rate: 20.0},
+            {country: '미국', rate: 22.8},
+            {country: 'OECD 평균', rate: 14.2},
+            {country: '영국', rate: 15.5},
+            {country: '독일', rate: 9.1},
+            {country: '프랑스', rate: 4.4},
+            {country: '덴마크', rate: 3.0}
+        ];
+
+        const oecdColors = oecdData.map(d =>
+            d.country === '한국' ? '#636e72' :
+            d.country === 'OECD 평균' ? '#b2bec3' :
+            '#dfe6e9'
+        );
+
+        const oecdTrace = {
+            x: oecdData.map(d => d.country),
+            y: oecdData.map(d => d.rate),
+            type: 'bar',
+            marker: {
+                color: oecdColors,
+                line: {
+                    color: '#636e72',
+                    width: 1
+                }
+            },
+            text: oecdData.map(d => d.rate + '%'),
+            textposition: 'outside',
+            textfont: {
+                color: '#fff',
+                size: 12
+            }
+        };
+
+        const oecdLayout = {
+            title: {
+                text: 'OECD 주요국 노인 빈곤율 (2020년 기준)',
+                font: { color: '#636e72', size: 16 }
+            },
+            plot_bgcolor: 'rgba(0,0,0,0)',
+            paper_bgcolor: 'rgba(0,0,0,0)',
+            xaxis: {
+                color: '#fff',
+                tickangle: -45
+            },
+            yaxis: {
+                title: '빈곤율 (%)',
+                color: '#fff',
+                gridcolor: 'rgba(255,255,255,0.1)'
+            },
+            margin: { t: 60, b: 120, l: 60, r: 20 },
+            height: 500
+        };
+
+        Plotly.newPlot('oecdChart', [oecdTrace], oecdLayout, {responsive: true});
+
+        // 노인 자살률 비교 차트
+        const suicideData = [
+            {country: '한국', rate: 46.6},
+            {country: '슬로베니아', rate: 34.2},
+            {country: '헝가리', rate: 29.1},
+            {country: 'OECD 평균', rate: 18.8},
+            {country: '일본', rate: 18.4},
+            {country: '미국', rate: 16.5},
+            {country: '독일', rate: 14.2},
+            {country: '영국', rate: 8.7}
+        ];
+
+        const suicideColors = suicideData.map(d =>
+            d.country === '한국' ? '#636e72' :
+            d.country === 'OECD 평균' ? '#b2bec3' :
+            '#dfe6e9'
+        );
+
+        const suicideTrace = {
+            x: suicideData.map(d => d.country),
+            y: suicideData.map(d => d.rate),
+            type: 'bar',
+            marker: {
+                color: suicideColors,
+                line: {
+                    color: '#636e72',
+                    width: 1
+                }
+            },
+            text: suicideData.map(d => d.rate),
+            textposition: 'outside',
+            textfont: {
+                color: '#fff',
+                size: 12
+            }
+        };
+
+        const suicideLayout = {
+            title: {
+                text: '65세 이상 인구 10만명당 자살률 (2021년)',
+                font: { color: '#636e72', size: 16 }
+            },
+            plot_bgcolor: 'rgba(0,0,0,0)',
+            paper_bgcolor: 'rgba(0,0,0,0)',
+            xaxis: {
+                color: '#fff'
+            },
+            yaxis: {
+                title: '자살률 (10만명당)',
+                color: '#fff',
+                gridcolor: 'rgba(255,255,255,0.1)'
+            },
+            margin: { t: 60, b: 60, l: 60, r: 20 },
+            height: 400
+        };
+
+        Plotly.newPlot('suicideChart', [suicideTrace], suicideLayout, {responsive: true});
+    </script>
+</body>
+</html>

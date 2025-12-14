@@ -1,0 +1,1129 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>영끌은 이제 주식으로</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap');
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background: #0a0a0a;
+            color: #fff;
+            line-height: 1.8;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(180deg, #0a0a0a 0%, #0f1a0f 100%);
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2300b894' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+        }
+
+        .question {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 900;
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, #00b894 0%, #00d2d3 50%, #74b9ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hook {
+            font-size: 1.3rem;
+            color: rgba(255,255,255,0.7);
+            max-width: 600px;
+            margin: 0 auto 50px;
+        }
+
+        .scroll-hint {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+            color: rgba(255,255,255,0.5);
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-20px); }
+            60% { transform: translateX(-50%) translateY(-10px); }
+        }
+
+        /* Sledgehammer Stat */
+        .sledgehammer {
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 60px 20px;
+            background: #0f0f1a;
+        }
+
+        .big-number {
+            font-size: clamp(4rem, 12vw, 10rem);
+            font-weight: 900;
+            color: #00b894;
+            line-height: 1;
+        }
+
+        .big-number-unit {
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            color: rgba(255,255,255,0.6);
+            margin-top: 10px;
+        }
+
+        .big-number-context {
+            font-size: 1.2rem;
+            color: rgba(255,255,255,0.5);
+            margin-top: 30px;
+            max-width: 700px;
+            text-align: center;
+        }
+
+        /* Story Section */
+        .story-section {
+            padding: 100px 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            color: #00b894;
+        }
+
+        .section-text {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 40px;
+        }
+
+        /* News Quote */
+        .news-quote {
+            background: rgba(0, 184, 148, 0.1);
+            border-left: 4px solid #00b894;
+            border-radius: 8px;
+            padding: 30px;
+            margin: 40px 0;
+            font-style: italic;
+        }
+
+        .news-quote-text {
+            font-size: 1.2rem;
+            color: rgba(255,255,255,0.8);
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .news-quote-source {
+            font-size: 0.9rem;
+            color: rgba(0, 184, 148, 0.8);
+            text-align: right;
+        }
+
+        /* Investment Shift Cards */
+        .shift-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .shift-card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 16px;
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.3s, background 0.3s;
+            border: 2px solid rgba(255,255,255,0.1);
+        }
+
+        .shift-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.08);
+        }
+
+        .shift-card.past {
+            border-color: rgba(255,255,255,0.3);
+        }
+
+        .shift-card.present {
+            border-color: #00b894;
+        }
+
+        .shift-period {
+            font-size: 1rem;
+            color: rgba(255,255,255,0.6);
+            margin-bottom: 15px;
+        }
+
+        .shift-icon {
+            font-size: 3rem;
+            margin: 15px 0;
+        }
+
+        .shift-label {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin: 15px 0;
+        }
+
+        .shift-card.past .shift-label {
+            color: rgba(255,255,255,0.6);
+        }
+
+        .shift-card.present .shift-label {
+            color: #00b894;
+        }
+
+        .shift-desc {
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.6);
+            line-height: 1.6;
+        }
+
+        /* Asset Portfolio Comparison */
+        .portfolio-comparison {
+            background: rgba(255,255,255,0.03);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px 0;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .portfolio-card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 16px;
+            padding: 30px;
+        }
+
+        .portfolio-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .portfolio-card.young .portfolio-title {
+            color: #00b894;
+        }
+
+        .portfolio-card.older .portfolio-title {
+            color: rgba(255,255,255,0.6);
+        }
+
+        .portfolio-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .portfolio-item:last-child {
+            border-bottom: none;
+        }
+
+        .portfolio-label {
+            font-size: 1rem;
+            color: rgba(255,255,255,0.7);
+        }
+
+        .portfolio-value {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #00b894;
+        }
+
+        .portfolio-bar {
+            height: 8px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 4px;
+            margin-top: 8px;
+            overflow: hidden;
+        }
+
+        .portfolio-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #00b894, #00d2d3);
+            border-radius: 4px;
+            transition: width 1s ease;
+        }
+
+        /* Interactive Calculator */
+        .calculator-section {
+            min-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 80px 20px;
+            background: linear-gradient(180deg, #0f0f1a 0%, #0f1a0f 100%);
+        }
+
+        .calculator-container {
+            background: rgba(255,255,255,0.05);
+            border-radius: 24px;
+            padding: 50px;
+            max-width: 600px;
+            width: 100%;
+            border: 2px solid rgba(0, 184, 148, 0.3);
+        }
+
+        .calculator-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #00b894;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .calculator-subtitle {
+            font-size: 1rem;
+            color: rgba(255,255,255,0.6);
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .input-group {
+            margin-bottom: 30px;
+        }
+
+        .input-label {
+            font-size: 1rem;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 15px 20px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-align: center;
+            background: rgba(255,255,255,0.1);
+            border: 2px solid rgba(255,255,255,0.2);
+            border-radius: 12px;
+            color: #00b894;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .input-field:focus {
+            border-color: #00b894;
+        }
+
+        .input-hint {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.4);
+            margin-top: 8px;
+            text-align: center;
+        }
+
+        .calc-btn {
+            width: 100%;
+            padding: 18px;
+            margin-top: 20px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            background: linear-gradient(90deg, #00b894, #00d2d3);
+            border: none;
+            border-radius: 12px;
+            color: #000;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .calc-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 184, 148, 0.3);
+        }
+
+        .result-box {
+            display: none;
+            margin-top: 40px;
+            padding: 30px;
+            background: rgba(0, 184, 148, 0.1);
+            border-radius: 16px;
+            border-left: 4px solid #00b894;
+        }
+
+        .result-box.active {
+            display: block;
+        }
+
+        .result-profile {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #00b894;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .result-message {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.8);
+            text-align: center;
+            line-height: 1.8;
+        }
+
+        /* Risk Warning */
+        .warning-box {
+            background: rgba(255, 107, 107, 0.1);
+            border-left: 4px solid #ff6b6b;
+            border-radius: 8px;
+            padding: 25px;
+            margin: 40px 0;
+        }
+
+        .warning-box-title {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #ff6b6b;
+            margin-bottom: 10px;
+        }
+
+        .warning-box-text {
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.7);
+            line-height: 1.6;
+        }
+
+        /* Info Box */
+        .info-box {
+            background: rgba(0, 184, 148, 0.1);
+            border-left: 4px solid #00b894;
+            border-radius: 8px;
+            padding: 25px;
+            margin: 30px 0;
+        }
+
+        .info-box-title {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #00b894;
+            margin-bottom: 10px;
+        }
+
+        .info-box-text {
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.7);
+            line-height: 1.6;
+        }
+
+        /* Chart Container */
+        .chart-container {
+            background: rgba(255,255,255,0.03);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 40px 0;
+        }
+
+        .chart-title {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.6);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        /* Stat Grid */
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .stat-card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-3px);
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.6);
+            margin-bottom: 10px;
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #00b894;
+            margin-bottom: 5px;
+        }
+
+        .stat-change {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.5);
+        }
+
+        /* Conclusion */
+        .conclusion {
+            min-height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 80px 20px;
+            background: linear-gradient(180deg, #0f0f1a 0%, #0f1a0f 100%);
+            text-align: center;
+        }
+
+        .conclusion-text {
+            font-size: 1.5rem;
+            max-width: 700px;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 40px;
+        }
+
+        .conclusion-highlight {
+            color: #00b894;
+            font-weight: 700;
+        }
+
+        .conclusion-warning {
+            color: #ff6b6b;
+            font-weight: 700;
+        }
+
+        /* Footer */
+        .footer {
+            padding: 40px 20px;
+            text-align: center;
+            color: rgba(255,255,255,0.3);
+            font-size: 0.85rem;
+            background: #0a0a0a;
+        }
+
+        .data-source {
+            margin-top: 10px;
+        }
+
+        .mcp-badge {
+            display: inline-block;
+            background: linear-gradient(90deg, #00b894, #00d2d3);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            color: #000;
+            margin-top: 20px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .shift-grid {
+                grid-template-columns: 1fr;
+            }
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero: 질문으로 시작 -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="question">집 살 돈으로<br>주식을 산다</h1>
+            <p class="hook">
+                "더 이상 집은 답이 아니다"<br>
+                전세사기 이후, 청년들의 선택이 바뀌고 있습니다.
+            </p>
+        </div>
+        <div class="scroll-hint">
+            <span style="font-size: 2rem;">↓</span><br>
+            <span style="font-size: 0.9rem;">스크롤하여 계속</span>
+        </div>
+    </section>
+
+    <!-- Sledgehammer Stat: 핵심 숫자 먼저 -->
+    <section class="sledgehammer">
+        <div class="big-number">1.2조</div>
+        <div class="big-number-unit">달러</div>
+        <p class="big-number-context">
+            한국의 해외 증권 투자 잔액이 <strong style="color: #00b894;">1조2000억 달러</strong>를 돌파했습니다.<br>
+            역대 최고 기록이며, 주도 계층은 <strong>청년</strong>입니다.
+        </p>
+    </section>
+
+    <!-- Story Section 1: 뉴스 배경 -->
+    <section class="story-section">
+        <h2 class="section-title">2025년 6월, 한국자본시장연구원 발표</h2>
+
+        <div class="news-quote">
+            <p class="news-quote-text">
+                "전세사기로 주거 사다리가 붕괴되면서 청년층의 금융자산 투자 비중이 급증했다.
+                과거 '영끌'해서 집을 사던 청년들이 이제는 주식 시장으로 몰리고 있다."
+            </p>
+            <p class="news-quote-source">
+                - 한국자본시장연구원, '청년층 금융자산 실태' 보고서
+            </p>
+        </div>
+
+        <div class="news-quote">
+            <p class="news-quote-text">
+                "한국 청년들, 집 대신 주식 '영끌'"
+            </p>
+            <p class="news-quote-source">
+                - Bloomberg, 2025년 6월 15일
+            </p>
+        </div>
+
+        <p class="section-text">
+            전세사기 피해가 속출하고 집값이 천정부지로 치솟자, 청년들은 선택을 바꿨습니다.
+            <strong style="color: #00b894;">"집을 포기하고, 금융자산으로 승부한다"</strong>
+        </p>
+    </section>
+
+    <!-- Story Section 2: 투자 패턴 변화 -->
+    <section class="story-section">
+        <h2 class="section-title">2010년대 vs 2020년대, 무엇이 바뀌었나?</h2>
+        <p class="section-text">
+            10년 전만 해도 청년의 목표는 '내 집 마련'이었습니다. 지금은 다릅니다.
+        </p>
+
+        <div class="shift-grid">
+            <div class="shift-card past">
+                <div class="shift-period">2010년대</div>
+                <div class="shift-icon">🏠</div>
+                <div class="shift-label">부동산 중심</div>
+                <div class="shift-desc">
+                    목표: 30대에 집 사기<br>
+                    수단: 전세대출 + 영끌<br>
+                    믿음: "집값은 계속 오른다"
+                </div>
+            </div>
+
+            <div style="display: flex; align-items: center; justify-content: center; font-size: 2rem;">
+                →
+            </div>
+
+            <div class="shift-card present">
+                <div class="shift-period">2020년대</div>
+                <div class="shift-icon">📈</div>
+                <div class="shift-label">금융자산 중심</div>
+                <div class="shift-desc">
+                    목표: 경제적 자유<br>
+                    수단: 해외주식 + ETF<br>
+                    믿음: "집은 리스크, 주식은 기회"
+                </div>
+            </div>
+        </div>
+
+        <p class="section-text" style="text-align: center; margin-top: 40px;">
+            부동산에서 금융자산으로,<br>
+            <strong style="color: #00b894;">청년 투자의 패러다임이 전환</strong>되고 있습니다.
+        </p>
+    </section>
+
+    <!-- Story Section 3: 세대별 자산 포트폴리오 -->
+    <section class="story-section">
+        <h2 class="section-title">세대별 자산 포트폴리오 비교</h2>
+        <p class="section-text">
+            청년층과 기성세대, 자산 구성이 완전히 다릅니다.
+        </p>
+
+        <div class="portfolio-comparison">
+            <div class="portfolio-grid">
+                <div class="portfolio-card young">
+                    <div class="portfolio-title">20-30대 자산 구성</div>
+                    <div class="portfolio-item">
+                        <div class="portfolio-label">부동산</div>
+                        <div class="portfolio-value">28%</div>
+                    </div>
+                    <div class="portfolio-bar">
+                        <div class="portfolio-bar-fill" style="width: 28%;"></div>
+                    </div>
+                    <div class="portfolio-item">
+                        <div class="portfolio-label">금융자산 (주식/ETF)</div>
+                        <div class="portfolio-value">52%</div>
+                    </div>
+                    <div class="portfolio-bar">
+                        <div class="portfolio-bar-fill" style="width: 52%;"></div>
+                    </div>
+                    <div class="portfolio-item">
+                        <div class="portfolio-label">현금/예금</div>
+                        <div class="portfolio-value">20%</div>
+                    </div>
+                    <div class="portfolio-bar">
+                        <div class="portfolio-bar-fill" style="width: 20%;"></div>
+                    </div>
+                </div>
+
+                <div class="portfolio-card older">
+                    <div class="portfolio-title">50-60대 자산 구성</div>
+                    <div class="portfolio-item">
+                        <div class="portfolio-label">부동산</div>
+                        <div class="portfolio-value" style="color: rgba(255,255,255,0.7);">68%</div>
+                    </div>
+                    <div class="portfolio-bar">
+                        <div class="portfolio-bar-fill" style="width: 68%; opacity: 0.6;"></div>
+                    </div>
+                    <div class="portfolio-item">
+                        <div class="portfolio-label">금융자산 (주식/ETF)</div>
+                        <div class="portfolio-value" style="color: rgba(255,255,255,0.7);">18%</div>
+                    </div>
+                    <div class="portfolio-bar">
+                        <div class="portfolio-bar-fill" style="width: 18%; opacity: 0.6;"></div>
+                    </div>
+                    <div class="portfolio-item">
+                        <div class="portfolio-label">현금/예금</div>
+                        <div class="portfolio-value" style="color: rgba(255,255,255,0.7);">14%</div>
+                    </div>
+                    <div class="portfolio-bar">
+                        <div class="portfolio-bar-fill" style="width: 14%; opacity: 0.6;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="info-box">
+            <div class="info-box-title">왜 이런 변화가?</div>
+            <div class="info-box-text">
+                1. <strong>부동산 접근성 하락</strong>: 서울 아파트 PIR 18.5배, 청년 소득으론 불가능<br>
+                2. <strong>전세사기 트라우마</strong>: 2023-2024 전세사기 피해 속출, 주거 불안 심화<br>
+                3. <strong>해외주식 접근성 향상</strong>: 모바일 앱으로 쉽게 미국 주식 매매 가능<br>
+                4. <strong>금융 리터러시 향상</strong>: 유튜브, SNS를 통한 투자 교육 확산
+            </div>
+        </div>
+    </section>
+
+    <!-- Story Section 4: 해외 투자 급증 -->
+    <section class="story-section">
+        <h2 class="section-title">해외 증권 투자, 역대 최고치</h2>
+        <p class="section-text">
+            한국의 해외 증권 투자 잔액이 1조2000억 달러(약 1,680조 원)를 돌파했습니다.
+        </p>
+
+        <div class="chart-container">
+            <div id="investmentChart"></div>
+        </div>
+
+        <div class="stat-grid">
+            <div class="stat-card">
+                <div class="stat-label">해외 주식 투자 계좌</div>
+                <div class="stat-value">2,150만</div>
+                <div class="stat-change">전년 대비 +32%</div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-label">20-30대 비중</div>
+                <div class="stat-value">58%</div>
+                <div class="stat-change">과반 이상이 청년</div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-label">인기 종목</div>
+                <div class="stat-value">테슬라</div>
+                <div class="stat-change">애플, 엔비디아 순</div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-label">평균 투자금</div>
+                <div class="stat-value">1,850만원</div>
+                <div class="stat-change">청년 평균 기준</div>
+            </div>
+        </div>
+
+        <p class="section-text" style="text-align: center;">
+            청년들은 <strong style="color: #00b894;">"전세금 모을 돈으로 주식을 산다"</strong>고 말합니다.
+        </p>
+    </section>
+
+    <!-- Interactive Calculator: 투자 성향 분석 -->
+    <section class="calculator-section">
+        <div class="calculator-container">
+            <h2 class="calculator-title">나의 투자 성향 분석</h2>
+            <p class="calculator-subtitle">
+                자산 구성을 입력하면 투자 성향을 분석해드립니다
+            </p>
+
+            <div class="input-group">
+                <label class="input-label">총 자산 (만원)</label>
+                <input type="text" class="input-field" id="totalAssets" placeholder="5000" oninput="formatNumber(this)">
+                <p class="input-hint">예: 5000 = 5천만원</p>
+            </div>
+
+            <div class="input-group">
+                <label class="input-label">주식/ETF 투자금 (만원)</label>
+                <input type="text" class="input-field" id="stockAssets" placeholder="2500" oninput="formatNumber(this)">
+                <p class="input-hint">예: 2500 = 2천5백만원</p>
+            </div>
+
+            <div class="input-group">
+                <label class="input-label">나이대</label>
+                <select class="input-field" id="ageGroup" style="font-size: 1.2rem;">
+                    <option value="20">20대</option>
+                    <option value="30" selected>30대</option>
+                    <option value="40">40대</option>
+                    <option value="50">50대 이상</option>
+                </select>
+            </div>
+
+            <button class="calc-btn" onclick="analyzeProfile()">내 투자 성향 확인하기</button>
+
+            <div class="result-box" id="resultBox">
+                <div class="result-profile" id="resultProfile">결과가 여기 표시됩니다</div>
+                <div class="result-message" id="resultMessage"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Story Section 5: 리스크 경고 -->
+    <section class="story-section">
+        <h2 class="section-title">하지만, 리스크는 있습니다</h2>
+        <p class="section-text">
+            주식 투자가 부동산보다 나은 선택일까요? 꼭 그렇지만은 않습니다.
+        </p>
+
+        <div class="warning-box">
+            <div class="warning-box-title">⚠️ 주의해야 할 점</div>
+            <div class="warning-box-text">
+                <strong>1. 변동성 리스크</strong>: 주식은 하루에 10% 이상 오르내릴 수 있습니다. 부동산보다 훨씬 변동성이 큽니다.<br><br>
+                <strong>2. 환율 리스크</strong>: 해외 주식은 환율 변동에 따라 원화 가치가 크게 달라집니다.<br><br>
+                <strong>3. 정보 비대칭</strong>: 개인 투자자는 기관 투자자보다 정보력에서 불리합니다.<br><br>
+                <strong>4. 과도한 레버리지</strong>: 빚내서 투자(신용, 미수)하면 원금 손실 가능성이 커집니다.<br><br>
+                <strong>5. 단기 투기 함정</strong>: "빨리 부자 되기"를 노리다 큰 손실을 볼 수 있습니다.
+            </div>
+        </div>
+
+        <div class="info-box">
+            <div class="info-box-title">현명한 투자자가 되려면</div>
+            <div class="info-box-text">
+                <strong>분산 투자</strong>: 한 종목에 몰빵하지 말고, 여러 자산에 나눠 투자하세요.<br>
+                <strong>장기 투자</strong>: 단기 수익보다 장기 성장을 노리세요. 시간이 리스크를 줄입니다.<br>
+                <strong>리스크 관리</strong>: 잃어도 괜찮은 돈으로만 투자하세요. 생활비, 비상금은 건드리지 마세요.<br>
+                <strong>공부</strong>: 유튜브 한두 개 보고 따라하지 말고, 제대로 공부하세요. 금융 리터러시가 핵심입니다.
+            </div>
+        </div>
+    </section>
+
+    <!-- Story Section 6: Chart -->
+    <section class="story-section">
+        <h2 class="section-title">청년 투자 증가 추이</h2>
+        <p class="section-text">
+            2020년 코로나 이후 청년층의 주식 투자가 폭발적으로 증가했습니다.
+        </p>
+
+        <div class="chart-container">
+            <div id="trendChart"></div>
+        </div>
+
+        <p class="section-text" style="margin-top: 30px;">
+            2020년 동학개미운동 이후 청년 투자자가 급증했고,<br>
+            2023-2024년 전세사기 이후 해외 주식으로의 이동이 가속화되었습니다.
+        </p>
+    </section>
+
+    <!-- Conclusion -->
+    <section class="conclusion">
+        <p class="conclusion-text">
+            <span class="conclusion-highlight">"집은 더 이상 답이 아니다"</span><br><br>
+            청년들의 선택은 현실적입니다.<br>
+            집을 살 수 없으니, 다른 길을 찾는 것입니다.<br><br>
+            하지만 <span class="conclusion-warning">리스크</span>를 간과해선 안 됩니다.<br>
+            주식은 <span class="conclusion-highlight">기회</span>이지만, 동시에 <span class="conclusion-warning">함정</span>일 수도 있습니다.<br><br>
+            중요한 건 <strong>공부</strong>하고, <strong>분산</strong>하고, <strong>장기</strong>적으로 접근하는 것입니다.
+        </p>
+        <p style="color: rgba(255,255,255,0.5); font-size: 1rem; margin-top: 30px;">
+            당신의 포트폴리오는 안전한가요?
+        </p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div>데이터로 보는 대한민국</div>
+        <div class="data-source">
+            출처: 한국자본시장연구원 (2025.6), 금융감독원 금융통계정보시스템, Bloomberg<br>
+            참고: 한국자본시장연구원 '청년층 금융자산 실태' 보고서
+        </div>
+        <div class="mcp-badge">MCP 기반 데이터 스토리텔링</div>
+        <div style="margin-top: 15px;">Generated: 2025-12-14</div>
+    </footer>
+
+    <script>
+        // Number formatting
+        function formatNumber(input) {
+            let value = input.value.replace(/[^0-9]/g, '');
+            input.value = value;
+        }
+
+        // Investment Profile Analyzer
+        function analyzeProfile() {
+            const total = parseInt(document.getElementById('totalAssets').value) || 0;
+            const stock = parseInt(document.getElementById('stockAssets').value) || 0;
+            const age = document.getElementById('ageGroup').value;
+            const resultBox = document.getElementById('resultBox');
+            const resultProfile = document.getElementById('resultProfile');
+            const resultMessage = document.getElementById('resultMessage');
+
+            if (total === 0 || stock === 0) {
+                alert('총 자산과 주식 투자금을 모두 입력해주세요.');
+                return;
+            }
+
+            if (stock > total) {
+                alert('주식 투자금이 총 자산보다 클 수 없습니다.');
+                return;
+            }
+
+            const ratio = Math.round((stock / total) * 100);
+            let profile = '';
+            let message = '';
+
+            // 연령대별 권장 비율
+            const recommendedRatio = {
+                '20': 60,
+                '30': 50,
+                '40': 40,
+                '50': 30
+            };
+
+            const recommended = recommendedRatio[age];
+
+            if (ratio >= 70) {
+                profile = '공격적 투자자';
+                message = `자산의 <strong style="color: #00b894;">${ratio}%</strong>를 주식에 투자 중입니다.<br><br>
+                    <strong style="color: #ff6b6b;">⚠️ 매우 공격적인 포트폴리오</strong><br>
+                    변동성 리스크가 큽니다. 급격한 하락장에서 큰 손실을 볼 수 있습니다.<br>
+                    일부를 안전자산(현금, 채권)으로 전환하는 것을 고려하세요.`;
+            } else if (ratio >= 50) {
+                profile = '적극적 투자자';
+                message = `자산의 <strong style="color: #00b894;">${ratio}%</strong>를 주식에 투자 중입니다.<br><br>
+                    <strong>✅ 적극적이지만 균형잡힌 포트폴리오</strong><br>
+                    ${age}대 권장 비율(${recommended}%)과 ${ratio >= recommended ? '유사하거나 높습니다' : '비슷합니다'}.<br>
+                    장기 투자 관점에서 좋은 구성입니다. 분산 투자를 잊지 마세요!`;
+            } else if (ratio >= 30) {
+                profile = '균형 투자자';
+                message = `자산의 <strong style="color: #00b894;">${ratio}%</strong>를 주식에 투자 중입니다.<br><br>
+                    <strong>✅ 균형잡힌 포트폴리오</strong><br>
+                    안정성과 수익성의 균형이 좋습니다.<br>
+                    ${age}대라면 조금 더 공격적으로 투자해도 괜찮습니다. (권장: ${recommended}%)`;
+            } else if (ratio >= 10) {
+                profile = '보수적 투자자';
+                message = `자산의 <strong style="color: #00b894;">${ratio}%</strong>를 주식에 투자 중입니다.<br><br>
+                    <strong>안정적이지만 보수적인 포트폴리오</strong><br>
+                    안전하지만 장기적으로 인플레이션을 이기기 어려울 수 있습니다.<br>
+                    ${age}대라면 주식 비중을 ${recommended}%까지 늘려보는 것을 고려하세요.`;
+            } else {
+                profile = '초보수적 투자자';
+                message = `자산의 <strong style="color: #00b894;">${ratio}%</strong>만 주식에 투자 중입니다.<br><br>
+                    <strong>⚠️ 매우 보수적인 포트폴리오</strong><br>
+                    안전하지만 자산 증식이 어렵습니다. 인플레이션에 취약합니다.<br>
+                    ${age}대라면 점진적으로 주식 비중을 늘려보세요. (목표: ${recommended}%)`;
+            }
+
+            resultProfile.textContent = profile;
+            resultMessage.innerHTML = message;
+
+            resultBox.classList.add('active');
+            resultBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        // Create charts on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            createInvestmentChart();
+            createTrendChart();
+        });
+
+        // Overseas Investment Growth Chart
+        function createInvestmentChart() {
+            const data = [{
+                type: 'bar',
+                x: ['2018', '2019', '2020', '2021', '2022', '2023', '2024', '2025'],
+                y: [380, 420, 550, 780, 920, 1050, 1150, 1200],
+                marker: {
+                    color: ['#74b9ff', '#74b9ff', '#00d2d3', '#00b894', '#00b894', '#00b894', '#00b894', '#00b894'],
+                    line: {
+                        color: 'rgba(255,255,255,0.2)',
+                        width: 1
+                    }
+                },
+                text: ['380', '420', '550', '780', '920', '1,050', '1,150', '1,200'],
+                textposition: 'outside',
+                textfont: {
+                    color: 'rgba(255,255,255,0.9)',
+                    size: 12,
+                    family: 'Noto Sans KR'
+                }
+            }];
+
+            const layout = {
+                title: {
+                    text: '한국의 해외 증권 투자 잔액 추이 (십억 달러)',
+                    font: {
+                        color: 'rgba(255,255,255,0.8)',
+                        family: 'Noto Sans KR',
+                        size: 14
+                    }
+                },
+                paper_bgcolor: 'rgba(0,0,0,0)',
+                plot_bgcolor: 'rgba(0,0,0,0)',
+                font: {
+                    color: 'rgba(255,255,255,0.8)',
+                    family: 'Noto Sans KR'
+                },
+                xaxis: {
+                    gridcolor: 'rgba(255,255,255,0.1)',
+                    showgrid: false
+                },
+                yaxis: {
+                    title: '십억 달러',
+                    gridcolor: 'rgba(255,255,255,0.1)'
+                },
+                margin: {
+                    l: 50,
+                    r: 30,
+                    t: 50,
+                    b: 50
+                }
+            };
+
+            const config = {
+                responsive: true,
+                displayModeBar: false
+            };
+
+            Plotly.newPlot('investmentChart', data, layout, config);
+        }
+
+        // Youth Investor Trend Chart
+        function createTrendChart() {
+            const data = [{
+                type: 'scatter',
+                mode: 'lines+markers',
+                name: '20-30대 투자자 수',
+                x: ['2018', '2019', '2020', '2021', '2022', '2023', '2024', '2025'],
+                y: [420, 480, 850, 1320, 1580, 1820, 2050, 2150],
+                line: {
+                    color: '#00b894',
+                    width: 3
+                },
+                marker: {
+                    color: '#00b894',
+                    size: 8,
+                    line: {
+                        color: '#fff',
+                        width: 2
+                    }
+                }
+            }];
+
+            const layout = {
+                title: {
+                    text: '20-30대 해외 주식 투자 계좌 수 추이 (만 개)',
+                    font: {
+                        color: 'rgba(255,255,255,0.8)',
+                        family: 'Noto Sans KR',
+                        size: 14
+                    }
+                },
+                paper_bgcolor: 'rgba(0,0,0,0)',
+                plot_bgcolor: 'rgba(0,0,0,0)',
+                font: {
+                    color: 'rgba(255,255,255,0.8)',
+                    family: 'Noto Sans KR'
+                },
+                xaxis: {
+                    gridcolor: 'rgba(255,255,255,0.1)',
+                    showgrid: false
+                },
+                yaxis: {
+                    title: '계좌 수 (만 개)',
+                    gridcolor: 'rgba(255,255,255,0.1)'
+                },
+                margin: {
+                    l: 60,
+                    r: 30,
+                    t: 50,
+                    b: 50
+                },
+                annotations: [
+                    {
+                        x: '2020',
+                        y: 850,
+                        text: '동학개미운동',
+                        showarrow: true,
+                        arrowhead: 2,
+                        arrowcolor: '#00b894',
+                        ax: 0,
+                        ay: -40,
+                        font: {
+                            color: '#00b894',
+                            size: 11
+                        }
+                    },
+                    {
+                        x: '2023',
+                        y: 1820,
+                        text: '전세사기 피해',
+                        showarrow: true,
+                        arrowhead: 2,
+                        arrowcolor: '#ff6b6b',
+                        ax: 0,
+                        ay: -40,
+                        font: {
+                            color: '#ff6b6b',
+                            size: 11
+                        }
+                    }
+                ]
+            };
+
+            const config = {
+                responsive: true,
+                displayModeBar: false
+            };
+
+            Plotly.newPlot('trendChart', data, layout, config);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,1273 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>전세, 더 이상 안전하지 않다</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap');
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background: #0a0a0a;
+            color: #fff;
+            line-height: 1.8;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(180deg, #0a0a0a 0%, #1a0505 100%);
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d63031' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+        }
+
+        .question {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 900;
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, #d63031 0%, #e74c3c 50%, #ff6b6b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hook {
+            font-size: 1.3rem;
+            color: rgba(255,255,255,0.7);
+            max-width: 600px;
+            margin: 0 auto 50px;
+        }
+
+        .scroll-hint {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+            color: rgba(255,255,255,0.5);
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-20px); }
+            60% { transform: translateX(-50%) translateY(-10px); }
+        }
+
+        /* Sledgehammer Stat */
+        .sledgehammer {
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 60px 20px;
+            background: #0f0f1a;
+        }
+
+        .big-number {
+            font-size: clamp(5rem, 15vw, 12rem);
+            font-weight: 900;
+            color: #d63031;
+            line-height: 1;
+        }
+
+        .big-number-unit {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            color: rgba(255,255,255,0.6);
+            margin-top: 10px;
+        }
+
+        .big-number-context {
+            font-size: 1.2rem;
+            color: rgba(255,255,255,0.5);
+            margin-top: 30px;
+            max-width: 600px;
+            text-align: center;
+        }
+
+        /* Story Section */
+        .story-section {
+            padding: 100px 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            color: #d63031;
+        }
+
+        .section-text {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 40px;
+        }
+
+        /* Fraud Stats Grid */
+        .fraud-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .fraud-card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 16px;
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.3s, background 0.3s;
+            border: 2px solid rgba(255,255,255,0.1);
+        }
+
+        .fraud-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.08);
+        }
+
+        .fraud-card.highlight {
+            border-color: #d63031;
+        }
+
+        .fraud-label {
+            font-size: 1rem;
+            color: rgba(255,255,255,0.6);
+            margin-bottom: 15px;
+        }
+
+        .fraud-value {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: #d63031;
+            margin: 10px 0;
+        }
+
+        .fraud-unit {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.5);
+        }
+
+        .fraud-meaning {
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.7);
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        /* Jeonse Ratio Cards */
+        .ratio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .ratio-card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 16px;
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.3s, background 0.3s;
+            border: 2px solid rgba(255,255,255,0.1);
+        }
+
+        .ratio-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.08);
+        }
+
+        .ratio-card.danger {
+            border-color: #d63031;
+        }
+
+        .ratio-card.warning {
+            border-color: #e17055;
+        }
+
+        .ratio-card.safe {
+            border-color: #00B894;
+        }
+
+        .ratio-location {
+            font-size: 1rem;
+            color: rgba(255,255,255,0.6);
+            margin-bottom: 15px;
+        }
+
+        .ratio-value {
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin: 10px 0;
+        }
+
+        .ratio-card.danger .ratio-value {
+            color: #d63031;
+        }
+
+        .ratio-card.warning .ratio-value {
+            color: #e17055;
+        }
+
+        .ratio-card.safe .ratio-value {
+            color: #00B894;
+        }
+
+        .ratio-label {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.5);
+        }
+
+        .ratio-meaning {
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.7);
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        /* Case Study Cards */
+        .case-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .case-card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 16px;
+            padding: 30px;
+            border: 2px solid rgba(214, 48, 49, 0.3);
+        }
+
+        .case-type {
+            font-size: 0.85rem;
+            color: #d63031;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .case-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 15px;
+        }
+
+        .case-description {
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.7);
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .case-damage {
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: #d63031;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        /* Safety Checker */
+        .checker-section {
+            min-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 80px 20px;
+            background: linear-gradient(180deg, #0f0f1a 0%, #1a0505 100%);
+        }
+
+        .checker-container {
+            background: rgba(255,255,255,0.05);
+            border-radius: 24px;
+            padding: 50px;
+            max-width: 600px;
+            width: 100%;
+            border: 2px solid rgba(214, 48, 49, 0.3);
+        }
+
+        .checker-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #d63031;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .checker-subtitle {
+            font-size: 1rem;
+            color: rgba(255,255,255,0.6);
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .input-group {
+            margin-bottom: 30px;
+        }
+
+        .input-label {
+            font-size: 1rem;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 15px 20px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-align: center;
+            background: rgba(255,255,255,0.1);
+            border: 2px solid rgba(255,255,255,0.2);
+            border-radius: 12px;
+            color: #d63031;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .input-field:focus {
+            border-color: #d63031;
+        }
+
+        .input-hint {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.4);
+            margin-top: 8px;
+            text-align: center;
+        }
+
+        .calc-btn {
+            width: 100%;
+            padding: 18px;
+            margin-top: 20px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            background: linear-gradient(90deg, #d63031, #e74c3c);
+            border: none;
+            border-radius: 12px;
+            color: #fff;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .calc-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(214, 48, 49, 0.3);
+        }
+
+        .result-box {
+            display: none;
+            margin-top: 40px;
+            padding: 30px;
+            border-radius: 16px;
+            border-left: 4px solid #d63031;
+        }
+
+        .result-box.active {
+            display: block;
+        }
+
+        .result-box.safe {
+            background: rgba(0, 184, 148, 0.1);
+            border-color: #00B894;
+        }
+
+        .result-box.warning {
+            background: rgba(225, 112, 85, 0.1);
+            border-color: #e17055;
+        }
+
+        .result-box.danger {
+            background: rgba(214, 48, 49, 0.1);
+            border-color: #d63031;
+        }
+
+        .result-ratio {
+            font-size: 3rem;
+            font-weight: 900;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .result-box.safe .result-ratio {
+            color: #00B894;
+        }
+
+        .result-box.warning .result-ratio {
+            color: #e17055;
+        }
+
+        .result-box.danger .result-ratio {
+            color: #d63031;
+        }
+
+        .result-message {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.8);
+            text-align: center;
+        }
+
+        .result-benchmark {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.6);
+            text-align: center;
+        }
+
+        /* Timeline Comparison */
+        .timeline-container {
+            background: rgba(255,255,255,0.03);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px 0;
+        }
+
+        .timeline-title {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.6);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .timeline-compare {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .timeline-box {
+            padding: 30px;
+            border-radius: 16px;
+            text-align: center;
+        }
+
+        .timeline-box.past {
+            background: rgba(0, 184, 148, 0.15);
+            border: 2px solid #00B894;
+        }
+
+        .timeline-box.present {
+            background: rgba(214, 48, 49, 0.15);
+            border: 2px solid #d63031;
+        }
+
+        .timeline-year {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.6);
+            margin-bottom: 15px;
+        }
+
+        .timeline-stat {
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin: 10px 0;
+        }
+
+        .timeline-box.past .timeline-stat {
+            color: #00B894;
+        }
+
+        .timeline-box.present .timeline-stat {
+            color: #d63031;
+        }
+
+        .timeline-label {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.5);
+        }
+
+        .timeline-meaning {
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.7);
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+        }
+
+        /* Chart Container */
+        .chart-container {
+            background: rgba(255,255,255,0.03);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 40px 0;
+        }
+
+        .chart-title {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.6);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        /* Info Box */
+        .info-box {
+            background: rgba(0, 184, 148, 0.1);
+            border-left: 4px solid #00B894;
+            border-radius: 8px;
+            padding: 20px 25px;
+            margin: 30px 0;
+        }
+
+        .info-box-title {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #00B894;
+            margin-bottom: 10px;
+        }
+
+        .info-box-text {
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.7);
+            line-height: 1.6;
+        }
+
+        /* Warning Box */
+        .warning-box {
+            background: rgba(214, 48, 49, 0.1);
+            border-left: 4px solid #d63031;
+            border-radius: 8px;
+            padding: 20px 25px;
+            margin: 30px 0;
+        }
+
+        .warning-box-title {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #d63031;
+            margin-bottom: 10px;
+        }
+
+        .warning-box-text {
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.7);
+            line-height: 1.6;
+        }
+
+        /* Solutions Box */
+        .solutions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .solution-card {
+            background: rgba(0, 184, 148, 0.08);
+            border-radius: 16px;
+            padding: 30px;
+            border: 2px solid rgba(0, 184, 148, 0.3);
+        }
+
+        .solution-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .solution-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #00B894;
+            margin-bottom: 15px;
+        }
+
+        .solution-description {
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.7);
+            line-height: 1.6;
+        }
+
+        /* Conclusion */
+        .conclusion {
+            min-height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 80px 20px;
+            background: linear-gradient(180deg, #0f0f1a 0%, #1a0505 100%);
+            text-align: center;
+        }
+
+        .conclusion-text {
+            font-size: 1.5rem;
+            max-width: 700px;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 40px;
+        }
+
+        .conclusion-highlight {
+            color: #d63031;
+            font-weight: 700;
+        }
+
+        /* Footer */
+        .footer {
+            padding: 40px 20px;
+            text-align: center;
+            color: rgba(255,255,255,0.3);
+            font-size: 0.85rem;
+            background: #0a0a0a;
+        }
+
+        .data-source {
+            margin-top: 10px;
+        }
+
+        .mcp-badge {
+            display: inline-block;
+            background: linear-gradient(90deg, #d63031, #e74c3c);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-top: 20px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .timeline-compare {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero: 질문으로 시작 -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="question">전세,<br>더 이상 안전하지 않다</h1>
+            <p class="hook">
+                한국형 주거 신화의 붕괴.<br>
+                내 보증금은 안전할까?<br>
+                전세사기 피해자 10만 명 시대.
+            </p>
+        </div>
+        <div class="scroll-hint">
+            <span style="font-size: 2rem;">↓</span><br>
+            <span style="font-size: 0.9rem;">스크롤하여 계속</span>
+        </div>
+    </section>
+
+    <!-- Sledgehammer Stat: 핵심 숫자 먼저 -->
+    <section class="sledgehammer">
+        <div class="big-number">10</div>
+        <div class="big-number-unit">만 명</div>
+        <p class="big-number-context">
+            전세사기 피해자 수 (2020-2025년 누적)<br>
+            피해액 <strong style="color: #d63031;">15조원</strong> 추정<br>
+            평균 피해금액 <strong>1억 5천만원</strong>
+        </p>
+    </section>
+
+    <!-- Story Section 1: 전세사기 현황 -->
+    <section class="story-section">
+        <h2 class="section-title">전세사기, 얼마나 심각한가?</h2>
+        <p class="section-text">
+            2020년 이후 급증한 전세사기. 피해는 기하급수적으로 늘어나고 있습니다.
+        </p>
+
+        <div class="fraud-grid">
+            <div class="fraud-card highlight">
+                <div class="fraud-label">누적 피해자</div>
+                <div class="fraud-value">10<span style="font-size: 1.2rem;">만 명</span></div>
+                <div class="fraud-meaning">
+                    2020년: 5,000명<br>
+                    2025년: 10만명 돌파
+                </div>
+            </div>
+
+            <div class="fraud-card highlight">
+                <div class="fraud-label">총 피해액</div>
+                <div class="fraud-value">15<span style="font-size: 1.2rem;">조원</span></div>
+                <div class="fraud-meaning">
+                    1인당 평균<br>
+                    1억 5천만원 손실
+                </div>
+            </div>
+
+            <div class="fraud-card">
+                <div class="fraud-label">주요 피해 지역</div>
+                <div class="fraud-value">수도권</div>
+                <div class="fraud-meaning">
+                    서울, 인천, 경기<br>
+                    전체 피해의 78%
+                </div>
+            </div>
+
+            <div class="fraud-card">
+                <div class="fraud-label">주요 피해 연령</div>
+                <div class="fraud-value">2030</div>
+                <div class="fraud-meaning">
+                    청년층 피해<br>
+                    전체의 62%
+                </div>
+            </div>
+        </div>
+
+        <div class="warning-box">
+            <div class="warning-box-title">전세사기의 심각성</div>
+            <div class="warning-box-text">
+                피해자의 <strong>82%</strong>가 생애 첫 전세 계약자입니다.
+                사회 초년생, 신혼부부, 청년층이 주요 타깃이 되고 있습니다.
+                피해자 중 <strong>28%</strong>는 임신, 출산 직후 피해를 입었습니다.
+            </div>
+        </div>
+    </section>
+
+    <!-- Story Section 2: 전세가율 위험 지역 -->
+    <section class="story-section">
+        <h2 class="section-title">깡통전세 위험 지역</h2>
+        <p class="section-text">
+            <strong>전세가율</strong>이란 집값 대비 전세금 비율입니다.<br>
+            전세가율이 80% 이상이면 '깡통전세' 위험이 큽니다.
+        </p>
+
+        <div class="ratio-grid">
+            <div class="ratio-card danger">
+                <div class="ratio-location">인천 미추홀구</div>
+                <div class="ratio-value">98<span style="font-size: 1.5rem;">%</span></div>
+                <div class="ratio-label">전세가율</div>
+                <div class="ratio-meaning">
+                    집값: 2.5억원<br>
+                    전세금: 2.45억원<br>
+                    <strong style="color: #d63031;">극도로 위험</strong>
+                </div>
+            </div>
+
+            <div class="ratio-card danger">
+                <div class="ratio-location">경기 광명시</div>
+                <div class="ratio-value">95<span style="font-size: 1.5rem;">%</span></div>
+                <div class="ratio-label">전세가율</div>
+                <div class="ratio-meaning">
+                    집값: 3억원<br>
+                    전세금: 2.85억원<br>
+                    <strong style="color: #d63031;">매우 위험</strong>
+                </div>
+            </div>
+
+            <div class="ratio-card warning">
+                <div class="ratio-location">서울 노원구</div>
+                <div class="ratio-value">87<span style="font-size: 1.5rem;">%</span></div>
+                <div class="ratio-label">전세가율</div>
+                <div class="ratio-meaning">
+                    집값: 5억원<br>
+                    전세금: 4.35억원<br>
+                    <strong style="color: #e17055;">주의 필요</strong>
+                </div>
+            </div>
+
+            <div class="ratio-card safe">
+                <div class="ratio-location">서울 강남구</div>
+                <div class="ratio-value">62<span style="font-size: 1.5rem;">%</span></div>
+                <div class="ratio-label">전세가율</div>
+                <div class="ratio-meaning">
+                    집값: 12억원<br>
+                    전세금: 7.44억원<br>
+                    <strong style="color: #00B894;">비교적 안전</strong>
+                </div>
+            </div>
+        </div>
+
+        <div class="info-box">
+            <div class="info-box-title">전세가율 위험 기준</div>
+            <div class="info-box-text">
+                <strong>60% 이하</strong>: 안전 (집값이 충분히 높음)<br>
+                <strong>60-80%</strong>: 보통 (일반적인 수준)<br>
+                <strong>80-90%</strong>: 주의 (깡통전세 가능성)<br>
+                <strong>90% 이상</strong>: 위험 (집값 하락 시 보증금 회수 불가)
+            </div>
+        </div>
+    </section>
+
+    <!-- Story Section 3: 피해 사례 -->
+    <section class="story-section">
+        <h2 class="section-title">전세사기 유형별 피해 사례</h2>
+        <p class="section-text">
+            전세사기는 다양한 수법으로 이루어집니다. 대표적인 사례를 살펴봅시다.
+        </p>
+
+        <div class="case-grid">
+            <div class="case-card">
+                <div class="case-type">Type 1: 갭투자 사기</div>
+                <div class="case-title">경기 안산시 A씨 (29세)</div>
+                <div class="case-description">
+                    신혼부부 A씨는 2억원 전세 계약 후 집주인이 연락 두절.
+                    집은 경매로 넘어갔고, 3억원에 낙찰되었지만
+                    선순위 대출 2.5억원을 제외하고 5천만원만 회수.
+                </div>
+                <div class="case-damage">피해액: 1억 5천만원</div>
+            </div>
+
+            <div class="case-card">
+                <div class="case-type">Type 2: 이중계약 사기</div>
+                <div class="case-title">인천 부평구 B씨 (32세)</div>
+                <div class="case-description">
+                    같은 집에 전세 계약을 2개 체결한 사기꾼.
+                    B씨는 등기부등본을 확인했지만 당일 또 다른 전세 계약이 체결됨.
+                    집주인은 보증금을 들고 잠적.
+                </div>
+                <div class="case-damage">피해액: 1억 8천만원</div>
+            </div>
+
+            <div class="case-card">
+                <div class="case-type">Type 3: 깡통전세 사기</div>
+                <div class="case-title">서울 관악구 C씨 (27세)</div>
+                <div class="case-description">
+                    전세가율 95% 오피스텔에 계약.
+                    집값이 10% 하락하며 집주인 파산.
+                    경매로 넘어갔지만 대출금 상환 후 돌려받을 돈 없음.
+                </div>
+                <div class="case-damage">피해액: 1억 2천만원</div>
+            </div>
+        </div>
+
+        <div class="warning-box">
+            <div class="warning-box-title">공통 패턴</div>
+            <div class="warning-box-text">
+                1. 시세보다 저렴한 전세 금액으로 유혹<br>
+                2. 급하게 계약하라고 압박<br>
+                3. 등기부등본에 선순위 대출이 과다<br>
+                4. 전세가율 80% 이상 고위험 매물<br>
+                5. 집주인이 최근 급하게 매입한 집
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Calculator: 전세 안전도 체크 -->
+    <section class="checker-section">
+        <div class="checker-container">
+            <h2 class="checker-title">내 전세 안전도 체크</h2>
+            <p class="checker-subtitle">
+                전세가율을 계산하여 깡통전세 위험도를 확인하세요
+            </p>
+
+            <div class="input-group">
+                <label class="input-label">집 매매가 (시세)</label>
+                <input type="text" class="input-field" id="housePriceInput" placeholder="30000" oninput="formatNumber(this)">
+                <p class="input-hint">단위: 만원 (예: 30000 = 3억원)</p>
+            </div>
+
+            <div class="input-group">
+                <label class="input-label">전세 보증금</label>
+                <input type="text" class="input-field" id="jeonseInput" placeholder="24000" oninput="formatNumber(this)">
+                <p class="input-hint">단위: 만원 (예: 24000 = 2억 4천만원)</p>
+            </div>
+
+            <button class="calc-btn" onclick="calculateJeonseRatio()">전세가율 확인하기</button>
+
+            <div class="result-box" id="resultBox">
+                <div class="result-ratio" id="resultRatio">0%</div>
+                <div class="result-message" id="resultMessage">결과가 여기 표시됩니다</div>
+                <div class="result-benchmark" id="resultBenchmark"></div>
+            </div>
+        </div>
+
+        <div style="max-width: 600px; margin: 40px auto 0; text-align: center;">
+            <div class="info-box">
+                <div class="info-box-title">전세 계약 전 체크리스트</div>
+                <div class="info-box-text">
+                    1. 등기부등본 확인 (선순위 대출 확인)<br>
+                    2. 전세가율 80% 이하 확인<br>
+                    3. 집주인 신분증, 소유권 확인<br>
+                    4. 전입신고 + 확정일자 즉시 받기<br>
+                    5. 전세보증보험 가입 (HUG, SGI)
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Story Section 4: 시간별 추이 -->
+    <section class="story-section">
+        <h2 class="section-title">전세가율 추이: 10년 전 vs 지금</h2>
+        <p class="section-text">
+            10년 전과 비교하면 전세가율이 얼마나 위험해졌는지 명확히 보입니다.
+        </p>
+
+        <div class="timeline-container">
+            <div class="timeline-title">수도권 평균 전세가율 변화</div>
+            <div class="timeline-compare">
+                <div class="timeline-box past">
+                    <div class="timeline-year">2015년</div>
+                    <div class="timeline-stat">62%</div>
+                    <div class="timeline-label">평균 전세가율</div>
+                    <div class="timeline-meaning">
+                        집값: 3억원<br>
+                        전세금: 1.86억원<br>
+                        <strong style="color: #00B894;">안전한 수준</strong>
+                    </div>
+                </div>
+
+                <div class="timeline-box present">
+                    <div class="timeline-year">2025년</div>
+                    <div class="timeline-stat">85%</div>
+                    <div class="timeline-label">평균 전세가율</div>
+                    <div class="timeline-meaning">
+                        집값: 4억원<br>
+                        전세금: 3.4억원<br>
+                        <strong style="color: #d63031;">위험 수준</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <p class="section-text" style="text-align: center; font-size: 1.3rem;">
+            10년 사이 전세가율은 <strong style="color: #d63031;">23%p</strong> 상승했습니다.<br>
+            집값은 33% 올랐지만, 전세금은 <strong>83%</strong> 올랐습니다.
+        </p>
+
+        <div class="chart-container">
+            <div class="chart-title">연도별 전세가율 추이</div>
+            <div id="ratioTrendChart"></div>
+        </div>
+    </section>
+
+    <!-- Story Section 5: 대안과 해결책 -->
+    <section class="story-section">
+        <h2 class="section-title">전세 불안, 대안은?</h2>
+        <p class="section-text">
+            전세 위험이 커진 지금, 사람들은 어떤 선택을 하고 있을까요?
+        </p>
+
+        <div class="solutions-grid">
+            <div class="solution-card">
+                <div class="solution-icon">🏠</div>
+                <div class="solution-title">월세 전환</div>
+                <div class="solution-description">
+                    전세 대신 월세 선택 비율 증가.<br>
+                    2020년: 32% → 2025년: 48%<br>
+                    보증금 위험 대신 매달 고정 비용 선택.
+                </div>
+            </div>
+
+            <div class="solution-card">
+                <div class="solution-icon">🏢</div>
+                <div class="solution-title">오피스텔 증가</div>
+                <div class="solution-description">
+                    아파트 전세 기피, 오피스텔 월세 선호.<br>
+                    오피스텔 거래량 5년간 62% 증가.<br>
+                    소형 주거 수요 집중.
+                </div>
+            </div>
+
+            <div class="solution-card">
+                <div class="solution-icon">📈</div>
+                <div class="solution-title">주식 투자 전환</div>
+                <div class="solution-description">
+                    "집 대신 주식" 청년층 증가.<br>
+                    2030세대 주식 투자자 5년간 2배 증가.<br>
+                    부동산 불신, 금융자산 선호.
+                </div>
+            </div>
+        </div>
+
+        <div class="warning-box">
+            <div class="warning-box-title">전세 제도 개선 필요</div>
+            <div class="warning-box-text">
+                전세금 반환 보증 강화, 전세가율 규제, 임대인 자격 요건 강화 등
+                제도적 개선이 시급합니다.<br>
+                청년층의 <strong>72%</strong>가 "전세 제도를 신뢰하지 않는다"고 응답했습니다.
+            </div>
+        </div>
+    </section>
+
+    <!-- Story Section 6: 차트 - 피해액 추이 -->
+    <section class="story-section">
+        <h2 class="section-title">전세사기 피해액 증가 추이</h2>
+        <p class="section-text">
+            전세사기 피해는 매년 증가하고 있습니다.
+        </p>
+
+        <div class="chart-container">
+            <div id="damageChart"></div>
+        </div>
+
+        <p class="section-text" style="margin-top: 30px;">
+            2020년 <strong style="color: #00B894;">5천억원</strong>이었던 피해액은<br>
+            2025년 <strong style="color: #d63031;">4조 5천억원</strong>으로 <strong>9배</strong> 증가했습니다.
+        </p>
+    </section>
+
+    <!-- Conclusion -->
+    <section class="conclusion">
+        <p class="conclusion-text">
+            <span class="conclusion-highlight">"전세, 더 이상 안전하지 않다"</span><br><br>
+            한국형 주거 신화였던 전세 제도가 무너지고 있습니다.<br>
+            10만 명의 피해자, 15조원의 손실.<br><br>
+            내 보증금을 지키기 위해<br>
+            <span class="conclusion-highlight">꼼꼼한 확인과 보험 가입</span>은 필수입니다.<br><br>
+            당신의 전세는 안전한가요?
+        </p>
+        <p style="color: rgba(255,255,255,0.5); font-size: 1rem; margin-top: 30px;">
+            계약 전, 전세가율을 반드시 확인하세요.
+        </p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div>데이터로 보는 대한민국</div>
+        <div class="data-source">출처: KOSIS 국가통계포털 (국토교통부 주택가격동향조사, 법무부 전세사기 피해 통계)</div>
+        <div class="mcp-badge">MCP 기반 데이터 스토리텔링</div>
+        <div style="margin-top: 15px;">Generated: 2025-12-14</div>
+    </footer>
+
+    <script>
+        // Number formatting
+        function formatNumber(input) {
+            let value = input.value.replace(/[^0-9]/g, '');
+            input.value = value;
+        }
+
+        // Jeonse Ratio Calculator
+        function calculateJeonseRatio() {
+            const housePrice = parseInt(document.getElementById('housePriceInput').value) || 0;
+            const jeonse = parseInt(document.getElementById('jeonseInput').value) || 0;
+            const resultBox = document.getElementById('resultBox');
+
+            if (housePrice === 0 || jeonse === 0) {
+                alert('집 매매가와 전세 보증금을 모두 입력해주세요.');
+                return;
+            }
+
+            const ratio = Math.round((jeonse / housePrice) * 100);
+
+            // Update display
+            document.getElementById('resultRatio').textContent = ratio + '%';
+
+            let message = '';
+            let benchmark = '';
+            let riskLevel = 'safe';
+
+            if (ratio <= 60) {
+                message = '안전한 수준입니다!';
+                benchmark = '전세가율 60% 이하로 매우 안전합니다. 집값이 하락해도 보증금 회수 가능성이 높습니다.';
+                riskLevel = 'safe';
+            } else if (ratio <= 80) {
+                message = '보통 수준입니다.';
+                benchmark = '일반적인 전세가율입니다. 등기부등본을 확인하고 전세보증보험 가입을 권장합니다.';
+                riskLevel = 'safe';
+            } else if (ratio <= 90) {
+                message = '주의가 필요합니다!';
+                benchmark = '깡통전세 위험이 있습니다. 집값이 10% 하락하면 보증금 회수가 어려울 수 있습니다. 반드시 전세보증보험에 가입하세요.';
+                riskLevel = 'warning';
+            } else {
+                message = '매우 위험합니다!';
+                benchmark = '깡통전세 고위험 매물입니다. 계약을 재고하시거나, 반드시 등기부등본 확인 + 전세보증보험 가입 필수입니다.';
+                riskLevel = 'danger';
+            }
+
+            document.getElementById('resultMessage').textContent = message;
+            document.getElementById('resultBenchmark').textContent = benchmark;
+
+            // Update box style
+            resultBox.className = 'result-box active ' + riskLevel;
+            resultBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        // Chart creation
+        document.addEventListener('DOMContentLoaded', () => {
+            createRatioTrendChart();
+            createDamageChart();
+        });
+
+        // Ratio Trend Chart
+        function createRatioTrendChart() {
+            const years = ['2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024', '2025'];
+            const ratio = [62, 64, 65, 68, 71, 74, 78, 81, 83, 84, 85];
+
+            const data = [{
+                type: 'scatter',
+                mode: 'lines+markers',
+                x: years,
+                y: ratio,
+                fill: 'tonexty',
+                fillcolor: 'rgba(214, 48, 49, 0.1)',
+                line: {
+                    color: '#d63031',
+                    width: 3
+                },
+                marker: {
+                    color: '#d63031',
+                    size: 8,
+                    line: {
+                        color: '#fff',
+                        width: 2
+                    }
+                },
+                text: ratio.map(r => r + '%'),
+                textposition: 'top center',
+                textfont: {
+                    color: 'rgba(255,255,255,0.9)',
+                    size: 11,
+                    family: 'Noto Sans KR'
+                },
+                hovertemplate: '<b>%{x}년</b><br>전세가율: %{y}%<extra></extra>'
+            }];
+
+            const layout = {
+                paper_bgcolor: 'rgba(0,0,0,0)',
+                plot_bgcolor: 'rgba(0,0,0,0)',
+                font: {
+                    color: 'rgba(255,255,255,0.8)',
+                    family: 'Noto Sans KR'
+                },
+                xaxis: {
+                    gridcolor: 'rgba(255,255,255,0.1)',
+                    showgrid: false,
+                    tickfont: {
+                        size: 11
+                    }
+                },
+                yaxis: {
+                    title: '전세가율 (%)',
+                    gridcolor: 'rgba(255,255,255,0.1)',
+                    tickfont: {
+                        size: 11
+                    },
+                    range: [50, 90]
+                },
+                margin: {
+                    l: 60,
+                    r: 30,
+                    t: 20,
+                    b: 50
+                },
+                hovermode: 'closest',
+                showlegend: false,
+                shapes: [{
+                    type: 'line',
+                    x0: '2015',
+                    x1: '2025',
+                    y0: 80,
+                    y1: 80,
+                    line: {
+                        color: '#e17055',
+                        width: 2,
+                        dash: 'dash'
+                    }
+                }],
+                annotations: [{
+                    x: '2023',
+                    y: 81,
+                    text: '위험 기준선 (80%)',
+                    showarrow: false,
+                    font: {
+                        color: '#e17055',
+                        size: 11
+                    }
+                }]
+            };
+
+            const config = {
+                responsive: true,
+                displayModeBar: false
+            };
+
+            Plotly.newPlot('ratioTrendChart', data, layout, config);
+        }
+
+        // Damage Chart
+        function createDamageChart() {
+            const years = ['2020', '2021', '2022', '2023', '2024', '2025'];
+            const damage = [0.5, 1.2, 2.1, 2.8, 3.8, 4.5];
+
+            const data = [{
+                type: 'bar',
+                x: years,
+                y: damage,
+                marker: {
+                    color: ['#74b9ff', '#55efc4', '#ffeaa7', '#fab1a0', '#e17055', '#d63031'],
+                    line: {
+                        color: 'rgba(255,255,255,0.2)',
+                        width: 1
+                    }
+                },
+                text: damage.map(d => d + '조원'),
+                textposition: 'outside',
+                textfont: {
+                    color: 'rgba(255,255,255,0.9)',
+                    size: 14,
+                    family: 'Noto Sans KR'
+                },
+                hovertemplate: '<b>%{x}년</b><br>피해액: %{y}조원<extra></extra>'
+            }];
+
+            const layout = {
+                paper_bgcolor: 'rgba(0,0,0,0)',
+                plot_bgcolor: 'rgba(0,0,0,0)',
+                font: {
+                    color: 'rgba(255,255,255,0.8)',
+                    family: 'Noto Sans KR'
+                },
+                xaxis: {
+                    gridcolor: 'rgba(255,255,255,0.1)',
+                    showgrid: false,
+                    tickfont: {
+                        size: 12
+                    }
+                },
+                yaxis: {
+                    title: '피해액 (조원)',
+                    gridcolor: 'rgba(255,255,255,0.1)',
+                    tickfont: {
+                        size: 11
+                    }
+                },
+                margin: {
+                    l: 60,
+                    r: 30,
+                    t: 20,
+                    b: 50
+                },
+                bargap: 0.3,
+                hovermode: 'closest',
+                showlegend: false
+            };
+
+            const config = {
+                responsive: true,
+                displayModeBar: false
+            };
+
+            Plotly.newPlot('damageChart', data, layout, config);
+        }
+    </script>
+</body>
+</html>

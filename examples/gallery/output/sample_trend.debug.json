@@ -1,0 +1,109 @@
+{
+  "report_id": "ba6169ea-8a55-405c-a236-70c4a327e2a9",
+  "timestamp": "2025-12-13T22:42:35.740135",
+  "user_query": "전국 인구 추이 분석",
+  "parsed_query": {
+    "raw_query": "전국 인구 추이 분석",
+    "target_regions": [
+      "전국"
+    ],
+    "target_periods": [],
+    "target_items": [],
+    "comparison_type": "temporal",
+    "analysis_depth": "standard",
+    "include_visualization": true
+  },
+  "sections_determined": [
+    "summary",
+    "eda",
+    "trend",
+    "stats",
+    "visualization"
+  ],
+  "processing_steps": [
+    {
+      "step": "parse_query",
+      "detail": "쿼리 파싱: '전국 인구 추이 분석'",
+      "duration_ms": 1.1300829937681556
+    },
+    {
+      "step": "determine_sections",
+      "detail": "섹션 결정: summary, eda, trend, stats, visualization",
+      "sections": [
+        "summary",
+        "eda",
+        "trend",
+        "stats",
+        "visualization"
+      ],
+      "duration_ms": 0.0019169820006936789
+    },
+    {
+      "step": "filter_data",
+      "detail": "데이터 필터링: 20건 → 4건",
+      "records_before": 20,
+      "records_after": 4,
+      "duration_ms": 0.977666990365833
+    },
+    {
+      "step": "generate_header",
+      "detail": "HTML 헤더 생성",
+      "duration_ms": 0.0015830155462026596
+    },
+    {
+      "step": "generate_summary_card",
+      "detail": "요약 카드 생성",
+      "duration_ms": 0.1963749818969518
+    },
+    {
+      "step": "generate_section_summary",
+      "detail": "섹션 생성: summary",
+      "success": false,
+      "duration_ms": 0.003374996595084667
+    },
+    {
+      "step": "generate_section_eda",
+      "detail": "섹션 생성: eda",
+      "success": true,
+      "duration_ms": 0.6189160048961639
+    },
+    {
+      "step": "generate_section_trend",
+      "detail": "섹션 생성: trend",
+      "success": true,
+      "duration_ms": 1.2634579907171428
+    },
+    {
+      "step": "generate_section_stats",
+      "detail": "섹션 생성: stats",
+      "success": true,
+      "duration_ms": 0.5643330223392695
+    },
+    {
+      "step": "generate_section_visualization",
+      "detail": "섹션 생성: visualization",
+      "success": true,
+      "duration_ms": 115.37124999449588
+    },
+    {
+      "step": "generate_footer",
+      "detail": "HTML 푸터 생성",
+      "duration_ms": 0.013791024684906006
+    }
+  ],
+  "data_info": {
+    "total_records": 20,
+    "filtered_records": 4,
+    "columns": [
+      "PRD_DE",
+      "C1_NM",
+      "DT",
+      "ITM_NM",
+      "UNIT_NM"
+    ],
+    "unique_regions": 5,
+    "unique_periods": 4
+  },
+  "output_path": "sample_trend.html",
+  "total_duration_ms": 120.15587501809932
+}
