@@ -10,9 +10,10 @@
 
 | 우선순위 | 문서 | 목적 | 언제 참조 |
 |:--------:|------|------|----------|
-| 1 | **[MCP_PATTERN.md](./MCP_PATTERN.md)** | 대용량 데이터 처리 핵심 패턴 | 모든 MCP 도구 개발 시 |
-| 2 | **[docs/ARCHITECTURE_DESIGN.md](./docs/ARCHITECTURE_DESIGN.md)** | 전체 시스템 아키텍처 | 새 기능 설계 시 |
-| 3 | **[docs/CODEBASE_WALKTHROUGH.md](./docs/CODEBASE_WALKTHROUGH.md)** | 코드베이스 구조, 파일 역할 | 코드 수정 시 |
+| 1 | **[PRD.md](./PRD.md)** | 제품 요구사항, 유저 스토리, 수락 기준 | 기능 구현 전 |
+| 2 | **[MCP_PATTERN.md](./MCP_PATTERN.md)** | 대용량 데이터 처리 핵심 패턴 | 모든 MCP 도구 개발 시 |
+| 3 | **[docs/ARCHITECTURE_DESIGN.md](./docs/ARCHITECTURE_DESIGN.md)** | 전체 시스템 아키텍처 | 새 기능 설계 시 |
+| 4 | **[docs/CODEBASE_WALKTHROUGH.md](./docs/CODEBASE_WALKTHROUGH.md)** | 코드베이스 구조, 파일 역할 | 코드 수정 시 |
 
 ### API & 데이터 문서
 
