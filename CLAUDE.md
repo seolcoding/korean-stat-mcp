@@ -29,12 +29,13 @@
 | [docs/METADATA_JSON_SCHEMA.md](./docs/METADATA_JSON_SCHEMA.md) | JSON 스키마 정의 |
 | [docs/METADATA_OPTIMIZATION_STRATEGY.md](./docs/METADATA_OPTIMIZATION_STRATEGY.md) | 최적화 전략 |
 
-### 배포 & 인프라 문서 (작성 예정)
+### 배포 & 인프라 문서
 
 | 문서 | 내용 | 상태 |
 |------|------|------|
-| [docs/DEPLOYMENT.md](./docs/DEPLOYMENT.md) | 배포 전략, Docker, R2, Tailscale | 🚧 작성 예정 |
-| [docs/HYBRID_SEARCH.md](./docs/HYBRID_SEARCH.md) | PostgreSQL + pgvector + 임베딩 | 🚧 작성 예정 |
+| [docs/ARCHITECTURE_DESIGN.md](./docs/ARCHITECTURE_DESIGN.md) | 전체 시스템 아키텍처, 레이어 구조, 데이터 흐름 | ✅ 완료 |
+| [docs/DEPLOYMENT.md](./docs/DEPLOYMENT.md) | FastMCP HTTP, Docker, R2 CDN, PostgreSQL | ✅ 완료 |
+| [docs/HYBRID_SEARCH.md](./docs/HYBRID_SEARCH.md) | pgvector HNSW, BM25 FTS, RRF 결합 | ✅ 완료 |
 | [ROADMAP.md](./ROADMAP.md) | 구현 로드맵, 마일스톤 | 🚧 작성 예정 |
 
 ---
