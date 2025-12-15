@@ -4,71 +4,81 @@ KOSIS(국가통계포털) 데이터를 Claude와 다른 LLM에서 직접 조회�
 
 ## Features
 
-- **DISCOVER**: 통계표 검색, 기관/주제 목록 조회, 메타데이터 확인
-- **FETCH**: 통계 데이터 조회, 필터링, 집계
-- **PRESENT**: 추세/비교/순위 분석, 시각화, 리포트 생성
+- **DISCOVER**: 하이브리드 검색 (벡터 + BM25), 252,890개 테이블 메타데이터
+- **FETCH**: 통계 데이터 조회, 필터링, 집계, 청크 처리
+- **PRESENT**: 모듈형 Executor (시각화, 분석, 테이블, 리포트)
 
-## Installation
+## Quick Start
 
-### Prerequisites
-
-- Python 3.12+
-- [KOSIS OpenAPI Key](https://kosis.kr/openapi/) (무료 발급)
-
-### Option 1: uvx (권장)
-
-설치 없이 바로 실행:
+### Docker (권장)
 
 ```bash
-uvx kosis-mcp
+# 1. Clone
+git clone https://github.com/sdh/kosis-mcp.git
+cd kosis-mcp
+
+# 2. 환경 변수 설정
+cp .env.example .env
+# .env 파일에 KOSIS_API_KEY 입력
+
+# 3. 실행
+docker-compose up -d
+
+# 4. 확인
+curl http://localhost:8000/health
 ```
 
-### Option 2: pip
+### 수동 설치
 
 ```bash
-pip install kosis-mcp
-```
+# 의존성 설치
+uv sync
 
-### Option 3: uv
+# PostgreSQL 실행 (별도 필요)
+# 메타데이터 로드
+uv run python scripts/load_metadata.py
 
-```bash
-uv add kosis-mcp
+# 서버 실행
+DATABASE_URL="postgresql://..." uv run uvicorn mcp_server.app:app --port 8000
 ```
 
 ## Configuration
 
-### Environment Variable
+### 환경 변수
 
 ```bash
-export KOSIS_API_KEY="your-api-key"
-```
+# 필수
+KOSIS_API_KEY=your-api-key              # KOSIS OpenAPI 키
+DATABASE_URL=postgresql://user:pass@host/db  # PostgreSQL
 
-또는 `.env` 파일 생성:
-
-```env
-KOSIS_API_KEY=your-api-key
+# 선택
+OPENAI_API_KEY=sk-...                   # 벡터 검색용 임베딩
+KOSIS_ARTIFACTS_DIR=/tmp/kosis_artifacts  # 아티팩트 저장
+KOSIS_BASE_URL=http://localhost:8000    # 아티팩트 URL
 ```
 
 ## Claude Desktop Integration
 
-### 방법 1: fastmcp install (권장)
-
-```bash
-fastmcp install claude-desktop kosis-mcp --env KOSIS_API_KEY=your-key
-```
-
-### 방법 2: 수동 설정
-
-Claude Desktop 설정 파일 위치:
-- **macOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`
-- **Windows**: `%APPDATA%\Claude\claude_desktop_config.json`
+### 방법 1: HTTP 모드 (Docker)
 
 ```json
 {
   "mcpServers": {
     "kosis-mcp": {
-      "command": "uvx",
-      "args": ["kosis-mcp"],
+      "url": "http://localhost:8000/mcp"
+    }
+  }
+}
+```
+
+### 방법 2: stdio 모드
+
+```json
+{
+  "mcpServers": {
+    "kosis-mcp": {
+      "command": "uv",
+      "args": ["run", "fastmcp", "run", "src/mcp_server/server.py"],
       "env": {
         "KOSIS_API_KEY": "your-api-key"
       }
@@ -77,71 +87,106 @@ Claude Desktop 설정 파일 위치:
 }
 ```
 
-설정 후 Claude Desktop을 재시작하세요.
-
 ## Available Tools
 
-| Category | Tool | Description |
-|----------|------|-------------|
-| DISCOVER | `search_statistics` | 키워드로 통계표 검색 |
-| DISCOVER | `list_organizations` | 통계 작성 기관 목록 |
-| DISCOVER | `list_themes` | 통계 주제 분류 목록 |
-| DISCOVER | `get_table_metadata` | 통계표 상세 메타데이터 |
-| FETCH | `get_statistics_data` | 통계 데이터 조회 |
-| FETCH | `filter_data` | 데이터 필터링 |
-| FETCH | `aggregate_data` | 데이터 집계 |
-| FETCH | `get_available_values` | 사용 가능한 필드 값 조회 |
-| PRESENT | `analyze_trend` | 시계열 추세 분석 |
-| PRESENT | `analyze_comparison` | 항목 간 비교 분석 |
-| PRESENT | `analyze_ranking` | 순위 분석 |
-| PRESENT | `analyze_statistics` | 기술통계 분석 |
-| PRESENT | `create_quick_report` | 원클릭 분석 리포트 |
-| PRESENT | `create_custom_report` | 커스텀 리포트 생성 |
+### Layer 1: DISCOVER
+
+| Tool | Description |
+|------|-------------|
+| `search_tables_hybrid` | 하이브리드 검색 (벡터 + BM25 + RRF) |
+| `browse_categories` | 카테고리/주제 브라우징 |
+| `get_table_metadata` | 테이블 구조 및 분류 조회 |
+| `get_available_values` | 분류항목 값 목록 |
+
+### Layer 2: FETCH
+
+| Tool | Description |
+|------|-------------|
+| `get_statistics_data` | KOSIS API 데이터 조회 |
+| `filter_statistics` | 데이터 필터링 |
+| `aggregate_statistics` | 그룹별 집계 |
+| `list_stored_data` | 저장된 데이터 목록 |
+| `read_stored_data` | 청크 단위 데이터 읽기 |
+
+### Layer 3: PRESENT (Modular Executors)
+
+| Tool | Description |
+|------|-------------|
+| `execute_visualization` | Altair 차트 생성 (URL 반환) |
+| `execute_analysis` | 통계 분석 (변화율, CAGR 등) |
+| `execute_table` | HTML 테이블 생성 |
+| `execute_report` | 복합 리포트 (차트+분석+테이블) |
 
 ## Usage Examples
 
-Claude에서 사용 예시:
+### 하이브리드 검색
 
 ```
-"인구 관련 통계표를 검색해줘"
-→ search_statistics("인구")
+"인구 관련 통계표를 찾아줘"
+→ search_tables_hybrid("인구")
+→ 벡터 유사도 + BM25 키워드 검색 결합
+```
 
-"통계청의 행정구역별 인구수 데이터를 2020-2023년으로 조회해줘"
-→ get_statistics_data(org_id="101", tbl_id="DT_1B040A3",
-                       start_period="2020", end_period="2023")
+### 데이터 조회 및 시각화
 
-"서울시 인구 추세를 분석해줘"
-→ analyze_trend(data, time_field="PRD_DE", value_field="DT")
+```
+"서울 인구 추이를 차트로 보여줘"
+→ get_statistics_data(org_id="101", tbl_id="DT_1B040A3", ...)
+→ execute_visualization(code="...", data=...)
+→ http://localhost:8000/artifacts/charts/xxx.html
+```
+
+### 복합 리포트 생성
+
+```
+"서울, 부산, 대구 인구 비교 리포트를 만들어줘"
+→ execute_analysis(...) - 비교 분석
+→ execute_visualization(...) - 비교 차트
+→ execute_table(...) - 비교 테이블
+→ execute_report(...) - 조합
+→ http://localhost:8000/artifacts/reports/xxx.html
 ```
 
 ## Development
 
 ```bash
-# Clone repository
-git clone https://github.com/sdh/kosis-mcp.git
-cd kosis-mcp
+# 테스트
+uv run pytest tests/ -v
 
-# Install dependencies
-uv sync --dev
+# MCP Inspector
+uv run fastmcp dev src/mcp_server/server.py
 
-# Run tests
-uv run pytest
+# 타입 체크
+uv run mypy src/
 
-# Run MCP Inspector (interactive testing)
-uv run fastmcp dev src/kosis_tools/mcp_server.py
-
-# Inspect server tools
-uv run fastmcp inspect src/kosis_tools/mcp_server.py
+# E2E 시나리오 테스트 (Claude Code)
+/test-mcp
 ```
 
-## Publishing to PyPI
+## Architecture
 
-```bash
-# Build
-uv build
-
-# Publish (requires PyPI token)
-uv publish
+```
+┌─────────────────────────────────────────┐
+│          FastAPI + FastMCP              │
+│  ┌─────────────────────────────────────┐│
+│  │ Layer 3: Modular Executors          ││
+│  │  visualization | analysis | report  ││
+│  └─────────────────────────────────────┘│
+│  ┌─────────────────────────────────────┐│
+│  │ Layer 2: Data Operations            ││
+│  │  fetch | filter | aggregate         ││
+│  └─────────────────────────────────────┘│
+│  ┌─────────────────────────────────────┐│
+│  │ Layer 1: Discovery                  ││
+│  │  hybrid_search | metadata           ││
+│  └─────────────────────────────────────┘│
+└─────────────────────────────────────────┘
+         │              │
+         ▼              ▼
+┌─────────────┐  ┌─────────────┐
+│ PostgreSQL  │  │ KOSIS API   │
+│ + pgvector  │  │             │
+└─────────────┘  └─────────────┘
 ```
 
 ## License

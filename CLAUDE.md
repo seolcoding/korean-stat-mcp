@@ -28,16 +28,14 @@
 |------|------|
 | [docs/METADATA_COLLECTION_GUIDE.md](./docs/METADATA_COLLECTION_GUIDE.md) | 메타데이터 수집 방법 |
 | [docs/METADATA_JSON_SCHEMA.md](./docs/METADATA_JSON_SCHEMA.md) | JSON 스키마 정의 |
-| [docs/METADATA_OPTIMIZATION_STRATEGY.md](./docs/METADATA_OPTIMIZATION_STRATEGY.md) | 최적화 전략 |
 
 ### 배포 & 인프라 문서
 
 | 문서 | 내용 | 상태 |
 |------|------|------|
 | [docs/ARCHITECTURE_DESIGN.md](./docs/ARCHITECTURE_DESIGN.md) | 전체 시스템 아키텍처, 레이어 구조, 데이터 흐름 | ✅ 완료 |
-| [docs/DEPLOYMENT.md](./docs/DEPLOYMENT.md) | FastMCP HTTP, Docker, R2 CDN, PostgreSQL | ✅ 완료 |
+| [docs/DEPLOYMENT.md](./docs/DEPLOYMENT.md) | FastMCP HTTP, Docker, PostgreSQL | ✅ 완료 |
 | [docs/HYBRID_SEARCH.md](./docs/HYBRID_SEARCH.md) | pgvector HNSW, BM25 FTS, RRF 결합 | ✅ 완료 |
-| [ROADMAP.md](./ROADMAP.md) | 구현 로드맵, 마일스톤 | 🚧 작성 예정 |
 
 ---
 
@@ -45,25 +43,26 @@
 
 ### 완료된 기능 ✅
 
-- **MCP 서버 기본 구조** (FastMCP 기반)
-- **KOSIS API 연동** (검색, 조회, 메타데이터)
-- **Code Execution 패턴** (`execute_code` 도구)
-- **시각화** (Altair 기반 차트 생성)
-- **리포트 생성** (HTML 리포트)
-- **메타데이터 카탈로그** (103,796개 테이블, 159MB JSON)
+**Phase 1-2: Core MCP**
+- MCP 서버 기본 구조 (FastMCP 기반)
+- KOSIS API 연동 (검색, 조회, 메타데이터)
+- Code Execution 패턴 (`execute_code` 도구)
+- 시각화 (Altair 기반 차트 생성)
+- 리포트 생성 (HTML 리포트)
 
-### 진행 중인 작업 🚧
+**Phase 3: Production Infrastructure**
+- PostgreSQL + pgvector (252,890 테이블 메타데이터)
+- 하이브리드 검색 (벡터 + BM25 + RRF)
+- OpenAI 임베딩 (`text-embedding-3-small`)
+- FastAPI HTTP 서버 (`app.py`)
+- 정적 파일 서빙 (차트/리포트 URL)
+- Docker 컨테이너화
 
-- **배포 아키텍처 설계**
-  - Docker 컨테이너화
-  - Cloudflare R2 (스태틱 파일 CDN)
-  - 연구실 서버 + Tailscale (외부 접근)
-
-- **하이브리드 검색 시스템**
-  - PostgreSQL + pgvector
-  - OpenAI 임베딩 (text-embedding-3-small)
-  - 벡터 + BM25 하이브리드 검색
-  - 시맨틱 테이블 추천
+**Modular Executors**
+- `execute_visualization` - 차트 생성 (천 단위, 과학적표기법 금지)
+- `execute_analysis` - 통계 분석 (변화율, CAGR)
+- `execute_table` - HTML 테이블 (스타일링)
+- `execute_report` - 복합 리포트 (차트+분석+테이블)
 
 ---
 
@@ -76,20 +75,65 @@
 ✅ 권장 패턴: API → 서버 저장 → 요약만 LLM에 → 필요시 청크 요청
 ```
 
-### 2. 기술 스택
+### 2. 숫자 포맷 규칙
+
+| 항목 | 규칙 | 예시 |
+|------|------|------|
+| 인구 | 천 명 단위 | `9,386천 명` (not `9386320`) |
+| Y축 | `format=",.0f"` | 천 단위 구분자 |
+| 과학적 표기법 | **금지** | `5.17e+7` ❌ |
+
+### 3. 기술 스택
 
 | 영역 | 기술 | 비고 |
 |------|------|------|
-| 시각화 | **Altair** | Plotly 대신 사용 (가볍고 간결) |
-| 서버 | **FastMCP** | MCP 서버 프레임워크 |
-| DB (예정) | **PostgreSQL + pgvector** | 하이브리드 검색용 |
-| 임베딩 (예정) | **OpenAI text-embedding-3-small** | 한국어 성능 우수 |
+| 시각화 | **Altair** | Plotly/Matplotlib 대신 |
+| 서버 | **FastMCP + FastAPI** | MCP + HTTP 듀얼 모드 |
+| DB | **PostgreSQL + pgvector** | 하이브리드 검색 |
+| 임베딩 | **OpenAI text-embedding-3-small** | 1536 차원 |
 
-### 3. 금지 사항
+### 4. 금지 사항
 
 - **Playwright/Selenium/Puppeteer** 사용 금지
 - 모든 데이터 수집은 API 또는 `requests.get`으로
 - 브라우저 자동화 없이 빠르게 파싱 가능해야 함
+
+---
+
+## 디렉토리 구조
+
+```
+kosis-data-processor/
+├── src/
+│   ├── mcp_server/
+│   │   ├── server.py              # MCP 서버 (도구 정의)
+│   │   └── app.py                 # FastAPI HTTP 앱
+│   └── kosis_tools/
+│       ├── report_tools.py        # 데이터 조회/분석
+│       ├── code_executor.py       # execute_code 범용
+│       ├── visualize.py           # Altair 시각화
+│       ├── executors/             # 모듈형 실행기
+│       │   ├── visualization.py   # 차트 (가이드라인 포함)
+│       │   ├── analysis.py        # 분석 (통계 함수)
+│       │   ├── table.py           # 테이블 (스타일링)
+│       │   └── report.py          # 리포트 (조합)
+│       ├── database.py            # PostgreSQL 연결
+│       ├── embeddings.py          # OpenAI 임베딩
+│       └── hybrid_search.py       # 벡터+BM25 검색
+├── data/
+│   └── metadata_api/
+│       └── tables.json            # 메타데이터 (252,890 테이블)
+├── migrations/
+│   └── init.sql                   # PostgreSQL 스키마
+├── scripts/
+│   └── load_metadata.py           # DB 로드 스크립트
+├── .claude/
+│   └── commands/
+│       └── test-mcp.md            # E2E 테스트 슬래시 커맨드
+├── Dockerfile                     # 컨테이너 빌드
+├── docker-compose.yml             # 로컬 개발 환경
+└── CLAUDE.md                      # 이 문서
+```
 
 ---
 
@@ -101,7 +145,6 @@
 |-----------|------|
 | `statisticsParameterData.do` | 실제 데이터 조회 |
 | `statisticsList.do` | 통계 목록 조회 |
-| `statHtmlContent.do` | 테이블 상세 HTML |
 
 ### 데이터 응답 필드
 
@@ -117,75 +160,93 @@
 
 ---
 
-## 시각화 검증 시스템
+## 서버 실행
 
-`execute_code` 도구는 빈 차트 데이터를 자동 감지합니다.
+### 로컬 개발 (Docker Compose)
 
-### 검증 실패 시 응답
+```bash
+# PostgreSQL + 서버 시작
+docker-compose up -d
 
-```json
-{
-  "success": false,
-  "error": "VISUALIZATION_VALIDATION_ERROR",
-  "data_signature": {
-    "fields": {"PRD_DE": {...}, "C1_NM": {...}, "DT": {...}},
-    "sample_records": [...]
-  },
-  "fix_hints": [
-    "prepare_data() 호출 시 올바른 numeric_fields 지정",
-    "DT 필드는 문자열 - 숫자 연산 전 형변환 필요"
-  ]
-}
+# 또는 수동 실행
+DATABASE_URL="postgresql://kosis:kosis_dev_password@localhost:5432/kosis" \
+KOSIS_ARTIFACTS_DIR="/tmp/kosis_artifacts" \
+KOSIS_BASE_URL="http://localhost:8000" \
+uv run uvicorn mcp_server.app:app --port 8000
 ```
 
-### 클라이언트 대응
+### 테스트
 
-1. `data_signature` 참조
-2. 올바른 필드명/타입으로 코드 재작성
-3. 다시 `execute_code` 호출
+```bash
+# 서버 상태 확인
+curl http://localhost:8000/health
+
+# E2E 테스트 슬래시 커맨드
+/test-mcp
+```
 
 ---
 
-## 디렉토리 구조
+## 모듈형 Executor 사용법
 
-```
-kosis-data-processor/
-├── src/
-│   ├── mcp_server/
-│   │   ├── server.py          # MCP 서버 메인 (도구 정의)
-│   │   └── app.py             # FastAPI HTTP 앱 (Phase 3)
-│   └── kosis_tools/
-│       ├── report_tools.py    # 데이터 조회/분석 함수
-│       ├── code_executor.py   # execute_code 구현
-│       ├── visualize.py       # Altair 시각화
-│       ├── database.py        # PostgreSQL 연결 (Phase 3)
-│       ├── embeddings.py      # OpenAI 임베딩 (Phase 3)
-│       ├── hybrid_search.py   # 하이브리드 검색 (Phase 3)
-│       └── r2_storage.py      # Cloudflare R2 (Phase 3)
-├── data/
-│   └── metadata_api/
-│       └── tables.json        # ✅ 메타데이터 카탈로그 (252K 통계표, 54필드)
-├── scripts/
-│   └── load_metadata.py       # DB 로드 스크립트
-├── migrations/
-│   └── init.sql               # PostgreSQL 스키마
-├── docs/                      # 상세 문서
-├── tests/                     # 테스트
-└── CLAUDE.md                  # 이 문서 (엔트리포인트)
+### execute_visualization
+
+```python
+# 천 단위 + 과학적표기법 금지 자동 적용
+code = '''
+df = prepare_data(data, numeric_fields=["DT"])
+df["인구_천명"] = df["DT"] / 1000
+
+chart = alt.Chart(df).mark_line(point=True).encode(
+    x=alt.X("PRD_DE:N", title="연도"),
+    y=alt.Y("인구_천명:Q", title="인구 (천 명)",
+            axis=alt.Axis(format=",.0f")),  # 필수!
+)
+return save_chart(chart, "population.html")
+'''
 ```
 
-### 메타데이터 파일 (중요!)
+### execute_analysis
 
-| 파일 | 설명 |
-|------|------|
-| `data/metadata_api/tables.json` | ✅ **사용** - 252,890개 통계표, 54개 필드 |
-| ~~`kosis_data/kosis_metadata_final.json`~~ | ❌ **삭제됨** - 불완전 (검색어 기반 수집) |
+```python
+# 헬퍼 함수: calc_change_rate, calc_cagr, to_thousand
+code = '''
+df = prepare_data(data, numeric_fields=["DT"])
+pop_2023 = df[df["PRD_DE"] == "2023"]["DT"].iloc[0]
+pop_2019 = df[df["PRD_DE"] == "2019"]["DT"].iloc[0]
 
-> ⚠️ `src/scripts/scrape_kosis_metadata.py`는 DEPRECATED. 사용 금지.
+return {
+    "summary": {
+        "2023년 인구": f"{to_thousand(pop_2023):,.0f}천 명",
+        "변화율": f"{calc_change_rate(pop_2023, pop_2019):.1f}%",
+    }
+}
+'''
+```
+
+### execute_report (조합)
+
+```python
+# 분석 + 차트 + 테이블 조합
+code = '''
+return build_report(
+    title="인구 분석 리포트",
+    analysis=analysis,   # execute_analysis 결과
+    charts=charts,       # execute_visualization 결과 배열
+    tables=tables,       # execute_table 결과 배열
+    source="통계청 KOSIS",
+)
+'''
+```
 
 ---
 
 ## 참고 링크
 
 - **KOSIS 100대 지표**: https://kosis.kr/visual/nsportalStats/main.do
-- **k-stat 메타데이터**: https://www.k-stat.go.kr/metasvc/msba100/statsdcdta
+- **FastMCP 문서**: https://gofastmcp.com/
+- **Altair 문서**: https://altair-viz.github.io/
+
+---
+
+*마지막 업데이트: 2025-12-15*
