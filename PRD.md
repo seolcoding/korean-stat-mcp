@@ -1,8 +1,8 @@
 # KOSIS MCP Server - Product Requirements Document
 
 > **Version**: 1.0
-> **Last Updated**: 2024-12-15
-> **Status**: Phase 3 Implementation
+> **Last Updated**: 2025-12-15
+> **Status**: Phase 3 Complete, Phase 4 Planning
 > **Related Docs**: [CLAUDE.md](./CLAUDE.md), [docs/ARCHITECTURE_DESIGN.md](./docs/ARCHITECTURE_DESIGN.md)
 
 ---
@@ -21,7 +21,7 @@ KOSIS MCP Server는 **국가통계포털(KOSIS) OpenAPI**를 **MCP(Model Context
 
 1. **토큰 폭발 문제**: KOSIS API 응답은 수천~수만 행의 데이터를 반환하며, 이를 LLM 컨텍스트에 직접 전달하면 토큰이 급격히 소모됨
 2. **검색 한계**: 키워드 기반 검색만으로는 사용자의 의도를 정확히 파악하기 어려움 (예: "경제가 좋아졌나요?" → 어떤 테이블?)
-3. **메타데이터 접근성**: 103,796개 테이블의 메타데이터가 JSON 파일로만 존재, 효율적 검색 불가
+3. **메타데이터 접근성**: 252,890개 테이블의 메타데이터가 JSON 파일로만 존재, 효율적 검색 불가
 4. **시각화 생성**: 데이터를 받아도 차트/리포트 생성까지 여러 단계 필요
 
 ### 해결해야 할 핵심 과제
@@ -63,8 +63,9 @@ PostgreSQL    Cloudflare R2
 | **데이터 조회** | 요약만 LLM에 전달, 원본은 서버 저장 | ✅ 완료 |
 | **코드 실행** | pandas/altair 코드를 서버에서 실행 | ✅ 완료 |
 | **시각화** | Altair 차트 생성 및 URL 반환 | ✅ 완료 |
-| **하이브리드 검색** | 벡터 + BM25 결합 검색 | 🚧 Phase 3 |
-| **프로덕션 배포** | Docker + R2 + PostgreSQL | 🚧 Phase 3 |
+| **하이브리드 검색** | 벡터 + BM25 결합 검색 (252,890 테이블) | ✅ 완료 |
+| **프로덕션 배포** | Docker + PostgreSQL + pgvector | ✅ 완료 |
+| **모듈형 Executor** | visualization, analysis, table, report | ✅ 완료 |
 
 ---
 
@@ -224,18 +225,18 @@ CREATE TABLE kosis_tables (
 - [x] Altair 차트가 HTML로 저장되고 URL 반환
 - [x] 금지된 모듈(`exec`, `eval`, `open` 등) 사용 시 에러 발생
 
-### Phase 3 (진행 중) - Hybrid Search & Deployment
+### Phase 3 (완료) - Hybrid Search & Deployment
 
-- [ ] PostgreSQL + pgvector 컨테이너 구성
-- [ ] `kosis_tables` 테이블에 103,796개 메타데이터 로드
-- [ ] OpenAI 임베딩 생성 (text-embedding-3-small)
-- [ ] HNSW 인덱스 생성 (vector_cosine_ops)
-- [ ] GIN 인덱스 생성 (tsvector)
-- [ ] `search_tables_hybrid` 도구 구현 (RRF 결합)
-- [ ] 하이브리드 검색 응답 시간 < 500ms
-- [ ] Cloudflare R2 연동 (차트/리포트 업로드)
-- [ ] Docker Compose로 전체 스택 배포
-- [ ] FastMCP HTTP 모드 (`stateless_http=True`)
+- [x] PostgreSQL + pgvector 컨테이너 구성
+- [x] `kosis_tables` 테이블에 252,890개 메타데이터 로드
+- [x] OpenAI 임베딩 생성 (text-embedding-3-small)
+- [x] HNSW 인덱스 생성 (vector_cosine_ops)
+- [x] GIN 인덱스 생성 (tsvector)
+- [x] `search_tables_hybrid` 도구 구현 (RRF 결합)
+- [x] 하이브리드 검색 응답 시간 < 500ms
+- [x] Docker Compose로 전체 스택 배포
+- [x] FastMCP HTTP 모드 (`stateless_http=True`)
+- [x] Cloudflare R2 연동 (차트/리포트 업로드)
 
 ### Phase 4 (계획) - External Access
 
@@ -310,13 +311,13 @@ CREATE TABLE kosis_tables (
 - 빈 차트 검증 시스템
 - HTML 리포트 생성
 
-### Phase 3 🚧 - Hybrid Search & Deployment
+### Phase 3 ✅ - Hybrid Search & Deployment
 
 - PostgreSQL + pgvector 설정
-- 메타데이터 임베딩 생성
-- 하이브리드 검색 구현
+- 252,890개 테이블 메타데이터 임베딩 생성
+- 하이브리드 검색 구현 (벡터 + BM25 + RRF)
 - Docker 컨테이너화
-- Cloudflare R2 연동
+- Modular Executors (visualization, analysis, table, report)
 
 ### Phase 4 📋 - External Access & Optimization
 
@@ -344,6 +345,7 @@ CREATE TABLE kosis_tables (
 ### 내부 문서
 
 - [CLAUDE.md](./CLAUDE.md) - 프로젝트 엔트리포인트
+- [docs/USER_GUIDE.md](./docs/USER_GUIDE.md) - 사용자 가이드
 - [docs/ARCHITECTURE_DESIGN.md](./docs/ARCHITECTURE_DESIGN.md) - 시스템 아키텍처
 - [docs/DEPLOYMENT.md](./docs/DEPLOYMENT.md) - 배포 가이드
 - [docs/HYBRID_SEARCH.md](./docs/HYBRID_SEARCH.md) - 하이브리드 검색 설계

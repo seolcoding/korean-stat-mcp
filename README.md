@@ -1,84 +1,119 @@
 # KOSIS MCP Server
 
-KOSIS(국가통계포털) 데이터를 Claude와 다른 LLM에서 직접 조회하고 분석할 수 있는 MCP(Model Context Protocol) 서버입니다.
+<p align="center">
+  <strong>Korean Statistical Data at Your Fingertips</strong><br>
+  AI agents can now search, analyze, and visualize KOSIS statistics through MCP
+</p>
+
+<p align="center">
+  <a href="#features">Features</a> •
+  <a href="#quick-start">Quick Start</a> •
+  <a href="#usage">Usage</a> •
+  <a href="docs/USER_GUIDE.md">User Guide</a> •
+  <a href="#contributing">Contributing</a>
+</p>
+
+---
+
+## What is KOSIS MCP Server?
+
+**KOSIS MCP Server** is a [Model Context Protocol (MCP)](https://modelcontextprotocol.io/) server that enables AI agents like Claude to directly access and analyze Korean statistical data from [KOSIS (Korean Statistical Information Service)](https://kosis.kr/).
+
+### Key Benefits
+
+- **98% Token Savings**: Server-side data processing with chunked responses
+- **Natural Language Search**: Hybrid search combining vector similarity and BM25
+- **Rich Visualizations**: Generate interactive Altair charts with URL links
+- **Comprehensive Data**: Access to 250,000+ statistical tables
 
 ## Features
 
-- **DISCOVER**: 하이브리드 검색 (벡터 + BM25), 252,890개 테이블 메타데이터
-- **FETCH**: 통계 데이터 조회, 필터링, 집계, 청크 처리
-- **PRESENT**: 모듈형 Executor (시각화, 분석, 테이블, 리포트)
+### 🔍 DISCOVER - Smart Data Search
+
+- **Hybrid Search**: Vector embeddings + BM25 full-text search with RRF ranking
+- **Category Browsing**: Navigate by organization or theme
+- **Metadata Access**: Explore table structures and classification values
+
+### 📥 FETCH - Efficient Data Retrieval
+
+- **Chunked Responses**: Large datasets split into manageable chunks
+- **Server-Side Storage**: Raw data stays on server, summaries to LLM
+- **Filtering & Aggregation**: Query data without loading it all
+
+### 📊 PRESENT - Analysis & Visualization
+
+- **Modular Executors**: Specialized tools for visualization, analysis, tables, reports
+- **Interactive Charts**: Altair-based visualizations served via URL
+- **Composite Reports**: Combine charts, analysis, and tables into HTML reports
 
 ## Quick Start
 
-### Docker (권장)
+### Prerequisites
+
+- Python 3.12+
+- [uv](https://github.com/astral-sh/uv) package manager
+- KOSIS API Key ([Get one here](https://kosis.kr/openapi/))
+- Docker & Docker Compose (recommended)
+
+### Option 1: Docker (Recommended)
 
 ```bash
-# 1. Clone
+# Clone the repository
 git clone https://github.com/sdh/kosis-mcp.git
 cd kosis-mcp
 
-# 2. 환경 변수 설정
+# Configure environment
 cp .env.example .env
-# .env 파일에 KOSIS_API_KEY 입력
+# Edit .env with your API keys
 
-# 3. 실행
-docker-compose up -d
+# Start services
+docker compose up -d
 
-# 4. 확인
+# Verify
 curl http://localhost:8000/health
 ```
 
-### 수동 설치
+### Option 2: Local Development
 
 ```bash
-# 의존성 설치
+# Clone and setup
+git clone https://github.com/sdh/kosis-mcp.git
+cd kosis-mcp
+
+# Install dependencies
 uv sync
 
-# PostgreSQL 실행 (별도 필요)
-# 메타데이터 로드
-uv run python scripts/load_metadata.py
+# Set environment variables
+export KOSIS_API_KEY="your-api-key"
 
-# 서버 실행
-DATABASE_URL="postgresql://..." uv run uvicorn mcp_server.app:app --port 8000
-```
-
-## Configuration
-
-### 환경 변수
-
-```bash
-# 필수
-KOSIS_API_KEY=your-api-key              # KOSIS OpenAPI 키
-DATABASE_URL=postgresql://user:pass@host/db  # PostgreSQL
-
-# 선택
-OPENAI_API_KEY=sk-...                   # 벡터 검색용 임베딩
-KOSIS_ARTIFACTS_DIR=/tmp/kosis_artifacts  # 아티팩트 저장
-KOSIS_BASE_URL=http://localhost:8000    # 아티팩트 URL
+# Run MCP server (stdio mode)
+uv run python -m mcp_server
 ```
 
 ## Claude Desktop Integration
 
-### 방법 1: HTTP 모드 (Docker)
+### HTTP Mode (with Docker)
+
+Add to your Claude Desktop config (`~/Library/Application Support/Claude/claude_desktop_config.json`):
 
 ```json
 {
   "mcpServers": {
-    "kosis-mcp": {
+    "kosis": {
       "url": "http://localhost:8000/mcp"
     }
   }
 }
 ```
 
-### 방법 2: stdio 모드
+### stdio Mode (Direct)
 
 ```json
 {
   "mcpServers": {
-    "kosis-mcp": {
+    "kosis": {
       "command": "uv",
-      "args": ["run", "fastmcp", "run", "src/mcp_server/server.py"],
+      "args": ["run", "--directory", "/path/to/kosis-mcp", "python", "-m", "mcp_server"],
       "env": {
         "KOSIS_API_KEY": "your-api-key"
       }
@@ -87,115 +122,146 @@ KOSIS_BASE_URL=http://localhost:8000    # 아티팩트 URL
 }
 ```
 
-## Available Tools
+## Usage
 
-### Layer 1: DISCOVER
+### Example: Population Trend Analysis
 
-| Tool | Description |
-|------|-------------|
-| `search_tables_hybrid` | 하이브리드 검색 (벡터 + BM25 + RRF) |
-| `browse_categories` | 카테고리/주제 브라우징 |
-| `get_table_metadata` | 테이블 구조 및 분류 조회 |
-| `get_available_values` | 분류항목 값 목록 |
+```text
+User: "Show me Korea's population trend over the last 5 years"
 
-### Layer 2: FETCH
-
-| Tool | Description |
-|------|-------------|
-| `get_statistics_data` | KOSIS API 데이터 조회 |
-| `filter_statistics` | 데이터 필터링 |
-| `aggregate_statistics` | 그룹별 집계 |
-| `list_stored_data` | 저장된 데이터 목록 |
-| `read_stored_data` | 청크 단위 데이터 읽기 |
-
-### Layer 3: PRESENT (Modular Executors)
-
-| Tool | Description |
-|------|-------------|
-| `execute_visualization` | Altair 차트 생성 (URL 반환) |
-| `execute_analysis` | 통계 분석 (변화율, CAGR 등) |
-| `execute_table` | HTML 테이블 생성 |
-| `execute_report` | 복합 리포트 (차트+분석+테이블) |
-
-## Usage Examples
-
-### 하이브리드 검색
-
-```
-"인구 관련 통계표를 찾아줘"
-→ search_tables_hybrid("인구")
-→ 벡터 유사도 + BM25 키워드 검색 결합
+Claude uses:
+1. search_statistics("인구") → finds relevant tables
+2. get_statistics_data(org_id="101", tbl_id="DT_1B040A3") → retrieves data
+3. execute_visualization(code="...", data_id="...") → creates chart
+   → Returns: http://localhost:8000/artifacts/charts/population_trend.html
 ```
 
-### 데이터 조회 및 시각화
+### Available MCP Tools
+
+| Layer | Tool | Description |
+|-------|------|-------------|
+| **DISCOVER** | `search_statistics` | Keyword-based table search |
+| | `search_tables_hybrid` | Semantic + keyword hybrid search |
+| | `get_table_metadata` | Get table structure and classifications |
+| **FETCH** | `get_statistics_data` | Retrieve statistical data |
+| | `filter_statistics` | Filter stored data |
+| | `aggregate_statistics` | Aggregate by groups |
+| **EXECUTE** | `execute_code` | Run Python code server-side |
+| | `execute_visualization` | Generate Altair charts |
+| | `execute_analysis` | Perform statistical analysis |
+| | `execute_report` | Create composite HTML reports |
+
+See [User Guide](docs/USER_GUIDE.md) for detailed tool documentation and examples.
+
+## Configuration
+
+### Environment Variables
+
+| Variable | Required | Description |
+|----------|----------|-------------|
+| `KOSIS_API_KEY` | Yes | KOSIS OpenAPI key |
+| `DATABASE_URL` | For hybrid search | PostgreSQL connection string |
+| `OPENAI_API_KEY` | For hybrid search | For generating embeddings |
+| `KOSIS_ARTIFACTS_DIR` | No | Artifact storage path (default: `/tmp/kosis_artifacts`) |
+| `KOSIS_BASE_URL` | No | Base URL for artifact links (default: `http://localhost:8000`) |
+
+See [.env.example](.env.example) for all configuration options.
+
+## Architecture
 
 ```
-"서울 인구 추이를 차트로 보여줘"
-→ get_statistics_data(org_id="101", tbl_id="DT_1B040A3", ...)
-→ execute_visualization(code="...", data=...)
-→ http://localhost:8000/artifacts/charts/xxx.html
-```
-
-### 복합 리포트 생성
-
-```
-"서울, 부산, 대구 인구 비교 리포트를 만들어줘"
-→ execute_analysis(...) - 비교 분석
-→ execute_visualization(...) - 비교 차트
-→ execute_table(...) - 비교 테이블
-→ execute_report(...) - 조합
-→ http://localhost:8000/artifacts/reports/xxx.html
+┌─────────────────────────────────────────────────────────────┐
+│                    MCP Client (Claude)                       │
+└──────────────────────────┬──────────────────────────────────┘
+                           │ MCP Protocol
+┌──────────────────────────▼──────────────────────────────────┐
+│                   KOSIS MCP Server                           │
+│  ┌────────────────────────────────────────────────────────┐ │
+│  │  Layer 3: EXECUTE (Code Execution & Visualization)     │ │
+│  │  • execute_code • execute_visualization • execute_report│ │
+│  ├────────────────────────────────────────────────────────┤ │
+│  │  Layer 2: FETCH (Data Operations)                      │ │
+│  │  • get_statistics_data • filter • aggregate            │ │
+│  ├────────────────────────────────────────────────────────┤ │
+│  │  Layer 1: DISCOVER (Search & Metadata)                 │ │
+│  │  • search_statistics • hybrid_search • metadata        │ │
+│  └────────────────────────────────────────────────────────┘ │
+└─────────────────┬───────────────────────┬───────────────────┘
+                  │                       │
+       ┌──────────▼──────────┐   ┌────────▼────────┐
+       │  PostgreSQL         │   │  KOSIS OpenAPI  │
+       │  + pgvector         │   │  (kosis.kr)     │
+       └─────────────────────┘   └─────────────────┘
 ```
 
 ## Development
 
 ```bash
-# 테스트
+# Install dev dependencies
+uv sync --dev
+
+# Run tests
 uv run pytest tests/ -v
 
-# MCP Inspector
+# Run MCP Inspector for debugging
 uv run fastmcp dev src/mcp_server/server.py
 
-# 타입 체크
+# Type checking
 uv run mypy src/
-
-# E2E 시나리오 테스트 (Claude Code)
-/test-mcp
 ```
 
-## Architecture
+### Project Structure
 
 ```
-┌─────────────────────────────────────────┐
-│          FastAPI + FastMCP              │
-│  ┌─────────────────────────────────────┐│
-│  │ Layer 3: Modular Executors          ││
-│  │  visualization | analysis | report  ││
-│  └─────────────────────────────────────┘│
-│  ┌─────────────────────────────────────┐│
-│  │ Layer 2: Data Operations            ││
-│  │  fetch | filter | aggregate         ││
-│  └─────────────────────────────────────┘│
-│  ┌─────────────────────────────────────┐│
-│  │ Layer 1: Discovery                  ││
-│  │  hybrid_search | metadata           ││
-│  └─────────────────────────────────────┘│
-└─────────────────────────────────────────┘
-         │              │
-         ▼              ▼
-┌─────────────┐  ┌─────────────┐
-│ PostgreSQL  │  │ KOSIS API   │
-│ + pgvector  │  │             │
-└─────────────┘  └─────────────┘
+kosis-mcp/
+├── src/
+│   ├── mcp_server/          # MCP server entry points
+│   │   ├── server.py        # Tool definitions
+│   │   └── app.py           # HTTP mode ASGI app
+│   └── kosis_tools/         # Core functionality
+│       ├── search.py        # KOSIS API search
+│       ├── data.py          # Data retrieval
+│       ├── visualize.py     # Altair visualization
+│       ├── code_executor.py # Sandboxed code execution
+│       └── executors/       # Modular executors
+├── data/                    # Metadata cache
+├── docs/                    # Documentation
+├── tests/                   # Test suite
+├── docker-compose.yml       # Docker setup
+└── pyproject.toml           # Project config
 ```
+
+## Documentation
+
+- [User Guide](docs/USER_GUIDE.md) - Detailed usage instructions
+- [Architecture Design](docs/ARCHITECTURE_DESIGN.md) - System architecture
+- [KOSIS API Reference](docs/KOSIS_API_REFERENCE.md) - API documentation
+- [Deployment Guide](docs/DEPLOYMENT.md) - Production deployment
+- [Hybrid Search Design](docs/HYBRID_SEARCH.md) - Search implementation
+
+## Contributing
+
+Contributions are welcome! Please see our contributing guidelines (coming soon).
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
 ## License
 
-MIT License - see [LICENSE](LICENSE) file.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Acknowledgments
+
+- [KOSIS (Korean Statistical Information Service)](https://kosis.kr/) for providing the OpenAPI
+- [FastMCP](https://gofastmcp.com/) for the MCP server framework
+- [Altair](https://altair-viz.github.io/) for declarative visualization
 
 ## Links
 
-- [KOSIS 국가통계포털](https://kosis.kr/)
-- [KOSIS OpenAPI 안내](https://kosis.kr/openapi/)
+- [KOSIS Portal](https://kosis.kr/)
+- [KOSIS OpenAPI Guide](https://kosis.kr/openapi/)
+- [Model Context Protocol](https://modelcontextprotocol.io/)
 - [FastMCP Documentation](https://gofastmcp.com/)
-- [MCP Protocol](https://modelcontextprotocol.io/)

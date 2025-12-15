@@ -29,6 +29,12 @@
 | [docs/METADATA_COLLECTION_GUIDE.md](./docs/METADATA_COLLECTION_GUIDE.md) | 메타데이터 수집 방법 |
 | [docs/METADATA_JSON_SCHEMA.md](./docs/METADATA_JSON_SCHEMA.md) | JSON 스키마 정의 |
 
+### 사용자 문서
+
+| 문서 | 내용 |
+|------|------|
+| [docs/USER_GUIDE.md](./docs/USER_GUIDE.md) | 사용자 가이드, 도구 사용법, 예제 |
+
 ### 배포 & 인프라 문서
 
 | 문서 | 내용 | 상태 |
@@ -43,14 +49,14 @@
 
 ### 완료된 기능 ✅
 
-**Phase 1-2: Core MCP**
+**Phase 1-2: Core MCP** ✅ 완료
 - MCP 서버 기본 구조 (FastMCP 기반)
 - KOSIS API 연동 (검색, 조회, 메타데이터)
 - Code Execution 패턴 (`execute_code` 도구)
 - 시각화 (Altair 기반 차트 생성)
 - 리포트 생성 (HTML 리포트)
 
-**Phase 3: Production Infrastructure**
+**Phase 3: Production Infrastructure** ✅ 완료
 - PostgreSQL + pgvector (252,890 테이블 메타데이터)
 - 하이브리드 검색 (벡터 + BM25 + RRF)
 - OpenAI 임베딩 (`text-embedding-3-small`)
@@ -58,11 +64,16 @@
 - 정적 파일 서빙 (차트/리포트 URL)
 - Docker 컨테이너화
 
-**Modular Executors**
+**Modular Executors** ✅ 완료
 - `execute_visualization` - 차트 생성 (천 단위, 과학적표기법 금지)
 - `execute_analysis` - 통계 분석 (변화율, CAGR)
 - `execute_table` - HTML 테이블 (스타일링)
 - `execute_report` - 복합 리포트 (차트+분석+테이블)
+
+### 다음 단계 (Phase 4) 📋
+- Tailscale 또는 Cloudflare Tunnel 설정
+- 외부에서 MCP 서버 접근 가능하게
+- 인증/권한 설정
 
 ---
 

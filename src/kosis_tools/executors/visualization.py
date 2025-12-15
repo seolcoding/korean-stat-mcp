@@ -125,6 +125,8 @@ def save_chart(
     """
     차트를 저장하고 URL을 반환.
 
+    R2가 설정되어 있으면 R2에 업로드, 아니면 로컬에 저장.
+
     Args:
         chart: Altair Chart 객체
         filename: 파일명 (확장자 포함)
@@ -133,25 +135,50 @@ def save_chart(
         {"url": ..., "path": ..., "type": "chart"}
     """
     import os
+    import tempfile
     from pathlib import Path
 
-    artifacts_dir = os.environ.get("KOSIS_ARTIFACTS_DIR", "/tmp/kosis_artifacts")
-    base_url = os.environ.get("KOSIS_BASE_URL", "http://localhost:8000")
+    suffix = Path(filename).suffix.lower()
 
-    output_path = Path(artifacts_dir) / "charts"
-    output_path.mkdir(parents=True, exist_ok=True)
+    # 임시 파일에 먼저 저장
+    with tempfile.NamedTemporaryFile(suffix=suffix, delete=False) as tmp:
+        tmp_path = tmp.name
 
-    filepath = output_path / filename
-    chart.save(str(filepath))
+    chart.save(tmp_path)
 
-    url = f"{base_url}/artifacts/charts/{filename}"
+    # R2 또는 로컬 스토리지에 업로드
+    try:
+        from kosis_tools.r2_storage import get_storage, generate_artifact_key
 
-    return {
-        "url": url,
-        "path": str(filepath.absolute()),
-        "type": "chart",
-        "format": filepath.suffix.lstrip("."),
-    }
+        storage = get_storage()
+        key = generate_artifact_key("charts", filename)
+        url = storage.upload_file(tmp_path, key)
+
+        return {
+            "url": url,
+            "path": key,
+            "type": "chart",
+            "format": suffix.lstrip("."),
+        }
+    except Exception as e:
+        # R2 실패 시 로컬 폴백
+        logger.warning(f"R2 upload failed, using local: {e}")
+        artifacts_dir = os.environ.get("KOSIS_ARTIFACTS_DIR", "/tmp/kosis_artifacts")
+        base_url = os.environ.get("KOSIS_BASE_URL", "http://localhost:8000")
+
+        output_path = Path(artifacts_dir) / "charts"
+        output_path.mkdir(parents=True, exist_ok=True)
+
+        import shutil
+        final_path = output_path / filename
+        shutil.move(tmp_path, final_path)
+
+        return {
+            "url": f"{base_url}/artifacts/charts/{filename}",
+            "path": str(final_path.absolute()),
+            "type": "chart",
+            "format": suffix.lstrip("."),
+        }
 
 
 def execute_visualization(
