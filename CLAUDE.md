@@ -20,6 +20,7 @@
 | 문서 | 내용 | 언제 참조 |
 |------|------|----------|
 | [docs/KOSIS_API_REFERENCE.md](./docs/KOSIS_API_REFERENCE.md) | KOSIS API 엔드포인트, 파라미터, 응답 필드 | API 호출/파싱 시 |
+| [docs/KOSIS_API_IMPLEMENTATION_PLAN.md](./docs/KOSIS_API_IMPLEMENTATION_PLAN.md) | API 구현 계획, Gap 분석 | API 기능 확장 시 |
 | [docs/LARGE_DATA_MCP_PATTERNS.md](./docs/LARGE_DATA_MCP_PATTERNS.md) | execute_code 패턴 상세 | 코드 실행 기능 개발 시 |
 
 ### 메타데이터 문서
@@ -28,6 +29,7 @@
 |------|------|
 | [docs/METADATA_COLLECTION_GUIDE.md](./docs/METADATA_COLLECTION_GUIDE.md) | 메타데이터 수집 방법 |
 | [docs/METADATA_JSON_SCHEMA.md](./docs/METADATA_JSON_SCHEMA.md) | JSON 스키마 정의 |
+| [docs/METADATA_OPTIMIZATION_STRATEGY.md](./docs/METADATA_OPTIMIZATION_STRATEGY.md) | 로컬 메타데이터 활용 전략 (XLS 기반) |
 
 ### 사용자 문서
 
@@ -42,6 +44,13 @@
 | [docs/ARCHITECTURE_DESIGN.md](./docs/ARCHITECTURE_DESIGN.md) | 전체 시스템 아키텍처, 레이어 구조, 데이터 흐름 | ✅ 완료 |
 | [docs/DEPLOYMENT.md](./docs/DEPLOYMENT.md) | FastMCP HTTP, Docker, PostgreSQL | ✅ 완료 |
 | [docs/HYBRID_SEARCH.md](./docs/HYBRID_SEARCH.md) | pgvector HNSW, BM25 FTS, RRF 결합 | ✅ 완료 |
+| [docs/DOCKER_ARCHITECTURE.md](./docs/DOCKER_ARCHITECTURE.md) | Docker Compose 배포 아키텍처 | 📋 계획 |
+
+### 테스트 문서
+
+| 문서 | 내용 |
+|------|------|
+| [tests/e2e/E2E_TEST_PLAN.md](./tests/e2e/E2E_TEST_PLAN.md) | 사용자 페르소나 기반 E2E 테스트 계획 |
 
 ---
 
@@ -61,7 +70,7 @@
 - 하이브리드 검색 (벡터 + BM25 + RRF)
 - OpenAI 임베딩 (`text-embedding-3-small`)
 - FastAPI HTTP 서버 (`app.py`)
-- 정적 파일 서빙 (차트/리포트 URL)
+- Cloudflare R2 CDN (차트/리포트 호스팅)
 - Docker 컨테이너화
 
 **Modular Executors** ✅ 완료
@@ -130,7 +139,8 @@ kosis-data-processor/
 │       │   └── report.py          # 리포트 (조합)
 │       ├── database.py            # PostgreSQL 연결
 │       ├── embeddings.py          # OpenAI 임베딩
-│       └── hybrid_search.py       # 벡터+BM25 검색
+│       ├── hybrid_search.py       # 벡터+BM25 검색
+│       └── r2_storage.py          # Cloudflare R2 스토리지
 ├── data/
 │   └── metadata_api/
 │       └── tables.json            # 메타데이터 (252,890 테이블)
@@ -260,4 +270,4 @@ return build_report(
 
 ---
 
-*마지막 업데이트: 2025-12-15*
+*마지막 업데이트: 2025-12-16*
