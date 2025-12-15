@@ -14,7 +14,7 @@ Modules:
     stats_explanation: 통계설명 (statisticsExplanation.do)
     kstat_metadata: k-stat 메타데이터 (statHtmlContent.do)
     transform: 데이터 변환/집계 (pandas 기반)
-    visualize: 데이터 시각화 (plotly 기반, 한글 지원)
+    visualize: 데이터 시각화 (altair 기반, 한글 지원)
     cache_builder: 메타데이터 캐시 빌드 (비동기, 점진적)
     metadata_fetcher: 통계표 목록 비동기 수집
     metadata_enricher: 통계설명/영문명 보강
@@ -46,11 +46,23 @@ from .transform import (
     get_llm_context,
 )
 from .visualize import (
-    KosisVisualizer,
-    quick_line,
-    quick_bar,
-    quick_pie,
+    prepare_data,
+    save_chart,
+    chart_to_json,
+    chart_to_html,
 )
+from .code_executor import execute_code, CodeExecutor
+
+# Phase 3: Database & Search (optional - requires PostgreSQL)
+try:
+    from .database import DatabasePool, DatabaseError, check_database_health
+    from .embeddings import EmbeddingGenerator, EmbeddingError, create_search_text
+    from .hybrid_search import HybridSearcher, SearchResult, search_tables as hybrid_search_tables
+    from .r2_storage import get_storage, upload_chart, upload_report, upload_data
+    PHASE3_AVAILABLE = True
+except ImportError:
+    PHASE3_AVAILABLE = False
+
 from .report_generator import (
     ReportGenerator,
     UserQuery,
@@ -142,11 +154,14 @@ __all__ = [
     "pivot_data",
     "filter_data",
     "get_llm_context",
-    # Visualize (plotly)
-    "KosisVisualizer",
-    "quick_line",
-    "quick_bar",
-    "quick_pie",
+    # Visualize (altair helpers)
+    "prepare_data",
+    "save_chart",
+    "chart_to_json",
+    "chart_to_html",
+    # Code Execution
+    "execute_code",
+    "CodeExecutor",
     # Report Generator
     "ReportGenerator",
     "UserQuery",
@@ -197,4 +212,24 @@ __all__ = [
     "StatisticsTable",
     "TablesFile",
     "DataSource",
+    # Phase 3: Database & Search (optional)
+    "PHASE3_AVAILABLE",
 ]
+
+# Conditionally add Phase 3 exports
+if PHASE3_AVAILABLE:
+    __all__.extend([
+        "DatabasePool",
+        "DatabaseError",
+        "check_database_health",
+        "EmbeddingGenerator",
+        "EmbeddingError",
+        "create_search_text",
+        "HybridSearcher",
+        "SearchResult",
+        "hybrid_search_tables",
+        "get_storage",
+        "upload_chart",
+        "upload_report",
+        "upload_data",
+    ])

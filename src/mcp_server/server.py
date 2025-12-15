@@ -21,6 +21,8 @@ from __future__ import annotations
 
 import json
 import logging
+import os
+import sys
 from typing import Optional
 from pathlib import Path
 
@@ -29,6 +31,10 @@ from fastmcp import FastMCP
 # 로깅 설정
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
+
+# 아티팩트 설정
+ARTIFACTS_DIR = os.environ.get("KOSIS_ARTIFACTS_DIR", "/tmp/kosis_artifacts")
+BASE_URL = os.environ.get("KOSIS_BASE_URL", "http://localhost:8000")
 
 # FastMCP 서버 생성
 mcp = FastMCP(
@@ -40,31 +46,41 @@ mcp = FastMCP(
 
     🔍 DISCOVER (데이터 탐색):
     - search_statistics: 키워드로 통계표 검색
+    - search_tables_hybrid: 자연어/의미 기반 검색 ⭐ (PostgreSQL 필요)
     - browse_categories: 기관/주제별 통계 목록
     - get_table_metadata: 테이블 상세 정보
     - get_available_values: 필터링 가능한 값 조회
 
     📥 FETCH (데이터 조회):
-    - get_statistics_data: 통계 데이터 조회 (원본은 파일에 자동 저장)
+    - get_statistics_data: 통계 데이터 조회 (요약 반환, 원본은 파일 저장)
     - filter_statistics: 데이터 필터링
     - aggregate_statistics: 데이터 집계
 
-    📊 PRESENT (시각화/리포트):
-    - create_quick_report: 빠른 HTML 리포트 생성
+    💻 CODE EXECUTION (코드 실행) ⭐ 권장:
+    - execute_code: Python 코드를 서버에서 실행
+      * 대용량 데이터 분석 시 토큰 98.7% 절감
+      * pandas, altair, numpy 사용 가능
+      * 시각화, 집계, 분석 등 자유롭게 코드 작성
+
+    📊 PRESENT (미리 정의된 분석):
     - analyze_trend: 추세 분석
     - analyze_comparison: 비교 분석
     - analyze_ranking: 순위 분석
+    - create_quick_report: HTML 리포트 생성
 
-    💾 DATA ACCESS (저장 데이터 접근):
-    - list_stored_data: 저장된 데이터 파일 목록
-    - read_stored_data: 저장된 원본 데이터 읽기 (청크 지원)
+    💾 DATA ACCESS:
+    - list_stored_data: 저장된 파일 목록
+    - read_stored_data: 원본 데이터 읽기
 
-    일반적인 워크플로우:
-    1. search_statistics로 원하는 데이터 찾기
-    2. get_table_metadata로 테이블 구조 파악
-    3. get_statistics_data로 데이터 조회 (요약만 반환, 원본은 파일에 저장)
-    4. 필요시 read_stored_data로 원본 데이터 접근
-    5. analyze_* 또는 create_quick_report로 결과 생성
+    권장 워크플로우:
+    1. search_statistics로 데이터 찾기
+    2. get_statistics_data로 조회 (data_id 획득)
+    3. execute_code로 분석/시각화 코드 실행 ← 핵심!
+       예: execute_code('''
+           df = prepare_data(data)
+           chart = alt.Chart(df).mark_line()...
+           return save_chart(chart, "result.html")
+       ''', data_id="...")
     """,
 )
 
@@ -126,6 +142,98 @@ def search_statistics(
     except Exception as e:
         logger.error(f"search_statistics error: {e}")
         return json.dumps({"error": str(e)}, ensure_ascii=False)
+
+
+@mcp.tool
+async def search_tables_hybrid(
+    query: str,
+    limit: int = 10,
+    fts_weight: float = 0.5,
+    vector_weight: float = 0.5,
+) -> str:
+    """
+    자연어로 KOSIS 통계 테이블을 검색합니다 (하이브리드 검색).
+
+    키워드 검색(BM25)과 의미 검색(벡터)을 결합한 고급 검색입니다.
+    "경제가 좋아졌나요?" 같은 자연어 질문도 이해합니다.
+
+    ⚠️ 이 기능은 PostgreSQL + pgvector가 필요합니다.
+
+    Args:
+        query: 검색어 (자연어 가능)
+               예: "출산율 감소 원인", "경제 성장률 추이", "지역별 고용률"
+        limit: 최대 결과 수 (기본 10, 최대 50)
+        fts_weight: 키워드 검색 가중치 (0-1, 기본 0.5)
+        vector_weight: 의미 검색 가중치 (0-1, 기본 0.5)
+
+    Returns:
+        {
+            "query": "출산율 감소",
+            "search_type": "hybrid",
+            "count": 10,
+            "results": [
+                {
+                    "tbl_id": "DT_1B8000F",
+                    "tbl_nm": "시도/성/연령별 출생아수",
+                    "org_nm": "통계청",
+                    "score": 0.0312,
+                    "fts_rank": 1,
+                    "vec_rank": 3,
+                    "period": "1997 ~ 2023"
+                },
+                ...
+            ],
+            "next_step": "get_statistics_data(org_id, tbl_id, ...)로 데이터 조회"
+        }
+
+    Example:
+        >>> search_tables_hybrid("경제 성장률")
+        >>> search_tables_hybrid("출산율 감소", vector_weight=0.7)
+    """
+    try:
+        # 데이터베이스 연결 확인
+        from kosis_tools.database import DatabasePool
+
+        if not DatabasePool._initialized:
+            return json.dumps({
+                "error": "DATABASE_NOT_AVAILABLE",
+                "message": "PostgreSQL 데이터베이스가 연결되지 않았습니다.",
+                "fallback": "search_statistics(keyword)를 사용하세요 (KOSIS API 기반 키워드 검색)",
+                "setup_hint": "docker compose up postgres -d && python scripts/load_metadata.py"
+            }, ensure_ascii=False, indent=2)
+
+        # 하이브리드 검색 실행
+        from kosis_tools.hybrid_search import search_tables
+
+        results = await search_tables(
+            query=query,
+            limit=min(limit, 50),
+            fts_weight=fts_weight,
+            vector_weight=vector_weight,
+        )
+
+        return json.dumps({
+            "query": query,
+            "search_type": "hybrid",
+            "weights": {"fts": fts_weight, "vector": vector_weight},
+            "count": len(results),
+            "results": results,
+            "next_step": "get_statistics_data(org_id, tbl_id, start_date, end_date)로 데이터 조회"
+        }, ensure_ascii=False, indent=2)
+
+    except Exception as e:
+        logger.error(f"search_tables_hybrid error: {e}")
+
+        # 데이터베이스 오류 시 대안 제시
+        error_msg = str(e)
+        if "database" in error_msg.lower() or "connection" in error_msg.lower():
+            return json.dumps({
+                "error": "DATABASE_ERROR",
+                "message": error_msg,
+                "fallback": "search_statistics(keyword)를 사용하세요",
+            }, ensure_ascii=False, indent=2)
+
+        return json.dumps({"error": error_msg}, ensure_ascii=False)
 
 
 @mcp.tool
@@ -984,6 +1092,430 @@ def read_stored_data(
 
 
 # =============================================================================
+# Layer 4: CODE EXECUTION - LLM 코드 실행
+# =============================================================================
+
+@mcp.tool
+def execute_code(
+    code: str,
+    data_id: Optional[str] = None,
+    data_json: Optional[str] = None,
+) -> str:
+    """
+    Python 코드를 서버에서 실행합니다. 대용량 데이터 분석 시 토큰 98.7% 절감.
+
+    사용 가능: pd, alt, np, prepare_data, save_chart, save_report, build_report
+
+    빠른 시작:
+        df = prepare_data(data, numeric_fields=["DT"])
+        chart = alt.Chart(df).mark_line().encode(x='PRD_DE:N', y='DT:Q')
+        return save_report(build_report("제목", [{"type":"chart","vega_spec":chart.to_dict()}]), "report")
+
+    가이드: get_report_templates() → get_template_guide("trend") → get_element_guide("line_chart")
+
+    품질 피드백: 실행 성공 시 quality_warnings 필드에 개선 제안이 포함될 수 있습니다.
+
+    Args:
+        code: Python 코드 (return 또는 마지막 표현식이 결과)
+        data_id: 저장된 데이터 ID (get_statistics_data 결과)
+        data_json: KOSIS 데이터 JSON (data_id 없을 때)
+    """
+    from kosis_tools.code_executor import execute_code as _execute
+
+    try:
+        # 데이터 로드
+        data = None
+        if data_id:
+            from kosis_tools.report_tools import load_raw_data
+            result = load_raw_data(data_id)
+            if "error" not in result:
+                data = result.get("data", [])
+            else:
+                return json.dumps(result, ensure_ascii=False)
+        elif data_json:
+            data = json.loads(data_json) if isinstance(data_json, str) else data_json
+
+        # 코드 실행
+        result = _execute(code=code, data=data)
+
+        # 검증 에러 시 클라이언트에게 명확한 피드백 제공
+        if not result.get("success") and "validation_details" in result:
+            validation = result["validation_details"]
+            error_response = {
+                "success": False,
+                "error": "VISUALIZATION_VALIDATION_ERROR",
+                "message": validation["message"],
+                "issue_type": validation.get("issue_type"),
+                "empty_charts": validation.get("empty_charts", []),
+                "fix_hints": validation.get("fix_hints", []),
+                "data_signature": validation.get("data_signature", {}),
+                "action_required": "데이터 시그니처를 확인하고 시각화 코드를 수정해서 다시 실행하세요.",
+                "code_example": '''
+# 올바른 코드 패턴 예시:
+df = prepare_data(data, numeric_fields=["DT"])
+
+# 필터링 전 데이터 확인
+print(f"전체 레코드: {len(df)}")
+
+# 빈 DataFrame 방지
+if len(df) == 0:
+    raise ValueError("필터링 후 데이터가 없습니다. 조건을 확인하세요.")
+
+# 차트 생성
+chart = alt.Chart(df).mark_line().encode(
+    x='PRD_DE:N',
+    y='DT:Q',
+    color='C1_NM:N'
+).properties(width=600, height=400)
+
+# 차트 데이터 확인
+spec = chart.to_dict()
+if not spec.get("data", {}).get("values"):
+    raise ValueError("차트 데이터가 비어있습니다.")
+
+return save_report(build_report("리포트", [{"type": "chart", "vega_spec": spec}]), "report")
+''',
+            }
+            return json.dumps(error_response, ensure_ascii=False, indent=2, default=str)
+
+        return json.dumps(result, ensure_ascii=False, indent=2, default=str)
+
+    except Exception as e:
+        logger.error(f"execute_code error: {e}")
+        # 오류 시 모범 사례/코드 템플릿 제공
+        return json.dumps({
+            "success": False,
+            "result": None,
+            "stdout": "",
+            "error": str(e),
+            "code_templates": {
+                "data_aggregation": '''
+# 데이터 집계 예시
+df = prepare_data(data, numeric_fields=["DT"])
+result = df.groupby("C1_NM")["DT"].sum().sort_values(ascending=False)
+return result.head(10).to_dict()
+''',
+                "line_chart": '''
+# 라인 차트 예시
+df = prepare_data(data, numeric_fields=["DT"])
+chart = alt.Chart(df).mark_line(point=True).encode(
+    x='PRD_DE:N',
+    y='DT:Q',
+    color='C1_NM:N'
+).properties(title="추이", width=600, height=400)
+return chart_to_json(chart)
+''',
+                "bar_chart": '''
+# 막대 차트 예시
+df = prepare_data(data, numeric_fields=["DT"])
+chart = alt.Chart(df).mark_bar().encode(
+    x=alt.X('C1_NM:N', sort='-y'),
+    y='DT:Q'
+).properties(title="비교", width=600, height=400)
+return save_chart(chart, "result.html")
+''',
+                "statistics": '''
+# 통계 분석 예시
+df = prepare_data(data, numeric_fields=["DT"])
+stats = {
+    "count": len(df),
+    "mean": df["DT"].mean(),
+    "std": df["DT"].std(),
+    "min": df["DT"].min(),
+    "max": df["DT"].max()
+}
+return stats
+'''
+            },
+            "available_modules": ["pd (pandas)", "alt (altair)", "np (numpy)"],
+            "available_functions": [
+                "prepare_data(data, numeric_fields=['DT']) → DataFrame",
+                "save_chart(chart, filename) → {'path': ..., 'format': ...}",
+                "chart_to_json(chart) → Vega-Lite JSON",
+                "chart_to_html(chart, title) → HTML 문자열"
+            ]
+        }, ensure_ascii=False, indent=2)
+
+
+# =============================================================================
+# Layer 4.1: MODULAR EXECUTORS - 특화된 코드 실행
+# =============================================================================
+
+@mcp.tool
+def execute_visualization(
+    code: str,
+    data_id: Optional[str] = None,
+    data_json: Optional[str] = None,
+) -> str:
+    """
+    시각화 코드를 실행합니다. 차트/그래프 생성에 특화.
+
+    ## 필수 가이드라인 (자동 적용)
+    - 숫자 단위: 천 명/천 원/천 개 (1,000 기준)
+    - Y축 포맷: format=",.0f" 사용, 과학적 표기법 절대 금지
+    - 축 제목: 단위 반드시 명시 (예: "인구 (천 명)")
+    - 시리즈: 5개 이하 권장
+
+    ## 예시
+    ```python
+    df = prepare_data(data, numeric_fields=["DT"])
+    df["인구_천명"] = df["DT"] / 1000
+
+    chart = alt.Chart(df).mark_line(point=True).encode(
+        x=alt.X("PRD_DE:N", title="연도"),
+        y=alt.Y("인구_천명:Q", title="인구 (천 명)", axis=alt.Axis(format=",.0f")),
+        color="C1_NM:N"
+    ).properties(title="인구 추이", width=600, height=350)
+
+    return save_chart(chart, "population.html")
+    ```
+
+    Args:
+        code: Python 시각화 코드
+        data_id: 저장된 데이터 ID
+        data_json: KOSIS 데이터 JSON
+    """
+    from kosis_tools.executors.visualization import execute_visualization as _execute
+
+    try:
+        data = None
+        if data_id:
+            from kosis_tools.report_tools import load_raw_data
+            result = load_raw_data(data_id)
+            if "error" not in result:
+                data = result.get("data", [])
+            else:
+                return json.dumps(result, ensure_ascii=False)
+        elif data_json:
+            data = json.loads(data_json) if isinstance(data_json, str) else data_json
+
+        result = _execute(code=code, data=data)
+        return json.dumps(result, ensure_ascii=False, indent=2, default=str)
+
+    except Exception as e:
+        logger.error(f"execute_visualization error: {e}")
+        return json.dumps({"success": False, "error": str(e)}, ensure_ascii=False)
+
+
+@mcp.tool
+def execute_analysis(
+    code: str,
+    data_id: Optional[str] = None,
+    data_json: Optional[str] = None,
+) -> str:
+    """
+    데이터 분석 코드를 실행합니다. 통계/집계에 특화.
+
+    ## 필수 가이드라인 (자동 적용)
+    - KOSIS 결측치 처리: "-", "*", "" 자동 변환
+    - 숫자 단위: 천 (1,000) 기준
+    - 결과: 딕셔너리로 반환 (리포트에서 사용)
+
+    ## 사용 가능 헬퍼
+    - prepare_data(data, numeric_fields): 데이터 변환
+    - calc_change_rate(current, previous): 증감률 (%)
+    - calc_cagr(start, end, years): 연평균 성장률 (%)
+    - calc_ratio(value, total): 구성비 (%)
+    - to_thousand(value): 천 단위 변환
+
+    ## 예시
+    ```python
+    df = prepare_data(data, numeric_fields=["DT"])
+
+    total_2023 = df[df["PRD_DE"] == "2023"]["DT"].sum()
+    total_2019 = df[df["PRD_DE"] == "2019"]["DT"].sum()
+
+    return {
+        "summary": {
+            "total_2023": to_thousand(total_2023),
+            "change_rate": calc_change_rate(total_2023, total_2019),
+        },
+        "insights": ["인구 감소 추세 지속", "수도권 집중 심화"]
+    }
+    ```
+
+    Args:
+        code: Python 분석 코드
+        data_id: 저장된 데이터 ID
+        data_json: KOSIS 데이터 JSON
+    """
+    from kosis_tools.executors.analysis import execute_analysis as _execute
+
+    try:
+        data = None
+        if data_id:
+            from kosis_tools.report_tools import load_raw_data
+            result = load_raw_data(data_id)
+            if "error" not in result:
+                data = result.get("data", [])
+            else:
+                return json.dumps(result, ensure_ascii=False)
+        elif data_json:
+            data = json.loads(data_json) if isinstance(data_json, str) else data_json
+
+        result = _execute(code=code, data=data)
+        return json.dumps(result, ensure_ascii=False, indent=2, default=str)
+
+    except Exception as e:
+        logger.error(f"execute_analysis error: {e}")
+        return json.dumps({"success": False, "error": str(e)}, ensure_ascii=False)
+
+
+@mcp.tool
+def execute_table(
+    code: str,
+    data_id: Optional[str] = None,
+    data_json: Optional[str] = None,
+) -> str:
+    """
+    테이블 생성 코드를 실행합니다. 예쁜 HTML 테이블 생성에 특화.
+
+    ## 필수 가이드라인 (자동 적용)
+    - 숫자 포맷: 천 단위 구분자 (12,345)
+    - 컬럼명: 한글로 명확하게 (PRD_DE → 연도)
+    - 단위 명시: 인구 (천 명)
+    - 정렬: 숫자 우측, 텍스트 좌측 (자동)
+
+    ## 예시
+    ```python
+    df = prepare_data(data, numeric_fields=["DT"])
+    df["인구_천명"] = df["DT"] / 1000
+
+    return create_table(
+        df[["PRD_DE", "C1_NM", "인구_천명"]],
+        title="연도별 지역별 인구",
+        columns={"PRD_DE": "연도", "C1_NM": "지역", "인구_천명": "인구 (천 명)"},
+        number_format={"인구 (천 명)": ",.0f"},
+        max_rows=20,
+    )
+    ```
+
+    Args:
+        code: Python 테이블 생성 코드
+        data_id: 저장된 데이터 ID
+        data_json: KOSIS 데이터 JSON
+    """
+    from kosis_tools.executors.table import execute_table as _execute
+
+    try:
+        data = None
+        if data_id:
+            from kosis_tools.report_tools import load_raw_data
+            result = load_raw_data(data_id)
+            if "error" not in result:
+                data = result.get("data", [])
+            else:
+                return json.dumps(result, ensure_ascii=False)
+        elif data_json:
+            data = json.loads(data_json) if isinstance(data_json, str) else data_json
+
+        result = _execute(code=code, data=data)
+        return json.dumps(result, ensure_ascii=False, indent=2, default=str)
+
+    except Exception as e:
+        logger.error(f"execute_table error: {e}")
+        return json.dumps({"success": False, "error": str(e)}, ensure_ascii=False)
+
+
+@mcp.tool
+def execute_report(
+    code: str,
+    analysis_json: Optional[str] = None,
+    charts_json: Optional[str] = None,
+    tables_json: Optional[str] = None,
+    data_id: Optional[str] = None,
+) -> str:
+    """
+    리포트 생성 코드를 실행합니다. 시각화+분석+테이블을 조합.
+
+    ## 워크플로우
+    1. execute_analysis → analysis 결과 획득
+    2. execute_visualization → charts 결과 획득
+    3. execute_table → tables 결과 획득
+    4. execute_report → 위 결과들을 조합해서 리포트 생성
+
+    ## 예시
+    ```python
+    return build_report(
+        title="인구 분석 리포트",
+        analysis=analysis,   # {"summary": {...}, "insights": [...]}
+        charts=charts,       # [{"vega_spec": {...}, "title": "인구 추이"}]
+        tables=tables,       # [{"html": "...", "title": "상세 데이터"}]
+        source="통계청 KOSIS",
+    )
+    ```
+
+    Args:
+        code: Python 리포트 생성 코드
+        analysis_json: 분석 결과 JSON (execute_analysis 출력)
+        charts_json: 차트 목록 JSON (execute_visualization 출력들)
+        tables_json: 테이블 목록 JSON (execute_table 출력들)
+        data_id: 원본 데이터 ID (필요시)
+    """
+    from kosis_tools.executors.report import execute_report as _execute
+
+    try:
+        data = None
+        if data_id:
+            from kosis_tools.report_tools import load_raw_data
+            result = load_raw_data(data_id)
+            if "error" not in result:
+                data = result.get("data", [])
+
+        analysis = json.loads(analysis_json) if analysis_json else None
+        charts = json.loads(charts_json) if charts_json else None
+        tables = json.loads(tables_json) if tables_json else None
+
+        result = _execute(
+            code=code,
+            data=data,
+            analysis=analysis,
+            charts=charts,
+            tables=tables,
+        )
+        return json.dumps(result, ensure_ascii=False, indent=2, default=str)
+
+    except Exception as e:
+        logger.error(f"execute_report error: {e}")
+        return json.dumps({"success": False, "error": str(e)}, ensure_ascii=False)
+
+
+@mcp.tool
+def get_executor_guide(executor_type: str) -> str:
+    """
+    특화 실행기의 가이드라인을 조회합니다.
+
+    Args:
+        executor_type: 실행기 유형 (visualization, analysis, table, report)
+
+    Returns:
+        해당 실행기의 상세 가이드라인 및 예제
+    """
+    from kosis_tools.executors import (
+        VISUALIZATION_GUIDE,
+        ANALYSIS_GUIDE,
+        TABLE_GUIDE,
+        REPORT_GUIDE,
+    )
+
+    guides = {
+        "visualization": VISUALIZATION_GUIDE,
+        "analysis": ANALYSIS_GUIDE,
+        "table": TABLE_GUIDE,
+        "report": REPORT_GUIDE,
+    }
+
+    guide = guides.get(executor_type)
+    if guide:
+        return guide
+    else:
+        return json.dumps({
+            "error": f"알 수 없는 실행기 유형: {executor_type}",
+            "available_types": list(guides.keys()),
+        }, ensure_ascii=False)
+
+
+# =============================================================================
 # Resources - 정적 데이터 리소스
 # =============================================================================
 
@@ -1056,12 +1588,402 @@ def get_period_types_resource() -> str:
 
 
 # =============================================================================
+# 템플릿 가이드 도구 (토큰 효율적 계층 구조)
+# =============================================================================
+
+@mcp.tool
+def get_report_templates() -> str:
+    """
+    리포트 템플릿 목록 조회 (토큰 효율적).
+
+    사용 가능한 템플릿 ID와 간략 설명만 반환합니다.
+    상세 가이드는 get_template_guide(template_id)로 조회하세요.
+
+    Returns:
+        템플릿 목록 (ID, 이름, 용도, 섹션 수)
+    """
+    from kosis_tools.story_templates import get_template_list
+
+    templates = get_template_list()
+    return json.dumps({
+        "templates": templates,
+        "usage": "상세 가이드: get_template_guide(template_id)",
+    }, ensure_ascii=False, indent=2)
+
+
+@mcp.tool
+def get_template_guide(
+    template_id: str,
+    step: Optional[int] = None,
+) -> str:
+    """
+    템플릿 가이드 조회 (단계별 또는 전체).
+
+    Args:
+        template_id: 템플릿 ID (trend, compare, composition, correlation, dashboard, ranking)
+        step: 특정 단계만 조회 (1부터 시작). None이면 전체 구조.
+
+    Returns:
+        단계별 가이드 (현재 단계 + 다음 예고 + 코드 힌트)
+    """
+    from kosis_tools.story_templates import (
+        get_template_guide as _get_guide,
+        get_template_step,
+    )
+
+    if step is not None:
+        # 특정 단계만 반환 (토큰 절약)
+        result = get_template_step(template_id, step)
+        if not result:
+            return json.dumps({"error": f"템플릿 '{template_id}' 또는 단계 {step}을 찾을 수 없습니다."}, ensure_ascii=False)
+        return json.dumps(result, ensure_ascii=False, indent=2)
+    else:
+        # 전체 구조 반환
+        result = _get_guide(template_id)
+        if not result:
+            return json.dumps({"error": f"템플릿 '{template_id}'을 찾을 수 없습니다."}, ensure_ascii=False)
+        return json.dumps(result, ensure_ascii=False, indent=2)
+
+
+@mcp.tool
+def get_element_guide(element_type: str) -> str:
+    """
+    특정 요소(차트, 카드 등)의 상세 가이드.
+
+    Args:
+        element_type: 요소 유형
+            - "line_chart": 라인 차트
+            - "bar_chart": 막대 차트
+            - "donut_chart": 도넛 차트
+            - "stat_cards": 통계 카드
+            - "insight_box": 인사이트 박스
+
+    Returns:
+        해당 요소의 when/must_have/code/avoid 가이드
+    """
+    from kosis_tools.story_templates import get_element_guide as _get_element
+
+    result = _get_element(element_type)
+    return json.dumps(result, ensure_ascii=False, indent=2)
+
+
+@mcp.tool
+def recommend_template(data_id: Optional[str] = None) -> str:
+    """
+    데이터 특성 기반 템플릿 추천.
+
+    저장된 데이터의 시그니처를 분석하여 최적 템플릿을 추천합니다.
+
+    Args:
+        data_id: 저장된 데이터 ID (선택). 없으면 일반 가이드 반환.
+
+    Returns:
+        {"recommended": "trend", "reason": "...", "alternatives": [...]}
+    """
+    from kosis_tools.story_templates import recommend_template as _recommend
+
+    if data_id:
+        from kosis_tools.report_tools import load_raw_data
+        result = load_raw_data(data_id)
+        if "error" in result:
+            return json.dumps(result, ensure_ascii=False)
+
+        data = result.get("data", [])
+        # 데이터 시그니처 생성
+        from kosis_tools.code_executor import CodeExecutor
+        executor = CodeExecutor()
+        signature = executor._generate_data_signature(data)
+        recommendation = _recommend(signature)
+        recommendation["data_signature_preview"] = {
+            "fields": list(signature.get("fields", {}).keys()),
+            "records": signature.get("total_records", 0),
+        }
+        return json.dumps(recommendation, ensure_ascii=False, indent=2)
+    else:
+        # 일반 가이드
+        return json.dumps({
+            "tip": "data_id를 제공하면 데이터 기반 추천을 받을 수 있습니다.",
+            "available_templates": ["trend", "compare", "composition", "correlation", "dashboard", "ranking"],
+            "default": "dashboard",
+        }, ensure_ascii=False, indent=2)
+
+
+# =============================================================================
+# 템플릿 리소스 (상세 참조용)
+# =============================================================================
+
+@mcp.resource("kosis://templates")
+def get_templates_resource() -> str:
+    """
+    리포트 템플릿 전체 목록 (리소스).
+
+    각 템플릿의 ID, 이름, 용도, 섹션 수를 제공합니다.
+    """
+    from kosis_tools.story_templates import get_template_list
+    return json.dumps(get_template_list(), ensure_ascii=False, indent=2)
+
+
+@mcp.resource("kosis://templates/trend")
+def get_trend_template_resource() -> str:
+    """트렌드 분석 템플릿 상세."""
+    from kosis_tools.story_templates import get_template_guide
+    return json.dumps(get_template_guide("trend"), ensure_ascii=False, indent=2)
+
+
+@mcp.resource("kosis://templates/compare")
+def get_compare_template_resource() -> str:
+    """비교 분석 템플릿 상세."""
+    from kosis_tools.story_templates import get_template_guide
+    return json.dumps(get_template_guide("compare"), ensure_ascii=False, indent=2)
+
+
+@mcp.resource("kosis://templates/dashboard")
+def get_dashboard_template_resource() -> str:
+    """대시보드 템플릿 상세."""
+    from kosis_tools.story_templates import get_template_guide
+    return json.dumps(get_template_guide("dashboard"), ensure_ascii=False, indent=2)
+
+
+@mcp.resource("kosis://guide/charts")
+def get_chart_guide_resource() -> str:
+    """차트 선택 가이드."""
+    from kosis_tools.story_templates import CHART_GUIDE
+    return json.dumps(CHART_GUIDE, ensure_ascii=False, indent=2)
+
+
+@mcp.resource("kosis://guide/visualization")
+def get_visualization_guide_resource() -> str:
+    """시각화 상세 가이드라인 - execute_code 사용 시 참조."""
+    guide = {
+        "title": "KOSIS 시각화 가이드라인",
+        "sections": {
+            "number_formatting": {
+                "rule": "큰 숫자는 반드시 천 단위 구분",
+                "how": "alt.Axis(format=',') 또는 format=',.0f'",
+                "example": "9411211 → '9,411,211'",
+            },
+            "axis_labels": {
+                "rule": "명확한 한글 제목 + 단위",
+                "examples": [
+                    "alt.X('PRD_DE:N', title='연도')",
+                    "alt.Y('DT:Q', title='인구 (명)', axis=alt.Axis(format=','))",
+                ],
+            },
+            "chart_title": {
+                "rule": "구체적이고 한눈에 파악 가능",
+                "example": ".properties(title='2015-2023년 서울 vs 경기 인구 변화 추이')",
+                "tip": "제목만 보고 무슨 데이터인지 알 수 있게!",
+            },
+            "colors": {
+                "rule": "의미 있는 색상 스킴 사용",
+                "categorical": "scale=alt.Scale(scheme='category10')",
+                "sequential": "scale=alt.Scale(scheme='blues')",
+                "tip": "대비가 명확하게!",
+            },
+            "legend": {
+                "rule": "항상 표시, 위치 조정",
+                "example": "color=alt.Color('지역:N', legend=alt.Legend(title='지역'))",
+                "tip": "범례 제목은 한글로!",
+            },
+            "chart_size": {
+                "rule": "충분히 크게",
+                "default": ".properties(width=600, height=400)",
+                "mobile": "width=500",
+            },
+            "tooltip": {
+                "rule": "상세 정보 제공",
+                "example": "tooltip=['지역', '연도', alt.Tooltip('인구:Q', format=',')]",
+            },
+            "insights": {
+                "rule": "핵심 발견을 텍스트로 강조",
+                "example": "build_insight_box('경기도가 서울을 추월했습니다!')",
+            },
+        },
+        "report_guidelines": {
+            "structure": "인사이트 먼저, 차트 나중에 (결론 → 근거)",
+            "stats": "핵심 수치는 build_stat_cards로 크게 강조",
+            "tables": "테이블은 10행 이내로 (to_table_html, max_rows=10)",
+            "printable": "프린트 가능한 형태로 구성",
+        },
+        "available_helpers": {
+            "data": "prepare_data(data, numeric_fields=['DT']) → DataFrame",
+            "chart_save": "save_chart(chart, name) → {'url': ...}",
+            "chart_json": "chart_to_json(chart) → Vega-Lite JSON",
+            "chart_html": "chart_to_html(chart) → HTML 문자열",
+            "report": "save_report(html, name) → {'url': ...}",
+            "data_save": "save_data(data, name, format) → {'url': ...}",
+            "table": "to_table_html(df, max_rows=10, title='') → HTML 테이블",
+            "build": "build_report(title, sections) → 완성 HTML",
+            "stats": "build_stat_cards([{label, value, unit}]) → 통계 카드",
+            "insight": "build_insight_box(content, title) → 인사이트 박스",
+            "quick": "quick_report(title, chart_specs, tables, insights) → 빠른 리포트",
+        },
+        "quality_feedback": {
+            "description": "execute_code 실행 시 자동 품질 검사 수행",
+            "checks": [
+                "빈 데이터 배열 감지",
+                "차트 제목 누락",
+                "축 라벨 누락",
+                "숫자 포맷 누락",
+                "너무 많은 시리즈/카테고리",
+                "인사이트 누락",
+                "데이터 출처 누락",
+            ],
+            "response_field": "quality_warnings, quality_summary",
+        },
+    }
+    return json.dumps(guide, ensure_ascii=False, indent=2)
+
+
+@mcp.resource("kosis://guide/code-patterns")
+def get_code_patterns_resource() -> str:
+    """코드 패턴 예시 - 복사-붙여넣기 가능한 템플릿."""
+    patterns = {
+        "line_chart": '''# 라인 차트 (트렌드)
+df = prepare_data(data, numeric_fields=["DT"])
+chart = alt.Chart(df).mark_line(point=True).encode(
+    x=alt.X('PRD_DE:N', title='연도'),
+    y=alt.Y('DT:Q', title='값', axis=alt.Axis(format=',')),
+    color=alt.Color('C1_NM:N', title='분류'),
+    tooltip=['PRD_DE', 'C1_NM', alt.Tooltip('DT:Q', format=',')]
+).properties(title='추이 분석', width=600, height=400)
+return save_chart(chart, "trend")''',
+
+        "bar_chart": '''# 막대 차트 (비교)
+df = prepare_data(data, numeric_fields=["DT"])
+chart = alt.Chart(df).mark_bar().encode(
+    x=alt.X('C1_NM:N', sort='-y', title='분류'),
+    y=alt.Y('sum(DT):Q', title='합계', axis=alt.Axis(format=',')),
+    color=alt.value('#667eea')
+).properties(title='비교 분석', width=600, height=400)
+return save_chart(chart, "comparison")''',
+
+        "donut_chart": '''# 도넛 차트 (비율)
+df = prepare_data(data, numeric_fields=["DT"])
+df_agg = df.groupby("C1_NM")["DT"].sum().reset_index()
+chart = alt.Chart(df_agg).mark_arc(innerRadius=50).encode(
+    theta="DT:Q",
+    color=alt.Color("C1_NM:N", title="구성"),
+    tooltip=["C1_NM", alt.Tooltip("DT:Q", format=",")]
+).properties(title='구성 비율', width=400, height=400)
+return save_chart(chart, "composition")''',
+
+        "full_report": '''# 완전한 리포트
+df = prepare_data(data, numeric_fields=["DT"])
+
+# 핵심 수치 계산
+total = df["DT"].sum()
+latest = df[df["PRD_DE"] == df["PRD_DE"].max()]["DT"].sum()
+
+# 차트 생성
+chart = alt.Chart(df).mark_line(point=True).encode(
+    x='PRD_DE:N', y=alt.Y('DT:Q', axis=alt.Axis(format=',')), color='C1_NM:N'
+).properties(title='추이', width=600, height=400)
+
+# 리포트 조립
+html = build_report(
+    title='분석 리포트',
+    sections=[
+        {'type': 'stats', 'items': [
+            {'label': '총합', 'value': f'{total:,.0f}', 'unit': '명'},
+            {'label': '최신', 'value': f'{latest:,.0f}', 'unit': '명'},
+        ]},
+        {'type': 'chart', 'vega_spec': chart.to_dict(), 'title': '추이', 'description': '연도별 변화'},
+        {'type': 'insight', 'content': '핵심 발견점을 여기에 작성', 'title': '인사이트'},
+        {'type': 'table', 'html': to_table_html(df.head(10), title='상세 데이터')},
+    ]
+)
+return save_report(html, 'analysis_report')''',
+
+        "aggregation": '''# 데이터 집계
+df = prepare_data(data, numeric_fields=["DT"])
+result = df.groupby("C1_NM")["DT"].agg(['sum', 'mean', 'count']).sort_values('sum', ascending=False)
+return result.head(10).to_dict()''',
+    }
+    return json.dumps(patterns, ensure_ascii=False, indent=2)
+
+
+# =============================================================================
+# HTTP 앱 생성 (아티팩트 서빙 포함)
+# =============================================================================
+
+def create_http_app():
+    """
+    HTTP 모드용 FastAPI 앱 생성.
+
+    MCP 엔드포인트와 아티팩트 정적 파일 서빙을 통합합니다.
+    """
+    from fastapi import FastAPI
+    from fastapi.staticfiles import StaticFiles
+    from fastapi.middleware.cors import CORSMiddleware
+
+    # 아티팩트 디렉토리 생성
+    artifacts_path = Path(ARTIFACTS_DIR)
+    for subdir in ["charts", "reports", "data"]:
+        (artifacts_path / subdir).mkdir(parents=True, exist_ok=True)
+
+    # FastAPI 앱 생성
+    app = FastAPI(
+        title="KOSIS MCP Server",
+        description="한국 통계 데이터 MCP 서버 (아티팩트 호스팅 포함)",
+        version="0.1.0",
+    )
+
+    # CORS 설정 (로컬 개발용)
+    app.add_middleware(
+        CORSMiddleware,
+        allow_origins=["*"],
+        allow_credentials=True,
+        allow_methods=["*"],
+        allow_headers=["*"],
+    )
+
+    # 아티팩트 정적 파일 서빙
+    app.mount("/artifacts", StaticFiles(directory=str(artifacts_path)), name="artifacts")
+
+    # MCP 엔드포인트 마운트
+    mcp_app = mcp.http_app(path="/mcp")
+    app.mount("/mcp", mcp_app)
+
+    # 서버 정보 엔드포인트
+    @app.get("/")
+    def root():
+        return {
+            "name": "KOSIS MCP Server",
+            "version": "0.1.0",
+            "mcp_endpoint": "/mcp",
+            "artifacts_endpoint": "/artifacts",
+            "artifacts_structure": {
+                "charts": "/artifacts/charts/{filename}",
+                "reports": "/artifacts/reports/{filename}",
+                "data": "/artifacts/data/{filename}",
+            },
+        }
+
+    return app
+
+
+# =============================================================================
 # 엔트리포인트
 # =============================================================================
 
 def main():
     """MCP 서버 실행."""
-    mcp.run()
+    if "--http" in sys.argv:
+        # HTTP 모드
+        import uvicorn
+        port = int(os.environ.get("KOSIS_PORT", "8000"))
+        host = os.environ.get("KOSIS_HOST", "0.0.0.0")
+
+        logger.info(f"Starting HTTP server at http://{host}:{port}")
+        logger.info(f"  MCP endpoint: http://{host}:{port}/mcp")
+        logger.info(f"  Artifacts: http://{host}:{port}/artifacts/")
+
+        app = create_http_app()
+        uvicorn.run(app, host=host, port=port)
+    else:
+        # stdio 모드 (기본)
+        mcp.run()
 
 
 if __name__ == "__main__":

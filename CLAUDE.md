@@ -152,18 +152,36 @@
 kosis-data-processor/
 ├── src/
 │   ├── mcp_server/
-│   │   └── server.py          # MCP 서버 메인 (도구 정의)
+│   │   ├── server.py          # MCP 서버 메인 (도구 정의)
+│   │   └── app.py             # FastAPI HTTP 앱 (Phase 3)
 │   └── kosis_tools/
 │       ├── report_tools.py    # 데이터 조회/분석 함수
 │       ├── code_executor.py   # execute_code 구현
 │       ├── visualize.py       # Altair 시각화
-│       └── ...
-├── kosis_data/
-│   └── kosis_metadata_final.json  # 메타데이터 카탈로그 (103K 테이블)
+│       ├── database.py        # PostgreSQL 연결 (Phase 3)
+│       ├── embeddings.py      # OpenAI 임베딩 (Phase 3)
+│       ├── hybrid_search.py   # 하이브리드 검색 (Phase 3)
+│       └── r2_storage.py      # Cloudflare R2 (Phase 3)
+├── data/
+│   └── metadata_api/
+│       └── tables.json        # ✅ 메타데이터 카탈로그 (252K 통계표, 54필드)
+├── scripts/
+│   └── load_metadata.py       # DB 로드 스크립트
+├── migrations/
+│   └── init.sql               # PostgreSQL 스키마
 ├── docs/                      # 상세 문서
 ├── tests/                     # 테스트
 └── CLAUDE.md                  # 이 문서 (엔트리포인트)
 ```
+
+### 메타데이터 파일 (중요!)
+
+| 파일 | 설명 |
+|------|------|
+| `data/metadata_api/tables.json` | ✅ **사용** - 252,890개 통계표, 54개 필드 |
+| ~~`kosis_data/kosis_metadata_final.json`~~ | ❌ **삭제됨** - 불완전 (검색어 기반 수집) |
+
+> ⚠️ `src/scripts/scrape_kosis_metadata.py`는 DEPRECATED. 사용 금지.
 
 ---
 

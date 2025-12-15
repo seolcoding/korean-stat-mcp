@@ -52,8 +52,7 @@ from typing import Any, Dict, List, Optional, Union, Callable
 from pathlib import Path
 
 import pandas as pd
-import plotly.graph_objects as go
-import plotly.io as pio
+import altair as alt
 
 from .config import DataStorageConfig
 
@@ -749,6 +748,47 @@ def format_data_for_llm(
         "note": f"전체 {len(data)}건 중 최근 기간({periods[-1] if periods else 'N/A'}) {len(data_preview)}건 샘플 제공" if len(data) > max_rows else "전체 데이터 제공",
     }
 
+    # 8. 동적 컬럼 스키마 생성 (Code Execution용)
+    # 실제 데이터에 존재하는 컬럼과 설명
+    column_schema = {}
+    column_descriptions = {
+        "PRD_DE": "기간 (예: '2023', '202301')",
+        "C1_NM": "분류1 - 주로 지역명 (예: '서울특별시')",
+        "C2_NM": "분류2 - 세부 분류",
+        "C3_NM": "분류3 - 추가 분류",
+        "DT": "데이터 값 (문자열, 숫자 변환 필요: prepare_data 사용)",
+        "ITM_NM": "항목명 (예: '인구수', '세대수')",
+        "UNIT_NM": "단위 (예: '명', '%')",
+        "TBL_ID": "테이블 ID",
+        "TBL_NM": "테이블명",
+        "ORG_ID": "기관 ID",
+        "ORG_NM": "기관명",
+    }
+
+    # 첫 번째 레코드에서 실제 존재하는 컬럼 추출
+    for col in first.keys():
+        if first.get(col):  # 값이 있는 컬럼만
+            column_schema[col] = {
+                "description": column_descriptions.get(col, f"필드: {col}"),
+                "sample_value": str(first.get(col))[:50],  # 샘플값 (50자 제한)
+            }
+
+    # 9. Code Execution 컨텍스트
+    actual_columns = list(first.keys())
+    code_context = {
+        "columns": actual_columns,
+        "column_schema": column_schema,
+        "value_column": "DT",  # 숫자 값 컬럼
+        "group_columns": [c for c in ["C1_NM", "C2_NM", "C3_NM", "ITM_NM"] if c in unique_values],
+        "period_column": "PRD_DE" if "PRD_DE" in actual_columns else None,
+        "usage_hint": """
+# Code Execution 예시:
+df = prepare_data(data, numeric_fields=["DT"])  # DT를 숫자로 변환
+df.groupby("C1_NM")["DT"].sum()  # 분류별 합계
+alt.Chart(df).mark_line().encode(x='PRD_DE:N', y='DT:Q', color='C1_NM:N')  # 차트
+""",
+    }
+
     result = {
         "summary": summary,
         "metadata": metadata,
@@ -759,6 +799,7 @@ def format_data_for_llm(
             k: v[:20] if len(v) > 20 else v  # 각 필드별 20개까지만
             for k, v in unique_values.items()
         },
+        "code_context": code_context,  # Code Execution용 컨텍스트 추가
     }
 
     # 원본 파일 정보 추가
@@ -945,7 +986,6 @@ def viz_line_trend(
         show_trend_line: 추세선 표시 여부
         labels: 필드명→표시라벨 매핑 (MCP에서 LLM이 지정)
                예: {"PRD_DE": "연도", "DT": "인구수", "C1_NM": "지역"}
-               hovertemplate, 축 제목, 범례 제목에 모두 적용됩니다.
 
     Returns:
         ReportComponent (type="chart")
@@ -960,12 +1000,24 @@ def viz_line_trend(
         >>> print(chart.summary)
         "4개 지역의 2020-2023 추이를 보여주는 라인 차트"
     """
-    from .visualize import KosisVisualizer
+    from .visualize import prepare_data
 
-    viz = KosisVisualizer()
-    fig = viz.line_chart(
-        data, x=x, y=y, color=color, title=title, markers=True, labels=labels
+    labels = labels or {}
+    df = prepare_data(data, numeric_fields=[y])
+
+    # Altair 차트 생성
+    chart = alt.Chart(df).mark_line(point=True).encode(
+        x=alt.X(f'{x}:N', title=labels.get(x, x)),
+        y=alt.Y(f'{y}:Q', title=labels.get(y, y)),
     )
+
+    if color and color in df.columns:
+        chart = chart.encode(color=alt.Color(f'{color}:N', title=labels.get(color, color)))
+
+    if title:
+        chart = chart.properties(title=title)
+
+    chart = chart.properties(width=600, height=400)
 
     # 요약 생성
     periods = get_available_values(data, x)
@@ -975,11 +1027,16 @@ def viz_line_trend(
 
     summary = f"{group_count}개 항목의 {period_range} 추이를 보여주는 라인 차트"
 
-    html = pio.to_html(fig, full_html=False, include_plotlyjs=False)
+    # Vega-Embed HTML 생성
+    spec = chart.to_json()
+    html = f'''<div class="chart-container">
+        <div id="chart-{id(chart)}"></div>
+        <script>vegaEmbed('#chart-{id(chart)}', {spec}, {{"renderer": "svg"}}).catch(console.error);</script>
+    </div>'''
 
     return ReportComponent(
         type="chart",
-        html=f'<div class="chart-container">{html}</div>',
+        html=html,
         data={"x": x, "y": y, "color": color, "periods": periods, "groups": groups},
         summary=summary,
         metadata={"chart_type": "line", "title": title},
@@ -1015,7 +1072,6 @@ def viz_bar_comparison(
         horizontal: 가로 막대 여부
         labels: 필드명→표시라벨 매핑 (MCP에서 LLM이 지정)
                예: {"C1_NM": "지역", "DT": "인구수", "PRD_DE": "연도"}
-               hovertemplate, 축 제목, 범례 제목에 모두 적용됩니다.
 
     Returns:
         ReportComponent (type="chart")
@@ -1030,35 +1086,53 @@ def viz_bar_comparison(
         ...     labels={"C1_NM": "지역", "DT": "인구수"}
         ... )
     """
-    from .visualize import KosisVisualizer
-    from .transform import KosisTransformer
+    from .visualize import prepare_data
+
+    labels = labels or {}
+    df = prepare_data(data, numeric_fields=[y])
 
     # 정렬 및 Top N 처리
     if sort or top_n:
-        tx = KosisTransformer(data)
-        df = tx.df.copy()
-        df[y] = pd.to_numeric(df[y], errors="coerce")
         df = df.sort_values(y, ascending=False)
         if top_n:
             df = df.head(top_n)
-        data = df.to_dict("records")
 
-    viz = KosisVisualizer()
-    orientation = "h" if horizontal else "v"
-    fig = viz.bar_chart(
-        data, x=x, y=y, color=color, title=title, orientation=orientation, labels=labels
-    )
+    # Altair 차트 생성
+    if horizontal:
+        chart = alt.Chart(df).mark_bar().encode(
+            x=alt.X(f'{y}:Q', title=labels.get(y, y)),
+            y=alt.Y(f'{x}:N', title=labels.get(x, x), sort='-x'),
+        )
+    else:
+        sort_order = '-y' if sort else None
+        chart = alt.Chart(df).mark_bar().encode(
+            x=alt.X(f'{x}:N', title=labels.get(x, x), sort=sort_order),
+            y=alt.Y(f'{y}:Q', title=labels.get(y, y)),
+        )
 
-    categories = get_available_values(data, x)
+    if color and color in df.columns:
+        chart = chart.encode(color=alt.Color(f'{color}:N', title=labels.get(color, color)))
+
+    if title:
+        chart = chart.properties(title=title)
+
+    chart = chart.properties(width=600, height=400)
+
+    categories = df[x].unique().tolist() if x in df.columns else []
     summary = f"{len(categories)}개 항목의 비교 막대 차트"
     if top_n:
         summary = f"상위 {top_n}개 항목의 비교 막대 차트"
 
-    html = pio.to_html(fig, full_html=False, include_plotlyjs=False)
+    # Vega-Embed HTML 생성
+    spec = chart.to_json()
+    html = f'''<div class="chart-container">
+        <div id="chart-{id(chart)}"></div>
+        <script>vegaEmbed('#chart-{id(chart)}', {spec}, {{"renderer": "svg"}}).catch(console.error);</script>
+    </div>'''
 
     return ReportComponent(
         type="chart",
-        html=f'<div class="chart-container">{html}</div>',
+        html=html,
         data={"x": x, "y": y, "categories": categories, "top_n": top_n},
         summary=summary,
         metadata={"chart_type": "bar", "title": title, "sorted": sort},
@@ -1177,30 +1251,39 @@ def viz_pie_composition(
     Returns:
         ReportComponent (type="chart")
     """
-    from .visualize import KosisVisualizer
-    from .transform import KosisTransformer
+    from .visualize import prepare_data
 
-    # Top N 처리 (나머지는 "기타"로 합침)
-    tx = KosisTransformer(data)
-    df = tx.df.copy()
-    df[values] = pd.to_numeric(df[values], errors="coerce")
+    df = prepare_data(data, numeric_fields=[values])
     df = df.sort_values(values, ascending=False)
 
+    # Top N 처리 (나머지는 "기타"로 합침)
     if len(df) > top_n:
         top_df = df.head(top_n)
         others_sum = df.iloc[top_n:][values].sum()
         others_row = {names: "기타", values: others_sum}
         df = pd.concat([top_df, pd.DataFrame([others_row])], ignore_index=True)
-        data = df.to_dict("records")
 
-    viz = KosisVisualizer()
-    fig = viz.pie_chart(data, values=values, names=names, title=title, hole=hole)
+    # Altair 파이/도넛 차트 (arc mark)
+    inner_radius = int(hole * 100) if hole > 0 else 0
+    chart = alt.Chart(df).mark_arc(innerRadius=inner_radius).encode(
+        theta=alt.Theta(f'{values}:Q'),
+        color=alt.Color(f'{names}:N'),
+        tooltip=[f'{names}:N', f'{values}:Q']
+    ).properties(width=400, height=400)
 
-    html = pio.to_html(fig, full_html=False, include_plotlyjs=False)
+    if title:
+        chart = chart.properties(title=title)
+
+    # Vega-Embed HTML 생성
+    spec = chart.to_json()
+    html = f'''<div class="chart-container">
+        <div id="chart-{id(chart)}"></div>
+        <script>vegaEmbed('#chart-{id(chart)}', {spec}, {{"renderer": "svg"}}).catch(console.error);</script>
+    </div>'''
 
     return ReportComponent(
         type="chart",
-        html=f'<div class="chart-container">{html}</div>',
+        html=html,
         data={"values": values, "names": names, "top_n": top_n},
         summary=f"상위 {top_n}개 항목의 구성비 차트",
         metadata={"chart_type": "pie", "title": title},
@@ -1229,24 +1312,48 @@ def viz_heatmap(
         y: Y축 필드 (기본: "C1_NM")
         z: 값 필드 (기본: "DT")
         title: 차트 제목
-        color_scale: 색상 스케일 ("Blues", "Reds", "Viridis" 등)
+        color_scale: 색상 스케일 ("blues", "reds", "viridis" 등)
 
     Returns:
         ReportComponent (type="chart")
     """
-    from .visualize import KosisVisualizer
+    from .visualize import prepare_data
 
-    viz = KosisVisualizer()
-    fig = viz.heatmap(data, x=x, y=y, z=z, title=title, color_scale=color_scale)
+    df = prepare_data(data, numeric_fields=[z])
 
-    x_vals = get_available_values(data, x)
-    y_vals = get_available_values(data, y)
+    # Altair color scheme mapping
+    scheme_map = {
+        "Blues": "blues",
+        "Reds": "reds",
+        "Viridis": "viridis",
+        "Greens": "greens",
+    }
+    scheme = scheme_map.get(color_scale, color_scale.lower())
 
-    html = pio.to_html(fig, full_html=False, include_plotlyjs=False)
+    # Altair 히트맵
+    chart = alt.Chart(df).mark_rect().encode(
+        x=alt.X(f'{x}:N', title=x),
+        y=alt.Y(f'{y}:N', title=y),
+        color=alt.Color(f'{z}:Q', scale=alt.Scale(scheme=scheme)),
+        tooltip=[f'{x}:N', f'{y}:N', f'{z}:Q']
+    ).properties(width=600, height=400)
+
+    if title:
+        chart = chart.properties(title=title)
+
+    x_vals = df[x].unique().tolist() if x in df.columns else []
+    y_vals = df[y].unique().tolist() if y in df.columns else []
+
+    # Vega-Embed HTML 생성
+    spec = chart.to_json()
+    html = f'''<div class="chart-container">
+        <div id="chart-{id(chart)}"></div>
+        <script>vegaEmbed('#chart-{id(chart)}', {spec}, {{"renderer": "svg"}}).catch(console.error);</script>
+    </div>'''
 
     return ReportComponent(
         type="chart",
-        html=f'<div class="chart-container">{html}</div>',
+        html=html,
         data={"x": x, "y": y, "z": z, "x_count": len(x_vals), "y_count": len(y_vals)},
         summary=f"{len(y_vals)}x{len(x_vals)} 히트맵",
         metadata={"chart_type": "heatmap", "title": title},
@@ -2284,7 +2391,9 @@ def assemble_report(
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{title}</title>
-    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
 

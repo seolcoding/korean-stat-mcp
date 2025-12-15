@@ -1,0 +1,68 @@
+services:
+  # PostgreSQL with pgvector extension
+  postgres:
+    image: pgvector/pgvector:pg16
+    container_name: kosis-postgres
+    environment:
+      POSTGRES_USER: kosis
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-kosis_dev_password}
+      POSTGRES_DB: kosis
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./migrations/init.sql:/docker-entrypoint-initdb.d/01_init.sql:ro
+    ports:
+      - "5432:5432"
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U kosis -d kosis"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+
+  # KOSIS MCP Server (production mode)
+  kosis-mcp:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: kosis-mcp
+    ports:
+      - "8000:8000"
+    environment:
+      # FastMCP
+      - FASTMCP_STATELESS_HTTP=true
+      # KOSIS API
+      - KOSIS_API_KEY=${KOSIS_API_KEY}
+      # PostgreSQL (asyncpg format)
+      - DATABASE_URL=postgresql://kosis:${POSTGRES_PASSWORD:-kosis_dev_password}@postgres:5432/kosis
+      # Cloudflare R2
+      - R2_ACCOUNT_ID=${R2_ACCOUNT_ID:-}
+      - R2_ACCESS_KEY_ID=${R2_ACCESS_KEY_ID:-}
+      - R2_SECRET_ACCESS_KEY=${R2_SECRET_ACCESS_KEY:-}
+      - R2_BUCKET_NAME=${R2_BUCKET_NAME:-kosis-assets}
+      - R2_PUBLIC_URL=${R2_PUBLIC_URL:-}
+      - R2_REGION=${R2_REGION:-auto}
+      # OpenAI (for embeddings)
+      - OPENAI_API_KEY=${OPENAI_API_KEY:-}
+      # Artifact storage mode: 'local' or 'r2'
+      - ARTIFACT_STORAGE=${ARTIFACT_STORAGE:-local}
+    volumes:
+      - ./artifacts:/app/artifacts
+    depends_on:
+      postgres:
+        condition: service_healthy
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+
+volumes:
+  postgres_data:
+    driver: local
+
+networks:
+  default:
+    name: kosis-network
