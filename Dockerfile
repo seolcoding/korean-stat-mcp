@@ -44,8 +44,11 @@ COPY --from=builder /app/.venv /app/.venv
 # Copy application source
 COPY src/ src/
 
-# Note: Metadata is now loaded into PostgreSQL, not from JSON files
-# kosis_data/ directory is no longer needed
+# Copy scripts for updater service
+COPY scripts/ scripts/
+
+# Note: Metadata is loaded into PostgreSQL via updater service
+# Data files are mounted as volumes, not copied into image
 
 # Create artifact directories
 RUN mkdir -p /app/artifacts/charts /app/artifacts/reports /app/artifacts/data \

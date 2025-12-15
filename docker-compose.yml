@@ -59,6 +59,29 @@ services:
       retries: 3
       start_period: 30s
 
+  # Metadata Updater (batch job - run manually or via cron)
+  # Features: resume support, retry logic, incremental update
+  updater:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: kosis-updater
+    profiles: ["updater"]  # 수동 실행: docker-compose --profile updater run updater
+    command: >
+      python scripts/load_metadata.py
+      --resume
+      --create-indexes
+      --retry-count 5
+      --retry-delay 10
+    environment:
+      - DATABASE_URL=postgresql://kosis:${POSTGRES_PASSWORD:-kosis_dev_password}@postgres:5432/kosis
+      - OPENAI_API_KEY=${OPENAI_API_KEY:-}
+    volumes:
+      - ./data:/app/data:ro
+    depends_on:
+      postgres:
+        condition: service_healthy
+
 volumes:
   postgres_data:
     driver: local

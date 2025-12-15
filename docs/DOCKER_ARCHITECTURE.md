@@ -1,8 +1,8 @@
 # KOSIS MCP Server - Docker Architecture
 
-> **Status: TODO (계획 단계)**
+> **Status: ✅ 구현 완료**
 >
-> 이 문서는 향후 구현할 Docker Compose 기반 배포 아키텍처를 설명합니다.
+> 마지막 업데이트: 2025-12-16
 
 ## Overview
 
@@ -33,9 +33,37 @@
 
 | 서비스 | 역할 | 실행 방식 |
 |--------|------|----------|
-| **db** | PostgreSQL 16 + pgvector | 상시 실행 |
-| **updater** | XLS 다운로드 → 파싱 → 임베딩 → DB 적재 | cron/수동 (하루 1회) |
-| **mcp-server** | Claude Desktop 연동, 하이브리드 검색 제공 | 상시 실행 |
+| **postgres** | PostgreSQL 16 + pgvector | 상시 실행 |
+| **updater** | 메타데이터 임베딩 → DB 적재 | cron/수동 (하루 1회) |
+| **kosis-mcp** | Claude Desktop 연동, 하이브리드 검색 제공 | 상시 실행 |
+
+## Architectural Decision: Updater 분리
+
+### 결정 사항
+Updater를 MCP Server와 **별도 서비스**로 분리한다.
+
+### 근거
+1. **부하 격리**: 임베딩 생성(OpenAI API 호출)은 CPU/네트워크 집약적 작업. 서버 응답성에 영향 없도록 분리
+2. **독립적 스케줄링**: 서버 재시작과 무관하게 업데이트 주기 조절 가능 (매일/매주)
+3. **관심사 분리**: 서버는 요청 처리에만 집중, Updater는 데이터 파이프라인에만 집중
+4. **선택적 실행**: `profiles`로 기본 실행에서 제외, 필요 시에만 실행
+
+### Robust 기능
+- **Resume 지원**: `--resume` 플래그로 중단된 위치에서 재개 (이미 임베딩된 레코드 스킵)
+- **Retry 로직**: API 실패 시 지수 백오프로 자동 재시도 (기본 5회, 10초 간격)
+- **증분 업데이트**: 새 레코드만 임베딩 생성 (비용 절감)
+
+### 실행 방법
+```bash
+# Updater만 수동 실행 (resume 모드 기본 적용)
+docker-compose --profile updater run --rm updater
+
+# 전체 재생성 (강제)
+docker-compose --profile updater run --rm updater python scripts/load_metadata.py --force
+
+# cron으로 매일 새벽 3시 실행
+0 3 * * * cd /path/to/project && docker-compose --profile updater run --rm updater
+```
 
 ## docker-compose.yml
 
@@ -258,17 +286,20 @@ EMBEDDING_MODEL=text-embedding-3-small
 EMBEDDING_DIMENSIONS=1536
 ```
 
-## TODO
+## 구현 상태
 
-- [ ] `db/init.sql` 스키마 작성
-- [ ] `services/updater/` 구현
-  - [ ] download.py - XLS 다운로드 로직
-  - [ ] parse.py - XLS 파싱 및 정규화
-  - [ ] embed.py - OpenAI 임베딩 생성
-  - [ ] load.py - DB upsert
-  - [ ] main.py - 파이프라인 오케스트레이션
-- [ ] `services/mcp-server/` 구현
-  - [ ] 기존 kosis_tools 통합
-  - [ ] 하이브리드 검색 구현
-- [ ] Claude Desktop MCP 설정 가이드 작성
-- [ ] 배포 문서 작성
+- [x] `migrations/init.sql` 스키마 작성
+- [x] `kosis-mcp` 서비스 구현
+  - [x] 기존 kosis_tools 통합
+  - [x] 하이브리드 검색 구현 (pgvector + BM25 + RRF)
+  - [x] Cloudflare R2 연동
+- [x] `updater` 서비스 추가 (docker-compose.yml)
+  - [x] `scripts/load_metadata.py` 재사용
+  - [x] profiles로 선택적 실행
+- [x] Claude Desktop MCP 설정 가이드 (docs/USER_GUIDE.md)
+- [x] 배포 문서 작성 (docs/DEPLOYMENT.md)
+
+### 향후 개선 사항
+- [ ] Updater: XLS 자동 다운로드 기능 추가
+- [ ] Updater: 증분 업데이트 (변경분만 임베딩 재생성)
+- [ ] 모니터링/알림 설정

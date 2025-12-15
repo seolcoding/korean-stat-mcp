@@ -4,12 +4,23 @@
 This script loads the kosis_metadata_final.json file into the database
 and generates OpenAI embeddings for semantic search.
 
+Features:
+- Robust: Supports resume after interruption
+- Incremental: Only generates embeddings for records without them
+- Batch processing with retry logic for API failures
+
 Usage:
     # Full load with embeddings (requires OPENAI_API_KEY)
     uv run python scripts/load_metadata.py
 
+    # Resume mode: skip records with existing embeddings
+    uv run python scripts/load_metadata.py --resume
+
     # Load without embeddings (faster, for testing)
     uv run python scripts/load_metadata.py --skip-embeddings
+
+    # Force re-generate all embeddings
+    uv run python scripts/load_metadata.py --force
 
     # Load specific number of records (for testing)
     uv run python scripts/load_metadata.py --limit 1000
@@ -56,6 +67,16 @@ def parse_args():
         help="Skip embedding generation (faster, for testing)",
     )
     parser.add_argument(
+        "--resume",
+        action="store_true",
+        help="Resume mode: skip records that already have embeddings",
+    )
+    parser.add_argument(
+        "--force",
+        action="store_true",
+        help="Force re-generate embeddings for all records",
+    )
+    parser.add_argument(
         "--limit",
         type=int,
         default=None,
@@ -77,6 +98,18 @@ def parse_args():
         "--create-indexes",
         action="store_true",
         help="Create indexes after loading (recommended)",
+    )
+    parser.add_argument(
+        "--retry-count",
+        type=int,
+        default=3,
+        help="Number of retries for API failures (default: 3)",
+    )
+    parser.add_argument(
+        "--retry-delay",
+        type=float,
+        default=5.0,
+        help="Delay between retries in seconds (default: 5.0)",
     )
     return parser.parse_args()
 
@@ -107,15 +140,43 @@ def create_search_text(record: dict) -> str:
     return text[:15000] if len(text) > 15000 else text
 
 
+async def get_existing_tbl_ids_with_embeddings() -> set:
+    """Get set of tbl_ids that already have embeddings."""
+    from kosis_tools.database import DatabasePool
+
+    rows = await DatabasePool.fetch(
+        "SELECT tbl_id FROM kosis_tables WHERE embedding IS NOT NULL"
+    )
+    return {row["tbl_id"] for row in rows}
+
+
 async def load_metadata(
     json_path: str,
     skip_embeddings: bool = False,
+    resume: bool = False,
+    force: bool = False,
     limit: Optional[int] = None,
     batch_size: int = 500,
     embedding_batch_size: int = 100,
     create_indexes: bool = False,
+    retry_count: int = 3,
+    retry_delay: float = 5.0,
 ):
-    """Load metadata into database."""
+    """Load metadata into database.
+
+    Args:
+        json_path: Path to metadata JSON file
+        skip_embeddings: Skip embedding generation entirely
+        resume: Skip records that already have embeddings (incremental update)
+        force: Force re-generate embeddings for all records
+        limit: Limit number of records to process
+        batch_size: Batch size for database inserts
+        embedding_batch_size: Batch size for OpenAI API calls
+        create_indexes: Create indexes after loading
+        retry_count: Number of retries for API failures
+        retry_delay: Delay between retries in seconds
+    """
+    import time
     from kosis_tools.database import DatabasePool, DatabaseError
 
     # Load JSON file
@@ -143,7 +204,28 @@ async def load_metadata(
         records = records[:limit]
 
     logger.info(f"Total records in file: {total_records:,}")
-    logger.info(f"Records to load: {len(records):,}")
+    logger.info(f"Records to process: {len(records):,}")
+
+    # Resume mode: filter out records that already have embeddings
+    existing_with_embeddings = set()
+    if resume and not skip_embeddings and not force:
+        try:
+            await DatabasePool.initialize()
+            existing_with_embeddings = await get_existing_tbl_ids_with_embeddings()
+            logger.info(f"Found {len(existing_with_embeddings):,} records with existing embeddings")
+
+            # Helper to get tbl_id from record
+            def get_tbl_id(rec):
+                return rec.get("tbl_id") or rec.get("TBL_ID")
+
+            original_count = len(records)
+            records = [r for r in records if get_tbl_id(r) not in existing_with_embeddings]
+            skipped = original_count - len(records)
+            logger.info(f"Resume mode: skipping {skipped:,} records, processing {len(records):,}")
+            await DatabasePool.close()
+        except Exception as e:
+            logger.warning(f"Could not get existing embeddings: {e}")
+            logger.info("Proceeding with all records")
 
     # Initialize database
     try:
@@ -188,21 +270,31 @@ async def load_metadata(
         # Prepare search texts
         search_texts = [create_search_text(r) for r in batch]
 
-        # Generate embeddings if enabled
+        # Generate embeddings if enabled (with retry logic)
         embeddings = None
         if embedder and not skip_embeddings:
-            try:
-                def progress_cb(done, total):
-                    pass  # Silent progress
+            for attempt in range(retry_count):
+                try:
+                    def progress_cb(done, total):
+                        pass  # Silent progress
 
-                embeddings = embedder.create_embeddings_batch(
-                    search_texts,
-                    batch_size=embedding_batch_size,
-                    progress_callback=progress_cb,
-                )
-            except Exception as e:
-                logger.warning(f"Embedding generation failed for batch: {e}")
-                embeddings = None
+                    embeddings = embedder.create_embeddings_batch(
+                        search_texts,
+                        batch_size=embedding_batch_size,
+                        progress_callback=progress_cb,
+                    )
+                    break  # Success, exit retry loop
+                except Exception as e:
+                    if attempt < retry_count - 1:
+                        wait_time = retry_delay * (2 ** attempt)  # Exponential backoff
+                        logger.warning(
+                            f"Embedding API failed (attempt {attempt + 1}/{retry_count}): {e}"
+                        )
+                        logger.info(f"Retrying in {wait_time:.1f}s...")
+                        time.sleep(wait_time)
+                    else:
+                        logger.error(f"Embedding generation failed after {retry_count} attempts: {e}")
+                        embeddings = None
 
         # Helper to get field value (supports both lowercase and uppercase)
         def get_field(rec, lower_key, upper_key=None):
@@ -334,9 +426,13 @@ if __name__ == "__main__":
         load_metadata(
             json_path=args.json_path,
             skip_embeddings=args.skip_embeddings,
+            resume=args.resume,
+            force=args.force,
             limit=args.limit,
             batch_size=args.batch_size,
             embedding_batch_size=args.embedding_batch_size,
             create_indexes=args.create_indexes,
+            retry_count=args.retry_count,
+            retry_delay=args.retry_delay,
         )
     )
