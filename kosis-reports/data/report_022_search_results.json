@@ -1,0 +1,362 @@
+[
+  {
+    "tbl_id": "DT_1YL202101E",
+    "tbl_nm": "인터넷이용률(시도)",
+    "org_id": "101",
+    "org_nm": "과학기술정보통신부",
+    "start_prd": "",
+    "end_prd": "",
+    "prd_se": "Y"
+  },
+  {
+    "tbl_id": "DT_12702N_021",
+    "tbl_nm": "사물인터넷 개발(기술) 인력 충원 계획",
+    "org_id": "127",
+    "org_nm": "과학기술정보통신부",
+    "start_prd": "",
+    "end_prd": "",
+    "prd_se": "Y"
+  },
+  {
+    "tbl_id": "DT_12702N_034",
+    "tbl_nm": "사물인터넷 사업체 인력 충원 계획",
+    "org_id": "127",
+    "org_nm": "과학기술정보통신부",
+    "start_prd": "",
+    "end_prd": "",
+    "prd_se": "Y"
+  },
+  {
+    "tbl_id": "DT_12702N_031",
+    "tbl_nm": "사물인터넷 인력 현황",
+    "org_id": "127",
+    "org_nm": "과학기술정보통신부",
+    "start_prd": "",
+    "end_prd": "",
+    "prd_se": "Y"
+  },
+  {
+    "tbl_id": "DT_FH002_FI002",
+    "tbl_nm": "가구 인터넷 접속 여부(인터넷 접속률)",
+    "org_id": "127",
+    "org_nm": "과학기술정보통신부",
+    "start_prd": "",
+    "end_prd": "",
+    "prd_se": "Y"
+  },
+  {
+    "tbl_id": "DT_12702N_005",
+    "tbl_nm": "사물인터넷 사업체 전체 종사자 수",
+    "org_id": "127",
+    "org_nm": "과학기술정보통신부",
+    "start_prd": "",
+    "end_prd": "",
+    "prd_se": "Y"
+  },
+  {
+    "tbl_id": "DT_MH001_MI002",
+    "tbl_nm": "최근 1개월 이내 인터넷 이용 여부(인터넷 이용률)",
+    "org_id": "127",
+    "org_nm": "과학기술정보통신부",
+    "start_prd": "",
+    "end_prd": "",
+    "prd_se": "Y"
+  },
+  {
+    "tbl_id": "DT_12702N_018",
+    "tbl_nm": "사물인터넷 개발(기술) 인력 현황",
+    "org_id": "127",
+    "org_nm": "과학기술정보통신부",
+    "start_prd": "",
+    "end_prd": "",
+    "prd_se": "Y"
+  },
+  {
+    "tbl_id": "DT_12702N_026",
+    "tbl_nm": "사물인터넷 사업 시 애로사항",
+    "org_id": "127",
+    "org_nm": "과학기술정보통신부",
+    "start_prd": "",
+    "end_prd": "",
+    "prd_se": "Y"
+  },
+  {
+    "tbl_id": "DT_12702N_023",
+    "tbl_nm": "국내 사물인터넷 기업의 주요 경쟁국",
+    "org_id": "127",
+    "org_nm": "과학기술정보통신부",
+    "start_prd": "",
+    "end_prd": "",
+    "prd_se": "Y"
+  },
+  {
+    "tbl_id": "DT_120019N_2021_032",
+    "tbl_nm": "(청소년)부모님의 스마트폰 지도활동",
+    "org_id": "127",
+    "org_nm": "과학기술정보통신부",
+    "start_prd": "",
+    "end_prd": "",
+    "prd_se": "Y"
+  },
+  {
+    "tbl_id": "DT_120019N_2016_014",
+    "tbl_nm": "성인(만20~59세) 인터넷 과의존 척도",
+    "org_id": "127",
+    "org_nm": "과학기술정보통신부",
+    "start_prd": "",
+    "end_prd": "",
+    "prd_se": "Y"
+  },
+  {
+    "tbl_id": "DT_120019N_2016_013",
+    "tbl_nm": "청소년(만10~19세) 인터넷 과의존 척도",
+    "org_id": "127",
+    "org_nm": "과학기술정보통신부",
+    "start_prd": "",
+    "end_prd": "",
+    "prd_se": "Y"
+  },
+  {
+    "tbl_id": "DT_120019N_2016_015",
+    "tbl_nm": "60대(만60~69세) 인터넷 과의존 척도",
+    "org_id": "127",
+    "org_nm": "과학기술정보통신부",
+    "start_prd": "",
+    "end_prd": "",
+    "prd_se": "Y"
+  },
+  {
+    "tbl_id": "DT_120019N_2021_034",
+    "tbl_nm": "(만3~19세 학부모)자녀 스마트폰 사용에 대한 지도활동",
+    "org_id": "127",
+    "org_nm": "과학기술정보통신부",
+    "start_prd": "",
+    "end_prd": "",
+    "prd_se": "Y"
+  },
+  {
+    "tbl_id": "DT_120019N_2016_012",
+    "tbl_nm": "유아동(만3~9세) 인터넷 과의존 척도",
+    "org_id": "127",
+    "org_nm": "과학기술정보통신부",
+    "start_prd": "",
+    "end_prd": "",
+    "prd_se": "Y"
+  },
+  {
+    "tbl_id": "DT_405001_I024",
+    "tbl_nm": "스마트폰 유형별 점유율",
+    "org_id": "405",
+    "org_nm": "정보통신정책연구원",
+    "start_prd": "",
+    "end_prd": "",
+    "prd_se": "Y"
+  },
+  {
+    "tbl_id": "DT_120019N_2021_036",
+    "tbl_nm": "(만3~19세 학부모)자녀 스마트폰 사용 관리를 위해 필요한 정보",
+    "org_id": "127",
+    "org_nm": "과학기술정보통신부",
+    "start_prd": "",
+    "end_prd": "",
+    "prd_se": "Y"
+  },
+  {
+    "tbl_id": "DT_405001_I008",
+    "tbl_nm": "스마트폰 및 키즈폰 보유대수",
+    "org_id": "405",
+    "org_nm": "정보통신정책연구원",
+    "start_prd": "",
+    "end_prd": "",
+    "prd_se": "Y"
+  },
+  {
+    "tbl_id": "DT_120019N_2021_037",
+    "tbl_nm": "(유아동 자녀 학부모)자녀의 스마트폰 과의존 주요 원인(1순위)",
+    "org_id": "127",
+    "org_nm": "과학기술정보통신부",
+    "start_prd": "",
+    "end_prd": "",
+    "prd_se": "Y"
+  },
+  {
+    "tbl_id": "DT_420002_039",
+    "tbl_nm": "참여 희망하는 디지털 문해교육",
+    "org_id": "420",
+    "org_nm": "국가평생교육진흥원",
+    "start_prd": "",
+    "end_prd": "",
+    "prd_se": "Y"
+  },
+  {
+    "tbl_id": "DT_420002_003",
+    "tbl_nm": "성인 디지털 문해능력 점수",
+    "org_id": "420",
+    "org_nm": "국가평생교육진흥원",
+    "start_prd": "",
+    "end_prd": "",
+    "prd_se": "Y"
+  },
+  {
+    "tbl_id": "DT_420002_040",
+    "tbl_nm": "디지털 문해교육 불필요 이유",
+    "org_id": "420",
+    "org_nm": "국가평생교육진흥원",
+    "start_prd": "",
+    "end_prd": "",
+    "prd_se": "Y"
+  },
+  {
+    "tbl_id": "DT_420002_034",
+    "tbl_nm": "디지털 문해교육 참여경험",
+    "org_id": "420",
+    "org_nm": "국가평생교육진흥원",
+    "start_prd": "",
+    "end_prd": "",
+    "prd_se": "Y"
+  },
+  {
+    "tbl_id": "DT_115039_2_4",
+    "tbl_nm": "디지털 기술과 솔루션 이해도",
+    "org_id": "115",
+    "org_nm": "산업통상부",
+    "start_prd": "",
+    "end_prd": "",
+    "prd_se": "Y"
+  },
+  {
+    "tbl_id": "DT_115039_2_2",
+    "tbl_nm": "디지털 비전과 리더십 단계",
+    "org_id": "115",
+    "org_nm": "산업통상부",
+    "start_prd": "",
+    "end_prd": "",
+    "prd_se": "Y"
+  },
+  {
+    "tbl_id": "DT_115039_6_2_0_1",
+    "tbl_nm": "디지털 전환 인식 변화 정도",
+    "org_id": "115",
+    "org_nm": "산업통상부",
+    "start_prd": "",
+    "end_prd": "",
+    "prd_se": "Y"
+  },
+  {
+    "tbl_id": "DT_420002_041",
+    "tbl_nm": "디지털 문해교육 참여가 어려움 이유",
+    "org_id": "420",
+    "org_nm": "국가평생교육진흥원",
+    "start_prd": "",
+    "end_prd": "",
+    "prd_se": "Y"
+  },
+  {
+    "tbl_id": "DT_115039_2_3",
+    "tbl_nm": "디지털 전략 단계",
+    "org_id": "115",
+    "org_nm": "산업통상부",
+    "start_prd": "",
+    "end_prd": "",
+    "prd_se": "Y"
+  },
+  {
+    "tbl_id": "DT_127021_E009",
+    "tbl_nm": "이용자 데이터 수집 여부",
+    "org_id": "127",
+    "org_nm": "과학기술정보통신부",
+    "start_prd": "",
+    "end_prd": "",
+    "prd_se": "Y"
+  },
+  {
+    "tbl_id": "DT_MLTM_2100",
+    "tbl_nm": "(新)주택보급률",
+    "org_id": "116",
+    "org_nm": "국토교통부",
+    "start_prd": "",
+    "end_prd": "",
+    "prd_se": "Y"
+  },
+  {
+    "tbl_id": "DT_1YL20751",
+    "tbl_nm": "하수도보급률(시도/시/군/구)",
+    "org_id": "101",
+    "org_nm": "국가데이터처",
+    "start_prd": "",
+    "end_prd": "",
+    "prd_se": "Y"
+  },
+  {
+    "tbl_id": "DT_1YL20061",
+    "tbl_nm": "도시가스 보급률(시도)",
+    "org_id": "101",
+    "org_nm": "국가데이터처",
+    "start_prd": "",
+    "end_prd": "",
+    "prd_se": "Y"
+  },
+  {
+    "tbl_id": "DT_2AS001",
+    "tbl_nm": "전기 보급률",
+    "org_id": "101",
+    "org_nm": "국가데이터처",
+    "start_prd": "",
+    "end_prd": "",
+    "prd_se": "Y"
+  },
+  {
+    "tbl_id": "DT_2AS001",
+    "tbl_nm": "전기 보급률",
+    "org_id": "101",
+    "org_nm": "국가데이터처",
+    "start_prd": "",
+    "end_prd": "",
+    "prd_se": "Y"
+  },
+  {
+    "tbl_id": "DT_1YL20741",
+    "tbl_nm": "상수도보급률(시도/시/군/구)",
+    "org_id": "101",
+    "org_nm": "국가데이터처",
+    "start_prd": "",
+    "end_prd": "",
+    "prd_se": "Y"
+  },
+  {
+    "tbl_id": "DT_106N_06_0100043",
+    "tbl_nm": "상수도 보급현황",
+    "org_id": "106",
+    "org_nm": "기후에너지환경부",
+    "start_prd": "",
+    "end_prd": "",
+    "prd_se": "Y"
+  },
+  {
+    "tbl_id": "DT_106N_06_0100042",
+    "tbl_nm": "상수도 보급현황(총괄)",
+    "org_id": "106",
+    "org_nm": "기후에너지환경부",
+    "start_prd": "",
+    "end_prd": "",
+    "prd_se": "Y"
+  },
+  {
+    "tbl_id": "DT_337001_004",
+    "tbl_nm": "신·재생에너지 보급용량(발전-신규)(비재생폐기물 전체 제외)",
+    "org_id": "337",
+    "org_nm": "한국에너지공단",
+    "start_prd": "",
+    "end_prd": "",
+    "prd_se": "Y"
+  },
+  {
+    "tbl_id": "DT_337N_A005A",
+    "tbl_nm": "신·재생에너지 보급용량(발전-누적)",
+    "org_id": "337",
+    "org_nm": "한국에너지공단",
+    "start_prd": "",
+    "end_prd": "",
+    "prd_se": "Y"
+  }
+]

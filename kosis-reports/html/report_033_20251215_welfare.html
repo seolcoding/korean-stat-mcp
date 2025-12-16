@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report #033: 한국 사회복지 트렌드 분석</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans KR', sans-serif;
+            line-height: 1.6;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #34495e;
+            margin-top: 30px;
+            border-left: 4px solid #3498db;
+            padding-left: 10px;
+        }
+        h3 {
+            color: #555;
+            margin-top: 20px;
+        }
+        .meta {
+            background-color: #ecf0f1;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        .meta p {
+            margin: 5px 0;
+        }
+        .highlight {
+            background-color: #fff9e6;
+            border-left: 4px solid #f39c12;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .chart {
+            margin: 30px 0;
+            text-align: center;
+        }
+        .chart iframe {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        .data-table th, .data-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        .data-table th {
+            background-color: #3498db;
+            color: white;
+        }
+        .data-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        .sources {
+            background-color: #e8f4f8;
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 40px;
+        }
+        .sources h3 {
+            margin-top: 0;
+        }
+        .sources ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .sources li {
+            margin: 10px 0;
+        }
+        .sources a {
+            color: #2980b9;
+            text-decoration: none;
+        }
+        .sources a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Report #033: 한국 사회복지 트렌드 분석</h1>
+        <h2>기초생활보장 수급자 현황 및 복지지출 추이</h2>
+
+        <div class="meta">
+            <p><strong>보고서 번호:</strong> #033</p>
+            <p><strong>생성일:</strong> 2025-12-15</p>
+            <p><strong>키워드:</strong> 사회복지, 기초생활, 수급자, 복지예산</p>
+            <p><strong>데이터 출처:</strong> 국가통계포털 (KOSIS)</p>
+        </div>
+
+        <h2>📊 요약 (Executive Summary)</h2>
+        <div class="highlight">
+            <h3>주요 발견사항</h3>
+            <ul>
+                <li><strong>수급자 증가 추세:</strong> 국민기초생활보장 수급자는 2017년 약 158만 명에서 2024년 약 238만 명으로 <strong>50% 이상 증가</strong></li>
+                <li><strong>복지 지출 확대:</strong> 사회복지지출 비율(GDP 대비)은 2015년 10%에서 2023년 14.3%로 <strong>43% 증가</strong></li>
+                <li><strong>2025년 정책 변화:</strong> 기준 중위소득 6.42% 인상 (역대 최대), 약 7만 1천명 신규 수급 예상</li>
+                <li><strong>지원 강화:</strong> 4인 가구 생계급여 기준 195만원 (전년 대비 6.42% ↑), 의료급여 건강생활 유지비 2배 인상</li>
+            </ul>
+        </div>
+
+        <h2>🔍 2025년 사회복지 정책 동향</h2>
+        <h3>기준 중위소득 역대 최대 인상</h3>
+        <p>
+            2025년도 기준 중위소득은 맞춤형 급여체계로 전환된 2015년 이후 역대 최고 증가율인 <strong>6.42%</strong>로 결정되었습니다.
+            이는 취약계층의 생활안정을 위한 정부의 강력한 의지를 보여줍니다.
+        </p>
+
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>가구 규모</th>
+                    <th>2024년 기준</th>
+                    <th>2025년 기준</th>
+                    <th>인상률</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1인 가구</td>
+                    <td>222만 8,445원</td>
+                    <td>239만 2,013원</td>
+                    <td>7.34%</td>
+                </tr>
+                <tr>
+                    <td>4인 가구</td>
+                    <td>572만 9,913원</td>
+                    <td>609만 7,773원</td>
+                    <td>6.42%</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>생계급여 선정기준</h3>
+        <p>
+            생계급여는 기준 중위소득의 <strong>32%</strong>로, 4인 가구 기준 195만 1,287원(전년 대비 6.42% 증가),
+            1인 가구 기준 76만 5,444원(전년 대비 7.34% 증가)입니다.
+        </p>
+
+        <h2>📈 KOSIS 데이터 분석</h2>
+
+        <h3>1. 국민기초생활보장 수급자 수 추이</h3>
+        <div class="chart">
+            <iframe src="chart_033_recipients.html" width="800" height="500"></iframe>
+        </div>
+        <p>
+            <strong>분석:</strong> 2017년 최저점(약 158만 명) 이후 지속적인 증가세를 보이며,
+            2024년에는 약 238만 명에 도달했습니다. 이는 복지 사각지대 해소 노력과
+            선정기준 완화의 결과로 해석됩니다.
+        </p>
+
+        <h3>2. 사회복지지출 비율 (GDP 대비)</h3>
+        <div class="chart">
+            <iframe src="chart_033_welfare_gdp.html" width="800" height="500"></iframe>
+        </div>
+        <p>
+            <strong>분석:</strong> GDP 대비 사회복지지출 비율은 꾸준히 상승하여 2023년 14.3%를 기록했습니다.
+            이는 한국이 복지국가로의 전환을 가속화하고 있음을 시사합니다.
+        </p>
+
+        <h3>3. 총사회복지지출 비율 (GDP 대비)</h3>
+        <div class="chart">
+            <iframe src="chart_033_total_welfare.html" width="800" height="500"></iframe>
+        </div>
+        <p>
+            <strong>분석:</strong> 총사회복지지출은 2015년 11.8%에서 2022년 14.6%로 증가했으며,
+            특히 2019-2020년 COVID-19 팬데믹 시기에 급격한 증가를 보였습니다.
+        </p>
+
+        <h2>💡 정책 시사점</h2>
+        <div class="highlight">
+            <h3>핵심 인사이트</h3>
+            <ol>
+                <li><strong>지속적인 수급자 증가:</strong> 저출산·고령화와 경제적 양극화로 인해
+                    기초생활보장 수급자는 앞으로도 증가할 것으로 전망됩니다.</li>
+                <li><strong>복지 지출 확대 필요성:</strong> OECD 평균(GDP 대비 20% 수준)에 비해
+                    여전히 낮은 수준으로, 지속적인 재정 투입이 필요합니다.</li>
+                <li><strong>선정기준 정례적 조정:</strong> 물가상승률과 소득 증가를 반영한
+                    기준 중위소득의 정례적 조정이 중요합니다.</li>
+                <li><strong>사각지대 해소:</strong> 약 7만 명의 신규 수급자 발생 예상은
+                    여전히 복지 사각지대가 존재함을 의미합니다.</li>
+            </ol>
+        </div>
+
+        <h2>📊 데이터 요약</h2>
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>지표</th>
+                    <th>2015년</th>
+                    <th>2024년</th>
+                    <th>변화</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>기초생활보장 수급자 (전국)</td>
+                    <td>1,646,363명</td>
+                    <td>2,383,000명 (추정)</td>
+                    <td>+44.7%</td>
+                </tr>
+                <tr>
+                    <td>사회복지지출 비율 (GDP 대비)</td>
+                    <td>10.0%</td>
+                    <td>14.3% (2023년)</td>
+                    <td>+4.3%p</td>
+                </tr>
+                <tr>
+                    <td>총사회복지지출 비율 (GDP 대비)</td>
+                    <td>11.8%</td>
+                    <td>14.6% (2022년)</td>
+                    <td>+2.8%p</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="sources">
+            <h3>📚 참고 자료 (Sources)</h3>
+            <ul>
+                <li>KOSIS 국가통계포털:
+                    <ul>
+                        <li>국민기초생활보장 수급자수(시도) - 보건복지부 (DT_1YL13801E)</li>
+                        <li>사회복지지출 비율 (GDP 대비) - 보건복지부 (DT_11777_N120)</li>
+                        <li>총사회복지지출 비율 (GDP 대비) - 보건복지부 (DT_11777_N220)</li>
+                    </ul>
+                </li>
+                <li><a href="https://www.mohw.go.kr/board.es?mid=a10503000000&bid=0027&list_no=1482430&act=view">
+                    2025년도 기준 중위소득 6.42%로 역대 최대 인상 - 보건복지부</a></li>
+                <li><a href="https://edu.welfare.pe.kr/2025-보건복지부-2024년-국민기초생활보장-수급자-현황/">
+                    2025 보건복지부: 2024년 국민기초생활보장 수급자 현황</a></li>
+                <li><a href="https://www.bokjiro.go.kr/ssis-tbu/twatga/sociGuaStat/SociGuaStatDetailIframe.do?datsNo=7&datsClNo=1012&datsClCrit=WS">
+                    복지통계 - 복지로</a></li>
+            </ul>
+        </div>
+
+        <footer style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #ddd; text-align: center; color: #777;">
+            <p>Report #033 | Generated on 2025-12-15 | KOSIS Data Processor</p>
+        </footer>
+    </div>
+</body>
+</html>

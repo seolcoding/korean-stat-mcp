@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 한국 영화/극장 산업 트렌드 분석 2025</title>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+    <style>
+        /* 기본 스타일 */
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont,
+                         'Segoe UI', Roboto, 'Helvetica Neue', Arial,
+                         'Noto Sans KR', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #fff;
+        }
+
+        /* 헤더 */
+        .report-header {
+            text-align: center;
+            border-bottom: 2px solid #2c3e50;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        .report-header h1 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 2rem;
+        }
+
+        .report-meta {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+
+        /* 섹션 */
+        .section {
+            margin-bottom: 40px;
+            page-break-inside: avoid;
+        }
+
+        .section h2 {
+            color: #34495e;
+            border-left: 4px solid #3498db;
+            padding-left: 15px;
+            margin-bottom: 20px;
+        }
+
+        .section h3 {
+            color: #7f8c8d;
+            margin-top: 25px;
+        }
+
+        /* 차트 컨테이너 */
+        .chart-container {
+            background: #fafafa;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .chart-container .vega-embed {
+            display: inline-block;
+        }
+
+        /* 테이블 스타일 */
+        .table-container {
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+        }
+
+        .data-table th {
+            background: #34495e;
+            color: white;
+            padding: 12px 15px;
+            text-align: left;
+            font-weight: 500;
+        }
+
+        .data-table td {
+            padding: 10px 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .data-table tr:hover {
+            background: #f8f9fa;
+        }
+
+        .data-table tr:nth-child(even) {
+            background: #fafafa;
+        }
+
+        .table-note {
+            color: #7f8c8d;
+            font-size: 0.85rem;
+            font-style: italic;
+            margin-top: 10px;
+        }
+
+        /* 텍스트 콘텐츠 */
+        .text-content {
+            text-align: justify;
+        }
+
+        .text-content p {
+            margin-bottom: 15px;
+        }
+
+        /* 인사이트 박스 */
+        .insight-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .insight-box h4 {
+            margin: 0 0 10px 0;
+            font-size: 1.1rem;
+        }
+
+        /* 통계 카드 */
+        .stat-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .stat-card {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .stat-card .value {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .stat-card .label {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+
+        /* 푸터 */
+        .report-footer {
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+            margin-top: 40px;
+            text-align: center;
+            color: #7f8c8d;
+            font-size: 0.85rem;
+        }
+
+        /* 프린트 스타일 */
+        @media print {
+            body {
+                padding: 0;
+                font-size: 11pt;
+            }
+
+            .report-header {
+                page-break-after: avoid;
+            }
+
+            .section {
+                page-break-inside: avoid;
+            }
+
+            .chart-container {
+                page-break-inside: avoid;
+                background: white;
+                border: 1px solid #ccc;
+            }
+
+            .no-print {
+                display: none;
+            }
+
+            a {
+                text-decoration: none;
+                color: #333;
+            }
+        }
+
+        /* 커스텀 스타일 */
+        
+        /* 시네마 스타일 커스텀 */
+        body {
+            background: linear-gradient(180deg, #1a0000 0%, #000000 100%);
+            color: #f0f0f0;
+        }
+
+        .report-header {
+            background: linear-gradient(135deg, #8B0000 0%, #000000 100%);
+            border-bottom: 3px solid #FFD700;
+            box-shadow: 0 4px 20px rgba(139, 0, 0, 0.5);
+        }
+
+        .report-header h1 {
+            color: #FFD700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+            font-size: 2.5rem;
+            font-family: 'Georgia', serif;
+        }
+
+        .report-meta {
+            color: #FFD700;
+            font-size: 1rem;
+            font-style: italic;
+        }
+
+        .section {
+            background: rgba(26, 0, 0, 0.6);
+            border: 1px solid #8B0000;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .section h2 {
+            color: #FFD700;
+            border-left: 5px solid #FFD700;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+        }
+
+        .section h3 {
+            color: #FFA500;
+        }
+
+        .chart-container {
+            background: rgba(0, 0, 0, 0.7);
+            border: 2px solid #8B0000;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: inset 0 2px 10px rgba(139, 0, 0, 0.3);
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #8B0000 0%, #2a0000 100%);
+            border: 2px solid #FFD700;
+            box-shadow: 0 4px 15px rgba(139, 0, 0, 0.4);
+        }
+
+        .stat-card .value {
+            color: #FFD700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        }
+
+        .stat-card .label {
+            color: #f0f0f0;
+        }
+
+        .insight-box {
+            background: linear-gradient(135deg, #8B0000 0%, #4a0000 100%);
+            border: 2px solid #FFD700;
+            color: #f0f0f0;
+            box-shadow: 0 4px 20px rgba(139, 0, 0, 0.6);
+        }
+
+        .insight-box h4 {
+            color: #FFD700;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+        }
+
+        .data-table th {
+            background: #8B0000;
+            border-bottom: 2px solid #FFD700;
+        }
+
+        .data-table tr:hover {
+            background: rgba(139, 0, 0, 0.2);
+        }
+
+        .report-footer {
+            border-top: 2px solid #8B0000;
+            color: #FFD700;
+        }
+
+        /* 극장 커튼 효과 */
+        .curtain-effect {
+            position: relative;
+            padding-top: 20px;
+        }
+
+        .curtain-effect::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 10px;
+            background: repeating-linear-gradient(
+                90deg,
+                #8B0000,
+                #8B0000 20px,
+                #FFD700 20px,
+                #FFD700 22px
+            );
+        }
+    
+    </style>
+</head>
+<body>
+    <header class="report-header">
+        <h1>🎬 한국 영화/극장 산업 트렌드 분석 2025</h1>
+        <div class="report-meta">
+            Cinema & Theater Industry Analysis - KOSIS Data Report #091
+            <br>
+            생성일시: 2025년 12월 15일 09:44
+        </div>
+    </header>
+
+    <main>
+        
+    <div class="curtain-effect">
+        <h2>🎬 개요</h2>
+        <p>본 보고서는 KOSIS (국가통계포털)의 공식 데이터를 기반으로 한국 영화 및 극장 산업의
+        최근 동향을 분석합니다.</p>
+        <p><strong>분석 범위:</strong> 2014년~2024년 영화 관람객, 스크린 수, 극장 현황 등</p>
+        <p><strong>데이터 출처:</strong> 8개 KOSIS 통계표, 총 2,058건</p>
+    </div>
+    
+<div class="section"><div class="stat-cards">
+        <div class="stat-card">
+            <div class="value">2014~2023<span style="font-size: 0.5em"></span></div>
+            <div class="label">분석 기간</div>
+        </div>
+        
+        <div class="stat-card">
+            <div class="value">2,058<span style="font-size: 0.5em">건</span></div>
+            <div class="label">총 데이터</div>
+        </div>
+        </div></div>
+
+    <div class="curtain-effect">
+        <h2>📊 2025년 주요 트렌드</h2>
+        <ul>
+            <li>OTT 플랫폼 성장으로 극장 관객 감소</li><li>프리미엄 상영관 (IMAX, 4DX, ScreenX) 확대</li><li>한국 영화의 해외 수출 증가 (오스카, 칸 수상 영향)</li><li>메가박스, CGV, 롯데시네마 3사 과점 구조</li><li>코로나 이후 회복세, 하지만 팬데믹 이전 수준 미회복</li><li>멀티플렉스 중심 시장 구조 고착화</li>
+        </ul>
+    </div>
+    
+<div class="section"><div class="chart-container"><h3>지역별 분포 (2023년)</h3><div id="chart-87bdc734" class="vega-chart" data-spec='{"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"name": "data-c415b86fec5624b3fc1457f4311cd24e"}, "mark": {"type": "bar", "color": "#8B0000"}, "encoding": {"tooltip": [{"field": "C1_NM", "title": "지역", "type": "nominal"}, {"field": "VALUE", "format": ",.0f", "title": "값", "type": "quantitative"}], "x": {"field": "VALUE", "title": "값", "type": "quantitative"}, "y": {"field": "C1_NM", "sort": "-x", "title": "지역", "type": "nominal"}}, "height": 400, "title": {"text": "지역별 분포 (2023년)", "fontSize": 18, "color": "#8B0000", "fontWeight": "bold"}, "width": 700, "$schema": "https://vega.github.io/schema/vega-lite/v6.1.0.json", "datasets": {"data-c415b86fec5624b3fc1457f4311cd24e": [{"C1_NM": "소계", "VALUE": 6258136.0}, {"C1_NM": "전체", "VALUE": 5942416.0}, {"C1_NM": "매출액", "VALUE": 5903072.0}, {"C1_NM": "영화기획 및 제작", "VALUE": 2546342.0}, {"C1_NM": "극장상영", "VALUE": 1686964.0}, {"C1_NM": "부가가치액", "VALUE": 1265499.7}, {"C1_NM": "영화배급", "VALUE": 796548.0}, {"C1_NM": "영화제작 지원", "VALUE": 741228.0}, {"C1_NM": "합계", "VALUE": 370420.0}, {"C1_NM": "영화 수입", "VALUE": 188520.0}]}}'></div></div></div>
+<div class="section">
+    <div class="insight-box">
+        <h4>🎥 핵심 인사이트</h4>
+        <p>한국 영화 산업은 OTT 플랫폼의 급성장으로 극장 관람 패턴이 변화하고 있으며, 프리미엄 상영관 (IMAX, 4DX) 확대를 통해 차별화된 극장 경험을 제공하고 있습니다.<br><br>메가박스, CGV, 롯데시네마 3대 멀티플렉스 중심의 과점 구조가 고착화되고 있으며, 한국 영화의 해외 진출 성공이 산업 성장의 새로운 동력으로 작용하고 있습니다.</p>
+    </div>
+    </div>
+
+    <div class="curtain-effect">
+        <h2>📚 데이터 출처</h2>
+        <div class="table-container">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>테이블명</th>
+                        <th>기관</th>
+                        <th>테이블ID</th>
+                        <th>데이터 건수</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <td>영화산업 : 사업체 및 종사자당 평균매출액 현황</td>
+                        <td>113</td>
+                        <td>DT_113_STBL_1027323</td>
+                        <td>595</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>영화산업 : 성별 업종별 종사자 현황</td>
+                        <td>113</td>
+                        <td>DT_113_STBL_1031281</td>
+                        <td>117</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>영화산업 : 고용형태별 업종별 종사자 현황</td>
+                        <td>113</td>
+                        <td>DT_113_STBL_1031280</td>
+                        <td>125</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>영화산업 : 학력별 업종별 종사자 현황</td>
+                        <td>113</td>
+                        <td>DT_113_STBL_1031727</td>
+                        <td>121</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>영화산업 : 직무별 업종별 종사자 현황</td>
+                        <td>113</td>
+                        <td>DT_113_STBL_1031728</td>
+                        <td>131</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>영화산업 : 연령별 업종별 종사자 현황(2013년~)</td>
+                        <td>113</td>
+                        <td>DT_113_STBL_1027234</td>
+                        <td>723</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>영화산업 : 총괄</td>
+                        <td>113</td>
+                        <td>DT_113_STBL_1023512</td>
+                        <td>182</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>영화산업 : 주요 대륙별 수출액 현황</td>
+                        <td>113</td>
+                        <td>DT_113_STBL_1031279</td>
+                        <td>64</td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    </main>
+
+    <footer class="report-footer">
+        <p>KOSIS 통계 데이터 기반 자동 생성 리포트</p>
+        <p class="no-print">
+            <a href="javascript:window.print()">이 리포트 인쇄하기</a>
+        </p>
+    </footer>
+
+    <script>
+        // Vega-Lite 차트 렌더링
+        document.querySelectorAll('.vega-chart').forEach(function(el) {
+            var spec = JSON.parse(el.getAttribute('data-spec'));
+            vegaEmbed(el, spec, {
+                actions: false,
+                renderer: 'svg'  // 프린트용 SVG
+            }).catch(console.error);
+        });
+    </script>
+</body>
+</html>

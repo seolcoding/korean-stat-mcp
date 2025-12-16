@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌊 물/수자원 트렌드 분석 보고서</title>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+    <style>
+        /* 기본 스타일 */
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont,
+                         'Segoe UI', Roboto, 'Helvetica Neue', Arial,
+                         'Noto Sans KR', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #fff;
+        }
+
+        /* 헤더 */
+        .report-header {
+            text-align: center;
+            border-bottom: 2px solid #2c3e50;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        .report-header h1 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 2rem;
+        }
+
+        .report-meta {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+
+        /* 섹션 */
+        .section {
+            margin-bottom: 40px;
+            page-break-inside: avoid;
+        }
+
+        .section h2 {
+            color: #34495e;
+            border-left: 4px solid #3498db;
+            padding-left: 15px;
+            margin-bottom: 20px;
+        }
+
+        .section h3 {
+            color: #7f8c8d;
+            margin-top: 25px;
+        }
+
+        /* 차트 컨테이너 */
+        .chart-container {
+            background: #fafafa;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .chart-container .vega-embed {
+            display: inline-block;
+        }
+
+        /* 테이블 스타일 */
+        .table-container {
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+        }
+
+        .data-table th {
+            background: #34495e;
+            color: white;
+            padding: 12px 15px;
+            text-align: left;
+            font-weight: 500;
+        }
+
+        .data-table td {
+            padding: 10px 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .data-table tr:hover {
+            background: #f8f9fa;
+        }
+
+        .data-table tr:nth-child(even) {
+            background: #fafafa;
+        }
+
+        .table-note {
+            color: #7f8c8d;
+            font-size: 0.85rem;
+            font-style: italic;
+            margin-top: 10px;
+        }
+
+        /* 텍스트 콘텐츠 */
+        .text-content {
+            text-align: justify;
+        }
+
+        .text-content p {
+            margin-bottom: 15px;
+        }
+
+        /* 인사이트 박스 */
+        .insight-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .insight-box h4 {
+            margin: 0 0 10px 0;
+            font-size: 1.1rem;
+        }
+
+        /* 통계 카드 */
+        .stat-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .stat-card {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .stat-card .value {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .stat-card .label {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+
+        /* 푸터 */
+        .report-footer {
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+            margin-top: 40px;
+            text-align: center;
+            color: #7f8c8d;
+            font-size: 0.85rem;
+        }
+
+        /* 프린트 스타일 */
+        @media print {
+            body {
+                padding: 0;
+                font-size: 11pt;
+            }
+
+            .report-header {
+                page-break-after: avoid;
+            }
+
+            .section {
+                page-break-inside: avoid;
+            }
+
+            .chart-container {
+                page-break-inside: avoid;
+                background: white;
+                border: 1px solid #ccc;
+            }
+
+            .no-print {
+                display: none;
+            }
+
+            a {
+                text-decoration: none;
+                color: #333;
+            }
+        }
+
+        /* 커스텀 스타일 */
+        
+/* 아쿠아 테마 - 물/수자원 스타일 */
+
+:root {
+    --aqua-primary: #00bcd4;
+    --aqua-light: #4dd0e1;
+    --aqua-lighter: #b2ebf2;
+    --aqua-dark: #0097a7;
+    --wave-overlay: linear-gradient(135deg, #00bcd444 0%, #4dd0e144 100%);
+}
+
+body {
+    background: linear-gradient(to bottom, #e0f7fa 0%, #ffffff 100%);
+}
+
+/* 물방울 배경 패턴 */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.05;
+    background-image:
+        radial-gradient(circle at 20% 30%, var(--aqua-light) 2px, transparent 2px),
+        radial-gradient(circle at 80% 70%, var(--aqua-primary) 3px, transparent 3px),
+        radial-gradient(circle at 50% 50%, var(--aqua-lighter) 2px, transparent 2px);
+    background-size: 200px 200px;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.report-header {
+    background: linear-gradient(135deg, var(--aqua-primary) 0%, var(--aqua-light) 100%);
+    color: white;
+    border-bottom: 4px solid var(--aqua-dark);
+    padding: 30px 20px;
+    border-radius: 12px 12px 0 0;
+    box-shadow: 0 4px 12px rgba(0, 188, 212, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+/* 웨이브 패턴 */
+.report-header::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"><path d="M0,0 Q300,60 600,0 T1200,0 L1200,120 L0,120 Z" fill="white" opacity="0.3"/></svg>');
+    background-size: cover;
+}
+
+.report-header h1 {
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    margin-bottom: 10px;
+}
+
+.report-meta {
+    color: #e0f7fa;
+    font-size: 0.95rem;
+}
+
+/* 섹션 헤더 */
+.section h2 {
+    color: var(--aqua-dark);
+    border-left: 5px solid var(--aqua-primary);
+    background: linear-gradient(to right, #e0f7fa 0%, transparent 100%);
+    padding: 12px 20px;
+    border-radius: 0 8px 8px 0;
+}
+
+/* 통계 카드 - 물방울 스타일 */
+.stat-card {
+    background: linear-gradient(135deg, #ffffff 0%, #e0f7fa 100%);
+    border: 2px solid var(--aqua-lighter);
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 188, 212, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 8px 20px rgba(0, 188, 212, 0.25);
+    border-color: var(--aqua-primary);
+}
+
+.stat-card .label {
+    color: var(--aqua-dark);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.stat-card .value {
+    color: var(--aqua-primary);
+    font-weight: 700;
+    text-shadow: 1px 1px 2px rgba(0, 188, 212, 0.1);
+}
+
+/* 인사이트 박스 */
+.insight-box {
+    background: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 100%);
+    border-left: 6px solid var(--aqua-primary);
+    border-radius: 0 12px 12px 0;
+    box-shadow: 0 3px 10px rgba(0, 188, 212, 0.2);
+}
+
+.insight-box h3 {
+    color: var(--aqua-dark);
+}
+
+/* 차트 컨테이너 */
+.chart-container {
+    background: linear-gradient(to bottom, #ffffff 0%, #f5feff 100%);
+    border: 2px solid var(--aqua-lighter);
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0, 188, 212, 0.1);
+}
+
+/* 테이블 헤더 */
+.data-table th {
+    background: linear-gradient(135deg, var(--aqua-primary) 0%, var(--aqua-dark) 100%);
+    color: white;
+}
+
+.data-table tr:hover {
+    background: #e0f7fa;
+}
+
+/* 물방울 아이콘 장식 */
+.section::before {
+    content: "💧";
+    position: absolute;
+    left: -30px;
+    font-size: 1.5rem;
+    opacity: 0.3;
+}
+
+/* 프린트 최적화 */
+@media print {
+    body::before {
+        display: none;
+    }
+
+    .report-header {
+        background: var(--aqua-primary) !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <header class="report-header">
+        <h1>🌊 물/수자원 트렌드 분석 보고서</h1>
+        <div class="report-meta">
+            상수도·하수도 보급 현황 및 수자원 관리 동향 (2014-2023)
+            <br>
+            생성일시: 2025년 12월 15일 09:40
+        </div>
+    </header>
+
+    <main>
+        <div class="section text-content">
+<h2>📊 개요</h2>
+<p>
+이 보고서는 한국의 <strong>수자원 관리 현황</strong>과 <strong>상수도·하수도 보급률</strong>을
+KOSIS(국가통계포털) 데이터를 기반으로 분석합니다.
+</p>
+<p>
+국제사회는 한국을 <strong>물 부족 국가</strong>로 분류하고 있으며, 1인당 가용 수자원량은
+세계 평균의 12% 수준입니다. 효율적인 수자원 관리와 상하수도 인프라 확충이 중요한 시점입니다.
+</p>
+</div>
+<div class="section text-content"><h2>🌊 핵심 지표</h2><div class="stat-cards">
+        <div class="stat-card">
+            <div class="value">2,705<span style="font-size: 0.5em">㎥/년</span></div>
+            <div class="label">1인당 수자원</div>
+        </div>
+        
+        <div class="stat-card">
+            <div class="value">304<span style="font-size: 0.5em">L/일</span></div>
+            <div class="label">1인당 물 사용량</div>
+        </div>
+        
+        <div class="stat-card">
+            <div class="value">63<span style="font-size: 0.5em">%</span></div>
+            <div class="label">농업용수 비중</div>
+        </div>
+        </div></div>
+<div class="section text-content">
+    <div class="insight-box">
+        <h4>📰 2025 수자원 동향</h4>
+        <p>
+<h4>🚨 물 부족 국가 한국</h4>
+<ul>
+<li><strong>연간 강수량은 많지만</strong> 인구밀도가 높아 1인당 수자원은 부족</li>
+<li><strong>가용 수자원 대비 사용량 40-50%</strong> (세계 평균의 2-3배)</li>
+<li><strong>제주도 2025년 예상:</strong> 일일 5만 7천㎥ 물 부족</li>
+<li><strong>지하수 고갈 우려:</strong> 재충전에 최대 800년 소요</li>
+</ul>
+<p style="margin-top: 15px; font-size: 0.9rem; color: #666;">
+출처: 대통령직속 국가물관리위원회, K-water, WAMIS, WRI 2023
+</p>
+        </p>
+    </div>
+    </div>
+<div class="section text-content">
+<h2>📚 데이터 출처</h2>
+<ul>
+<li><strong>KOSIS 국가통계포털</strong>
+    <ul>
+    <li>상수도 보급현황 (기후에너지환경부) - <code>106/DT_106N_06_0100043</code></li>
+    <li>하수도 보급현황 (기후에너지환경부) - <code>106/DT_106N_07_0100039</code></li>
+    </ul>
+</li>
+<li><strong>뉴스 및 동향</strong>
+    <ul>
+    <li>대통령직속 국가물관리위원회 (water.go.kr)</li>
+    <li>한국수자원공사 K-water (kwater.or.kr)</li>
+    <li>WAMIS 국가수자원관리종합정보시스템 (wamis.go.kr)</li>
+    <li>세계자원연구소(WRI) 2023</li>
+    </ul>
+</li>
+</ul>
+</div>
+    </main>
+
+    <footer class="report-footer">
+        <p>KOSIS 통계 데이터 기반 자동 생성 리포트</p>
+        <p class="no-print">
+            <a href="javascript:window.print()">이 리포트 인쇄하기</a>
+        </p>
+    </footer>
+
+    <script>
+        // Vega-Lite 차트 렌더링
+        document.querySelectorAll('.vega-chart').forEach(function(el) {
+            var spec = JSON.parse(el.getAttribute('data-spec'));
+            vegaEmbed(el, spec, {
+                actions: false,
+                renderer: 'svg'  // 프린트용 SVG
+            }).catch(console.error);
+        });
+    </script>
+</body>
+</html>

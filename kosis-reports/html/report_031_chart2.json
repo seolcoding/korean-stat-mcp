@@ -1,0 +1,82 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 800,
+  "height": 400,
+  "data": {
+    "values": [
+      {
+        "region": "제천시",
+        "index": 112.6054585
+      },
+      {
+        "region": "충주시",
+        "index": 106.9506525
+      },
+      {
+        "region": "영주시",
+        "index": 106.5697133
+      },
+      {
+        "region": "안동시",
+        "index": 106.1895149
+      },
+      {
+        "region": "강릉시",
+        "index": 106.1597893
+      },
+      {
+        "region": "속초시",
+        "index": 106.0221833
+      },
+      {
+        "region": "김천시",
+        "index": 105.9305573
+      },
+      {
+        "region": "이천시",
+        "index": 105.9183066
+      },
+      {
+        "region": "보령시",
+        "index": 104.3668931
+      },
+      {
+        "region": "밀양시",
+        "index": 104.2742465
+      }
+    ]
+  },
+  "mark": "bar",
+  "encoding": {
+    "x": {
+      "field": "region",
+      "type": "nominal",
+      "title": "지역",
+      "sort": "-y"
+    },
+    "y": {
+      "field": "index",
+      "type": "quantitative",
+      "title": "전세가격지수"
+    },
+    "color": {
+      "field": "index",
+      "type": "quantitative",
+      "scale": {
+        "scheme": "blues"
+      }
+    },
+    "tooltip": [
+      {
+        "field": "region",
+        "title": "지역"
+      },
+      {
+        "field": "index",
+        "title": "지수",
+        "format": ".2f"
+      }
+    ]
+  },
+  "title": "지역별 아파트 전세가격지수 (2024년 최신)"
+}

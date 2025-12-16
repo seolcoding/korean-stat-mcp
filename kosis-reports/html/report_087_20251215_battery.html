@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배터리/이차전지 산업 트렌드 분석 - Report #report_087</title>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;600;700;900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background: linear-gradient(135deg, #059669 0%, #10b981 50%, #fbbf24 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #1f2937;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #064e3b 0%, #065f46 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '⚡';
+            position: absolute;
+            right: 40px;
+            top: 40px;
+            font-size: 120px;
+            opacity: 0.1;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        .header .meta {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .lightning-divider {
+            text-align: center;
+            font-size: 3rem;
+            margin: 20px 0;
+        }
+
+        .card {
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            border-left: 5px solid #10b981;
+        }
+
+        .card h2 {
+            color: #064e3b;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .stat-box {
+            background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            border: 2px solid #10b981;
+        }
+
+        .stat-box.warning {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border-color: #f59e0b;
+        }
+
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: #065f46;
+            margin-bottom: 8px;
+        }
+
+        .stat-box.warning .stat-value {
+            color: #b45309;
+        }
+
+        .stat-label {
+            font-size: 0.95rem;
+            color: #064e3b;
+            font-weight: 500;
+        }
+
+        .trend-item {
+            background: #f9fafb;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            border-left: 4px solid #10b981;
+        }
+
+        .trend-item h3 {
+            color: #065f46;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .trend-item p {
+            color: #4b5563;
+            line-height: 1.6;
+        }
+
+        .source-list {
+            background: #f0fdfa;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 15px;
+        }
+
+        .source-list ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .source-list li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .source-list li::before {
+            content: '⚡';
+            position: absolute;
+            left: 0;
+            color: #10b981;
+        }
+
+        .chart-container {
+            margin: 30px 0;
+            padding: 20px;
+            background: #f9fafb;
+            border-radius: 10px;
+        }
+
+        .footer {
+            text-align: center;
+            color: white;
+            padding: 30px;
+            margin-top: 40px;
+            font-size: 0.9rem;
+        }
+
+        .energy-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>⚡ 배터리/이차전지 산업 트렌드 분석</h1>
+            <p class="subtitle">KOSIS 데이터 기반 한국 배터리 산업 현황 및 전망</p>
+            <div class="meta">
+                <span class="energy-badge">Report #report_087</span>
+                <span class="energy-badge">📅 2025-12-15</span>
+                <span class="energy-badge">🔋 ENERGY Theme</span>
+            </div>
+        </div>
+
+        <div class="lightning-divider">⚡ ⚡ ⚡</div>
+
+        <div class="card">
+            <h2>📊 핵심 지표</h2>
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <div class="stat-value">$16,982M</div>
+                    <div class="stat-label">2024년 수출액 (백만달러)</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value">$12,463M</div>
+                    <div class="stat-label">2024년 수입액 (백만달러)</div>
+                </div>
+                <div class="stat-box warning">
+                    <div class="stat-value">-16.5%</div>
+                    <div class="stat-label">전년 대비 수출 증감률</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value">$4,519M</div>
+                    <div class="stat-label">무역수지 (백만달러)</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>📈 수출입 추이 분석</h2>
+            <div id="trade-chart" class="chart-container"></div>
+        </div>
+
+        <div class="card">
+            <h2>🌐 산업 트렌드 (2025년)</h2>
+            <div class="trend-item">
+                <h3>시장 현황</h3>
+                <p>2025년 1~4월 기준 국내 3사 글로벌 시장 점유율 39.7% (전년 대비 5.6%p 하락).
+                비중국 시장에서는 54.3%로 절반 이상을 차지하며 경쟁력 유지.</p>
+            </div>
+            <div class="trend-item">
+                <h3>ESS 시장 진출</h3>
+                <p>LG에너지솔루션 테슬라 43억 달러 계약, 삼성SDI 21억 달러 계약 협의 중.
+                전기차 시장 둔화에 대응해 에너지 저장장치(ESS) 시장으로 전환 가속화.</p>
+            </div>
+            <div class="trend-item">
+                <h3>기술 혁신</h3>
+                <p>46시리즈 원통형 배터리, 전고체 배터리(2027년 목표), No TP 안전 기술 개발.
+                LFP 배터리 경쟁력 강화로 중국 업체와 경쟁.</p>
+            </div>
+            <div class="trend-item">
+                <h3>시장 전망</h3>
+                <p>글로벌 배터리 시장 2030년 4.7TWh (2022년 대비 7배).
+                AI 데이터센터용 ESS 시장 연평균 25.2% 성장 전망.</p>
+            </div>
+
+            <div class="source-list">
+                <h3 style="color: #065f46; margin-bottom: 10px;">주요 기업</h3>
+                <ul>
+                    <li>LG에너지솔루션 - 글로벌 시장 2위, ESS 시장 공격적 진출</li>
+                    <li>삼성SDI - 각형 배터리 안전성 기술 집중, 전고체 배터리 개발</li>
+                    <li>SK온 - 2025년 LFP 배터리 양산 목표</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>🔍 데이터 출처</h2>
+            <div class="source-list">
+                <ul>
+                    <li><strong>KOSIS</strong> - 한국무역협회 품목별 수출입 데이터 (DT_1R11001_FRM101)</li>
+                    <li><strong>기간</strong> - 2020년 ~ 2024년 연간 데이터</li>
+                    <li><strong>품목</strong> - 배터리, 전지, 축전지, 이차전지 관련 제품</li>
+                    <li><strong>웹 조사</strong> - 2025년 배터리 산업 트렌드 분석</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p style="font-size: 1.1rem; margin-bottom: 10px;">⚡ Powered by KOSIS Data Processor ⚡</p>
+            <p>Report Generated: 2025-12-15 09:50:17</p>
+            <p>Data Source: KOSIS (국가통계포털) | Theme: Energy</p>
+        </div>
+    </div>
+
+    <script>
+        vegaEmbed('#trade-chart', {
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.1.0.json",
+  "config": {
+    "view": {
+      "continuousHeight": 300,
+      "continuousWidth": 300
+    }
+  },
+  "data": {
+    "name": "data-d7fc12eaf02025497c1f4c0c4af64e98"
+  },
+  "datasets": {
+    "data-d7fc12eaf02025497c1f4c0c4af64e98": [
+      {
+        "category": "\uc218\ucd9c",
+        "value": 15550.024,
+        "year": "2020"
+      },
+      {
+        "category": "\uc218\uc785",
+        "value": 5798.197,
+        "year": "2020"
+      },
+      {
+        "category": "\uc218\ucd9c",
+        "value": 18042.354,
+        "year": "2021"
+      },
+      {
+        "category": "\uc218\uc785",
+        "value": 9223.368,
+        "year": "2021"
+      },
+      {
+        "category": "\uc218\ucd9c",
+        "value": 20588.516,
+        "year": "2022"
+      },
+      {
+        "category": "\uc218\uc785",
+        "value": 14251.483,
+        "year": "2022"
+      },
+      {
+        "category": "\uc218\ucd9c",
+        "value": 20333.423,
+        "year": "2023"
+      },
+      {
+        "category": "\uc218\uc785",
+        "value": 19604.297,
+        "year": "2023"
+      },
+      {
+        "category": "\uc218\ucd9c",
+        "value": 16982.353,
+        "year": "2024"
+      },
+      {
+        "category": "\uc218\uc785",
+        "value": 12463.374,
+        "year": "2024"
+      }
+    ]
+  },
+  "encoding": {
+    "color": {
+      "field": "category",
+      "legend": {
+        "title": "\uad6c\ubd84"
+      },
+      "scale": {
+        "domain": [
+          "\uc218\ucd9c",
+          "\uc218\uc785"
+        ],
+        "range": [
+          "#10b981",
+          "#fbbf24"
+        ]
+      },
+      "type": "nominal"
+    },
+    "x": {
+      "field": "year",
+      "title": "\uc5f0\ub3c4",
+      "type": "ordinal"
+    },
+    "y": {
+      "field": "value",
+      "title": "\uae08\uc561 (\ubc31\ub9cc \ub2ec\ub7ec)",
+      "type": "quantitative"
+    }
+  },
+  "height": 400,
+  "mark": {
+    "type": "bar"
+  },
+  "title": "\ubc30\ud130\ub9ac \uc0b0\uc5c5 \uc218\ucd9c\uc785 \ucd94\uc774 (2020-2024)",
+  "width": 600
+}, {"renderer": "svg"}).catch(console.error);
+    </script>
+</body>
+</html>

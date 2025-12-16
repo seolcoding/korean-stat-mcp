@@ -1,0 +1,151 @@
+{
+  "metadata": {
+    "report_id": "061",
+    "title": "한국 특허 및 지식재산 트렌드 분석 2025",
+    "keywords": [
+      "특허",
+      "지식재산",
+      "IP",
+      "발명",
+      "산업재산권"
+    ],
+    "generated_date": "2025-12-15",
+    "sources": [
+      "e-나라지표 (특허 등 출원/등록건수)",
+      "지식재산처 정책브리핑",
+      "한국일보 (특허청→지식재산처 격상 뉴스)"
+    ]
+  },
+  "news_highlights": [
+    {
+      "title": "특허청, 지식재산처로 격상",
+      "date": "2025-11",
+      "summary": "AI·기술전쟁 시대 한국 지식재산권 경쟁력 강화를 위해 특허청이 지식재산처로 격상. 김용선 초대 지식재산처장 취임",
+      "impact": "정부 조직 차원에서 IP 정책 강화 신호"
+    },
+    {
+      "title": "2026년 지식재산권 보호 예산 45% 증액",
+      "date": "2025",
+      "summary": "전년 대비 145억원 증액된 468억원 규모 예산안 편성",
+      "impact": "IP 보호 역량 강화 투자 확대"
+    },
+    {
+      "title": "특허법조약(PLT) 가입 추진",
+      "date": "2025",
+      "summary": "2029년부터 모든 언어로 특허출원 가능 전망",
+      "impact": "글로벌 특허 제도 통합, 출원 편의성 증대"
+    },
+    {
+      "title": "2025 대한민국 지식재산대전 개최",
+      "date": "2025-12-03~06",
+      "summary": "코엑스에서 발명특허대전, 상표·디자인권전, 서울국제발명전시회 통합 개최",
+      "impact": "국내 최대 규모 IP 통합 전시회"
+    }
+  ],
+  "statistics": {
+    "annual_applications": {
+      "2024": {
+        "total": 560629,
+        "change_pct": 0.7
+      },
+      "2023": {
+        "total": 556600,
+        "change_pct": 0.03
+      },
+      "2022": {
+        "total": 556436,
+        "change_pct": -6.1
+      },
+      "2021": {
+        "total": 592615,
+        "change_pct": 9.1
+      },
+      "2020": {
+        "total": 557256,
+        "change_pct": 9.1
+      },
+      "2019": {
+        "total": 510968,
+        "change_pct": 6.4
+      },
+      "2018": {
+        "total": 480245,
+        "change_pct": 4.9
+      },
+      "2017": {
+        "total": 457686,
+        "change_pct": 0.0
+      },
+      "2016": {
+        "total": 445679,
+        "change_pct": 0.0
+      },
+      "2015": {
+        "total": 437563,
+        "change_pct": 0.0
+      }
+    },
+    "breakdown_2024": {
+      "patent": {
+        "change_pct": 1.2
+      },
+      "utility_model": {
+        "change_pct": -11.1
+      },
+      "design": {
+        "change_pct": 1.0
+      },
+      "trademark": {
+        "change_pct": 0.7
+      }
+    },
+    "key_metrics_2024": {
+      "total_applications": 560629,
+      "patent_growth": "1.2%",
+      "design_growth": "1.0%",
+      "trademark_growth": "0.7%"
+    }
+  },
+  "trend_analysis": {
+    "overall_trend": "2018-2021년 급증 후 안정화 국면. 2024년 소폭 회복(0.7% 증가)",
+    "peak_year": "2021년 (592,615건) - 코로나19 이후 디지털 전환 가속화 반영",
+    "recent_pattern": "2022년 조정(-6.1%) 후 2023-2024년 안정화",
+    "growth_rate_10yr": "28.1% (2015-2024)",
+    "cagr_10yr": "2.79%"
+  },
+  "insights": [
+    {
+      "category": "정책",
+      "title": "지식재산처 출범으로 IP 생태계 고도화",
+      "description": "특허청의 지식재산처 격상은 단순한 명칭 변경이 아닌, AI·첨단기술 시대 IP 경쟁력 강화를 위한 정부의 전략적 의지를 보여줌. 2026년 예산 45% 증액은 구체적인 실행력 확보"
+    },
+    {
+      "category": "트렌드",
+      "title": "안정화 국면 진입, 질적 성장 전환기",
+      "description": "2021년 최고점(59만건) 이후 양적 성장에서 질적 성장으로 전환. 특허 1.2% 성장 vs 실용신안 -11.1% 감소는 혁신의 고도화를 시사"
+    },
+    {
+      "category": "국제화",
+      "title": "PLT 가입으로 글로벌 진출 가속화",
+      "description": "2029년부터 다국어 특허출원 가능. 한국 기업의 해외 IP 보호 비용 절감 및 절차 간소화 기대"
+    },
+    {
+      "category": "기술",
+      "title": "AI·6G 등 미래기술 IP 경쟁 심화",
+      "description": "2025 특허로 연구개발 학술회의 주제가 'AI 전쟁부터 6G까지'. 특허 빅데이터를 활용한 미래기술 선점 경쟁 본격화"
+    }
+  ],
+  "data_sources": {
+    "kosis_tables": [
+      "TX_13801_A079 (국제특허분류별 특허 등록)",
+      "TX_13801_A070 (기술분야별 특허·실용신안 심판청구)",
+      "DT_138002_A020_1 (지식재산권 활용 현황)",
+      "DT_138002_A032_1 (산업재산권 해외등록)"
+    ],
+    "external_sources": [
+      "https://www.index.go.kr/unity/potal/main/EachDtlPageDetail.do?idx_cd=2787",
+      "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156734320",
+      "https://www.hankookilbo.com/News/Read/A2025081815420004675"
+    ]
+  }
+}

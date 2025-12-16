@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>소비자물가 동향 심층 분석 | KOSIS 데이터 기반</title>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
+        header {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 60px 40px;
+            border-radius: 20px;
+            margin-bottom: 40px;
+            box-shadow: 0 20px 60px rgba(240, 147, 251, 0.3);
+        }
+        header h1 { font-size: 2.5rem; margin-bottom: 15px; font-weight: 800; }
+        header p { font-size: 1.1rem; opacity: 0.9; line-height: 1.6; }
+        .meta-info { margin-top: 20px; font-size: 0.9rem; opacity: 0.8; }
+
+        .kpi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+        .kpi-card {
+            background: white;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .kpi-card.danger { border-left: 5px solid #e74c3c; }
+        .kpi-card.warning { border-left: 5px solid #f39c12; }
+        .kpi-card.good { border-left: 5px solid #27ae60; }
+        .kpi-card.neutral { border-left: 5px solid #3498db; }
+        .kpi-value { font-size: 3rem; font-weight: 800; color: #2c3e50; }
+        .kpi-value.danger { color: #e74c3c; }
+        .kpi-value.warning { color: #f39c12; }
+        .kpi-value.good { color: #27ae60; }
+        .kpi-label { font-size: 1rem; color: #7f8c8d; margin-top: 10px; }
+        .kpi-sub { font-size: 0.85rem; color: #95a5a6; margin-top: 5px; }
+
+        .section {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+        }
+        .section h2 {
+            font-size: 1.5rem;
+            color: #2c3e50;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #eee;
+        }
+
+        .insight-box {
+            background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+            border-left: 5px solid #f39c12;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 25px 0;
+        }
+        .insight-box.danger {
+            background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%);
+            border-left-color: #e74c3c;
+        }
+        .insight-box.good {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            border-left-color: #27ae60;
+        }
+        .insight-box h3 { color: #e65100; margin-bottom: 15px; }
+        .insight-box.danger h3 { color: #c62828; }
+        .insight-box.good h3 { color: #1b5e20; }
+        .insight-box ul { margin-left: 20px; }
+        .insight-box li { margin: 10px 0; line-height: 1.7; }
+
+        .chart-container { margin: 30px 0; }
+
+        .news-section { background: #f8f9fa; }
+        .news-item {
+            padding: 20px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .news-item:last-child { border-bottom: none; }
+        .news-item a {
+            color: #f5576c;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.05rem;
+        }
+        .news-item a:hover { text-decoration: underline; }
+        .news-source { font-size: 0.85rem; color: #888; margin-top: 8px; }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        .comparison-table th, .comparison-table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+        .comparison-table th {
+            background: #f8f9fa;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+        .comparison-table tr:hover {
+            background: #f8f9fa;
+        }
+        .high { color: #e74c3c; font-weight: 600; }
+        .low { color: #27ae60; font-weight: 600; }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: white;
+            font-size: 0.9rem;
+        }
+        footer a { color: #f5576c; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>💰 소비자물가 동향 심층 분석</h1>
+            <p>KOSIS 공식 통계 데이터 기반 | 2015-2024년 물가상승률 추이 및 지역별 비교</p>
+            <div class="meta-info">
+                📊 데이터 출처: KOSIS 국가통계포털 |
+                📅 생성일: 2025-12-15 |
+                🏢 통계표: 소비자물가 등락률 (DT_1YL20581)
+            </div>
+        </header>
+
+        <div class="kpi-grid">
+            <div class="kpi-card danger">
+                <div class="kpi-value danger">5.1%</div>
+                <div class="kpi-label">2022년 물가상승률</div>
+                <div class="kpi-sub">24년 만의 최고치</div>
+            </div>
+            <div class="kpi-card good">
+                <div class="kpi-value good">2.3%</div>
+                <div class="kpi-label">2024년 물가상승률</div>
+                <div class="kpi-sub">안정화 추세</div>
+            </div>
+            <div class="kpi-card warning">
+                <div class="kpi-value warning">3.6%</div>
+                <div class="kpi-label">2023년 물가상승률</div>
+                <div class="kpi-sub">점진적 하락</div>
+            </div>
+            <div class="kpi-card neutral">
+                <div class="kpi-value">0.4%</div>
+                <div class="kpi-label">2019년 물가상승률</div>
+                <div class="kpi-sub">팬데믹 직전 최저</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>📈 소비자물가 등락률 추이 (2015-2024)</h2>
+            <div class="chart-container" id="trend-chart"></div>
+            <div class="insight-box danger">
+                <h3>⚠️ 2022년 물가 급등 원인</h3>
+                <ul>
+                    <li><strong>글로벌 공급망 차질</strong>: 코로나19 이후 공급망 회복 지연으로 원자재 가격 급등</li>
+                    <li><strong>에너지 가격 폭등</strong>: 러시아-우크라이나 전쟁으로 국제 유가 및 천연가스 가격 상승</li>
+                    <li><strong>농산물 가격 상승</strong>: 이상기후로 인한 작황 부진</li>
+                    <li><strong>수요 급증</strong>: 팬데믹 억눌린 소비 폭발과 유동성 증가</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🗺️ 2024년 지역별 물가상승률</h2>
+            <div class="chart-container" id="regional-chart"></div>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>순위</th>
+                        <th>지역</th>
+                        <th>물가상승률</th>
+                        <th>특이사항</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>목포시</td>
+                        <td class="high">2.7%</td>
+                        <td>전국 최고</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>순천시</td>
+                        <td class="high">2.6%</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>인천광역시</td>
+                        <td class="high">2.6%</td>
+                        <td>수도권 최고</td>
+                    </tr>
+                    <tr>
+                        <td>-</td>
+                        <td>전국 평균</td>
+                        <td><strong>2.3%</strong></td>
+                        <td>기준</td>
+                    </tr>
+                    <tr>
+                        <td>48</td>
+                        <td>천안시</td>
+                        <td class="low">1.9%</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>49</td>
+                        <td>제주특별자치도</td>
+                        <td class="low">1.8%</td>
+                        <td>전국 최저</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section news-section">
+            <h2>📰 물가 관련 최신 뉴스</h2>
+            <div class="news-item">
+                <a href="https://www.yna.co.kr/view/AKR20251210039600002" target="_blank">
+                    11월 소비자물가 상승률 1.5%...3개월 만에 반등
+                </a>
+                <div class="news-source">연합뉴스 | 2025.12</div>
+            </div>
+            <div class="news-item">
+                <a href="https://m.joseilbo.com/news/view.htm?newsid=529989" target="_blank">
+                    10월 소비자물가, 4개월 연속 1%대...27년 만에 역대 최저
+                </a>
+                <div class="news-source">조세일보 | 2025.11</div>
+            </div>
+            <div class="news-item">
+                <a href="https://www.hankyung.com/article/2024120489471" target="_blank">
+                    물가 잡히나 했더니...11월 내수 급감, 스태그플레이션 우려
+                </a>
+                <div class="news-source">한국경제 | 2024.12</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>💡 종합 인사이트</h2>
+            <div class="insight-box good">
+                <h3>✅ 긍정적 신호</h3>
+                <ul>
+                    <li><strong>물가 안정화</strong>: 2022년 5.1% → 2024년 2.3%로 절반 이상 하락</li>
+                    <li><strong>한국은행 목표 수렴</strong>: 물가안정 목표(2%)에 근접</li>
+                    <li><strong>글로벌 추세 동조</strong>: 주요국 대비 양호한 물가 관리</li>
+                </ul>
+            </div>
+            <div class="insight-box">
+                <h3>⚠️ 주의 요인</h3>
+                <ul>
+                    <li><strong>스태그플레이션 우려</strong>: 물가 안정과 함께 내수 경기 침체 동반</li>
+                    <li><strong>환율 리스크</strong>: 원/달러 환율 상승 시 수입물가 상승 압력</li>
+                    <li><strong>지역별 격차</strong>: 지방 도시 물가상승률이 서울보다 높은 역전 현상</li>
+                    <li><strong>체감물가 괴리</strong>: 통계 물가와 실제 체감 물가 간 차이 지속</li>
+                </ul>
+            </div>
+            <div class="insight-box">
+                <h3>📊 역사적 맥락</h3>
+                <ul>
+                    <li><strong>2019년 0.4%</strong>: 저물가 시대의 정점, 디플레이션 우려</li>
+                    <li><strong>2020년 0.5%</strong>: 코로나19 초기, 수요 급감으로 물가 억제</li>
+                    <li><strong>2021년 2.5%</strong>: 회복기 진입, 물가 상승 시작</li>
+                    <li><strong>2022년 5.1%</strong>: 24년 만의 최고치 (1998년 IMF 이후)</li>
+                </ul>
+            </div>
+        </div>
+
+        <footer>
+            <p>
+                이 보고서는 <a href="https://kosis.kr" target="_blank">KOSIS 국가통계포털</a> API를 통해 수집된 공식 통계 데이터를 기반으로 자동 생성되었습니다.
+            </p>
+            <p style="margin-top: 10px;">
+                Report #004 | 생성: 2025-12-15
+            </p>
+        </footer>
+    </div>
+
+    <script>
+        // 물가상승률 추이 차트
+        const trendSpec = {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "width": "container",
+            "height": 350,
+            "data": {
+                "values": [
+                    {"year": "2015", "rate": 0.7},
+                    {"year": "2016", "rate": 1.0},
+                    {"year": "2017", "rate": 1.9},
+                    {"year": "2018", "rate": 1.5},
+                    {"year": "2019", "rate": 0.4},
+                    {"year": "2020", "rate": 0.5},
+                    {"year": "2021", "rate": 2.5},
+                    {"year": "2022", "rate": 5.1},
+                    {"year": "2023", "rate": 3.6},
+                    {"year": "2024", "rate": 2.3}
+                ]
+            },
+            "layer": [
+                {
+                    "mark": {
+                        "type": "area",
+                        "line": {"color": "#f5576c"},
+                        "color": {
+                            "x1": 1, "y1": 1, "x2": 1, "y2": 0,
+                            "gradient": "linear",
+                            "stops": [
+                                {"offset": 0, "color": "rgba(245, 87, 108, 0.1)"},
+                                {"offset": 1, "color": "rgba(245, 87, 108, 0.5)"}
+                            ]
+                        }
+                    }
+                },
+                {
+                    "mark": {
+                        "type": "line",
+                        "point": {"filled": true, "size": 100},
+                        "strokeWidth": 3,
+                        "color": "#f5576c"
+                    }
+                },
+                {
+                    "mark": {"type": "rule", "strokeDash": [4, 4], "color": "#27ae60"},
+                    "encoding": {"y": {"datum": 2}}
+                },
+                {
+                    "mark": {"type": "text", "align": "left", "dx": 5, "dy": -8, "color": "#27ae60"},
+                    "encoding": {
+                        "x": {"datum": "2015"},
+                        "y": {"datum": 2},
+                        "text": {"value": "한국은행 물가목표 2%"}
+                    }
+                }
+            ],
+            "encoding": {
+                "x": {
+                    "field": "year",
+                    "type": "ordinal",
+                    "title": "연도",
+                    "axis": {"labelAngle": 0}
+                },
+                "y": {
+                    "field": "rate",
+                    "type": "quantitative",
+                    "title": "물가상승률 (%)",
+                    "scale": {"domain": [0, 6]}
+                },
+                "tooltip": [
+                    {"field": "year", "title": "연도"},
+                    {"field": "rate", "title": "상승률", "format": ".1f"}
+                ]
+            }
+        };
+        vegaEmbed('#trend-chart', trendSpec, {"actions": false});
+
+        // 2024년 지역별 차트 (주요 지역만)
+        const regionalSpec = {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "width": "container",
+            "height": 400,
+            "data": {
+                "values": [
+                    {"region": "목포시", "rate": 2.7, "type": "지방"},
+                    {"region": "순천시", "rate": 2.6, "type": "지방"},
+                    {"region": "인천", "rate": 2.6, "type": "수도권"},
+                    {"region": "부산", "rate": 2.5, "type": "광역시"},
+                    {"region": "광주", "rate": 2.5, "type": "광역시"},
+                    {"region": "서울", "rate": 2.4, "type": "수도권"},
+                    {"region": "대전", "rate": 2.4, "type": "광역시"},
+                    {"region": "전국", "rate": 2.3, "type": "전국"},
+                    {"region": "울산", "rate": 2.3, "type": "광역시"},
+                    {"region": "대구", "rate": 2.2, "type": "광역시"},
+                    {"region": "천안시", "rate": 1.9, "type": "지방"},
+                    {"region": "제주", "rate": 1.8, "type": "지방"}
+                ]
+            },
+            "mark": {"type": "bar", "cornerRadiusTopLeft": 8, "cornerRadiusTopRight": 8},
+            "encoding": {
+                "x": {
+                    "field": "region",
+                    "type": "nominal",
+                    "title": "지역",
+                    "sort": "-y",
+                    "axis": {"labelAngle": -45}
+                },
+                "y": {
+                    "field": "rate",
+                    "type": "quantitative",
+                    "title": "물가상승률 (%)",
+                    "scale": {"domain": [0, 3]}
+                },
+                "color": {
+                    "field": "type",
+                    "type": "nominal",
+                    "title": "구분",
+                    "scale": {
+                        "domain": ["수도권", "광역시", "지방", "전국"],
+                        "range": ["#3498db", "#9b59b6", "#e74c3c", "#2ecc71"]
+                    }
+                },
+                "tooltip": [
+                    {"field": "region", "title": "지역"},
+                    {"field": "rate", "title": "상승률", "format": ".1f"},
+                    {"field": "type", "title": "구분"}
+                ]
+            }
+        };
+        vegaEmbed('#regional-chart', regionalSpec, {"actions": false});
+    </script>
+</body>
+</html>

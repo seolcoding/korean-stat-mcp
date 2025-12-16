@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🛒 한국 전자상거래 트렌드 리포트 2025</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans KR', sans-serif;
+            background: #f8f9fa;
+            color: #212529;
+            line-height: 1.6;
+        }
+
+        /* Header - Promotion Banner Style */
+        .header-banner {
+            background: linear-gradient(135deg, #ff6f00 0%, #ff8f00 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .header-banner h1 {
+            font-size: 2.5em;
+            font-weight: 800;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .header-banner .subtitle {
+            font-size: 1.2em;
+            opacity: 0.95;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #03c75a;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 700;
+            margin-top: 15px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 30px 20px;
+        }
+
+        /* Product Card Grid */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .product-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+            border-color: #ff6f00;
+        }
+
+        .product-card .icon {
+            font-size: 3em;
+            margin-bottom: 12px;
+        }
+
+        .product-card h3 {
+            color: #212529;
+            font-size: 1.3em;
+            margin-bottom: 8px;
+        }
+
+        .product-card .price {
+            font-size: 2.2em;
+            font-weight: 800;
+            color: #ff6f00;
+            margin: 12px 0;
+        }
+
+        .product-card .unit {
+            font-size: 0.5em;
+            color: #666;
+            font-weight: 400;
+        }
+
+        .product-card .change {
+            font-size: 1.1em;
+            font-weight: 600;
+            margin-top: 8px;
+        }
+
+        .product-card .change.up {
+            color: #03c75a;
+        }
+
+        .product-card .change.down {
+            color: #e74c3c;
+        }
+
+        /* Sale Badge */
+        .sale-badge {
+            display: inline-block;
+            background: #e74c3c;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 0.85em;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        /* Section Headers */
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin: 40px 0 20px 0;
+            padding-bottom: 12px;
+            border-bottom: 3px solid #ff6f00;
+        }
+
+        .section-header h2 {
+            font-size: 1.8em;
+            color: #212529;
+        }
+
+        /* Shopping Platform Comparison */
+        .platform-list {
+            background: white;
+            border-radius: 12px;
+            padding: 24px;
+            margin: 20px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .platform-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px;
+            border-bottom: 1px solid #e9ecef;
+            transition: background 0.2s;
+        }
+
+        .platform-item:hover {
+            background: #f8f9fa;
+        }
+
+        .platform-item:last-child {
+            border-bottom: none;
+        }
+
+        .platform-rank {
+            font-size: 1.5em;
+            font-weight: 800;
+            color: #ff6f00;
+            min-width: 40px;
+        }
+
+        .platform-name {
+            flex: 1;
+            font-size: 1.2em;
+            font-weight: 600;
+            margin-left: 16px;
+        }
+
+        .platform-stat {
+            text-align: right;
+        }
+
+        .platform-value {
+            font-size: 1.4em;
+            font-weight: 700;
+            color: #03c75a;
+        }
+
+        .platform-label {
+            font-size: 0.85em;
+            color: #666;
+            margin-top: 2px;
+        }
+
+        /* Star Rating */
+        .stars {
+            color: #ffc107;
+            font-size: 1.2em;
+            margin: 8px 0;
+        }
+
+        /* Delivery Icon */
+        .delivery-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: #e3f2fd;
+            color: #1976d2;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 600;
+            margin-top: 8px;
+        }
+
+        /* Trend Insights */
+        .insight-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 12px;
+            padding: 28px;
+            margin: 30px 0;
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+        }
+
+        .insight-box h3 {
+            font-size: 1.6em;
+            margin-bottom: 16px;
+        }
+
+        .insight-box ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .insight-box li {
+            padding: 10px 0;
+            padding-left: 28px;
+            position: relative;
+        }
+
+        .insight-box li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            font-weight: 800;
+            color: #03c75a;
+        }
+
+        /* Mobile Shopping Bar Chart */
+        .bar-chart {
+            background: white;
+            border-radius: 12px;
+            padding: 24px;
+            margin: 20px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .bar-item {
+            margin: 20px 0;
+        }
+
+        .bar-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .bar-bg {
+            background: #e9ecef;
+            height: 36px;
+            border-radius: 18px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .bar-fill {
+            background: linear-gradient(90deg, #03c75a 0%, #00e676 100%);
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 12px;
+            color: white;
+            font-weight: 700;
+            transition: width 1s ease;
+        }
+
+        /* Category Tags */
+        .tag-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        .tag {
+            background: #f8f9fa;
+            border: 2px solid #ff6f00;
+            color: #ff6f00;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+
+        .tag:hover {
+            background: #ff6f00;
+            color: white;
+        }
+
+        /* Cart Icon */
+        .cart-icon {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #03c75a;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8em;
+            box-shadow: 0 4px 12px rgba(3, 199, 90, 0.4);
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .cart-icon:hover {
+            transform: scale(1.1);
+        }
+
+        /* Footer */
+        .footer {
+            background: #212529;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 60px;
+        }
+
+        .footer a {
+            color: #ff6f00;
+            text-decoration: none;
+        }
+
+        /* Reviews */
+        .review-box {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 15px 0;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+        }
+
+        .review-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .review-author {
+            font-weight: 600;
+            color: #212529;
+        }
+
+        .review-text {
+            color: #495057;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <!-- Promotion Banner Header -->
+    <div class="header-banner">
+        <h1>🛒 한국 전자상거래 트렌드 리포트 2025</h1>
+        <p class="subtitle">온라인쇼핑의 모든 것 - 최신 트렌드와 데이터 분석</p>
+        <div class="badge">📦 무료배송 리포트</div>
+    </div>
+
+    <div class="container">
+        <!-- Key Metrics - Product Card Style -->
+        <div class="section-header">
+            <h2>🏆 핵심 지표</h2>
+        </div>
+
+        <div class="card-grid">
+            <div class="product-card">
+                <div class="sale-badge">HOT</div>
+                <div class="icon">🛍️</div>
+                <h3>모바일 쇼핑 비중</h3>
+                <div class="price">76.4<span class="unit">%</span></div>
+                <div class="change up">▲ 1.4%p 증가</div>
+                <div class="stars">★★★★★</div>
+                <div class="delivery-badge">
+                    <span>🚚</span>
+                    <span>빠른 성장</span>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="icon">📱</div>
+                <h3>주요 플랫폼 점유율</h3>
+                <div class="price">69.9<span class="unit">%</span></div>
+                <div class="change up">▲ 쿠팡 1위</div>
+                <div class="stars">★★★★★</div>
+            </div>
+
+            <div class="product-card">
+                <div class="sale-badge">NEW</div>
+                <div class="icon">💳</div>
+                <h3>토스쇼핑 인지도</h3>
+                <div class="price">42.0<span class="unit">%</span></div>
+                <div class="change up">▲ 신규 급성장</div>
+                <div class="stars">★★★★☆</div>
+            </div>
+
+            <div class="product-card">
+                <div class="icon">🌏</div>
+                <h3>중국 플랫폼 이용</h3>
+                <div class="price">증가<span class="unit">세</span></div>
+                <div class="change up">▲ 알리/테무 인기</div>
+                <div class="stars">★★★★☆</div>
+            </div>
+        </div>
+
+        <!-- Platform Rankings -->
+        <div class="section-header">
+            <h2>🏪 플랫폼 순위</h2>
+        </div>
+
+        <div class="platform-list">
+            <div class="platform-item">
+                <div class="platform-rank">#1</div>
+                <div class="platform-name">🛍️ 쿠팡</div>
+                <div class="platform-stat">
+                    <div class="platform-value">69.9%</div>
+                    <div class="platform-label">최근 1개월 이용률</div>
+                </div>
+            </div>
+
+            <div class="platform-item">
+                <div class="platform-rank">#2</div>
+                <div class="platform-name">🔍 네이버쇼핑</div>
+                <div class="platform-stat">
+                    <div class="platform-value">56.0%</div>
+                    <div class="platform-label">최근 1개월 이용률</div>
+                </div>
+            </div>
+
+            <div class="platform-item">
+                <div class="platform-rank">#3</div>
+                <div class="platform-name">💰 토스쇼핑</div>
+                <div class="platform-stat">
+                    <div class="platform-value">27.1%</div>
+                    <div class="platform-label">이용 경험</div>
+                </div>
+            </div>
+
+            <div class="platform-item">
+                <div class="platform-rank">#4</div>
+                <div class="platform-name">🌏 알리익스프레스</div>
+                <div class="platform-stat">
+                    <div class="platform-value">인기↑</div>
+                    <div class="platform-label">저가 제품 강세</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Growth Chart -->
+        <div class="section-header">
+            <h2>📱 모바일 커머스 성장</h2>
+        </div>
+
+        <div class="bar-chart">
+            <h3 style="margin-bottom: 20px;">📊 모바일 거래 비중 증가 추이</h3>
+
+            <div class="bar-item">
+                <div class="bar-label">
+                    <span>2024년 현재</span>
+                    <span>76.4%</span>
+                </div>
+                <div class="bar-bg">
+                    <div class="bar-fill" style="width: 76.4%;"></div>
+                </div>
+            </div>
+
+            <div class="bar-item">
+                <div class="bar-label">
+                    <span>2023년</span>
+                    <span>75.0%</span>
+                </div>
+                <div class="bar-bg">
+                    <div class="bar-fill" style="width: 75.0%;"></div>
+                </div>
+            </div>
+
+            <div class="bar-item">
+                <div class="bar-label">
+                    <span>2025년 전망</span>
+                    <span style="color: #ff6f00;">82.0%</span>
+                </div>
+                <div class="bar-bg">
+                    <div class="bar-fill" style="width: 82.0%; background: linear-gradient(90deg, #ff6f00 0%, #ff8f00 100%);"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2025 Trends Insight Box -->
+        <div class="insight-box">
+            <h3>🚀 2025년 핵심 이커머스 트렌드</h3>
+            <ul>
+                <li><strong>AI 기반 개인화</strong> - 고객별 맞춤형 경험으로 매출 15% 이상 증가</li>
+                <li><strong>모바일 최적화</strong> - '마이크로 모먼트' 전환율 극대화</li>
+                <li><strong>지속가능성</strong> - 소비자 67%가 친환경 제품에 프리미엄 지불 의향</li>
+                <li><strong>인플루언서 마케팅</strong> - 82%가 구매 결정 시 리뷰/추천 참고</li>
+                <li><strong>라이브 커머스</strong> - 실시간 방송 쇼핑 확대</li>
+                <li><strong>소셜 커머스</strong> - SNS 직접 구매 증가</li>
+            </ul>
+        </div>
+
+        <!-- Popular Categories -->
+        <div class="section-header">
+            <h2>🔥 인기 카테고리</h2>
+        </div>
+
+        <div class="tag-cloud">
+            <div class="tag">🍔 식품·식료품</div>
+            <div class="tag">🧴 생활용품</div>
+            <div class="tag">👕 패션 의류</div>
+            <div class="tag">🍳 주방용품</div>
+            <div class="tag">💄 화장품</div>
+            <div class="tag">📱 전자기기</div>
+            <div class="tag">🏠 가구·인테리어</div>
+            <div class="tag">📚 도서</div>
+        </div>
+
+        <!-- Consumer Behavior -->
+        <div class="section-header">
+            <h2>👥 소비자 행동 변화</h2>
+        </div>
+
+        <div class="bar-chart">
+            <div class="bar-item">
+                <div class="bar-label">
+                    <span>💰 최저가 비교 검색</span>
+                    <span>85%</span>
+                </div>
+                <div class="bar-bg">
+                    <div class="bar-fill" style="width: 85%;"></div>
+                </div>
+            </div>
+
+            <div class="bar-item">
+                <div class="bar-label">
+                    <span>⏰ 할인 시기 대기</span>
+                    <span>72%</span>
+                </div>
+                <div class="bar-bg">
+                    <div class="bar-fill" style="width: 72%;"></div>
+                </div>
+            </div>
+
+            <div class="bar-item">
+                <div class="bar-label">
+                    <span>♻️ 중고 제품 고려</span>
+                    <span>58%</span>
+                </div>
+                <div class="bar-bg">
+                    <div class="bar-fill" style="width: 58%;"></div>
+                </div>
+            </div>
+
+            <div class="bar-item">
+                <div class="bar-label">
+                    <span>⭐ 리뷰/평점 확인</span>
+                    <span>91%</span>
+                </div>
+                <div class="bar-bg">
+                    <div class="bar-fill" style="width: 91%;"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Platform Features Comparison -->
+        <div class="section-header">
+            <h2>🎯 플랫폼별 특징</h2>
+        </div>
+
+        <div class="review-box">
+            <div class="review-header">
+                <div class="review-author">🛍️ 쿠팡</div>
+                <div class="stars">★★★★★</div>
+            </div>
+            <div class="review-text">
+                <strong>강점:</strong> 빠른 배송(로켓배송), 다양한 상품, 높은 구매 빈도(주 1.65회)<br>
+                <strong>주요 카테고리:</strong> 생활용품, 식품, 주방용품
+            </div>
+        </div>
+
+        <div class="review-box">
+            <div class="review-header">
+                <div class="review-author">🔍 네이버쇼핑</div>
+                <div class="stars">★★★★★</div>
+            </div>
+            <div class="review-text">
+                <strong>강점:</strong> 높은 1회 평균 구매금액(6.12만원), 다양한 판매자<br>
+                <strong>주요 카테고리:</strong> 패션 의류, 생활용품, 식품
+            </div>
+        </div>
+
+        <div class="review-box">
+            <div class="review-header">
+                <div class="review-author">💰 토스쇼핑</div>
+                <div class="stars">★★★★☆</div>
+            </div>
+            <div class="review-text">
+                <strong>강점:</strong> 소액 단품 중심, 간편 결제, 빠른 성장<br>
+                <strong>주요 카테고리:</strong> 패션 의류 중심
+            </div>
+        </div>
+
+        <!-- Market Stats -->
+        <div class="insight-box" style="background: linear-gradient(135deg, #ff6f00 0%, #ff8f00 100%);">
+            <h3>📊 시장 현황</h3>
+            <ul>
+                <li><strong>한국 이커머스 침투율:</strong> 43% (2022년 기준, 세계 최고 수준)</li>
+                <li><strong>비교 국가:</strong> 중국 31%, 영국 28%, 미국 26%</li>
+                <li><strong>모바일 비중:</strong> 73.2% → 82% 예상 (2025년)</li>
+                <li><strong>성장 동력:</strong> 디지털 네이티브 젠지 세대 부상</li>
+            </ul>
+        </div>
+
+        <!-- Data Source -->
+        <div class="section-header">
+            <h2>📚 데이터 출처</h2>
+        </div>
+
+        <div class="platform-list">
+            <div class="platform-item">
+                <div>📰 <a href="https://blog.opensurvey.co.kr/trendreport/online-shopping-2025/" target="_blank">오픈서베이 - 온라인 쇼핑 트렌드 리포트 2025</a></div>
+            </div>
+            <div class="platform-item">
+                <div>📰 <a href="https://oscsnm.com/2025-ecommerce-trends-analysis/" target="_blank">OSC - 2025 이커머스 트렌드 10가지</a></div>
+            </div>
+            <div class="platform-item">
+                <div>📰 <a href="https://blog.opensurvey.co.kr/article/online-shopping-2025-2/" target="_blank">오픈서베이 - 2025 온라인 쇼핑 트렌드: 토스쇼핑 성장</a></div>
+            </div>
+            <div class="platform-item">
+                <div>📊 국가통계포털(KOSIS) - 온라인쇼핑 관련 데이터</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Cart Icon -->
+    <div class="cart-icon" title="리포트 다운로드">
+        🛒
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>© 2025 KOSIS 데이터 기반 리포트</p>
+        <p style="margin-top: 10px;">
+            <a href="#top">맨 위로 ▲</a>
+        </p>
+        <p style="margin-top: 10px; font-size: 0.9em; opacity: 0.8;">
+            Report #054 | Generated on 2025-12-15
+        </p>
+    </div>
+
+    <script>
+        // Animate bars on load
+        window.addEventListener('load', function() {
+            const bars = document.querySelectorAll('.bar-fill');
+            bars.forEach(bar => {
+                const width = bar.style.width;
+                bar.style.width = '0';
+                setTimeout(() => {
+                    bar.style.width = width;
+                }, 100);
+            });
+        });
+
+        // Cart icon click
+        document.querySelector('.cart-icon').addEventListener('click', function() {
+            alert('📦 리포트를 저장하시려면 Ctrl+S 또는 Cmd+S를 눌러주세요!');
+        });
+    </script>
+</body>
+</html>

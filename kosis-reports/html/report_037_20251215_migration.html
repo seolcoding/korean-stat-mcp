@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report #37 - 한국 인구이동과 수도권 집중 분석</title>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            color: #e4e4e4;
+            line-height: 1.7;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 20px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 40px;
+            box-shadow: 0 8px 32px rgba(0, 217, 255, 0.1);
+        }
+
+        h1 {
+            font-size: 3em;
+            font-weight: 800;
+            background: linear-gradient(135deg, #00d9ff 0%, #ff6b6b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+            text-shadow: 0 0 30px rgba(0, 217, 255, 0.3);
+        }
+
+        .subtitle {
+            font-size: 1.2em;
+            color: #a0a0a0;
+            margin-bottom: 10px;
+        }
+
+        .meta {
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        .kpi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .kpi-card {
+            background: rgba(15, 52, 96, 0.6);
+            backdrop-filter: blur(15px);
+            border-radius: 20px;
+            padding: 30px;
+            border: 1px solid rgba(0, 217, 255, 0.2);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .kpi-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #00d9ff, #ff6b6b);
+        }
+
+        .kpi-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 217, 255, 0.3);
+            border-color: #00d9ff;
+        }
+
+        .kpi-label {
+            font-size: 0.9em;
+            color: #a0a0a0;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .kpi-value {
+            font-size: 2.5em;
+            font-weight: 800;
+            color: #00d9ff;
+            text-shadow: 0 0 20px rgba(0, 217, 255, 0.5);
+            margin-bottom: 5px;
+        }
+
+        .kpi-unit {
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        .kpi-change {
+            font-size: 0.95em;
+            margin-top: 10px;
+            padding: 8px 12px;
+            background: rgba(255, 107, 107, 0.2);
+            border-radius: 8px;
+            display: inline-block;
+        }
+
+        .kpi-change.positive {
+            color: #ff6b6b;
+        }
+
+        .kpi-change.negative {
+            color: #4ecdc4;
+        }
+
+        section {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            font-size: 2em;
+            margin-bottom: 25px;
+            color: #00d9ff;
+            text-shadow: 0 0 20px rgba(0, 217, 255, 0.3);
+            border-bottom: 2px solid rgba(0, 217, 255, 0.3);
+            padding-bottom: 15px;
+        }
+
+        .insight-box {
+            background: linear-gradient(135deg, rgba(255, 107, 107, 0.2), rgba(0, 217, 255, 0.2));
+            backdrop-filter: blur(15px);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 25px 0;
+            border-left: 4px solid #ff6b6b;
+            box-shadow: 0 8px 24px rgba(255, 107, 107, 0.2);
+        }
+
+        .insight-box h3 {
+            color: #ff6b6b;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .insight-box ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .insight-box li {
+            padding: 10px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .insight-box li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: #00d9ff;
+            font-weight: bold;
+        }
+
+        .chart-container {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 25px 0;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        th {
+            background: rgba(0, 217, 255, 0.2);
+            color: #00d9ff;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        tr:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .positive {
+            color: #4ecdc4;
+        }
+
+        .negative {
+            color: #ff6b6b;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #666;
+            margin-top: 60px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .source {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 0.9em;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            .kpi-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="subtitle">KOSIS Trend Analysis Report #37</div>
+            <h1>한국 인구이동과 수도권 집중</h1>
+            <div class="meta">
+                분석 기간: 2015년 ~ 2024년 |
+                생성일: 2025년 12월 15일
+            </div>
+        </header>
+
+        <div class="kpi-grid">
+            <div class="kpi-card">
+                <div class="kpi-label">수도권 인구 집중률</div>
+                <div class="kpi-value">50.9<span class="kpi-unit">%</span></div>
+                <div class="kpi-change positive">
+                    2015년 대비 +1.4%p
+                </div>
+            </div>
+
+            <div class="kpi-card">
+                <div class="kpi-label">경기도 인구 증가</div>
+                <div class="kpi-value">117<span class="kpi-unit">만명</span></div>
+                <div class="kpi-change positive">
+                    +9.4% (2015-2024)
+                </div>
+            </div>
+
+            <div class="kpi-card">
+                <div class="kpi-label">서울 인구 감소</div>
+                <div class="kpi-value">69<span class="kpi-unit">만명</span></div>
+                <div class="kpi-change negative">
+                    -6.9% (2015-2024)
+                </div>
+            </div>
+        </div>
+
+        <section>
+            <h2>핵심 인사이트</h2>
+            <div class="insight-box">
+                <h3>주요 발견사항</h3>
+                <ul>
+                    <li><strong>수도권 집중 심화:</strong> 2015년 49.4%에서 2024년 50.9%로 증가하여 전국 인구의 절반 이상이 수도권에 거주</li>
+                    <li><strong>경기도 급증:</strong> 2015-2024년간 약 117만명 증가하여 전국에서 가장 높은 인구 증가율 기록</li>
+                    <li><strong>서울 인구 유출:</strong> 같은 기간 서울은 약 69만명 감소하며 경기도로 인구 이동</li>
+                    <li><strong>지방 소멸 위기:</strong> 부산, 대구 등 광역시와 대부분 도 지역에서 인구 감소 지속</li>
+                    <li><strong>청년 유출 가속화:</strong> 2025년 통계청 자료에 따르면 지난 10년간 지방을 떠난 청년이 71만명 달해</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>수도권 vs 비수도권 인구 추이</h2>
+            <div class="chart-container" id="chart1"></div>
+        </section>
+
+        <section>
+            <h2>서울 vs 경기 인구 변화</h2>
+            <div class="chart-container" id="chart2"></div>
+        </section>
+
+        <section>
+            <h2>지역별 인구 증감 현황 (2015-2024)</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>지역</th>
+                        <th>2015년</th>
+                        <th>2024년</th>
+                        <th>증감</th>
+                        <th>증감률</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <td><strong>경기도</strong></td>
+                        <td>12,522,606</td>
+                        <td>13,694,685</td>
+                        <td class="positive">+1,172,079</td>
+                        <td class="positive">+9.36%</td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>세종특별자치시</strong></td>
+                        <td>210,884</td>
+                        <td>390,685</td>
+                        <td class="positive">+179,801</td>
+                        <td class="positive">+85.26%</td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>인천광역시</strong></td>
+                        <td>2,925,815</td>
+                        <td>3,021,010</td>
+                        <td class="positive">+95,195</td>
+                        <td class="positive">+3.25%</td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>충청남도</strong></td>
+                        <td>2,077,649</td>
+                        <td>2,136,574</td>
+                        <td class="positive">+58,925</td>
+                        <td class="positive">+2.84%</td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>제주특별자치도</strong></td>
+                        <td>624,395</td>
+                        <td>670,368</td>
+                        <td class="positive">+45,973</td>
+                        <td class="positive">+7.36%</td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>충청북도</strong></td>
+                        <td>1,583,952</td>
+                        <td>1,591,177</td>
+                        <td class="positive">+7,225</td>
+                        <td class="positive">+0.46%</td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>강원특별자치도</strong></td>
+                        <td>1,549,507</td>
+                        <td>1,517,766</td>
+                        <td class="negative">-31,741</td>
+                        <td class="negative">-2.05%</td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>광주광역시</strong></td>
+                        <td>1,472,199</td>
+                        <td>1,408,422</td>
+                        <td class="negative">-63,777</td>
+                        <td class="negative">-4.33%</td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>울산광역시</strong></td>
+                        <td>1,173,534</td>
+                        <td>1,098,049</td>
+                        <td class="negative">-75,485</td>
+                        <td class="negative">-6.43%</td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>대전광역시</strong></td>
+                        <td>1,518,775</td>
+                        <td>1,439,157</td>
+                        <td class="negative">-79,618</td>
+                        <td class="negative">-5.24%</td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>전라남도</strong></td>
+                        <td>1,908,996</td>
+                        <td>1,788,819</td>
+                        <td class="negative">-120,177</td>
+                        <td class="negative">-6.30%</td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>대구광역시</strong></td>
+                        <td>2,487,829</td>
+                        <td>2,363,629</td>
+                        <td class="negative">-124,200</td>
+                        <td class="negative">-4.99%</td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>전북특별자치도</strong></td>
+                        <td>1,869,711</td>
+                        <td>1,738,690</td>
+                        <td class="negative">-131,021</td>
+                        <td class="negative">-7.01%</td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>경상남도</strong></td>
+                        <td>3,364,702</td>
+                        <td>3,228,380</td>
+                        <td class="negative">-136,322</td>
+                        <td class="negative">-4.05%</td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>경상북도</strong></td>
+                        <td>2,702,826</td>
+                        <td>2,531,384</td>
+                        <td class="negative">-171,442</td>
+                        <td class="negative">-6.34%</td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>부산광역시</strong></td>
+                        <td>3,513,777</td>
+                        <td>3,266,598</td>
+                        <td class="negative">-247,179</td>
+                        <td class="negative">-7.03%</td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>서울특별시</strong></td>
+                        <td>10,022,181</td>
+                        <td>9,331,828</td>
+                        <td class="negative">-690,353</td>
+                        <td class="negative">-6.89%</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h2>정책 시사점</h2>
+            <div class="insight-box">
+                <h3>지방소멸 대응 방안</h3>
+                <ul>
+                    <li><strong>일자리 분산:</strong> 양질의 일자리를 지방으로 이전하여 청년 인구 유출 방지</li>
+                    <li><strong>주거 안정:</strong> 수도권 집중으로 인한 주거비 상승 문제 해결 필요</li>
+                    <li><strong>균형 발전:</strong> 의료·교육·문화 인프라를 지방에 확충하여 삶의 질 격차 해소</li>
+                    <li><strong>지역 특화:</strong> 지역별 특성을 살린 산업 육성으로 자생력 강화</li>
+                </ul>
+            </div>
+
+            <div class="source">
+                <strong>데이터 출처:</strong> KOSIS 국가통계포털 (행정구역별 인구수, DT_1B040A3)<br>
+                <strong>뉴스 출처:</strong>
+                <a href="https://news.nate.com/view/20250623n01712" style="color: #00d9ff;">네이트뉴스</a>,
+                <a href="https://www.ajunews.com/view/20250721081315569" style="color: #00d9ff;">아주경제</a><br>
+                <strong>생성:</strong> KOSIS MCP Server | 2025-12-15 09:38
+            </div>
+        </section>
+
+        <footer>
+            <p>Report #37 - 한국 인구이동과 수도권 집중 분석</p>
+            <p style="margin-top: 10px; color: #444;">Generated with KOSIS Data Processor</p>
+        </footer>
+    </div>
+
+    <script>
+        // Chart 1: Metropolitan vs Non-metropolitan trend
+        const data1 = [{"TBL_ID":"DT_1B040A3","ORG_ID":"101","ITM_NM_ENG":"Koreans (Total)","PRD_SE":"A","ITM_NM":"\ucd1d\uc778\uad6c\uc218","LST_CHN_DE":"2025-03-12","ITM_ID":"T20","UNIT_NM":"\uba85","C1":"00","DT":51529338,"UNIT_NM_ENG":"Person","C1_OBJ_NM_ENG":"By Administrative District","C1_NM":"\uc804\uad6d","PRD_DE":"2015","C1_NM_ENG":"Whole country","TBL_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4 \uc131\ubcc4 \uc778\uad6c\uc218","C1_OBJ_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4"},{"TBL_ID":"DT_1B040A3","ORG_ID":"101","ITM_NM_ENG":"Koreans (Total)","PRD_SE":"A","ITM_NM":"\ucd1d\uc778\uad6c\uc218","LST_CHN_DE":"2025-03-12","ITM_ID":"T20","UNIT_NM":"\uba85","C1":"41","DT":12522606,"UNIT_NM_ENG":"Person","C1_OBJ_NM_ENG":"By Administrative District","C1_NM":"\uacbd\uae30\ub3c4","PRD_DE":"2015","C1_NM_ENG":"Gyeonggi-do","TBL_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4 \uc131\ubcc4 \uc778\uad6c\uc218","C1_OBJ_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4"},{"TBL_ID":"DT_1B040A3","ORG_ID":"101","ITM_NM_ENG":"Koreans (Total)","PRD_SE":"A","ITM_NM":"\ucd1d\uc778\uad6c\uc218","LST_CHN_DE":"2025-03-12","ITM_ID":"T20","UNIT_NM":"\uba85","C1":"11","DT":10022181,"UNIT_NM_ENG":"Person","C1_OBJ_NM_ENG":"By Administrative District","C1_NM":"\uc11c\uc6b8\ud2b9\ubcc4\uc2dc","PRD_DE":"2015","C1_NM_ENG":"Seoul","TBL_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4 \uc131\ubcc4 \uc778\uad6c\uc218","C1_OBJ_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4"},{"TBL_ID":"DT_1B040A3","ORG_ID":"101","ITM_NM_ENG":"Koreans (Total)","PRD_SE":"A","ITM_NM":"\ucd1d\uc778\uad6c\uc218","LST_CHN_DE":"2025-03-12","ITM_ID":"T20","UNIT_NM":"\uba85","C1":"28","DT":2925815,"UNIT_NM_ENG":"Person","C1_OBJ_NM_ENG":"By Administrative District","C1_NM":"\uc778\ucc9c\uad11\uc5ed\uc2dc","PRD_DE":"2015","C1_NM_ENG":"Incheon","TBL_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4 \uc131\ubcc4 \uc778\uad6c\uc218","C1_OBJ_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4"},{"TBL_ID":"DT_1B040A3","ORG_ID":"101","ITM_NM_ENG":"Koreans (Total)","PRD_SE":"A","ITM_NM":"\ucd1d\uc778\uad6c\uc218","LST_CHN_DE":"2025-03-12","ITM_ID":"T20","UNIT_NM":"\uba85","C1":"28","DT":2943069,"UNIT_NM_ENG":"Person","C1_OBJ_NM_ENG":"By Administrative District","C1_NM":"\uc778\ucc9c\uad11\uc5ed\uc2dc","PRD_DE":"2016","C1_NM_ENG":"Incheon","TBL_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4 \uc131\ubcc4 \uc778\uad6c\uc218","C1_OBJ_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4"},{"TBL_ID":"DT_1B040A3","ORG_ID":"101","ITM_NM_ENG":"Koreans (Total)","PRD_SE":"A","ITM_NM":"\ucd1d\uc778\uad6c\uc218","LST_CHN_DE":"2025-03-12","ITM_ID":"T20","UNIT_NM":"\uba85","C1":"00","DT":51696216,"UNIT_NM_ENG":"Person","C1_OBJ_NM_ENG":"By Administrative District","C1_NM":"\uc804\uad6d","PRD_DE":"2016","C1_NM_ENG":"Whole country","TBL_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4 \uc131\ubcc4 \uc778\uad6c\uc218","C1_OBJ_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4"},{"TBL_ID":"DT_1B040A3","ORG_ID":"101","ITM_NM_ENG":"Koreans (Total)","PRD_SE":"A","ITM_NM":"\ucd1d\uc778\uad6c\uc218","LST_CHN_DE":"2025-03-12","ITM_ID":"T20","UNIT_NM":"\uba85","C1":"41","DT":12716780,"UNIT_NM_ENG":"Person","C1_OBJ_NM_ENG":"By Administrative District","C1_NM":"\uacbd\uae30\ub3c4","PRD_DE":"2016","C1_NM_ENG":"Gyeonggi-do","TBL_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4 \uc131\ubcc4 \uc778\uad6c\uc218","C1_OBJ_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4"},{"TBL_ID":"DT_1B040A3","ORG_ID":"101","ITM_NM_ENG":"Koreans (Total)","PRD_SE":"A","ITM_NM":"\ucd1d\uc778\uad6c\uc218","LST_CHN_DE":"2025-03-12","ITM_ID":"T20","UNIT_NM":"\uba85","C1":"11","DT":9930616,"UNIT_NM_ENG":"Person","C1_OBJ_NM_ENG":"By Administrative District","C1_NM":"\uc11c\uc6b8\ud2b9\ubcc4\uc2dc","PRD_DE":"2016","C1_NM_ENG":"Seoul","TBL_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4 \uc131\ubcc4 \uc778\uad6c\uc218","C1_OBJ_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4"},{"TBL_ID":"DT_1B040A3","ORG_ID":"101","ITM_NM_ENG":"Koreans (Total)","PRD_SE":"A","ITM_NM":"\ucd1d\uc778\uad6c\uc218","LST_CHN_DE":"2025-03-12","ITM_ID":"T20","UNIT_NM":"\uba85","C1":"00","DT":51778544,"UNIT_NM_ENG":"Person","C1_OBJ_NM_ENG":"By Administrative District","C1_NM":"\uc804\uad6d","PRD_DE":"2017","C1_NM_ENG":"Whole country","TBL_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4 \uc131\ubcc4 \uc778\uad6c\uc218","C1_OBJ_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4"},{"TBL_ID":"DT_1B040A3","ORG_ID":"101","ITM_NM_ENG":"Koreans (Total)","PRD_SE":"A","ITM_NM":"\ucd1d\uc778\uad6c\uc218","LST_CHN_DE":"2025-03-12","ITM_ID":"T20","UNIT_NM":"\uba85","C1":"11","DT":9857426,"UNIT_NM_ENG":"Person","C1_OBJ_NM_ENG":"By Administrative District","C1_NM":"\uc11c\uc6b8\ud2b9\ubcc4\uc2dc","PRD_DE":"2017","C1_NM_ENG":"Seoul","TBL_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4 \uc131\ubcc4 \uc778\uad6c\uc218","C1_OBJ_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4"},{"TBL_ID":"DT_1B040A3","ORG_ID":"101","ITM_NM_ENG":"Koreans (Total)","PRD_SE":"A","ITM_NM":"\ucd1d\uc778\uad6c\uc218","LST_CHN_DE":"2025-03-12","ITM_ID":"T20","UNIT_NM":"\uba85","C1":"28","DT":2948542,"UNIT_NM_ENG":"Person","C1_OBJ_NM_ENG":"By Administrative District","C1_NM":"\uc778\ucc9c\uad11\uc5ed\uc2dc","PRD_DE":"2017","C1_NM_ENG":"Incheon","TBL_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4 \uc131\ubcc4 \uc778\uad6c\uc218","C1_OBJ_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4"},{"TBL_ID":"DT_1B040A3","ORG_ID":"101","ITM_NM_ENG":"Koreans (Total)","PRD_SE":"A","ITM_NM":"\ucd1d\uc778\uad6c\uc218","LST_CHN_DE":"2025-03-12","ITM_ID":"T20","UNIT_NM":"\uba85","C1":"41","DT":12873895,"UNIT_NM_ENG":"Person","C1_OBJ_NM_ENG":"By Administrative District","C1_NM":"\uacbd\uae30\ub3c4","PRD_DE":"2017","C1_NM_ENG":"Gyeonggi-do","TBL_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4 \uc131\ubcc4 \uc778\uad6c\uc218","C1_OBJ_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4"},{"TBL_ID":"DT_1B040A3","ORG_ID":"101","ITM_NM_ENG":"Koreans (Total)","PRD_SE":"A","ITM_NM":"\ucd1d\uc778\uad6c\uc218","LST_CHN_DE":"2025-03-12","ITM_ID":"T20","UNIT_NM":"\uba85","C1":"41","DT":13077153,"UNIT_NM_ENG":"Person","C1_OBJ_NM_ENG":"By Administrative District","C1_NM":"\uacbd\uae30\ub3c4","PRD_DE":"2018","C1_NM_ENG":"Gyeonggi-do","TBL_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4 \uc131\ubcc4 \uc778\uad6c\uc218","C1_OBJ_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4"},{"TBL_ID":"DT_1B040A3","ORG_ID":"101","ITM_NM_ENG":"Koreans (Total)","PRD_SE":"A","ITM_NM":"\ucd1d\uc778\uad6c\uc218","LST_CHN_DE":"2025-03-12","ITM_ID":"T20","UNIT_NM":"\uba85","C1":"11","DT":9765623,"UNIT_NM_ENG":"Person","C1_OBJ_NM_ENG":"By Administrative District","C1_NM":"\uc11c\uc6b8\ud2b9\ubcc4\uc2dc","PRD_DE":"2018","C1_NM_ENG":"Seoul","TBL_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4 \uc131\ubcc4 \uc778\uad6c\uc218","C1_OBJ_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4"},{"TBL_ID":"DT_1B040A3","ORG_ID":"101","ITM_NM_ENG":"Koreans (Total)","PRD_SE":"A","ITM_NM":"\ucd1d\uc778\uad6c\uc218","LST_CHN_DE":"2025-03-12","ITM_ID":"T20","UNIT_NM":"\uba85","C1":"28","DT":2954642,"UNIT_NM_ENG":"Person","C1_OBJ_NM_ENG":"By Administrative District","C1_NM":"\uc778\ucc9c\uad11\uc5ed\uc2dc","PRD_DE":"2018","C1_NM_ENG":"Incheon","TBL_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4 \uc131\ubcc4 \uc778\uad6c\uc218","C1_OBJ_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4"},{"TBL_ID":"DT_1B040A3","ORG_ID":"101","ITM_NM_ENG":"Koreans (Total)","PRD_SE":"A","ITM_NM":"\ucd1d\uc778\uad6c\uc218","LST_CHN_DE":"2025-03-12","ITM_ID":"T20","UNIT_NM":"\uba85","C1":"00","DT":51826059,"UNIT_NM_ENG":"Person","C1_OBJ_NM_ENG":"By Administrative District","C1_NM":"\uc804\uad6d","PRD_DE":"2018","C1_NM_ENG":"Whole country","TBL_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4 \uc131\ubcc4 \uc778\uad6c\uc218","C1_OBJ_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4"},{"TBL_ID":"DT_1B040A3","ORG_ID":"101","ITM_NM_ENG":"Koreans (Total)","PRD_SE":"A","ITM_NM":"\ucd1d\uc778\uad6c\uc218","LST_CHN_DE":"2025-03-12","ITM_ID":"T20","UNIT_NM":"\uba85","C1":"00","DT":51849861,"UNIT_NM_ENG":"Person","C1_OBJ_NM_ENG":"By Administrative District","C1_NM":"\uc804\uad6d","PRD_DE":"2019","C1_NM_ENG":"Whole country","TBL_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4 \uc131\ubcc4 \uc778\uad6c\uc218","C1_OBJ_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4"},{"TBL_ID":"DT_1B040A3","ORG_ID":"101","ITM_NM_ENG":"Koreans (Total)","PRD_SE":"A","ITM_NM":"\ucd1d\uc778\uad6c\uc218","LST_CHN_DE":"2025-03-12","ITM_ID":"T20","UNIT_NM":"\uba85","C1":"11","DT":9729107,"UNIT_NM_ENG":"Person","C1_OBJ_NM_ENG":"By Administrative District","C1_NM":"\uc11c\uc6b8\ud2b9\ubcc4\uc2dc","PRD_DE":"2019","C1_NM_ENG":"Seoul","TBL_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4 \uc131\ubcc4 \uc778\uad6c\uc218","C1_OBJ_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4"},{"TBL_ID":"DT_1B040A3","ORG_ID":"101","ITM_NM_ENG":"Koreans (Total)","PRD_SE":"A","ITM_NM":"\ucd1d\uc778\uad6c\uc218","LST_CHN_DE":"2025-03-12","ITM_ID":"T20","UNIT_NM":"\uba85","C1":"28","DT":2957026,"UNIT_NM_ENG":"Person","C1_OBJ_NM_ENG":"By Administrative District","C1_NM":"\uc778\ucc9c\uad11\uc5ed\uc2dc","PRD_DE":"2019","C1_NM_ENG":"Incheon","TBL_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4 \uc131\ubcc4 \uc778\uad6c\uc218","C1_OBJ_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4"},{"TBL_ID":"DT_1B040A3","ORG_ID":"101","ITM_NM_ENG":"Koreans (Total)","PRD_SE":"A","ITM_NM":"\ucd1d\uc778\uad6c\uc218","LST_CHN_DE":"2025-03-12","ITM_ID":"T20","UNIT_NM":"\uba85","C1":"41","DT":13239666,"UNIT_NM_ENG":"Person","C1_OBJ_NM_ENG":"By Administrative District","C1_NM":"\uacbd\uae30\ub3c4","PRD_DE":"2019","C1_NM_ENG":"Gyeonggi-do","TBL_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4 \uc131\ubcc4 \uc778\uad6c\uc218","C1_OBJ_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4"},{"TBL_ID":"DT_1B040A3","ORG_ID":"101","ITM_NM_ENG":"Koreans (Total)","PRD_SE":"A","ITM_NM":"\ucd1d\uc778\uad6c\uc218","LST_CHN_DE":"2025-03-12","ITM_ID":"T20","UNIT_NM":"\uba85","C1":"28","DT":2942828,"UNIT_NM_ENG":"Person","C1_OBJ_NM_ENG":"By Administrative District","C1_NM":"\uc778\ucc9c\uad11\uc5ed\uc2dc","PRD_DE":"2020","C1_NM_ENG":"Incheon","TBL_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4 \uc131\ubcc4 \uc778\uad6c\uc218","C1_OBJ_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4"},{"TBL_ID":"DT_1B040A3","ORG_ID":"101","ITM_NM_ENG":"Koreans (Total)","PRD_SE":"A","ITM_NM":"\ucd1d\uc778\uad6c\uc218","LST_CHN_DE":"2025-03-12","ITM_ID":"T20","UNIT_NM":"\uba85","C1":"41","DT":13427014,"UNIT_NM_ENG":"Person","C1_OBJ_NM_ENG":"By Administrative District","C1_NM":"\uacbd\uae30\ub3c4","PRD_DE":"2020","C1_NM_ENG":"Gyeonggi-do","TBL_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4 \uc131\ubcc4 \uc778\uad6c\uc218","C1_OBJ_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4"},{"TBL_ID":"DT_1B040A3","ORG_ID":"101","ITM_NM_ENG":"Koreans (Total)","PRD_SE":"A","ITM_NM":"\ucd1d\uc778\uad6c\uc218","LST_CHN_DE":"2025-03-12","ITM_ID":"T20","UNIT_NM":"\uba85","C1":"11","DT":9668465,"UNIT_NM_ENG":"Person","C1_OBJ_NM_ENG":"By Administrative District","C1_NM":"\uc11c\uc6b8\ud2b9\ubcc4\uc2dc","PRD_DE":"2020","C1_NM_ENG":"Seoul","TBL_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4 \uc131\ubcc4 \uc778\uad6c\uc218","C1_OBJ_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4"},{"TBL_ID":"DT_1B040A3","ORG_ID":"101","ITM_NM_ENG":"Koreans (Total)","PRD_SE":"A","ITM_NM":"\ucd1d\uc778\uad6c\uc218","LST_CHN_DE":"2025-03-12","ITM_ID":"T20","UNIT_NM":"\uba85","C1":"00","DT":51829023,"UNIT_NM_ENG":"Person","C1_OBJ_NM_ENG":"By Administrative District","C1_NM":"\uc804\uad6d","PRD_DE":"2020","C1_NM_ENG":"Whole country","TBL_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4 \uc131\ubcc4 \uc778\uad6c\uc218","C1_OBJ_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4"},{"TBL_ID":"DT_1B040A3","ORG_ID":"101","ITM_NM_ENG":"Koreans (Total)","PRD_SE":"A","ITM_NM":"\ucd1d\uc778\uad6c\uc218","LST_CHN_DE":"2025-03-12","ITM_ID":"T20","UNIT_NM":"\uba85","C1":"11","DT":9509458,"UNIT_NM_ENG":"Person","C1_OBJ_NM_ENG":"By Administrative District","C1_NM":"\uc11c\uc6b8\ud2b9\ubcc4\uc2dc","PRD_DE":"2021","C1_NM_ENG":"Seoul","TBL_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4 \uc131\ubcc4 \uc778\uad6c\uc218","C1_OBJ_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4"},{"TBL_ID":"DT_1B040A3","ORG_ID":"101","ITM_NM_ENG":"Koreans (Total)","PRD_SE":"A","ITM_NM":"\ucd1d\uc778\uad6c\uc218","LST_CHN_DE":"2025-03-12","ITM_ID":"T20","UNIT_NM":"\uba85","C1":"28","DT":2948375,"UNIT_NM_ENG":"Person","C1_OBJ_NM_ENG":"By Administrative District","C1_NM":"\uc778\ucc9c\uad11\uc5ed\uc2dc","PRD_DE":"2021","C1_NM_ENG":"Incheon","TBL_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4 \uc131\ubcc4 \uc778\uad6c\uc218","C1_OBJ_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4"},{"TBL_ID":"DT_1B040A3","ORG_ID":"101","ITM_NM_ENG":"Koreans (Total)","PRD_SE":"A","ITM_NM":"\ucd1d\uc778\uad6c\uc218","LST_CHN_DE":"2025-03-12","ITM_ID":"T20","UNIT_NM":"\uba85","C1":"41","DT":13565450,"UNIT_NM_ENG":"Person","C1_OBJ_NM_ENG":"By Administrative District","C1_NM":"\uacbd\uae30\ub3c4","PRD_DE":"2021","C1_NM_ENG":"Gyeonggi-do","TBL_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4 \uc131\ubcc4 \uc778\uad6c\uc218","C1_OBJ_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4"},{"TBL_ID":"DT_1B040A3","ORG_ID":"101","ITM_NM_ENG":"Koreans (Total)","PRD_SE":"A","ITM_NM":"\ucd1d\uc778\uad6c\uc218","LST_CHN_DE":"2025-03-12","ITM_ID":"T20","UNIT_NM":"\uba85","C1":"00","DT":51638809,"UNIT_NM_ENG":"Person","C1_OBJ_NM_ENG":"By Administrative District","C1_NM":"\uc804\uad6d","PRD_DE":"2021","C1_NM_ENG":"Whole country","TBL_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4 \uc131\ubcc4 \uc778\uad6c\uc218","C1_OBJ_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4"},{"TBL_ID":"DT_1B040A3","ORG_ID":"101","ITM_NM_ENG":"Koreans (Total)","PRD_SE":"A","ITM_NM":"\ucd1d\uc778\uad6c\uc218","LST_CHN_DE":"2025-03-12","ITM_ID":"T20","UNIT_NM":"\uba85","C1":"41","DT":13589432,"UNIT_NM_ENG":"Person","C1_OBJ_NM_ENG":"By Administrative District","C1_NM":"\uacbd\uae30\ub3c4","PRD_DE":"2022","C1_NM_ENG":"Gyeonggi-do","TBL_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4 \uc131\ubcc4 \uc778\uad6c\uc218","C1_OBJ_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4"},{"TBL_ID":"DT_1B040A3","ORG_ID":"101","ITM_NM_ENG":"Koreans (Total)","PRD_SE":"A","ITM_NM":"\ucd1d\uc778\uad6c\uc218","LST_CHN_DE":"2025-03-12","ITM_ID":"T20","UNIT_NM":"\uba85","C1":"28","DT":2967314,"UNIT_NM_ENG":"Person","C1_OBJ_NM_ENG":"By Administrative District","C1_NM":"\uc778\ucc9c\uad11\uc5ed\uc2dc","PRD_DE":"2022","C1_NM_ENG":"Incheon","TBL_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4 \uc131\ubcc4 \uc778\uad6c\uc218","C1_OBJ_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4"},{"TBL_ID":"DT_1B040A3","ORG_ID":"101","ITM_NM_ENG":"Koreans (Total)","PRD_SE":"A","ITM_NM":"\ucd1d\uc778\uad6c\uc218","LST_CHN_DE":"2025-03-12","ITM_ID":"T20","UNIT_NM":"\uba85","C1":"00","DT":51439038,"UNIT_NM_ENG":"Person","C1_OBJ_NM_ENG":"By Administrative District","C1_NM":"\uc804\uad6d","PRD_DE":"2022","C1_NM_ENG":"Whole country","TBL_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4 \uc131\ubcc4 \uc778\uad6c\uc218","C1_OBJ_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4"},{"TBL_ID":"DT_1B040A3","ORG_ID":"101","ITM_NM_ENG":"Koreans (Total)","PRD_SE":"A","ITM_NM":"\ucd1d\uc778\uad6c\uc218","LST_CHN_DE":"2025-03-12","ITM_ID":"T20","UNIT_NM":"\uba85","C1":"11","DT":9428372,"UNIT_NM_ENG":"Person","C1_OBJ_NM_ENG":"By Administrative District","C1_NM":"\uc11c\uc6b8\ud2b9\ubcc4\uc2dc","PRD_DE":"2022","C1_NM_ENG":"Seoul","TBL_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4 \uc131\ubcc4 \uc778\uad6c\uc218","C1_OBJ_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4"},{"TBL_ID":"DT_1B040A3","ORG_ID":"101","ITM_NM_ENG":"Koreans (Total)","PRD_SE":"A","ITM_NM":"\ucd1d\uc778\uad6c\uc218","LST_CHN_DE":"2025-03-12","ITM_ID":"T20","UNIT_NM":"\uba85","C1":"11","DT":9386034,"UNIT_NM_ENG":"Person","C1_OBJ_NM_ENG":"By Administrative District","C1_NM":"\uc11c\uc6b8\ud2b9\ubcc4\uc2dc","PRD_DE":"2023","C1_NM_ENG":"Seoul","TBL_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4 \uc131\ubcc4 \uc778\uad6c\uc218","C1_OBJ_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4"},{"TBL_ID":"DT_1B040A3","ORG_ID":"101","ITM_NM_ENG":"Koreans (Total)","PRD_SE":"A","ITM_NM":"\ucd1d\uc778\uad6c\uc218","LST_CHN_DE":"2025-03-12","ITM_ID":"T20","UNIT_NM":"\uba85","C1":"28","DT":2997410,"UNIT_NM_ENG":"Person","C1_OBJ_NM_ENG":"By Administrative District","C1_NM":"\uc778\ucc9c\uad11\uc5ed\uc2dc","PRD_DE":"2023","C1_NM_ENG":"Incheon","TBL_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4 \uc131\ubcc4 \uc778\uad6c\uc218","C1_OBJ_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4"},{"TBL_ID":"DT_1B040A3","ORG_ID":"101","ITM_NM_ENG":"Koreans (Total)","PRD_SE":"A","ITM_NM":"\ucd1d\uc778\uad6c\uc218","LST_CHN_DE":"2025-03-12","ITM_ID":"T20","UNIT_NM":"\uba85","C1":"00","DT":51325329,"UNIT_NM_ENG":"Person","C1_OBJ_NM_ENG":"By Administrative District","C1_NM":"\uc804\uad6d","PRD_DE":"2023","C1_NM_ENG":"Whole country","TBL_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4 \uc131\ubcc4 \uc778\uad6c\uc218","C1_OBJ_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4"},{"TBL_ID":"DT_1B040A3","ORG_ID":"101","ITM_NM_ENG":"Koreans (Total)","PRD_SE":"A","ITM_NM":"\ucd1d\uc778\uad6c\uc218","LST_CHN_DE":"2025-03-12","ITM_ID":"T20","UNIT_NM":"\uba85","C1":"41","DT":13630821,"UNIT_NM_ENG":"Person","C1_OBJ_NM_ENG":"By Administrative District","C1_NM":"\uacbd\uae30\ub3c4","PRD_DE":"2023","C1_NM_ENG":"Gyeonggi-do","TBL_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4 \uc131\ubcc4 \uc778\uad6c\uc218","C1_OBJ_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4"},{"TBL_ID":"DT_1B040A3","ORG_ID":"101","ITM_NM_ENG":"Koreans (Total)","PRD_SE":"A","ITM_NM":"\ucd1d\uc778\uad6c\uc218","LST_CHN_DE":"2025-03-12","ITM_ID":"T20","UNIT_NM":"\uba85","C1":"11","DT":9331828,"UNIT_NM_ENG":"Person","C1_OBJ_NM_ENG":"By Administrative District","C1_NM":"\uc11c\uc6b8\ud2b9\ubcc4\uc2dc","PRD_DE":"2024","C1_NM_ENG":"Seoul","TBL_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4 \uc131\ubcc4 \uc778\uad6c\uc218","C1_OBJ_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4"},{"TBL_ID":"DT_1B040A3","ORG_ID":"101","ITM_NM_ENG":"Koreans (Total)","PRD_SE":"A","ITM_NM":"\ucd1d\uc778\uad6c\uc218","LST_CHN_DE":"2025-03-12","ITM_ID":"T20","UNIT_NM":"\uba85","C1":"00","DT":51217221,"UNIT_NM_ENG":"Person","C1_OBJ_NM_ENG":"By Administrative District","C1_NM":"\uc804\uad6d","PRD_DE":"2024","C1_NM_ENG":"Whole country","TBL_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4 \uc131\ubcc4 \uc778\uad6c\uc218","C1_OBJ_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4"},{"TBL_ID":"DT_1B040A3","ORG_ID":"101","ITM_NM_ENG":"Koreans (Total)","PRD_SE":"A","ITM_NM":"\ucd1d\uc778\uad6c\uc218","LST_CHN_DE":"2025-03-12","ITM_ID":"T20","UNIT_NM":"\uba85","C1":"28","DT":3021010,"UNIT_NM_ENG":"Person","C1_OBJ_NM_ENG":"By Administrative District","C1_NM":"\uc778\ucc9c\uad11\uc5ed\uc2dc","PRD_DE":"2024","C1_NM_ENG":"Incheon","TBL_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4 \uc131\ubcc4 \uc778\uad6c\uc218","C1_OBJ_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4"},{"TBL_ID":"DT_1B040A3","ORG_ID":"101","ITM_NM_ENG":"Koreans (Total)","PRD_SE":"A","ITM_NM":"\ucd1d\uc778\uad6c\uc218","LST_CHN_DE":"2025-03-12","ITM_ID":"T20","UNIT_NM":"\uba85","C1":"41","DT":13694685,"UNIT_NM_ENG":"Person","C1_OBJ_NM_ENG":"By Administrative District","C1_NM":"\uacbd\uae30\ub3c4","PRD_DE":"2024","C1_NM_ENG":"Gyeonggi-do","TBL_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4 \uc131\ubcc4 \uc778\uad6c\uc218","C1_OBJ_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4"}];
+
+        // Calculate metro total by year
+        const metroByYear = {};
+        const nationalByYear = {};
+
+        data1.forEach(d => {
+            const year = d.PRD_DE;
+            const region = d.C1_NM;
+            const pop = d.DT;
+
+            if (region === '전국') {
+                nationalByYear[year] = pop;
+            } else if (['서울특별시', '인천광역시', '경기도'].includes(region)) {
+                if (!metroByYear[year]) metroByYear[year] = 0;
+                metroByYear[year] += pop;
+            }
+        });
+
+        // Create chart data
+        const chartData1 = Object.keys(metroByYear).map(year => ({
+            year: year,
+            '수도권': metroByYear[year],
+            '전국': nationalByYear[year],
+            '비수도권': nationalByYear[year] - metroByYear[year]
+        })).sort((a, b) => a.year.localeCompare(b.year));
+
+        const spec1 = {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "data": {"values": chartData1},
+            "width": "container",
+            "height": 400,
+            "config": {
+                "background": "transparent",
+                "view": {"stroke": null},
+                "axis": {
+                    "labelColor": "#e4e4e4",
+                    "titleColor": "#00d9ff",
+                    "gridColor": "rgba(255, 255, 255, 0.1)",
+                    "domainColor": "rgba(255, 255, 255, 0.2)"
+                },
+                "legend": {
+                    "labelColor": "#e4e4e4",
+                    "titleColor": "#00d9ff"
+                }
+            },
+            "transform": [
+                {"fold": ["수도권", "비수도권"], "as": ["구분", "인구"]}
+            ],
+            "mark": {"type": "line", "point": true, "strokeWidth": 3},
+            "encoding": {
+                "x": {
+                    "field": "year",
+                    "type": "ordinal",
+                    "title": "연도",
+                    "axis": {"labelAngle": 0}
+                },
+                "y": {
+                    "field": "인구",
+                    "type": "quantitative",
+                    "title": "인구 (명)",
+                    "axis": {"format": ","}
+                },
+                "color": {
+                    "field": "구분",
+                    "type": "nominal",
+                    "scale": {
+                        "domain": ["수도권", "비수도권"],
+                        "range": ["#00d9ff", "#ff6b6b"]
+                    },
+                    "legend": {"title": "구분"}
+                },
+                "tooltip": [
+                    {"field": "year", "title": "연도"},
+                    {"field": "구분", "title": "구분"},
+                    {"field": "인구", "title": "인구", "format": ","}
+                ]
+            }
+        };
+
+        vegaEmbed('#chart1', spec1, {actions: false});
+
+        // Chart 2: Seoul vs Gyeonggi
+        const data2 = [{"TBL_ID":"DT_1B040A3","ORG_ID":"101","ITM_NM_ENG":"Koreans (Total)","PRD_SE":"A","ITM_NM":"\ucd1d\uc778\uad6c\uc218","LST_CHN_DE":"2025-03-12","ITM_ID":"T20","UNIT_NM":"\uba85","C1":"11","DT":10022181,"UNIT_NM_ENG":"Person","C1_OBJ_NM_ENG":"By Administrative District","C1_NM":"\uc11c\uc6b8\ud2b9\ubcc4\uc2dc","PRD_DE":"2015","C1_NM_ENG":"Seoul","TBL_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4 \uc131\ubcc4 \uc778\uad6c\uc218","C1_OBJ_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4"},{"TBL_ID":"DT_1B040A3","ORG_ID":"101","ITM_NM_ENG":"Koreans (Total)","PRD_SE":"A","ITM_NM":"\ucd1d\uc778\uad6c\uc218","LST_CHN_DE":"2025-03-12","ITM_ID":"T20","UNIT_NM":"\uba85","C1":"11","DT":9930616,"UNIT_NM_ENG":"Person","C1_OBJ_NM_ENG":"By Administrative District","C1_NM":"\uc11c\uc6b8\ud2b9\ubcc4\uc2dc","PRD_DE":"2016","C1_NM_ENG":"Seoul","TBL_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4 \uc131\ubcc4 \uc778\uad6c\uc218","C1_OBJ_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4"},{"TBL_ID":"DT_1B040A3","ORG_ID":"101","ITM_NM_ENG":"Koreans (Total)","PRD_SE":"A","ITM_NM":"\ucd1d\uc778\uad6c\uc218","LST_CHN_DE":"2025-03-12","ITM_ID":"T20","UNIT_NM":"\uba85","C1":"11","DT":9857426,"UNIT_NM_ENG":"Person","C1_OBJ_NM_ENG":"By Administrative District","C1_NM":"\uc11c\uc6b8\ud2b9\ubcc4\uc2dc","PRD_DE":"2017","C1_NM_ENG":"Seoul","TBL_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4 \uc131\ubcc4 \uc778\uad6c\uc218","C1_OBJ_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4"},{"TBL_ID":"DT_1B040A3","ORG_ID":"101","ITM_NM_ENG":"Koreans (Total)","PRD_SE":"A","ITM_NM":"\ucd1d\uc778\uad6c\uc218","LST_CHN_DE":"2025-03-12","ITM_ID":"T20","UNIT_NM":"\uba85","C1":"11","DT":9765623,"UNIT_NM_ENG":"Person","C1_OBJ_NM_ENG":"By Administrative District","C1_NM":"\uc11c\uc6b8\ud2b9\ubcc4\uc2dc","PRD_DE":"2018","C1_NM_ENG":"Seoul","TBL_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4 \uc131\ubcc4 \uc778\uad6c\uc218","C1_OBJ_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4"},{"TBL_ID":"DT_1B040A3","ORG_ID":"101","ITM_NM_ENG":"Koreans (Total)","PRD_SE":"A","ITM_NM":"\ucd1d\uc778\uad6c\uc218","LST_CHN_DE":"2025-03-12","ITM_ID":"T20","UNIT_NM":"\uba85","C1":"11","DT":9729107,"UNIT_NM_ENG":"Person","C1_OBJ_NM_ENG":"By Administrative District","C1_NM":"\uc11c\uc6b8\ud2b9\ubcc4\uc2dc","PRD_DE":"2019","C1_NM_ENG":"Seoul","TBL_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4 \uc131\ubcc4 \uc778\uad6c\uc218","C1_OBJ_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4"},{"TBL_ID":"DT_1B040A3","ORG_ID":"101","ITM_NM_ENG":"Koreans (Total)","PRD_SE":"A","ITM_NM":"\ucd1d\uc778\uad6c\uc218","LST_CHN_DE":"2025-03-12","ITM_ID":"T20","UNIT_NM":"\uba85","C1":"11","DT":9668465,"UNIT_NM_ENG":"Person","C1_OBJ_NM_ENG":"By Administrative District","C1_NM":"\uc11c\uc6b8\ud2b9\ubcc4\uc2dc","PRD_DE":"2020","C1_NM_ENG":"Seoul","TBL_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4 \uc131\ubcc4 \uc778\uad6c\uc218","C1_OBJ_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4"},{"TBL_ID":"DT_1B040A3","ORG_ID":"101","ITM_NM_ENG":"Koreans (Total)","PRD_SE":"A","ITM_NM":"\ucd1d\uc778\uad6c\uc218","LST_CHN_DE":"2025-03-12","ITM_ID":"T20","UNIT_NM":"\uba85","C1":"11","DT":9509458,"UNIT_NM_ENG":"Person","C1_OBJ_NM_ENG":"By Administrative District","C1_NM":"\uc11c\uc6b8\ud2b9\ubcc4\uc2dc","PRD_DE":"2021","C1_NM_ENG":"Seoul","TBL_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4 \uc131\ubcc4 \uc778\uad6c\uc218","C1_OBJ_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4"},{"TBL_ID":"DT_1B040A3","ORG_ID":"101","ITM_NM_ENG":"Koreans (Total)","PRD_SE":"A","ITM_NM":"\ucd1d\uc778\uad6c\uc218","LST_CHN_DE":"2025-03-12","ITM_ID":"T20","UNIT_NM":"\uba85","C1":"11","DT":9428372,"UNIT_NM_ENG":"Person","C1_OBJ_NM_ENG":"By Administrative District","C1_NM":"\uc11c\uc6b8\ud2b9\ubcc4\uc2dc","PRD_DE":"2022","C1_NM_ENG":"Seoul","TBL_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4 \uc131\ubcc4 \uc778\uad6c\uc218","C1_OBJ_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4"},{"TBL_ID":"DT_1B040A3","ORG_ID":"101","ITM_NM_ENG":"Koreans (Total)","PRD_SE":"A","ITM_NM":"\ucd1d\uc778\uad6c\uc218","LST_CHN_DE":"2025-03-12","ITM_ID":"T20","UNIT_NM":"\uba85","C1":"11","DT":9386034,"UNIT_NM_ENG":"Person","C1_OBJ_NM_ENG":"By Administrative District","C1_NM":"\uc11c\uc6b8\ud2b9\ubcc4\uc2dc","PRD_DE":"2023","C1_NM_ENG":"Seoul","TBL_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4 \uc131\ubcc4 \uc778\uad6c\uc218","C1_OBJ_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4"},{"TBL_ID":"DT_1B040A3","ORG_ID":"101","ITM_NM_ENG":"Koreans (Total)","PRD_SE":"A","ITM_NM":"\ucd1d\uc778\uad6c\uc218","LST_CHN_DE":"2025-03-12","ITM_ID":"T20","UNIT_NM":"\uba85","C1":"11","DT":9331828,"UNIT_NM_ENG":"Person","C1_OBJ_NM_ENG":"By Administrative District","C1_NM":"\uc11c\uc6b8\ud2b9\ubcc4\uc2dc","PRD_DE":"2024","C1_NM_ENG":"Seoul","TBL_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4 \uc131\ubcc4 \uc778\uad6c\uc218","C1_OBJ_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4"},{"TBL_ID":"DT_1B040A3","ORG_ID":"101","ITM_NM_ENG":"Koreans (Total)","PRD_SE":"A","ITM_NM":"\ucd1d\uc778\uad6c\uc218","LST_CHN_DE":"2025-03-12","ITM_ID":"T20","UNIT_NM":"\uba85","C1":"41","DT":12522606,"UNIT_NM_ENG":"Person","C1_OBJ_NM_ENG":"By Administrative District","C1_NM":"\uacbd\uae30\ub3c4","PRD_DE":"2015","C1_NM_ENG":"Gyeonggi-do","TBL_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4 \uc131\ubcc4 \uc778\uad6c\uc218","C1_OBJ_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4"},{"TBL_ID":"DT_1B040A3","ORG_ID":"101","ITM_NM_ENG":"Koreans (Total)","PRD_SE":"A","ITM_NM":"\ucd1d\uc778\uad6c\uc218","LST_CHN_DE":"2025-03-12","ITM_ID":"T20","UNIT_NM":"\uba85","C1":"41","DT":12716780,"UNIT_NM_ENG":"Person","C1_OBJ_NM_ENG":"By Administrative District","C1_NM":"\uacbd\uae30\ub3c4","PRD_DE":"2016","C1_NM_ENG":"Gyeonggi-do","TBL_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4 \uc131\ubcc4 \uc778\uad6c\uc218","C1_OBJ_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4"},{"TBL_ID":"DT_1B040A3","ORG_ID":"101","ITM_NM_ENG":"Koreans (Total)","PRD_SE":"A","ITM_NM":"\ucd1d\uc778\uad6c\uc218","LST_CHN_DE":"2025-03-12","ITM_ID":"T20","UNIT_NM":"\uba85","C1":"41","DT":12873895,"UNIT_NM_ENG":"Person","C1_OBJ_NM_ENG":"By Administrative District","C1_NM":"\uacbd\uae30\ub3c4","PRD_DE":"2017","C1_NM_ENG":"Gyeonggi-do","TBL_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4 \uc131\ubcc4 \uc778\uad6c\uc218","C1_OBJ_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4"},{"TBL_ID":"DT_1B040A3","ORG_ID":"101","ITM_NM_ENG":"Koreans (Total)","PRD_SE":"A","ITM_NM":"\ucd1d\uc778\uad6c\uc218","LST_CHN_DE":"2025-03-12","ITM_ID":"T20","UNIT_NM":"\uba85","C1":"41","DT":13077153,"UNIT_NM_ENG":"Person","C1_OBJ_NM_ENG":"By Administrative District","C1_NM":"\uacbd\uae30\ub3c4","PRD_DE":"2018","C1_NM_ENG":"Gyeonggi-do","TBL_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4 \uc131\ubcc4 \uc778\uad6c\uc218","C1_OBJ_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4"},{"TBL_ID":"DT_1B040A3","ORG_ID":"101","ITM_NM_ENG":"Koreans (Total)","PRD_SE":"A","ITM_NM":"\ucd1d\uc778\uad6c\uc218","LST_CHN_DE":"2025-03-12","ITM_ID":"T20","UNIT_NM":"\uba85","C1":"41","DT":13239666,"UNIT_NM_ENG":"Person","C1_OBJ_NM_ENG":"By Administrative District","C1_NM":"\uacbd\uae30\ub3c4","PRD_DE":"2019","C1_NM_ENG":"Gyeonggi-do","TBL_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4 \uc131\ubcc4 \uc778\uad6c\uc218","C1_OBJ_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4"},{"TBL_ID":"DT_1B040A3","ORG_ID":"101","ITM_NM_ENG":"Koreans (Total)","PRD_SE":"A","ITM_NM":"\ucd1d\uc778\uad6c\uc218","LST_CHN_DE":"2025-03-12","ITM_ID":"T20","UNIT_NM":"\uba85","C1":"41","DT":13427014,"UNIT_NM_ENG":"Person","C1_OBJ_NM_ENG":"By Administrative District","C1_NM":"\uacbd\uae30\ub3c4","PRD_DE":"2020","C1_NM_ENG":"Gyeonggi-do","TBL_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4 \uc131\ubcc4 \uc778\uad6c\uc218","C1_OBJ_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4"},{"TBL_ID":"DT_1B040A3","ORG_ID":"101","ITM_NM_ENG":"Koreans (Total)","PRD_SE":"A","ITM_NM":"\ucd1d\uc778\uad6c\uc218","LST_CHN_DE":"2025-03-12","ITM_ID":"T20","UNIT_NM":"\uba85","C1":"41","DT":13565450,"UNIT_NM_ENG":"Person","C1_OBJ_NM_ENG":"By Administrative District","C1_NM":"\uacbd\uae30\ub3c4","PRD_DE":"2021","C1_NM_ENG":"Gyeonggi-do","TBL_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4 \uc131\ubcc4 \uc778\uad6c\uc218","C1_OBJ_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4"},{"TBL_ID":"DT_1B040A3","ORG_ID":"101","ITM_NM_ENG":"Koreans (Total)","PRD_SE":"A","ITM_NM":"\ucd1d\uc778\uad6c\uc218","LST_CHN_DE":"2025-03-12","ITM_ID":"T20","UNIT_NM":"\uba85","C1":"41","DT":13589432,"UNIT_NM_ENG":"Person","C1_OBJ_NM_ENG":"By Administrative District","C1_NM":"\uacbd\uae30\ub3c4","PRD_DE":"2022","C1_NM_ENG":"Gyeonggi-do","TBL_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4 \uc131\ubcc4 \uc778\uad6c\uc218","C1_OBJ_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4"},{"TBL_ID":"DT_1B040A3","ORG_ID":"101","ITM_NM_ENG":"Koreans (Total)","PRD_SE":"A","ITM_NM":"\ucd1d\uc778\uad6c\uc218","LST_CHN_DE":"2025-03-12","ITM_ID":"T20","UNIT_NM":"\uba85","C1":"41","DT":13630821,"UNIT_NM_ENG":"Person","C1_OBJ_NM_ENG":"By Administrative District","C1_NM":"\uacbd\uae30\ub3c4","PRD_DE":"2023","C1_NM_ENG":"Gyeonggi-do","TBL_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4 \uc131\ubcc4 \uc778\uad6c\uc218","C1_OBJ_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4"},{"TBL_ID":"DT_1B040A3","ORG_ID":"101","ITM_NM_ENG":"Koreans (Total)","PRD_SE":"A","ITM_NM":"\ucd1d\uc778\uad6c\uc218","LST_CHN_DE":"2025-03-12","ITM_ID":"T20","UNIT_NM":"\uba85","C1":"41","DT":13694685,"UNIT_NM_ENG":"Person","C1_OBJ_NM_ENG":"By Administrative District","C1_NM":"\uacbd\uae30\ub3c4","PRD_DE":"2024","C1_NM_ENG":"Gyeonggi-do","TBL_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4 \uc131\ubcc4 \uc778\uad6c\uc218","C1_OBJ_NM":"\ud589\uc815\uad6c\uc5ed(\uc2dc\uad70\uad6c)\ubcc4"}];
+
+        const spec2 = {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "data": {"values": data2},
+            "width": "container",
+            "height": 400,
+            "config": {
+                "background": "transparent",
+                "view": {"stroke": null},
+                "axis": {
+                    "labelColor": "#e4e4e4",
+                    "titleColor": "#00d9ff",
+                    "gridColor": "rgba(255, 255, 255, 0.1)",
+                    "domainColor": "rgba(255, 255, 255, 0.2)"
+                },
+                "legend": {
+                    "labelColor": "#e4e4e4",
+                    "titleColor": "#00d9ff"
+                }
+            },
+            "mark": {"type": "line", "point": true, "strokeWidth": 3},
+            "encoding": {
+                "x": {
+                    "field": "PRD_DE",
+                    "type": "ordinal",
+                    "title": "연도",
+                    "axis": {"labelAngle": 0}
+                },
+                "y": {
+                    "field": "DT",
+                    "type": "quantitative",
+                    "title": "인구 (명)",
+                    "axis": {"format": ","}
+                },
+                "color": {
+                    "field": "C1_NM",
+                    "type": "nominal",
+                    "scale": {
+                        "domain": ["서울특별시", "경기도"],
+                        "range": ["#ff6b6b", "#4ecdc4"]
+                    },
+                    "legend": {"title": "지역"}
+                },
+                "tooltip": [
+                    {"field": "PRD_DE", "title": "연도"},
+                    {"field": "C1_NM", "title": "지역"},
+                    {"field": "DT", "title": "인구", "format": ","}
+                ]
+            }
+        };
+
+        vegaEmbed('#chart2', spec2, {actions: false});
+    </script>
+</body>
+</html>

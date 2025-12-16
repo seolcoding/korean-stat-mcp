@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 한국 영화/엔터테인먼트 산업 트렌드 | KOSIS Report #60</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans KR", sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a0a0a 50%, #0a0a0a 100%);
+            color: #fff;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        /* Cinema Header */
+        .cinema-header {
+            background: linear-gradient(180deg, #8b0000 0%, #4a0000 100%);
+            padding: 80px 20px 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 5px solid #ffd700;
+            box-shadow: 0 10px 40px rgba(255, 215, 0, 0.3);
+        }
+
+        .cinema-header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                repeating-linear-gradient(
+                    90deg,
+                    transparent,
+                    transparent 10px,
+                    rgba(255, 215, 0, 0.05) 10px,
+                    rgba(255, 215, 0, 0.05) 20px
+                );
+            pointer-events: none;
+        }
+
+        .spotlight {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255, 215, 0, 0.3) 0%, transparent 70%);
+            filter: blur(50px);
+            animation: spotlight 8s ease-in-out infinite;
+        }
+
+        @keyframes spotlight {
+            0%, 100% { transform: translate(-100px, -50px); }
+            50% { transform: translate(100px, -30px); }
+        }
+
+        .neon-title {
+            font-size: 4rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            margin-bottom: 20px;
+            text-shadow:
+                0 0 10px #ffd700,
+                0 0 20px #ffd700,
+                0 0 30px #ffd700,
+                0 0 40px #ff4500,
+                0 0 70px #ff4500;
+            animation: neon-flicker 3s ease-in-out infinite;
+            position: relative;
+            z-index: 1;
+        }
+
+        @keyframes neon-flicker {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+            color: #ffd700;
+            margin-bottom: 10px;
+            letter-spacing: 3px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .report-meta {
+            color: #ccc;
+            font-size: 0.95rem;
+            margin-top: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Film Strip Decoration */
+        .film-strip {
+            background: #000;
+            height: 40px;
+            position: relative;
+            border-top: 3px solid #333;
+            border-bottom: 3px solid #333;
+            margin: 0;
+        }
+
+        .film-strip::before,
+        .film-strip::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100%;
+            height: 8px;
+            background: repeating-linear-gradient(
+                90deg,
+                #333 0px,
+                #333 15px,
+                #000 15px,
+                #000 25px
+            );
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        /* Ticket-Style Cards */
+        .ticket-card {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2a1a1a 100%);
+            border: 3px solid #ffd700;
+            border-radius: 15px;
+            padding: 40px;
+            margin-bottom: 40px;
+            position: relative;
+            box-shadow: 0 10px 40px rgba(255, 215, 0, 0.2);
+            overflow: hidden;
+        }
+
+        .ticket-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(255, 215, 0, 0.1),
+                transparent
+            );
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        .ticket-stub {
+            position: absolute;
+            right: 40px;
+            top: 40px;
+            width: 20px;
+            height: 100px;
+            background: repeating-linear-gradient(
+                180deg,
+                #ffd700 0px,
+                #ffd700 5px,
+                transparent 5px,
+                transparent 10px
+            );
+            opacity: 0.3;
+        }
+
+        /* Section Headers */
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #ffd700;
+        }
+
+        .section-icon {
+            font-size: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: #ffd700;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        /* Star Rating */
+        .star-rating {
+            display: flex;
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        .star {
+            font-size: 2rem;
+            color: #ffd700;
+            text-shadow: 0 0 10px #ffd700;
+        }
+
+        /* Movie Poster Style Stats */
+        .poster-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .poster-card {
+            background: linear-gradient(135deg, #8b0000 0%, #4a0000 100%);
+            border: 3px solid #ffd700;
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .poster-card:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 20px 50px rgba(255, 215, 0, 0.4);
+        }
+
+        .poster-card::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 215, 0, 0.1) 0%, transparent 70%);
+            animation: rotate 10s linear infinite;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .poster-label {
+            font-size: 0.9rem;
+            color: #ffd700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .poster-value {
+            font-size: 3rem;
+            font-weight: 900;
+            color: #fff;
+            margin-bottom: 5px;
+            position: relative;
+            z-index: 1;
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+        }
+
+        .poster-unit {
+            font-size: 1rem;
+            color: #ccc;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Highlight Box - Marquee Style */
+        .marquee-box {
+            background: #000;
+            border: 4px solid #ffd700;
+            border-radius: 10px;
+            padding: 30px;
+            margin: 40px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .marquee-box::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: repeating-linear-gradient(
+                90deg,
+                #ffd700 0px,
+                #ffd700 20px,
+                transparent 20px,
+                transparent 40px
+            );
+            animation: marquee-lights 1s linear infinite;
+        }
+
+        @keyframes marquee-lights {
+            0% { background-position: 0 0; }
+            100% { background-position: 40px 0; }
+        }
+
+        .marquee-title {
+            font-size: 1.5rem;
+            color: #ffd700;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: 700;
+            letter-spacing: 3px;
+        }
+
+        .marquee-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #fff;
+        }
+
+        .marquee-content li {
+            margin-bottom: 10px;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .marquee-content li::before {
+            content: "🎬";
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        /* Data Table - Ticket Style */
+        .data-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin: 30px 0;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .data-table thead {
+            background: linear-gradient(135deg, #8b0000 0%, #4a0000 100%);
+        }
+
+        .data-table th {
+            padding: 20px;
+            text-align: left;
+            color: #ffd700;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 2px solid #ffd700;
+        }
+
+        .data-table tbody tr {
+            background: #1a1a1a;
+            transition: all 0.3s ease;
+        }
+
+        .data-table tbody tr:nth-child(even) {
+            background: #222;
+        }
+
+        .data-table tbody tr:hover {
+            background: #2a1a1a;
+            transform: scale(1.02);
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.2);
+        }
+
+        .data-table td {
+            padding: 15px 20px;
+            color: #fff;
+            border-bottom: 1px solid #333;
+        }
+
+        /* Footer */
+        .cinema-footer {
+            background: #000;
+            padding: 40px 20px;
+            text-align: center;
+            border-top: 3px solid #ffd700;
+            margin-top: 60px;
+        }
+
+        .cinema-footer p {
+            color: #999;
+            margin-bottom: 10px;
+        }
+
+        .cinema-footer a {
+            color: #ffd700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .cinema-footer a:hover {
+            color: #fff;
+            text-shadow: 0 0 10px #ffd700;
+        }
+
+        /* Credits Roll */
+        .credits {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 20px;
+            font-family: 'Courier New', monospace;
+        }
+    </style>
+</head>
+<body>
+    <!-- Spotlight Effect -->
+    <div class="cinema-header">
+        <div class="spotlight"></div>
+        <h1 class="neon-title">🎬 Cinema Report</h1>
+        <p class="subtitle">한국 영화/엔터테인먼트 산업 트렌드 분석</p>
+        <div class="report-meta">
+            <p>Report #60 | Generated: 2025.12.15</p>
+            <p>Data Source: KOSIS 국가통계포털 | Analysis Period: 2019-2023</p>
+        </div>
+    </div>
+
+    <!-- Film Strip Decoration -->
+    <div class="film-strip"></div>
+
+    <!-- Main Content -->
+    <div class="container">
+
+        <div class="ticket-card">
+            <div class="ticket-stub"></div>
+            <div class="section-header">
+                <span class="section-icon">🎭</span>
+                <h2 class="section-title">2025 박스오피스 하이라이트</h2>
+            </div>
+
+            <div class="star-rating">
+                <span class="star">⭐</span>
+                <span class="star">⭐</span>
+                <span class="star">⭐</span>
+                <span class="star">⭐</span>
+                <span class="star">⭐</span>
+            </div>
+
+            <div class="marquee-box">
+                <h3 class="marquee-title">🎬 NOW SHOWING - 2025년 7월</h3>
+                <ul class="marquee-content">
+                    <li><strong>1위: F1 더 무비</strong> - 누적 187만 관객 | 개봉 4주차 47만 관객 동원</li>
+                    <li><strong>2위: 킹 오브 킹스</strong> - 한국 애니메이션, 38만 관객</li>
+                    <li><strong>5위: 노이즈</strong> - 심리 스릴러, 누적 148만 관객 돌파</li>
+                    <li><strong>시장 점유율:</strong> 외국영화 66.7% vs 한국영화 33.3%</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="ticket-card">
+            <div class="ticket-stub"></div>
+            <div class="section-header">
+                <span class="section-icon">📊</span>
+                <h2 class="section-title">영화산업 : 사업체 및 종사자당 평균매출액 현황</h2>
+            </div>
+
+            <div class="poster-stats">
+                <div class="poster-card">
+                    <div class="poster-label">최신 연도</div>
+                    <div class="poster-value">2023</div>
+                    <div class="poster-unit">Year</div>
+                </div>
+                <div class="poster-card">
+                    <div class="poster-label">최신 수치</div>
+                    <div class="poster-value">17,844,146</div>
+                    <div class="poster-unit">개명백만원</div>
+                </div>
+                <div class="poster-card">
+                    <div class="poster-label">전년 대비</div>
+                    <div class="poster-value">-19.8%</div>
+                    <div class="poster-unit">Growth Rate</div>
+                </div>
+            </div>
+
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>기간</th>
+                        <th>수치</th>
+                        <th>TBL_ID</th>
+                        <th>ORG_ID</th>
+                        <th>PRD_SE</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2019</td>
+                        <td>64,523</td>
+                        <td>DT_113_STBL_1027323</td>
+                        <td>113</td>
+                        <td>A</td>
+                    </tr>
+                    <tr>
+                        <td>2020</td>
+                        <td>39,673</td>
+                        <td>DT_113_STBL_1027323</td>
+                        <td>113</td>
+                        <td>A</td>
+                    </tr>
+                    <tr>
+                        <td>2021</td>
+                        <td>66,913</td>
+                        <td>DT_113_STBL_1027323</td>
+                        <td>113</td>
+                        <td>A</td>
+                    </tr>
+                    <tr>
+                        <td>2022</td>
+                        <td>829</td>
+                        <td>DT_113_STBL_1027323</td>
+                        <td>113</td>
+                        <td>A</td>
+                    </tr>
+                    <tr>
+                        <td>2023</td>
+                        <td>661</td>
+                        <td>DT_113_STBL_1027323</td>
+                        <td>113</td>
+                        <td>A</td>
+                    </tr>
+                    <tr>
+                        <td>2019</td>
+                        <td>1,271</td>
+                        <td>DT_113_STBL_1027323</td>
+                        <td>113</td>
+                        <td>A</td>
+                    </tr>
+                    <tr>
+                        <td>2020</td>
+                        <td>873</td>
+                        <td>DT_113_STBL_1027323</td>
+                        <td>113</td>
+                        <td>A</td>
+                    </tr>
+                    <tr>
+                        <td>2021</td>
+                        <td>1,057</td>
+                        <td>DT_113_STBL_1027323</td>
+                        <td>113</td>
+                        <td>A</td>
+                    </tr>
+                    <tr>
+                        <td>2022</td>
+                        <td>195</td>
+                        <td>DT_113_STBL_1027323</td>
+                        <td>113</td>
+                        <td>A</td>
+                    </tr>
+                    <tr>
+                        <td>2023</td>
+                        <td>157</td>
+                        <td>DT_113_STBL_1027323</td>
+                        <td>113</td>
+                        <td>A</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+        <div class="ticket-card">
+            <div class="ticket-stub"></div>
+            <div class="section-header">
+                <span class="section-icon">💡</span>
+                <h2 class="section-title">Key Insights</h2>
+            </div>
+
+            <div class="marquee-box">
+                <h3 class="marquee-title">🎯 핵심 발견사항</h3>
+                <ul class="marquee-content">
+                    <li><strong>박스오피스 트렌드:</strong> 블록버스터 외화의 지속적인 시장 지배력</li>
+                    <li><strong>한국 영화:</strong> 장르 다양화와 틈새시장 공략 전략</li>
+                    <li><strong>관객 패턴:</strong> 프리미엄 상영관 수요 증가</li>
+                    <li><strong>산업 전망:</strong> OTT와의 윈도우 전략 재편성 필요</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="ticket-card">
+            <div class="ticket-stub"></div>
+            <div class="section-header">
+                <span class="section-icon">📚</span>
+                <h2 class="section-title">Data Sources</h2>
+            </div>
+
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>기관</th>
+                        <th>테이블명</th>
+                        <th>기간</th>
+                        <th>레코드</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <td></td>
+                        <td>영화산업 : 사업체 및 종사자당 평균매출액 현황</td>
+                        <td>2013 ~ 2023</td>
+                        <td>300건</td>
+                    </tr>
+
+                </tbody>
+            </table>
+
+            <div style="margin-top: 30px; color: #999; font-size: 0.9rem;">
+                <p><strong>외부 참조:</strong></p>
+                <ul style="list-style: none; padding: 0;">
+                    <li>• KOFIC 영화관 입장권 통합전산망: <a href="https://www.kobis.or.kr" target="_blank" style="color: #ffd700;">kobis.or.kr</a></li>
+                    <li>• 웹매거진 한국영화: <a href="https://magazine.kofic.or.kr" target="_blank" style="color: #ffd700;">magazine.kofic.or.kr</a></li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Cinema Footer -->
+    <div class="film-strip"></div>
+    <div class="cinema-footer">
+        <p>🎬 <strong>KOSIS Cinema Report #60</strong> 🎬</p>
+        <p>Powered by <a href="https://kosis.kr" target="_blank">KOSIS 국가통계포털</a></p>
+        <div class="credits">
+            <p>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</p>
+            <p>PRODUCED BY: KOSIS Data Processor</p>
+            <p>DIRECTED BY: Claude Code</p>
+            <p>DESIGN: Cinema/Entertainment Style</p>
+            <p>RELEASE DATE: 2025.12.15</p>
+            <p>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -27,7 +27,6 @@ from kosis_tools.list_categories import CategoryList, OrgCode, ThemeCode
 from kosis_tools.table_meta import TableMetadata
 from kosis_tools.data import StatisticsData
 from kosis_tools.transform import KosisTransformer, to_dataframe
-from kosis_tools.visualize import KosisVisualizer
 from kosis_tools.report_tools import (
     ReportComponent,
     AnalysisResult,

@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>대한민국 초고령사회 진입 분석 | KOSIS 데이터 기반</title>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
+        header {
+            background: linear-gradient(135deg, #4e54c8 0%, #8f94fb 100%);
+            color: white;
+            padding: 60px 40px;
+            border-radius: 20px;
+            margin-bottom: 40px;
+            box-shadow: 0 20px 60px rgba(78, 84, 200, 0.3);
+        }
+        header h1 { font-size: 2.5rem; margin-bottom: 15px; font-weight: 800; }
+        header p { font-size: 1.1rem; opacity: 0.9; line-height: 1.6; }
+        .meta-info { margin-top: 20px; font-size: 0.9rem; opacity: 0.8; }
+
+        .kpi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+        .kpi-card {
+            background: white;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .kpi-card.critical { border-left: 5px solid #8e44ad; }
+        .kpi-card.warning { border-left: 5px solid #e67e22; }
+        .kpi-card.danger { border-left: 5px solid #e74c3c; }
+        .kpi-card.info { border-left: 5px solid #3498db; }
+        .kpi-value { font-size: 3rem; font-weight: 800; color: #2c3e50; }
+        .kpi-value.critical { color: #8e44ad; }
+        .kpi-value.warning { color: #e67e22; }
+        .kpi-value.danger { color: #e74c3c; }
+        .kpi-label { font-size: 1rem; color: #7f8c8d; margin-top: 10px; }
+        .kpi-sub { font-size: 0.85rem; color: #95a5a6; margin-top: 5px; }
+
+        .section {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+        }
+        .section h2 {
+            font-size: 1.5rem;
+            color: #2c3e50;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #eee;
+        }
+
+        .insight-box {
+            background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
+            border-left: 5px solid #8e44ad;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 25px 0;
+        }
+        .insight-box.danger {
+            background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%);
+            border-left-color: #e74c3c;
+        }
+        .insight-box.info {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            border-left-color: #3498db;
+        }
+        .insight-box h3 { color: #6a1b9a; margin-bottom: 15px; }
+        .insight-box.danger h3 { color: #c62828; }
+        .insight-box.info h3 { color: #1565c0; }
+        .insight-box ul { margin-left: 20px; }
+        .insight-box li { margin: 10px 0; line-height: 1.7; }
+
+        .chart-container { margin: 30px 0; }
+
+        .news-section { background: #f8f9fa; }
+        .news-item {
+            padding: 20px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .news-item:last-child { border-bottom: none; }
+        .news-item a {
+            color: #4e54c8;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.05rem;
+        }
+        .news-item a:hover { text-decoration: underline; }
+        .news-source { font-size: 0.85rem; color: #888; margin-top: 8px; }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        .comparison-table th, .comparison-table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+        .comparison-table th {
+            background: #f8f9fa;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+        .comparison-table tr:hover { background: #f8f9fa; }
+        .high { color: #e74c3c; font-weight: 600; }
+        .low { color: #27ae60; font-weight: 600; }
+
+        .milestone {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 12px;
+            margin: 15px 0;
+        }
+        .milestone-year {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #8e44ad;
+            min-width: 100px;
+        }
+        .milestone-content { flex: 1; padding-left: 20px; }
+        .milestone-title { font-weight: 600; color: #2c3e50; }
+        .milestone-desc { color: #7f8c8d; font-size: 0.9rem; margin-top: 5px; }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: white;
+            font-size: 0.9rem;
+        }
+        footer a { color: #8f94fb; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>👴 대한민국 초고령사회 진입 분석</h1>
+            <p>KOSIS 공식 통계 데이터 기반 | 2025년 고령인구 20% 돌파, 초고령사회 원년</p>
+            <div class="meta-info">
+                📊 데이터 출처: KOSIS 국가통계포털 |
+                📅 생성일: 2025-12-15 |
+                🏢 통계표: 고령인구비율(시도/시/군/구) (DT_1YL20631)
+            </div>
+        </header>
+
+        <div class="kpi-grid">
+            <div class="kpi-card critical">
+                <div class="kpi-value critical">20.0%</div>
+                <div class="kpi-label">2024년 고령인구 비율</div>
+                <div class="kpi-sub">초고령사회 공식 진입</div>
+            </div>
+            <div class="kpi-card warning">
+                <div class="kpi-value warning">1,026만</div>
+                <div class="kpi-label">65세 이상 인구</div>
+                <div class="kpi-sub">사상 최초 1천만 돌파</div>
+            </div>
+            <div class="kpi-card danger">
+                <div class="kpi-value danger">47.5%</div>
+                <div class="kpi-label">의성군 고령인구 비율</div>
+                <div class="kpi-sub">전국 최고 (초고령 지역)</div>
+            </div>
+            <div class="kpi-card info">
+                <div class="kpi-value">10.9%</div>
+                <div class="kpi-label">화성시 고령인구 비율</div>
+                <div class="kpi-sub">전국 최저 (젊은 도시)</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>📈 고령인구 비율 추이 (2015-2024)</h2>
+            <div class="chart-container" id="trend-chart"></div>
+            <div class="insight-box">
+                <h3>📊 고령화 속도</h3>
+                <ul>
+                    <li><strong>10년간 6.9%p 증가</strong>: 2015년 13.1% → 2024년 20.0%</li>
+                    <li><strong>세계 최고 속도</strong>: 고령화사회→초고령사회 25년 (일본 36년, 미국 87년)</li>
+                    <li><strong>인구 1,026만 명</strong>: 65세 이상 인구가 사상 최초로 천만 명 돌파</li>
+                    <li><strong>2050년 전망</strong>: 고령인구 비율 40% 예상 (국민 5명 중 2명이 노인)</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>📌 고령화 주요 마일스톤</h2>
+            <div class="milestone">
+                <div class="milestone-year">2000</div>
+                <div class="milestone-content">
+                    <div class="milestone-title">고령화사회 진입 (7.2%)</div>
+                    <div class="milestone-desc">65세 이상 인구가 총인구의 7% 초과</div>
+                </div>
+            </div>
+            <div class="milestone">
+                <div class="milestone-year">2017</div>
+                <div class="milestone-content">
+                    <div class="milestone-title">고령사회 진입 (14.2%)</div>
+                    <div class="milestone-desc">65세 이상 인구가 총인구의 14% 초과</div>
+                </div>
+            </div>
+            <div class="milestone">
+                <div class="milestone-year">2025</div>
+                <div class="milestone-content">
+                    <div class="milestone-title">초고령사회 진입 (20.0%)</div>
+                    <div class="milestone-desc">65세 이상 인구가 총인구의 20% 초과 - 현재 위치</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🗺️ 2024년 지역별 고령인구 비율</h2>
+            <div class="chart-container" id="regional-chart"></div>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>순위</th>
+                        <th>고령인구 비율 TOP 5</th>
+                        <th>비율</th>
+                        <th>저령인구 비율 TOP 5</th>
+                        <th>비율</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td class="high">의성군 (경북)</td>
+                        <td class="high">47.5%</td>
+                        <td class="low">화성시 (경기)</td>
+                        <td class="low">10.9%</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td class="high">군위군 (경북)</td>
+                        <td class="high">47.3%</td>
+                        <td class="low">세종특별자치시</td>
+                        <td class="low">11.6%</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td class="high">고흥군 (전남)</td>
+                        <td class="high">45.7%</td>
+                        <td class="low">광주 북구</td>
+                        <td class="low">11.8%</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td class="high">합천군 (경남)</td>
+                        <td class="high">45.3%</td>
+                        <td class="low">광주 광산구</td>
+                        <td class="low">12.1%</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td class="high">청도군 (경북)</td>
+                        <td class="high">44.3%</td>
+                        <td class="low">오산시 (경기)</td>
+                        <td class="low">12.2%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section news-section">
+            <h2>📰 고령화 관련 최신 뉴스</h2>
+            <div class="news-item">
+                <a href="https://www.nocutnews.co.kr/news/6407362" target="_blank">
+                    올해 '초고령사회' 첫 진입…2050년엔 국민 40%가 노인
+                </a>
+                <div class="news-source">노컷뉴스 | 2025.09</div>
+            </div>
+            <div class="news-item">
+                <a href="https://koreabizreview.com/detail.php?number=6931" target="_blank">
+                    2025년 대한민국, 초고령사회 진입 원년… 10년 후 미래를 준비하라
+                </a>
+                <div class="news-source">Korea Biz Review | 2025</div>
+            </div>
+            <div class="news-item">
+                <a href="https://www.ohmynews.com/NWS_Web/View/at_pg.aspx?CNTN_CD=A0003190581" target="_blank">
+                    생애의 불평등은 노년까지 이어진다
+                </a>
+                <div class="news-source">오마이뉴스 | 2025</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>💡 종합 인사이트</h2>
+            <div class="insight-box danger">
+                <h3>⚠️ 주요 위기 요인</h3>
+                <ul>
+                    <li><strong>지방 소멸 위기</strong>: 군 단위 지역 고령인구 45% 이상, 인구 재생산 불가 상태</li>
+                    <li><strong>노인 빈곤율 OECD 1위</strong>: 노인 빈곤율 40% 이상, 노후 소득보장 체계 미흡</li>
+                    <li><strong>1인 고령가구 급증</strong>: 독거노인 200만 가구 돌파, 고독사 문제 심화</li>
+                    <li><strong>의료비 폭증</strong>: 건강보험 재정 압박, 요양병원/시설 수요 급증</li>
+                </ul>
+            </div>
+            <div class="insight-box info">
+                <h3>📋 정책 대응 방향</h3>
+                <ul>
+                    <li><strong>정년 연장</strong>: 65세 이상 고용 확대, 재취업 지원 강화</li>
+                    <li><strong>연금 개혁</strong>: 국민연금 재정 안정화, 기초연금 확대</li>
+                    <li><strong>돌봄 인프라</strong>: 지역사회 통합돌봄, 스마트 시니어 케어</li>
+                    <li><strong>세대 통합</strong>: 청년-노인 상생 모델, 시니어 자원봉사 활성화</li>
+                </ul>
+            </div>
+            <div class="insight-box">
+                <h3>🔮 미래 전망</h3>
+                <ul>
+                    <li><strong>2035년</strong>: 고령인구 비율 30% 돌파 전망</li>
+                    <li><strong>2050년</strong>: 고령인구 비율 40% 진입, 세계 최고령 국가</li>
+                    <li><strong>2072년</strong>: 인구 3,600만 명으로 감소, 고령인구 비율 47% 전망</li>
+                </ul>
+            </div>
+        </div>
+
+        <footer>
+            <p>
+                이 보고서는 <a href="https://kosis.kr" target="_blank">KOSIS 국가통계포털</a> API를 통해 수집된 공식 통계 데이터를 기반으로 자동 생성되었습니다.
+            </p>
+            <p style="margin-top: 10px;">
+                Report #005 | 생성: 2025-12-15
+            </p>
+        </footer>
+    </div>
+
+    <script>
+        // 고령인구비율 추이 차트
+        const trendSpec = {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "width": "container",
+            "height": 350,
+            "data": {
+                "values": [
+                    {"year": "2015", "rate": 13.1},
+                    {"year": "2016", "rate": 13.5},
+                    {"year": "2017", "rate": 14.2},
+                    {"year": "2018", "rate": 14.8},
+                    {"year": "2019", "rate": 15.5},
+                    {"year": "2020", "rate": 16.4},
+                    {"year": "2021", "rate": 17.1},
+                    {"year": "2022", "rate": 18.0},
+                    {"year": "2023", "rate": 19.0},
+                    {"year": "2024", "rate": 20.0}
+                ]
+            },
+            "layer": [
+                {
+                    "mark": {
+                        "type": "area",
+                        "line": {"color": "#8e44ad"},
+                        "color": {
+                            "x1": 1, "y1": 1, "x2": 1, "y2": 0,
+                            "gradient": "linear",
+                            "stops": [
+                                {"offset": 0, "color": "rgba(142, 68, 173, 0.1)"},
+                                {"offset": 1, "color": "rgba(142, 68, 173, 0.5)"}
+                            ]
+                        }
+                    }
+                },
+                {
+                    "mark": {
+                        "type": "line",
+                        "point": {"filled": true, "size": 100},
+                        "strokeWidth": 3,
+                        "color": "#8e44ad"
+                    }
+                },
+                {
+                    "mark": {"type": "rule", "strokeDash": [4, 4], "color": "#e74c3c"},
+                    "encoding": {"y": {"datum": 20}}
+                },
+                {
+                    "mark": {"type": "text", "align": "left", "dx": 5, "dy": -8, "color": "#e74c3c"},
+                    "encoding": {
+                        "x": {"datum": "2015"},
+                        "y": {"datum": 20},
+                        "text": {"value": "초고령사회 기준 20%"}
+                    }
+                },
+                {
+                    "mark": {"type": "rule", "strokeDash": [4, 4], "color": "#f39c12"},
+                    "encoding": {"y": {"datum": 14}}
+                },
+                {
+                    "mark": {"type": "text", "align": "left", "dx": 5, "dy": -8, "color": "#f39c12"},
+                    "encoding": {
+                        "x": {"datum": "2015"},
+                        "y": {"datum": 14},
+                        "text": {"value": "고령사회 기준 14%"}
+                    }
+                }
+            ],
+            "encoding": {
+                "x": {
+                    "field": "year",
+                    "type": "ordinal",
+                    "title": "연도",
+                    "axis": {"labelAngle": 0}
+                },
+                "y": {
+                    "field": "rate",
+                    "type": "quantitative",
+                    "title": "고령인구 비율 (%)",
+                    "scale": {"domain": [10, 25]}
+                },
+                "tooltip": [
+                    {"field": "year", "title": "연도"},
+                    {"field": "rate", "title": "비율", "format": ".1f"}
+                ]
+            }
+        };
+        vegaEmbed('#trend-chart', trendSpec, {"actions": false});
+
+        // 지역별 차트
+        const regionalSpec = {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "width": "container",
+            "height": 400,
+            "data": {
+                "values": [
+                    {"region": "의성군", "rate": 47.5, "type": "초고령"},
+                    {"region": "군위군", "rate": 47.3, "type": "초고령"},
+                    {"region": "고흥군", "rate": 45.7, "type": "초고령"},
+                    {"region": "합천군", "rate": 45.3, "type": "초고령"},
+                    {"region": "청도군", "rate": 44.3, "type": "초고령"},
+                    {"region": "전국", "rate": 20.0, "type": "전국"},
+                    {"region": "오산시", "rate": 12.2, "type": "젊은도시"},
+                    {"region": "광산구", "rate": 12.1, "type": "젊은도시"},
+                    {"region": "북구", "rate": 11.8, "type": "젊은도시"},
+                    {"region": "세종시", "rate": 11.6, "type": "젊은도시"},
+                    {"region": "화성시", "rate": 10.9, "type": "젊은도시"}
+                ]
+            },
+            "mark": {"type": "bar", "cornerRadiusTopLeft": 8, "cornerRadiusTopRight": 8},
+            "encoding": {
+                "x": {
+                    "field": "region",
+                    "type": "nominal",
+                    "title": "지역",
+                    "sort": "-y",
+                    "axis": {"labelAngle": -45}
+                },
+                "y": {
+                    "field": "rate",
+                    "type": "quantitative",
+                    "title": "고령인구 비율 (%)",
+                    "scale": {"domain": [0, 50]}
+                },
+                "color": {
+                    "field": "type",
+                    "type": "nominal",
+                    "title": "구분",
+                    "scale": {
+                        "domain": ["초고령", "전국", "젊은도시"],
+                        "range": ["#e74c3c", "#8e44ad", "#27ae60"]
+                    }
+                },
+                "tooltip": [
+                    {"field": "region", "title": "지역"},
+                    {"field": "rate", "title": "비율", "format": ".1f"},
+                    {"field": "type", "title": "구분"}
+                ]
+            }
+        };
+        vegaEmbed('#regional-chart', regionalSpec, {"actions": false});
+    </script>
+</body>
+</html>

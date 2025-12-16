@@ -10,6 +10,10 @@ LLM이 유저의 질문이나 요청에 맞춰 맞춤형 분석을 수행할 수
     - 다양한 출력 형식: Markdown, HTML, JSON
     - LLM 친화적 구조: 프롬프트 생성 지원
 
+시각화:
+    - Altair 기반 인터랙티브 차트 (Vega-Lite)
+    - HTML 보고서에 Vega-Embed로 임베드
+
 Example:
     기본 사용:
     >>> from kosis_tools.report_generator import ReportGenerator
@@ -43,9 +47,9 @@ from pathlib import Path
 from typing import Any, Dict, List, Optional, Union
 
 import pandas as pd
+import altair as alt
 
 from .transform import KosisTransformer, Fields, FieldLabels
-from .visualize import KosisVisualizer
 
 logger = logging.getLogger(__name__)
 
@@ -106,7 +110,6 @@ class ReportGenerator:
     Attributes:
         data: 원본 KOSIS API 응답 데이터
         tx: KosisTransformer 인스턴스
-        viz: KosisVisualizer 인스턴스
 
     Example:
         >>> generator = ReportGenerator(records)
@@ -120,18 +123,15 @@ class ReportGenerator:
     def __init__(
         self,
         data: List[Dict[str, Any]],
-        visualizer: Optional[KosisVisualizer] = None,
     ):
         """
         리포트 생성기를 초기화합니다.
 
         Args:
             data: KOSIS API 응답 데이터 (레코드 리스트)
-            visualizer: KosisVisualizer 인스턴스 (None이면 새로 생성)
         """
         self.data = data
         self.tx = KosisTransformer(data)
-        self.viz = visualizer or KosisVisualizer()
         self._sections: List[ReportSection] = []
 
     def parse_user_query(self, query: str) -> UserQuery:
@@ -306,8 +306,6 @@ class ReportGenerator:
             ...     save_debug_info=True
             ... )
         """
-        import plotly.io as pio
-
         # 디버그 정보 수집
         debug_steps = []
         start_time = time.perf_counter()
@@ -452,7 +450,9 @@ class ReportGenerator:
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{title}</title>
-    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
 
@@ -657,8 +657,6 @@ class ReportGenerator:
         query: UserQuery,
     ) -> Optional[str]:
         """개별 HTML 섹션 생성"""
-        import plotly.io as pio
-
         generators = {
             "eda": self._html_eda,
             "stats": self._html_stats,
@@ -827,74 +825,68 @@ class ReportGenerator:
 '''
 
     def _html_visualization(self, tx: KosisTransformer, query: UserQuery) -> str:
-        """시각화 섹션 HTML (Plotly 임베드)"""
-        import plotly.io as pio
+        """시각화 섹션 HTML (Altair/Vega-Embed)"""
+        import uuid
 
         charts_html = []
+        df = tx.df.copy()
 
         # 컨텍스트 기반 라벨 생성
         context = FieldLabels.detect_context(tx.to_records(), query.raw_query)
         labels = self._build_labels(context)
 
+        def chart_to_html(chart, chart_id: str) -> str:
+            """Altair 차트를 Vega-Embed HTML로 변환"""
+            spec = chart.to_json()
+            return f'''
+            <div id="{chart_id}" class="chart-container"></div>
+            <script>
+                vegaEmbed('#{chart_id}', {spec}, {{"renderer": "svg"}}).catch(console.error);
+            </script>
+            '''
+
         # 비교 유형에 따른 차트 선택
         if query.comparison_type == "temporal":
-            fig = self.viz.line_chart(
-                tx.to_records(),
-                x=Fields.PERIOD,
-                y=Fields.VALUE,
-                color=Fields.C1_NM if Fields.C1_NM in tx.df.columns else None,
-                title="시계열 추이",
-                labels=labels,
-            )
-            charts_html.append(pio.to_html(fig, full_html=False, include_plotlyjs=False))
+            chart = alt.Chart(df).mark_line(point=True).encode(
+                x=alt.X(f'{Fields.PERIOD}:N', title=labels.get(Fields.PERIOD, '기간')),
+                y=alt.Y(f'{Fields.VALUE}:Q', title=labels.get(Fields.VALUE, '값')),
+                color=alt.Color(f'{Fields.C1_NM}:N', title=labels.get(Fields.C1_NM, '분류')) if Fields.C1_NM in df.columns else alt.value('steelblue'),
+            ).properties(title="시계열 추이", width=600, height=400)
+            charts_html.append(chart_to_html(chart, f"chart_{uuid.uuid4().hex[:8]}"))
 
         elif query.comparison_type == "regional":
-            fig = self.viz.bar_chart(
-                tx.to_records(),
-                x=Fields.C1_NM,
-                y=Fields.VALUE,
-                color=Fields.PERIOD if Fields.PERIOD in tx.df.columns else None,
-                title="지역별 비교",
-                labels=labels,
-            )
-            charts_html.append(pio.to_html(fig, full_html=False, include_plotlyjs=False))
+            chart = alt.Chart(df).mark_bar().encode(
+                x=alt.X(f'{Fields.C1_NM}:N', title=labels.get(Fields.C1_NM, '지역')),
+                y=alt.Y(f'{Fields.VALUE}:Q', title=labels.get(Fields.VALUE, '값')),
+                color=alt.Color(f'{Fields.PERIOD}:N', title=labels.get(Fields.PERIOD, '기간')) if Fields.PERIOD in df.columns else alt.value('steelblue'),
+            ).properties(title="지역별 비교", width=600, height=400)
+            charts_html.append(chart_to_html(chart, f"chart_{uuid.uuid4().hex[:8]}"))
 
         elif query.comparison_type == "ranking":
             ranked = tx.rank_by(Fields.VALUE, top_n=10)
-            fig = self.viz.bar_chart(
-                ranked.to_dict("records"),
-                x=Fields.VALUE,
-                y=Fields.C1_NM,
-                orientation="h",
-                title="상위 순위",
-                labels=labels,
-            )
-            charts_html.append(pio.to_html(fig, full_html=False, include_plotlyjs=False))
+            chart = alt.Chart(ranked).mark_bar().encode(
+                x=alt.X(f'{Fields.VALUE}:Q', title=labels.get(Fields.VALUE, '값')),
+                y=alt.Y(f'{Fields.C1_NM}:N', title=labels.get(Fields.C1_NM, '분류'), sort='-x'),
+            ).properties(title="상위 순위", width=600, height=400)
+            charts_html.append(chart_to_html(chart, f"chart_{uuid.uuid4().hex[:8]}"))
 
         else:
             # 기본: 라인 차트 + 막대 차트
-            fig1 = self.viz.line_chart(
-                tx.to_records(),
-                x=Fields.PERIOD,
-                y=Fields.VALUE,
-                color=Fields.C1_NM if Fields.C1_NM in tx.df.columns else None,
-                title="시계열 추이",
-                labels=labels,
-            )
-            charts_html.append(pio.to_html(fig1, full_html=False, include_plotlyjs=False))
+            chart1 = alt.Chart(df).mark_line(point=True).encode(
+                x=alt.X(f'{Fields.PERIOD}:N', title=labels.get(Fields.PERIOD, '기간')),
+                y=alt.Y(f'{Fields.VALUE}:Q', title=labels.get(Fields.VALUE, '값')),
+                color=alt.Color(f'{Fields.C1_NM}:N', title=labels.get(Fields.C1_NM, '분류')) if Fields.C1_NM in df.columns else alt.value('steelblue'),
+            ).properties(title="시계열 추이", width=600, height=400)
+            charts_html.append(chart_to_html(chart1, f"chart_{uuid.uuid4().hex[:8]}"))
 
-            fig2 = self.viz.bar_chart(
-                tx.to_records(),
-                x=Fields.C1_NM if Fields.C1_NM in tx.df.columns else Fields.PERIOD,
-                y=Fields.VALUE,
-                title="분류별 비교",
-                labels=labels,
-            )
-            charts_html.append(pio.to_html(fig2, full_html=False, include_plotlyjs=False))
+            x_field = Fields.C1_NM if Fields.C1_NM in df.columns else Fields.PERIOD
+            chart2 = alt.Chart(df).mark_bar().encode(
+                x=alt.X(f'{x_field}:N', title=labels.get(x_field, '분류')),
+                y=alt.Y(f'{Fields.VALUE}:Q', title=labels.get(Fields.VALUE, '값')),
+            ).properties(title="분류별 비교", width=600, height=400)
+            charts_html.append(chart_to_html(chart2, f"chart_{uuid.uuid4().hex[:8]}"))
 
-        all_charts = "\n".join(
-            f'<div class="chart-container">{c}</div>' for c in charts_html
-        )
+        all_charts = "\n".join(charts_html)
 
         return f'''
         <div class="card">
@@ -1200,8 +1192,11 @@ class ReportGenerator:
         self, tx: KosisTransformer, query: UserQuery, output_dir: Optional[Path]
     ) -> ReportSection:
         """시각화 섹션 생성"""
+        from .visualize import save_chart
+
         lines = []
         charts = []
+        df = tx.df.copy()
 
         if output_dir:
             output_dir = Path(output_dir)
@@ -1210,52 +1205,45 @@ class ReportGenerator:
         # 비교 유형에 따른 차트 선택
         if query.comparison_type == "temporal":
             # 라인 차트
-            fig = self.viz.line_chart(
-                tx.to_records(),
-                x=Fields.PERIOD,
-                y=Fields.VALUE,
-                color=Fields.C1_NM if Fields.C1_NM in tx.df.columns else None,
-                title="시계열 추이",
-            )
-            charts.append(fig)
+            chart = alt.Chart(df).mark_line(point=True).encode(
+                x=alt.X(f'{Fields.PERIOD}:N', title='기간'),
+                y=alt.Y(f'{Fields.VALUE}:Q', title='값'),
+                color=alt.Color(f'{Fields.C1_NM}:N') if Fields.C1_NM in df.columns else alt.value('steelblue'),
+            ).properties(title="시계열 추이", width=600, height=400)
+            charts.append(chart)
             lines.append("📈 **시계열 추이 차트** 생성됨")
 
             if output_dir:
-                path = self.viz.save_chart(fig, output_dir / "trend_chart.html")
-                lines.append(f"   → 저장: `{path}`")
+                result = save_chart(chart, "trend_chart.html", str(output_dir))
+                lines.append(f"   → 저장: `{result['path']}`")
 
         elif query.comparison_type == "regional":
             # 막대 차트
-            fig = self.viz.bar_chart(
-                tx.to_records(),
-                x=Fields.C1_NM,
-                y=Fields.VALUE,
-                color=Fields.PERIOD if Fields.PERIOD in tx.df.columns else None,
-                title="지역별 비교",
-            )
-            charts.append(fig)
+            chart = alt.Chart(df).mark_bar().encode(
+                x=alt.X(f'{Fields.C1_NM}:N', title='지역'),
+                y=alt.Y(f'{Fields.VALUE}:Q', title='값'),
+                color=alt.Color(f'{Fields.PERIOD}:N') if Fields.PERIOD in df.columns else alt.value('steelblue'),
+            ).properties(title="지역별 비교", width=600, height=400)
+            charts.append(chart)
             lines.append("📊 **지역별 비교 차트** 생성됨")
 
             if output_dir:
-                path = self.viz.save_chart(fig, output_dir / "comparison_chart.html")
-                lines.append(f"   → 저장: `{path}`")
+                result = save_chart(chart, "comparison_chart.html", str(output_dir))
+                lines.append(f"   → 저장: `{result['path']}`")
 
         elif query.comparison_type == "ranking":
             # 순위 막대 차트 (수평)
             ranked = tx.rank_by(Fields.VALUE, top_n=10)
-            fig = self.viz.bar_chart(
-                ranked.to_dict("records"),
-                x=Fields.VALUE,
-                y=Fields.C1_NM,
-                orientation="h",
-                title="상위 순위",
-            )
-            charts.append(fig)
+            chart = alt.Chart(ranked).mark_bar().encode(
+                x=alt.X(f'{Fields.VALUE}:Q', title='값'),
+                y=alt.Y(f'{Fields.C1_NM}:N', title='분류', sort='-x'),
+            ).properties(title="상위 순위", width=600, height=400)
+            charts.append(chart)
             lines.append("🏆 **순위 차트** 생성됨")
 
             if output_dir:
-                path = self.viz.save_chart(fig, output_dir / "ranking_chart.html")
-                lines.append(f"   → 저장: `{path}`")
+                result = save_chart(chart, "ranking_chart.html", str(output_dir))
+                lines.append(f"   → 저장: `{result['path']}`")
 
         return ReportSection(
             name="visualization",

@@ -1,0 +1,186 @@
+{
+  "report_metadata": {
+    "report_id": "040",
+    "title": "한국 온실가스 배출 현황과 탄소중립 2050 로드맵",
+    "subtitle": "대한민국의 온실가스 감축 목표와 실천 전략",
+    "date": "2025-12-15",
+    "keywords": ["온실가스", "탄소중립", "기후변화", "배출량", "NDC"],
+    "data_source": "KOSIS, 탄소중립녹색성장위원회, 국가통계포털"
+  },
+  "key_findings": {
+    "current_status": {
+      "year_2022_emissions": "724.3백만톤",
+      "change_from_2021": "-2.3%",
+      "change_from_2018": "-7.6%",
+      "base_year_1990": "+133.2%"
+    },
+    "sector_breakdown": {
+      "energy": "86.9%",
+      "industrial_process": "7.6%",
+      "agriculture": "3.2%",
+      "waste": "2.4%"
+    },
+    "ndc_targets": {
+      "base_year": "2018",
+      "base_emissions": "727.6백만톤",
+      "target_year": "2030",
+      "target_emissions": "436.6백만톤",
+      "reduction_rate": "40%",
+      "annual_reduction_rate": "4.17%"
+    },
+    "sector_targets": {
+      "power_generation": {
+        "base_2018": "269.6백만톤",
+        "target_2030": "149.9백만톤",
+        "reduction": "44.4%"
+      },
+      "industry": {
+        "base_2018": "260.5백만톤",
+        "target_2030": "222.6백만톤",
+        "reduction": "14.5%"
+      },
+      "buildings": {
+        "base_2018": "52.1백만톤",
+        "target_2030": "35.0백만톤",
+        "reduction": "32.8%"
+      },
+      "transportation": {
+        "base_2018": "98.1백만톤",
+        "target_2030": "61.0백만톤",
+        "reduction": "37.8%"
+      }
+    }
+  },
+  "kosis_data": {
+    "table_id": "DT_2OEV029",
+    "table_name": "대기 배출 계정 : 총 온실가스",
+    "org_id": "101",
+    "org_name": "국가데이터처",
+    "period": "1990-2021",
+    "sample_data": [
+      {
+        "year": "2018",
+        "gas_type": "이산화탄소",
+        "sector": "주거 물 전기 가스 및 기타 연료",
+        "emissions": "24795609톤"
+      },
+      {
+        "year": "2017",
+        "gas_type": "이산화탄소",
+        "sector": "주거 물 전기 가스 및 기타 연료",
+        "emissions": "27179100톤"
+      },
+      {
+        "year": "2018",
+        "gas_type": "메탄",
+        "sector": "주거 물 전기 가스 및 기타 연료",
+        "emissions": "10142톤"
+      },
+      {
+        "year": "2017",
+        "gas_type": "메탄",
+        "sector": "주거 물 전기 가스 및 기타 연료",
+        "emissions": "10392톤"
+      }
+    ]
+  },
+  "timeline": [
+    {
+      "year": "1990",
+      "event": "기준연도 배출량",
+      "value": "310.5백만톤",
+      "icon": "📊"
+    },
+    {
+      "year": "2018",
+      "event": "NDC 기준연도",
+      "value": "727.6백만톤",
+      "icon": "📈"
+    },
+    {
+      "year": "2022",
+      "event": "최근 배출량",
+      "value": "724.3백만톤",
+      "icon": "📉"
+    },
+    {
+      "year": "2030",
+      "event": "감축 목표 (NDC)",
+      "value": "436.6백만톤",
+      "icon": "🎯"
+    },
+    {
+      "year": "2050",
+      "event": "탄소중립 목표",
+      "value": "Net Zero",
+      "icon": "🌱"
+    }
+  ],
+  "policy_actions": [
+    {
+      "category": "에너지 전환",
+      "icon": "⚡",
+      "actions": [
+        "석탄발전 축소",
+        "신재생에너지 확대",
+        "원자력 안전 활용"
+      ]
+    },
+    {
+      "category": "산업 혁신",
+      "icon": "🏭",
+      "actions": [
+        "철강 공정 전환",
+        "석유화학 원료 전환",
+        "CCUS 기술 도입"
+      ]
+    },
+    {
+      "category": "건물 효율화",
+      "icon": "🏢",
+      "actions": [
+        "제로에너지빌딩 확대",
+        "단열 성능 강화",
+        "스마트 에너지 관리"
+      ]
+    },
+    {
+      "category": "친환경 교통",
+      "icon": "🚗",
+      "actions": [
+        "전기차 보급 확대",
+        "수소차 상용화",
+        "대중교통 활성화"
+      ]
+    }
+  ],
+  "international_comparison": {
+    "description": "주요국 대비 한국의 연평균 감축률",
+    "data": [
+      {"country": "한국", "rate": "4.17%", "emoji": "🇰🇷"},
+      {"country": "일본", "rate": "3.56%", "emoji": "🇯🇵"},
+      {"country": "미국", "rate": "2.81%", "emoji": "🇺🇸"},
+      {"country": "영국", "rate": "2.81%", "emoji": "🇬🇧"},
+      {"country": "EU", "rate": "1.98%", "emoji": "🇪🇺"}
+    ],
+    "note": "한국의 감축률은 주요 선진국 대비 가장 도전적인 수준"
+  },
+  "sources": [
+    {
+      "title": "대통령직속 2050 탄소중립녹색성장위원회",
+      "url": "https://www.2050cnc.go.kr/base/contents/view?contentsNo=59&menuLevel=2&menuNo=109"
+    },
+    {
+      "title": "국가 온실가스 배출현황",
+      "url": "https://www.index.go.kr/unity/potal/main/EachDtlPageDetail.do?idx_cd=1464"
+    },
+    {
+      "title": "국가발전지표",
+      "url": "https://www.index.go.kr/unify/idx-info.do?idxCd=4288"
+    },
+    {
+      "title": "탄소중립 정책포털",
+      "url": "https://www.gihoo.or.kr/menu.es?mid=a30211000000"
+    }
+  ]
+}

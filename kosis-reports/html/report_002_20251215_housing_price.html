@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>주택매매가격 변동 추이 분석 | KOSIS 데이터 기반</title>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif; 
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
+        header {
+            background: linear-gradient(135deg, #2193b0 0%, #6dd5ed 100%);
+            color: white;
+            padding: 60px 40px;
+            border-radius: 20px;
+            margin-bottom: 40px;
+            box-shadow: 0 20px 60px rgba(33, 147, 176, 0.3);
+        }
+        header h1 { font-size: 2.5rem; margin-bottom: 15px; font-weight: 800; }
+        header p { font-size: 1.1rem; opacity: 0.9; line-height: 1.6; }
+        .meta-info { margin-top: 20px; font-size: 0.9rem; opacity: 0.8; }
+        
+        .kpi-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+            gap: 25px; 
+            margin-bottom: 40px; 
+        }
+        .kpi-card {
+            background: white;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        .kpi-card:hover { transform: translateY(-5px); }
+        .kpi-card.up { border-left: 5px solid #27ae60; }
+        .kpi-card.down { border-left: 5px solid #e74c3c; }
+        .kpi-card.neutral { border-left: 5px solid #3498db; }
+        .kpi-value { font-size: 3rem; font-weight: 800; color: #2c3e50; }
+        .kpi-value.positive { color: #27ae60; }
+        .kpi-value.negative { color: #e74c3c; }
+        .kpi-label { font-size: 1rem; color: #7f8c8d; margin-top: 10px; }
+        .kpi-sub { font-size: 0.85rem; color: #95a5a6; margin-top: 5px; }
+        
+        .section { 
+            background: white; 
+            border-radius: 20px; 
+            padding: 40px; 
+            margin-bottom: 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.06);
+        }
+        .section h2 { 
+            font-size: 1.5rem; 
+            color: #2c3e50; 
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #eee;
+        }
+        
+        .insight-box {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2ff 100%);
+            border-left: 5px solid #2193b0;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 25px 0;
+        }
+        .insight-box h3 { color: #1a7a8a; margin-bottom: 15px; }
+        .insight-box ul { margin-left: 20px; }
+        .insight-box li { margin: 10px 0; line-height: 1.7; }
+        
+        .chart-container { margin: 30px 0; }
+        
+        .data-table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        .data-table th, .data-table td { 
+            padding: 15px; 
+            text-align: left; 
+            border-bottom: 1px solid #eee; 
+        }
+        .data-table th { 
+            background: #f8f9fa; 
+            font-weight: 600; 
+        }
+        .data-table tr:hover { background: #f8f9fa; }
+        .positive { color: #27ae60; font-weight: bold; }
+        .negative { color: #e74c3c; font-weight: bold; }
+        
+        .news-section { background: #f8f9fa; }
+        .news-item { 
+            padding: 20px; 
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .news-item:last-child { border-bottom: none; }
+        .news-item a { 
+            color: #2193b0; 
+            text-decoration: none; 
+            font-weight: 600;
+            font-size: 1.05rem;
+        }
+        .news-item a:hover { text-decoration: underline; }
+        .news-source { font-size: 0.85rem; color: #888; margin-top: 8px; }
+        
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: #888;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🏠 주택매매가격 변동 추이 분석</h1>
+            <p>KOSIS 공식 통계 데이터 기반 | 2015-2023년 전국 주택매매가격 변동률</p>
+            <div class="meta-info">
+                📊 데이터 출처: KOSIS 국가통계포털 | 
+                📅 생성일: 2025-12-15 01:28 |
+                🏢 통계표: 주택매매가격변동률(시도/시/군/구) (DT_1YL1701)
+            </div>
+        </header>
+        
+        <div class="kpi-grid">
+            <div class="kpi-card up">
+                <div class="kpi-value positive">+9.51%</div>
+                <div class="kpi-label">2021년 누적 상승률</div>
+                <div class="kpi-sub">역대 최고 상승</div>
+            </div>
+            <div class="kpi-card down">
+                <div class="kpi-value negative">-4.77%</div>
+                <div class="kpi-label">2022년 누적 변동률</div>
+                <div class="kpi-sub">하락 전환</div>
+            </div>
+            <div class="kpi-card down">
+                <div class="kpi-value negative">-3.58%</div>
+                <div class="kpi-label">2023년 누적 변동률</div>
+                <div class="kpi-sub">하락 지속</div>
+            </div>
+            <div class="kpi-card neutral">
+                <div class="kpi-value">-8.35%</div>
+                <div class="kpi-label">2022-2023 누적</div>
+                <div class="kpi-sub">2년간 하락폭</div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>📈 전국 연간 주택매매가격 변동률 추이 (2015-2023)</h2>
+            <div class="chart-container" id="trend-chart"></div>
+            <div class="insight-box">
+                <h3>📊 주요 발견</h3>
+                <ul>
+                    <li><strong>2020-2021 급등기</strong>: 코로나19 유동성 증가와 저금리 기조로 2년간 14.75% 상승</li>
+                    <li><strong>2022년 하락 전환</strong>: 금리 인상 시작으로 -4.77% 급락, 거래량 급감</li>
+                    <li><strong>2023년 조정 지속</strong>: -3.58% 추가 하락, 일부 지역 바닥론 대두</li>
+                    <li><strong>지역 양극화</strong>: 수도권 vs 비수도권, 아파트 vs 기타주택 격차 확대</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>🗺️ 2023년 시도별 주택매매가격 누적 변동률</h2>
+            <div class="chart-container" id="region-chart"></div>
+            <table class="data-table">
+                <thead>
+                    <tr><th>순위</th><th>지역</th><th>변동률</th><th>상태</th></tr>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <td>1</td>
+                        <td>경상북도</td>
+                        <td class="negative">-1.02%</td>
+                        <td>📉 하락</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2</td>
+                        <td>충청북도</td>
+                        <td class="negative">-1.21%</td>
+                        <td>📉 하락</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>3</td>
+                        <td>서울특별시</td>
+                        <td class="negative">-1.96%</td>
+                        <td>📉 하락</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>4</td>
+                        <td>제주특별자치도</td>
+                        <td class="negative">-2.30%</td>
+                        <td>📉 하락</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>5</td>
+                        <td>충청남도</td>
+                        <td class="negative">-2.43%</td>
+                        <td>📉 하락</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>6</td>
+                        <td>전라남도</td>
+                        <td class="negative">-2.46%</td>
+                        <td>📉 하락</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>7</td>
+                        <td>세종특별자치시</td>
+                        <td class="negative">-3.52%</td>
+                        <td>📉 하락</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>8</td>
+                        <td>경상남도</td>
+                        <td class="negative">-3.53%</td>
+                        <td>📉 하락</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>9</td>
+                        <td>대전광역시</td>
+                        <td class="negative">-3.92%</td>
+                        <td>📉 하락</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>10</td>
+                        <td>인천광역시</td>
+                        <td class="negative">-4.15%</td>
+                        <td>📉 하락</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>11</td>
+                        <td>광주광역시</td>
+                        <td class="negative">-4.34%</td>
+                        <td>📉 하락</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>12</td>
+                        <td>울산광역시</td>
+                        <td class="negative">-4.63%</td>
+                        <td>📉 하락</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>13</td>
+                        <td>경기도</td>
+                        <td class="negative">-4.68%</td>
+                        <td>📉 하락</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>14</td>
+                        <td>대구광역시</td>
+                        <td class="negative">-6.65%</td>
+                        <td>📉 하락</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>15</td>
+                        <td>부산광역시</td>
+                        <td class="negative">-6.91%</td>
+                        <td>📉 하락</td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="section news-section">
+            <h2>📰 관련 뉴스 동향</h2>
+            <div class="news-item">
+                <a href="https://www.newsspace.kr/news/article.html?no=9889" target="_blank">
+                    강남 전용 49㎡도 27억원...2025년 서울 49㎡ 이하 소형아파트 매매가 순위
+                </a>
+                <div class="news-source">뉴스스페이스 | 2025.10</div>
+            </div>
+            <div class="news-item">
+                <a href="https://eiec.kdi.re.kr/policy/domesticView.do?ac=0000193314" target="_blank">
+                    2025 KB 부동산 보고서 - 주택시장 하향 안정 전망
+                </a>
+                <div class="news-source">KDI 경제정보센터 | 2025</div>
+            </div>
+            <div class="news-item">
+                <a href="https://www.youthdaily.co.kr/mobile/article.html?no=200342" target="_blank">
+                    "전세 안정세에도"...아파트 월세는 10년 만에 최고치 기록
+                </a>
+                <div class="news-source">청년일보 | 2025.11</div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>💡 종합 인사이트</h2>
+            <div class="insight-box" style="background: linear-gradient(135deg, #fff5f0 0%, #ffe8e0 100%); border-left-color: #e74c3c;">
+                <h3 style="color: #c0392b;">🏡 데이터가 말해주는 시장 동향</h3>
+                <ul>
+                    <li><strong>사이클 전환</strong>: 2015-2021 상승기 → 2022-현재 조정기로 명확한 전환</li>
+                    <li><strong>금리 민감도</strong>: 기준금리 변화와 주택가격의 높은 상관관계 확인</li>
+                    <li><strong>지역별 차별화</strong>: 서울 등 핵심 지역 회복 조짐 vs 지방 하락 지속</li>
+                    <li><strong>전세→월세 전환</strong>: 전세사기 여파로 월세 선호 현상 심화</li>
+                </ul>
+            </div>
+        </div>
+        
+        <footer>
+            <p>
+                이 보고서는 <a href="https://kosis.kr" target="_blank">KOSIS 국가통계포털</a> API를 통해 수집된 공식 통계 데이터를 기반으로 자동 생성되었습니다.
+            </p>
+            <p style="margin-top: 10px;">
+                Report #002 | 생성: 2025-12-15 01:28:27
+            </p>
+        </footer>
+    </div>
+    
+    <script>
+        // 추이 차트 (막대 + 라인)
+        const trendSpec = {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "width": "container",
+            "height": 350,
+            "data": {
+                "values": [{"PRD_DE": "2015", "DT": 3.46}, {"PRD_DE": "2016", "DT": 0.7100000000000001}, {"PRD_DE": "2017", "DT": 1.46}, {"PRD_DE": "2018", "DT": 1.09}, {"PRD_DE": "2019", "DT": -0.37}, {"PRD_DE": "2020", "DT": 5.24}, {"PRD_DE": "2021", "DT": 9.51}, {"PRD_DE": "2022", "DT": -4.77}, {"PRD_DE": "2023", "DT": -3.58}]
+            },
+            "layer": [
+                {
+                    "mark": {
+                        "type": "bar",
+                        "cornerRadiusTopLeft": 5,
+                        "cornerRadiusTopRight": 5
+                    },
+                    "encoding": {
+                        "color": {
+                            "condition": {
+                                "test": "datum.DT >= 0",
+                                "value": "#27ae60"
+                            },
+                            "value": "#e74c3c"
+                        }
+                    }
+                },
+                {
+                    "mark": {
+                        "type": "line",
+                        "color": "#2c3e50",
+                        "strokeWidth": 2,
+                        "point": {"filled": true, "size": 80}
+                    }
+                }
+            ],
+            "encoding": {
+                "x": {
+                    "field": "PRD_DE",
+                    "type": "ordinal",
+                    "title": "연도",
+                    "axis": {"labelAngle": 0}
+                },
+                "y": {
+                    "field": "DT",
+                    "type": "quantitative",
+                    "title": "누적 변동률 (%)"
+                },
+                "tooltip": [
+                    {"field": "PRD_DE", "title": "연도"},
+                    {"field": "DT", "title": "변동률", "format": ".2f"}
+                ]
+            }
+        };
+        vegaEmbed('#trend-chart', trendSpec, {"actions": false});
+        
+        // 지역별 차트
+        const regionSpec = {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "width": "container",
+            "height": 400,
+            "data": {
+                "values": [{"C1_NM": "\uacbd\uc0c1\ubd81\ub3c4", "DT": -1.02}, {"C1_NM": "\ucda9\uccad\ubd81\ub3c4", "DT": -1.21}, {"C1_NM": "\uc11c\uc6b8\ud2b9\ubcc4\uc2dc", "DT": -1.9600000000000002}, {"C1_NM": "\uc81c\uc8fc\ud2b9\ubcc4\uc790\uce58\ub3c4", "DT": -2.3000000000000003}, {"C1_NM": "\ucda9\uccad\ub0a8\ub3c4", "DT": -2.43}, {"C1_NM": "\uc804\ub77c\ub0a8\ub3c4", "DT": -2.46}, {"C1_NM": "\uc138\uc885\ud2b9\ubcc4\uc790\uce58\uc2dc", "DT": -3.5199999999999996}, {"C1_NM": "\uacbd\uc0c1\ub0a8\ub3c4", "DT": -3.5300000000000002}, {"C1_NM": "\ub300\uc804\uad11\uc5ed\uc2dc", "DT": -3.92}, {"C1_NM": "\uc778\ucc9c\uad11\uc5ed\uc2dc", "DT": -4.1499999999999995}, {"C1_NM": "\uad11\uc8fc\uad11\uc5ed\uc2dc", "DT": -4.34}, {"C1_NM": "\uc6b8\uc0b0\uad11\uc5ed\uc2dc", "DT": -4.63}, {"C1_NM": "\uacbd\uae30\ub3c4", "DT": -4.68}, {"C1_NM": "\ub300\uad6c\uad11\uc5ed\uc2dc", "DT": -6.65}, {"C1_NM": "\ubd80\uc0b0\uad11\uc5ed\uc2dc", "DT": -6.91}]
+            },
+            "mark": {
+                "type": "bar",
+                "cornerRadiusTopRight": 5,
+                "cornerRadiusTopLeft": 5
+            },
+            "encoding": {
+                "x": {
+                    "field": "C1_NM",
+                    "type": "nominal",
+                    "title": "지역",
+                    "sort": {"field": "DT", "order": "descending"},
+                    "axis": {"labelAngle": -45}
+                },
+                "y": {
+                    "field": "DT",
+                    "type": "quantitative",
+                    "title": "변동률 (%)"
+                },
+                "color": {
+                    "condition": {
+                        "test": "datum.DT >= 0",
+                        "value": "#27ae60"
+                    },
+                    "value": "#e74c3c"
+                },
+                "tooltip": [
+                    {"field": "C1_NM", "title": "지역"},
+                    {"field": "DT", "title": "변동률", "format": ".2f"}
+                ]
+            }
+        };
+        vegaEmbed('#region-chart', regionSpec, {"actions": false});
+    </script>
+</body>
+</html>

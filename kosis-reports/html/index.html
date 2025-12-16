@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KOSIS 트렌드 분석 리포트 | 100개 시각화 모음</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            color: #fff;
+        }
+        
+        .hero {
+            text-align: center;
+            padding: 80px 20px 60px;
+            background: linear-gradient(180deg, rgba(0,0,0,0.3) 0%, transparent 100%);
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #667eea, #764ba2, #f093fb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            color: rgba(255,255,255,0.8);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            margin-top: 40px;
+        }
+        
+        .stat {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 900;
+            color: #667eea;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.6);
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px 60px;
+        }
+        
+        .category-section {
+            margin-bottom: 50px;
+        }
+        
+        .category-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid rgba(255,255,255,0.1);
+        }
+        
+        .category-badge {
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: white;
+        }
+        
+        .category-count {
+            color: rgba(255,255,255,0.5);
+            font-size: 0.9rem;
+        }
+        
+        .reports-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        
+        .report-card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 16px;
+            padding: 25px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: white;
+            display: block;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .report-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .report-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.1);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+        
+        .report-card:hover::before {
+            opacity: 1;
+        }
+        
+        .report-num {
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.4);
+            margin-bottom: 10px;
+        }
+        
+        .report-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            line-height: 1.5;
+            color: rgba(255,255,255,0.95);
+        }
+        
+        .report-meta {
+            margin-top: 15px;
+            display: flex;
+            gap: 10px;
+        }
+        
+        .report-tag {
+            font-size: 0.75rem;
+            padding: 4px 10px;
+            background: rgba(102, 126, 234, 0.2);
+            border-radius: 12px;
+            color: #667eea;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: rgba(255,255,255,0.5);
+            font-size: 0.9rem;
+        }
+        
+        .footer a {
+            color: #667eea;
+            text-decoration: none;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .stats {
+                flex-direction: column;
+                gap: 20px;
+            }
+            .stat-number {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <h1>KOSIS 트렌드 분석 리포트</h1>
+        <p>대한민국 국가통계포털 데이터 기반 100개 시각화 분석 모음</p>
+        <div class="stats">
+            <div class="stat">
+                <div class="stat-number">100</div>
+                <div class="stat-label">리포트</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">15</div>
+                <div class="stat-label">카테고리</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">2024</div>
+                <div class="stat-label">최신 데이터</div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container">
+
+        <div class="category-section">
+            <div class="category-header">
+                <span class="category-badge" style="background: #E91E63;">인구·가구</span>
+                <span class="category-count">7개 리포트</span>
+            </div>
+            <div class="reports-grid">
+
+                <a href="report_001_20251215_fertility_rate.html" class="report-card">
+                    <div class="report-num">#001</div>
+                    <div class="report-title">대한민국 저출산 위기 심층 분석</div>
+                </a>
+
+                <a href="report_005_20251215_elderly.html" class="report-card">
+                    <div class="report-num">#005</div>
+                    <div class="report-title">대한민국 초고령사회 진입 분석</div>
+                </a>
+
+                <a href="report_006_20251215_single_household.html" class="report-card">
+                    <div class="report-num">#006</div>
+                    <div class="report-title">1인 가구 800만 시대 분석</div>
+                </a>
+
+                <a href="report_011_20251215_marriage.html" class="report-card">
+                    <div class="report-num">#011</div>
+                    <div class="report-title">혼인·이혼 통계 트렌드 분석</div>
+                </a>
+
+                <a href="report_013_20251215_suicide.html" class="report-card">
+                    <div class="report-num">#013</div>
+                    <div class="report-title">Report #013: 한국 자살률 추세 분석</div>
+                </a>
+
+                <a href="report_014_20251215_birth.html" class="report-card">
+                    <div class="report-num">#014</div>
+                    <div class="report-title">한국 출생 통계 트렌드 분석 (2013-2023)</div>
+                </a>
+
+                <a href="report_015_20251215_death.html" class="report-card">
+                    <div class="report-num">#015</div>
+                    <div class="report-title">Report #015: 한국 사망 통계 트렌드 분석</div>
+                </a>
+
+            </div>
+        </div>
+
+        <div class="category-section">
+            <div class="category-header">
+                <span class="category-badge" style="background: #2196F3;">경제·금융</span>
+                <span class="category-count">8개 리포트</span>
+            </div>
+            <div class="reports-grid">
+
+                <a href="report_004_20251215_cpi.html" class="report-card">
+                    <div class="report-num">#004</div>
+                    <div class="report-title">소비자물가 동향 심층 분석</div>
+                </a>
+
+                <a href="report_007_20251215_export.html" class="report-card">
+                    <div class="report-num">#007</div>
+                    <div class="report-title">한국 수출입 무역 현황 분석 (반도체 중심)</div>
+                </a>
+
+                <a href="report_021_20251215_debt.html" class="report-card">
+                    <div class="report-num">#021</div>
+                    <div class="report-title">Report #021: 가계부채 트렌드 분석</div>
+                </a>
+
+                <a href="report_029_20251215_gdp.html" class="report-card">
+                    <div class="report-num">#029</div>
+                    <div class="report-title">KOSIS Report #029: GDP/경제성장률 트렌드 분석</div>
+                </a>
+
+                <a href="report_041_20251215_inequality.html" class="report-card">
+                    <div class="report-num">#041</div>
+                    <div class="report-title">한국 소득불평등 트렌드 분석 2025 - KOSIS Report #041</div>
+                </a>
+
+                <a href="report_051_20251215_grdp.html" class="report-card">
+                    <div class="report-num">#051</div>
+                    <div class="report-title">지역경제 GRDP 분석 리포트 - 2023</div>
+                </a>
+
+                <a href="report_063_20251215_budget.html" class="report-card">
+                    <div class="report-num">#063</div>
+                    <div class="report-title">대한민국 재정현황 보고서 (2015-2024)</div>
+                </a>
+
+                <a href="report_075_20251215_finance.html" class="report-card">
+                    <div class="report-num">#075</div>
+                    <div class="report-title">Report #75: 금융/은행 산업 트렌드 분석</div>
+                </a>
+
+            </div>
+        </div>
+
+        <div class="category-section">
+            <div class="category-header">
+                <span class="category-badge" style="background: #FF9800;">고용·노동</span>
+                <span class="category-count">4개 리포트</span>
+            </div>
+            <div class="reports-grid">
+
+                <a href="report_003_20251215_employment.html" class="report-card">
+                    <div class="report-num">#003</div>
+                    <div class="report-title">대한민국 고용시장 심층 분석</div>
+                </a>
+
+                <a href="report_018_20251215_wage.html" class="report-card">
+                    <div class="report-num">#018</div>
+                    <div class="report-title">Report #018: 한국 임금 동향 분석 (2025-12-15)</div>
+                </a>
+
+                <a href="report_030_20251215_industrial.html" class="report-card">
+                    <div class="report-num">#030</div>
+                    <div class="report-title">한국 산업재해 트렌드 분석 보고서 (2015-2024)</div>
+                </a>
+
+                <a href="report_048_20251215_worktime.html" class="report-card">
+                    <div class="report-num">#048</div>
+                    <div class="report-title">한국 노동시간 추이 분석</div>
+                </a>
+
+            </div>
+        </div>
+
+        <div class="category-section">
+            <div class="category-header">
+                <span class="category-badge" style="background: #795548;">부동산·건설</span>
+                <span class="category-count">4개 리포트</span>
+            </div>
+            <div class="reports-grid">
+
+                <a href="report_002_20251215_housing_price.html" class="report-card">
+                    <div class="report-num">#002</div>
+                    <div class="report-title">주택매매가격 변동 추이 분석</div>
+                </a>
+
+                <a href="report_031_20251215_rent.html" class="report-card">
+                    <div class="report-num">#031</div>
+                    <div class="report-title">한국 전월세 주거비 트렌드 분석</div>
+                </a>
+
+                <a href="report_065_20251215_construction.html" class="report-card">
+                    <div class="report-num">#065</div>
+                    <div class="report-title">Report #65 - 건설/건축 트렌드 분석</div>
+                </a>
+
+                <a href="report_074_20251215_housing.html" class="report-card">
+                    <div class="report-num">#074</div>
+                    <div class="report-title">Report #74: 한국 아파트/주택 트렌드 분석 (2025)</div>
+                </a>
+
+            </div>
+        </div>
+
+        <div class="category-section">
+            <div class="category-header">
+                <span class="category-badge" style="background: #9C27B0;">교육·보육</span>
+                <span class="category-count">5개 리포트</span>
+            </div>
+            <div class="reports-grid">
+
+                <a href="report_016_20251215_education.html" class="report-card">
+                    <div class="report-num">#016</div>
+                    <div class="report-title">Report #016: 한국 교육 통계 트렌드 분석</div>
+                </a>
+
+                <a href="report_036_20251215_library.html" class="report-card">
+                    <div class="report-num">#036</div>
+                    <div class="report-title">Report #036: 한국 도서관 및 독서 트렌드 분석</div>
+                </a>
+
+                <a href="report_049_20251215_childcare.html" class="report-card">
+                    <div class="report-num">#049</div>
+                    <div class="report-title">어린이집 & 보육 트렌드 분석 2025 - Kids Edition!</div>
+                </a>
+
+                <a href="report_052_20251215_student.html" class="report-card">
+                    <div class="report-num">#052</div>
+                    <div class="report-title">한국 외국인 유학생 현황 분석 연구 | Academic Report #052</div>
+                </a>
+
+                <a href="report_079_20251215_education.html" class="report-card">
+                    <div class="report-num">#079</div>
+                    <div class="report-title">한국 사교육 트렌드 분석 리포트 #79</div>
+                </a>
+
+            </div>
+        </div>
+
+        <div class="category-section">
+            <div class="category-header">
+                <span class="category-badge" style="background: #4CAF50;">건강·의료</span>
+                <span class="category-count">6개 리포트</span>
+            </div>
+            <div class="reports-grid">
+
+                <a href="report_017_20251215_healthcare.html" class="report-card">
+                    <div class="report-num">#017</div>
+                    <div class="report-title">Report #017 - 건강보험 및 의료비 트렌드 분석</div>
+                </a>
+
+                <a href="report_045_20251215_obesity.html" class="report-card">
+                    <div class="report-num">#045</div>
+                    <div class="report-title">한국 비만율 건강 트렌드 분석 2025</div>
+                </a>
+
+                <a href="report_055_20251215_alcohol.html" class="report-card">
+                    <div class="report-num">#055</div>
+                    <div class="report-title">대한민국 음주 및 주류 소비 트렌드 분석</div>
+                </a>
+
+                <a href="report_057_20251215_smoking.html" class="report-card">
+                    <div class="report-num">#057</div>
+                    <div class="report-title">한국 흡연율 및 금연 트렌드 분석 | 보건 리포트 #057</div>
+                </a>
+
+                <a href="report_088_20251215_bio.html" class="report-card">
+                    <div class="report-num">#088</div>
+                    <div class="report-title">한국 바이오/제약산업 트렌드 분석 #088</div>
+                </a>
+
+                <a href="report_089_20251215_cosmetics.html" class="report-card">
+                    <div class="report-num">#089</div>
+                    <div class="report-title">K-Beauty 트렌드 리포트 2024 | 화장품 산업 분석</div>
+                </a>
+
+            </div>
+        </div>
+
+        <div class="category-section">
+            <div class="category-header">
+                <span class="category-badge" style="background: #00BCD4;">환경·에너지</span>
+                <span class="category-count">5개 리포트</span>
+            </div>
+            <div class="reports-grid">
+
+                <a href="report_020_20251215_environment.html" class="report-card">
+                    <div class="report-num">#020</div>
+                    <div class="report-title">Report #020: 환경/대기오염 트렌드 분석</div>
+                </a>
+
+                <a href="report_035_20251215_waste.html" class="report-card">
+                    <div class="report-num">#035</div>
+                    <div class="report-title">대한민국 폐기물 재활용 현황 분석</div>
+                </a>
+
+                <a href="report_040_20251215_greenhouse.html" class="report-card">
+                    <div class="report-num">#040</div>
+                    <div class="report-title">한국 온실가스 배출 현황과 탄소중립 2050</div>
+                </a>
+
+                <a href="report_058_20251215_climate.html" class="report-card">
+                    <div class="report-num">#058</div>
+                    <div class="report-title">한국 기후변화 및 기온 트렌드 분석</div>
+                </a>
+
+                <a href="report_067_20251215_water.html" class="report-card">
+                    <div class="report-num">#067</div>
+                    <div class="report-title">🌊 물/수자원 트렌드 분석 보고서</div>
+                </a>
+
+            </div>
+        </div>
+
+        <div class="category-section">
+            <div class="category-header">
+                <span class="category-badge" style="background: #F44336;">안전·복지</span>
+                <span class="category-count">5개 리포트</span>
+            </div>
+            <div class="reports-grid">
+
+                <a href="report_009_20251215_traffic.html" class="report-card">
+                    <div class="report-num">#009</div>
+                    <div class="report-title">Report #009 - 교통사고 사망자 추이 분석</div>
+                </a>
+
+                <a href="report_012_20251215_crime.html" class="report-card">
+                    <div class="report-num">#012</div>
+                    <div class="report-title">대한민국 범죄 발생 현황 분석</div>
+                </a>
+
+                <a href="report_028_20251215_fire.html" class="report-card">
+                    <div class="report-num">#028</div>
+                    <div class="report-title">화재 및 재난 발생 트렌드 분석 보고서 (2015-2024)</div>
+                </a>
+
+                <a href="report_062_20251215_defense.html" class="report-card">
+                    <div class="report-num">#062</div>
+                    <div class="report-title">REPORT #062 - 대한민국 국방력 분석</div>
+                </a>
+
+                <a href="report_068_20251215_disability.html" class="report-card">
+                    <div class="report-num">#068</div>
+                    <div class="report-title">장애인 복지 트렌드 분석 2025 - 함께 만드는 포용사회</div>
+                </a>
+
+            </div>
+        </div>
+
+        <div class="category-section">
+            <div class="category-header">
+                <span class="category-badge" style="background: #607D8B;">제조·산업</span>
+                <span class="category-count">6개 리포트</span>
+            </div>
+            <div class="reports-grid">
+
+                <a href="report_039_20251215_manufacturing.html" class="report-card">
+                    <div class="report-num">#039</div>
+                    <div class="report-title">제조업 산업 생산 트렌드 대시보드</div>
+                </a>
+
+                <a href="report_082_20251215_shipbuilding.html" class="report-card">
+                    <div class="report-num">#082</div>
+                    <div class="report-title">Report #082 - 한국 조선/해운산업 트렌드 분석</div>
+                </a>
+
+                <a href="report_083_20251215_steel.html" class="report-card">
+                    <div class="report-num">#083</div>
+                    <div class="report-title">한국 철강/금속산업 트렌드 분석 | Report #83</div>
+                </a>
+
+                <a href="report_085_20251215_chemical.html" class="report-card">
+                    <div class="report-num">#085</div>
+                    <div class="report-title">한국 석유화학산업 트렌드 분석 2025</div>
+                </a>
+
+                <a href="report_086_20251215_semiconductor.html" class="report-card">
+                    <div class="report-num">#086</div>
+                    <div class="report-title">Report #086: 반도체/디스플레이산업 트렌드 분석</div>
+                </a>
+
+                <a href="report_087_20251215_battery.html" class="report-card">
+                    <div class="report-num">#087</div>
+                    <div class="report-title">배터리/이차전지 산업 트렌드 분석 - Report #report_087</div>
+                </a>
+
+            </div>
+        </div>
+
+        <div class="category-section">
+            <div class="category-header">
+                <span class="category-badge" style="background: #3F51B5;">기술·IT</span>
+                <span class="category-count">10개 리포트</span>
+            </div>
+            <div class="reports-grid">
+
+                <a href="report_022_20251215_internet.html" class="report-card">
+                    <div class="report-num">#022</div>
+                    <div class="report-title">Report #022: 한국 스마트폰 및 인터넷 보급률 트렌드 분석</div>
+                </a>
+
+                <a href="report_034_20251215_rnd.html" class="report-card">
+                    <div class="report-num">#034</div>
+                    <div class="report-title">R&D/연구개발 투자 트렌드 분석 - 2025년 12월</div>
+                </a>
+
+                <a href="report_044_20251215_retail.html" class="report-card">
+                    <div class="report-num">#044</div>
+                    <div class="report-title">한국 소매판매 트렌드 분석 2025</div>
+                </a>
+
+                <a href="report_053_20251215_sns.html" class="report-card">
+                    <div class="report-num">#053</div>
+                    <div class="report-title">한국 SNS 트렌드 2025 | Social Media Report</div>
+                </a>
+
+                <a href="report_054_20251215_ecommerce.html" class="report-card">
+                    <div class="report-num">#054</div>
+                    <div class="report-title">🛒 한국 전자상거래 트렌드 리포트 2025</div>
+                </a>
+
+                <a href="report_061_20251215_patent.html" class="report-card">
+                    <div class="report-num">#061</div>
+                    <div class="report-title">한국 특허 및 지식재산 트렌드 분석 2025</div>
+                </a>
+
+                <a href="report_071_20251215_telecom.html" class="report-card">
+                    <div class="report-num">#071</div>
+                    <div class="report-title">5G 통신 가입자 트렌드 분석 | Report #071</div>
+                </a>
+
+                <a href="report_098_20251215_telecom.html" class="report-card">
+                    <div class="report-num">#098</div>
+                    <div class="report-title">한국 통신/5G 산업 트렌드 분석 보고서 #98</div>
+                </a>
+
+                <a href="report_099_20251215_ai.html" class="report-card">
+                    <div class="report-num">#099</div>
+                    <div class="report-title">한국 AI/인공지능 산업 트렌드 분석 - Report #099</div>
+                </a>
+
+                <a href="report_100_20251215_robot.html" class="report-card">
+                    <div class="report-num">#100</div>
+                    <div class="report-title">한국 로봇·자동화 산업 트렌드 리포트</div>
+                </a>
+
+            </div>
+        </div>
+
+        <div class="category-section">
+            <div class="category-header">
+                <span class="category-badge" style="background: #FF5722;">물류·교통</span>
+                <span class="category-count">7개 리포트</span>
+            </div>
+            <div class="reports-grid">
+
+                <a href="report_019_20251215_vehicle.html" class="report-card">
+                    <div class="report-num">#019</div>
+                    <div class="report-title">Report #019: 한국 자동차 등록 및 전기차 현황 트렌드 분석</div>
+                </a>
+
+                <a href="report_059_20251215_transit.html" class="report-card">
+                    <div class="report-num">#059</div>
+                    <div class="report-title">한국 대중교통 트렌드 분석 2025</div>
+                </a>
+
+                <a href="report_064_20251215_marine.html" class="report-card">
+                    <div class="report-num">#064</div>
+                    <div class="report-title">해양수산 트렌드 분석 보고서 #64</div>
+                </a>
+
+                <a href="report_069_20251215_aviation.html" class="report-card">
+                    <div class="report-num">#069</div>
+                    <div class="report-title">한국 항공 산업 트렌드 분석 2025</div>
+                </a>
+
+                <a href="report_072_20251215_delivery.html" class="report-card">
+                    <div class="report-num">#072</div>
+                    <div class="report-title">한국 택배·물류 산업 트렌드 분석 - Report #072</div>
+                </a>
+
+                <a href="report_081_20251215_logistics.html" class="report-card">
+                    <div class="report-num">#081</div>
+                    <div class="report-title">한국 물류/택배 산업 트렌드 분석</div>
+                </a>
+
+                <a href="report_084_20251215_aviation.html" class="report-card">
+                    <div class="report-num">#084</div>
+                    <div class="report-title">항공/공항 통계 보고서 #84</div>
+                </a>
+
+            </div>
+        </div>
+
+        <div class="category-section">
+            <div class="category-header">
+                <span class="category-badge" style="background: #8BC34A;">관광·외식</span>
+                <span class="category-count">5개 리포트</span>
+            </div>
+            <div class="reports-grid">
+
+                <a href="report_008_20251215_tourism.html" class="report-card">
+                    <div class="report-num">#008</div>
+                    <div class="report-title">한국 관광 트렌드 분석 리포트 #008 - 외래관광객 현황</div>
+                </a>
+
+                <a href="report_042_20251215_food_price.html" class="report-card">
+                    <div class="report-num">#042</div>
+                    <div class="report-title">식료품 물가 트렌드 분석 - 2025년 12월</div>
+                </a>
+
+                <a href="report_070_20251215_coffee.html" class="report-card">
+                    <div class="report-num">#070</div>
+                    <div class="report-title">한국 커피/카페 산업 트렌드 분석 (2018-2024)</div>
+                </a>
+
+                <a href="report_076_20251215_restaurant.html" class="report-card">
+                    <div class="report-num">#076</div>
+                    <div class="report-title">한국 외식산업 트렌드 분석 2025 - Report #076</div>
+                </a>
+
+                <a href="report_077_20251215_hotel.html" class="report-card">
+                    <div class="report-num">#077</div>
+                    <div class="report-title">한국 호텔 & 숙박 산업 트렌드 리포트 #77</div>
+                </a>
+
+            </div>
+        </div>
+
+        <div class="category-section">
+            <div class="category-header">
+                <span class="category-badge" style="background: #E040FB;">문화·콘텐츠</span>
+                <span class="category-count">9개 리포트</span>
+            </div>
+            <div class="reports-grid">
+
+                <a href="report_060_20251215_movie.html" class="report-card">
+                    <div class="report-num">#060</div>
+                    <div class="report-title">🎬 한국 영화/엔터테인먼트 산업 트렌드</div>
+                </a>
+
+                <a href="report_066_20251215_game.html" class="report-card">
+                    <div class="report-num">#066</div>
+                    <div class="report-title">GAME OVER? 한국 게임 산업 리포트 2025</div>
+                </a>
+
+                <a href="report_090_20251215_hallyu.html" class="report-card">
+                    <div class="report-num">#090</div>
+                    <div class="report-title">K-콘텐츠 한류 산업 트렌드 분석 2025</div>
+                </a>
+
+                <a href="report_091_20251215_cinema.html" class="report-card">
+                    <div class="report-num">#091</div>
+                    <div class="report-title">🎬 한국 영화/극장 산업 트렌드 분석 2025</div>
+                </a>
+
+                <a href="report_092_20251215_ott.html" class="report-card">
+                    <div class="report-num">#092</div>
+                    <div class="report-title">한국 OTT/스트리밍 산업 트렌드 분석 | Report #92</div>
+                </a>
+
+                <a href="report_093_20251215_music.html" class="report-card">
+                    <div class="report-num">#093</div>
+                    <div class="report-title">KOSIS 트렌드 리포트 #93: 음악/음원산업 통계</div>
+                </a>
+
+                <a href="report_094_20251215_esports.html" class="report-card">
+                    <div class="report-num">#094</div>
+                    <div class="report-title">KOSIS 데이터 트렌드 분석 #094: e스포츠/게임대회</div>
+                </a>
+
+                <a href="report_095_20251215_webtoon.html" class="report-card">
+                    <div class="report-num">#095</div>
+                    <div class="report-title">웹툰/만화산업 트렌드 분석</div>
+                </a>
+
+                <a href="report_096_20251215_publishing.html" class="report-card">
+                    <div class="report-num">#096</div>
+                    <div class="report-title">한국 출판산업 트렌드 분석</div>
+                </a>
+
+            </div>
+        </div>
+
+        <div class="category-section">
+            <div class="category-header">
+                <span class="category-badge" style="background: #FFC107;">산업·서비스</span>
+                <span class="category-count">8개 리포트</span>
+            </div>
+            <div class="reports-grid">
+
+                <a href="report_023_20251215_business.html" class="report-card">
+                    <div class="report-num">#023</div>
+                    <div class="report-title">한국 창업·폐업 트렌드 분석 (2025)</div>
+                </a>
+
+                <a href="report_047_20251215_startup.html" class="report-card">
+                    <div class="report-num">#047</div>
+                    <div class="report-title">한국 스타트업 & 벤처 트렌드 분석 #047 - NEON CYBERPUNK</div>
+                </a>
+
+                <a href="report_050_20251215_business.html" class="report-card">
+                    <div class="report-num">#050</div>
+                    <div class="report-title">한국 기업 생태계 2025 | The Future of Korean Business</div>
+                </a>
+
+                <a href="report_056_20251215_pet.html" class="report-card">
+                    <div class="report-num">#056</div>
+                    <div class="report-title">반려동물 트렌드 분석 리포트 2025</div>
+                </a>
+
+                <a href="report_073_20251215_beauty.html" class="report-card">
+                    <div class="report-num">#073</div>
+                    <div class="report-title">K-Beauty & Cosmetics Trend Analysis 2025</div>
+                </a>
+
+                <a href="report_078_20251215_insurance.html" class="report-card">
+                    <div class="report-num">#078</div>
+                    <div class="report-title">한국 보험 산업 통계 분석 보고서 - 시장 규모 추정</div>
+                </a>
+
+                <a href="report_080_20251215_fashion.html" class="report-card">
+                    <div class="report-num">#080</div>
+                    <div class="report-title">2025 한국 패션·의류 트렌드 분석 - K-패션의 글로벌 확장과 Z세대 소비 패턴 변화</div>
+                </a>
+
+                <a href="report_097_20251215_advertising.html" class="report-card">
+                    <div class="report-num">#097</div>
+                    <div class="report-title">한국 광고·마케팅 산업 트렌드 분석 2024-2025</div>
+                </a>
+
+            </div>
+        </div>
+
+        <div class="category-section">
+            <div class="category-header">
+                <span class="category-badge" style="background: #9E9E9E;">기타</span>
+                <span class="category-count">11개 리포트</span>
+            </div>
+            <div class="reports-grid">
+
+                <a href="report_010_20251215_energy.html" class="report-card">
+                    <div class="report-num">#010</div>
+                    <div class="report-title">Report #010: 한국 에너지·전력 트렌드 분석</div>
+                </a>
+
+                <a href="report_024_20251215_pension.html" class="report-card">
+                    <div class="report-num">#024</div>
+                    <div class="report-title">Report #024 - 국민연금 수급 현황 분석</div>
+                </a>
+
+                <a href="report_025_20251215_agriculture.html" class="report-card">
+                    <div class="report-num">#025</div>
+                    <div class="report-title">한국 농가 및 농업 인구 트렌드 분석 (Report #025)</div>
+                </a>
+
+                <a href="report_026_20251215_culture.html" class="report-card">
+                    <div class="report-num">#026</div>
+                    <div class="report-title">Report #026: 문화/여가 산업 트렌드 분석 (2015-2023)</div>
+                </a>
+
+                <a href="report_027_20251215_foreigner.html" class="report-card">
+                    <div class="report-num">#027</div>
+                    <div class="report-title">Report #027: 한국의 외국인 및 다문화 가정 트렌드 분석</div>
+                </a>
+
+                <a href="report_032_20251215_sports.html" class="report-card">
+                    <div class="report-num">#032</div>
+                    <div class="report-title">한국 체육·스포츠 참여 현황 분석</div>
+                </a>
+
+                <a href="report_033_20251215_welfare.html" class="report-card">
+                    <div class="report-num">#033</div>
+                    <div class="report-title">Report #033: 한국 사회복지 트렌드 분석</div>
+                </a>
+
+                <a href="report_037_20251215_migration.html" class="report-card">
+                    <div class="report-num">#037</div>
+                    <div class="report-title">Report #37 - 한국 인구이동과 수도권 집중 분석</div>
+                </a>
+
+                <a href="report_038_20251215_youth.html" class="report-card">
+                    <div class="report-num">#038</div>
+                    <div class="report-title">청년정책 트렌드 분석 2025</div>
+                </a>
+
+                <a href="report_043_20251215_infection.html" class="report-card">
+                    <div class="report-num">#043</div>
+                    <div class="report-title">감염병 발생 현황 타임라인 (2020-2024)</div>
+                </a>
+
+                <a href="report_046_20251215_happiness.html" class="report-card">
+                    <div class="report-num">#046</div>
+                    <div class="report-title">Report #046 - 행복지수/삶의질 트렌드 분석</div>
+                </a>
+
+            </div>
+        </div>
+
+    </div>
+    
+    <div class="footer">
+        <p>Generated on 2025-12-15 11:02 | 
+        Data Source: <a href="https://kosis.kr" target="_blank">KOSIS (국가통계포털)</a> |
+        Powered by KOSIS MCP Server</p>
+    </div>
+</body>
+</html>

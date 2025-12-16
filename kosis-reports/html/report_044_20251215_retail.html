@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>한국 소매판매 트렌드 분석 2025</title>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            min-height: 100vh;
+            padding: 3rem 1.5rem;
+            color: #1a1a2e;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        /* Header */
+        header {
+            text-align: center;
+            margin-bottom: 4rem;
+            animation: fadeInDown 0.8s ease;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: white;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+        
+        .subtitle {
+            font-size: 1.25rem;
+            color: rgba(255,255,255,0.9);
+            font-weight: 400;
+        }
+        
+        .report-meta {
+            display: inline-flex;
+            gap: 2rem;
+            margin-top: 1.5rem;
+            padding: 1rem 2rem;
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 50px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .meta-item {
+            color: white;
+            font-size: 0.95rem;
+        }
+        
+        .meta-item strong {
+            font-weight: 600;
+            margin-right: 0.5rem;
+        }
+        
+        /* Cards */
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 24px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            border: 1px solid rgba(255,255,255,0.4);
+            animation: fadeInUp 0.8s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 70px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+        
+        h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #2d3748;
+        }
+        
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .stat-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 2rem;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(102,126,234,0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .stat-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(102,126,234,0.4);
+        }
+        
+        .stat-label {
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.9);
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 0.25rem;
+        }
+        
+        .stat-unit {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.8);
+            font-weight: 400;
+        }
+        
+        /* Insight Box */
+        .insight-box {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            padding: 2rem;
+            border-radius: 20px;
+            margin: 2rem 0;
+            color: white;
+            box-shadow: 0 10px 30px rgba(240,147,251,0.3);
+        }
+        
+        .insight-box h3 {
+            color: white;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .insight-box p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: rgba(255,255,255,0.95);
+        }
+        
+        /* Tags */
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin: 1.5rem 0;
+        }
+        
+        .tag {
+            display: inline-block;
+            padding: 0.5rem 1.25rem;
+            background: rgba(102,126,234,0.1);
+            color: #667eea;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border: 1px solid rgba(102,126,234,0.2);
+        }
+        
+        /* Chart Container */
+        .chart-container {
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background: rgba(255,255,255,0.5);
+            border-radius: 16px;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+        
+        /* List Items */
+        .highlight-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .highlight-list li {
+            padding: 1rem 1.5rem;
+            margin-bottom: 0.75rem;
+            background: linear-gradient(90deg, rgba(102,126,234,0.1), rgba(240,147,251,0.05));
+            border-left: 4px solid #667eea;
+            border-radius: 12px;
+            font-size: 1.05rem;
+        }
+        
+        .highlight-list li strong {
+            color: #667eea;
+            font-weight: 600;
+        }
+        
+        /* Footer */
+        footer {
+            text-align: center;
+            margin-top: 4rem;
+            padding: 2rem;
+            color: rgba(255,255,255,0.8);
+            font-size: 0.95rem;
+        }
+        
+        .source-tag {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.75rem 1.5rem;
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
+            border-radius: 50px;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+        
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Glow effects */
+        .glow {
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 10px rgba(255,255,255,0.5), 0 0 20px rgba(255,255,255,0.3);
+            }
+            to {
+                text-shadow: 0 0 20px rgba(255,255,255,0.8), 0 0 30px rgba(255,255,255,0.5);
+            }
+        }
+        
+        /* SVG Decorations */
+        .wave {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            opacity: 0.1;
+            z-index: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="glow">📊 한국 소매판매 트렌드 분석 2025</h1>
+            <p class="subtitle">대한민국 소매업계 판매 동향 및 성장 분석</p>
+            <div class="report-meta">
+                <span class="meta-item"><strong>📅 발행일:</strong> 2025년 12월 15일</span>
+                <span class="meta-item"><strong>📈 분석기간:</strong> 2020-2024</span>
+                <span class="meta-item"><strong>🔖 리포트번호:</strong> #044</span>
+            </div>
+        </header>
+        
+        <!-- Executive Summary -->
+        <div class="card">
+            <h2>🎯 핵심 요약</h2>
+            <div class="insight-box">
+                <h3>💡 주요 발견</h3>
+                <p>
+                    2020-2024년 기간 동안 한국 소매시장은 <strong>백화점(+48.2%)</strong>과 <strong>무점포 소매(+31.6%)</strong>가 
+                    가장 높은 성장률을 기록했습니다. 특히 온라인 쇼핑을 포함한 무점포 소매는 105조 원에서 138조 원으로 급성장하며 
+                    디지털 전환이 가속화되고 있음을 보여줍니다. 반면 면세점은 -7.5% 감소하며 유일한 역성장을 기록했습니다.
+                </p>
+            </div>
+            
+            <div class="tags">
+                <span class="tag">소비 트렌드</span>
+                <span class="tag">온라인 쇼핑</span>
+                <span class="tag">백화점 성장</span>
+                <span class="tag">무점포 소매</span>
+                <span class="tag">디지털 전환</span>
+            </div>
+        </div>
+        
+        <!-- Key Statistics -->
+        <div class="card">
+            <h2>📊 주요 지표 (2024년 기준)</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-label">무점포 소매</div>
+                    <div class="stat-value">138</div>
+                    <div class="stat-unit">조 원 | +31.6%</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">전문소매점</div>
+                    <div class="stat-value">185</div>
+                    <div class="stat-unit">조 원 | +8.9%</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">백화점</div>
+                    <div class="stat-value">41</div>
+                    <div class="stat-unit">조 원 | +48.2%</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">승용차/연료</div>
+                    <div class="stat-value">126</div>
+                    <div class="stat-unit">조 원 | +20.2%</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Growth Analysis -->
+        <div class="card">
+            <h2>📈 업태별 성장률 분석 (2020-2024)</h2>
+            <div class="chart-container">
+                <div id="growth-chart"></div>
+            </div>
+            
+            <h3>성장률 순위</h3>
+            <ul class="highlight-list">
+                <li><strong>1위 백화점:</strong> 48.2% 성장 (27조 → 41조 원) - 럭셔리 소비 증가</li>
+                <li><strong>2위 무점포 소매:</strong> 31.6% 성장 (105조 → 138조 원) - 온라인 쇼핑 급증</li>
+                <li><strong>3위 승용차 및 연료:</strong> 20.2% 성장 (105조 → 126조 원) - 유가 상승 영향</li>
+                <li><strong>4위 편의점:</strong> 19.7% 성장 (27조 → 32조 원) - 1인 가구 증가</li>
+                <li><strong>최하위 면세점:</strong> -7.5% 감소 (16조 → 14조 원) - 중국인 관광객 감소</li>
+            </ul>
+        </div>
+        
+        <!-- Annual Trend -->
+        <div class="card">
+            <h2>📊 연도별 판매액 추이 (2020-2024)</h2>
+            <div class="chart-container">
+                <div id="annual-trend-chart"></div>
+            </div>
+        </div>
+        
+        <!-- Monthly Trend -->
+        <div class="card">
+            <h2>📅 최근 월별 추이 (2024-2025)</h2>
+            <div class="chart-container">
+                <div id="monthly-trend-chart"></div>
+            </div>
+            <div class="insight-box">
+                <h3>💡 최근 트렌드 인사이트</h3>
+                <p>
+                    2024년부터 2025년 10월까지의 월별 데이터를 보면, 무점포 소매와 전문소매점이 꾸준히 높은 판매액을 유지하고 있습니다. 
+                    특히 명절 시즌(1월, 9-10월)에는 백화점과 대형마트의 판매가 급증하는 계절성이 뚜렷합니다.
+                </p>
+            </div>
+        </div>
+        
+        <!-- Market Insights -->
+        <div class="card">
+            <h2>🔍 시장 인사이트</h2>
+            
+            <h3>✨ 주요 트렌드</h3>
+            <ul class="highlight-list">
+                <li><strong>온라인 쇼핑 급성장:</strong> 무점포 소매가 31.6% 증가하며 소비자들의 구매 채널이 오프라인에서 온라인으로 빠르게 전환</li>
+                <li><strong>프리미엄 소비 강세:</strong> 백화점이 48.2% 급증하며 고소득층의 럭셔리 소비가 활발</li>
+                <li><strong>편의점 1인 가구 타겟팅:</strong> 편의점이 19.7% 성장하며 소량 구매와 즉시 소비 트렌드 반영</li>
+                <li><strong>면세점 부진:</strong> 중국인 관광객 감소와 해외여행 패턴 변화로 유일한 마이너스 성장</li>
+            </ul>
+            
+            <h3>🎯 2025년 전망</h3>
+            <div class="insight-box">
+                <h3>📌 예상 시나리오</h3>
+                <p>
+                    • <strong>무점포 소매:</strong> 라이브커머스, AI 추천 등 기술 혁신으로 지속 성장 예상<br>
+                    • <strong>백화점:</strong> VIP 고객 중심 서비스 강화와 체험형 매장 확대로 안정적 성장<br>
+                    • <strong>편의점:</strong> 무인점포 확대와 배달 서비스 강화로 성장세 유지<br>
+                    • <strong>면세점:</strong> 중국 관광객 회복 시 반등 가능성, 그러나 불확실성 높음
+                </p>
+            </div>
+        </div>
+        
+        <!-- Data Sources -->
+        <footer>
+            <p><strong>데이터 출처:</strong> 국가통계포털(KOSIS) - 통계청</p>
+            <div class="source-tag">
+                소매업태별 판매액 (DT_1K41003) | 2020-2024 연간 데이터
+            </div>
+            <p style="margin-top: 2rem; font-size: 0.85rem;">
+                본 리포트는 공개된 통계 데이터를 기반으로 작성되었으며, 투자 권유 목적이 아닌 정보 제공 목적입니다.
+            </p>
+        </footer>
+    </div>
+    
+    <script>
+        // Data
+        const annualData = [{"year": "2020", "retail_type": "백화점", "value": 27.416957}, {"year": "2021", "retail_type": "백화점", "value": 33.690061}, {"year": "2022", "retail_type": "백화점", "value": 37.7683}, {"year": "2023", "retail_type": "백화점", "value": 40.492428}, {"year": "2024", "retail_type": "백화점", "value": 40.618534}, {"year": "2020", "retail_type": "대형마트", "value": 33.777746}, {"year": "2021", "retail_type": "대형마트", "value": 34.571098}, {"year": "2022", "retail_type": "대형마트", "value": 34.773912}, {"year": "2023", "retail_type": "대형마트", "value": 36.690393}, {"year": "2024", "retail_type": "대형마트", "value": 37.096498}, {"year": "2020", "retail_type": "면세점", "value": 15.505934}, {"year": "2021", "retail_type": "면세점", "value": 17.833393}, {"year": "2022", "retail_type": "면세점", "value": 17.816386}, {"year": "2023", "retail_type": "면세점", "value": 13.758612}, {"year": "2024", "retail_type": "면세점", "value": 14.338502}, {"year": "2020", "retail_type": "슈퍼마켓 및 잡화점", "value": 65.359288}, {"year": "2021", "retail_type": "슈퍼마켓 및 잡화점", "value": 63.969151}, {"year": "2022", "retail_type": "슈퍼마켓 및 잡화점", "value": 64.738114}, {"year": "2023", "retail_type": "슈퍼마켓 및 잡화점", "value": 67.599369}, {"year": "2024", "retail_type": "슈퍼마켓 및 잡화점", "value": 68.077072}, {"year": "2020", "retail_type": "편의점", "value": 26.522549}, {"year": "2021", "retail_type": "편의점", "value": 28.423684}, {"year": "2022", "retail_type": "편의점", "value": 31.194661}, {"year": "2023", "retail_type": "편의점", "value": 30.969213}, {"year": "2024", "retail_type": "편의점", "value": 31.740136}, {"year": "2020", "retail_type": "승용차 및 연료 소매점", "value": 104.712192}, {"year": "2021", "retail_type": "승용차 및 연료 소매점", "value": 115.990084}, {"year": "2022", "retail_type": "승용차 및 연료 소매점", "value": 131.516631}, {"year": "2023", "retail_type": "승용차 및 연료 소매점", "value": 130.250145}, {"year": "2024", "retail_type": "승용차 및 연료 소매점", "value": 125.846238}, {"year": "2020", "retail_type": "전문소매점", "value": 170.032948}, {"year": "2021", "retail_type": "전문소매점", "value": 179.10829}, {"year": "2022", "retail_type": "전문소매점", "value": 183.521789}, {"year": "2023", "retail_type": "전문소매점", "value": 189.753866}, {"year": "2024", "retail_type": "전문소매점", "value": 185.136558}, {"year": "2020", "retail_type": "무점포 소매", "value": 104.598882}, {"year": "2021", "retail_type": "무점포 소매", "value": 118.792419}, {"year": "2022", "retail_type": "무점포 소매", "value": 124.222054}, {"year": "2023", "retail_type": "무점포 소매", "value": 131.444208}, {"year": "2024", "retail_type": "무점포 소매", "value": 137.692586}];
+        const growthData = [{"retail_type": "백화점", "value_2020": 27.416957, "value_2024": 40.618534, "growth_pct": 48.151138727758884}, {"retail_type": "무점포 소매", "value_2020": 104.598882, "value_2024": 137.692586, "growth_pct": 31.638678509011214}, {"retail_type": "승용차 및 연료 소매점", "value_2020": 104.712192, "value_2024": 125.846238, "growth_pct": 20.182984995672708}, {"retail_type": "편의점", "value_2020": 26.522549, "value_2024": 31.740136, "growth_pct": 19.672268302718564}, {"retail_type": "대형마트", "value_2020": 33.777746, "value_2024": 37.096498, "growth_pct": 9.825261875081896}, {"retail_type": "전문소매점", "value_2020": 170.032948, "value_2024": 185.136558, "growth_pct": 8.882754888187906}, {"retail_type": "슈퍼마켓 및 잡화점", "value_2020": 65.359288, "value_2024": 68.077072, "growth_pct": 4.158221552229883}, {"retail_type": "면세점", "value_2020": 15.505934, "value_2024": 14.338502, "growth_pct": -7.528936986317625}];
+        const monthlyData = [{"month": "2024.01", "retail_type": "백화점", "value": 3.256797}, {"month": "2024.02", "retail_type": "백화점", "value": 3.170646}, {"month": "2024.03", "retail_type": "백화점", "value": 3.572575}, {"month": "2024.04", "retail_type": "백화점", "value": 3.329812}, {"month": "2024.05", "retail_type": "백화점", "value": 3.553294}, {"month": "2024.06", "retail_type": "백화점", "value": 3.255239}, {"month": "2024.07", "retail_type": "백화점", "value": 3.108132}, {"month": "2024.08", "retail_type": "백화점", "value": 2.993084}, {"month": "2024.09", "retail_type": "백화점", "value": 3.342618}, {"month": "2024.10", "retail_type": "백화점", "value": 3.455846}, {"month": "2024.11", "retail_type": "백화점", "value": 3.704262}, {"month": "2024.12", "retail_type": "백화점", "value": 3.876229}, {"month": "2025.01", "retail_type": "백화점", "value": 3.498953}, {"month": "2025.02", "retail_type": "백화점", "value": 3.027207}, {"month": "2025.03", "retail_type": "백화점", "value": 3.475942}, {"month": "2025.04", "retail_type": "백화점", "value": 3.161028}, {"month": "2025.05", "retail_type": "백화점", "value": 3.574772}, {"month": "2025.06", "retail_type": "백화점", "value": 3.221595}, {"month": "2025.07", "retail_type": "백화점", "value": 3.142468}, {"month": "2025.08", "retail_type": "백화점", "value": 3.090567}, {"month": "2025.09", "retail_type": "백화점", "value": 3.459424}, {"month": "2025.10", "retail_type": "백화점", "value": 3.739072}, {"month": "2024.01", "retail_type": "대형마트", "value": 3.250598}, {"month": "2024.02", "retail_type": "대형마트", "value": 3.126012}, {"month": "2024.03", "retail_type": "대형마트", "value": 3.140594}, {"month": "2024.04", "retail_type": "대형마트", "value": 2.806119}, {"month": "2024.05", "retail_type": "대형마트", "value": 3.091592}, {"month": "2024.06", "retail_type": "대형마트", "value": 2.945683}, {"month": "2024.07", "retail_type": "대형마트", "value": 3.013906}, {"month": "2024.08", "retail_type": "대형마트", "value": 3.356573}, {"month": "2024.09", "retail_type": "대형마트", "value": 3.383965}, {"month": "2024.10", "retail_type": "대형마트", "value": 2.845103}, {"month": "2024.11", "retail_type": "대형마트", "value": 3.021773}, {"month": "2024.12", "retail_type": "대형마트", "value": 3.11458}, {"month": "2025.01", "retail_type": "대형마트", "value": 3.861641}, {"month": "2025.02", "retail_type": "대형마트", "value": 2.597079}, {"month": "2025.03", "retail_type": "대형마트", "value": 3.112909}, {"month": "2025.04", "retail_type": "대형마트", "value": 2.749521}, {"month": "2025.05", "retail_type": "대형마트", "value": 3.029991}, {"month": "2025.06", "retail_type": "대형마트", "value": 2.942962}, {"month": "2025.07", "retail_type": "대형마트", "value": 3.019032}, {"month": "2025.08", "retail_type": "대형마트", "value": 2.998664}, {"month": "2025.09", "retail_type": "대형마트", "value": 3.136562}, {"month": "2025.10", "retail_type": "대형마트", "value": 3.131928}, {"month": "2024.01", "retail_type": "면세점", "value": 1.590894}, {"month": "2024.02", "retail_type": "면세점", "value": 0.915232}, {"month": "2024.03", "retail_type": "면세점", "value": 1.186574}, {"month": "2024.04", "retail_type": "면세점", "value": 1.25048}, {"month": "2024.05", "retail_type": "면세점", "value": 1.254227}, {"month": "2024.06", "retail_type": "면세점", "value": 1.199569}, {"month": "2024.07", "retail_type": "면세점", "value": 1.147968}, {"month": "2024.08", "retail_type": "면세점", "value": 1.215559}, {"month": "2024.09", "retail_type": "면세점", "value": 1.194035}, {"month": "2024.10", "retail_type": "면세점", "value": 1.111206}, {"month": "2024.11", "retail_type": "면세점", "value": 1.014787}, {"month": "2024.12", "retail_type": "면세점", "value": 1.257971}, {"month": "2025.01", "retail_type": "면세점", "value": 0.954397}, {"month": "2025.02", "retail_type": "면세점", "value": 1.000604}, {"month": "2025.03", "retail_type": "면세점", "value": 1.084509}, {"month": "2025.04", "retail_type": "면세점", "value": 1.184867}, {"month": "2025.05", "retail_type": "면세점", "value": 1.052538}, {"month": "2025.06", "retail_type": "면세점", "value": 1.08542}, {"month": "2025.07", "retail_type": "면세점", "value": 0.919954}, {"month": "2025.08", "retail_type": "면세점", "value": 1.019469}, {"month": "2025.09", "retail_type": "면세점", "value": 1.067415}, {"month": "2025.10", "retail_type": "면세점", "value": 1.048264}, {"month": "2024.01", "retail_type": "슈퍼마켓 및 잡화점", "value": 5.583417}, {"month": "2024.02", "retail_type": "슈퍼마켓 및 잡화점", "value": 5.721387}, {"month": "2024.03", "retail_type": "슈퍼마켓 및 잡화점", "value": 5.535276}, {"month": "2024.04", "retail_type": "슈퍼마켓 및 잡화점", "value": 5.392539}, {"month": "2024.05", "retail_type": "슈퍼마켓 및 잡화점", "value": 5.770573}, {"month": "2024.06", "retail_type": "슈퍼마켓 및 잡화점", "value": 5.623561}, {"month": "2024.07", "retail_type": "슈퍼마켓 및 잡화점", "value": 5.653909}, {"month": "2024.08", "retail_type": "슈퍼마켓 및 잡화점", "value": 5.981376}, {"month": "2024.09", "retail_type": "슈퍼마켓 및 잡화점", "value": 6.172796}, {"month": "2024.10", "retail_type": "슈퍼마켓 및 잡화점", "value": 5.55465}, {"month": "2024.11", "retail_type": "슈퍼마켓 및 잡화점", "value": 5.495115}, {"month": "2024.12", "retail_type": "슈퍼마켓 및 잡화점", "value": 5.592473}, {"month": "2025.01", "retail_type": "슈퍼마켓 및 잡화점", "value": 6.160992}, {"month": "2025.02", "retail_type": "슈퍼마켓 및 잡화점", "value": 4.968106}, {"month": "2025.03", "retail_type": "슈퍼마켓 및 잡화점", "value": 5.522466}, {"month": "2025.04", "retail_type": "슈퍼마켓 및 잡화점", "value": 5.366329}, {"month": "2025.05", "retail_type": "슈퍼마켓 및 잡화점", "value": 5.731509}, {"month": "2025.06", "retail_type": "슈퍼마켓 및 잡화점", "value": 5.504482}, {"month": "2025.07", "retail_type": "슈퍼마켓 및 잡화점", "value": 5.6387}, {"month": "2025.08", "retail_type": "슈퍼마켓 및 잡화점", "value": 5.640456}, {"month": "2025.09", "retail_type": "슈퍼마켓 및 잡화점", "value": 5.670054}, {"month": "2025.10", "retail_type": "슈퍼마켓 및 잡화점", "value": 5.784708}, {"month": "2024.01", "retail_type": "편의점", "value": 2.396084}, {"month": "2024.02", "retail_type": "편의점", "value": 2.314028}, {"month": "2024.03", "retail_type": "편의점", "value": 2.550836}, {"month": "2024.04", "retail_type": "편의점", "value": 2.635388}, {"month": "2024.05", "retail_type": "편의점", "value": 2.762318}, {"month": "2024.06", "retail_type": "편의점", "value": 2.745934}, {"month": "2024.07", "retail_type": "편의점", "value": 2.76879}, {"month": "2024.08", "retail_type": "편의점", "value": 2.860579}, {"month": "2024.09", "retail_type": "편의점", "value": 2.794959}, {"month": "2024.10", "retail_type": "편의점", "value": 2.781658}, {"month": "2024.11", "retail_type": "편의점", "value": 2.61473}, {"month": "2024.12", "retail_type": "편의점", "value": 2.514832}, {"month": "2025.01", "retail_type": "편의점", "value": 2.404668}, {"month": "2025.02", "retail_type": "편의점", "value": 2.180162}, {"month": "2025.03", "retail_type": "편의점", "value": 2.555112}, {"month": "2025.04", "retail_type": "편의점", "value": 2.595518}, {"month": "2025.05", "retail_type": "편의점", "value": 2.734445}, {"month": "2025.06", "retail_type": "편의점", "value": 2.699755}, {"month": "2025.07", "retail_type": "편의점", "value": 2.852682}, {"month": "2025.08", "retail_type": "편의점", "value": 2.866979}, {"month": "2025.09", "retail_type": "편의점", "value": 2.799065}, {"month": "2025.10", "retail_type": "편의점", "value": 2.777111}, {"month": "2024.01", "retail_type": "승용차 및 연료 소매점", "value": 9.5696}, {"month": "2024.02", "retail_type": "승용차 및 연료 소매점", "value": 9.274173}, {"month": "2024.03", "retail_type": "승용차 및 연료 소매점", "value": 11.033962}, {"month": "2024.04", "retail_type": "승용차 및 연료 소매점", "value": 10.544925}, {"month": "2024.05", "retail_type": "승용차 및 연료 소매점", "value": 10.708752}, {"month": "2024.06", "retail_type": "승용차 및 연료 소매점", "value": 10.470135}, {"month": "2024.07", "retail_type": "승용차 및 연료 소매점", "value": 10.297118}, {"month": "2024.08", "retail_type": "승용차 및 연료 소매점", "value": 10.436784}, {"month": "2024.09", "retail_type": "승용차 및 연료 소매점", "value": 10.419927}, {"month": "2024.10", "retail_type": "승용차 및 연료 소매점", "value": 10.815129}, {"month": "2024.11", "retail_type": "승용차 및 연료 소매점", "value": 11.028428}, {"month": "2024.12", "retail_type": "승용차 및 연료 소매점", "value": 11.247305}, {"month": "2025.01", "retail_type": "승용차 및 연료 소매점", "value": 9.774731}, {"month": "2025.02", "retail_type": "승용차 및 연료 소매점", "value": 10.508273}, {"month": "2025.03", "retail_type": "승용차 및 연료 소매점", "value": 11.570405}, {"month": "2025.04", "retail_type": "승용차 및 연료 소매점", "value": 11.210015}, {"month": "2025.05", "retail_type": "승용차 및 연료 소매점", "value": 11.159593}, {"month": "2025.06", "retail_type": "승용차 및 연료 소매점", "value": 11.116652}, {"month": "2025.07", "retail_type": "승용차 및 연료 소매점", "value": 11.068342}, {"month": "2025.08", "retail_type": "승용차 및 연료 소매점", "value": 10.992621}, {"month": "2025.09", "retail_type": "승용차 및 연료 소매점", "value": 11.733293}, {"month": "2025.10", "retail_type": "승용차 및 연료 소매점", "value": 10.354603}, {"month": "2024.01", "retail_type": "전문소매점", "value": 14.830551}, {"month": "2024.02", "retail_type": "전문소매점", "value": 14.583289}, {"month": "2024.03", "retail_type": "전문소매점", "value": 15.478517}, {"month": "2024.04", "retail_type": "전문소매점", "value": 15.194568}, {"month": "2024.05", "retail_type": "전문소매점", "value": 15.838303}, {"month": "2024.06", "retail_type": "전문소매점", "value": 15.154883}, {"month": "2024.07", "retail_type": "전문소매점", "value": 15.163446}, {"month": "2024.08", "retail_type": "전문소매점", "value": 14.519336}, {"month": "2024.09", "retail_type": "전문소매점", "value": 16.149159}, {"month": "2024.10", "retail_type": "전문소매점", "value": 16.093998}, {"month": "2024.11", "retail_type": "전문소매점", "value": 15.889276}, {"month": "2024.12", "retail_type": "전문소매점", "value": 16.241232}, {"month": "2025.01", "retail_type": "전문소매점", "value": 15.280907}, {"month": "2025.02", "retail_type": "전문소매점", "value": 14.491139}, {"month": "2025.03", "retail_type": "전문소매점", "value": 15.924676}, {"month": "2025.04", "retail_type": "전문소매점", "value": 15.276897}, {"month": "2025.05", "retail_type": "전문소매점", "value": 16.080477}, {"month": "2025.06", "retail_type": "전문소매점", "value": 15.343837}, {"month": "2025.07", "retail_type": "전문소매점", "value": 15.862662}, {"month": "2025.08", "retail_type": "전문소매점", "value": 15.066187}, {"month": "2025.09", "retail_type": "전문소매점", "value": 16.213326}, {"month": "2025.10", "retail_type": "전문소매점", "value": 16.995363}, {"month": "2024.01", "retail_type": "무점포 소매", "value": 11.724335}, {"month": "2024.02", "retail_type": "무점포 소매", "value": 10.986378}, {"month": "2024.03", "retail_type": "무점포 소매", "value": 11.608014}, {"month": "2024.04", "retail_type": "무점포 소매", "value": 11.535505}, {"month": "2024.05", "retail_type": "무점포 소매", "value": 11.813721}, {"month": "2024.06", "retail_type": "무점포 소매", "value": 11.150423}, {"month": "2024.07", "retail_type": "무점포 소매", "value": 11.339262}, {"month": "2024.08", "retail_type": "무점포 소매", "value": 10.928088}, {"month": "2024.09", "retail_type": "무점포 소매", "value": 11.066932}, {"month": "2024.10", "retail_type": "무점포 소매", "value": 11.621975}, {"month": "2024.11", "retail_type": "무점포 소매", "value": 12.043914}, {"month": "2024.12", "retail_type": "무점포 소매", "value": 11.874039}, {"month": "2025.01", "retail_type": "무점포 소매", "value": 11.482712}, {"month": "2025.02", "retail_type": "무점포 소매", "value": 11.212016}, {"month": "2025.03", "retail_type": "무점포 소매", "value": 11.926943}, {"month": "2025.04", "retail_type": "무점포 소매", "value": 11.705511}, {"month": "2025.05", "retail_type": "무점포 소매", "value": 11.826145}, {"month": "2025.06", "retail_type": "무점포 소매", "value": 11.489626}, {"month": "2025.07", "retail_type": "무점포 소매", "value": 12.082229}, {"month": "2025.08", "retail_type": "무점포 소매", "value": 11.398255}, {"month": "2025.09", "retail_type": "무점포 소매", "value": 12.709635}, {"month": "2025.10", "retail_type": "무점포 소매", "value": 11.817655}];
+        
+        // Growth Chart
+        const growthSpec = {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "width": "container",
+            "height": 400,
+            "data": {"values": growthData},
+            "mark": {"type": "bar", "cornerRadiusEnd": 8},
+            "encoding": {
+                "x": {
+                    "field": "retail_type",
+                    "type": "nominal",
+                    "title": "업태",
+                    "sort": "-y",
+                    "axis": {"labelAngle": -45, "labelFontSize": 11}
+                },
+                "y": {
+                    "field": "growth_pct",
+                    "type": "quantitative",
+                    "title": "성장률 (%)",
+                    "axis": {"format": ".1f"}
+                },
+                "color": {
+                    "field": "growth_pct",
+                    "type": "quantitative",
+                    "scale": {
+                        "scheme": "purples"
+                    },
+                    "legend": null
+                },
+                "tooltip": [
+                    {"field": "retail_type", "type": "nominal", "title": "업태"},
+                    {"field": "growth_pct", "type": "quantitative", "title": "성장률 (%)", "format": ".1f"},
+                    {"field": "value_2020", "type": "quantitative", "title": "2020년 (조원)", "format": ".1f"},
+                    {"field": "value_2024", "type": "quantitative", "title": "2024년 (조원)", "format": ".1f"}
+                ]
+            },
+            "config": {
+                "view": {"strokeWidth": 0},
+                "axis": {"grid": true, "gridOpacity": 0.2}
+            }
+        };
+        
+        // Annual Trend Chart
+        const annualSpec = {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "width": "container",
+            "height": 400,
+            "data": {"values": annualData},
+            "mark": {"type": "line", "point": true, "strokeWidth": 3},
+            "encoding": {
+                "x": {
+                    "field": "year",
+                    "type": "ordinal",
+                    "title": "연도",
+                    "axis": {"labelAngle": 0}
+                },
+                "y": {
+                    "field": "value",
+                    "type": "quantitative",
+                    "title": "판매액 (조 원)",
+                    "axis": {"format": ".0f"}
+                },
+                "color": {
+                    "field": "retail_type",
+                    "type": "nominal",
+                    "title": "업태",
+                    "scale": {"scheme": "category10"},
+                    "legend": {"orient": "right", "titleFontSize": 12}
+                },
+                "tooltip": [
+                    {"field": "retail_type", "type": "nominal", "title": "업태"},
+                    {"field": "year", "type": "ordinal", "title": "연도"},
+                    {"field": "value", "type": "quantitative", "title": "판매액 (조원)", "format": ".1f"}
+                ]
+            },
+            "config": {
+                "view": {"strokeWidth": 0},
+                "axis": {"grid": true, "gridOpacity": 0.2}
+            }
+        };
+        
+        // Monthly Trend Chart
+        const monthlySpec = {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "width": "container",
+            "height": 400,
+            "data": {"values": monthlyData},
+            "mark": {"type": "line", "point": true, "strokeWidth": 2},
+            "encoding": {
+                "x": {
+                    "field": "month",
+                    "type": "ordinal",
+                    "title": "월",
+                    "axis": {"labelAngle": -45, "labelFontSize": 10}
+                },
+                "y": {
+                    "field": "value",
+                    "type": "quantitative",
+                    "title": "판매액 (조 원)",
+                    "axis": {"format": ".1f"}
+                },
+                "color": {
+                    "field": "retail_type",
+                    "type": "nominal",
+                    "title": "업태",
+                    "scale": {"scheme": "category10"},
+                    "legend": {"orient": "right", "titleFontSize": 11}
+                },
+                "tooltip": [
+                    {"field": "retail_type", "type": "nominal", "title": "업태"},
+                    {"field": "month", "type": "ordinal", "title": "월"},
+                    {"field": "value", "type": "quantitative", "title": "판매액 (조원)", "format": ".2f"}
+                ]
+            },
+            "config": {
+                "view": {"strokeWidth": 0},
+                "axis": {"grid": true, "gridOpacity": 0.2}
+            }
+        };
+        
+        // Render charts
+        vegaEmbed('#growth-chart', growthSpec, {"actions": false});
+        vegaEmbed('#annual-trend-chart', annualSpec, {"actions": false});
+        vegaEmbed('#monthly-trend-chart', monthlySpec, {"actions": false});
+    </script>
+</body>
+</html>

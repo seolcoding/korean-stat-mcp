@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1인 가구 800만 시대 분석 | KOSIS 데이터 기반</title>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
+        header {
+            background: linear-gradient(135deg, #00b894 0%, #00cec9 100%);
+            color: white;
+            padding: 60px 40px;
+            border-radius: 20px;
+            margin-bottom: 40px;
+            box-shadow: 0 20px 60px rgba(0, 184, 148, 0.3);
+        }
+        header h1 { font-size: 2.5rem; margin-bottom: 15px; font-weight: 800; }
+        header p { font-size: 1.1rem; opacity: 0.9; line-height: 1.6; }
+        .meta-info { margin-top: 20px; font-size: 0.9rem; opacity: 0.8; }
+
+        .kpi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+        .kpi-card {
+            background: white;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .kpi-card.primary { border-left: 5px solid #00b894; }
+        .kpi-card.warning { border-left: 5px solid #fdcb6e; }
+        .kpi-card.danger { border-left: 5px solid #e17055; }
+        .kpi-card.info { border-left: 5px solid #74b9ff; }
+        .kpi-value { font-size: 3rem; font-weight: 800; color: #2c3e50; }
+        .kpi-value.primary { color: #00b894; }
+        .kpi-value.warning { color: #f39c12; }
+        .kpi-value.danger { color: #e17055; }
+        .kpi-label { font-size: 1rem; color: #7f8c8d; margin-top: 10px; }
+        .kpi-sub { font-size: 0.85rem; color: #95a5a6; margin-top: 5px; }
+
+        .section {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+        }
+        .section h2 {
+            font-size: 1.5rem;
+            color: #2c3e50;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #eee;
+        }
+
+        .insight-box {
+            background: linear-gradient(135deg, #dfe6e9 0%, #b2bec3 100%);
+            border-left: 5px solid #636e72;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 25px 0;
+        }
+        .insight-box.warning {
+            background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+            border-left-color: #f39c12;
+        }
+        .insight-box.danger {
+            background: linear-gradient(135deg, #fab1a0 0%, #e17055 100%);
+            border-left-color: #d63031;
+        }
+        .insight-box.good {
+            background: linear-gradient(135deg, #55efc4 0%, #00b894 100%);
+            border-left-color: #00b894;
+        }
+        .insight-box h3 { color: #2d3436; margin-bottom: 15px; }
+        .insight-box.warning h3 { color: #d35400; }
+        .insight-box.danger h3 { color: #c0392b; }
+        .insight-box.good h3 { color: #00695c; }
+        .insight-box ul { margin-left: 20px; }
+        .insight-box li { margin: 10px 0; line-height: 1.7; }
+
+        .chart-container { margin: 30px 0; }
+
+        .news-section { background: #f8f9fa; }
+        .news-item {
+            padding: 20px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .news-item:last-child { border-bottom: none; }
+        .news-item a {
+            color: #00b894;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.05rem;
+        }
+        .news-item a:hover { text-decoration: underline; }
+        .news-source { font-size: 0.85rem; color: #888; margin-top: 8px; }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        .comparison-table th, .comparison-table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+        .comparison-table th {
+            background: #f8f9fa;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+        .comparison-table tr:hover { background: #f8f9fa; }
+        .high { color: #e17055; font-weight: 600; }
+        .low { color: #00b894; font-weight: 600; }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: white;
+            font-size: 0.9rem;
+        }
+        footer a { color: #00cec9; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🏠 1인 가구 800만 시대 분석</h1>
+            <p>KOSIS 공식 통계 데이터 기반 | 2024년 1인 가구 사상 최초 800만 돌파</p>
+            <div class="meta-info">
+                📊 데이터 출처: KOSIS 국가통계포털 |
+                📅 생성일: 2025-12-15 |
+                🏢 통계표: 1인가구비율(시도/시/군/구) (DT_1YL21161)
+            </div>
+        </header>
+
+        <div class="kpi-grid">
+            <div class="kpi-card primary">
+                <div class="kpi-value primary">804만</div>
+                <div class="kpi-label">2024년 1인 가구 수</div>
+                <div class="kpi-sub">사상 최초 800만 돌파</div>
+            </div>
+            <div class="kpi-card warning">
+                <div class="kpi-value warning">36.1%</div>
+                <div class="kpi-label">전체 가구 비중</div>
+                <div class="kpi-sub">3가구 중 1가구 이상</div>
+            </div>
+            <div class="kpi-card danger">
+                <div class="kpi-value danger">58.2%</div>
+                <div class="kpi-label">관악구 1인가구 비율</div>
+                <div class="kpi-sub">전국 최고 (대학가)</div>
+            </div>
+            <div class="kpi-card info">
+                <div class="kpi-value">17.4%</div>
+                <div class="kpi-label">과천시 1인가구 비율</div>
+                <div class="kpi-sub">전국 최저</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>📈 1인 가구 증가 추이 (2015-2024)</h2>
+            <div class="chart-container" id="trend-chart"></div>
+            <div class="insight-box good">
+                <h3>📊 10년간 변화</h3>
+                <ul>
+                    <li><strong>520만 → 804만</strong>: 10년간 284만 가구 증가 (54.6% 성장)</li>
+                    <li><strong>27.2% → 36.1%</strong>: 비율 약 9%p 상승</li>
+                    <li><strong>연평균 28만 가구 증가</strong>: 꾸준한 증가세 지속</li>
+                    <li><strong>2019년 30% 돌파</strong>: 전체 가구의 1/3 이상이 1인 가구</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🗺️ 2024년 지역별 1인가구 비율</h2>
+            <div class="chart-container" id="regional-chart"></div>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>순위</th>
+                        <th>1인가구 비율 TOP 5</th>
+                        <th>비율</th>
+                        <th>1인가구 비율 LOW 5</th>
+                        <th>비율</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td class="high">관악구 (서울)</td>
+                        <td class="high">58.2%</td>
+                        <td class="low">과천시 (경기)</td>
+                        <td class="low">17.4%</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td class="high">중구 (서울)</td>
+                        <td class="high">56.4%</td>
+                        <td class="low">의왕시 (경기)</td>
+                        <td class="low">23.8%</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td class="high">옹진군 (인천)</td>
+                        <td class="high">48.5%</td>
+                        <td class="low">울산 북구</td>
+                        <td class="low">25.2%</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td class="high">중구 (부산)</td>
+                        <td class="high">48.4%</td>
+                        <td class="low">남양주시 (경기)</td>
+                        <td class="low">25.8%</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td class="high">금천구 (서울)</td>
+                        <td class="high">47.8%</td>
+                        <td class="low">광명시 (경기)</td>
+                        <td class="low">25.9%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section news-section">
+            <h2>📰 1인 가구 관련 최신 뉴스</h2>
+            <div class="news-item">
+                <a href="https://www.donga.com/news/Economy/article/all/20251210/132934983/2" target="_blank">
+                    '1인 가구' 800만 넘어 사상최대… 절반은 "외롭다" 호소
+                </a>
+                <div class="news-source">동아일보 | 2025.12</div>
+            </div>
+            <div class="news-item">
+                <a href="https://www.hankyung.com/article/2025120932157" target="_blank">
+                    지난해 1인 가구 첫 800만 넘어…서울 가장 비중 높아
+                </a>
+                <div class="news-source">한국경제 | 2025.12</div>
+            </div>
+            <div class="news-item">
+                <a href="http://m.newsedu.co.kr/news/articleView.html?idxno=98593" target="_blank">
+                    1인 가구 첫 800만 명 넘어…전체 가구 36% '역대 최고'
+                </a>
+                <div class="news-source">뉴스에듀 | 2025.12</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>💡 종합 인사이트</h2>
+            <div class="insight-box warning">
+                <h3>🔍 1인 가구 특성</h3>
+                <ul>
+                    <li><strong>연령별 분포</strong>: 20-30대 청년층 + 60대 이상 고령층 양극화</li>
+                    <li><strong>성별 차이</strong>: 청년 1인가구는 남성, 고령 1인가구는 여성 비중 높음</li>
+                    <li><strong>지역 특성</strong>: 대학가(관악구), 도심(중구), 섬 지역(옹진군) 높음</li>
+                    <li><strong>비혼/만혼 영향</strong>: 평균 초혼연령 상승, 비혼 선택 증가</li>
+                </ul>
+            </div>
+            <div class="insight-box danger">
+                <h3>⚠️ 사회적 우려</h3>
+                <ul>
+                    <li><strong>고독/외로움</strong>: 1인 가구의 절반 이상이 외로움 호소</li>
+                    <li><strong>고독사 위험</strong>: 특히 고령 1인 가구 증가에 따른 우려</li>
+                    <li><strong>사회적 고립</strong>: 사회적 관계 단절, 긴급 시 도움 요청 어려움</li>
+                    <li><strong>주거비 부담</strong>: 1인 가구용 소형 주택 부족, 임대료 상승</li>
+                </ul>
+            </div>
+            <div class="insight-box">
+                <h3>📋 정책 과제</h3>
+                <ul>
+                    <li><strong>소형 주택 공급</strong>: 1-2인 가구용 공공임대 확대</li>
+                    <li><strong>돌봄 서비스</strong>: 고령 1인 가구 정기 방문, 안전 확인</li>
+                    <li><strong>커뮤니티 활성화</strong>: 공유주거, 코리빙 등 새로운 주거 형태</li>
+                    <li><strong>세제 개편</strong>: 1인 가구 맞춤형 세금/복지 정책</li>
+                </ul>
+            </div>
+        </div>
+
+        <footer>
+            <p>
+                이 보고서는 <a href="https://kosis.kr" target="_blank">KOSIS 국가통계포털</a> API를 통해 수집된 공식 통계 데이터를 기반으로 자동 생성되었습니다.
+            </p>
+            <p style="margin-top: 10px;">
+                Report #006 | 생성: 2025-12-15
+            </p>
+        </footer>
+    </div>
+
+    <script>
+        // 1인가구 추이 차트
+        const trendSpec = {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "width": "container",
+            "height": 350,
+            "data": {
+                "values": [
+                    {"year": "2015", "households": 520, "rate": 27.2},
+                    {"year": "2016", "households": 540, "rate": 27.9},
+                    {"year": "2017", "households": 562, "rate": 28.6},
+                    {"year": "2018", "households": 585, "rate": 29.3},
+                    {"year": "2019", "households": 615, "rate": 30.2},
+                    {"year": "2020", "households": 664, "rate": 31.7},
+                    {"year": "2021", "households": 717, "rate": 33.4},
+                    {"year": "2022", "households": 750, "rate": 34.5},
+                    {"year": "2023", "households": 783, "rate": 35.5},
+                    {"year": "2024", "households": 804, "rate": 36.1}
+                ]
+            },
+            "layer": [
+                {
+                    "mark": {"type": "bar", "color": "#00b894", "opacity": 0.7},
+                    "encoding": {
+                        "y": {
+                            "field": "households",
+                            "type": "quantitative",
+                            "title": "1인 가구 수 (만)"
+                        }
+                    }
+                },
+                {
+                    "mark": {
+                        "type": "line",
+                        "point": {"filled": true, "size": 80},
+                        "strokeWidth": 3,
+                        "color": "#fdcb6e"
+                    },
+                    "encoding": {
+                        "y": {
+                            "field": "rate",
+                            "type": "quantitative",
+                            "title": "비율 (%)",
+                            "scale": {"domain": [20, 40]},
+                            "axis": {"titleColor": "#fdcb6e"}
+                        }
+                    }
+                }
+            ],
+            "encoding": {
+                "x": {
+                    "field": "year",
+                    "type": "ordinal",
+                    "title": "연도",
+                    "axis": {"labelAngle": 0}
+                },
+                "tooltip": [
+                    {"field": "year", "title": "연도"},
+                    {"field": "households", "title": "가구수(만)", "format": ".0f"},
+                    {"field": "rate", "title": "비율(%)", "format": ".1f"}
+                ]
+            },
+            "resolve": {"scale": {"y": "independent"}}
+        };
+        vegaEmbed('#trend-chart', trendSpec, {"actions": false});
+
+        // 지역별 차트
+        const regionalSpec = {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "width": "container",
+            "height": 400,
+            "data": {
+                "values": [
+                    {"region": "관악구", "rate": 58.2, "type": "서울"},
+                    {"region": "중구(서울)", "rate": 56.4, "type": "서울"},
+                    {"region": "옹진군", "rate": 48.5, "type": "인천"},
+                    {"region": "중구(부산)", "rate": 48.4, "type": "부산"},
+                    {"region": "금천구", "rate": 47.8, "type": "서울"},
+                    {"region": "전국", "rate": 36.1, "type": "전국"},
+                    {"region": "광명시", "rate": 25.9, "type": "경기"},
+                    {"region": "남양주시", "rate": 25.8, "type": "경기"},
+                    {"region": "의왕시", "rate": 23.8, "type": "경기"},
+                    {"region": "과천시", "rate": 17.4, "type": "경기"}
+                ]
+            },
+            "mark": {"type": "bar", "cornerRadiusTopLeft": 8, "cornerRadiusTopRight": 8},
+            "encoding": {
+                "x": {
+                    "field": "region",
+                    "type": "nominal",
+                    "title": "지역",
+                    "sort": "-y",
+                    "axis": {"labelAngle": -45}
+                },
+                "y": {
+                    "field": "rate",
+                    "type": "quantitative",
+                    "title": "1인가구 비율 (%)",
+                    "scale": {"domain": [0, 65]}
+                },
+                "color": {
+                    "field": "type",
+                    "type": "nominal",
+                    "title": "지역구분",
+                    "scale": {
+                        "domain": ["서울", "부산", "인천", "경기", "전국"],
+                        "range": ["#e17055", "#74b9ff", "#a29bfe", "#00b894", "#636e72"]
+                    }
+                },
+                "tooltip": [
+                    {"field": "region", "title": "지역"},
+                    {"field": "rate", "title": "비율", "format": ".1f"},
+                    {"field": "type", "title": "구분"}
+                ]
+            }
+        };
+        vegaEmbed('#regional-chart', regionalSpec, {"actions": false});
+    </script>
+</body>
+</html>

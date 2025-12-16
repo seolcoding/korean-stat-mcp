@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K-Beauty & Cosmetics Trend Analysis 2025</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Noto+Serif+KR:wght@300;400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Serif KR', serif;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #B76E79 100%);
+            color: #FFFFFF;
+            line-height: 1.8;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 60px 30px;
+        }
+
+        .header {
+            text-align: center;
+            padding: 80px 20px;
+            background: linear-gradient(135deg, rgba(183, 110, 121, 0.15) 0%, rgba(199, 21, 133, 0.15) 100%);
+            border-radius: 30px;
+            margin-bottom: 60px;
+            position: relative;
+            overflow: hidden;
+            border: 2px solid #B76E79;
+        }
+
+        .header::before {
+            content: '✨';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 40px;
+            opacity: 0.6;
+        }
+
+        .header::after {
+            content: '💄';
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            font-size: 40px;
+            opacity: 0.6;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            font-weight: 900;
+            color: #FFB6C1;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+        }
+
+        .subtitle {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5rem;
+            color: #C0C0C0;
+            font-weight: 300;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+        }
+
+        .metadata {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            color: #C0C0C0;
+            margin-top: 30px;
+        }
+
+        .metadata-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .section {
+            background: rgba(45, 45, 45, 0.7);
+            backdrop-filter: blur(10px);
+            padding: 50px;
+            margin-bottom: 40px;
+            border-radius: 25px;
+            border: 1px solid #B76E79;
+            box-shadow: 0 10px 30px rgba(183, 110, 121, 0.2);
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: #FF69B4;
+            margin-bottom: 30px;
+            text-align: center;
+            font-weight: 700;
+            position: relative;
+            padding-bottom: 20px;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, #FFB6C1, #C71585);
+        }
+
+        h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: #FFB6C1;
+            margin: 30px 0 20px 0;
+            font-weight: 600;
+        }
+
+        p {
+            font-size: 1.1rem;
+            color: #C0C0C0;
+            margin-bottom: 20px;
+            line-height: 2;
+        }
+
+        .highlight {
+            background: linear-gradient(135deg, rgba(255, 182, 193, 0.2), rgba(199, 21, 133, 0.2));
+            padding: 30px;
+            border-radius: 20px;
+            border-left: 5px solid #FF69B4;
+            margin: 30px 0;
+        }
+
+        .kpi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+
+        .kpi-card {
+            background: linear-gradient(135deg, rgba(183, 110, 121, 0.2), rgba(199, 21, 133, 0.15));
+            padding: 35px;
+            border-radius: 20px;
+            text-align: center;
+            border: 2px solid #B76E79;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .kpi-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(255, 105, 180, 0.3);
+        }
+
+        .kpi-value {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 900;
+            color: #FF69B4;
+            margin: 15px 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .kpi-label {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            color: #FFB6C1;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .chart-container {
+            background: rgba(26, 26, 26, 0.5);
+            padding: 30px;
+            border-radius: 20px;
+            margin: 30px 0;
+            border: 1px solid #B76E79;
+        }
+
+        .insight-box {
+            background: linear-gradient(135deg, rgba(255, 182, 193, 0.15), rgba(183, 110, 121, 0.15));
+            padding: 30px;
+            border-radius: 20px;
+            margin: 25px 0;
+            border-left: 5px solid #FFB6C1;
+        }
+
+        .insight-icon {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        ul, ol {
+            margin-left: 30px;
+            color: #C0C0C0;
+        }
+
+        li {
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+
+        strong {
+            color: #FF69B4;
+            font-weight: 600;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 60px 20px;
+            margin-top: 80px;
+            border-top: 2px solid #B76E79;
+            font-family: 'Montserrat', sans-serif;
+            color: #C0C0C0;
+        }
+
+        .beauty-icon {
+            font-size: 2.5rem;
+            margin: 0 10px;
+        }
+
+        .sources {
+            background: rgba(45, 45, 45, 0.8);
+            padding: 40px;
+            border-radius: 20px;
+            margin-top: 40px;
+            border: 1px solid #B76E79;
+        }
+
+        .sources h3 {
+            color: #FFB6C1;
+            margin-bottom: 20px;
+        }
+
+        .sources a {
+            color: #FF69B4;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .sources a:hover {
+            color: #FFB6C1;
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .subtitle {
+                font-size: 1rem;
+            }
+
+            .kpi-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>K-Beauty & Cosmetics Trend Analysis 2025</h1>
+            <div class="subtitle">K-Beauty Trend Analysis 2025</div>
+            <div class="beauty-icon">💄 ✨ 💅 👄</div>
+            <div class="metadata">
+                <div class="metadata-item">📅 2025년 12월 15일</div>
+                <div class="metadata-item">📊 Report #073</div>
+                <div class="metadata-item">🏷️ Beauty & Cosmetics</div>
+            </div>
+        </div>
+
+        
+    <div class="section">
+        <h2>💎 Executive Summary</h2>
+        <div class="highlight">
+            <p><strong>K-뷰티, 글로벌 시장을 압도하다</strong></p>
+            <p>2025년, 한국 화장품 산업은 전례 없는 성장을 기록하며 글로벌 뷰티 트렌드를 주도하고 있습니다.
+            2024년 사상 최초로 100억 달러 수출을 돌파했으며, 미국 시장에서는 화장품 수입국 1위를 차지했습니다.</p>
+        </div>
+
+        <div class="kpi-grid">
+            <div class="kpi-card">
+                <div class="kpi-label">2024 수출액</div>
+                <div class="kpi-value">100억$</div>
+                <div class="beauty-icon">💰</div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-label">미국 수입 순위</div>
+                <div class="kpi-value">#1</div>
+                <div class="beauty-icon">🏆</div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-label">2025 시장 규모</div>
+                <div class="kpi-value">6,772억$</div>
+                <div class="beauty-icon">🌍</div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-label">글로벌 순위</div>
+                <div class="kpi-value">#2</div>
+                <div class="beauty-icon">📊</div>
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="section">
+        <h2>✨ 2025 K-Beauty Trend Keywords</h2>
+
+        <div class="insight-box">
+            <div class="insight-icon">💎</div>
+            <h3>1. 글래스 스킨 (Glass Skin)</h3>
+            <p>글로벌 MZ세대가 가장 열광하는 키워드. 유리처럼 투명하고 윤기 나는 피부를 추구하는 트렌드가
+            전 세계 스킨케어 시장을 장악하고 있습니다. 미국 아마존, 일본 라쿠텐 등에서 '피부 장벽', '진정', '촉촉함' 등의
+            키워드가 폭발적으로 검색되고 있습니다.</p>
+        </div>
+
+        <div class="insight-box">
+            <div class="insight-icon">⏰</div>
+            <h3>2. 슬로우에이징 (Slow Aging)</h3>
+            <p>한국이 초고령사회로 진입하면서 노화에 대한 인식이 정교하게 재편되고 있습니다.
+            단순히 주름을 없애는 것이 아니라, 건강하고 아름답게 나이 드는 '슬로우에이징'이 새로운 패러다임으로 자리잡았습니다.</p>
+        </div>
+
+        <div class="insight-box">
+            <div class="insight-icon">🌱</div>
+            <h3>3. 클린뷰티 & 지속가능성</h3>
+            <p>ESG 경영이 화두인 시대, 클린 뷰티가 더욱 강세를 보이고 있습니다.
+            윤리소비·가치소비가 확산되며 원료 업사이클링부터 제품의 탄소발자국까지
+            투명하게 공개하는 브랜드가 MZ세대의 선택을 받고 있습니다.</p>
+        </div>
+
+        <div class="insight-box">
+            <div class="insight-icon">🤖</div>
+            <h3>4. 맞춤형 케어 & AI 기술</h3>
+            <p>20~40대 여성 소비자의 53.2%가 화장품 구매 시 '피부에 잘 맞는 제품'을 가장 중요하게 생각합니다.
+            AI 기반 피부 분석, 맞춤형 포뮬러 제공 등 개인화된 뷰티 솔루션이 대세로 떠올랐습니다.</p>
+        </div>
+    </div>
+    
+
+    <div class="section">
+        <h2>💄 카테고리 다변화 트렌드</h2>
+
+        <div class="highlight">
+            <p><strong>스킨케어를 넘어 전방위 확장</strong></p>
+            <p>K-뷰티가 스킨케어 중심에서 벗어나 메이크업, 향수, 헤어 제품까지
+            전 카테고리에서 글로벌 강자로 부상하고 있습니다.</p>
+        </div>
+
+        <h3>🎨 메이크업</h3>
+        <p>티르티르 쿠션, 조선미녀 립스틱 등이 SNS를 통해 바이럴되며 글로벌 히트를 기록했습니다.
+        특히 '무너지지 않는 베이스', '촉촉한 립 메이크업'이 주요 트렌드로 자리잡았습니다.</p>
+
+        <h3>🌸 향수</h3>
+        <p>여성 소비자 10명 중 4명 이상이 최근 1년간 본인 사용 목적으로 향수를 구매했습니다.
+        향수가 럭셔리 아이템을 넘어 일상 필수품으로 자리매김하며 K-향수가 새롭게 주목받고 있습니다.</p>
+
+        <h3>💅 네일 & 헤어</h3>
+        <p>네일 제품과 헤어 케어 라인이 빠르게 성장하며 토탈 뷰티 케어의 중요성이 부각되고 있습니다.</p>
+    </div>
+    
+
+    <div class="section">
+        <h2>🛍️ 유통 채널 혁신</h2>
+
+        <div class="kpi-grid">
+            <div class="kpi-card">
+                <div class="kpi-label">온오프라인 최강자</div>
+                <div class="kpi-value">올리브영</div>
+                <div class="beauty-icon">👑</div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-label">급성장 채널</div>
+                <div class="kpi-value">다이소</div>
+                <div class="beauty-icon">🚀</div>
+            </div>
+        </div>
+
+        <p>올리브영이 온오프라인 통합 뷰티 플랫폼으로서 독보적 위치를 유지하는 가운데,
+        다이소가 '가성비 뷰티'의 강자로 빠르게 성장하고 있습니다.
+        합리적인 가격대에 우수한 품질을 제공하며 젊은 소비자들의 지갑을 열고 있습니다.</p>
+
+        <div class="insight-box">
+            <div class="insight-icon">📱</div>
+            <h3>온라인 채널의 진화</h3>
+            <p>소셜커머스, 라이브 커머스, 인플루언서 마케팅이 결합되며
+            뷰티 제품 구매 방식이 근본적으로 변화하고 있습니다.
+            실시간 리뷰, 라이브 시연, AI 추천 등이 구매 결정의 핵심 요소로 작용합니다.</p>
+        </div>
+    </div>
+    
+
+        <div class="section">
+            <h2>📊 KOSIS 통계 데이터 분석</h2>
+            <p>식품의약품안전처 공식 통계를 기반으로 한 한국 화장품 산업 현황</p>
+        
+            <div class="insight-box">
+                <h3>📋 화장품 책임판매업체 생산실적</h3>
+                <p><strong>데이터 출처:</strong> 식품의약품안전처</p>
+                <p><strong>레코드 수:</strong> 15건</p>
+                <p><strong>테이블 ID:</strong> DT_145011_A004</p>
+            </div>
+            
+            <div class="insight-box">
+                <h3>📋 화장품 수입 및 수출액 현황</h3>
+                <p><strong>데이터 출처:</strong> 식품의약품안전처</p>
+                <p><strong>레코드 수:</strong> 10건</p>
+                <p><strong>테이블 ID:</strong> DT_145011_A006</p>
+            </div>
+            
+            <div class="insight-box">
+                <h3>📋 국내 화장품산업 현황</h3>
+                <p><strong>데이터 출처:</strong> 식품의약품안전처</p>
+                <p><strong>레코드 수:</strong> 30건</p>
+                <p><strong>테이블 ID:</strong> DT_145011_A009</p>
+            </div>
+            </div>
+
+    <div class="section">
+        <h2>🔮 2025 전망 및 시사점</h2>
+
+        <div class="highlight">
+            <h3>💎 럭셔리화 가속</h3>
+            <p>K-뷰티가 대중적 이미지에서 벗어나 프리미엄·럭셔리 시장으로 확대되고 있습니다.
+            고급화 전략을 통해 브랜드 가치를 높이고 높은 마진을 확보하는 전략이 주효하고 있습니다.</p>
+        </div>
+
+        <div class="highlight">
+            <h3>🌏 글로벌 확장 지속</h3>
+            <p>미국, 일본을 넘어 유럽, 중동, 동남아시아까지 K-뷰티의 영향력이 확대되고 있습니다.
+            현지화 전략과 K-문화 콘텐츠의 시너지가 성장을 견인할 것으로 전망됩니다.</p>
+        </div>
+
+        <div class="highlight">
+            <h3>🔬 R&D 투자 강화</h3>
+            <p>기술 혁신을 통한 차별화가 더욱 중요해지고 있습니다.
+            바이오 기술, 나노 기술, AI 기반 맞춤형 솔루션 등에 대한 투자가 급증하고 있습니다.</p>
+        </div>
+
+        <div class="highlight">
+            <h3>🌱 ESG 경영 필수화</h3>
+            <p>지속가능성이 선택이 아닌 필수가 되었습니다.
+            친환경 패키징, 비건 인증, 동물실험 금지, 탄소중립 등이 브랜드 경쟁력의 핵심 요소로 자리잡았습니다.</p>
+        </div>
+    </div>
+    
+
+    <div class="sources">
+        <h3>📚 출처 및 참고자료</h3>
+        <ul>
+            <li><a href="https://retailtalk.co.kr/Trend/?bmode=view&idx=165200000" target="_blank">2025 K-뷰티 트렌드 : Trend</a></li>
+            <li><a href="https://dream.kotra.or.kr/kotranews/cms/news/actionKotraBoardDetail.do?SITE_NO=3&MENU_ID=120&bbsSn=484&pNttSn=229456&CONTENTS_NO=1" target="_blank">[2025 해외시장뉴스플러스] 글로벌 화장품·뷰티 산업 트렌드</a></li>
+            <li><a href="https://www.wkorea.com/2025/01/31/2025년-뜨는-뷰티-트렌드-키워드/" target="_blank">2025년 뜨는 뷰티 트렌드 키워드 | W Korea</a></li>
+            <li><a href="https://blog.opensurvey.co.kr/article/beauty-2025-2/" target="_blank">2025년을 여는 뷰티 트렌드 - 오픈서베이</a></li>
+            <li>KOSIS 국가통계포털 - 식품의약품안전처 화장품 통계</li>
+        </ul>
+    </div>
+    
+
+        <div class="footer">
+            <div class="beauty-icon">💎 ✨ 💖</div>
+            <p style="margin-top: 20px;">Generated with KOSIS Data Processor</p>
+            <p style="font-size: 0.9rem; margin-top: 10px;">Korean Statistical Information Service</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,301 @@
+{
+  "report_number": "073",
+  "title": "K-Beauty & Cosmetics Trend Analysis 2025",
+  "category": "Beauty/Cosmetics",
+  "generated_at": "2025-12-15T09:43:00.161936",
+  "keywords": [
+    "미용",
+    "뷰티",
+    "화장품",
+    "K-뷰티"
+  ],
+  "data_sources": [],
+  "news_insights": [
+    {
+      "title": "시장 규모 폭발적 성장",
+      "content": "2024년 한국 화장품 수출액이 사상 처음 100억 달러를 돌파했으며, 미국 화장품 수입국 1위를 차지했습니다. 2025년 전 세계 뷰티·퍼스널케어 시장 규모는 약 6,772억 달러에 달할 전망입니다.",
+      "icon": "📈"
+    },
+    {
+      "title": "2025 핵심 트렌드",
+      "content": "글래스 스킨(유리 피부), 슬로우에이징, 클린뷰티, 지속가능성, 맞춤형 케어, AI 기술이 K-뷰티를 주도하는 핵심 키워드로 부상했습니다.",
+      "icon": "✨"
+    },
+    {
+      "title": "카테고리 다변화",
+      "content": "스킨케어 중심에서 메이크업, 향수, 헤어 제품까지 전방위로 확대되고 있으며, '티르티르', '조선미녀' 등이 SNS를 통해 글로벌 히트를 기록하고 있습니다.",
+      "icon": "💄"
+    },
+    {
+      "title": "유통 채널 혁신",
+      "content": "올리브영이 온오프라인 최강자로 자리매김하는 가운데, 다이소가 합리적 가격과 좋은 품질로 빠르게 성장하고 있습니다.",
+      "icon": "🛍️"
+    }
+  ],
+  "kosis_data": {
+    "production": {
+      "table_id": "DT_145011_A004",
+      "table_name": "화장품 책임판매업체 생산실적",
+      "org": "식품의약품안전처",
+      "record_count": 15,
+      "sample_data": [
+        {
+          "TBL_ID": "DT_145011_A004",
+          "ORG_ID": "145",
+          "PRD_SE": "A",
+          "ITM_NM": "업체수",
+          "LST_CHN_DE": "2020-12-08",
+          "ITM_ID": "T001",
+          "UNIT_NM": "개",
+          "C1": "DATA",
+          "DT": "7580",
+          "UNIT_NM_ENG": "EA",
+          "C1_NM": "데이터",
+          "PRD_DE": "2019",
+          "TBL_NM": "화장품 책임판매업체 생산실적",
+          "C1_OBJ_NM": "가상분류"
+        },
+        {
+          "TBL_ID": "DT_145011_A004",
+          "ORG_ID": "145",
+          "PRD_SE": "A",
+          "ITM_NM": "업체수",
+          "LST_CHN_DE": "2021-10-27",
+          "ITM_ID": "T001",
+          "UNIT_NM": "개",
+          "C1": "DATA",
+          "DT": "8942",
+          "UNIT_NM_ENG": "EA",
+          "C1_NM": "데이터",
+          "PRD_DE": "2020",
+          "TBL_NM": "화장품 책임판매업체 생산실적",
+          "C1_OBJ_NM": "가상분류"
+        },
+        {
+          "TBL_ID": "DT_145011_A004",
+          "ORG_ID": "145",
+          "PRD_SE": "A",
+          "ITM_NM": "업체수",
+          "LST_CHN_DE": "2022-10-31",
+          "ITM_ID": "T001",
+          "UNIT_NM": "개",
+          "C1": "DATA",
+          "DT": "9359",
+          "UNIT_NM_ENG": "EA",
+          "C1_NM": "데이터",
+          "PRD_DE": "2021",
+          "TBL_NM": "화장품 책임판매업체 생산실적",
+          "C1_OBJ_NM": "가상분류"
+        },
+        {
+          "TBL_ID": "DT_145011_A004",
+          "ORG_ID": "145",
+          "PRD_SE": "A",
+          "ITM_NM": "업체수",
+          "LST_CHN_DE": "2023-08-02",
+          "ITM_ID": "T001",
+          "UNIT_NM": "개",
+          "C1": "DATA",
+          "DT": "10119",
+          "UNIT_NM_ENG": "EA",
+          "C1_NM": "데이터",
+          "PRD_DE": "2022",
+          "TBL_NM": "화장품 책임판매업체 생산실적",
+          "C1_OBJ_NM": "가상분류"
+        },
+        {
+          "TBL_ID": "DT_145011_A004",
+          "ORG_ID": "145",
+          "PRD_SE": "A",
+          "ITM_NM": "업체수",
+          "LST_CHN_DE": "2024-06-14",
+          "ITM_ID": "T001",
+          "UNIT_NM": "개",
+          "C1": "DATA",
+          "DT": "11861",
+          "UNIT_NM_ENG": "EA",
+          "C1_NM": "데이터",
+          "PRD_DE": "2023",
+          "TBL_NM": "화장품 책임판매업체 생산실적",
+          "C1_OBJ_NM": "가상분류"
+        }
+      ]
+    },
+    "trade": {
+      "table_id": "DT_145011_A006",
+      "table_name": "화장품 수입 및 수출액 현황",
+      "org": "식품의약품안전처",
+      "record_count": 10,
+      "sample_data": [
+        {
+          "TBL_ID": "DT_145011_A006",
+          "ORG_ID": "145",
+          "PRD_SE": "A",
+          "ITM_NM": "수입액",
+          "LST_CHN_DE": "2020-12-08",
+          "ITM_ID": "T001",
+          "UNIT_NM": "천$",
+          "C1": "DATA",
+          "DT": "1250580",
+          "UNIT_NM_ENG": "Thousand dollar",
+          "C1_NM": "데이터",
+          "PRD_DE": "2019",
+          "TBL_NM": "화장품 수입 및 수출액 현황",
+          "C1_OBJ_NM": "가상분류"
+        },
+        {
+          "TBL_ID": "DT_145011_A006",
+          "ORG_ID": "145",
+          "PRD_SE": "A",
+          "ITM_NM": "수입액",
+          "LST_CHN_DE": "2021-10-27",
+          "ITM_ID": "T001",
+          "UNIT_NM": "천$",
+          "C1": "DATA",
+          "DT": "1168098",
+          "UNIT_NM_ENG": "Thousand dollar",
+          "C1_NM": "데이터",
+          "PRD_DE": "2020",
+          "TBL_NM": "화장품 수입 및 수출액 현황",
+          "C1_OBJ_NM": "가상분류"
+        },
+        {
+          "TBL_ID": "DT_145011_A006",
+          "ORG_ID": "145",
+          "PRD_SE": "A",
+          "ITM_NM": "수입액",
+          "LST_CHN_DE": "2022-10-31",
+          "ITM_ID": "T001",
+          "UNIT_NM": "천$",
+          "C1": "DATA",
+          "DT": "1305238",
+          "UNIT_NM_ENG": "Thousand dollar",
+          "C1_NM": "데이터",
+          "PRD_DE": "2021",
+          "TBL_NM": "화장품 수입 및 수출액 현황",
+          "C1_OBJ_NM": "가상분류"
+        },
+        {
+          "TBL_ID": "DT_145011_A006",
+          "ORG_ID": "145",
+          "PRD_SE": "A",
+          "ITM_NM": "수입액",
+          "LST_CHN_DE": "2023-08-02",
+          "ITM_ID": "T001",
+          "UNIT_NM": "천$",
+          "C1": "DATA",
+          "DT": "1325134",
+          "UNIT_NM_ENG": "Thousand dollar",
+          "C1_NM": "데이터",
+          "PRD_DE": "2022",
+          "TBL_NM": "화장품 수입 및 수출액 현황",
+          "C1_OBJ_NM": "가상분류"
+        },
+        {
+          "TBL_ID": "DT_145011_A006",
+          "ORG_ID": "145",
+          "PRD_SE": "A",
+          "ITM_NM": "수입액",
+          "LST_CHN_DE": "2024-06-14",
+          "ITM_ID": "T001",
+          "UNIT_NM": "천$",
+          "C1": "DATA",
+          "DT": "1313388",
+          "UNIT_NM_ENG": "Thousand dollar",
+          "C1_NM": "데이터",
+          "PRD_DE": "2023",
+          "TBL_NM": "화장품 수입 및 수출액 현황",
+          "C1_OBJ_NM": "가상분류"
+        }
+      ]
+    },
+    "industry": {
+      "table_id": "DT_145011_A009",
+      "table_name": "국내 화장품산업 현황",
+      "org": "식품의약품안전처",
+      "record_count": 30,
+      "sample_data": [
+        {
+          "TBL_ID": "DT_145011_A009",
+          "ORG_ID": "145",
+          "PRD_SE": "A",
+          "ITM_NM": "생산액",
+          "LST_CHN_DE": "2020-12-08",
+          "ITM_ID": "T001",
+          "UNIT_NM": "백만원",
+          "C1": "DATA",
+          "DT": "16263316",
+          "UNIT_NM_ENG": "1000000won",
+          "C1_NM": "데이터",
+          "PRD_DE": "2019",
+          "TBL_NM": "국내 화장품산업 현황",
+          "C1_OBJ_NM": "가상분류"
+        },
+        {
+          "TBL_ID": "DT_145011_A009",
+          "ORG_ID": "145",
+          "PRD_SE": "A",
+          "ITM_NM": "생산액",
+          "LST_CHN_DE": "2021-10-27",
+          "ITM_ID": "T001",
+          "UNIT_NM": "백만원",
+          "C1": "DATA",
+          "DT": "15161717",
+          "UNIT_NM_ENG": "1000000won",
+          "C1_NM": "데이터",
+          "PRD_DE": "2020",
+          "TBL_NM": "국내 화장품산업 현황",
+          "C1_OBJ_NM": "가상분류"
+        },
+        {
+          "TBL_ID": "DT_145011_A009",
+          "ORG_ID": "145",
+          "PRD_SE": "A",
+          "ITM_NM": "생산액",
+          "LST_CHN_DE": "2022-10-31",
+          "ITM_ID": "T001",
+          "UNIT_NM": "백만원",
+          "C1": "DATA",
+          "DT": "16653313",
+          "UNIT_NM_ENG": "1000000won",
+          "C1_NM": "데이터",
+          "PRD_DE": "2021",
+          "TBL_NM": "국내 화장품산업 현황",
+          "C1_OBJ_NM": "가상분류"
+        },
+        {
+          "TBL_ID": "DT_145011_A009",
+          "ORG_ID": "145",
+          "PRD_SE": "A",
+          "ITM_NM": "생산액",
+          "LST_CHN_DE": "2023-08-07",
+          "ITM_ID": "T001",
+          "UNIT_NM": "백만원",
+          "C1": "DATA",
+          "DT": "13590776",
+          "UNIT_NM_ENG": "1000000won",
+          "C1_NM": "데이터",
+          "PRD_DE": "2022",
+          "TBL_NM": "국내 화장품산업 현황",
+          "C1_OBJ_NM": "가상분류"
+        },
+        {
+          "TBL_ID": "DT_145011_A009",
+          "ORG_ID": "145",
+          "PRD_SE": "A",
+          "ITM_NM": "생산액",
+          "LST_CHN_DE": "2024-06-14",
+          "ITM_ID": "T001",
+          "UNIT_NM": "백만원",
+          "C1": "DATA",
+          "DT": "14510243",
+          "UNIT_NM_ENG": "1000000won",
+          "C1_NM": "데이터",
+          "PRD_DE": "2023",
+          "TBL_NM": "국내 화장품산업 현황",
+          "C1_OBJ_NM": "가상분류"
+        }
+      ]
+    }
+  }
+}

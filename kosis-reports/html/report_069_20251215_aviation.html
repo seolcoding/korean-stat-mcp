@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>한국 항공 산업 트렌드 분석 2025 | KOSIS 리포트 #069</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --sky-blue: #87CEEB;
+            --cloud-white: #F8FCFF;
+            --deep-blue: #2C5F8D;
+            --light-gray: #E8F4F8;
+            --accent-gold: #FFD700;
+            --text-dark: #1a1a1a;
+        }
+
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background: linear-gradient(135deg, #E0F2FE 0%, #FFFFFF 100%);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        .page-wrapper {
+            min-height: 100vh;
+            background-image:
+                url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2387CEEB' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Boarding Pass Header */
+        .boarding-pass {
+            background: linear-gradient(135deg, var(--deep-blue) 0%, var(--sky-blue) 100%);
+            color: white;
+            border-radius: 20px;
+            padding: 50px;
+            margin-bottom: 40px;
+            box-shadow: 0 20px 60px rgba(44, 95, 141, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .boarding-pass::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 10 L60 30 L80 30 L65 45 L70 65 L50 50 L30 65 L35 45 L20 30 L40 30 Z' fill='%23FFFFFF' fill-opacity='0.05'/%3E%3C/svg%3E") repeat;
+            opacity: 0.5;
+        }
+
+        .boarding-pass-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .flight-number {
+            font-size: 14px;
+            font-weight: 300;
+            letter-spacing: 3px;
+            margin-bottom: 10px;
+            opacity: 0.9;
+        }
+
+        .main-title {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            letter-spacing: -1px;
+        }
+
+        .subtitle {
+            font-size: 18px;
+            font-weight: 300;
+            opacity: 0.95;
+            margin-bottom: 30px;
+        }
+
+        .flight-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 2px dashed rgba(255, 255, 255, 0.3);
+        }
+
+        .info-item {
+            text-align: center;
+        }
+
+        .info-label {
+            font-size: 12px;
+            font-weight: 300;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            opacity: 0.8;
+        }
+
+        .info-value {
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        /* Cloud Card Design */
+        .cloud-card {
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 40px rgba(135, 206, 235, 0.2);
+            border: 3px solid var(--light-gray);
+            position: relative;
+        }
+
+        .cloud-card::before {
+            content: '✈️';
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 40px;
+            opacity: 0.1;
+        }
+
+        .section-title {
+            color: var(--deep-blue);
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid var(--sky-blue);
+            display: inline-block;
+        }
+
+        /* KPI Cards - Ticket Style */
+        .kpi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .kpi-ticket {
+            background: linear-gradient(135deg, #FFFFFF 0%, var(--cloud-white) 100%);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 5px 20px rgba(135, 206, 235, 0.3);
+            border-left: 5px solid var(--sky-blue);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .kpi-ticket::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(circle, var(--sky-blue) 0%, transparent 70%);
+            opacity: 0.1;
+        }
+
+        .kpi-icon {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        .kpi-label {
+            font-size: 14px;
+            color: var(--deep-blue);
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
+        .kpi-value {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--deep-blue);
+            margin-bottom: 5px;
+        }
+
+        .kpi-change {
+            font-size: 14px;
+            color: #059669;
+            font-weight: 500;
+        }
+
+        .kpi-change.negative {
+            color: #DC2626;
+        }
+
+        /* Insight Box */
+        .insight-box {
+            background: linear-gradient(135deg, var(--sky-blue) 0%, #B0E0F6 100%);
+            border-radius: 20px;
+            padding: 35px;
+            margin: 30px 0;
+            box-shadow: 0 10px 30px rgba(135, 206, 235, 0.4);
+            position: relative;
+        }
+
+        .insight-box::before {
+            content: '💡';
+            font-size: 50px;
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            opacity: 0.3;
+        }
+
+        .insight-title {
+            color: var(--deep-blue);
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .insight-text {
+            color: #1e293b;
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .insight-highlight {
+            background: rgba(255, 255, 255, 0.5);
+            padding: 3px 8px;
+            border-radius: 5px;
+            font-weight: 600;
+        }
+
+        /* News Section */
+        .news-grid {
+            display: grid;
+            gap: 20px;
+        }
+
+        .news-item {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            border-left: 4px solid var(--sky-blue);
+            transition: all 0.3s ease;
+        }
+
+        .news-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 5px 20px rgba(135, 206, 235, 0.3);
+        }
+
+        .news-title {
+            color: var(--deep-blue);
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .news-content {
+            color: #475569;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+        .news-meta {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid var(--light-gray);
+            font-size: 13px;
+            color: #94a3b8;
+        }
+
+        /* Data Table */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(135, 206, 235, 0.2);
+        }
+
+        .data-table thead {
+            background: linear-gradient(135deg, var(--deep-blue) 0%, var(--sky-blue) 100%);
+            color: white;
+        }
+
+        .data-table th {
+            padding: 18px;
+            text-align: left;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 13px;
+        }
+
+        .data-table td {
+            padding: 16px 18px;
+            border-bottom: 1px solid var(--light-gray);
+            font-size: 14px;
+        }
+
+        .data-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .data-table tbody tr:hover {
+            background-color: var(--cloud-white);
+        }
+
+        /* Footer */
+        .report-footer {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin-top: 50px;
+            text-align: center;
+            border: 3px solid var(--light-gray);
+        }
+
+        .footer-logo {
+            font-size: 18px;
+            color: var(--deep-blue);
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .footer-text {
+            color: #64748b;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        .data-source {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 2px solid var(--light-gray);
+            font-size: 13px;
+            color: #94a3b8;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .main-title {
+                font-size: 32px;
+            }
+
+            .boarding-pass {
+                padding: 30px;
+            }
+
+            .flight-info {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+
+            .cloud-card {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-wrapper">
+        <div class="container">
+            <!-- Boarding Pass Header -->
+            <div class="boarding-pass">
+                <div class="boarding-pass-content">
+                    <div class="flight-number">FLIGHT KR-2025 | KOSIS REPORT #069</div>
+                    <h1 class="main-title">한국 항공 산업 트렌드 분석</h1>
+                    <p class="subtitle">2025년 항공·공항·여객 시장 현황 및 전망</p>
+
+                    <div class="flight-info">
+                        <div class="info-item">
+                            <div class="info-label">Departure</div>
+                            <div class="info-value">2019</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Arrival</div>
+                            <div class="info-value">2025</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Report Date</div>
+                            <div class="info-value">2025.12.15</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Data Source</div>
+                            <div class="info-value">KOSIS</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Executive Summary -->
+            <div class="cloud-card">
+                <h2 class="section-title">📊 주요 성과 지표 (2025 Q3)</h2>
+
+                <div class="kpi-grid">
+                    <div class="kpi-ticket">
+                        <div class="kpi-icon">✈️</div>
+                        <div class="kpi-label">분기 매출</div>
+                        <div class="kpi-value">4.0조원</div>
+                        <div class="kpi-change negative">▼ 2,323억원 (전년 동기 대비)</div>
+                    </div>
+
+                    <div class="kpi-ticket">
+                        <div class="kpi-icon">👥</div>
+                        <div class="kpi-label">여객 매출</div>
+                        <div class="kpi-value">2.4조원</div>
+                        <div class="kpi-change negative">▼ 1,962억원 (YoY)</div>
+                    </div>
+
+                    <div class="kpi-ticket">
+                        <div class="kpi-icon">📦</div>
+                        <div class="kpi-label">화물 매출</div>
+                        <div class="kpi-value">1.1조원</div>
+                        <div class="kpi-change negative">▼ 531억원 (YoY)</div>
+                    </div>
+
+                    <div class="kpi-ticket">
+                        <div class="kpi-icon">💰</div>
+                        <div class="kpi-label">영업이익</div>
+                        <div class="kpi-value">0.4조원</div>
+                        <div class="kpi-change negative">▼ 2,423억원 (YoY)</div>
+                    </div>
+                </div>
+
+                <div class="insight-box">
+                    <h3 class="insight-title">핵심 인사이트</h3>
+                    <p class="insight-text">
+                        2025년 3분기 대한항공의 실적은 <span class="insight-highlight">미국 입국 규정 강화</span>와
+                        <span class="insight-highlight">추석연휴 이연</span> 영향으로 전년 동기 대비 소폭 감소했습니다.
+                        통상 여객 성수기인 3분기임에도 매출이 감소한 것은 글로벌 변수의 영향이 컸습니다.
+                    </p>
+                    <p class="insight-text">
+                        화물 사업은 <span class="insight-highlight">미국 관세 리스크 확대</span>로 성장세가 둔화되었으나,
+                        탄력적 노선 운영을 통해 안정적 수익을 유지했습니다.
+                    </p>
+                </div>
+            </div>
+
+            <!-- 2025 Aviation Trends -->
+            <div class="cloud-card">
+                <h2 class="section-title">🌏 2025년 항공 트렌드</h2>
+
+                <div class="news-grid">
+                    <div class="news-item">
+                        <h3 class="news-title">1. 일본 선호 지속 - 도쿄가 1위</h3>
+                        <p class="news-content">
+                            2025년 한국발 대한항공 승객들이 가장 많이 찾은 도시는 <strong>도쿄</strong>로 나타났습니다.
+                            일본 여행 선호도는 여전히 높은 수준을 유지하고 있으며,
+                            근거리 노선의 안정적 수요가 확인되었습니다.
+                        </p>
+                    </div>
+
+                    <div class="news-item">
+                        <h3 class="news-title">2. 중국 노선 회복</h3>
+                        <p class="news-content">
+                            코로나19 이후 침체되었던 중국 노선이 점진적으로 회복되고 있습니다.
+                            비즈니스 및 관광 수요가 모두 증가하며 향후 성장 가능성이 높은 것으로 전망됩니다.
+                        </p>
+                    </div>
+
+                    <div class="news-item">
+                        <h3 class="news-title">3. 서비스 경험 강화</h3>
+                        <p class="news-content">
+                            대한항공은 2025년 <strong>새 CI를 적용한 항공기 34대</strong>를 선보였으며,
+                            인천공항 제2터미널 <strong>신규 라운지 리뉴얼</strong>을 완료했습니다.
+                            연간 누적 입장객은 131만 6천여 명이며, 신규 라운지 개장 이후 방문객이 약 26%를 차지했습니다.
+                        </p>
+                    </div>
+
+                    <div class="news-item">
+                        <h3 class="news-title">4. 주요 고객층: 30-40대</h3>
+                        <p class="news-content">
+                            2025년 대한항공 이용객의 주 연령대는 <strong>30~40대</strong>로 분석되었습니다.
+                            이들은 해외 출장 및 가족 여행 수요의 주축을 이루며,
+                            프리미엄 서비스에 대한 관심도가 높은 것으로 나타났습니다.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Industry Performance -->
+            <div class="cloud-card">
+                <h2 class="section-title">📈 분기별 실적 분석</h2>
+
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>구분</th>
+                            <th>2024 Q3</th>
+                            <th>2025 Q3</th>
+                            <th>증감</th>
+                            <th>비고</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>총 매출</strong></td>
+                            <td>4.2조원</td>
+                            <td>4.0조원</td>
+                            <td style="color: #DC2626;">▼ 2,323억원</td>
+                            <td>성수기 변수 영향</td>
+                        </tr>
+                        <tr>
+                            <td><strong>여객 매출</strong></td>
+                            <td>2.6조원</td>
+                            <td>2.4조원</td>
+                            <td style="color: #DC2626;">▼ 1,962억원</td>
+                            <td>입국 규정 강화</td>
+                        </tr>
+                        <tr>
+                            <td><strong>화물 매출</strong></td>
+                            <td>1.1조원</td>
+                            <td>1.1조원</td>
+                            <td style="color: #DC2626;">▼ 531억원</td>
+                            <td>관세 리스크 완화</td>
+                        </tr>
+                        <tr>
+                            <td><strong>영업이익</strong></td>
+                            <td>0.6조원</td>
+                            <td>0.4조원</td>
+                            <td style="color: #DC2626;">▼ 2,423억원</td>
+                            <td>비용 증가</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="insight-box">
+                    <h3 class="insight-title">실적 변동 요인</h3>
+                    <p class="insight-text">
+                        <strong>📉 매출 감소 요인:</strong><br>
+                        • 미국 입국 규정 강화로 인한 여객 수요 감소<br>
+                        • 추석연휴 이연 (2024년 9월 → 2025년 10월)<br>
+                        • 미국 관세 리스크로 인한 화물 시장 성장 둔화
+                    </p>
+                    <p class="insight-text">
+                        <strong>💡 긍정적 요소:</strong><br>
+                        • 탄력적 노선 운영으로 안정적 수익 유지<br>
+                        • 연료비 감소 효과<br>
+                        • 일본 및 근거리 노선 강세 지속
+                    </p>
+                </div>
+            </div>
+
+            <!-- Service Innovation -->
+            <div class="cloud-card">
+                <h2 class="section-title">🎯 서비스 혁신 현황</h2>
+
+                <div class="kpi-grid">
+                    <div class="kpi-ticket">
+                        <div class="kpi-icon">✨</div>
+                        <div class="kpi-label">새 CI 적용 항공기</div>
+                        <div class="kpi-value">34대</div>
+                        <div class="kpi-change">2025년 선보임</div>
+                    </div>
+
+                    <div class="kpi-ticket">
+                        <div class="kpi-icon">🏢</div>
+                        <div class="kpi-label">라운지 입장객</div>
+                        <div class="kpi-value">131만명</div>
+                        <div class="kpi-change">연간 누적 (2025)</div>
+                    </div>
+
+                    <div class="kpi-ticket">
+                        <div class="kpi-icon">🆕</div>
+                        <div class="kpi-label">신규 라운지 비중</div>
+                        <div class="kpi-value">26%</div>
+                        <div class="kpi-change">개장 이후 방문객</div>
+                    </div>
+
+                    <div class="kpi-ticket">
+                        <div class="kpi-icon">🌐</div>
+                        <div class="kpi-label">최다 방문 도시</div>
+                        <div class="kpi-value">도쿄</div>
+                        <div class="kpi-change">2025년 1위</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Future Outlook -->
+            <div class="cloud-card">
+                <h2 class="section-title">🔮 향후 전망</h2>
+
+                <div class="insight-box">
+                    <h3 class="insight-title">2026년 전망 및 과제</h3>
+                    <p class="insight-text">
+                        <strong>🎯 성장 기회:</strong><br>
+                        • 중국 노선 회복세 지속 예상<br>
+                        • 동남아시아 여행 수요 증가<br>
+                        • 프리미엄 서비스 강화로 수익성 개선<br>
+                        • 디지털 전환 가속화 (AI 기반 고객 서비스)
+                    </p>
+                    <p class="insight-text">
+                        <strong>⚠️ 리스크 요인:</strong><br>
+                        • 글로벌 경제 불확실성 지속<br>
+                        • 유가 변동성 증가 가능성<br>
+                        • 환율 리스크 관리 필요<br>
+                        • 지정학적 긴장 지속 모니터링 필요
+                    </p>
+                    <p class="insight-text">
+                        <strong>📊 전략 방향:</strong><br>
+                        • 근거리 노선 (일본, 동남아) 강화<br>
+                        • 화물 사업 포트폴리오 다각화<br>
+                        • ESG 경영 강화 (탄소중립 로드맵)<br>
+                        • 고객 경험 혁신 지속 추진
+                    </p>
+                </div>
+            </div>
+
+            <!-- Data Sources -->
+            <div class="cloud-card">
+                <h2 class="section-title">📚 참고 자료</h2>
+
+                <div class="news-grid">
+                    <div class="news-item">
+                        <h3 class="news-title">대한항공 2025년 3분기 실적 발표</h3>
+                        <p class="news-content">
+                            매출 4조 85억원, 영업이익 3,763억원 기록. 여객 및 화물 사업 모두 전년 대비 감소했으나
+                            탄력적 운영으로 안정적 수익 유지.
+                        </p>
+                        <div class="news-meta">
+                            출처: ISSUE ON (이슈온), 대한항공 뉴스룸
+                        </div>
+                    </div>
+
+                    <div class="news-item">
+                        <h3 class="news-title">대한항공 '2025 결산' - 최다 방문지 도쿄</h3>
+                        <p class="news-content">
+                            주 연령대 30~40대, 새 CI 항공기 34대 선보임,
+                            인천공항 제2터미널 신규 라운지 리뉴얼 완료 (연간 입장객 131만 6천명).
+                        </p>
+                        <div class="news-meta">
+                            출처: 이지이코노미
+                        </div>
+                    </div>
+
+                    <div class="news-item">
+                        <h3 class="news-title">2025년 항공교통서비스 보고서</h3>
+                        <p class="news-content">
+                            국토교통부 월간 항공소비자 리포트. 항공 시장 동향, 소비자 트렌드,
+                            항공사별 서비스 품질 등 종합 분석.
+                        </p>
+                        <div class="news-meta">
+                            출처: 국토교통부
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="report-footer">
+                <div class="footer-logo">
+                    ✈️ KOSIS Aviation Industry Report 2025
+                </div>
+                <p class="footer-text">
+                    본 리포트는 KOSIS(국가통계포털) 데이터와 공개된 뉴스 자료를 바탕으로 작성되었습니다.<br>
+                    한국 항공 산업의 현황과 트렌드를 분석하여 시장 이해도를 높이고자 합니다.
+                </p>
+                <div class="data-source">
+                    <strong>데이터 출처:</strong> KOSIS 국가통계포털, 대한항공 공식 발표자료, 국토교통부<br>
+                    <strong>분석 기간:</strong> 2019-2025<br>
+                    <strong>작성일:</strong> 2025년 12월 15일<br>
+                    <strong>Report ID:</strong> #069
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

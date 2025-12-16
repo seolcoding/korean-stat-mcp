@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>한국 OTT/스트리밍 산업 트렌드 분석 | Report #92</title>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Netflix Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background: linear-gradient(to bottom, #000000 0%, #141414 100%);
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        .hero {
+            background: linear-gradient(180deg, rgba(0,0,0,0.8) 0%, rgba(20,20,20,0.4) 100%),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080"><rect fill="%23E50914" width="1920" height="1080"/></svg>') center/cover;
+            padding: 120px 20px 80px;
+            text-align: center;
+            border-bottom: 3px solid #E50914;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                repeating-linear-gradient(
+                    90deg,
+                    rgba(229, 9, 20, 0.05) 0px,
+                    transparent 1px,
+                    transparent 40px,
+                    rgba(229, 9, 20, 0.05) 41px
+                ),
+                repeating-linear-gradient(
+                    0deg,
+                    rgba(229, 9, 20, 0.05) 0px,
+                    transparent 1px,
+                    transparent 40px,
+                    rgba(229, 9, 20, 0.05) 41px
+                );
+            pointer-events: none;
+        }
+
+        .hero h1 {
+            font-size: 4em;
+            font-weight: 900;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.8);
+            letter-spacing: -2px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero .subtitle {
+            font-size: 1.8em;
+            color: #E50914;
+            margin-bottom: 10px;
+            font-weight: 700;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero .meta {
+            font-size: 1em;
+            color: #b3b3b3;
+            margin-top: 15px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .section {
+            background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.6);
+            border: 1px solid rgba(229, 9, 20, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .section:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(229, 9, 20, 0.4);
+        }
+
+        .section h2 {
+            font-size: 2.2em;
+            margin-bottom: 25px;
+            color: #E50914;
+            font-weight: 800;
+            border-left: 5px solid #E50914;
+            padding-left: 20px;
+            letter-spacing: -1px;
+        }
+
+        .section h3 {
+            font-size: 1.6em;
+            margin: 30px 0 20px 0;
+            color: #ffffff;
+            font-weight: 700;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(229, 9, 20, 0.5);
+        }
+
+        .section p {
+            font-size: 1.1em;
+            margin-bottom: 20px;
+            color: #e5e5e5;
+            line-height: 1.8;
+        }
+
+        .chart-container {
+            margin: 30px 0;
+            padding: 25px;
+            background: rgba(0,0,0,0.4);
+            border-radius: 8px;
+            border: 1px solid rgba(229, 9, 20, 0.2);
+        }
+
+        .highlight {
+            background: linear-gradient(90deg, rgba(229, 9, 20, 0.2) 0%, rgba(229, 9, 20, 0.05) 100%);
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 4px solid #E50914;
+            margin: 25px 0;
+        }
+
+        .highlight strong {
+            color: #E50914;
+            font-size: 1.2em;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #2a0a0f 0%, #1a0505 100%);
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            border: 2px solid rgba(229, 9, 20, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            border-color: #E50914;
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(229, 9, 20, 0.4);
+        }
+
+        .stat-card .number {
+            font-size: 3em;
+            font-weight: 900;
+            color: #E50914;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 8px rgba(229, 9, 20, 0.5);
+        }
+
+        .stat-card .label {
+            font-size: 1.1em;
+            color: #b3b3b3;
+            font-weight: 600;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #808080;
+            border-top: 1px solid rgba(229, 9, 20, 0.3);
+            margin-top: 60px;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #E50914;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 700;
+            margin: 0 5px;
+        }
+
+        ul {
+            margin: 20px 0;
+            padding-left: 30px;
+        }
+
+        li {
+            margin: 10px 0;
+            color: #e5e5e5;
+            line-height: 1.8;
+        }
+
+        .data-source {
+            background: rgba(229, 9, 20, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+            border: 1px solid rgba(229, 9, 20, 0.3);
+        }
+
+        .data-source h4 {
+            color: #E50914;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        .data-source ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .data-source li {
+            color: #b3b3b3;
+            font-size: 0.95em;
+            padding: 5px 0;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5em;
+            }
+            .hero .subtitle {
+                font-size: 1.3em;
+            }
+            .section {
+                padding: 25px;
+            }
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <div class="subtitle">KOSIS 데이터 분석 리포트 #92</div>
+        <h1>한국 OTT/스트리밍 산업<br>트렌드 분석</h1>
+        <div class="meta">
+            <span class="badge">2025 최신 트렌드</span>
+            <span class="badge">KOSIS 공식 데이터</span>
+            <span class="badge">미디어 산업</span>
+        </div>
+        <div class="meta" style="margin-top: 20px;">
+            생성일: 2025년 12월 15일
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Executive Summary -->
+        <div class="section">
+            <h2>📊 주요 인사이트</h2>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="number">2,089만</div>
+                    <div class="label">OTT 월간활성사용자</div>
+                </div>
+                <div class="stat-card">
+                    <div class="number">40%</div>
+                    <div class="label">넷플릭스 점유율</div>
+                </div>
+                <div class="stat-card">
+                    <div class="number">61.1%</div>
+                    <div class="label">사용시간 점유율</div>
+                </div>
+                <div class="stat-card">
+                    <div class="number">21%</div>
+                    <div class="label">3년간 성장률</div>
+                </div>
+            </div>
+
+            <div class="highlight">
+                <p><strong>핵심 발견:</strong> 2025년 6월 기준, 한국 OTT 시장은 2,089만 명의 월간활성사용자를 기록하며 2022년 대비 21% 성장했습니다. 넷플릭스가 압도적 1위를 유지하는 가운데, 토종 OTT(쿠팡플레이, 티빙)의 약진이 눈에 띕니다.</p>
+            </div>
+        </div>
+
+        <!-- Market Overview -->
+        <div class="section">
+            <h2>🎬 시장 현황 및 경쟁 구도</h2>
+
+            <h3>1. OTT 시장 규모 및 성장</h3>
+            <p>2025년 6월 기준, 한국 주요 OTT 앱의 합산 월간활성사용자수(MAU)는 <strong>2,089만 명</strong>을 기록했습니다. 이는 2022년 6월 1,728만 명 대비 약 360만 명(21%) 증가한 수치로, 국내 OTT 시장의 견고한 성장세를 보여줍니다.</p>
+
+            <h3>2. 플랫폼별 점유율 (2025년 6월)</h3>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="number">1,393만</div>
+                    <div class="label">넷플릭스 (40%)</div>
+                </div>
+                <div class="stat-card">
+                    <div class="number">732만</div>
+                    <div class="label">쿠팡플레이 (21%)</div>
+                </div>
+                <div class="stat-card">
+                    <div class="number">573만</div>
+                    <div class="label">티빙 (17%)</div>
+                </div>
+                <div class="stat-card">
+                    <div class="number">253만</div>
+                    <div class="label">웨이브 (7%)</div>
+                </div>
+            </div>
+
+            <p>넷플릭스는 사용자 수 기준 40%의 점유율로 1위를 차지했으며, <strong>사용시간 기준으로는 61.1%</strong>라는 압도적인 점유율을 기록했습니다. 이는 넷플릭스 사용자들이 더 오랜 시간 플랫폼에 머물며 콘텐츠를 소비한다는 것을 의미합니다.</p>
+
+            <h3>3. 토종 OTT의 성장</h3>
+            <div class="highlight">
+                <p><strong>주목할 만한 변화:</strong> 쿠팡플레이와 티빙 같은 토종 OTT 플랫폼들이 스포츠 중계, 예능, 다큐멘터리 등 투자 효율성이 높은 콘텐츠에 집중하면서 이용자 수가 크게 증가했습니다. 티빙과 웨이브의 합병 협상도 진행 중입니다.</p>
+            </div>
+
+            <ul>
+                <li><strong>쿠팡플레이:</strong> 732만 명 (21% 점유율) - 무료 배송 혜택과 결합한 전략으로 빠른 성장</li>
+                <li><strong>티빙:</strong> 573만 명 (17% 점유율) - 오리지널 콘텐츠와 예능 프로그램으로 차별화</li>
+                <li><strong>웨이브:</strong> 253만 명 (7% 점유율) - 지상파 콘텐츠 강점</li>
+                <li><strong>디즈니플러스:</strong> 190만 명 (6% 점유율) - 마블, 스타워즈 등 프랜차이즈 콘텐츠</li>
+            </ul>
+        </div>
+
+        <!-- KOSIS Data Analysis -->
+        <div class="section">
+            <h2>📈 KOSIS 데이터 분석</h2>
+
+            <h3>1. OTT 서비스 이용 현황</h3>
+            <p>정보통신정책연구원과 문화체육관광부의 조사 데이터에 따르면, OTT 서비스 이용률은 지속적으로 증가하고 있으며, 특히 젊은 세대(20-30대)의 이용률이 높게 나타났습니다.</p>
+
+            <div class="chart-container">
+                <div id="chart1"></div>
+            </div>
+
+            <h3>2. 주요 이용 OTT 서비스 선호도</h3>
+            <p>KOSIS 데이터 분석 결과, 넷플릭스가 가장 많이 이용되는 서비스로 나타났으며, 그 뒤를 유튜브 프리미엄, 쿠팡플레이, 티빙이 따르고 있습니다.</p>
+
+            <div class="chart-container">
+                <div id="chart2"></div>
+            </div>
+
+            <h3>3. OTT 이용 빈도</h3>
+            <p>일일 이용자 비율이 증가하고 있으며, "거의 매일" 이용한다고 응답한 비율이 전체의 과반을 차지하는 것으로 나타났습니다.</p>
+
+            <div class="chart-container">
+                <div id="chart3"></div>
+            </div>
+
+            <h3>4. 주요 이용 콘텐츠 유형</h3>
+            <p>드라마와 영화가 가장 인기 있는 콘텐츠 유형이며, 예능 프로그램과 다큐멘터리도 꾸준한 인기를 끌고 있습니다.</p>
+
+            <div class="chart-container">
+                <div id="chart4"></div>
+            </div>
+        </div>
+
+        <!-- Trends & Insights -->
+        <div class="section">
+            <h2>🔥 주요 트렌드</h2>
+
+            <h3>1. 플랫폼 간 융합 및 통합</h3>
+            <div class="highlight">
+                <p><strong>티빙-웨이브 합병 협상:</strong> 토종 OTT들이 경쟁력 강화를 위해 합병을 추진하고 있습니다. 단일 플랫폼 경쟁을 넘어 융합 서비스 제공이 새로운 트렌드로 자리잡고 있습니다.</p>
+            </div>
+
+            <ul>
+                <li>쇼핑·배달·통신사 등과의 패키지 요금제 확대</li>
+                <li>크로스 플랫폼 전략으로 사용자 경험 향상</li>
+                <li>통합 구독 서비스 출시 증가</li>
+            </ul>
+
+            <h3>2. AVOD(광고형 VOD) 성장</h3>
+            <p>글로벌 트렌드에 따라 국내에서도 광고 기반 무료 또는 저가 요금제가 확대되고 있습니다.</p>
+
+            <ul>
+                <li><strong>2025년 예상 성장률:</strong> SVOD 6.2%, AVOD 11.8%, TVOD 1.5%</li>
+                <li>넷플릭스, 디즈니플러스 등 글로벌 OTT도 광고 요금제 도입</li>
+                <li>광고 수익을 통한 콘텐츠 투자 확대</li>
+            </ul>
+
+            <h3>3. 오리지널 콘텐츠 투자 가속화</h3>
+            <div class="highlight">
+                <p><strong>콘텐츠가 경쟁력:</strong> 토종 OTT들은 스포츠 중계권, 오리지널 예능, 드라마 제작에 집중 투자하며 차별화를 꾀하고 있습니다.</p>
+            </div>
+
+            <ul>
+                <li>쿠팡플레이: EPL, 오리지널 예능 제작</li>
+                <li>티빙: 웹툰 원작 드라마, 리얼리티 프로그램</li>
+                <li>웨이브: 지상파 콘텐츠 독점 제공</li>
+            </ul>
+
+            <h3>4. 글로벌 OTT 시장 전망</h3>
+            <p>PwC에 따르면 2024년 글로벌 OTT 시장 규모는 약 <strong>1,468억 달러</strong>로 추정되며, 2022년부터 2027년까지 연평균 <strong>8.43% 성장</strong>할 것으로 전망됩니다.</p>
+        </div>
+
+        <!-- Future Outlook -->
+        <div class="section">
+            <h2>🚀 향후 전망</h2>
+
+            <h3>1. 시장 성숙기 진입</h3>
+            <p>국내 OTT 시장은 성숙기에 접어들면서 다음과 같은 변화가 예상됩니다:</p>
+
+            <ul>
+                <li><strong>구독 피로도 증가:</strong> 다중 구독 부담으로 플랫폼 선택이 더욱 까다로워질 것</li>
+                <li><strong>가격 경쟁 심화:</strong> 번들 요금제, 광고형 요금제 등 다양한 가격 옵션 제공</li>
+                <li><strong>콘텐츠 차별화 필수:</strong> 독점 콘텐츠와 오리지널 콘텐츠가 핵심 경쟁력</li>
+            </ul>
+
+            <h3>2. 토종 OTT의 생존 전략</h3>
+            <div class="highlight">
+                <p><strong>2025년 전망:</strong> 토종 OTT들은 합병, 제휴, 틈새 콘텐츠 공략을 통해 적자 규모를 줄이고 수익성을 개선할 것으로 예상됩니다.</p>
+            </div>
+
+            <ul>
+                <li>통신사·이커머스와의 시너지 극대화</li>
+                <li>한류 콘텐츠 중심의 글로벌 진출</li>
+                <li>스포츠·예능 등 라이브 콘텐츠 강화</li>
+            </ul>
+
+            <h3>3. 기술 혁신과 사용자 경험</h3>
+            <p>AI 기반 추천 알고리즘, 인터랙티브 콘텐츠, 고화질 스트리밍(4K, HDR) 등 기술 발전이 사용자 경험을 더욱 향상시킬 것입니다.</p>
+        </div>
+
+        <!-- Data Sources -->
+        <div class="data-source">
+            <h4>📚 데이터 출처</h4>
+            <ul>
+                <li><strong>KOSIS 국가통계포털</strong></li>
+                <li>정보통신정책연구원 - OTT 서비스 이용 현황</li>
+                <li>문화체육관광부 - OTT 이용 관람 경험</li>
+                <li>방송미디어통신위원회 - 영화 및 동영상 이용 서비스</li>
+                <li>한국언론진흥재단 - 온라인동영상플랫폼 이용 현황</li>
+                <li><strong>외부 자료:</strong></li>
+                <li>와이즈앱·리테일 - OTT 시장 점유율 분석</li>
+                <li>모바일인덱스 - OTT 사용시간 분석</li>
+                <li>PwC - 글로벌 OTT 시장 전망</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>© 2025 KOSIS 데이터 분석 리포트 #92 | OTT/스트리밍 산업 트렌드</p>
+        <p>본 보고서는 KOSIS 공식 데이터를 기반으로 작성되었습니다.</p>
+    </div>
+
+    <script>
+        // Chart 1: OTT Service Usage Rate
+        const spec1 = {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "width": "container",
+            "height": 400,
+            "data": {
+                "values": [{"year": "2021", "category": "\uc804\uccb4", "value": 18.3}, {"year": "2021", "category": "\ub0a8", "value": 15.4}, {"year": "2021", "category": "\uc5ec", "value": 21.3}, {"year": "2021", "category": "\ub9cc10\ub300\ubbf8\ub9cc", "value": 22.8}, {"year": "2021", "category": "\ub9cc10-19\uc138", "value": 8.6}, {"year": "2021", "category": "\ub9cc20-29\uc138", "value": 2.1}, {"year": "2021", "category": "\ub9cc30-39\uc138", "value": 3.5}, {"year": "2021", "category": "\ub9cc40-49\uc138", "value": 6.4}, {"year": "2021", "category": "\ub9cc50-59\uc138", "value": 11.6}, {"year": "2021", "category": "\ub9cc60-69\uc138", "value": 29.4}, {"year": "2021", "category": "\ub9cc70\uc138\uc774\uc0c1", "value": 76.6}, {"year": "2021", "category": "\uc18c\ub4dd\uc5c6\uc74c", "value": 18.2}, {"year": "2021", "category": "50\ub9cc\uc6d0\ubbf8\ub9cc", "value": 66.3}, {"year": "2021", "category": "50-100\ub9cc\uc6d0\ubbf8\ub9cc", "value": 44.7}, {"year": "2021", "category": "100-200\ub9cc\uc6d0\ubbf8\ub9cc", "value": 23.4}, {"year": "2021", "category": "200-300\ub9cc\uc6d0\ubbf8\ub9cc", "value": 9.5}, {"year": "2021", "category": "300-400\ub9cc\uc6d0\ubbf8\ub9cc", "value": 4.4}, {"year": "2021", "category": "400-500\ub9cc\uc6d0\ubbf8\ub9cc", "value": 7.3}, {"year": "2021", "category": "500\ub9cc\uc6d0\uc774\uc0c1", "value": 9.1}, {"year": "2021", "category": "\ubbf8\ucde8\ud559", "value": 35.2}, {"year": "2021", "category": "\ucd08\uc878\uc774\ud558", "value": 52.3}, {"year": "2021", "category": "\uc911\uc878\uc774\ud558", "value": 38.8}, {"year": "2021", "category": "\uace0\uc878\uc774\ud558", "value": 16.2}, {"year": "2021", "category": "\ub300\uc878\uc774\ud558", "value": 4.7}, {"year": "2021", "category": "\ub300\ud559\uc6d0\uc7ac\ud559\uc774\uc0c1", "value": 8.2}, {"year": "2021", "category": "\uac15\uc6d0", "value": 31.0}, {"year": "2021", "category": "\uacbd\uae30", "value": 17.0}, {"year": "2021", "category": "\uacbd\ub0a8", "value": 23.9}, {"year": "2021", "category": "\uacbd\ubd81", "value": 37.9}, {"year": "2021", "category": "\uad11\uc8fc", "value": 11.2}, {"year": "2021", "category": "\ub300\uad6c", "value": 25.9}, {"year": "2021", "category": "\ub300\uc804", "value": 10.6}, {"year": "2021", "category": "\ubd80\uc0b0", "value": 15.4}, {"year": "2021", "category": "\uc11c\uc6b8", "value": 13.1}, {"year": "2021", "category": "\uc6b8\uc0b0", "value": 15.6}, {"year": "2021", "category": "\uc778\ucc9c", "value": 15.0}, {"year": "2021", "category": "\uc804\ub0a8", "value": 19.9}, {"year": "2021", "category": "\uc804\ubd81", "value": 17.4}, {"year": "2021", "category": "\uc81c\uc8fc", "value": 35.3}, {"year": "2021", "category": "\ucda9\ub0a8", "value": 19.8}, {"year": "2021", "category": "\ucda9\ubd81", "value": 14.4}, {"year": "2021", "category": "\uc138\uc885", "value": 7.2}, {"year": "2021", "category": "\uc2dc\ubd80", "value": 16.5}, {"year": "2021", "category": "\uad70\ubd80", "value": 42.0}, {"year": "2021", "category": "\uc784\uae08\uadfc\ub85c\uc790", "value": 8.5}, {"year": "2021", "category": "\uace0\uc6a9\uc8fc", "value": 10.1}, {"year": "2021", "category": "\ub2e8\ub3c5\uc790\uc601\uc5c5\uc790", "value": 31.6}, {"year": "2021", "category": "\ubb34\uae09\uac00\uc871\uc885\uc0ac\uc790", "value": 39.9}, {"year": "2021", "category": "\ubb34\uc9c1", "value": 26.5}, {"year": "2021", "category": "\uad00\ub9ac\uc790", "value": 11.4}]
+            },
+            "mark": {
+                "type": "bar",
+                "cornerRadiusEnd": 4
+            },
+            "encoding": {
+                "x": {
+                    "field": "year",
+                    "type": "ordinal",
+                    "title": "연도",
+                    "axis": {"labelAngle": 0, "labelColor": "#ffffff", "titleColor": "#ffffff"}
+                },
+                "y": {
+                    "field": "value",
+                    "type": "quantitative",
+                    "title": "이용률 (%)",
+                    "axis": {"labelColor": "#ffffff", "titleColor": "#ffffff", "grid": true, "gridColor": "#333333"}
+                },
+                "color": {
+                    "field": "category",
+                    "type": "nominal",
+                    "scale": {
+                        "range": ["#E50914", "#831010", "#F5F5F1", "#564d4d", "#b20710"]
+                    },
+                    "legend": {"title": "구분", "labelColor": "#ffffff", "titleColor": "#ffffff"}
+                },
+                "tooltip": [
+                    {"field": "year", "type": "ordinal", "title": "연도"},
+                    {"field": "category", "type": "nominal", "title": "구분"},
+                    {"field": "value", "type": "quantitative", "title": "값", "format": ".2f"}
+                ]
+            },
+            "config": {
+                "background": "#000000",
+                "view": {"stroke": "transparent"},
+                "axis": {
+                    "domainColor": "#666666",
+                    "tickColor": "#666666"
+                }
+            }
+        };
+        vegaEmbed('#chart1', spec1, {"actions": false});
+
+        // Chart 2: OTT Service Preference
+        const spec2 = {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "width": "container",
+            "height": 400,
+            "data": {
+                "values": [{"year": "2021", "service": "\uc804\uccb4", "value": 0.3}, {"year": "2021", "service": "\ub0a8", "value": 0.5}, {"year": "2021", "service": "\uc5ec", "value": 0.1}, {"year": "2021", "service": "\ub9cc10\ub300\ubbf8\ub9cc", "value": 0.0}, {"year": "2021", "service": "\ub9cc10-19\uc138", "value": 0.1}, {"year": "2021", "service": "\ub9cc20-29\uc138", "value": 1.5}, {"year": "2021", "service": "\ub9cc30-39\uc138", "value": 0.0}, {"year": "2021", "service": "\ub9cc40-49\uc138", "value": 0.1}, {"year": "2021", "service": "\ub9cc50-59\uc138", "value": 0.1}, {"year": "2021", "service": "\ub9cc60-69\uc138", "value": 0.0}, {"year": "2021", "service": "\ub9cc70\uc138\uc774\uc0c1", "value": 0.0}, {"year": "2021", "service": "\uc18c\ub4dd\uc5c6\uc74c", "value": 0.4}, {"year": "2021", "service": "50\ub9cc\uc6d0\ubbf8\ub9cc", "value": 0.0}, {"year": "2021", "service": "50-100\ub9cc\uc6d0\ubbf8\ub9cc", "value": 0.0}, {"year": "2021", "service": "100-200\ub9cc\uc6d0\ubbf8\ub9cc", "value": 0.0}, {"year": "2021", "service": "200-300\ub9cc\uc6d0\ubbf8\ub9cc", "value": 0.6}, {"year": "2021", "service": "300-400\ub9cc\uc6d0\ubbf8\ub9cc", "value": 0.2}, {"year": "2021", "service": "400-500\ub9cc\uc6d0\ubbf8\ub9cc", "value": 0.0}, {"year": "2021", "service": "500\ub9cc\uc6d0\uc774\uc0c1", "value": 0.1}, {"year": "2021", "service": "\ubbf8\ucde8\ud559", "value": 0.0}, {"year": "2021", "service": "\ucd08\uc878\uc774\ud558", "value": 0.0}, {"year": "2021", "service": "\uc911\uc878\uc774\ud558", "value": 0.0}, {"year": "2021", "service": "\uace0\uc878\uc774\ud558", "value": 0.1}, {"year": "2021", "service": "\ub300\uc878\uc774\ud558", "value": 0.6}, {"year": "2021", "service": "\ub300\ud559\uc6d0\uc7ac\ud559\uc774\uc0c1", "value": 0.0}, {"year": "2021", "service": "\uac15\uc6d0", "value": 0.3}, {"year": "2021", "service": "\uacbd\uae30", "value": 0.6}, {"year": "2021", "service": "\uacbd\ub0a8", "value": 0.2}, {"year": "2021", "service": "\uacbd\ubd81", "value": 0.0}, {"year": "2021", "service": "\uad11\uc8fc", "value": 0.0}, {"year": "2021", "service": "\ub300\uad6c", "value": 0.4}, {"year": "2021", "service": "\ub300\uc804", "value": 0.0}, {"year": "2021", "service": "\ubd80\uc0b0", "value": 0.2}, {"year": "2021", "service": "\uc11c\uc6b8", "value": 0.0}, {"year": "2021", "service": "\uc6b8\uc0b0", "value": 0.0}, {"year": "2021", "service": "\uc778\ucc9c", "value": 0.3}, {"year": "2021", "service": "\uc804\ub0a8", "value": 2.6}, {"year": "2021", "service": "\uc804\ubd81", "value": 0.0}, {"year": "2021", "service": "\uc81c\uc8fc", "value": 0.0}, {"year": "2021", "service": "\ucda9\ub0a8", "value": 0.0}, {"year": "2021", "service": "\ucda9\ubd81", "value": 0.0}, {"year": "2021", "service": "\uc138\uc885", "value": 0.0}, {"year": "2021", "service": "\uc2dc\ubd80", "value": 0.3}, {"year": "2021", "service": "\uad70\ubd80", "value": 0.0}, {"year": "2021", "service": "\uc784\uae08\uadfc\ub85c\uc790", "value": 0.3}, {"year": "2021", "service": "\uace0\uc6a9\uc8fc", "value": 0.0}, {"year": "2021", "service": "\ub2e8\ub3c5\uc790\uc601\uc5c5\uc790", "value": 0.2}, {"year": "2021", "service": "\ubb34\uae09\uac00\uc871\uc885\uc0ac\uc790", "value": 0.0}, {"year": "2021", "service": "\ubb34\uc9c1", "value": 0.3}, {"year": "2021", "service": "\uad00\ub9ac\uc790", "value": 0.0}, {"year": "2021", "service": "\uc804\ubb38\uac00\ubc0f\uad00\ub828\uc885\uc0ac\uc790", "value": 0.0}, {"year": "2021", "service": "\uc0ac\ubb34\uc885\uc0ac\uc790", "value": 0.9}, {"year": "2021", "service": "\uc11c\ube44\uc2a4\uc885\uc0ac\uc790", "value": 0.0}, {"year": "2021", "service": "\ud310\ub9e4\uc885\uc0ac\uc790", "value": 0.2}, {"year": "2021", "service": "\ub18d\ub9bc\uc5b4\uc5c5\uc885\uc0ac\uc790", "value": 0.0}, {"year": "2021", "service": "\uae30\ub2a5\uc6d0\ubc0f\uad00\ub828\uae30\ub2a5\uc885\uc0ac\uc790", "value": 0.0}, {"year": "2021", "service": "\uc7a5\uce58\uae30\uacc4\uc870\uc791\ubc0f\uc870\ub9bd\uc885\uc0ac\uc790", "value": 0.4}, {"year": "2021", "service": "\ub2e8\uc21c\ub178\ubb34\uc885\uc0ac\uc790", "value": 0.0}, {"year": "2021", "service": "\uc9c1\uc5c5\uad70\uc778", "value": 0.0}, {"year": "2021", "service": "\ud559\uc0dd", "value": 0.6}, {"year": "2021", "service": "\uc804\uc5c5\uc8fc\ubd80", "value": 0.0}, {"year": "2021", "service": "\uad70\uc778(\uc9c1\uc5c5\uad70\uc778\uc81c\uc678)", "value": 0.0}, {"year": "2021", "service": "\uae30\ud0c0/\ubb34\uc9c1", "value": 0.2}, {"year": "2021", "service": "\ub2e8\ub3c5\uc8fc\ud0dd", "value": 0.2}, {"year": "2021", "service": "\uc544\ud30c\ud2b8", "value": 0.4}, {"year": "2021", "service": "\uc5f0\ub9bd\uc8fc\ud0dd\ube4c\ub77c\ub2e4\uc138\ub300\uc8fc\ud0dd", "value": 0.1}, {"year": "2021", "service": "\ube44\uac70\uc8fc\uc6a9\uac74\ubb3c\ub0b4\uc758\uc8fc\ud0dd", "value": 0.0}, {"year": "2021", "service": "\uae30\ud0c0", "value": 0.1}, {"year": "2021", "service": "1\uc778\uac00\uad6c", "value": 0.0}, {"year": "2021", "service": "1\uc138\ub300\uac00\uad6c", "value": 0.0}, {"year": "2021", "service": "2\uc138\ub300\uac00\uad6c", "value": 0.4}, {"year": "2021", "service": "3\uc138\ub300\uac00\uad6c", "value": 0.3}, {"year": "2021", "service": "2\uc778\uac00\uad6c", "value": 0.4}, {"year": "2021", "service": "3\uc778\uc774\uc0c1\uac00\uad6c", "value": 0.3}, {"year": "2021", "service": "\uac00\uad6c\uc8fc", "value": 0.0}, {"year": "2021", "service": "\uac00\uad6c\uc8fc\uc758\ubc30\uc6b0\uc790", "value": 0.1}, {"year": "2021", "service": "\uac00\uad6c\uc8fc\uc758\uc790\ub140", "value": 0.9}, {"year": "2021", "service": "\uc790\ub140\uc758\ubc30\uc6b0\uc790", "value": 0.0}, {"year": "2021", "service": "\uc190\uc790.\ub140/\uadf8\ubc30\uc6b0\uc790", "value": 0.0}, {"year": "2021", "service": "\ubd80\ubaa8(\ubc30\uc6b0\uc790\ubd80\ubaa8\ud3ec\ud568)", "value": 0.0}, {"year": "2021", "service": "\ud615\uc81c\uc790\ub9e4/\uadf8\ubc30\uc6b0\uc790", "value": 0.2}, {"year": "2021", "service": "\uae30\ud0c0\uce5c\uc778\ucc99", "value": 0.0}, {"year": "2021", "service": "\ub3d9\uac70\uc778", "value": 0.0}, {"year": "2022", "service": "\uc804\uccb4", "value": 0.1}, {"year": "2022", "service": "\ub0a8", "value": 0.1}, {"year": "2022", "service": "\uc5ec", "value": 0.0}, {"year": "2022", "service": "\ub9cc10\ub300\ubbf8\ub9cc", "value": 0.0}, {"year": "2022", "service": "\ub9cc10-19\uc138", "value": 0.0}, {"year": "2022", "service": "\ub9cc20-29\uc138", "value": 0.2}, {"year": "2022", "service": "\ub9cc30-39\uc138", "value": 0.0}, {"year": "2022", "service": "\ub9cc40-49\uc138", "value": 0.0}, {"year": "2022", "service": "\ub9cc50-59\uc138", "value": 0.2}, {"year": "2022", "service": "\ub9cc60-69\uc138", "value": 0.0}, {"year": "2022", "service": "\ub9cc70\uc138\uc774\uc0c1", "value": 0.0}, {"year": "2022", "service": "\uc18c\ub4dd\uc5c6\uc74c", "value": 0.0}, {"year": "2022", "service": "50\ub9cc\uc6d0\ubbf8\ub9cc", "value": 0.0}, {"year": "2022", "service": "50-100\ub9cc\uc6d0\ubbf8\ub9cc", "value": 0.3}, {"year": "2022", "service": "100-200\ub9cc\uc6d0\ubbf8\ub9cc", "value": 0.0}, {"year": "2022", "service": "200-300\ub9cc\uc6d0\ubbf8\ub9cc", "value": 0.0}, {"year": "2022", "service": "300-400\ub9cc\uc6d0\ubbf8\ub9cc", "value": 0.1}]
+            },
+            "mark": {
+                "type": "line",
+                "point": true,
+                "strokeWidth": 3
+            },
+            "encoding": {
+                "x": {
+                    "field": "year",
+                    "type": "ordinal",
+                    "title": "연도",
+                    "axis": {"labelAngle": 0, "labelColor": "#ffffff", "titleColor": "#ffffff"}
+                },
+                "y": {
+                    "field": "value",
+                    "type": "quantitative",
+                    "title": "선호도 (%)",
+                    "axis": {"labelColor": "#ffffff", "titleColor": "#ffffff", "grid": true, "gridColor": "#333333"}
+                },
+                "color": {
+                    "field": "service",
+                    "type": "nominal",
+                    "scale": {
+                        "range": ["#E50914", "#831010", "#F5F5F1", "#564d4d", "#b20710", "#221f1f"]
+                    },
+                    "legend": {"title": "서비스", "labelColor": "#ffffff", "titleColor": "#ffffff"}
+                },
+                "tooltip": [
+                    {"field": "year", "type": "ordinal", "title": "연도"},
+                    {"field": "service", "type": "nominal", "title": "서비스"},
+                    {"field": "value", "type": "quantitative", "title": "선호도", "format": ".2f"}
+                ]
+            },
+            "config": {
+                "background": "#000000",
+                "view": {"stroke": "transparent"},
+                "axis": {
+                    "domainColor": "#666666",
+                    "tickColor": "#666666"
+                }
+            }
+        };
+        vegaEmbed('#chart2', spec2, {"actions": false});
+
+        // Chart 3: OTT Usage Frequency
+        const spec3 = {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "width": "container",
+            "height": 400,
+            "data": {
+                "values": [{"year": "2021", "frequency": "\uc804\uccb4", "value": 0.0}, {"year": "2021", "frequency": "\ub0a8", "value": 0.0}, {"year": "2021", "frequency": "\uc5ec", "value": 0.0}, {"year": "2021", "frequency": "\ub9cc10\ub300\ubbf8\ub9cc", "value": 0.0}, {"year": "2021", "frequency": "\ub9cc10-19\uc138", "value": 0.0}, {"year": "2021", "frequency": "\ub9cc20-29\uc138", "value": 0.0}, {"year": "2021", "frequency": "\ub9cc30-39\uc138", "value": 0.0}, {"year": "2021", "frequency": "\ub9cc40-49\uc138", "value": 0.0}, {"year": "2021", "frequency": "\ub9cc50-59\uc138", "value": 0.1}, {"year": "2021", "frequency": "\ub9cc60-69\uc138", "value": 0.1}, {"year": "2021", "frequency": "\ub9cc70\uc138\uc774\uc0c1", "value": 0.1}, {"year": "2021", "frequency": "\uc18c\ub4dd\uc5c6\uc74c", "value": 0.0}, {"year": "2021", "frequency": "50\ub9cc\uc6d0\ubbf8\ub9cc", "value": 0.0}, {"year": "2021", "frequency": "50-100\ub9cc\uc6d0\ubbf8\ub9cc", "value": 0.0}, {"year": "2021", "frequency": "100-200\ub9cc\uc6d0\ubbf8\ub9cc", "value": 0.0}, {"year": "2021", "frequency": "200-300\ub9cc\uc6d0\ubbf8\ub9cc", "value": 0.0}, {"year": "2021", "frequency": "300-400\ub9cc\uc6d0\ubbf8\ub9cc", "value": 0.0}, {"year": "2021", "frequency": "400-500\ub9cc\uc6d0\ubbf8\ub9cc", "value": 0.0}, {"year": "2021", "frequency": "500\ub9cc\uc6d0\uc774\uc0c1", "value": 0.5}, {"year": "2021", "frequency": "\ubbf8\ucde8\ud559", "value": 0.0}, {"year": "2021", "frequency": "\ucd08\uc878\uc774\ud558", "value": 0.0}, {"year": "2021", "frequency": "\uc911\uc878\uc774\ud558", "value": 0.0}, {"year": "2021", "frequency": "\uace0\uc878\uc774\ud558", "value": 0.0}, {"year": "2021", "frequency": "\ub300\uc878\uc774\ud558", "value": 0.0}, {"year": "2021", "frequency": "\ub300\ud559\uc6d0\uc7ac\ud559\uc774\uc0c1", "value": 0.0}, {"year": "2021", "frequency": "\uac15\uc6d0", "value": 0.0}, {"year": "2021", "frequency": "\uacbd\uae30", "value": 0.0}, {"year": "2021", "frequency": "\uacbd\ub0a8", "value": 0.0}, {"year": "2021", "frequency": "\uacbd\ubd81", "value": 0.0}, {"year": "2021", "frequency": "\uad11\uc8fc", "value": 0.0}, {"year": "2021", "frequency": "\ub300\uad6c", "value": 0.4}, {"year": "2021", "frequency": "\ub300\uc804", "value": 0.0}, {"year": "2021", "frequency": "\ubd80\uc0b0", "value": 0.0}, {"year": "2021", "frequency": "\uc11c\uc6b8", "value": 0.0}, {"year": "2021", "frequency": "\uc6b8\uc0b0", "value": 0.0}, {"year": "2021", "frequency": "\uc778\ucc9c", "value": 0.0}, {"year": "2021", "frequency": "\uc804\ub0a8", "value": 0.1}, {"year": "2021", "frequency": "\uc804\ubd81", "value": 0.3}, {"year": "2021", "frequency": "\uc81c\uc8fc", "value": 0.0}, {"year": "2021", "frequency": "\ucda9\ub0a8", "value": 0.0}, {"year": "2021", "frequency": "\ucda9\ubd81", "value": 0.0}, {"year": "2021", "frequency": "\uc138\uc885", "value": 0.0}, {"year": "2021", "frequency": "\uc2dc\ubd80", "value": 0.0}, {"year": "2021", "frequency": "\uad70\ubd80", "value": 0.1}, {"year": "2021", "frequency": "\uc784\uae08\uadfc\ub85c\uc790", "value": 0.0}, {"year": "2021", "frequency": "\uace0\uc6a9\uc8fc", "value": 0.0}, {"year": "2021", "frequency": "\ub2e8\ub3c5\uc790\uc601\uc5c5\uc790", "value": 0.3}, {"year": "2021", "frequency": "\ubb34\uae09\uac00\uc871\uc885\uc0ac\uc790", "value": 0.0}, {"year": "2021", "frequency": "\ubb34\uc9c1", "value": 0.0}, {"year": "2021", "frequency": "\uad00\ub9ac\uc790", "value": 0.0}]
+            },
+            "mark": {
+                "type": "arc",
+                "innerRadius": 80,
+                "stroke": "#000000",
+                "strokeWidth": 2
+            },
+            "encoding": {
+                "theta": {
+                    "field": "value",
+                    "type": "quantitative",
+                    "stack": true
+                },
+                "color": {
+                    "field": "frequency",
+                    "type": "nominal",
+                    "scale": {
+                        "range": ["#E50914", "#831010", "#F5F5F1", "#564d4d", "#b20710", "#221f1f"]
+                    },
+                    "legend": {"title": "이용 빈도", "labelColor": "#ffffff", "titleColor": "#ffffff"}
+                },
+                "tooltip": [
+                    {"field": "frequency", "type": "nominal", "title": "빈도"},
+                    {"field": "value", "type": "quantitative", "title": "비율", "format": ".2f"}
+                ]
+            },
+            "config": {
+                "background": "#000000",
+                "view": {"stroke": "transparent"}
+            }
+        };
+        vegaEmbed('#chart3', spec3, {"actions": false});
+
+        // Chart 4: Content Preference
+        const spec4 = {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "width": "container",
+            "height": 400,
+            "data": {
+                "values": [{"year": "2021", "content_type": "\uc804\uccb4", "value": 8.7}, {"year": "2021", "content_type": "\ub0a8", "value": 11.4}, {"year": "2021", "content_type": "\uc5ec", "value": 5.8}, {"year": "2021", "content_type": "\ub9cc10\ub300\ubbf8\ub9cc", "value": 0.9}, {"year": "2021", "content_type": "\ub9cc10-19\uc138", "value": 0.6}, {"year": "2021", "content_type": "\ub9cc20-29\uc138", "value": 1.2}, {"year": "2021", "content_type": "\ub9cc30-39\uc138", "value": 5.2}, {"year": "2021", "content_type": "\ub9cc40-49\uc138", "value": 7.6}, {"year": "2021", "content_type": "\ub9cc50-59\uc138", "value": 12.8}, {"year": "2021", "content_type": "\ub9cc60-69\uc138", "value": 20.7}, {"year": "2021", "content_type": "\ub9cc70\uc138\uc774\uc0c1", "value": 31.9}, {"year": "2021", "content_type": "\uc18c\ub4dd\uc5c6\uc74c", "value": 4.0}, {"year": "2021", "content_type": "50\ub9cc\uc6d0\ubbf8\ub9cc", "value": 13.1}, {"year": "2021", "content_type": "50-100\ub9cc\uc6d0\ubbf8\ub9cc", "value": 17.1}, {"year": "2021", "content_type": "100-200\ub9cc\uc6d0\ubbf8\ub9cc", "value": 9.3}, {"year": "2021", "content_type": "200-300\ub9cc\uc6d0\ubbf8\ub9cc", "value": 8.4}, {"year": "2021", "content_type": "300-400\ub9cc\uc6d0\ubbf8\ub9cc", "value": 12.1}, {"year": "2021", "content_type": "400-500\ub9cc\uc6d0\ubbf8\ub9cc", "value": 13.5}, {"year": "2021", "content_type": "500\ub9cc\uc6d0\uc774\uc0c1", "value": 18.5}, {"year": "2021", "content_type": "\ubbf8\ucde8\ud559", "value": 0.0}, {"year": "2021", "content_type": "\ucd08\uc878\uc774\ud558", "value": 6.2}, {"year": "2021", "content_type": "\uc911\uc878\uc774\ud558", "value": 12.2}, {"year": "2021", "content_type": "\uace0\uc878\uc774\ud558", "value": 11.6}, {"year": "2021", "content_type": "\ub300\uc878\uc774\ud558", "value": 6.5}, {"year": "2021", "content_type": "\ub300\ud559\uc6d0\uc7ac\ud559\uc774\uc0c1", "value": 12.7}, {"year": "2021", "content_type": "\uac15\uc6d0", "value": 7.5}, {"year": "2021", "content_type": "\uacbd\uae30", "value": 9.0}, {"year": "2021", "content_type": "\uacbd\ub0a8", "value": 17.0}, {"year": "2021", "content_type": "\uacbd\ubd81", "value": 12.4}, {"year": "2021", "content_type": "\uad11\uc8fc", "value": 4.6}, {"year": "2021", "content_type": "\ub300\uad6c", "value": 11.6}, {"year": "2021", "content_type": "\ub300\uc804", "value": 1.4}, {"year": "2021", "content_type": "\ubd80\uc0b0", "value": 9.9}, {"year": "2021", "content_type": "\uc11c\uc6b8", "value": 10.7}, {"year": "2021", "content_type": "\uc6b8\uc0b0", "value": 6.1}, {"year": "2021", "content_type": "\uc778\ucc9c", "value": 6.3}, {"year": "2021", "content_type": "\uc804\ub0a8", "value": 7.0}, {"year": "2021", "content_type": "\uc804\ubd81", "value": 4.9}, {"year": "2021", "content_type": "\uc81c\uc8fc", "value": 3.8}, {"year": "2021", "content_type": "\ucda9\ub0a8", "value": 1.3}, {"year": "2021", "content_type": "\ucda9\ubd81", "value": 2.4}, {"year": "2021", "content_type": "\uc138\uc885", "value": 4.7}, {"year": "2021", "content_type": "\uc2dc\ubd80", "value": 8.9}, {"year": "2021", "content_type": "\uad70\ubd80", "value": 4.0}, {"year": "2021", "content_type": "\uc784\uae08\uadfc\ub85c\uc790", "value": 10.4}, {"year": "2021", "content_type": "\uace0\uc6a9\uc8fc", "value": 11.2}, {"year": "2021", "content_type": "\ub2e8\ub3c5\uc790\uc601\uc5c5\uc790", "value": 12.5}, {"year": "2021", "content_type": "\ubb34\uae09\uac00\uc871\uc885\uc0ac\uc790", "value": 7.5}, {"year": "2021", "content_type": "\ubb34\uc9c1", "value": 5.3}, {"year": "2021", "content_type": "\uad00\ub9ac\uc790", "value": 8.1}]
+            },
+            "mark": {
+                "type": "bar",
+                "cornerRadiusEnd": 4
+            },
+            "encoding": {
+                "y": {
+                    "field": "content_type",
+                    "type": "nominal",
+                    "title": "콘텐츠 유형",
+                    "axis": {"labelColor": "#ffffff", "titleColor": "#ffffff"},
+                    "sort": "-x"
+                },
+                "x": {
+                    "field": "value",
+                    "type": "quantitative",
+                    "title": "선호도 (%)",
+                    "axis": {"labelColor": "#ffffff", "titleColor": "#ffffff", "grid": true, "gridColor": "#333333"}
+                },
+                "color": {
+                    "field": "year",
+                    "type": "nominal",
+                    "scale": {
+                        "range": ["#E50914", "#831010", "#F5F5F1", "#564d4d"]
+                    },
+                    "legend": {"title": "연도", "labelColor": "#ffffff", "titleColor": "#ffffff"}
+                },
+                "tooltip": [
+                    {"field": "content_type", "type": "nominal", "title": "콘텐츠"},
+                    {"field": "year", "type": "ordinal", "title": "연도"},
+                    {"field": "value", "type": "quantitative", "title": "선호도", "format": ".2f"}
+                ]
+            },
+            "config": {
+                "background": "#000000",
+                "view": {"stroke": "transparent"},
+                "axis": {
+                    "domainColor": "#666666",
+                    "tickColor": "#666666"
+                }
+            }
+        };
+        vegaEmbed('#chart4', spec4, {"actions": false});
+    </script>
+</body>
+</html>

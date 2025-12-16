@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report #021: 가계부채 트렌드 분석</title>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+        .header h1 {
+            margin: 0 0 10px 0;
+            font-size: 2.5em;
+        }
+        .header .meta {
+            opacity: 0.9;
+            font-size: 0.95em;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        .stat-card {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .stat-card .label {
+            font-size: 0.9em;
+            color: #666;
+            margin-bottom: 5px;
+        }
+        .stat-card .value {
+            font-size: 2em;
+            font-weight: bold;
+            color: #333;
+        }
+        .stat-card .change {
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+        .change.positive {
+            color: #e74c3c;
+        }
+        .change.negative {
+            color: #27ae60;
+        }
+        .section {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .section h2 {
+            margin-top: 0;
+            color: #333;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+        .section h3 {
+            color: #555;
+            margin-top: 30px;
+        }
+        .chart {
+            margin: 20px 0;
+        }
+        .news-section {
+            background: #fff9e6;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border-left: 4px solid #f39c12;
+        }
+        .news-section h3 {
+            margin-top: 0;
+            color: #d68910;
+        }
+        .news-item {
+            margin-bottom: 15px;
+            padding-left: 20px;
+        }
+        .data-sources {
+            background: #e8f4f8;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+        .data-sources h3 {
+            margin-top: 0;
+            color: #2980b9;
+        }
+        .data-sources ul {
+            margin: 10px 0;
+        }
+        .data-sources li {
+            margin: 5px 0;
+        }
+        .keywords {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin: 15px 0;
+        }
+        .keyword {
+            background: rgba(255,255,255,0.2);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Report #021: 가계부채 트렌드 분석</h1>
+        <div class="meta">
+            <div>생성일: 2025년 12월 15일</div>
+            <div class="keywords">
+                <span class="keyword">가계부채</span>
+                <span class="keyword">대출</span>
+                <span class="keyword">주택담보대출</span>
+                <span class="keyword">금리</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="stats-grid">
+        <div class="stat-card">
+            <div class="label">최근 가계신용 (2024년)</div>
+            <div class="value">1925.9조원</div>
+            <div class="change positive">
+                전년 대비 2.1% 증가
+            </div>
+        </div>
+        <div class="stat-card">
+            <div class="label">2015-2024 증가율</div>
+            <div class="value">60.1%</div>
+            <div class="change positive">
+                10년간 723조원 증가
+            </div>
+        </div>
+        <div class="stat-card">
+            <div class="label">데이터 출처</div>
+            <div class="value" style="font-size: 1.3em;">KOSIS</div>
+            <div class="change" style="color: #666;">
+                한국은행, 국가데이터처
+            </div>
+        </div>
+    </div>
+
+    <div class="news-section">
+        <h3>최신 동향 (2025년)</h3>
+        <div class="news-item">
+            <strong>가계신용 1,968조원 역대 최대</strong><br>
+            2025년 3분기 말 기준 가계신용 잔액은 1,968.3조원으로 2분기 대비 14.9조원 증가하여 역대 최고치를 기록했습니다.
+            다만 증가폭은 2분기(25.1조원)보다 약 10조원(40%) 감소하며 확연한 둔화세를 보였습니다.
+        </div>
+        <div class="news-item">
+            <strong>6·27 대책 효과 가시화</strong><br>
+            주택담보대출 잔액은 1,159.6조원으로 11.6조원 증가했으나, 2분기 증가액(14.4조원) 대비 속도가 완만해졌습니다.
+            신용대출 한도가 연 소득 이내로 축소되면서 신용대출이 감소세로 전환되었습니다.
+        </div>
+        <div class="news-item">
+            <strong>GDP 대비 비율 세계 2위 수준</strong><br>
+            2024년 말 기준 한국의 GDP 대비 가계부채 비율은 91.7%로 세계 2위 수준이며,
+            OECD 평균(65%)이나 세계 평균(60.3%)을 크게 상회하고 있습니다.
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>1. 가계신용 추이 (2015-2024)</h2>
+        <p>2015년 이후 한국의 가계신용은 지속적으로 증가해왔습니다. 특히 2020년 코로나19 팬데믹 이후 급격한 증가세를 보였으며,
+        2024년에는 1,900조원을 넘어섰습니다.</p>
+        <div id="vis1" class="chart"></div>
+    </div>
+
+    <div class="section">
+        <h2>2. 가계신용 구성 비교</h2>
+        <p>가계신용은 주로 예금취급기관의 가계대출과 판매신용으로 구성됩니다.
+        아래 차트는 각 업권별 가계신용 규모의 변화를 보여줍니다.</p>
+        <div id="vis2" class="chart"></div>
+    </div>
+
+    <div class="section">
+        <h2>3. 대출 용도별 분석</h2>
+        <p>가계대출은 주택담보대출, 신용대출, 기타대출로 구분됩니다.
+        주택담보대출이 가장 큰 비중을 차지하며, 부동산 시장 변동에 따라 증감을 반복하고 있습니다.</p>
+        <div id="vis3" class="chart"></div>
+    </div>
+
+    <div class="section">
+        <h2>주요 분석 결과</h2>
+        <h3>📈 지속적인 증가 추세</h3>
+        <ul>
+            <li>2015년 1,203조원에서 2024년 약 1,900조원으로 58% 증가</li>
+            <li>연평균 약 78조원씩 증가</li>
+            <li>2020년 이후 증가세 가속화</li>
+        </ul>
+
+        <h3>🏠 주택담보대출 비중 높음</h3>
+        <ul>
+            <li>전체 가계대출의 약 60% 이상이 주택담보대출</li>
+            <li>부동산 가격 상승과 밀접한 관계</li>
+            <li>금리 인상에도 불구하고 지속적 증가</li>
+        </ul>
+
+        <h3>⚠️ 정책적 고려사항</h3>
+        <ul>
+            <li>GDP 대비 가계부채 비율 91.7% (세계 2위)</li>
+            <li>금리 인상 시 가계 부담 급증 우려</li>
+            <li>6·27 대책 등 규제로 증가세 둔화 효과</li>
+            <li>지속적인 관리와 모니터링 필요</li>
+        </ul>
+    </div>
+
+    <div class="data-sources">
+        <h3>📊 데이터 출처</h3>
+        <ul>
+            <li><strong>가계신용(업권별, 분기)</strong> - 한국은행 (DT_151Y001) - 200 레코드</li>
+            <li><strong>가계신용(용도별, 분기)</strong> - 한국은행 (DT_151Y004) - 140 레코드</li>
+            <li><strong>예금취급기관 가계대출(용도별, 월)</strong> - 한국은행 (DT_151Y005) - 80 레코드</li>
+            <li><strong>가계부채</strong> - 국가데이터처 (DT_2KAAD34) - 323 레코드</li>
+        </ul>
+        <p style="margin-top: 15px; font-size: 0.9em; color: #666;">
+            데이터 생성일: 2025-12-15T09:31:12.001564<br>
+            출처: 국가통계포털 (KOSIS) - <a href="https://kosis.kr" target="_blank">https://kosis.kr</a>
+        </p>
+    </div>
+
+    <script>
+        // Chart 1: Household Credit Trend
+        const spec1 = {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "width": 800,
+            "height": 400,
+            "data": {
+                "values": [{"year": 2015, "value": 1203099.1582, "category": "\uac00\uacc4\uc2e0\uc6a9"}, {"year": 2016, "value": 1342526.8, "category": "\uac00\uacc4\uc2e0\uc6a9"}, {"year": 2017, "value": 1450627.4306, "category": "\uac00\uacc4\uc2e0\uc6a9"}, {"year": 2018, "value": 1536712.2318, "category": "\uac00\uacc4\uc2e0\uc6a9"}, {"year": 2019, "value": 1600600.7048, "category": "\uac00\uacc4\uc2e0\uc6a9"}, {"year": 2020, "value": 1729484.6568, "category": "\uac00\uacc4\uc2e0\uc6a9"}, {"year": 2021, "value": 1862908.4344, "category": "\uac00\uacc4\uc2e0\uc6a9"}, {"year": 2022, "value": 1867553.2857, "category": "\uac00\uacc4\uc2e0\uc6a9"}, {"year": 2023, "value": 1885457.4251, "category": "\uac00\uacc4\uc2e0\uc6a9"}, {"year": 2024, "value": 1925939.3508, "category": "\uac00\uacc4\uc2e0\uc6a9"}]
+            },
+            "mark": {
+                "type": "line",
+                "point": true,
+                "strokeWidth": 3
+            },
+            "encoding": {
+                "x": {
+                    "field": "year",
+                    "type": "ordinal",
+                    "title": "연도",
+                    "axis": {"labelAngle": -45}
+                },
+                "y": {
+                    "field": "value",
+                    "type": "quantitative",
+                    "title": "가계신용 (십억원)",
+                    "scale": {"zero": false}
+                },
+                "color": {
+                    "value": "#667eea"
+                },
+                "tooltip": [
+                    {"field": "year", "type": "ordinal", "title": "연도"},
+                    {"field": "value", "type": "quantitative", "title": "가계신용 (십억원)", "format": ",.0f"}
+                ]
+            }
+        };
+
+        // Chart 2: Household Credit Breakdown
+        const spec2 = {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "width": 800,
+            "height": 400,
+            "data": {
+                "values": [{"year": 2015, "category": "\uac00\uacc4\ub300\ucd9c", "value": 1137953.1017}, {"year": 2015, "category": "\uc608\uae08\ucde8\uae09\uae30\uad00", "value": 812360.049}, {"year": 2015, "category": "\uc608\uae08\uc740\ud589", "value": 563727.783}, {"year": 2015, "category": "\uc0c1\ud638\uc800\ucd95\uc740\ud589", "value": 13693.616}, {"year": 2015, "category": "\uc2e0\uc6a9\ud611\ub3d9\uc870\ud569", "value": 30353.748}, {"year": 2015, "category": "\uc0c1\ud638\uae08\uc735", "value": 151770.776}, {"year": 2015, "category": "\uc0c8\ub9c8\uc744\uae08\uace0", "value": 51637.448}, {"year": 2015, "category": "\uc6b0\uccb4\uad6d \ub4f1", "value": 1176.678}, {"year": 2015, "category": "\uae30\ud0c0\uae08\uc735\uae30\uad00 \ub4f1", "value": 325593.0527}, {"year": 2015, "category": "\ubcf4\ud5d8\ud68c\uc0ac", "value": 98825.1433}, {"year": 2015, "category": "\uc5f0\uae08\uae30\uae08", "value": 12837.984}, {"year": 2015, "category": "\uc5ec\uc2e0\uc804\ubb38\uae30\uad00", "value": 64116.9205}, {"year": 2015, "category": "\uacf5\uc801\uae08\uc735\uae30\uad00", "value": 32937.0466}, {"year": 2015, "category": "\uae30\ud0c0\uae08\uc735\uc911\uac1c\ud68c\uc0ac", "value": 119630.72}, {"year": 2015, "category": "\uae30\ud0c0", "value": 13107.419}, {"year": 2015, "category": "\ube44\uc740\ud589\uc608\uae08\ucde8\uae09\uae30\uad00", "value": 248632.266}, {"year": 2015, "category": "\ud310\ub9e4\uc2e0\uc6a9", "value": 65146.0565}, {"year": 2015, "category": "\ud310\ub9e4\ud68c\uc0ac", "value": 1029.136}, {"year": 2016, "category": "\uac00\uacc4\ub300\ucd9c", "value": 1269808.2}, {"year": 2016, "category": "\uc608\uae08\ucde8\uae09\uae30\uad00", "value": 908675.68}, {"year": 2016, "category": "\uc608\uae08\uc740\ud589", "value": 617420.31}, {"year": 2016, "category": "\uc0c1\ud638\uc800\ucd95\uc740\ud589", "value": 18284.893}, {"year": 2016, "category": "\uc2e0\uc6a9\ud611\ub3d9\uc870\ud569", "value": 36691.94}, {"year": 2016, "category": "\uc0c1\ud638\uae08\uc735", "value": 171051.806}, {"year": 2016, "category": "\uc0c8\ub9c8\uc744\uae08\uace0", "value": 64001.723}, {"year": 2016, "category": "\uc6b0\uccb4\uad6d \ub4f1", "value": 1225.008}, {"year": 2016, "category": "\uae30\ud0c0\uae08\uc735\uae30\uad00 \ub4f1", "value": 361132.5}, {"year": 2016, "category": "\ubcf4\ud5d8\ud68c\uc0ac", "value": 108445.2}, {"year": 2016, "category": "\uc5f0\uae08\uae30\uae08", "value": 12961.1506}, {"year": 2016, "category": "\uc5ec\uc2e0\uc804\ubb38\uae30\uad00", "value": 71653.0}, {"year": 2016, "category": "\uacf5\uc801\uae08\uc735\uae30\uad00", "value": 34034.8406}, {"year": 2016, "category": "\uae30\ud0c0\uae08\uc735\uc911\uac1c\ud68c\uc0ac", "value": 137287.6}, {"year": 2016, "category": "\uae30\ud0c0", "value": 13153.8738}, {"year": 2016, "category": "\ube44\uc740\ud589\uc608\uae08\ucde8\uae09\uae30\uad00", "value": 291255.37}, {"year": 2016, "category": "\ud310\ub9e4\uc2e0\uc6a9", "value": 72718.7}, {"year": 2016, "category": "\ud310\ub9e4\ud68c\uc0ac", "value": 1065.6093}, {"year": 2017, "category": "\uac00\uacc4\ub300\ucd9c", "value": 1369837.1521}, {"year": 2017, "category": "\uc608\uae08\ucde8\uae09\uae30\uad00", "value": 974569.482}, {"year": 2017, "category": "\uc608\uae08\uc740\ud589", "value": 660677.843}, {"year": 2017, "category": "\uc0c1\ud638\uc800\ucd95\uc740\ud589", "value": 21000.196}, {"year": 2017, "category": "\uc2e0\uc6a9\ud611\ub3d9\uc870\ud569", "value": 37853.378}, {"year": 2017, "category": "\uc0c1\ud638\uae08\uc735", "value": 180353.653}, {"year": 2017, "category": "\uc0c8\ub9c8\uc744\uae08\uace0", "value": 73382.246}, {"year": 2017, "category": "\uc6b0\uccb4\uad6d \ub4f1", "value": 1302.166}, {"year": 2017, "category": "\uae30\ud0c0\uae08\uc735\uae30\uad00 \ub4f1", "value": 395267.6701}, {"year": 2017, "category": "\ubcf4\ud5d8\ud68c\uc0ac", "value": 114817.8169}, {"year": 2017, "category": "\uc5f0\uae08\uae30\uae08", "value": 13551.8163}, {"year": 2017, "category": "\uc5ec\uc2e0\uc804\ubb38\uae30\uad00", "value": 79886.024}, {"year": 2017, "category": "\uacf5\uc801\uae08\uc735\uae30\uad00", "value": 37206.9429}, {"year": 2017, "category": "\uae30\ud0c0\uae08\uc735\uc911\uac1c\ud68c\uc0ac", "value": 156898.5213}, {"year": 2017, "category": "\uae30\ud0c0", "value": 12807.2104}, {"year": 2017, "category": "\ube44\uc740\ud589\uc608\uae08\ucde8\uae09\uae30\uad00", "value": 313891.639}, {"year": 2017, "category": "\ud310\ub9e4\uc2e0\uc6a9", "value": 80790.2784}, {"year": 2017, "category": "\ud310\ub9e4\ud68c\uc0ac", "value": 904.2544}, {"year": 2018, "category": "\uac00\uacc4\ub300\ucd9c", "value": 1446628.2763}, {"year": 2018, "category": "\uc608\uae08\ucde8\uae09\uae30\uad00", "value": 1033817.425}, {"year": 2018, "category": "\uc608\uae08\uc740\ud589", "value": 713084.874}, {"year": 2018, "category": "\uc0c1\ud638\uc800\ucd95\uc740\ud589", "value": 23467.405}, {"year": 2018, "category": "\uc2e0\uc6a9\ud611\ub3d9\uc870\ud569", "value": 36423.574}, {"year": 2018, "category": "\uc0c1\ud638\uae08\uc735", "value": 187871.363}, {"year": 2018, "category": "\uc0c8\ub9c8\uc744\uae08\uace0", "value": 71436.434}, {"year": 2018, "category": "\uc6b0\uccb4\uad6d \ub4f1", "value": 1533.775}, {"year": 2018, "category": "\uae30\ud0c0\uae08\uc735\uae30\uad00 \ub4f1", "value": 412810.8513}, {"year": 2018, "category": "\ubcf4\ud5d8\ud68c\uc0ac", "value": 119995.1027}, {"year": 2018, "category": "\uc5f0\uae08\uae30\uae08", "value": 14589.307}, {"year": 2018, "category": "\uc5ec\uc2e0\uc804\ubb38\uae30\uad00", "value": 89229.2305}, {"year": 2018, "category": "\uacf5\uc801\uae08\uc735\uae30\uad00", "value": 38207.8619}, {"year": 2018, "category": "\uae30\ud0c0\uae08\uc735\uc911\uac1c\ud68c\uc0ac", "value": 163008.1231}, {"year": 2018, "category": "\uae30\ud0c0", "value": 12473.4768}, {"year": 2018, "category": "\ube44\uc740\ud589\uc608\uae08\ucde8\uae09\uae30\uad00", "value": 320732.551}, {"year": 2018, "category": "\ud310\ub9e4\uc2e0\uc6a9", "value": 90083.9555}, {"year": 2018, "category": "\ud310\ub9e4\ud68c\uc0ac", "value": 854.725}, {"year": 2019, "category": "\uac00\uacc4\ub300\ucd9c", "value": 1504881.6087}, {"year": 2019, "category": "\uc608\uae08\ucde8\uae09\uae30\uad00", "value": 1083981.985}, {"year": 2019, "category": "\uc608\uae08\uc740\ud589", "value": 767718.755}, {"year": 2019, "category": "\uc0c1\ud638\uc800\ucd95\uc740\ud589", "value": 26045.484}, {"year": 2019, "category": "\uc2e0\uc6a9\ud611\ub3d9\uc870\ud569", "value": 35661.849}, {"year": 2019, "category": "\uc0c1\ud638\uae08\uc735", "value": 188519.978}, {"year": 2019, "category": "\uc0c8\ub9c8\uc744\uae08\uace0", "value": 64637.549}, {"year": 2019, "category": "\uc6b0\uccb4\uad6d \ub4f1", "value": 1398.37}, {"year": 2019, "category": "\uae30\ud0c0\uae08\uc735\uae30\uad00 \ub4f1", "value": 420899.6237}, {"year": 2019, "category": "\ubcf4\ud5d8\ud68c\uc0ac", "value": 119032.8022}, {"year": 2019, "category": "\uc5f0\uae08\uae30\uae08", "value": 15138.5995}, {"year": 2019, "category": "\uc5ec\uc2e0\uc804\ubb38\uae30\uad00", "value": 94883.3583}, {"year": 2019, "category": "\uacf5\uc801\uae08\uc735\uae30\uad00", "value": 41576.4901}, {"year": 2019, "category": "\uae30\ud0c0\uae08\uc735\uc911\uac1c\ud68c\uc0ac", "value": 166911.4291}, {"year": 2019, "category": "\uae30\ud0c0", "value": 12078.4139}, {"year": 2019, "category": "\ube44\uc740\ud589\uc608\uae08\ucde8\uae09\uae30\uad00", "value": 316263.23}, {"year": 2019, "category": "\ud310\ub9e4\uc2e0\uc6a9", "value": 95719.0961}, {"year": 2019, "category": "\ud310\ub9e4\ud68c\uc0ac", "value": 835.7378}, {"year": 2020, "category": "\uac00\uacc4\ub300\ucd9c", "value": 1633590.6805}, {"year": 2020, "category": "\uc608\uae08\ucde8\uae09\uae30\uad00", "value": 1173695.372}, {"year": 2020, "category": "\uc608\uae08\uc740\ud589", "value": 849869.407}, {"year": 2020, "category": "\uc0c1\ud638\uc800\ucd95\uc740\ud589", "value": 31580.352}, {"year": 2020, "category": "\uc2e0\uc6a9\ud611\ub3d9\uc870\ud569", "value": 35000.803}, {"year": 2020, "category": "\uc0c1\ud638\uae08\uc735", "value": 194558.443}, {"year": 2020, "category": "\uc0c8\ub9c8\uc744\uae08\uace0", "value": 61394.335}, {"year": 2020, "category": "\uc6b0\uccb4\uad6d \ub4f1", "value": 1292.032}, {"year": 2020, "category": "\uae30\ud0c0\uae08\uc735\uae30\uad00 \ub4f1", "value": 459895.3085}, {"year": 2020, "category": "\ubcf4\ud5d8\ud68c\uc0ac", "value": 120612.8504}, {"year": 2020, "category": "\uc5f0\uae08\uae30\uae08", "value": 15555.9807}, {"year": 2020, "category": "\uc5ec\uc2e0\uc804\ubb38\uae30\uad00", "value": 95210.5383}, {"year": 2020, "category": "\uacf5\uc801\uae08\uc735\uae30\uad00", "value": 46307.5872}, {"year": 2020, "category": "\uae30\ud0c0\uae08\uc735\uc911\uac1c\ud68c\uc0ac", "value": 195076.3203}, {"year": 2020, "category": "\uae30\ud0c0", "value": 11662.9147}, {"year": 2020, "category": "\ube44\uc740\ud589\uc608\uae08\ucde8\uae09\uae30\uad00", "value": 323825.965}, {"year": 2020, "category": "\ud310\ub9e4\uc2e0\uc6a9", "value": 95893.9763}, {"year": 2020, "category": "\ud310\ub9e4\ud68c\uc0ac", "value": 683.438}, {"year": 2021, "category": "\uac00\uacc4\ub300\ucd9c", "value": 1757065.0756}, {"year": 2021, "category": "\uc608\uae08\ucde8\uae09\uae30\uad00", "value": 1261485.885}, {"year": 2021, "category": "\uc608\uae08\uc740\ud589", "value": 910104.939}, {"year": 2021, "category": "\uc0c1\ud638\uc800\ucd95\uc740\ud589", "value": 37852.378}, {"year": 2021, "category": "\uc2e0\uc6a9\ud611\ub3d9\uc870\ud569", "value": 37486.761}, {"year": 2021, "category": "\uc0c1\ud638\uae08\uc735", "value": 208284.566}, {"year": 2021, "category": "\uc0c8\ub9c8\uc744\uae08\uace0", "value": 66345.298}, {"year": 2021, "category": "\uc6b0\uccb4\uad6d \ub4f1", "value": 1411.943}, {"year": 2021, "category": "\uae30\ud0c0\uae08\uc735\uae30\uad00 \ub4f1", "value": 495579.1906}, {"year": 2021, "category": "\ubcf4\ud5d8\ud68c\uc0ac", "value": 125395.6981}, {"year": 2021, "category": "\uc5f0\uae08\uae30\uae08", "value": 17586.255}, {"year": 2021, "category": "\uc5ec\uc2e0\uc804\ubb38\uae30\uad00", "value": 104896.7798}, {"year": 2021, "category": "\uacf5\uc801\uae08\uc735\uae30\uad00", "value": 51163.2014}, {"year": 2021, "category": "\uae30\ud0c0\uae08\uc735\uc911\uac1c\ud68c\uc0ac", "value": 215048.2285}, {"year": 2021, "category": "\uae30\ud0c0", "value": 11355.603}, {"year": 2021, "category": "\ube44\uc740\ud589\uc608\uae08\ucde8\uae09\uae30\uad00", "value": 351380.946}, {"year": 2021, "category": "\ud310\ub9e4\uc2e0\uc6a9", "value": 105843.3588}, {"year": 2021, "category": "\ud310\ub9e4\ud68c\uc0ac", "value": 946.579}, {"year": 2022, "category": "\uac00\uacc4\ub300\ucd9c", "value": 1749813.4051}, {"year": 2022, "category": "\uc608\uae08\ucde8\uae09\uae30\uad00", "value": 1248001.125}, {"year": 2022, "category": "\uc608\uae08\uc740\ud589", "value": 902574.789}, {"year": 2022, "category": "\uc0c1\ud638\uc800\ucd95\uc740\ud589", "value": 40204.572}, {"year": 2022, "category": "\uc2e0\uc6a9\ud611\ub3d9\uc870\ud569", "value": 37916.882}, {"year": 2022, "category": "\uc0c1\ud638\uae08\uc735", "value": 198045.677}, {"year": 2022, "category": "\uc0c8\ub9c8\uc744\uae08\uace0", "value": 67505.542}, {"year": 2022, "category": "\uc6b0\uccb4\uad6d \ub4f1", "value": 1753.663}, {"year": 2022, "category": "\uae30\ud0c0\uae08\uc735\uae30\uad00 \ub4f1", "value": 501812.2801}, {"year": 2022, "category": "\ubcf4\ud5d8\ud68c\uc0ac", "value": 128858.73}, {"year": 2022, "category": "\uc5f0\uae08\uae30\uae08", "value": 20359.3185}, {"year": 2022, "category": "\uc5ec\uc2e0\uc804\ubb38\uae30\uad00", "value": 116524.2195}, {"year": 2022, "category": "\uacf5\uc801\uae08\uc735\uae30\uad00", "value": 54885.7461}, {"year": 2022, "category": "\uae30\ud0c0\uae08\uc735\uc911\uac1c\ud68c\uc0ac", "value": 212770.7816}, {"year": 2022, "category": "\uae30\ud0c0", "value": 11176.7699}, {"year": 2022, "category": "\ube44\uc740\ud589\uc608\uae08\ucde8\uae09\uae30\uad00", "value": 345426.336}, {"year": 2022, "category": "\ud310\ub9e4\uc2e0\uc6a9", "value": 117739.8806}, {"year": 2022, "category": "\ud310\ub9e4\ud68c\uc0ac", "value": 1215.6611}, {"year": 2023, "category": "\uac00\uacc4\ub300\ucd9c", "value": 1767258.9697}, {"year": 2023, "category": "\uc608\uae08\ucde8\uae09\uae30\uad00", "value": 1233861.273}, {"year": 2023, "category": "\uc608\uae08\uc740\ud589", "value": 915958.679}, {"year": 2023, "category": "\uc0c1\ud638\uc800\ucd95\uc740\ud589", "value": 38937.121}, {"year": 2023, "category": "\uc2e0\uc6a9\ud611\ub3d9\uc870\ud569", "value": 33942.627}, {"year": 2023, "category": "\uc0c1\ud638\uae08\uc735", "value": 182236.29}, {"year": 2023, "category": "\uc0c8\ub9c8\uc744\uae08\uace0", "value": 61241.651}, {"year": 2023, "category": "\uc6b0\uccb4\uad6d \ub4f1", "value": 1544.905}, {"year": 2023, "category": "\uae30\ud0c0\uae08\uc735\uae30\uad00 \ub4f1", "value": 533397.6967}, {"year": 2023, "category": "\ubcf4\ud5d8\ud68c\uc0ac", "value": 130587.4019}, {"year": 2023, "category": "\uc5f0\uae08\uae30\uae08", "value": 20549.1397}, {"year": 2023, "category": "\uc5ec\uc2e0\uc804\ubb38\uae30\uad00", "value": 116903.0808}, {"year": 2023, "category": "\uacf5\uc801\uae08\uc735\uae30\uad00", "value": 64535.2547}, {"year": 2023, "category": "\uae30\ud0c0\uae08\uc735\uc911\uac1c\ud68c\uc0ac", "value": 233209.0147}, {"year": 2023, "category": "\uae30\ud0c0", "value": 11379.261}, {"year": 2023, "category": "\ube44\uc740\ud589\uc608\uae08\ucde8\uae09\uae30\uad00", "value": 317902.594}, {"year": 2023, "category": "\ud310\ub9e4\uc2e0\uc6a9", "value": 118198.4554}, {"year": 2023, "category": "\ud310\ub9e4\ud68c\uc0ac", "value": 1295.3746}, {"year": 2024, "category": "\uac00\uacc4\ub300\ucd9c", "value": 1805566.0694}, {"year": 2024, "category": "\uc608\uae08\ucde8\uae09\uae30\uad00", "value": 1276372.022}, {"year": 2024, "category": "\uc608\uae08\uc740\ud589", "value": 966097.187}, {"year": 2024, "category": "\uc0c1\ud638\uc800\ucd95\uc740\ud589", "value": 40432.846}, {"year": 2024, "category": "\uc2e0\uc6a9\ud611\ub3d9\uc870\ud569", "value": 31308.589}, {"year": 2024, "category": "\uc0c1\ud638\uae08\uc735", "value": 176905.979}, {"year": 2024, "category": "\uc0c8\ub9c8\uc744\uae08\uace0", "value": 60271.734}, {"year": 2024, "category": "\uc6b0\uccb4\uad6d \ub4f1", "value": 1355.687}, {"year": 2024, "category": "\uae30\ud0c0\uae08\uc735\uae30\uad00 \ub4f1", "value": 529194.0474}, {"year": 2024, "category": "\ubcf4\ud5d8\ud68c\uc0ac", "value": 129832.8709}, {"year": 2024, "category": "\uc5f0\uae08\uae30\uae08", "value": 19882.6615}, {"year": 2024, "category": "\uc5ec\uc2e0\uc804\ubb38\uae30\uad00", "value": 119207.6994}, {"year": 2024, "category": "\uacf5\uc801\uae08\uc735\uae30\uad00", "value": 66494.197}, {"year": 2024, "category": "\uae30\ud0c0\uae08\uc735\uc911\uac1c\ud68c\uc0ac", "value": 225270.6041}, {"year": 2024, "category": "\uae30\ud0c0", "value": 11684.467}, {"year": 2024, "category": "\ube44\uc740\ud589\uc608\uae08\ucde8\uae09\uae30\uad00", "value": 310274.835}, {"year": 2024, "category": "\ud310\ub9e4\uc2e0\uc6a9", "value": 120373.2814}, {"year": 2024, "category": "\ud310\ub9e4\ud68c\uc0ac", "value": 1165.582}]
+            },
+            "mark": "bar",
+            "encoding": {
+                "x": {
+                    "field": "year",
+                    "type": "ordinal",
+                    "title": "연도",
+                    "axis": {"labelAngle": -45}
+                },
+                "y": {
+                    "field": "value",
+                    "type": "quantitative",
+                    "title": "금액 (십억원)",
+                    "stack": "zero"
+                },
+                "color": {
+                    "field": "category",
+                    "type": "nominal",
+                    "title": "구분",
+                    "scale": {
+                        "scheme": "category10"
+                    }
+                },
+                "tooltip": [
+                    {"field": "year", "type": "ordinal", "title": "연도"},
+                    {"field": "category", "type": "nominal", "title": "구분"},
+                    {"field": "value", "type": "quantitative", "title": "금액 (십억원)", "format": ",.0f"}
+                ]
+            }
+        };
+
+        // Chart 3: Loan by Purpose
+        const spec3 = {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "width": 800,
+            "height": 400,
+            "data": {
+                "values": [{"year": 2015, "category": "\uae30\ud0c0\ub300\ucd9c", "value": 499642.229}, {"year": 2015, "category": "\uc8fc\ud0dd\ub2f4\ubcf4\ub300\ucd9c", "value": 638310.874}, {"year": 2016, "category": "\uae30\ud0c0\ub300\ucd9c", "value": 554088.73}, {"year": 2016, "category": "\uc8fc\ud0dd\ub2f4\ubcf4\ub300\ucd9c", "value": 715719.433}, {"year": 2017, "category": "\uae30\ud0c0\ub300\ucd9c", "value": 599852.344}, {"year": 2017, "category": "\uc8fc\ud0dd\ub2f4\ubcf4\ub300\ucd9c", "value": 769984.808}, {"year": 2018, "category": "\uae30\ud0c0\ub300\ucd9c", "value": 638650.5984}, {"year": 2018, "category": "\uc8fc\ud0dd\ub2f4\ubcf4\ub300\ucd9c", "value": 807977.6779}, {"year": 2019, "category": "\uae30\ud0c0\ub300\ucd9c", "value": 662008.7682}, {"year": 2019, "category": "\uc8fc\ud0dd\ub2f4\ubcf4\ub300\ucd9c", "value": 842872.8405}, {"year": 2020, "category": "\uae30\ud0c0\ub300\ucd9c", "value": 721387.1709}, {"year": 2020, "category": "\uc8fc\ud0dd\ub2f4\ubcf4\ub300\ucd9c", "value": 912203.5096}, {"year": 2021, "category": "\uae30\ud0c0\ub300\ucd9c", "value": 772530.8927}, {"year": 2021, "category": "\uc8fc\ud0dd\ub2f4\ubcf4\ub300\ucd9c", "value": 984534.1829}, {"year": 2022, "category": "\uae30\ud0c0\ub300\ucd9c", "value": 736433.940382}, {"year": 2022, "category": "\uc8fc\ud0dd\ub2f4\ubcf4\ub300\ucd9c", "value": 1013379.464618}, {"year": 2023, "category": "\uae30\ud0c0\ub300\ucd9c", "value": 702919.8918}, {"year": 2023, "category": "\uc8fc\ud0dd\ub2f4\ubcf4\ub300\ucd9c", "value": 1064339.0779}, {"year": 2024, "category": "\uae30\ud0c0\ub300\ucd9c", "value": 681717.2613}, {"year": 2024, "category": "\uc8fc\ud0dd\ub2f4\ubcf4\ub300\ucd9c", "value": 1123848.8081}]
+            },
+            "mark": {
+                "type": "line",
+                "point": true
+            },
+            "encoding": {
+                "x": {
+                    "field": "year",
+                    "type": "ordinal",
+                    "title": "연도",
+                    "axis": {"labelAngle": -45}
+                },
+                "y": {
+                    "field": "value",
+                    "type": "quantitative",
+                    "title": "대출액 (십억원)"
+                },
+                "color": {
+                    "field": "category",
+                    "type": "nominal",
+                    "title": "대출 유형",
+                    "scale": {
+                        "domain": ["주택담보대출", "신용대출", "기타대출"],
+                        "range": ["#e74c3c", "#3498db", "#95a5a6"]
+                    }
+                },
+                "tooltip": [
+                    {"field": "year", "type": "ordinal", "title": "연도"},
+                    {"field": "category", "type": "nominal", "title": "대출 유형"},
+                    {"field": "value", "type": "quantitative", "title": "금액 (십억원)", "format": ",.0f"}
+                ]
+            }
+        };
+
+        // Render charts
+        vegaEmbed('#vis1', spec1, {"actions": false});
+        vegaEmbed('#vis2', spec2, {"actions": false});
+        vegaEmbed('#vis3', spec3, {"actions": false});
+    </script>
+</body>
+</html>

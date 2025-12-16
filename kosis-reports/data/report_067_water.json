@@ -1,0 +1,79 @@
+{
+  "report_id": "067",
+  "title": "물/수자원 트렌드 분석 보고서",
+  "subtitle": "상수도·하수도 보급 현황 및 수자원 관리 동향",
+  "theme": "aqua",
+  "created_at": "2025-12-15T09:40:52.569733",
+  "news_context": "\n## 한국 수자원 현황 (2025)\n\n### 핵심 통계\n- 연간 강수량: 1,283mm (세계 평균의 1.3배)\n- 1인당 수자원: 2,705㎥/년 (세계 평균의 12%)\n- 물 부족 국가로 분류 (UN 기준)\n\n### 용도별 물 사용량 (총 244억㎥)\n- 농업용수: 154억㎥ (63%)\n- 생활용수: 74억㎥ (30%)\n- 공업용수: 16억㎥ (7%)\n\n### 1인당 물 사용량\n- 한국: 304L/일 (가정용 195L)\n- 일본: 237L/일\n- 독일: 120L/일\n- 덴마크: 113L/일\n\n### 주요 이슈\n- 가용 수자원 대비 실제 사용량: 40-50% (세계 평균 18%의 2-3배)\n- 제주도 2025년 예상: 일일 5만 7천㎥ 부족\n- 지하수 고갈 우려 (재충전에 최대 800년 소요)\n\n출처:\n- 대통령직속 국가물관리위원회\n- 한국수자원공사 (K-water)\n- WAMIS 국가수자원관리종합정보시스템\n- 세계자원연구소(WRI) 2023\n",
+  "datasets": [
+    {
+      "name": "상수도 보급현황",
+      "org_id": "106",
+      "tbl_id": "DT_106N_06_0100043",
+      "metadata": {
+        "tbl_id": "DT_106N_06_0100043",
+        "tbl_nm": "상수도 보급현황",
+        "org_id": "106",
+        "org_nm": "",
+        "prd_se": "Y",
+        "start_prd": "2008",
+        "end_prd": "2023",
+        "dimensions": [],
+        "items": [],
+        "raw": {
+          "table_info": {
+            "TBL_NM": "상수도 보급현황"
+          },
+          "obj_vars": [],
+          "itm_vars": [],
+          "prd_info": [
+            {
+              "PRD_SE": "년",
+              "STRT_PRD_DE": "2008",
+              "END_PRD_DE": "2023"
+            }
+          ],
+          "org_id": "106",
+          "tbl_id": "DT_106N_06_0100043"
+        }
+      },
+      "data": [],
+      "record_count": 0
+    },
+    {
+      "name": "하수도 보급현황",
+      "org_id": "106",
+      "tbl_id": "DT_106N_07_0100039",
+      "metadata": {
+        "tbl_id": "DT_106N_07_0100039",
+        "tbl_nm": "하수도 보급현황(총괄)",
+        "org_id": "106",
+        "org_nm": "",
+        "prd_se": "Y",
+        "start_prd": "1998",
+        "end_prd": "2024",
+        "dimensions": [],
+        "items": [],
+        "raw": {
+          "table_info": {
+            "TBL_NM_ENG": "Sewerage Supply Status(Total)",
+            "TBL_NM": "하수도 보급현황(총괄)"
+          },
+          "obj_vars": [],
+          "itm_vars": [],
+          "prd_info": [
+            {
+              "PRD_SE": "년",
+              "STRT_PRD_DE": "1998",
+              "END_PRD_DE": "2024"
+            }
+          ],
+          "org_id": "106",
+          "tbl_id": "DT_106N_07_0100039"
+        }
+      },
+      "data": [],
+      "record_count": 0
+    }
+  ]
+}

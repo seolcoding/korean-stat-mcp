@@ -117,7 +117,7 @@ class TestReportGeneratorHTML:
         html = generator.generate_html(user_query="인구 추이 분석")
         assert "<!DOCTYPE html>" in html
         assert "<html lang=\"ko\">" in html
-        assert "Plotly.newPlot" in html
+        assert "vegaEmbed" in html or "vega-lite" in html.lower()
 
     def test_generate_html_file(self, generator: ReportGenerator):
         """HTML 파일 저장."""
@@ -132,11 +132,11 @@ class TestReportGeneratorHTML:
             content = output_path.read_text(encoding="utf-8")
             assert "<!DOCTYPE html>" in content
 
-    def test_html_contains_plotly_chart(self, generator: ReportGenerator):
-        """Plotly 차트 임베드 확인."""
+    def test_html_contains_vega_chart(self, generator: ReportGenerator):
+        """Vega-Lite 차트 임베드 확인."""
         html = generator.generate_html(user_query="추이 분석")
-        assert "cdn.plot.ly/plotly" in html
-        assert "Plotly.newPlot" in html
+        assert "vega-lite" in html.lower() or "cdn.jsdelivr.net/npm/vega" in html
+        assert "vegaEmbed" in html
 
     def test_html_korean_fonts(self, generator: ReportGenerator):
         """한글 폰트 적용 확인."""
@@ -180,7 +180,7 @@ class TestConvenienceFunctions:
         """generate_html_report 함수."""
         html = generate_html_report(sample_data, "테스트 쿼리")
         assert "<!DOCTYPE html>" in html
-        assert "Plotly.newPlot" in html
+        assert "vegaEmbed" in html or "vega-lite" in html.lower()
 
     def test_generate_html_report_to_file(self, sample_data: list[dict]):
         """generate_html_report 파일 저장."""

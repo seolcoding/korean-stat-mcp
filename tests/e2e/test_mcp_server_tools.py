@@ -433,8 +433,8 @@ class TestReportTools:
         )
 
         content = output_path.read_text(encoding="utf-8")
-        assert "Plotly" in content or "plotly" in content.lower()
-        assert "chart" in content.lower() or "newPlot" in content
+        assert "vegaEmbed" in content or "vega-lite" in content.lower()
+        assert "chart" in content.lower() or "vegaEmbed" in content
 
     def test_create_custom_report_options(self, medium_population_data, output_dir):
         """custom_report 옵션 동작."""

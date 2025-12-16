@@ -1,0 +1,132 @@
+{
+  "report_id": "21d40844-84d5-47e8-adb2-e4ba08b7621f",
+  "timestamp": "2025-12-15T09:33:21.534275",
+  "user_query": "\n    한국 GDP 및 경제성장률 트렌드 분석 (2015-2024)\n\n    주요 분석 항목:\n    - GDP 추이 및 변화율\n    - 경제성장률 연도별 비교\n    - 주요 경제지표 변동 패턴\n    - 최근 경제 성장 동향\n    ",
+  "parsed_query": {
+    "raw_query": "\n    한국 GDP 및 경제성장률 트렌드 분석 (2015-2024)\n\n    주요 분석 항목:\n    - GDP 추이 및 변화율\n    - 경제성장률 연도별 비교\n    - 주요 경제지표 변동 패턴\n    - 최근 경제 성장 동향\n    ",
+    "target_regions": [
+      "경제성장률"
+    ],
+    "target_periods": [
+      "2015",
+      "2016",
+      "2017",
+      "2018",
+      "2019",
+      "2020",
+      "2021",
+      "2022",
+      "2023",
+      "2024"
+    ],
+    "target_items": [],
+    "comparison_type": "temporal",
+    "analysis_depth": "standard",
+    "include_visualization": true
+  },
+  "sections_determined": [
+    "summary",
+    "eda",
+    "trend",
+    "stats",
+    "visualization"
+  ],
+  "processing_steps": [
+    {
+      "step": "parse_query",
+      "detail": "쿼리 파싱: '\n    한국 GDP 및 경제성장률 트렌드 분석 (2015-2024)\n\n    주요 분석 항목:\n    - GDP 추이 및 변화율\n    - 경제성장률 연도별 비교\n    - 주요 경제지표 변동 패턴\n    - 최근 경제 성장 동향\n    '",
+      "duration_ms": 7.30316701810807
+    },
+    {
+      "step": "determine_sections",
+      "detail": "섹션 결정: summary, eda, trend, stats, visualization",
+      "sections": [
+        "summary",
+        "eda",
+        "trend",
+        "stats",
+        "visualization"
+      ],
+      "duration_ms": 0.002207991201430559
+    },
+    {
+      "step": "filter_data",
+      "detail": "데이터 필터링: 6364건 → 10건",
+      "records_before": 6364,
+      "records_after": 10,
+      "duration_ms": 1.830166031140834
+    },
+    {
+      "step": "generate_header",
+      "detail": "HTML 헤더 생성",
+      "duration_ms": 0.0017079873941838741
+    },
+    {
+      "step": "generate_summary_card",
+      "detail": "요약 카드 생성",
+      "duration_ms": 0.08416699711233377
+    },
+    {
+      "step": "generate_section_summary",
+      "detail": "섹션 생성: summary",
+      "success": false,
+      "duration_ms": 0.00200001522898674
+    },
+    {
+      "step": "generate_section_eda",
+      "detail": "섹션 생성: eda",
+      "success": true,
+      "duration_ms": 1.3322500162757933
+    },
+    {
+      "step": "generate_section_trend",
+      "detail": "섹션 생성: trend",
+      "success": true,
+      "duration_ms": 1.395665982272476
+    },
+    {
+      "step": "generate_section_stats",
+      "detail": "섹션 생성: stats",
+      "success": true,
+      "duration_ms": 0.5094169755466282
+    },
+    {
+      "step": "generate_section_visualization",
+      "detail": "섹션 생성: visualization",
+      "success": true,
+      "duration_ms": 9.298458986449987
+    },
+    {
+      "step": "generate_footer",
+      "detail": "HTML 푸터 생성",
+      "duration_ms": 0.013917044270783663
+    }
+  ],
+  "data_info": {
+    "total_records": 6364,
+    "filtered_records": 10,
+    "columns": [
+      "TBL_ID",
+      "ORG_ID",
+      "ITM_NM_ENG",
+      "PRD_SE",
+      "ITM_NM",
+      "LST_CHN_DE",
+      "ITM_ID",
+      "UNIT_NM",
+      "C1",
+      "DT",
+      "UNIT_NM_ENG",
+      "C1_OBJ_NM_ENG",
+      "C1_NM",
+      "PRD_DE",
+      "C1_NM_ENG",
+      "TBL_NM",
+      "C1_OBJ_NM"
+    ],
+    "unique_regions": 277,
+    "unique_periods": 46
+  },
+  "output_path": "report_029_20251215_gdp.html",
+  "total_duration_ms": 21.781457995530218
+}

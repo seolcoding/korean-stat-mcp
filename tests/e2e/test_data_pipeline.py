@@ -222,6 +222,22 @@ class TestPipelineCombinations:
         """
         분석 함수들이 컴팩트한 출력을 생성하는지 검증.
         """
+        import numpy as np
+
+        def convert_to_native(obj):
+            """numpy 타입을 Python 네이티브 타입으로 변환."""
+            if isinstance(obj, dict):
+                return {k: convert_to_native(v) for k, v in obj.items()}
+            elif isinstance(obj, list):
+                return [convert_to_native(item) for item in obj]
+            elif isinstance(obj, (np.integer,)):
+                return int(obj)
+            elif isinstance(obj, (np.floating,)):
+                return float(obj)
+            elif isinstance(obj, np.ndarray):
+                return obj.tolist()
+            return obj
+
         pop_data = filter_data(medium_population_data, items=["총인구"])
 
         # 각 분석 함수의 출력 크기 측정
@@ -238,11 +254,11 @@ class TestPipelineCombinations:
                 result_dict = {
                     "type": result.type,
                     "findings": result.findings,
-                    "metrics": result.metrics,
+                    "metrics": convert_to_native(result.metrics),
                     "interpretation": getattr(result, "interpretation", ""),
                 }
             else:
-                result_dict = result
+                result_dict = convert_to_native(result)
 
             result_json = json.dumps(result_dict, ensure_ascii=False)
             assert len(result_json) < 3000, (
@@ -478,14 +494,12 @@ class TestDataStorage:
         """
         from kosis_tools.report_tools import save_raw_data, load_raw_data
 
-        # 저장
-        data_id = save_raw_data(
-            data=medium_population_data,
-            org_id="101",
-            tbl_id="DT_TEST",
-            metadata={"test": True}
-        )
+        # 저장 (새 API: data, data_id만 받음)
+        result = save_raw_data(data=medium_population_data)
 
+        assert result is not None
+        assert "data_id" in result
+        data_id = result["data_id"]
         assert data_id is not None
 
         # 로드
@@ -501,12 +515,8 @@ class TestDataStorage:
         """
         from kosis_tools.report_tools import save_raw_data, list_saved_data
 
-        # 테스트 데이터 저장
-        save_raw_data(
-            data=medium_population_data,
-            org_id="101",
-            tbl_id="DT_LIST_TEST"
-        )
+        # 테스트 데이터 저장 (새 API)
+        save_raw_data(data=medium_population_data)
 
         # 목록 조회
         saved_list = list_saved_data()

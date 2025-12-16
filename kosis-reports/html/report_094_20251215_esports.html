@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KOSIS 데이터 트렌드 분석 #094: e스포츠/게임대회</title>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;500;700&display=swap');
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Rajdhani', sans-serif;
+            background: linear-gradient(135deg, #0a0a1f 0%, #1a1a2e 50%, #16213e 100%);
+            color: #00FFFF;
+            line-height: 1.6;
+            padding: 20px;
+            position: relative;
+            overflow-x: hidden;
+        }
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image:
+                linear-gradient(0deg, rgba(0, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            pointer-events: none;
+            z-index: 0;
+        }
+        .neon-glow { text-shadow: 0 0 10px #00FFFF, 0 0 20px #00FFFF, 0 0 30px #00FFFF, 0 0 40px #00FFFF; }
+        .neon-glow-purple { text-shadow: 0 0 10px #7B2FFF, 0 0 20px #7B2FFF, 0 0 30px #7B2FFF; }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(10, 10, 31, 0.8);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 0 30px rgba(0, 255, 255, 0.3), 0 0 60px rgba(123, 47, 255, 0.2), inset 0 0 30px rgba(0, 255, 255, 0.05);
+            border: 2px solid rgba(0, 255, 255, 0.3);
+            position: relative;
+            z-index: 1;
+        }
+        .container::before, .container::after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            border: 3px solid #00FFFF;
+            opacity: 0.5;
+        }
+        .container::before { top: -2px; left: -2px; border-right: none; border-bottom: none; }
+        .container::after { bottom: -2px; right: -2px; border-left: none; border-top: none; }
+        header { text-align: center; margin-bottom: 50px; padding: 30px 0; border-bottom: 3px solid rgba(0, 255, 255, 0.3); }
+        h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3em;
+            font-weight: 900;
+            margin-bottom: 15px;
+            background: linear-gradient(90deg, #00FFFF, #7B2FFF, #FF10F0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+        .subtitle { font-size: 1.5em; color: #00FF00; font-weight: 500; margin: 10px 0; }
+        .report-meta { display: flex; justify-content: center; gap: 30px; margin-top: 20px; font-size: 0.9em; color: #FF10F0; }
+        .report-meta span { padding: 8px 20px; background: rgba(123, 47, 255, 0.2); border: 1px solid rgba(255, 16, 240, 0.5); border-radius: 20px; }
+        .section { margin: 50px 0; padding: 30px; background: rgba(26, 26, 46, 0.6); border-radius: 15px; border-left: 5px solid #7B2FFF; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3); }
+        h2 { font-family: 'Orbitron', sans-serif; font-size: 2em; margin-bottom: 20px; color: #00FFFF; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; }
+        h3 { font-family: 'Orbitron', sans-serif; font-size: 1.5em; margin: 25px 0 15px 0; color: #FF10F0; font-weight: 700; }
+        p { margin-bottom: 15px; color: #E0E0E0; font-size: 1.1em; font-weight: 300; }
+        .chart-container { margin: 30px 0; padding: 30px; background: rgba(10, 10, 31, 0.8); border-radius: 15px; border: 2px solid rgba(0, 255, 255, 0.2); box-shadow: 0 0 20px rgba(0, 255, 255, 0.1); }
+        .highlight { color: #00FF00; font-weight: 700; text-shadow: 0 0 10px #00FF00; }
+        .key-point { background: rgba(0, 255, 255, 0.1); border-left: 4px solid #00FFFF; padding: 20px; margin: 20px 0; border-radius: 10px; }
+        .trend-badge { display: inline-block; padding: 5px 15px; background: linear-gradient(135deg, #7B2FFF, #FF10F0); color: white; border-radius: 20px; font-weight: 700; font-size: 0.9em; margin: 5px; box-shadow: 0 0 15px rgba(123, 47, 255, 0.5); animation: pulse 2s ease-in-out infinite; }
+        ul { list-style: none; margin: 20px 0; }
+        li { padding: 10px 0; padding-left: 30px; position: relative; color: #E0E0E0; font-size: 1.05em; }
+        li::before { content: '▸'; position: absolute; left: 0; color: #00FFFF; font-size: 1.2em; }
+        footer { margin-top: 60px; padding-top: 30px; border-top: 2px solid rgba(0, 255, 255, 0.3); text-align: center; color: #7B2FFF; font-size: 0.9em; }
+        .data-source { background: rgba(123, 47, 255, 0.1); padding: 15px; border-radius: 10px; margin: 20px 0; font-size: 0.95em; border: 1px solid rgba(123, 47, 255, 0.3); }
+        h1:hover { animation: glitch 0.3s ease-in-out; }
+        @keyframes glitch { 0% { transform: translate(0); } 20% { transform: translate(-2px, 2px); } 40% { transform: translate(-2px, -2px); } 60% { transform: translate(2px, 2px); } 80% { transform: translate(2px, -2px); } 100% { transform: translate(0); } }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.7; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="neon-glow">E-SPORTS & GAMING</h1>
+            <div class="subtitle neon-glow-purple">한국 게임 산업 트렌드 분석 2025</div>
+            <div class="report-meta">
+                <span>Report #094</span>
+                <span>Generated: 2025-12-15</span>
+                <span>Data Source: KOSIS</span>
+            </div>
+        </header>
+
+        <section class="section">
+            <h2 class="neon-glow">📊 Executive Summary</h2>
+            <div class="key-point">
+                <p>2025년 한국 게임 및 e스포츠 산업은 <span class="highlight">글로벌 시장의 주요 플레이어</span>로 자리매김하며,
+                모바일 게임과 e스포츠 대회가 새로운 성장 동력으로 부상하고 있습니다.</p>
+            </div>
+            <h3>🎮 주요 트렌드</h3>
+            <ul>
+                <li><span class="trend-badge">모바일 e스포츠</span> 모바일 레전드, 리그 오브 레전드 모바일 등 모바일 게임 대회 급성장</li>
+                <li><span class="trend-badge">AI 기술 접목</span> 게임 개발과 플레이 경험에 AI 기술 활발히 도입</li>
+                <li><span class="trend-badge">레트로 게임 부활</span> 스타크래프트 등 클래식 게임이 e스포츠에서 재조명</li>
+                <li><span class="trend-badge">글로벌 확장</span> 넷마블, 넥슨, 스마일게이트 등 글로벌 대회 개최</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2 class="neon-glow">💰 게임 산업 매출액 추이</h2>
+            <p>한국 게임 산업은 <span class="highlight">2018년 14.3조원에서 2023년 23조원</span>으로 지속적인 성장세를 보이며,
+            특히 모바일 게임과 온라인 게임 부문에서 강력한 시장 지배력을 유지하고 있습니다.</p>
+            <div class="chart-container"><div id="revenue_chart"></div></div>
+            <div class="key-point">
+                <p><strong>💡 인사이트:</strong> 2025년 글로벌 e스포츠 시장 규모는 약 81억 달러에서
+                2034년 약 480억 달러로 성장할 것으로 예상되며, 한국은 3억 달러에서 5억 2천만 달러 규모로 확대될 전망입니다.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="neon-glow">👥 게임 산업 종사자 분석</h2>
+            <h3>성별 분포</h3>
+            <div class="chart-container"><div id="gender_chart"></div></div>
+            <h3>분야별 분포</h3>
+            <div class="chart-container"><div id="industry_chart"></div></div>
+            <div class="key-point">
+                <p><strong>💡 인사이트:</strong> PC게임과 모바일게임 분야가 가장 많은 인력을 고용하고 있으며,
+                2023년 기준 전체 종사자 중 <span class="highlight">남성 68%, 여성 32%</span>로 구성되어 있습니다.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="neon-glow">🏆 2025년 주요 e스포츠 게임</h2>
+            <h3>1위: 리그 오브 레전드 (LoL)</h3>
+            <p>2025년 2월 LCK 컵에서 <span class="highlight">200만 명</span>에 가까운 시청자 수를 기록하며 압도적인 인기를 증명했습니다.</p>
+            <h3>2위: 발로란트</h3>
+            <p>2025년 3월 마스터즈 방콕 챔피언십에서 <span class="highlight">130만 명</span> 이상의 시청자를 기록하며 주요 e스포츠 타이틀로 자리매김했습니다.</p>
+            <h3>3위: 모바일 레전드: 뱅뱅 (MLBB)</h3>
+            <p>중국 출시와 함께 급성장하며 에이펙스 레전드, 포트나이트, 도타 2를 제치고 <span class="highlight">4위</span>로 올라섰습니다.</p>
+        </section>
+
+        <section class="section">
+            <h2 class="neon-glow">🔮 한국 e스포츠의 미래</h2>
+            <h3>과제</h3>
+            <ul>
+                <li>글로벌 경쟁 심화 속에서 e스포츠 종주국 위상 회복 필요</li>
+                <li>종목사 투자 감소와 팀 적자 지속 문제</li>
+                <li>수익성 개선을 위한 다양한 비즈니스 모델 개발 필요</li>
+            </ul>
+            <h3>기회</h3>
+            <ul>
+                <li>2025년 확장된 대회와 경기 수로 저변 확대</li>
+                <li>종목사들의 상생 기조와 파트너십 시스템 신설</li>
+                <li>AI 기술과 메타버스의 접목으로 새로운 게임 경험 창출</li>
+                <li>글로벌 기업들의 적극적인 대회 개최 및 투자</li>
+            </ul>
+            <div class="key-point">
+                <p><strong>💡 전망:</strong> 한국 e스포츠는 2025년을 기점으로 <span class="highlight">정면 돌파</span>를 선택했습니다.
+                확장과 개편을 통해 새로운 도약을 준비하고 있으며, 모바일 게임과 AI 기술이 주요 성장 동력이 될 것으로 예상됩니다.</p>
+            </div>
+        </section>
+
+        <div class="data-source">
+            <h3>📁 데이터 출처</h3>
+            <ul>
+                <li>KOSIS 국가통계포털 - 문화체육관광부 게임산업 통계</li>
+                <li>게임산업 매출액 및 종사자 현황 (2018-2023)</li>
+            </ul>
+            <h3>🌐 참고 자료</h3>
+            <ul>
+                <li>Esports Insider Korea - 2025년 e스포츠 산업 전망</li>
+                <li>Deloitte Korea - e스포츠 산업의 현황 분석 및 전망</li>
+                <li>한국콘텐츠진흥원 - 2023 e스포츠 실태조사</li>
+            </ul>
+        </div>
+
+        <footer>
+            <p>🎮 KOSIS 데이터 기반 한국 트렌드 분석 리포트 #094</p>
+            <p>E-스포츠 & 게임 산업 트렌드 | 2025년 12월 15일 생성</p>
+            <p style="margin-top: 15px; color: #00FFFF;">Powered by KOSIS Open API & Vega-Lite</p>
+        </footer>
+    </div>
+    <script>
+        vegaEmbed('#revenue_chart', {
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.1.0.json",
+  "config": {
+    "axis": {
+      "gridColor": "#1a1a2e"
+    },
+    "view": {
+      "continuousHeight": 300,
+      "continuousWidth": 300,
+      "fill": "#0a0a1f",
+      "strokeWidth": 0
+    }
+  },
+  "data": {
+    "name": "data-8b031b7824b02911eb9f665261b29a38"
+  },
+  "datasets": {
+    "data-8b031b7824b02911eb9f665261b29a38": [
+      {
+        "C1": "131021155181.001",
+        "C1_NM": "\ud569\uacc4",
+        "C1_NM_ENG": NaN,
+        "C1_OBJ_NM": "\ud1b5\uacc4\ubd84\ub958",
+        "DT": "14290224",
+        "DT_numeric": 14290224.0,
+        "ITM_ID": "13103115518T1",
+        "ITM_NM": "\ub9e4\ucd9c\uc561",
+        "LST_CHN_DE": "2025-04-03",
+        "ORG_ID": "113",
+        "PRD_DE": "2018",
+        "PRD_SE": "A",
+        "TBL_ID": "DT_113_STBL_1025886",
+        "TBL_NM": "\uac8c\uc784\uc0b0\uc5c5 : \uc5c5\uc885\ubcc4 \uc5f0\ub3c4\ubcc4 \ub9e4\ucd9c\uc561 \ud604\ud669",
+        "UNIT_NM": "%\ubc31\ub9cc\uc6d0",
+        "UNIT_NM_ENG": "% Million Won"
+      },
+      {
+        "C1": "131021155181.001",
+        "C1_NM": "\ud569\uacc4",
+        "C1_NM_ENG": NaN,
+        "C1_OBJ_NM": "\ud1b5\uacc4\ubd84\ub958",
+        "DT": "15575034",
+        "DT_numeric": 15575034.0,
+        "ITM_ID": "13103115518T1",
+        "ITM_NM": "\ub9e4\ucd9c\uc561",
+        "LST_CHN_DE": "2025-04-03",
+        "ORG_ID": "113",
+        "PRD_DE": "2019",
+        "PRD_SE": "A",
+        "TBL_ID": "DT_113_STBL_1025886",
+        "TBL_NM": "\uac8c\uc784\uc0b0\uc5c5 : \uc5c5\uc885\ubcc4 \uc5f0\ub3c4\ubcc4 \ub9e4\ucd9c\uc561 \ud604\ud669",
+        "UNIT_NM": "%\ubc31\ub9cc\uc6d0",
+        "UNIT_NM_ENG": "% Million Won"
+      },
+      {
+        "C1": "131021155181.001",
+        "C1_NM": "\ud569\uacc4",
+        "C1_NM_ENG": NaN,
+        "C1_OBJ_NM": "\ud1b5\uacc4\ubd84\ub958",
+        "DT": "18885484",
+        "DT_numeric": 18885484.0,
+        "ITM_ID": "13103115518T1",
+        "ITM_NM": "\ub9e4\ucd9c\uc561",
+        "LST_CHN_DE": "2025-04-03",
+        "ORG_ID": "113",
+        "PRD_DE": "2020",
+        "PRD_SE": "A",
+        "TBL_ID": "DT_113_STBL_1025886",
+        "TBL_NM": "\uac8c\uc784\uc0b0\uc5c5 : \uc5c5\uc885\ubcc4 \uc5f0\ub3c4\ubcc4 \ub9e4\ucd9c\uc561 \ud604\ud669",
+        "UNIT_NM": "%\ubc31\ub9cc\uc6d0",
+        "UNIT_NM_ENG": "% Million Won"
+      },
+      {
+        "C1": "131021155181.001",
+        "C1_NM": "\ud569\uacc4",
+        "C1_NM_ENG": NaN,
+        "C1_OBJ_NM": "\ud1b5\uacc4\ubd84\ub958",
+        "DT": "20991342",
+        "DT_numeric": 20991342.0,
+        "ITM_ID": "13103115518T1",
+        "ITM_NM": "\ub9e4\ucd9c\uc561",
+        "LST_CHN_DE": "2025-04-03",
+        "ORG_ID": "113",
+        "PRD_DE": "2021",
+        "PRD_SE": "A",
+        "TBL_ID": "DT_113_STBL_1025886",
+        "TBL_NM": "\uac8c\uc784\uc0b0\uc5c5 : \uc5c5\uc885\ubcc4 \uc5f0\ub3c4\ubcc4 \ub9e4\ucd9c\uc561 \ud604\ud669",
+        "UNIT_NM": "%\ubc31\ub9cc\uc6d0",
+        "UNIT_NM_ENG": "% Million Won"
+      },
+      {
+        "C1": "131021155181.001",
+        "C1_NM": "\ud569\uacc4",
+        "C1_NM_ENG": NaN,
+        "C1_OBJ_NM": "\ud1b5\uacc4\ubd84\ub958",
+        "DT": "22214886",
+        "DT_numeric": 22214886.0,
+        "ITM_ID": "13103115518T1",
+        "ITM_NM": "\ub9e4\ucd9c\uc561",
+        "LST_CHN_DE": "2025-04-03",
+        "ORG_ID": "113",
+        "PRD_DE": "2022",
+        "PRD_SE": "A",
+        "TBL_ID": "DT_113_STBL_1025886",
+        "TBL_NM": "\uac8c\uc784\uc0b0\uc5c5 : \uc5c5\uc885\ubcc4 \uc5f0\ub3c4\ubcc4 \ub9e4\ucd9c\uc561 \ud604\ud669",
+        "UNIT_NM": "%\ubc31\ub9cc\uc6d0",
+        "UNIT_NM_ENG": "% Million Won"
+      },
+      {
+        "C1": "131021155181.001",
+        "C1_NM": "\ud569\uacc4",
+        "C1_NM_ENG": NaN,
+        "C1_OBJ_NM": "\ud1b5\uacc4\ubd84\ub958",
+        "DT": "22964221",
+        "DT_numeric": 22964221.0,
+        "ITM_ID": "13103115518T1",
+        "ITM_NM": "\ub9e4\ucd9c\uc561",
+        "LST_CHN_DE": "2025-04-03",
+        "ORG_ID": "113",
+        "PRD_DE": "2023",
+        "PRD_SE": "A",
+        "TBL_ID": "DT_113_STBL_1025886",
+        "TBL_NM": "\uac8c\uc784\uc0b0\uc5c5 : \uc5c5\uc885\ubcc4 \uc5f0\ub3c4\ubcc4 \ub9e4\ucd9c\uc561 \ud604\ud669",
+        "UNIT_NM": "%\ubc31\ub9cc\uc6d0",
+        "UNIT_NM_ENG": "% Million Won"
+      }
+    ]
+  },
+  "encoding": {
+    "tooltip": [
+      {
+        "field": "PRD_DE",
+        "title": "\uc5f0\ub3c4",
+        "type": "ordinal"
+      },
+      {
+        "field": "DT_numeric",
+        "format": ",.0f",
+        "title": "\ub9e4\ucd9c\uc561 (\ubc31\ub9cc\uc6d0)",
+        "type": "quantitative"
+      }
+    ],
+    "x": {
+      "axis": {
+        "labelAngle": 0,
+        "labelColor": "#00FFFF",
+        "titleColor": "#00FFFF"
+      },
+      "field": "PRD_DE",
+      "title": "\uc5f0\ub3c4",
+      "type": "ordinal"
+    },
+    "y": {
+      "axis": {
+        "format": ",.0f",
+        "labelColor": "#00FFFF",
+        "titleColor": "#00FFFF"
+      },
+      "field": "DT_numeric",
+      "title": "\ub9e4\ucd9c\uc561 (\ubc31\ub9cc\uc6d0)",
+      "type": "quantitative"
+    }
+  },
+  "height": 400,
+  "mark": {
+    "color": "#00FFFF",
+    "point": {
+      "color": "#FF10F0",
+      "filled": true,
+      "size": 100
+    },
+    "strokeWidth": 4,
+    "type": "line"
+  },
+  "title": {
+    "color": "#00FFFF",
+    "fontSize": 20,
+    "text": "\ud55c\uad6d \uac8c\uc784 \uc0b0\uc5c5 \ub9e4\ucd9c\uc561 \ucd94\uc774 (2018-2023)"
+  },
+  "width": 800
+}, {"actions": false, "theme": "dark"}).catch(console.error);
+        vegaEmbed('#gender_chart', {
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.1.0.json",
+  "config": {
+    "view": {
+      "continuousHeight": 300,
+      "continuousWidth": 300,
+      "fill": "#0a0a1f",
+      "strokeWidth": 0
+    }
+  },
+  "data": {
+    "name": "data-47cc888d184ee69326ea7ec8a557b719"
+  },
+  "datasets": {
+    "data-47cc888d184ee69326ea7ec8a557b719": [
+      {
+        "C1": "131021356181.001",
+        "C1_NM": "\ud569\uacc4",
+        "C1_NM_ENG": NaN,
+        "C1_OBJ_NM": "\ud1b5\uacc4\ubd84\ub958",
+        "DT": "58114",
+        "DT_numeric": 58114.0,
+        "ITM_ID": "13103135618T2",
+        "ITM_NM": "\ub0a8\uc790",
+        "LST_CHN_DE": "2025-04-03",
+        "ORG_ID": "113",
+        "PRD_DE": "2023",
+        "PRD_SE": "A",
+        "TBL_ID": "DT_113_STBL_1031283",
+        "TBL_NM": "\uac8c\uc784\uc0b0\uc5c5 : \uc131\ubcc4 \uc5c5\uc885\ubcc4 \uc885\uc0ac\uc790 \ud604\ud669",
+        "UNIT_NM": "\uba85%",
+        "UNIT_NM_ENG": "Person %"
+      },
+      {
+        "C1": "131021356181.001",
+        "C1_NM": "\ud569\uacc4",
+        "C1_NM_ENG": NaN,
+        "C1_OBJ_NM": "\ud1b5\uacc4\ubd84\ub958",
+        "DT": "26856",
+        "DT_numeric": 26856.0,
+        "ITM_ID": "13103135618T3",
+        "ITM_NM": "\uc5ec\uc790",
+        "LST_CHN_DE": "2025-04-03",
+        "ORG_ID": "113",
+        "PRD_DE": "2023",
+        "PRD_SE": "A",
+        "TBL_ID": "DT_113_STBL_1031283",
+        "TBL_NM": "\uac8c\uc784\uc0b0\uc5c5 : \uc131\ubcc4 \uc5c5\uc885\ubcc4 \uc885\uc0ac\uc790 \ud604\ud669",
+        "UNIT_NM": "\uba85%",
+        "UNIT_NM_ENG": "Person %"
+      }
+    ]
+  },
+  "encoding": {
+    "color": {
+      "field": "ITM_NM",
+      "legend": {
+        "labelColor": "#00FFFF",
+        "titleColor": "#00FFFF"
+      },
+      "scale": {
+        "domain": [
+          "\ub0a8\uc790",
+          "\uc5ec\uc790"
+        ],
+        "range": [
+          "#7B2FFF",
+          "#FF10F0"
+        ]
+      },
+      "title": "\uc131\ubcc4",
+      "type": "nominal"
+    },
+    "theta": {
+      "field": "DT_numeric",
+      "stack": true,
+      "type": "quantitative"
+    },
+    "tooltip": [
+      {
+        "field": "ITM_NM",
+        "title": "\uc131\ubcc4",
+        "type": "nominal"
+      },
+      {
+        "field": "DT_numeric",
+        "format": ",.0f",
+        "title": "\uc885\uc0ac\uc790 \uc218",
+        "type": "quantitative"
+      }
+    ]
+  },
+  "height": 400,
+  "mark": {
+    "innerRadius": 80,
+    "stroke": "#0a0a1f",
+    "strokeWidth": 4,
+    "type": "arc"
+  },
+  "title": {
+    "color": "#00FFFF",
+    "fontSize": 18,
+    "text": "\uac8c\uc784 \uc0b0\uc5c5 \uc885\uc0ac\uc790 \uc131\ubcc4 \ubd84\ud3ec (2023)"
+  },
+  "width": 400
+}, {"actions": false, "theme": "dark"}).catch(console.error);
+        vegaEmbed('#industry_chart', {
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.1.0.json",
+  "config": {
+    "axis": {
+      "gridColor": "#1a1a2e"
+    },
+    "view": {
+      "continuousHeight": 300,
+      "continuousWidth": 300,
+      "fill": "#0a0a1f",
+      "strokeWidth": 0
+    }
+  },
+  "data": {
+    "name": "data-ecf7671e759c256981c36b3587d7aa85"
+  },
+  "datasets": {
+    "data-ecf7671e759c256981c36b3587d7aa85": [
+      {
+        "C1": "131028608001.002002",
+        "C1_NM": "PC\uac8c\uc784",
+        "C1_NM_ENG": NaN,
+        "C1_OBJ_NM": "\ud1b5\uacc4\ubd84\ub958",
+        "DT": "15604",
+        "DT_numeric": 15604.0,
+        "ITM_ID": "13103860800T1",
+        "ITM_NM": "\ud569\uacc4",
+        "LST_CHN_DE": "2025-04-03",
+        "ORG_ID": "113",
+        "PRD_DE": "2023",
+        "PRD_SE": "A",
+        "TBL_ID": "DT_113_STBL_1025112",
+        "TBL_NM": "\uac8c\uc784\uc0b0\uc5c5 : \uc5f0\ub839\ubcc4 \uc5c5\uc885\ubcc4 \uc885\uc0ac\uc790 \ud604\ud669",
+        "UNIT_NM": "\uba85%",
+        "UNIT_NM_ENG": "Person %"
+      },
+      {
+        "C1": "131028608001.002003",
+        "C1_NM": "\ubaa8\ubc14\uc77c\uac8c\uc784",
+        "C1_NM_ENG": NaN,
+        "C1_OBJ_NM": "\ud1b5\uacc4\ubd84\ub958",
+        "DT": "32818",
+        "DT_numeric": 32818.0,
+        "ITM_ID": "13103860800T1",
+        "ITM_NM": "\ud569\uacc4",
+        "LST_CHN_DE": "2025-04-03",
+        "ORG_ID": "113",
+        "PRD_DE": "2023",
+        "PRD_SE": "A",
+        "TBL_ID": "DT_113_STBL_1025112",
+        "TBL_NM": "\uac8c\uc784\uc0b0\uc5c5 : \uc5f0\ub839\ubcc4 \uc5c5\uc885\ubcc4 \uc885\uc0ac\uc790 \ud604\ud669",
+        "UNIT_NM": "\uba85%",
+        "UNIT_NM_ENG": "Person %"
+      },
+      {
+        "C1": "131028608001.002004",
+        "C1_NM": "\ucf58\uc194\uac8c\uc784",
+        "C1_NM_ENG": NaN,
+        "C1_OBJ_NM": "\ud1b5\uacc4\ubd84\ub958",
+        "DT": "2224",
+        "DT_numeric": 2224.0,
+        "ITM_ID": "13103860800T1",
+        "ITM_NM": "\ud569\uacc4",
+        "LST_CHN_DE": "2025-04-03",
+        "ORG_ID": "113",
+        "PRD_DE": "2023",
+        "PRD_SE": "A",
+        "TBL_ID": "DT_113_STBL_1025112",
+        "TBL_NM": "\uac8c\uc784\uc0b0\uc5c5 : \uc5f0\ub839\ubcc4 \uc5c5\uc885\ubcc4 \uc885\uc0ac\uc790 \ud604\ud669",
+        "UNIT_NM": "\uba85%",
+        "UNIT_NM_ENG": "Person %"
+      },
+      {
+        "C1": "131028608001.002005",
+        "C1_NM": "\uc544\ucf00\uc774\ub4dc\uac8c\uc784",
+        "C1_NM_ENG": NaN,
+        "C1_OBJ_NM": "\ud1b5\uacc4\ubd84\ub958",
+        "DT": "1137",
+        "DT_numeric": 1137.0,
+        "ITM_ID": "13103860800T1",
+        "ITM_NM": "\ud569\uacc4",
+        "LST_CHN_DE": "2025-04-03",
+        "ORG_ID": "113",
+        "PRD_DE": "2023",
+        "PRD_SE": "A",
+        "TBL_ID": "DT_113_STBL_1025112",
+        "TBL_NM": "\uac8c\uc784\uc0b0\uc5c5 : \uc5f0\ub839\ubcc4 \uc5c5\uc885\ubcc4 \uc885\uc0ac\uc790 \ud604\ud669",
+        "UNIT_NM": "\uba85%",
+        "UNIT_NM_ENG": "Person %"
+      }
+    ]
+  },
+  "encoding": {
+    "tooltip": [
+      {
+        "field": "C1_NM",
+        "title": "\uac8c\uc784 \ubd84\uc57c",
+        "type": "ordinal"
+      },
+      {
+        "field": "DT_numeric",
+        "format": ",.0f",
+        "title": "\uc885\uc0ac\uc790 \uc218",
+        "type": "quantitative"
+      }
+    ],
+    "x": {
+      "axis": {
+        "labelAngle": -45,
+        "labelColor": "#00FFFF",
+        "titleColor": "#00FFFF"
+      },
+      "field": "C1_NM",
+      "title": "\uac8c\uc784 \ubd84\uc57c",
+      "type": "ordinal"
+    },
+    "y": {
+      "axis": {
+        "format": ",.0f",
+        "labelColor": "#00FFFF",
+        "titleColor": "#00FFFF"
+      },
+      "field": "DT_numeric",
+      "title": "\uc885\uc0ac\uc790 \uc218",
+      "type": "quantitative"
+    }
+  },
+  "height": 400,
+  "mark": {
+    "color": "#00FF00",
+    "stroke": "#00FFFF",
+    "strokeWidth": 2,
+    "type": "bar"
+  },
+  "title": {
+    "color": "#00FFFF",
+    "fontSize": 18,
+    "text": "\uac8c\uc784 \ubd84\uc57c\ubcc4 \uc885\uc0ac\uc790 \ubd84\ud3ec (2023)"
+  },
+  "width": 700
+}, {"actions": false, "theme": "dark"}).catch(console.error);
+    </script>
+</body>
+</html>

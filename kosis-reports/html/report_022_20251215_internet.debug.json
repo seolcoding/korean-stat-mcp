@@ -1,0 +1,116 @@
+{
+  "report_id": "fab4fb63-bcbc-42a7-87cb-c4a30e09ecbc",
+  "timestamp": "2025-12-15T09:33:26.810223",
+  "user_query": "\n한국의 스마트폰 및 인터넷 보급률 트렌드를 분석하는 리포트를 작성하세요.\n\n## 웹 뉴스 요약 (2025년 기준)\n\n1. **스마트폰 보급률 99% 시대**\n   - 2024년 기준 60대 이하 스마트폰 사용률 거의 100%\n   - 70대 이상도 남녀 모두 처음으로 90%선 도달\n   - 5G 스마트폰 보유율: 59.2% (전년 대비 9.6%p 증가)\n\n2. **인터넷 보급률 94.5%**\n   - 2015년 85.1% → 2024년 94.5% (10년간 9.4%p 증가)\n   - 가구 인터넷 접속률: 99.97%\n\n3. **스마트폰 브랜드 점유율**\n   - 삼성: 72%, 애플: 24%\n   - 연령별 차이: 20대 애플 강세, 40대 이상 삼성 대세\n\n다음 항목을 포함하세요:\n1. 휴대폰/스마트폰 유형별 점유율 트렌드\n2. 연도별 변화 추이 시각화\n3. 주요 인사이트 및 해석\n",
+  "parsed_query": {
+    "raw_query": "\n한국의 스마트폰 및 인터넷 보급률 트렌드를 분석하는 리포트를 작성하세요.\n\n## 웹 뉴스 요약 (2025년 기준)\n\n1. **스마트폰 보급률 99% 시대**\n   - 2024년 기준 60대 이하 스마트폰 사용률 거의 100%\n   - 70대 이상도 남녀 모두 처음으로 90%선 도달\n   - 5G 스마트폰 보유율: 59.2% (전년 대비 9.6%p 증가)\n\n2. **인터넷 보급률 94.5%**\n   - 2015년 85.1% → 2024년 94.5% (10년간 9.4%p 증가)\n   - 가구 인터넷 접속률: 99.97%\n\n3. **스마트폰 브랜드 점유율**\n   - 삼성: 72%, 애플: 24%\n   - 연령별 차이: 20대 애플 강세, 40대 이상 삼성 대세\n\n다음 항목을 포함하세요:\n1. 휴대폰/스마트폰 유형별 점유율 트렌드\n2. 연도별 변화 추이 시각화\n3. 주요 인사이트 및 해석\n",
+    "target_regions": [
+      "남"
+    ],
+    "target_periods": [
+      "2024",
+      "2024"
+    ],
+    "target_items": [],
+    "comparison_type": "temporal",
+    "analysis_depth": "quick",
+    "include_visualization": true
+  },
+  "sections_determined": [
+    "summary",
+    "trend",
+    "stats",
+    "visualization"
+  ],
+  "processing_steps": [
+    {
+      "step": "parse_query",
+      "detail": "쿼리 파싱: '\n한국의 스마트폰 및 인터넷 보급률 트렌드를 분석하는 리포트를 작성하세요.\n\n## 웹 뉴스 요약 (2025년 기준)\n\n1. **스마트폰 보급률 99% 시대**\n   - 2024년 기준 60대 이하 스마트폰 사용률 거의 100%\n   - 70대 이상도 남녀 모두 처음으로 90%선 도달\n   - 5G 스마트폰 보유율: 59.2% (전년 대비 9.6%p 증가)\n\n2. **인터넷 보급률 94.5%**\n   - 2015년 85.1% → 2024년 94.5% (10년간 9.4%p 증가)\n   - 가구 인터넷 접속률: 99.97%\n\n3. **스마트폰 브랜드 점유율**\n   - 삼성: 72%, 애플: 24%\n   - 연령별 차이: 20대 애플 강세, 40대 이상 삼성 대세\n\n다음 항목을 포함하세요:\n1. 휴대폰/스마트폰 유형별 점유율 트렌드\n2. 연도별 변화 추이 시각화\n3. 주요 인사이트 및 해석\n'",
+      "duration_ms": 5.262374994345009
+    },
+    {
+      "step": "determine_sections",
+      "detail": "섹션 결정: summary, trend, stats, visualization",
+      "sections": [
+        "summary",
+        "trend",
+        "stats",
+        "visualization"
+      ],
+      "duration_ms": 0.0023750471882522106
+    },
+    {
+      "step": "filter_data",
+      "detail": "데이터 필터링: 4433건 → 13건",
+      "records_before": 4433,
+      "records_after": 13,
+      "duration_ms": 1.8876660033129156
+    },
+    {
+      "step": "generate_header",
+      "detail": "HTML 헤더 생성",
+      "duration_ms": 0.002667016815394163
+    },
+    {
+      "step": "generate_summary_card",
+      "detail": "요약 카드 생성",
+      "duration_ms": 0.09975000284612179
+    },
+    {
+      "step": "generate_section_summary",
+      "detail": "섹션 생성: summary",
+      "success": false,
+      "duration_ms": 0.0034999684430658817
+    },
+    {
+      "step": "generate_section_trend",
+      "detail": "섹션 생성: trend",
+      "success": true,
+      "duration_ms": 1.6785420011729002
+    },
+    {
+      "step": "generate_section_stats",
+      "detail": "섹션 생성: stats",
+      "success": true,
+      "duration_ms": 0.6500000017695129
+    },
+    {
+      "step": "generate_section_visualization",
+      "detail": "섹션 생성: visualization",
+      "success": true,
+      "duration_ms": 10.947791975922883
+    },
+    {
+      "step": "generate_footer",
+      "detail": "HTML 푸터 생성",
+      "duration_ms": 0.014833000022917986
+    }
+  ],
+  "data_info": {
+    "total_records": 4433,
+    "filtered_records": 13,
+    "columns": [
+      "TBL_ID",
+      "ORG_ID",
+      "ITM_NM_ENG",
+      "PRD_SE",
+      "ITM_NM",
+      "LST_CHN_DE",
+      "ITM_ID",
+      "UNIT_NM",
+      "C1",
+      "DT",
+      "UNIT_NM_ENG",
+      "C1_OBJ_NM_ENG",
+      "C1_NM",
+      "PRD_DE",
+      "C1_NM_ENG",
+      "TBL_NM",
+      "C1_OBJ_NM"
+    ],
+    "unique_regions": 84,
+    "unique_periods": 4
+  },
+  "output_path": "report_022_20251215_internet.html",
+  "total_duration_ms": 20.56179102510214
+}

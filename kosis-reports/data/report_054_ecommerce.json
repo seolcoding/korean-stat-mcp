@@ -1,0 +1,44 @@
+{
+  "report_id": "report_054",
+  "title": "한국 전자상거래/온라인쇼핑 트렌드 분석 2025",
+  "theme": "e-commerce",
+  "created_at": "2025-12-15",
+  "sources": {
+    "web_news": [
+      {
+        "title": "온라인 쇼핑 트렌드 리포트 2025",
+        "url": "https://blog.opensurvey.co.kr/trendreport/online-shopping-2025/"
+      },
+      {
+        "title": "2025 이커머스 트렌드 10가지",
+        "url": "https://oscsnm.com/2025-ecommerce-trends-analysis/"
+      },
+      {
+        "title": "2025 온라인 쇼핑 트렌드: 토스쇼핑 성장",
+        "url": "https://blog.opensurvey.co.kr/article/online-shopping-2025-2/"
+      }
+    ],
+    "kosis_tables": [
+      {
+        "org_id": "101",
+        "tbl_id": "DT_1KE10071",
+        "name": "온라인쇼핑몰 판매매체별/상품군별거래액"
+      },
+      {
+        "org_id": "101",
+        "tbl_id": "DT_1KE10051",
+        "name": "온라인쇼핑몰 운영형태별/상품군별거래액"
+      },
+      {
+        "org_id": "101",
+        "tbl_id": "DT_1KE1009",
+        "name": "온라인쇼핑 해외직접구매액"
+      }
+    ]
+  },
+  "datasets": {
+    "온라인쇼핑_판매매체별": [],
+    "온라인쇼핑_운영형태별": [],
+    "해외직접구매": []
+  }
+}

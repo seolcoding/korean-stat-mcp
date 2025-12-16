@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>식료품 물가 트렌드 분석 - 2025년 12월</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+            background-color: #f5f5f5;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .newsletter-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        /* Header / Branding */
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: #ffffff;
+            padding: 40px 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .header .subtitle {
+            font-size: 14px;
+            opacity: 0.9;
+            font-weight: 400;
+        }
+
+        .header .date {
+            margin-top: 15px;
+            font-size: 13px;
+            color: #f1c40f;
+            font-weight: 600;
+        }
+
+        /* Content sections */
+        .content {
+            padding: 30px;
+        }
+
+        .section {
+            margin-bottom: 35px;
+        }
+
+        .section-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f1c40f;
+        }
+
+        .section-content {
+            font-size: 15px;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        /* Key stats / Highlights */
+        .key-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin: 25px 0;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            border-left: 4px solid #f1c40f;
+        }
+
+        .stat-label {
+            font-size: 12px;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+        }
+
+        .stat-value {
+            font-size: 32px;
+            font-weight: 700;
+            color: #2c3e50;
+            font-family: 'Georgia', serif;
+        }
+
+        .stat-unit {
+            font-size: 18px;
+            color: #7f8c8d;
+            margin-left: 5px;
+        }
+
+        .stat-trend {
+            font-size: 13px;
+            margin-top: 8px;
+            color: #27ae60;
+        }
+
+        .stat-trend.down {
+            color: #27ae60;
+        }
+
+        .stat-trend.up {
+            color: #e74c3c;
+        }
+
+        /* Insight boxes */
+        .insight-box {
+            background-color: #fff9e6;
+            border-left: 4px solid #f39c12;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .insight-box h3 {
+            font-size: 16px;
+            color: #f39c12;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .insight-box p {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.7;
+        }
+
+        /* Bullet points */
+        .bullet-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .bullet-list li {
+            padding-left: 25px;
+            margin-bottom: 12px;
+            position: relative;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .bullet-list li:before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #f1c40f;
+            font-weight: bold;
+        }
+
+        /* CTA Button */
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #f39c12 0%, #f1c40f 100%);
+            color: #2c3e50;
+            padding: 15px 35px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 700;
+            font-size: 15px;
+            text-align: center;
+            margin: 20px 0;
+            transition: transform 0.2s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(243, 156, 18, 0.3);
+        }
+
+        /* Divider */
+        hr {
+            border: none;
+            border-top: 1px solid #e0e0e0;
+            margin: 30px 0;
+        }
+
+        /* Chart placeholder */
+        .chart-container {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .chart-container img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .chart-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        /* Data table */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 13px;
+        }
+
+        .data-table th {
+            background-color: #2c3e50;
+            color: #ffffff;
+            padding: 12px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .data-table td {
+            padding: 10px 12px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .data-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        .data-table tr:hover {
+            background-color: #fff9e6;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #2c3e50;
+            color: #ffffff;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .footer-text {
+            font-size: 13px;
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+
+        .social-links {
+            margin: 20px 0;
+        }
+
+        .social-links a {
+            color: #f1c40f;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 14px;
+            transition: opacity 0.2s;
+        }
+
+        .social-links a:hover {
+            opacity: 0.8;
+        }
+
+        .copyright {
+            font-size: 11px;
+            color: #95a5a6;
+            margin-top: 20px;
+        }
+
+        /* Mobile responsive */
+        @media (max-width: 600px) {
+            .newsletter-container {
+                margin: 0;
+            }
+
+            .key-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .header h1 {
+                font-size: 24px;
+            }
+
+            .stat-value {
+                font-size: 28px;
+            }
+
+            .content {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="newsletter-container">
+        <!-- Header / Branding -->
+        <div class="header">
+            <h1>식료품 물가 트렌드 리포트</h1>
+            <div class="subtitle">KOSIS 데이터 기반 장바구니 물가 분석</div>
+            <div class="date">2025년 12월 15일 발행</div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="content">
+            <!-- Executive Summary -->
+            <div class="section">
+                <h2 class="section-title">핵심 요약</h2>
+                <div class="key-stats">
+                    <div class="stat-card">
+                        <div class="stat-label">최근 물가상승률</div>
+                        <div class="stat-value">3.5<span class="stat-unit">%</span></div>
+                        <div class="stat-trend down">▼ 전월 대비 안정세</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-label">식료품 가격 변동</div>
+                        <div class="stat-value">+3.0<span class="stat-unit">%</span></div>
+                        <div class="stat-trend up">▲ 농산물 영향</div>
+                    </div>
+                </div>
+
+                <div class="insight-box">
+                    <h3>이번 달 핵심 인사이트</h3>
+                    <p>2025년 10월 기준, 식료품 물가는 전년 동월 대비 <strong>3.0% 상승</strong>했습니다. OECD 평균보다 50% 높은 수준으로, 복잡한 유통 구조와 기후 변화가 주요 원인으로 지적되고 있습니다.</p>
+                </div>
+            </div>
+
+            <hr>
+
+            <!-- Main Analysis -->
+            <div class="section">
+                <h2 class="section-title">장바구니 물가 상승 원인 분석</h2>
+                <div class="section-content">
+                    <p>2025년 한국의 식료품 가격은 다음과 같은 복합적 요인으로 상승세를 보이고 있습니다:</p>
+
+                    <ul class="bullet-list">
+                        <li><strong>복잡한 유통 구조:</strong> 도매시장 법인이 7% 수수료를 떼고, 중간 도매상의 마진이 추가되면서 유통 비용이 소비자 가격의 절반 가까이 차지합니다. 특히 배추·무 같은 품목은 60~70%까지 상승합니다.</li>
+                        <li><strong>기후 변화 영향:</strong> 지난 8월 농축수산물 가격은 전년 대비 4.8% 올랐으며, 불규칙한 기후 패턴이 농산물 생산량에 직접적인 영향을 미치고 있습니다.</li>
+                        <li><strong>소규모 농가 생산성:</strong> 낮은 생산성과 높은 유통 비용으로 농민은 제값을 받지 못하고, 소비자는 비싸게 사는 악순환이 지속되고 있습니다.</li>
+                        <li><strong>국제 비교:</strong> 한국의 식료품 가격은 OECD 평균보다 약 50% 높은 수준으로, 정부의 적극적인 대책이 필요한 상황입니다.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <hr>
+
+            <!-- Government Response -->
+            <div class="section">
+                <h2 class="section-title">정부 대책 및 향후 전망</h2>
+                <div class="section-content">
+                    <p>정부는 유통 구조 개선을 중심으로 다각적인 대책을 추진 중입니다:</p>
+
+                    <div class="chart-container">
+                        <div class="chart-title">주요 정책 방향</div>
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>정책 분야</th>
+                                    <th>세부 내용</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>유통 개선</strong></td>
+                                    <td>성과 부진 도매법인 지정 취소, 수수료 인하</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>거래 방식</strong></td>
+                                    <td>경매 대신 사전 물량·가격 거래 확대</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>출하 관리</strong></td>
+                                    <td>전자송품장 도입으로 출하량 조절</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>취약계층 지원</strong></td>
+                                    <td>농·식품바우처 지원사업 2025년 본격 시행</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="insight-box">
+                        <h3>향후 전망</h3>
+                        <p>이재명 대통령의 강력한 대책 지시에 따라 2025년에는 유통 구조 개선과 취약계층 지원이 본격화될 전망입니다. 특히 농·식품바우처 사업과 연계한 선택적 물가 대책이 기대됩니다.</p>
+                    </div>
+                </div>
+            </div>
+
+            <hr>
+
+            <!-- Data Insights -->
+            <div class="section">
+                <h2 class="section-title">KOSIS 데이터로 본 트렌드</h2>
+                <div class="section-content">
+                    <p>국가통계포털(KOSIS) 데이터 분석 결과:</p>
+
+                    <ul class="bullet-list">
+                        <li><strong>소비자물가지수 (2025년 11월):</strong> 전년 동월 대비 3.5% 상승</li>
+                        <li><strong>생활물가지수:</strong> 전년 동월 대비 2.5% 상승 (일반 물가보다 낮은 상승률)</li>
+                        <li><strong>농가판매가격지수:</strong> 95개 품목 추적, 육계·자돈·성돈 등 축산물 가격 변동성 높음</li>
+                        <li><strong>농산물 제외 지수:</strong> 농산물을 제외하면 물가 안정세 유지</li>
+                    </ul>
+
+                    <div style="margin-top: 20px; text-align: center;">
+                        <a href="https://kosis.kr" class="cta-button" target="_blank">KOSIS에서 더 많은 데이터 확인하기 →</a>
+                    </div>
+                </div>
+            </div>
+
+            <hr>
+
+            <!-- Sources -->
+            <div class="section">
+                <h2 class="section-title">데이터 출처</h2>
+                <div class="section-content">
+                    <ul class="bullet-list">
+                        <li>국가통계포털(KOSIS) - 소비자물가지수, 농가판매가격지수</li>
+                        <li>통계청 - 월별 소비자물가 등락률 (DT_1J22042)</li>
+                        <li>통계청 - 농산물 및 석유류제외지수 (DT_1J22007)</li>
+                        <li>통계청 - 농가판매가격지수 분기별 (DT_1J60)</li>
+                        <li>한국은행 - Trading Economics 식품 인플레이션 데이터</li>
+                        <li>대한민국 정책브리핑 - 소비자물가동향 (2025년 10월)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <div class="footer-text">
+                이 리포트는 KOSIS(국가통계포털) 데이터를 기반으로 작성되었습니다.<br>
+                신뢰할 수 있는 통계로 더 나은 인사이트를 제공합니다.
+            </div>
+
+            <div class="social-links">
+                <a href="https://kosis.kr" target="_blank">KOSIS 방문</a> |
+                <a href="https://kostat.go.kr" target="_blank">통계청</a> |
+                <a href="https://www.korea.kr" target="_blank">정책브리핑</a>
+            </div>
+
+            <div class="copyright">
+                Copyright 2025. KOSIS Data Analysis Team. All rights reserved.<br>
+                Report #042 | Generated on December 15, 2025
+            </div>
+        </div>
+    </div>
+</body>
+</html>

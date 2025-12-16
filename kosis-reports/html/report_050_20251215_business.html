@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>한국 기업 생태계 2025 | The Future of Korean Business</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #6366f1;
+            --secondary: #8b5cf6;
+            --accent: #06b6d4;
+            --dark: #0f172a;
+            --darker: #020617;
+            --light: #f8fafc;
+            --gray: #64748b;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans KR', sans-serif;
+            background: var(--darker);
+            color: var(--light);
+            overflow-x: hidden;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 50%, var(--accent) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background:
+                radial-gradient(circle at 20% 50%, rgba(99, 102, 241, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(139, 92, 246, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 40% 20%, rgba(6, 182, 212, 0.2) 0%, transparent 50%);
+            animation: gradient 15s ease infinite;
+        }
+
+        @keyframes gradient {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            50% { transform: translate(-50px, -50px) rotate(180deg); }
+        }
+
+        .hero-content {
+            text-align: center;
+            z-index: 1;
+            padding: 2rem;
+            animation: fadeInUp 1s ease;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 8vw, 6rem);
+            font-weight: 900;
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, #fff, #e0e7ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.02em;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1rem, 3vw, 1.5rem);
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2rem;
+            font-weight: 300;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        .hero-stat {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            padding: 2rem 4rem;
+            margin: 2rem 0;
+        }
+
+        .hero-stat-number {
+            font-size: clamp(3rem, 10vw, 7rem);
+            font-weight: 900;
+            background: linear-gradient(135deg, #fff 0%, #06b6d4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1;
+        }
+
+        .hero-stat-label {
+            font-size: clamp(1rem, 2vw, 1.5rem);
+            color: rgba(255, 255, 255, 0.8);
+            margin-top: 0.5rem;
+            font-weight: 500;
+        }
+
+        .hero-description {
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            color: rgba(255, 255, 255, 0.7);
+            max-width: 600px;
+            margin: 2rem auto 0;
+            line-height: 1.6;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(-20px); }
+        }
+
+        .scroll-indicator svg {
+            width: 30px;
+            height: 30px;
+            stroke: rgba(255, 255, 255, 0.5);
+        }
+
+        /* Stats Section */
+        .section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 4rem 2rem;
+            position: relative;
+        }
+
+        .section-dark {
+            background: var(--darker);
+        }
+
+        .section-light {
+            background: var(--dark);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 800;
+            margin-bottom: 3rem;
+            text-align: center;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* KPI Cards Grid */
+        .kpi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 4rem 0;
+        }
+
+        .kpi-card {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(139, 92, 246, 0.1));
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .kpi-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .kpi-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(99, 102, 241, 0.4);
+        }
+
+        .kpi-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .kpi-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            opacity: 0.8;
+        }
+
+        .kpi-value {
+            font-size: 3rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+
+        .kpi-label {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--light);
+            margin-bottom: 0.5rem;
+        }
+
+        .kpi-description {
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+
+        /* Chart Section */
+        .chart-container {
+            background: rgba(15, 23, 42, 0.5);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            border-radius: 20px;
+            padding: 2rem;
+            margin: 2rem 0;
+            backdrop-filter: blur(10px);
+        }
+
+        .chart-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--light);
+        }
+
+        .chart-source {
+            font-size: 0.85rem;
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+        }
+
+        /* Bar Chart */
+        .bar-chart {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .bar-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .bar-label {
+            min-width: 80px;
+            font-weight: 600;
+            color: var(--light);
+        }
+
+        .bar-wrapper {
+            flex: 1;
+            background: rgba(100, 116, 139, 0.2);
+            border-radius: 10px;
+            overflow: hidden;
+            height: 40px;
+            position: relative;
+        }
+
+        .bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 1rem;
+            transition: width 1s ease;
+            font-weight: 700;
+        }
+
+        .bar-value {
+            min-width: 80px;
+            text-align: right;
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        /* Pie Chart Grid */
+        .pie-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .pie-item {
+            background: rgba(99, 102, 241, 0.1);
+            border-left: 4px solid var(--primary);
+            padding: 1.5rem;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .pie-item:hover {
+            background: rgba(99, 102, 241, 0.2);
+            transform: translateX(10px);
+        }
+
+        .pie-item-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--light);
+            margin-bottom: 0.5rem;
+        }
+
+        .pie-item-value {
+            font-size: 2rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .pie-item-count {
+            font-size: 0.9rem;
+            color: var(--gray);
+            margin-top: 0.5rem;
+        }
+
+        /* Trend Cards */
+        .trend-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .trend-card {
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.8), rgba(30, 41, 59, 0.8));
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            border-radius: 15px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .trend-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 40px rgba(99, 102, 241, 0.3);
+        }
+
+        .trend-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+        }
+
+        .trend-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--light);
+        }
+
+        .trend-badge {
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .trend-badge.high {
+            background: rgba(239, 68, 68, 0.2);
+            color: #fca5a5;
+        }
+
+        .trend-badge.medium {
+            background: rgba(251, 146, 60, 0.2);
+            color: #fdba74;
+        }
+
+        .trend-badge.positive {
+            background: rgba(34, 197, 94, 0.2);
+            color: #86efac;
+        }
+
+        .trend-description {
+            color: var(--gray);
+            line-height: 1.6;
+        }
+
+        /* Data Table */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+        }
+
+        .data-table th,
+        .data-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(100, 116, 139, 0.2);
+        }
+
+        .data-table th {
+            background: rgba(99, 102, 241, 0.1);
+            font-weight: 700;
+            color: var(--light);
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 0.05em;
+        }
+
+        .data-table td {
+            color: var(--gray);
+        }
+
+        .data-table tr:hover {
+            background: rgba(99, 102, 241, 0.05);
+        }
+
+        .data-table .number {
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            text-align: center;
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="2" fill="white" opacity="0.1"/></svg>');
+            background-size: 50px 50px;
+            animation: moveBackground 20s linear infinite;
+        }
+
+        @keyframes moveBackground {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
+        }
+
+        .cta-title {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-description {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: var(--primary);
+            padding: 1.25rem 3rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--darker);
+            padding: 3rem 2rem;
+            text-align: center;
+            border-top: 1px solid rgba(99, 102, 241, 0.2);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .footer-link {
+            color: var(--gray);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-link:hover {
+            color: var(--accent);
+        }
+
+        .footer-copyright {
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin-top: 2rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .kpi-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-stat {
+                padding: 1.5rem 2rem;
+            }
+
+            .section {
+                padding: 3rem 1rem;
+            }
+        }
+
+        /* Scroll animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-subtitle">The Future of Korean Business</div>
+            <h1 class="hero-title">한국 기업 생태계 2025</h1>
+            <div class="hero-stat">
+                <div class="hero-stat-number">830만</div>
+                <div class="hero-stat-label">전국 사업체 수</div>
+            </div>
+            <p class="hero-description">
+                전국사업체조사로 살펴본 한국 기업 환경의 변화와 미래
+            </p>
+        </div>
+        <div class="scroll-indicator">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Key Insights Section -->
+    <section class="section section-dark">
+        <div class="container">
+            <h2 class="section-title fade-in">핵심 인사이트</h2>
+            <div class="kpi-grid">
+                <div class="kpi-card fade-in">
+                    <div class="kpi-icon">📈</div>
+                    <div class="kpi-value">+3.2%</div>
+                    <div class="kpi-label">사업체 지속 증가</div>
+                    <div class="kpi-description">전년 대비 사업체 수 증가율</div>
+                </div>
+                <div class="kpi-card fade-in">
+                    <div class="kpi-icon">👥</div>
+                    <div class="kpi-value">2,400만</div>
+                    <div class="kpi-label">종사자 수</div>
+                    <div class="kpi-description">전국 사업체 총 종사자 수</div>
+                </div>
+                <div class="kpi-card fade-in">
+                    <div class="kpi-icon">📍</div>
+                    <div class="kpi-value">56%</div>
+                    <div class="kpi-label">수도권 집중</div>
+                    <div class="kpi-description">수도권 창업 비율</div>
+                </div>
+                <div class="kpi-card fade-in">
+                    <div class="kpi-icon">💼</div>
+                    <div class="kpi-value">88.8%</div>
+                    <div class="kpi-label">서비스업 주도</div>
+                    <div class="kpi-description">창업기업 중 서비스업 비중</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Regional Distribution Section -->
+    <section class="section section-light">
+        <div class="container">
+            <h2 class="section-title fade-in">지역별 중소기업 분포</h2>
+            <div class="chart-container fade-in">
+                <h3 class="chart-title">Top 10 지역별 중소기업 수</h3>
+                <p class="chart-source">출처: 중소벤처기업부 2025</p>
+                <div class="bar-chart">
+                    <div class="bar-item">
+                        <div class="bar-label">경기</div>
+                        <div class="bar-wrapper">
+                            <div class="bar-fill" style="width: 100%;">221.7만개</div>
+                        </div>
+                        <div class="bar-value">26.7%</div>
+                    </div>
+                    <div class="bar-item">
+                        <div class="bar-label">서울</div>
+                        <div class="bar-wrapper">
+                            <div class="bar-fill" style="width: 76.5%;">169.6만개</div>
+                        </div>
+                        <div class="bar-value">20.4%</div>
+                    </div>
+                    <div class="bar-item">
+                        <div class="bar-label">부산</div>
+                        <div class="bar-wrapper">
+                            <div class="bar-fill" style="width: 22.5%;">49.9만개</div>
+                        </div>
+                        <div class="bar-value">6.0%</div>
+                    </div>
+                    <div class="bar-item">
+                        <div class="bar-label">경남</div>
+                        <div class="bar-wrapper">
+                            <div class="bar-fill" style="width: 22.1%;">49.0만개</div>
+                        </div>
+                        <div class="bar-value">5.9%</div>
+                    </div>
+                    <div class="bar-item">
+                        <div class="bar-label">인천</div>
+                        <div class="bar-wrapper">
+                            <div class="bar-fill" style="width: 20.3%;">45.0만개</div>
+                        </div>
+                        <div class="bar-value">5.4%</div>
+                    </div>
+                    <div class="bar-item">
+                        <div class="bar-label">경북</div>
+                        <div class="bar-wrapper">
+                            <div class="bar-fill" style="width: 18.4%;">40.7만개</div>
+                        </div>
+                        <div class="bar-value">4.9%</div>
+                    </div>
+                    <div class="bar-item">
+                        <div class="bar-label">대구</div>
+                        <div class="bar-wrapper">
+                            <div class="bar-fill" style="width: 16.0%;">35.4만개</div>
+                        </div>
+                        <div class="bar-value">4.3%</div>
+                    </div>
+                    <div class="bar-item">
+                        <div class="bar-label">충남</div>
+                        <div class="bar-wrapper">
+                            <div class="bar-fill" style="width: 15.4%;">34.2만개</div>
+                        </div>
+                        <div class="bar-value">4.1%</div>
+                    </div>
+                    <div class="bar-item">
+                        <div class="bar-label">전남</div>
+                        <div class="bar-wrapper">
+                            <div class="bar-fill" style="width: 13.7%;">30.4만개</div>
+                        </div>
+                        <div class="bar-value">3.7%</div>
+                    </div>
+                    <div class="bar-item">
+                        <div class="bar-label">전북</div>
+                        <div class="bar-wrapper">
+                            <div class="bar-fill" style="width: 13.3%;">29.5만개</div>
+                        </div>
+                        <div class="bar-value">3.6%</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industry Breakdown Section -->
+    <section class="section section-dark">
+        <div class="container">
+            <h2 class="section-title fade-in">업종별 창업 현황</h2>
+            <div class="chart-container fade-in">
+                <h3 class="chart-title">2025년 업종별 창업 비중</h3>
+                <p class="chart-source">출처: 통계청 창업기업 통계 (2025.08 기준)</p>
+                <div class="pie-grid">
+                    <div class="pie-item" style="border-left-color: #6366f1;">
+                        <div class="pie-item-name">서비스업</div>
+                        <div class="pie-item-value">88.8%</div>
+                        <div class="pie-item-count">79,602개</div>
+                    </div>
+                    <div class="pie-item" style="border-left-color: #8b5cf6;">
+                        <div class="pie-item-name">제조업</div>
+                        <div class="pie-item-value">5.2%</div>
+                        <div class="pie-item-count">4,650개</div>
+                    </div>
+                    <div class="pie-item" style="border-left-color: #06b6d4;">
+                        <div class="pie-item-name">건설업</div>
+                        <div class="pie-item-value">3.5%</div>
+                        <div class="pie-item-count">3,130개</div>
+                    </div>
+                    <div class="pie-item" style="border-left-color: #10b981;">
+                        <div class="pie-item-name">농업·어업</div>
+                        <div class="pie-item-value">1.5%</div>
+                        <div class="pie-item-count">1,340개</div>
+                    </div>
+                    <div class="pie-item" style="border-left-color: #f59e0b;">
+                        <div class="pie-item-name">전기·가스업</div>
+                        <div class="pie-item-value">1.0%</div>
+                        <div class="pie-item-count">895개</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Business Size Section -->
+    <section class="section section-light">
+        <div class="container">
+            <h2 class="section-title fade-in">사업체 규모별 현황</h2>
+            <div class="chart-container fade-in">
+                <h3 class="chart-title">종사자 규모별 사업체 분포</h3>
+                <p class="chart-source">출처: 전국사업체조사</p>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>규모</th>
+                            <th>사업체 수</th>
+                            <th>비중</th>
+                            <th>종사자 수</th>
+                            <th>평균 종사자</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1~4명</td>
+                            <td class="number">620만개</td>
+                            <td class="number">74.7%</td>
+                            <td class="number">1,050만명</td>
+                            <td class="number">1.7명</td>
+                        </tr>
+                        <tr>
+                            <td>5~9명</td>
+                            <td class="number">105만개</td>
+                            <td class="number">12.7%</td>
+                            <td class="number">680만명</td>
+                            <td class="number">6.5명</td>
+                        </tr>
+                        <tr>
+                            <td>10~49명</td>
+                            <td class="number">87만개</td>
+                            <td class="number">10.5%</td>
+                            <td class="number">1,420만명</td>
+                            <td class="number">16.3명</td>
+                        </tr>
+                        <tr>
+                            <td>50~299명</td>
+                            <td class="number">14만개</td>
+                            <td class="number">1.7%</td>
+                            <td class="number">910만명</td>
+                            <td class="number">65.0명</td>
+                        </tr>
+                        <tr>
+                            <td>300명 이상</td>
+                            <td class="number">3.5만개</td>
+                            <td class="number">0.4%</td>
+                            <td class="number">690만명</td>
+                            <td class="number">197.1명</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trends Section -->
+    <section class="section section-dark">
+        <div class="container">
+            <h2 class="section-title fade-in">주요 트렌드 분석</h2>
+            <div class="trend-grid">
+                <div class="trend-card fade-in">
+                    <div class="trend-header">
+                        <div class="trend-title">수도권 집중 심화</div>
+                        <div class="trend-badge high">High</div>
+                    </div>
+                    <p class="trend-description">
+                        경기·서울·인천 3개 지역이 전체 창업의 56%를 차지하며 수도권 집중도가 매우 높음.
+                        지방 창업 생태계 활성화 필요.
+                    </p>
+                </div>
+                <div class="trend-card fade-in">
+                    <div class="trend-header">
+                        <div class="trend-title">서비스업 중심 구조</div>
+                        <div class="trend-badge medium">Medium</div>
+                    </div>
+                    <p class="trend-description">
+                        10곳 중 9곳이 서비스업 중심의 창업으로 자영업 기반 구조 지속.
+                        제조업·기술 기반 창업 생태계 육성 필요.
+                    </p>
+                </div>
+                <div class="trend-card fade-in">
+                    <div class="trend-header">
+                        <div class="trend-title">중장년층 창업 주도</div>
+                        <div class="trend-badge positive">Positive</div>
+                    </div>
+                    <p class="trend-description">
+                        30~50대가 전체 창업의 84.3%를 차지하며 경험과 자본을 갖춘 세대가 주류.
+                        경력 활용형 창업 증가.
+                    </p>
+                </div>
+                <div class="trend-card fade-in">
+                    <div class="trend-header">
+                        <div class="trend-title">소규모 사업체 중심</div>
+                        <div class="trend-badge medium">Medium</div>
+                    </div>
+                    <p class="trend-description">
+                        1~4명 사업체가 전체의 74.7%를 차지하며 소상공인 중심 구조.
+                        영세 사업체 지원 정책 중요.
+                    </p>
+                </div>
+                <div class="trend-card fade-in">
+                    <div class="trend-header">
+                        <div class="trend-title">생존율 지속 하락</div>
+                        <div class="trend-badge high">High</div>
+                    </div>
+                    <p class="trend-description">
+                        3년 생존율 52.3%, 5년 생존율 40.2%로 창업 환경 어려움 지속.
+                        초기 창업 지원 및 멘토링 강화 필요.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Startup Statistics Section -->
+    <section class="section section-light">
+        <div class="container">
+            <h2 class="section-title fade-in">2025년 창업 통계</h2>
+            <div class="kpi-grid">
+                <div class="kpi-card fade-in">
+                    <div class="kpi-icon">🚀</div>
+                    <div class="kpi-value">77.5만</div>
+                    <div class="kpi-label">2025년 창업 (1~8월)</div>
+                    <div class="kpi-description">전년 동기 대비 증가세</div>
+                </div>
+                <div class="kpi-card fade-in">
+                    <div class="kpi-icon">📊</div>
+                    <div class="kpi-value">52.3%</div>
+                    <div class="kpi-label">3년 생존율</div>
+                    <div class="kpi-description">2022년 창업 기준</div>
+                </div>
+                <div class="kpi-card fade-in">
+                    <div class="kpi-icon">🏢</div>
+                    <div class="kpi-value">93.5만</div>
+                    <div class="kpi-label">법인 수</div>
+                    <div class="kpi-description">2023년 법인세 신고</div>
+                </div>
+                <div class="kpi-card fade-in">
+                    <div class="kpi-icon">💰</div>
+                    <div class="kpi-value">76.8조</div>
+                    <div class="kpi-label">법인세 납부</div>
+                    <div class="kpi-description">2023년 기준</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="cta-title">한국 기업 생태계의 미래</h2>
+            <p class="cta-description">
+                데이터로 보는 대한민국 비즈니스 환경의 변화와 기회
+            </p>
+            <a href="#" class="cta-button">더 알아보기</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-title">한국 기업 생태계 2025</div>
+            <div class="footer-links">
+                <a href="https://kostat.go.kr" class="footer-link" target="_blank">통계청</a>
+                <a href="https://www.mss.go.kr" class="footer-link" target="_blank">중소벤처기업부</a>
+                <a href="https://www.nts.go.kr" class="footer-link" target="_blank">국세청</a>
+                <a href="https://www.k-stat.go.kr" class="footer-link" target="_blank">K-STAT</a>
+            </div>
+            <div class="footer-copyright">
+                Report #050 | 2025-12-15 | Data Source: KOSIS, 통계청, 중소벤처기업부, 국세청
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Bar chart animation on scroll
+        const barObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.querySelectorAll('.bar-fill').forEach(bar => {
+                        const width = bar.style.width;
+                        bar.style.width = '0%';
+                        setTimeout(() => {
+                            bar.style.width = width;
+                        }, 100);
+                    });
+                    barObserver.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.bar-chart').forEach(chart => {
+            barObserver.observe(chart);
+        });
+    </script>
+</body>
+</html>

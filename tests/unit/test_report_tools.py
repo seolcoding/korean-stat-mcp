@@ -698,11 +698,11 @@ class TestAssembleReport:
 
         assert "부제목 테스트" in html
 
-    def test_plotly_cdn_included(self, sample_population_data):
-        """Plotly CDN 포함."""
+    def test_vega_cdn_included(self, sample_population_data):
+        """Vega CDN 포함."""
         chart = viz_line_trend(sample_population_data)
         html = assemble_report([chart], title="테스트")
-        assert "cdn.plot.ly/plotly" in html
+        assert "cdn.jsdelivr.net/npm/vega" in html or "vega-lite" in html.lower()
 
     def test_korean_fonts(self, sample_population_data):
         """한글 폰트 포함."""

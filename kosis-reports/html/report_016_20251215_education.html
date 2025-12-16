@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report #016: 한국 교육 통계 트렌드 분석</title>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+        .header h1 {
+            margin: 0 0 10px 0;
+            font-size: 2.2em;
+        }
+        .header .subtitle {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+        .section {
+            background: white;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .section h2 {
+            color: #667eea;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+        .chart-container {
+            margin: 20px 0;
+        }
+        .metadata {
+            background: #f8f9fa;
+            padding: 15px;
+            border-left: 4px solid #667eea;
+            margin: 15px 0;
+        }
+        .metadata strong {
+            color: #667eea;
+        }
+        .key-findings {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .key-findings h3 {
+            color: #856404;
+            margin-top: 0;
+        }
+        .sources {
+            background: #e7f3ff;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .sources h3 {
+            color: #004085;
+            margin-top: 0;
+        }
+        .sources ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        .news-section {
+            background: #f0f8ff;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        .news-section h3 {
+            color: #0056b3;
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Report #016: 한국 교육 통계 트렌드 분석</h1>
+        <div class="subtitle">학령인구 감소와 대학 진학률 변화 (2010-2024)</div>
+        <div style="margin-top: 15px; font-size: 0.9em;">
+            Generated: 2025-12-15 09:34 | Data Source: KOSIS 국가통계포털
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>📰 최신 동향 (2025년)</h2>
+        <div class="news-section">
+            <h3>주요 뉴스 하이라이트</h3>
+            <ul>
+                <li><strong>고등교육 취학률 76.3%</strong>: 2025학년도 고등교육기관 취학률이 76.3%로 증가 (전년 대비 +1.4%p)</li>
+                <li><strong>서울 4년제 진학률 최하위</strong>: 서울 일반고 4년제 대학 진학률 46.2%로 전국 17개 시도 중 최하위 (전국 평균 63.5%)</li>
+                <li><strong>비수도권 진학률 높아</strong>: 경북(80.2%), 전남(77.5%), 충북(77.3%) 등 비수도권 지역 진학률이 높음</li>
+                <li><strong>N수생 비율 최고치</strong>: 서울 소재 4년제 대학 신입생 중 N수생 비율 37.3%로 수능 도입 이후 최고</li>
+                <li><strong>OECD 1위 고등교육 이수율</strong>: 만 25-34세 고등교육 이수율 70.6%로 OECD 중 1위</li>
+            </ul>
+        </div>
+        <p>
+            출처:
+            <a href="https://www.index.go.kr/unity/potal/main/EachDtlPageDetail.do?idx_cd=1520" target="_blank">e-나라지표</a>,
+            <a href="https://www.newsspace.kr/news/article.html?no=11262" target="_blank">The Numbers</a>,
+            <a href="https://www.seoul.co.kr/news/society/education-news/2025/12/14/20251214500083" target="_blank">서울신문</a>
+        </p>
+    </div>
+
+    <div class="section">
+        <h2>📊 데이터 개요</h2>
+        <div class="metadata">
+            <p><strong>분석 기간:</strong> 2010년 ~ 2024년</p>
+            <p><strong>데이터 건수:</strong> 11,318건</p>
+            <p><strong>주요 지표:</strong></p>
+            <ul>
+                <li>학령인구 추이 (6-21세)</li>
+                <li>초등학교 학생수 변화</li>
+                <li>대학교 학생수 변화</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>📈 학령인구 추이</h2>
+        <div class="key-findings">
+            <h3>주요 발견사항</h3>
+            <ul>
+                <li>학령인구(6-21세)는 지속적으로 감소하는 추세</li>
+                <li>저출산으로 인한 인구구조 변화가 교육 시스템에 큰 영향</li>
+                <li>생산연령인구(15-64세)도 2020년 이후 감소세</li>
+            </ul>
+        </div>
+        <div class="chart-container">
+            <div id="chart1"></div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>🏫 초등학교 학생수 변화</h2>
+        <div class="key-findings">
+            <h3>트렌드 분석</h3>
+            <ul>
+                <li>초등학생 수는 학령인구 감소를 반영하여 지속 감소</li>
+                <li>지역별 격차 존재: 수도권 vs 비수도권</li>
+                <li>학교 통폐합 및 교육환경 변화 불가피</li>
+            </ul>
+        </div>
+        <div class="chart-container">
+            <div id="chart2"></div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>🎓 대학교 학생수 변화</h2>
+        <div class="key-findings">
+            <h3>고등교육 트렌드</h3>
+            <ul>
+                <li>대학생 수는 학령인구 감소에도 불구하고 상대적으로 안정적</li>
+                <li>진학률 증가로 학생수 감소폭 완화</li>
+                <li>지역별 진학 패턴 차이: 서울 낮음, 비수도권 높음</li>
+                <li>N수생 증가는 대학 입시 경쟁 심화 반영</li>
+            </ul>
+        </div>
+        <div class="chart-container">
+            <div id="chart3"></div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>💡 시사점 및 전망</h2>
+        <div class="key-findings">
+            <h3>정책적 함의</h3>
+            <ul>
+                <li><strong>학령인구 감소 대응:</strong> 교육 인프라 재구조화 필요</li>
+                <li><strong>지역 교육 격차:</strong> 비수도권 대학 경쟁력 강화 방안 모색</li>
+                <li><strong>진학률 패러독스:</strong> OECD 최고 진학률이지만 취업률·임금은 평균 이하</li>
+                <li><strong>N수생 증가:</strong> 입시제도 개선 및 다양한 진로 지원 필요</li>
+                <li><strong>대학 구조조정:</strong> 지방 대학 통폐합 및 특성화 불가피</li>
+            </ul>
+        </div>
+
+        <div class="news-section">
+            <h3>2025년 전망</h3>
+            <p>
+                고등교육 취학률은 76.3%로 증가했지만, 학령인구 감소는 지속될 것으로 예상됩니다.
+                특히 서울의 낮은 진학률과 높은 N수생 비율은 지역 간 교육 불평등과 입시 경쟁
+                심화를 반영하며, 이에 대한 정책적 대응이 시급합니다.
+            </p>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="sources">
+            <h3>데이터 출처</h3>
+            <ul>
+                <li><strong>KOSIS 국가통계포털</strong></li>
+                <li>주요 연령계층별 추계인구 (국가데이터처, DT_1BPA003)</li>
+                <li>초등학교 학생수(시도/시/군/구) (국가데이터처, DT_1YL21241)</li>
+                <li>대학교 학생수(시도/시/군/구) (국가데이터처)</li>
+            </ul>
+            <p style="margin-top: 15px; font-size: 0.9em; color: #666;">
+                <strong>뉴스 출처:</strong> e-나라지표, The Numbers, 서울신문, 경북신문, 서울경제 등
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Chart 1: School-age population
+        vegaEmbed('#chart1', {"$schema": "https://vega.github.io/schema/vega-lite/v5.json", "title": "\ud559\ub839\uc778\uad6c \ucd94\uc774 (2010-2024)", "width": 700, "height": 400, "data": {"values": [{"year": "2010-01-01", "population": 9950, "category": "\ud559\ub839\uc778\uad6c(\ucc9c\uba85)"}, {"year": "2011-01-01", "population": 9785, "category": "\ud559\ub839\uc778\uad6c(\ucc9c\uba85)"}, {"year": "2012-01-01", "population": 9590, "category": "\ud559\ub839\uc778\uad6c(\ucc9c\uba85)"}, {"year": "2013-01-01", "population": 9397, "category": "\ud559\ub839\uc778\uad6c(\ucc9c\uba85)"}, {"year": "2014-01-01", "population": 9181, "category": "\ud559\ub839\uc778\uad6c(\ucc9c\uba85)"}, {"year": "2015-01-01", "population": 8920, "category": "\ud559\ub839\uc778\uad6c(\ucc9c\uba85)"}, {"year": "2016-01-01", "population": 8672, "category": "\ud559\ub839\uc778\uad6c(\ucc9c\uba85)"}, {"year": "2017-01-01", "population": 8461, "category": "\ud559\ub839\uc778\uad6c(\ucc9c\uba85)"}, {"year": "2018-01-01", "population": 8263, "category": "\ud559\ub839\uc778\uad6c(\ucc9c\uba85)"}, {"year": "2019-01-01", "population": 8074, "category": "\ud559\ub839\uc778\uad6c(\ucc9c\uba85)"}, {"year": "2020-01-01", "population": 7888, "category": "\ud559\ub839\uc778\uad6c(\ucc9c\uba85)"}, {"year": "2021-01-01", "population": 7701, "category": "\ud559\ub839\uc778\uad6c(\ucc9c\uba85)"}, {"year": "2022-01-01", "population": 7497, "category": "\ud559\ub839\uc778\uad6c(\ucc9c\uba85)"}, {"year": "2023-01-01", "population": 7302, "category": "\ud559\ub839\uc778\uad6c(\ucc9c\uba85)"}, {"year": "2024-01-01", "population": 7147, "category": "\ud559\ub839\uc778\uad6c(\ucc9c\uba85)"}, {"year": "2010-01-01", "population": 3280, "category": "\ud559\ub839\uc778\uad6c(\ucc9c\uba85)"}, {"year": "2011-01-01", "population": 3109, "category": "\ud559\ub839\uc778\uad6c(\ucc9c\uba85)"}, {"year": "2012-01-01", "population": 2926, "category": "\ud559\ub839\uc778\uad6c(\ucc9c\uba85)"}, {"year": "2013-01-01", "population": 2783, "category": "\ud559\ub839\uc778\uad6c(\ucc9c\uba85)"}, {"year": "2014-01-01", "population": 2751, "category": "\ud559\ub839\uc778\uad6c(\ucc9c\uba85)"}, {"year": "2015-01-01", "population": 2720, "category": "\ud559\ub839\uc778\uad6c(\ucc9c\uba85)"}, {"year": "2016-01-01", "population": 2688, "category": "\ud559\ub839\uc778\uad6c(\ucc9c\uba85)"}, {"year": "2017-01-01", "population": 2719, "category": "\ud559\ub839\uc778\uad6c(\ucc9c\uba85)"}, {"year": "2018-01-01", "population": 2756, "category": "\ud559\ub839\uc778\uad6c(\ucc9c\uba85)"}, {"year": "2019-01-01", "population": 2766, "category": "\ud559\ub839\uc778\uad6c(\ucc9c\uba85)"}, {"year": "2020-01-01", "population": 2724, "category": "\ud559\ub839\uc778\uad6c(\ucc9c\uba85)"}, {"year": "2021-01-01", "population": 2720, "category": "\ud559\ub839\uc778\uad6c(\ucc9c\uba85)"}, {"year": "2022-01-01", "population": 2701, "category": "\ud559\ub839\uc778\uad6c(\ucc9c\uba85)"}, {"year": "2023-01-01", "population": 2607, "category": "\ud559\ub839\uc778\uad6c(\ucc9c\uba85)"}, {"year": "2024-01-01", "population": 2485, "category": "\ud559\ub839\uc778\uad6c(\ucc9c\uba85)"}, {"year": "2010-01-01", "population": 1985, "category": "\ud559\ub839\uc778\uad6c(\ucc9c\uba85)"}, {"year": "2011-01-01", "population": 1914, "category": "\ud559\ub839\uc778\uad6c(\ucc9c\uba85)"}, {"year": "2012-01-01", "population": 1867, "category": "\ud559\ub839\uc778\uad6c(\ucc9c\uba85)"}, {"year": "2013-01-01", "population": 1818, "category": "\ud559\ub839\uc778\uad6c(\ucc9c\uba85)"}, {"year": "2014-01-01", "population": 1719, "category": "\ud559\ub839\uc778\uad6c(\ucc9c\uba85)"}, {"year": "2015-01-01", "population": 1578, "category": "\ud559\ub839\uc778\uad6c(\ucc9c\uba85)"}, {"year": "2016-01-01", "population": 1458, "category": "\ud559\ub839\uc778\uad6c(\ucc9c\uba85)"}, {"year": "2017-01-01", "population": 1385, "category": "\ud559\ub839\uc778\uad6c(\ucc9c\uba85)"}, {"year": "2018-01-01", "population": 1340, "category": "\ud559\ub839\uc778\uad6c(\ucc9c\uba85)"}, {"year": "2019-01-01", "population": 1319, "category": "\ud559\ub839\uc778\uad6c(\ucc9c\uba85)"}, {"year": "2020-01-01", "population": 1364, "category": "\ud559\ub839\uc778\uad6c(\ucc9c\uba85)"}, {"year": "2021-01-01", "population": 1380, "category": "\ud559\ub839\uc778\uad6c(\ucc9c\uba85)"}, {"year": "2022-01-01", "population": 1368, "category": "\ud559\ub839\uc778\uad6c(\ucc9c\uba85)"}, {"year": "2023-01-01", "population": 1364, "category": "\ud559\ub839\uc778\uad6c(\ucc9c\uba85)"}, {"year": "2024-01-01", "population": 1384, "category": "\ud559\ub839\uc778\uad6c(\ucc9c\uba85)"}, {"year": "2010-01-01", "population": 2084, "category": "\ud559\ub839\uc778\uad6c(\ucc9c\uba85)"}, {"year": "2011-01-01", "population": 2062, "category": "\ud559\ub839\uc778\uad6c(\ucc9c\uba85)"}, {"year": "2012-01-01", "population": 2028, "category": "\ud559\ub839\uc778\uad6c(\ucc9c\uba85)"}, {"year": "2013-01-01", "population": 1985, "category": "\ud559\ub839\uc778\uad6c(\ucc9c\uba85)"}, {"year": "2014-01-01", "population": 1912, "category": "\ud559\ub839\uc778\uad6c(\ucc9c\uba85)"}, {"year": "2015-01-01", "population": 1868, "category": "\ud559\ub839\uc778\uad6c(\ucc9c\uba85)"}, {"year": "2016-01-01", "population": 1816, "category": "\ud559\ub839\uc778\uad6c(\ucc9c\uba85)"}, {"year": "2017-01-01", "population": 1715, "category": "\ud559\ub839\uc778\uad6c(\ucc9c\uba85)"}, {"year": "2018-01-01", "population": 1574, "category": "\ud559\ub839\uc778\uad6c(\ucc9c\uba85)"}, {"year": "2019-01-01", "population": 1453, "category": "\ud559\ub839\uc778\uad6c(\ucc9c\uba85)"}, {"year": "2020-01-01", "population": 1390, "category": "\ud559\ub839\uc778\uad6c(\ucc9c\uba85)"}, {"year": "2021-01-01", "population": 1344, "category": "\ud559\ub839\uc778\uad6c(\ucc9c\uba85)"}, {"year": "2022-01-01", "population": 1323, "category": "\ud559\ub839\uc778\uad6c(\ucc9c\uba85)"}, {"year": "2023-01-01", "population": 1364, "category": "\ud559\ub839\uc778\uad6c(\ucc9c\uba85)"}, {"year": "2024-01-01", "population": 1379, "category": "\ud559\ub839\uc778\uad6c(\ucc9c\uba85)"}, {"year": "2010-01-01", "population": 2601, "category": "\ud559\ub839\uc778\uad6c(\ucc9c\uba85)"}, {"year": "2011-01-01", "population": 2700, "category": "\ud559\ub839\uc778\uad6c(\ucc9c\uba85)"}, {"year": "2012-01-01", "population": 2769, "category": "\ud559\ub839\uc778\uad6c(\ucc9c\uba85)"}, {"year": "2013-01-01", "population": 2811, "category": "\ud559\ub839\uc778\uad6c(\ucc9c\uba85)"}, {"year": "2014-01-01", "population": 2799, "category": "\ud559\ub839\uc778\uad6c(\ucc9c\uba85)"}, {"year": "2015-01-01", "population": 2755, "category": "\ud559\ub839\uc778\uad6c(\ucc9c\uba85)"}, {"year": "2016-01-01", "population": 2710, "category": "\ud559\ub839\uc778\uad6c(\ucc9c\uba85)"}, {"year": "2017-01-01", "population": 2642, "category": "\ud559\ub839\uc778\uad6c(\ucc9c\uba85)"}, {"year": "2018-01-01", "population": 2593, "category": "\ud559\ub839\uc778\uad6c(\ucc9c\uba85)"}, {"year": "2019-01-01", "population": 2537, "category": "\ud559\ub839\uc778\uad6c(\ucc9c\uba85)"}, {"year": "2020-01-01", "population": 2410, "category": "\ud559\ub839\uc778\uad6c(\ucc9c\uba85)"}, {"year": "2021-01-01", "population": 2257, "category": "\ud559\ub839\uc778\uad6c(\ucc9c\uba85)"}, {"year": "2022-01-01", "population": 2105, "category": "\ud559\ub839\uc778\uad6c(\ucc9c\uba85)"}, {"year": "2023-01-01", "population": 1967, "category": "\ud559\ub839\uc778\uad6c(\ucc9c\uba85)"}, {"year": "2024-01-01", "population": 1899, "category": "\ud559\ub839\uc778\uad6c(\ucc9c\uba85)"}, {"year": "2022-01-01", "population": 7497, "category": "\ud559\ub839\uc778\uad6c(\ucc9c\uba85)"}, {"year": "2023-01-01", "population": 7302, "category": "\ud559\ub839\uc778\uad6c(\ucc9c\uba85)"}, {"year": "2024-01-01", "population": 7156, "category": "\ud559\ub839\uc778\uad6c(\ucc9c\uba85)"}, {"year": "2022-01-01", "population": 2701, "category": "\ud559\ub839\uc778\uad6c(\ucc9c\uba85)"}, {"year": "2023-01-01", "population": 2607, "category": "\ud559\ub839\uc778\uad6c(\ucc9c\uba85)"}, {"year": "2024-01-01", "population": 2486, "category": "\ud559\ub839\uc778\uad6c(\ucc9c\uba85)"}, {"year": "2022-01-01", "population": 1368, "category": "\ud559\ub839\uc778\uad6c(\ucc9c\uba85)"}, {"year": "2023-01-01", "population": 1364, "category": "\ud559\ub839\uc778\uad6c(\ucc9c\uba85)"}, {"year": "2024-01-01", "population": 1385, "category": "\ud559\ub839\uc778\uad6c(\ucc9c\uba85)"}, {"year": "2022-01-01", "population": 1323, "category": "\ud559\ub839\uc778\uad6c(\ucc9c\uba85)"}, {"year": "2023-01-01", "population": 1364, "category": "\ud559\ub839\uc778\uad6c(\ucc9c\uba85)"}, {"year": "2024-01-01", "population": 1380, "category": "\ud559\ub839\uc778\uad6c(\ucc9c\uba85)"}, {"year": "2022-01-01", "population": 2105, "category": "\ud559\ub839\uc778\uad6c(\ucc9c\uba85)"}, {"year": "2023-01-01", "population": 1967, "category": "\ud559\ub839\uc778\uad6c(\ucc9c\uba85)"}, {"year": "2024-01-01", "population": 1904, "category": "\ud559\ub839\uc778\uad6c(\ucc9c\uba85)"}, {"year": "2022-01-01", "population": 7497, "category": "\ud559\ub839\uc778\uad6c(\ucc9c\uba85)"}, {"year": "2023-01-01", "population": 7302, "category": "\ud559\ub839\uc778\uad6c(\ucc9c\uba85)"}, {"year": "2024-01-01", "population": 7138, "category": "\ud559\ub839\uc778\uad6c(\ucc9c\uba85)"}, {"year": "2022-01-01", "population": 2701, "category": "\ud559\ub839\uc778\uad6c(\ucc9c\uba85)"}, {"year": "2023-01-01", "population": 2607, "category": "\ud559\ub839\uc778\uad6c(\ucc9c\uba85)"}, {"year": "2024-01-01", "population": 2483, "category": "\ud559\ub839\uc778\uad6c(\ucc9c\uba85)"}, {"year": "2022-01-01", "population": 1368, "category": "\ud559\ub839\uc778\uad6c(\ucc9c\uba85)"}, {"year": "2023-01-01", "population": 1364, "category": "\ud559\ub839\uc778\uad6c(\ucc9c\uba85)"}, {"year": "2024-01-01", "population": 1384, "category": "\ud559\ub839\uc778\uad6c(\ucc9c\uba85)"}, {"year": "2022-01-01", "population": 1323, "category": "\ud559\ub839\uc778\uad6c(\ucc9c\uba85)"}]}, "mark": {"type": "line", "point": true, "tooltip": true}, "encoding": {"x": {"field": "year", "type": "temporal", "title": "Year"}, "y": {"field": "population", "type": "quantitative", "title": "Population"}, "color": {"field": "category", "type": "nominal", "title": "Category"}}}, {"actions": false});
+
+        // Chart 2: Elementary students
+        vegaEmbed('#chart2', {"$schema": "https://vega.github.io/schema/vega-lite/v5.json", "title": "\ucd08\ub4f1\ud559\uad50 \ud559\uc0dd\uc218 \uc804\uad6d \ud569\uacc4 (2010-2024)", "width": 700, "height": 400, "data": {"values": [{"year": "2010-01-01", "students": 9897282}, {"year": "2011-01-01", "students": 9397431}, {"year": "2012-01-01", "students": 8855985}, {"year": "2013-01-01", "students": 8344910}, {"year": "2014-01-01", "students": 8177470}, {"year": "2015-01-01", "students": 8130477}, {"year": "2016-01-01", "students": 8000619}, {"year": "2017-01-01", "students": 8001917}, {"year": "2018-01-01", "students": 8109290}, {"year": "2019-01-01", "students": 8213765}, {"year": "2020-01-01", "students": 8051661}, {"year": "2021-01-01", "students": 7986294}, {"year": "2022-01-01", "students": 7960604}, {"year": "2023-01-01", "students": 7779173}, {"year": "2024-01-01", "students": 7452884}]}, "mark": {"type": "line", "point": true, "tooltip": true}, "encoding": {"x": {"field": "year", "type": "temporal", "title": "Year"}, "y": {"field": "students", "type": "quantitative", "title": "Students"}}}, {"actions": false});
+
+        // Chart 3: University students
+        vegaEmbed('#chart3', {"$schema": "https://vega.github.io/schema/vega-lite/v5.json", "title": "\ub300\ud559\uad50 \ud559\uc0dd\uc218 \uc804\uad6d \ud569\uacc4 (2010-2024)", "width": 700, "height": 400, "data": {"values": [{"year": "2010-01-01", "students": 17707692}, {"year": "2011-01-01", "students": 17912076}, {"year": "2012-01-01", "students": 17929008}, {"year": "2013-01-01", "students": 17780148}, {"year": "2014-01-01", "students": 17633856}, {"year": "2015-01-01", "students": 17316626}, {"year": "2016-01-01", "students": 16938520}, {"year": "2017-01-01", "students": 16570008}, {"year": "2018-01-01", "students": 16281560}, {"year": "2019-01-01", "students": 16015680}, {"year": "2020-01-01", "students": 15757606}, {"year": "2021-01-01", "students": 15221904}, {"year": "2022-01-01", "students": 14701618}, {"year": "2023-01-01", "students": 14316724}, {"year": "2024-01-01", "students": 14097624}]}, "mark": {"type": "line", "point": true, "tooltip": true}, "encoding": {"x": {"field": "year", "type": "temporal", "title": "Year"}, "y": {"field": "students", "type": "quantitative", "title": "Students"}}}, {"actions": false});
+    </script>
+</body>
+</html>

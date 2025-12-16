@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>청년정책 트렌드 분석 2025 | KOSIS 트렌드 리포트 #038</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+            background: #f5f5f5;
+            color: #333;
+            line-height: 1.7;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            padding: 120px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><circle cx="100" cy="100" r="150" fill="rgba(255,255,255,0.1)"/><circle cx="1100" cy="500" r="200" fill="rgba(255,255,255,0.1)"/><circle cx="600" cy="300" r="100" fill="rgba(255,255,255,0.1)"/></svg>');
+            background-size: cover;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .report-number {
+            font-size: 14px;
+            font-weight: 600;
+            color: #666;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+        
+        h1 {
+            font-size: 56px;
+            font-weight: 800;
+            margin-bottom: 30px;
+            color: #1a1a1a;
+            line-height: 1.2;
+        }
+        
+        .hero-subtitle {
+            font-size: 24px;
+            color: #555;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+        
+        .hero-meta {
+            font-size: 16px;
+            color: #777;
+            margin-top: 30px;
+        }
+        
+        /* Container */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+        
+        /* Card Grid */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+        }
+        
+        .card-header {
+            margin-bottom: 30px;
+        }
+        
+        .card-title {
+            font-size: 28px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 10px;
+        }
+        
+        .card-subtitle {
+            font-size: 16px;
+            color: #888;
+            font-weight: 400;
+        }
+        
+        .kpi-value {
+            font-size: 72px;
+            font-weight: 800;
+            color: #ff6b9d;
+            line-height: 1;
+            margin: 20px 0;
+        }
+        
+        .kpi-unit {
+            font-size: 24px;
+            color: #888;
+            margin-left: 5px;
+        }
+        
+        .kpi-change {
+            font-size: 18px;
+            color: #4caf50;
+            margin-top: 10px;
+        }
+        
+        .kpi-change.negative {
+            color: #f44336;
+        }
+        
+        .kpi-description {
+            font-size: 16px;
+            color: #666;
+            margin-top: 15px;
+            line-height: 1.6;
+        }
+        
+        /* Section */
+        .section {
+            background: white;
+            border-radius: 20px;
+            padding: 50px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+        }
+        
+        .section-title {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            color: #1a1a1a;
+        }
+        
+        .section-content {
+            font-size: 18px;
+            color: #555;
+            line-height: 1.8;
+        }
+        
+        .section-content p {
+            margin-bottom: 20px;
+        }
+        
+        .section-content strong {
+            color: #ff6b9d;
+            font-weight: 600;
+        }
+        
+        /* Data Table */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+        }
+        
+        .data-table thead {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+        }
+        
+        .data-table th {
+            padding: 20px;
+            text-align: left;
+            font-weight: 600;
+            color: #1a1a1a;
+            font-size: 16px;
+        }
+        
+        .data-table td {
+            padding: 18px 20px;
+            border-bottom: 1px solid #f0f0f0;
+            font-size: 16px;
+            color: #555;
+        }
+        
+        .data-table tr:hover {
+            background: #fafafa;
+        }
+        
+        /* Highlight Box */
+        .highlight-box {
+            background: linear-gradient(135deg, #fff5f7 0%, #f0f9ff 100%);
+            border-left: 5px solid #ff6b9d;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+        }
+        
+        .highlight-box-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: #ff6b9d;
+            margin-bottom: 15px;
+        }
+        
+        .highlight-box-content {
+            font-size: 17px;
+            color: #555;
+            line-height: 1.7;
+        }
+        
+        /* Tag Cloud */
+        .tag-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin: 30px 0;
+        }
+        
+        .tag {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 15px;
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+        
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 60px 20px;
+            background: white;
+            margin-top: 60px;
+            border-radius: 20px;
+        }
+        
+        .footer-text {
+            font-size: 16px;
+            color: #888;
+            margin-bottom: 15px;
+        }
+        
+        .footer-source {
+            font-size: 14px;
+            color: #aaa;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 40px;
+            }
+            
+            .hero-subtitle {
+                font-size: 20px;
+            }
+            
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .kpi-value {
+                font-size: 56px;
+            }
+            
+            .section {
+                padding: 30px 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="hero-content">
+            <div class="report-number">KOSIS TREND REPORT #038</div>
+            <h1>청년정책 트렌드 분석 2025</h1>
+            <p class="hero-subtitle">니트족, 실업률, 그리고 청년 고용의 현실</p>
+            <div class="hero-meta">2025년 12월 15일 발행 | KOSIS 데이터 기반 분석</div>
+        </div>
+    </div>
+    
+    <div class="container">
+
+        <!-- KPI Cards -->
+        <div class="card-grid">
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">청년 고용보조지표1</h2>
+                    <p class="card-subtitle">시간관련 추가취업가능자 포함 (2024)</p>
+                </div>
+
+                <div class="kpi-value">8.8<span class="kpi-unit">%</span></div>
+                <div class="kpi-change negative">전년대비 0.0%p 악화</div>
+                <p class="kpi-description">
+                    청년층(15-29세) 중 시간 관련 추가취업 가능자를 포함한 고용보조지표입니다.
+                    2020년 12.6%에서 개선되었습니다.
+                </p>
+
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">청년 고용보조지표2</h2>
+                    <p class="card-subtitle">잠재경제활동인구 포함 (2024)</p>
+                </div>
+
+                <div class="kpi-value">12.9<span class="kpi-unit">%</span></div>
+                <p class="kpi-description">
+                    시간관련 추가취업가능자와 잠재경제활동인구를 포함한 지표로,
+                    청년층의 실질적인 고용 불완전 상태를 나타냅니다.
+                </p>
+
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">청년 고용보조지표3</h2>
+                    <p class="card-subtitle">실업자+잠재경제활동인구 (2024)</p>
+                </div>
+
+                <div class="kpi-value">15.6<span class="kpi-unit">%</span></div>
+                <p class="kpi-description">
+                    실업자와 잠재경제활동인구를 합산한 지표로,
+                    청년층의 전반적인 고용 취약성을 보여줍니다.
+                </p>
+
+            </div>
+        </div>
+
+        <!-- News Insights Section -->
+        <div class="section">
+            <h2 class="section-title">2025 청년정책 트렌드: 핵심 이슈</h2>
+            <div class="section-content">
+                <div class="highlight-box">
+                    <div class="highlight-box-title">한국만 증가하는 청년 니트족</div>
+                    <div class="highlight-box-content">
+                        OECD 주요 11개국 중 <strong>유일하게 한국만 니트(NEET) 비중이 2014년보다 증가</strong>했습니다. 
+                        한국의 15~29세 청년 중 니트 비중은 2022년 18.3%로 2014년 17.5%보다 높아졌으며, 
+                        이는 OECD 평균(12.6%)보다 약 6%p 높은 수치입니다.
+                    </div>
+                </div>
+                
+                <p>
+                    <strong>청년들의 눈높이와 현실의 괴리</strong><br>
+                    청년 100명 중 15명은 현재 직장의 근무지, 임금 수준, 직종에 대해 모두 만족하지 않는 것으로 조사되었습니다.
+                    직장의 기본 조건 세 가지를 모두 충족하는 직장에 다니는 청년은 단 9%에 불과합니다.
+                </p>
+                
+                <p>
+                    <strong>불안정한 첫 일자리</strong><br>
+                    올해 첫 일자리가 1년 이하 계약직인 경우가 31.8%에 달했으며, 
+                    첫 일자리 평균 임금은 68%가 월 200만 원 미만, 15.3%는 월 100만 원 미만으로 나타났습니다.
+                </p>
+                
+                <div class="tag-cloud">
+                    <span class="tag">청년니트족</span>
+                    <span class="tag">청년실업</span>
+                    <span class="tag">일자리미스매칭</span>
+                    <span class="tag">비정규직</span>
+                    <span class="tag">저임금</span>
+                    <span class="tag">사회적고립</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Policy Section -->
+        <div class="section">
+            <h2 class="section-title">2025년 청년 지원 정책</h2>
+            <div class="section-content">
+                <p>
+                    정부는 2020년 청년기본법 제정 이후, 일자리, 주거, 교육, 생활복지문화, 참여권리 등 
+                    청년 삶 전반을 포괄하는 종합적인 청년정책을 추진해왔습니다.
+                </p>
+                
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>정책명</th>
+                            <th>지원내용</th>
+                            <th>대상</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>청년구직활동지원금</strong></td>
+                            <td>월 50만 원 × 최대 6개월</td>
+                            <td>미취업 청년</td>
+                        </tr>
+                        <tr>
+                            <td><strong>청년월세지원</strong></td>
+                            <td>월 최대 20만 원 × 최대 12개월</td>
+                            <td>서울 거주 청년</td>
+                        </tr>
+                        <tr>
+                            <td><strong>청년도약계좌</strong></td>
+                            <td>정부기여금 + 이자소득</td>
+                            <td>소득 7,500만 원 이하 청년</td>
+                        </tr>
+                        <tr>
+                            <td><strong>청년내일채움공제</strong></td>
+                            <td>3년간 최대 1,200만 원</td>
+                            <td>중소·중견기업 재직 청년</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="highlight-box">
+                    <div class="highlight-box-title">정책 방향의 변화</div>
+                    <div class="highlight-box-content">
+                        2025년 청년 정책은 단순히 저소득층 지원을 넘어, <strong>모든 청년을 포괄하는 보편적 정책</strong>으로 확대되었습니다.
+                        "청년들이 당장은 버티고, 장기적으로는 성장할 수 있도록 돕는 정책"이라는 점에서 의미가 있습니다.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Data Analysis Section -->
+        <div class="section">
+            <h2 class="section-title">KOSIS 데이터로 본 청년 고용 트렌드</h2>
+            <div class="section-content">
+                <p>
+                    통계청 경제활동인구조사 데이터에 따르면, 청년층(15-29세)의 고용보조지표는 
+                    2020년 이후 점진적으로 개선되고 있습니다.
+                </p>
+
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>연도</th>
+                            <th>고용보조지표1 (%)</th>
+                            <th>고용보조지표2 (%)</th>
+                            <th>고용보조지표3 (%)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td><strong>2020</strong></td>
+                            <td>12.6%</td>
+                            <td>22%</td>
+                            <td>25.1%</td>
+                        </tr>
+
+                        <tr>
+                            <td><strong>2021</strong></td>
+                            <td>11.2%</td>
+                            <td>20.1%</td>
+                            <td>23.1%</td>
+                        </tr>
+
+                        <tr>
+                            <td><strong>2022</strong></td>
+                            <td>9.1%</td>
+                            <td>16.5%</td>
+                            <td>19%</td>
+                        </tr>
+
+                        <tr>
+                            <td><strong>2023</strong></td>
+                            <td>8.8%</td>
+                            <td>13.9%</td>
+                            <td>16.6%</td>
+                        </tr>
+
+                        <tr>
+                            <td><strong>2024</strong></td>
+                            <td>8.8%</td>
+                            <td>12.9%</td>
+                            <td>15.6%</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+                
+                <p style="margin-top: 30px;">
+                    <strong>고용보조지표 해석:</strong>
+                </p>
+                <ul style="margin-left: 20px; line-height: 2;">
+                    <li><strong>지표1:</strong> 시간관련 추가취업가능자를 포함한 실업률 (가장 좁은 범위)</li>
+                    <li><strong>지표2:</strong> 시간관련 추가취업가능자 + 잠재경제활동인구 포함</li>
+                    <li><strong>지표3:</strong> 실업자 + 잠재경제활동인구 (공식 실업률보다 넓은 개념)</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Conclusion Section -->
+        <div class="section">
+            <h2 class="section-title">분석 결론 및 시사점</h2>
+            <div class="section-content">
+                <p>
+                    <strong>1. 구조적 문제의 심화</strong><br>
+                    OECD 주요국 중 유일하게 니트족이 증가하는 현상은 단순한 경기 순환의 문제가 아닌 
+                    <strong>노동시장의 구조적 문제</strong>를 시사합니다. 경직된 노동시장과 대기업 중심의 
+                    경력직 채용 확대가 청년들의 첫 일자리 진입을 더욱 어렵게 만들고 있습니다.
+                </p>
+                
+                <p>
+                    <strong>2. 일자리 미스매칭의 심각성</strong><br>
+                    청년 100명 중 15명이 근무지, 임금, 직종 모두에 불만족한다는 것은 
+                    <strong>양질의 일자리 부족</strong>이 청년 고용 문제의 핵심임을 보여줍니다.
+                </p>
+                
+                <p>
+                    <strong>3. 정책적 노력과 한계</strong><br>
+                    청년구직활동지원금, 월세지원 등 다양한 지원정책이 시행되고 있지만, 
+                    근본적인 일자리 창출과 노동시장 개혁 없이는 한계가 있습니다.
+                    <strong>보편적 청년정책으로의 전환</strong>은 긍정적이나, 
+                    구조적 문제 해결을 위한 장기적 로드맵이 필요합니다.
+                </p>
+                
+                <div class="highlight-box">
+                    <div class="highlight-box-title">정책 제언</div>
+                    <div class="highlight-box-content">
+                        • 대기업-중소기업 간 임금 격차 완화 정책<br>
+                        • 청년 친화적 중소기업 육성 및 인센티브 강화<br>
+                        • 직업훈련과 실무 연계 강화<br>
+                        • 노동시장 유연성 제고와 청년 고용 보호 균형<br>
+                        • 니트족 → 경제활동 복귀를 위한 맞춤형 지원 프로그램
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p class="footer-text">KOSIS Trend Report #038 - 청년정책 트렌드 분석 2025</p>
+            <p class="footer-source">
+                데이터 출처: 통계청 KOSIS (고용보조지표, 경제활동인구조사)<br>
+                뉴스 출처: 서울경제, 한국고용정보원, 국무조정실 보도자료<br>
+                발행일: 2025년 12월 15일
+            </p>
+        </div>
+    </div>
+</body>
+</html>

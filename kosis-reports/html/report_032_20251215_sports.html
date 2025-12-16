@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>한국 체육·스포츠 참여 현황 분석 | KOSIS 트렌드 보고서 #032</title>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ec 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
+        header {
+            background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+            color: white;
+            padding: 60px 40px;
+            border-radius: 20px;
+            margin-bottom: 40px;
+            box-shadow: 0 20px 60px rgba(46, 204, 113, 0.4);
+        }
+        header h1 { font-size: 2.5rem; margin-bottom: 15px; font-weight: 800; }
+        header p { font-size: 1.1rem; opacity: 0.9; line-height: 1.6; }
+        .meta-info { margin-top: 20px; font-size: 0.9rem; opacity: 0.8; }
+
+        .kpi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+        .kpi-card {
+            background: white;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .kpi-card:hover { transform: translateY(-5px); box-shadow: 0 15px 50px rgba(0,0,0,0.12); }
+        .kpi-card.success { border-left: 5px solid #2ecc71; }
+        .kpi-card.warning { border-left: 5px solid #f39c12; }
+        .kpi-card.info { border-left: 5px solid #3498db; }
+        .kpi-card.primary { border-left: 5px solid #9b59b6; }
+        .kpi-value { font-size: 3rem; font-weight: 800; color: #2c3e50; }
+        .kpi-value.positive { color: #2ecc71; }
+        .kpi-label { font-size: 1rem; color: #7f8c8d; margin-top: 10px; }
+        .kpi-sub { font-size: 0.85rem; color: #95a5a6; margin-top: 5px; }
+
+        .section {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.06);
+        }
+        .section h2 {
+            font-size: 1.8rem;
+            color: #2c3e50;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #2ecc71;
+        }
+        .section h3 {
+            font-size: 1.3rem;
+            color: #34495e;
+            margin: 25px 0 15px 0;
+        }
+
+        .insight-box {
+            background: linear-gradient(135deg, #e8f8f5 0%, #d5f4e6 100%);
+            border-left: 5px solid #2ecc71;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 25px 0;
+        }
+        .insight-box h3 { color: #27ae60; margin-bottom: 15px; }
+        .insight-box ul { margin-left: 20px; }
+        .insight-box li { margin: 10px 0; line-height: 1.7; }
+
+        .warning-box {
+            background: linear-gradient(135deg, #fff9e6 0%, #fff3cd 100%);
+            border-left: 5px solid #f39c12;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 25px 0;
+        }
+        .warning-box h3 { color: #e67e22; margin-bottom: 15px; }
+        .warning-box ul { margin-left: 20px; }
+        .warning-box li { margin: 10px 0; line-height: 1.7; }
+
+        .chart-container { margin: 30px 0; }
+        .chart-title { font-size: 1.1rem; color: #555; margin-bottom: 15px; text-align: center; }
+
+        .data-table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        .data-table th, .data-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+        .data-table th {
+            background: #f8f9fa;
+            font-weight: 600;
+            color: #555;
+        }
+        .data-table tr:hover { background: #f8f9fa; }
+        .rank {
+            width: 30px;
+            height: 30px;
+            background: #2ecc71;
+            color: white;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        footer {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            margin-top: 40px;
+            text-align: center;
+            color: #7f8c8d;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.06);
+        }
+        footer a { color: #2ecc71; text-decoration: none; }
+        footer a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>한국 체육·스포츠 참여 현황 분석</h1>
+            <p>국민생활체육조사 기반 트렌드 분석 - 세대별 참여율과 인기 종목</p>
+            <div class="meta-info">
+                Report #032 | 발행일: 2025-12-15 | 데이터 출처: 문화체육관광부, KOSIS 국가통계포털
+            </div>
+        </header>
+
+        <!-- KPI 지표 -->
+        <div class="kpi-grid">
+            <div class="kpi-card success">
+                <div class="kpi-value positive">62.4%</div>
+                <div class="kpi-label">2023년 생활체육 참여율</div>
+                <div class="kpi-sub">전년 대비 +1.2%p ↑</div>
+            </div>
+            <div class="kpi-card info">
+                <div class="kpi-value">68.0%</div>
+                <div class="kpi-label">60대 참여율 (최고)</div>
+                <div class="kpi-sub">전 연령대 중 1위</div>
+            </div>
+            <div class="kpi-card warning">
+                <div class="kpi-value">47.9%</div>
+                <div class="kpi-label">10대 참여율 (최저)</div>
+                <div class="kpi-sub">개선 필요</div>
+            </div>
+            <div class="kpi-card primary">
+                <div class="kpi-value">37.2%</div>
+                <div class="kpi-label">걷기 참여율</div>
+                <div class="kpi-sub">가장 인기 있는 운동</div>
+            </div>
+        </div>
+
+        <!-- 핵심 인사이트 -->
+        <div class="section">
+            <h2>핵심 인사이트</h2>
+
+            <div class="insight-box">
+                <h3>긍정적 트렌드</h3>
+                <ul>
+                    <li><strong>참여율 회복세:</strong> 2023년 생활체육 참여율이 62.4%로 전년(61.2%) 대비 1.2%p 상승하며 코로나19 이전 수준 회복 중</li>
+                    <li><strong>시니어의 높은 활동성:</strong> 60대가 68.0%로 가장 높은 참여율을 기록하며 활발한 건강관리 문화 확산</li>
+                    <li><strong>동호회 활동 증가:</strong> 체육 동호회 가입율이 11.3%로 전년 대비 1.1%p 상승</li>
+                    <li><strong>다양한 종목 참여:</strong> 걷기(37.2%), 등산(17.3%), 헬스(16.3%), 수영(7.7%), 골프(7.1%) 등 다양한 선택지</li>
+                </ul>
+            </div>
+
+            <div class="warning-box">
+                <h3>주의할 점</h3>
+                <ul>
+                    <li><strong>청소년 참여율 저조:</strong> 10대 참여율이 47.9%로 전 연령대 중 최저 수준 - 학업 부담과 여가시간 부족 추정</li>
+                    <li><strong>2024년 참여율 하락:</strong> 2024년 조사(2023.9~2024.8)에서 전체 참여율 49.5%로 급감 - 조사 방법 변경 가능성</li>
+                    <li><strong>성별 격차 역전:</strong> 2024년 조사에서 여성(51.2%)이 남성(47.8%)보다 높은 참여율 기록</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 연도별 참여율 추이 -->
+        <div class="section">
+            <h2>연도별 생활체육 참여율 추이</h2>
+            <p style="margin-bottom: 20px; color: #666;">주 1회 이상, 1회당 30분 이상 규칙적 체육활동 참여 비율</p>
+
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>연도</th>
+                        <th>참여율</th>
+                        <th>전년 대비</th>
+                        <th>주요 특징</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2018년</td>
+                        <td>62.2%</td>
+                        <td>-</td>
+                        <td>안정적 참여율</td>
+                    </tr>
+                    <tr>
+                        <td>2019년</td>
+                        <td>66.6%</td>
+                        <td>+4.4%p</td>
+                        <td>역대 최고 수준</td>
+                    </tr>
+                    <tr>
+                        <td>2020년</td>
+                        <td>60.1%</td>
+                        <td>-6.5%p</td>
+                        <td>코로나19 팬데믹 영향</td>
+                    </tr>
+                    <tr>
+                        <td>2021년</td>
+                        <td>60.8%</td>
+                        <td>+0.7%p</td>
+                        <td>완만한 회복</td>
+                    </tr>
+                    <tr>
+                        <td>2022년</td>
+                        <td>61.2%</td>
+                        <td>+0.4%p</td>
+                        <td>지속적 회복세</td>
+                    </tr>
+                    <tr style="background: #e8f8f5;">
+                        <td><strong>2023년</strong></td>
+                        <td><strong>62.4%</strong></td>
+                        <td><strong>+1.2%p</strong></td>
+                        <td><strong>회복 가속화</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="chart-container">
+                <div class="chart-title">연도별 생활체육 참여율 변화 (2018-2023)</div>
+                <div id="chart_yearly_trend"></div>
+            </div>
+        </div>
+
+        <!-- 연령별 참여율 -->
+        <div class="section">
+            <h2>2023년 연령별 참여율 분석</h2>
+
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>순위</th>
+                        <th>연령대</th>
+                        <th>참여율</th>
+                        <th>특징</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="rank">1</span></td>
+                        <td>60대</td>
+                        <td><strong>68.0%</strong></td>
+                        <td>은퇴 후 건강관리 중시</td>
+                    </tr>
+                    <tr>
+                        <td><span class="rank">2</span></td>
+                        <td>50대</td>
+                        <td>66.5%</td>
+                        <td>중장년층 건강 관심 증가</td>
+                    </tr>
+                    <tr>
+                        <td><span class="rank">3</span></td>
+                        <td>30대</td>
+                        <td>64.7%</td>
+                        <td>경제력과 건강의식 조화</td>
+                    </tr>
+                    <tr>
+                        <td><span class="rank">4</span></td>
+                        <td>40대</td>
+                        <td>64.1%</td>
+                        <td>가족 단위 활동 활발</td>
+                    </tr>
+                    <tr>
+                        <td><span class="rank">5</span></td>
+                        <td>70대 이상</td>
+                        <td>60.6%</td>
+                        <td>건강 유지 목적</td>
+                    </tr>
+                    <tr>
+                        <td><span class="rank">6</span></td>
+                        <td>20대</td>
+                        <td>57.6%</td>
+                        <td>시간 부족, 경제적 제약</td>
+                    </tr>
+                    <tr style="background: #fff3cd;">
+                        <td><span class="rank">7</span></td>
+                        <td><strong>10대</strong></td>
+                        <td><strong>47.9%</strong></td>
+                        <td><strong>학업 부담으로 최저</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="chart-container">
+                <div class="chart-title">연령대별 생활체육 참여율 (2023년)</div>
+                <div id="chart_age_participation"></div>
+            </div>
+        </div>
+
+        <!-- 인기 운동 종목 -->
+        <div class="section">
+            <h2>인기 운동 종목 TOP 5</h2>
+            <p style="margin-bottom: 20px; color: #666;">규칙적으로 가장 많이 참여하는 운동 (2023년 기준)</p>
+
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>순위</th>
+                        <th>종목</th>
+                        <th>참여율</th>
+                        <th>특징</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="rank">1</span></td>
+                        <td><strong>걷기</strong></td>
+                        <td><strong>37.2%</strong></td>
+                        <td>비용 없이 누구나 가능</td>
+                    </tr>
+                    <tr>
+                        <td><span class="rank">2</span></td>
+                        <td>등산</td>
+                        <td>17.3%</td>
+                        <td>자연 친화적 활동</td>
+                    </tr>
+                    <tr>
+                        <td><span class="rank">3</span></td>
+                        <td>보디빌딩 (헬스)</td>
+                        <td>16.3%</td>
+                        <td>체력 단련 및 체형 관리</td>
+                    </tr>
+                    <tr>
+                        <td><span class="rank">4</span></td>
+                        <td>수영</td>
+                        <td>7.7%</td>
+                        <td>전신 운동 효과</td>
+                    </tr>
+                    <tr>
+                        <td><span class="rank">5</span></td>
+                        <td>골프</td>
+                        <td>7.1%</td>
+                        <td>대중화 추세</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="chart-container">
+                <div class="chart-title">인기 운동 종목 참여율 비교</div>
+                <div id="chart_sports_ranking"></div>
+            </div>
+        </div>
+
+        <!-- 체육 동호회 활동 -->
+        <div class="section">
+            <h2>체육 동호회 활동 현황</h2>
+
+            <h3>동호회 가입 현황</h3>
+            <ul style="margin: 15px 0 25px 20px; line-height: 1.8;">
+                <li><strong>전체 가입율:</strong> 11.3% (전년 대비 +1.1%p 증가)</li>
+                <li><strong>조직적 활동:</strong> 학교 동아리, 스포츠클럽 포함</li>
+                <li><strong>사회적 교류:</strong> 운동과 친목 활동 병행</li>
+            </ul>
+
+            <h3>인기 동호회 종목 TOP 3</h3>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>순위</th>
+                        <th>종목</th>
+                        <th>가입 비율</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="rank">1</span></td>
+                        <td>축구 / 풋살</td>
+                        <td>22.9%</td>
+                    </tr>
+                    <tr>
+                        <td><span class="rank">2</span></td>
+                        <td>배드민턴</td>
+                        <td>12.3%</td>
+                    </tr>
+                    <tr>
+                        <td><span class="rank">3</span></td>
+                        <td>탁구</td>
+                        <td>10.5%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- 정책 제안 -->
+        <div class="section">
+            <h2>정책 제안 및 시사점</h2>
+
+            <h3>1. 청소년 체육 활동 활성화</h3>
+            <ul style="margin: 10px 0 25px 20px; line-height: 1.8;">
+                <li>학교 체육시설 개방 확대 및 방과 후 스포츠 프로그램 강화</li>
+                <li>e-스포츠, 댄스 등 청소년 선호 종목 개발 및 지원</li>
+                <li>학업 부담 완화를 위한 교육과정 내 체육활동 시간 확보</li>
+            </ul>
+
+            <h3>2. 생애주기별 맞춤형 프로그램</h3>
+            <ul style="margin: 10px 0 25px 20px; line-height: 1.8;">
+                <li>20-30대: 직장인 대상 야간/주말 스포츠 클래스 확대</li>
+                <li>40-50대: 가족 단위 체육활동 및 건강검진 연계 프로그램</li>
+                <li>60대 이상: 안전한 실버 스포츠 및 재활 운동 지원</li>
+            </ul>
+
+            <h3>3. 접근성 및 편의성 개선</h3>
+            <ul style="margin: 10px 0 25px 20px; line-height: 1.8;">
+                <li>생활권 내 공공 체육시설 확충 (걷기 트랙, 야외 운동기구)</li>
+                <li>저소득층 및 취약계층 대상 체육활동 바우처 지원</li>
+                <li>디지털 플랫폼 활용한 온라인 홈트레이닝 콘텐츠 보급</li>
+            </ul>
+        </div>
+
+        <!-- 데이터 출처 -->
+        <footer>
+            <h3 style="margin-bottom: 15px; color: #2c3e50;">데이터 출처</h3>
+            <ul style="list-style: none; line-height: 2;">
+                <li><a href="https://www.mcst.go.kr/site/s_policy/dept/deptView.jsp?pSeq=1967" target="_blank">문화체육관광부 - 2024년 국민생활체육조사</a></li>
+                <li><a href="https://www.korea.kr/multi/visualNewsView.do?newsId=148924732" target="_blank">정책브리핑 - 2023년 국민생활체육조사 결과</a></li>
+                <li><a href="https://www.index.go.kr/unity/potal/main/EachDtlPageDetail.do?idx_cd=1658" target="_blank">e-나라지표 - 생활체육참여실태</a></li>
+                <li><a href="https://kosis.kr" target="_blank">KOSIS 국가통계포털</a></li>
+            </ul>
+            <p style="margin-top: 20px; font-size: 0.9rem;">
+                Report #032 | Generated: 2025-12-15 | KOSIS Data Processor
+            </p>
+        </footer>
+    </div>
+
+    <script>
+        // 연도별 참여율 추이 차트
+        const yearlyTrendSpec = {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "width": 800,
+            "height": 400,
+            "data": {
+                "values": [
+                    {"year": "2018", "rate": 62.2},
+                    {"year": "2019", "rate": 66.6},
+                    {"year": "2020", "rate": 60.1},
+                    {"year": "2021", "rate": 60.8},
+                    {"year": "2022", "rate": 61.2},
+                    {"year": "2023", "rate": 62.4}
+                ]
+            },
+            "mark": {
+                "type": "line",
+                "point": {"filled": true, "size": 100},
+                "strokeWidth": 3
+            },
+            "encoding": {
+                "x": {
+                    "field": "year",
+                    "type": "ordinal",
+                    "title": "연도",
+                    "axis": {"labelAngle": 0}
+                },
+                "y": {
+                    "field": "rate",
+                    "type": "quantitative",
+                    "title": "참여율 (%)",
+                    "scale": {"domain": [55, 70]}
+                },
+                "color": {
+                    "value": "#2ecc71"
+                },
+                "tooltip": [
+                    {"field": "year", "title": "연도"},
+                    {"field": "rate", "title": "참여율 (%)", "format": ".1f"}
+                ]
+            }
+        };
+
+        // 연령별 참여율 차트
+        const ageParticipationSpec = {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "width": 800,
+            "height": 400,
+            "data": {
+                "values": [
+                    {"age": "10대", "rate": 47.9, "order": 1},
+                    {"age": "20대", "rate": 57.6, "order": 2},
+                    {"age": "30대", "rate": 64.7, "order": 3},
+                    {"age": "40대", "rate": 64.1, "order": 4},
+                    {"age": "50대", "rate": 66.5, "order": 5},
+                    {"age": "60대", "rate": 68.0, "order": 6},
+                    {"age": "70대+", "rate": 60.6, "order": 7}
+                ]
+            },
+            "mark": "bar",
+            "encoding": {
+                "x": {
+                    "field": "age",
+                    "type": "nominal",
+                    "title": "연령대",
+                    "sort": {"field": "order"},
+                    "axis": {"labelAngle": 0}
+                },
+                "y": {
+                    "field": "rate",
+                    "type": "quantitative",
+                    "title": "참여율 (%)",
+                    "scale": {"domain": [0, 75]}
+                },
+                "color": {
+                    "field": "rate",
+                    "type": "quantitative",
+                    "scale": {"scheme": "greens"},
+                    "legend": null
+                },
+                "tooltip": [
+                    {"field": "age", "title": "연령대"},
+                    {"field": "rate", "title": "참여율 (%)", "format": ".1f"}
+                ]
+            }
+        };
+
+        // 인기 종목 차트
+        const sportsRankingSpec = {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "width": 800,
+            "height": 400,
+            "data": {
+                "values": [
+                    {"sport": "걷기", "rate": 37.2},
+                    {"sport": "등산", "rate": 17.3},
+                    {"sport": "보디빌딩", "rate": 16.3},
+                    {"sport": "수영", "rate": 7.7},
+                    {"sport": "골프", "rate": 7.1}
+                ]
+            },
+            "mark": "bar",
+            "encoding": {
+                "y": {
+                    "field": "sport",
+                    "type": "nominal",
+                    "title": "운동 종목",
+                    "sort": "-x"
+                },
+                "x": {
+                    "field": "rate",
+                    "type": "quantitative",
+                    "title": "참여율 (%)"
+                },
+                "color": {
+                    "field": "rate",
+                    "type": "quantitative",
+                    "scale": {"scheme": "greens"},
+                    "legend": null
+                },
+                "tooltip": [
+                    {"field": "sport", "title": "종목"},
+                    {"field": "rate", "title": "참여율 (%)", "format": ".1f"}
+                ]
+            }
+        };
+
+        // 차트 렌더링
+        vegaEmbed('#chart_yearly_trend', yearlyTrendSpec, {actions: false});
+        vegaEmbed('#chart_age_participation', ageParticipationSpec, {actions: false});
+        vegaEmbed('#chart_sports_ranking', sportsRankingSpec, {actions: false});
+    </script>
+</body>
+</html>

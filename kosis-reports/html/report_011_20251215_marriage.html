@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>혼인·이혼 통계 트렌드 분석 | KOSIS Report #011</title>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #ff6b9d 0%, #c94b4b 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .header .meta {
+            font-size: 1rem;
+            opacity: 0.95;
+            margin-top: 1rem;
+        }
+
+        .header .meta span {
+            margin: 0 1rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .kpi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .kpi-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .kpi-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+        }
+
+        .kpi-card .label {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .kpi-card .value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #c94b4b;
+            margin-bottom: 0.5rem;
+        }
+
+        .kpi-card .change {
+            font-size: 0.95rem;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            display: inline-block;
+            font-weight: 600;
+        }
+
+        .kpi-card .change.positive {
+            background: #e8f5e9;
+            color: #2e7d32;
+        }
+
+        .kpi-card .change.negative {
+            background: #ffebee;
+            color: #c62828;
+        }
+
+        .section {
+            background: white;
+            padding: 2.5rem;
+            margin: 2rem 0;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: #c94b4b;
+            border-bottom: 3px solid #ff6b9d;
+            padding-bottom: 0.5rem;
+        }
+
+        .chart-container {
+            margin: 2rem 0;
+        }
+
+        .news-grid {
+            display: grid;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .news-item {
+            padding: 1.5rem;
+            background: #f9f9f9;
+            border-left: 4px solid #ff6b9d;
+            border-radius: 8px;
+        }
+
+        .news-item h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.75rem;
+            color: #333;
+        }
+
+        .news-item p {
+            color: #666;
+            line-height: 1.7;
+        }
+
+        .insight-box {
+            background: linear-gradient(135deg, #fff5f8 0%, #ffe8ef 100%);
+            padding: 2rem;
+            border-radius: 12px;
+            border-left: 5px solid #c94b4b;
+            margin: 1.5rem 0;
+        }
+
+        .insight-box h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: #c94b4b;
+        }
+
+        .insight-box ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .insight-box li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            color: #555;
+        }
+
+        .insight-box li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #ff6b9d;
+            font-weight: bold;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .data-source {
+            font-size: 0.85rem;
+            color: #888;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #eee;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>혼인·이혼 통계 트렌드 분석</h1>
+        <div class="meta">
+            <span>Report #011</span>
+            <span>|</span>
+            <span>2025년 12월 15일</span>
+            <span>|</span>
+            <span>데이터 출처: KOSIS 국가통계포털</span>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="kpi-grid">
+            <div class="kpi-card">
+                <div class="label">2024년 혼인건수</div>
+                <div class="value">22.2만 건</div>
+                <div class="change positive">▲ 14.8% (전년대비)</div>
+            </div>
+            <div class="kpi-card">
+                <div class="label">2024년 이혼건수</div>
+                <div class="value">9.1만 건</div>
+                <div class="change negative">▼ 1.3% (전년대비)</div>
+            </div>
+            <div class="kpi-card">
+                <div class="label">평균 초혼연령 (남)</div>
+                <div class="value">33.9세</div>
+                <div class="change negative">▼ 0.1세 (전년대비)</div>
+            </div>
+            <div class="kpi-card">
+                <div class="label">평균 초혼연령 (여)</div>
+                <div class="value">31.6세</div>
+                <div class="change positive">▲ 0.1세 (전년대비)</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>혼인·이혼 건수 추이 (2015-2024)</h2>
+            <div class="chart-container">
+                <div id="chart1"></div>
+            </div>
+            <p class="data-source">데이터 출처: KOSIS - 인구동태건수 및 동태율 추이 (DT_1B8000F)</p>
+        </div>
+
+        <div class="section">
+            <h2>평균 초혼연령 추이 (2015-2024)</h2>
+            <div class="chart-container">
+                <div id="chart2"></div>
+            </div>
+            <p class="data-source">데이터 출처: KOSIS - 시도별 평균초혼연령 (DT_1B83A05)</p>
+        </div>
+
+        <div class="section">
+            <h2>조혼인율 및 조이혼율 추이</h2>
+            <div class="chart-container">
+                <div id="chart3"></div>
+            </div>
+            <p class="data-source">데이터 출처: KOSIS - 인구동태건수 및 동태율 추이 (DT_1B8000F)</p>
+        </div>
+
+        <div class="section">
+            <h2>주요 뉴스 및 동향</h2>
+            <div class="news-grid">
+                <div class="news-item">
+                    <h3>2024년 혼인건수 2년 연속 증가, 역대 최대 증가폭</h3>
+                    <p>2024년 혼인건수는 22만 2천 건으로 전년대비 14.8% 증가하여, 2010-2011년 이후 처음으로 2년 연속 증가했습니다. 전년 대비 약 15%의 증가폭은 관련 통계 작성 후 역대 최대치입니다.</p>
+                </div>
+                <div class="news-item">
+                    <h3>만혼화 현상 지속, 30대 초반 혼인율 최고</h3>
+                    <p>평균초혼연령은 남자 33.9세, 여자 31.6세로 만혼화 현상이 지속되고 있습니다. 연령별 혼인율은 남녀 모두 30대 초반에서 가장 높게 나타났습니다(남 48.3건, 여 51.9건).</p>
+                </div>
+                <div class="news-item">
+                    <h3>이혼건수 소폭 감소, 이혼연령 상승</h3>
+                    <p>2024년 이혼건수는 9만 1천 건으로 전년대비 1.3% 감소했습니다. 평균이혼연령은 남자 50.4세, 여자 47.1세로 남녀 모두 전년대비 0.5세 상승했습니다.</p>
+                </div>
+                <div class="news-item">
+                    <h3>결혼 의향 감소, 젊은 세대 비혼 확대</h3>
+                    <p>2025년 결혼인식조사에 따르면, 미혼자 중 향후 결혼 의향이 있는 사람은 44%로 전년대비 4%포인트 감소했습니다. 2·30대 기혼 여성 중 39%가 다시 태어나면 결혼하지 않겠다고 답했습니다.</p>
+                </div>
+                <div class="news-item">
+                    <h3>황혼이혼 증가, 혼인 20년 이상 부부 이혼 비중 확대</h3>
+                    <p>혼인 20년 이상 부부의 이혼이 꾸준히 증가하는 반면, 혼인 초기(5년 미만)의 이혼 비중은 줄어드는 경향을 보이고 있습니다. 40~50대 중장년층의 이혼율이 높은 수준을 유지하고 있습니다.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>주요 인사이트</h2>
+            <div class="insight-box">
+                <h3>혼인·이혼 트렌드 핵심 포인트</h3>
+                <ul>
+                    <li><strong>혼인 증가 전환점:</strong> 2024년 혼인건수가 역대 최대폭(14.8%)으로 증가하며 2년 연속 상승세를 보였으나, 이는 코로나19로 인한 기저효과와 일시적 반등일 가능성이 있습니다.</li>
+                    <li><strong>만혼화 심화:</strong> 평균 초혼연령이 남성 33.9세, 여성 31.6세로 상승하며 만혼화가 지속되고 있습니다. 특히 30대 초반의 혼인율이 가장 높게 나타났습니다.</li>
+                    <li><strong>이혼 안정화:</strong> 이혼건수는 소폭 감소하며 안정세를 보이고 있으나, 평균 이혼연령이 상승(남 50.4세, 여 47.1세)하며 황혼이혼이 증가하고 있습니다.</li>
+                    <li><strong>결혼 의향 감소:</strong> 미혼자의 결혼 의향이 44%로 전년대비 감소하며, 특히 젊은 기혼 여성의 39%가 재생 시 결혼하지 않겠다고 답해 결혼 제도에 대한 회의감이 확산되고 있습니다.</li>
+                    <li><strong>이혼 패턴 변화:</strong> 혼인 초기 이혼은 감소하는 반면, 혼인 20년 이상 부부의 황혼이혼이 증가하며 이혼 패턴이 변화하고 있습니다.</li>
+                    <li><strong>인구구조 영향:</strong> 혼인 가능 연령대 인구 감소, 경제적 불안정성, 주거비 부담 등이 혼인율에 지속적인 영향을 미치고 있습니다.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>본 보고서는 KOSIS 국가통계포털 데이터를 기반으로 작성되었습니다.</p>
+            <p>Report #011 | 혼인·이혼 통계 트렌드 분석 | 2025-12-15</p>
+        </div>
+    </div>
+
+    <script>
+        // Chart 1: 혼인·이혼 건수 추이
+        const spec1 = {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "width": 1000,
+            "height": 400,
+            "data": {
+                "values": [
+                    {"year": "2015", "type": "혼인", "count": 302828},
+                    {"year": "2016", "type": "혼인", "count": 281635},
+                    {"year": "2017", "type": "혼인", "count": 264455},
+                    {"year": "2018", "type": "혼인", "count": 257622},
+                    {"year": "2019", "type": "혼인", "count": 239159},
+                    {"year": "2020", "type": "혼인", "count": 213502},
+                    {"year": "2021", "type": "혼인", "count": 192507},
+                    {"year": "2022", "type": "혼인", "count": 191690},
+                    {"year": "2023", "type": "혼인", "count": 193673},
+                    {"year": "2024", "type": "혼인", "count": 222000},
+                    {"year": "2015", "type": "이혼", "count": 109153},
+                    {"year": "2016", "type": "이혼", "count": 107328},
+                    {"year": "2017", "type": "이혼", "count": 106032},
+                    {"year": "2018", "type": "이혼", "count": 108684},
+                    {"year": "2019", "type": "이혼", "count": 110831},
+                    {"year": "2020", "type": "이혼", "count": 106500},
+                    {"year": "2021", "type": "이혼", "count": 102000},
+                    {"year": "2022", "type": "이혼", "count": 93800},
+                    {"year": "2023", "type": "이혼", "count": 92500},
+                    {"year": "2024", "type": "이혼", "count": 91000}
+                ]
+            },
+            "mark": {"type": "line", "point": true, "strokeWidth": 3},
+            "encoding": {
+                "x": {
+                    "field": "year",
+                    "type": "ordinal",
+                    "title": "연도",
+                    "axis": {"labelAngle": 0}
+                },
+                "y": {
+                    "field": "count",
+                    "type": "quantitative",
+                    "title": "건수 (명)",
+                    "scale": {"zero": false}
+                },
+                "color": {
+                    "field": "type",
+                    "type": "nominal",
+                    "title": "구분",
+                    "scale": {
+                        "domain": ["혼인", "이혼"],
+                        "range": ["#ff6b9d", "#c94b4b"]
+                    }
+                },
+                "tooltip": [
+                    {"field": "year", "type": "ordinal", "title": "연도"},
+                    {"field": "type", "type": "nominal", "title": "구분"},
+                    {"field": "count", "type": "quantitative", "title": "건수", "format": ","}
+                ]
+            }
+        };
+
+        // Chart 2: 평균 초혼연령 추이
+        const spec2 = {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "width": 1000,
+            "height": 400,
+            "data": {
+                "values": [
+                    {"year": "2015", "gender": "남편", "age": 32.57},
+                    {"year": "2016", "gender": "남편", "age": 32.79},
+                    {"year": "2017", "gender": "남편", "age": 32.94},
+                    {"year": "2018", "gender": "남편", "age": 33.15},
+                    {"year": "2019", "gender": "남편", "age": 33.37},
+                    {"year": "2020", "gender": "남편", "age": 33.23},
+                    {"year": "2021", "gender": "남편", "age": 33.35},
+                    {"year": "2022", "gender": "남편", "age": 33.72},
+                    {"year": "2023", "gender": "남편", "age": 34.00},
+                    {"year": "2024", "gender": "남편", "age": 33.90},
+                    {"year": "2015", "gender": "아내", "age": 30.00},
+                    {"year": "2016", "gender": "아내", "age": 30.11},
+                    {"year": "2017", "gender": "아내", "age": 30.24},
+                    {"year": "2018", "gender": "아내", "age": 30.40},
+                    {"year": "2019", "gender": "아내", "age": 30.59},
+                    {"year": "2020", "gender": "아내", "age": 30.78},
+                    {"year": "2021", "gender": "아내", "age": 31.08},
+                    {"year": "2022", "gender": "아내", "age": 31.26},
+                    {"year": "2023", "gender": "아내", "age": 31.50},
+                    {"year": "2024", "gender": "아내", "age": 31.60}
+                ]
+            },
+            "mark": {"type": "line", "point": true, "strokeWidth": 3},
+            "encoding": {
+                "x": {
+                    "field": "year",
+                    "type": "ordinal",
+                    "title": "연도",
+                    "axis": {"labelAngle": 0}
+                },
+                "y": {
+                    "field": "age",
+                    "type": "quantitative",
+                    "title": "평균 초혼연령 (세)",
+                    "scale": {"domain": [29, 35]}
+                },
+                "color": {
+                    "field": "gender",
+                    "type": "nominal",
+                    "title": "성별",
+                    "scale": {
+                        "domain": ["남편", "아내"],
+                        "range": ["#5b9bd5", "#ff6b9d"]
+                    }
+                },
+                "tooltip": [
+                    {"field": "year", "type": "ordinal", "title": "연도"},
+                    {"field": "gender", "type": "nominal", "title": "성별"},
+                    {"field": "age", "type": "quantitative", "title": "평균연령", "format": ".2f"}
+                ]
+            }
+        };
+
+        // Chart 3: 조혼인율 및 조이혼율
+        const spec3 = {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "width": 1000,
+            "height": 400,
+            "data": {
+                "values": [
+                    {"year": "2015", "type": "조혼인율", "rate": 5.9},
+                    {"year": "2016", "type": "조혼인율", "rate": 5.5},
+                    {"year": "2017", "type": "조혼인율", "rate": 5.2},
+                    {"year": "2018", "type": "조혼인율", "rate": 5.0},
+                    {"year": "2019", "type": "조혼인율", "rate": 4.7},
+                    {"year": "2020", "type": "조혼인율", "rate": 4.2},
+                    {"year": "2021", "type": "조혼인율", "rate": 3.8},
+                    {"year": "2022", "type": "조혼인율", "rate": 3.7},
+                    {"year": "2023", "type": "조혼인율", "rate": 3.8},
+                    {"year": "2024", "type": "조혼인율", "rate": 4.4},
+                    {"year": "2015", "type": "조이혼율", "rate": 2.1},
+                    {"year": "2016", "type": "조이혼율", "rate": 2.1},
+                    {"year": "2017", "type": "조이혼율", "rate": 2.1},
+                    {"year": "2018", "type": "조이혼율", "rate": 2.1},
+                    {"year": "2019", "type": "조이혼율", "rate": 2.2},
+                    {"year": "2020", "type": "조이혼율", "rate": 2.1},
+                    {"year": "2021", "type": "조이혼율", "rate": 2.0},
+                    {"year": "2022", "type": "조이혼율", "rate": 1.8},
+                    {"year": "2023", "type": "조이혼율", "rate": 1.8},
+                    {"year": "2024", "type": "조이혼율", "rate": 1.8}
+                ]
+            },
+            "mark": {"type": "line", "point": true, "strokeWidth": 3},
+            "encoding": {
+                "x": {
+                    "field": "year",
+                    "type": "ordinal",
+                    "title": "연도",
+                    "axis": {"labelAngle": 0}
+                },
+                "y": {
+                    "field": "rate",
+                    "type": "quantitative",
+                    "title": "인구 1천명당 건수",
+                    "scale": {"domain": [0, 7]}
+                },
+                "color": {
+                    "field": "type",
+                    "type": "nominal",
+                    "title": "구분",
+                    "scale": {
+                        "domain": ["조혼인율", "조이혼율"],
+                        "range": ["#ff6b9d", "#c94b4b"]
+                    }
+                },
+                "tooltip": [
+                    {"field": "year", "type": "ordinal", "title": "연도"},
+                    {"field": "type", "type": "nominal", "title": "구분"},
+                    {"field": "rate", "type": "quantitative", "title": "율", "format": ".1f"}
+                ]
+            }
+        };
+
+        // Embed charts
+        vegaEmbed('#chart1', spec1, {actions: false});
+        vegaEmbed('#chart2', spec2, {actions: false});
+        vegaEmbed('#chart3', spec3, {actions: false});
+    </script>
+</body>
+</html>

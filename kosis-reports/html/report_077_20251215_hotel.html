@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>한국 호텔 & 숙박 산업 트렌드 리포트 #77</title>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #60a5fa 100%);
+            color: #1f2937;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '🏨';
+            position: absolute;
+            font-size: 200px;
+            opacity: 0.1;
+            top: -50px;
+            right: -50px;
+            transform: rotate(-15deg);
+        }
+
+        .header::after {
+            content: '🛏️';
+            position: absolute;
+            font-size: 150px;
+            opacity: 0.1;
+            bottom: -30px;
+            left: -30px;
+            transform: rotate(15deg);
+        }
+
+        .header h1 {
+            font-size: 48px;
+            font-weight: 900;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            position: relative;
+            z-index: 1;
+        }
+
+        .header .subtitle {
+            font-size: 20px;
+            font-weight: 300;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        .report-number {
+            display: inline-block;
+            background: #d97706;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 700;
+            margin-top: 15px;
+            font-size: 14px;
+            letter-spacing: 1px;
+        }
+
+        .summary-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            padding: 40px;
+            background: linear-gradient(to bottom, #f8fafc 0%, #ffffff 100%);
+        }
+
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border: 2px solid #e5e7eb;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #1e3a8a, #d97706);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .card-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .card-title {
+            font-size: 14px;
+            color: #6b7280;
+            font-weight: 500;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .card-value {
+            font-size: 36px;
+            font-weight: 900;
+            color: #1e3a8a;
+            margin-bottom: 10px;
+        }
+
+        .card-change {
+            font-size: 14px;
+            font-weight: 600;
+            color: #059669;
+        }
+
+        .card-change.negative {
+            color: #dc2626;
+        }
+
+        .section {
+            padding: 40px;
+        }
+
+        .section-title {
+            font-size: 28px;
+            font-weight: 700;
+            color: #1e3a8a;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #d97706;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .chart-container {
+            margin: 30px 0;
+            background: #f9fafb;
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid #e5e7eb;
+        }
+
+        .news-grid {
+            display: grid;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .news-category {
+            background: linear-gradient(135deg, #f0f9ff 0%, #ffffff 100%);
+            border-radius: 12px;
+            padding: 25px;
+            border-left: 5px solid #d97706;
+        }
+
+        .news-category h3 {
+            color: #1e3a8a;
+            font-size: 20px;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .news-category ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .news-category li {
+            padding: 12px 0;
+            padding-left: 25px;
+            border-bottom: 1px solid #e5e7eb;
+            position: relative;
+        }
+
+        .news-category li:last-child {
+            border-bottom: none;
+        }
+
+        .news-category li::before {
+            content: '✨';
+            position: absolute;
+            left: 0;
+            font-size: 14px;
+        }
+
+        .top-facilities {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .facility-badge {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(30, 58, 138, 0.3);
+        }
+
+        .facility-badge .rank {
+            font-size: 14px;
+            opacity: 0.8;
+            margin-bottom: 8px;
+        }
+
+        .facility-badge .name {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .facility-badge .value {
+            font-size: 28px;
+            font-weight: 900;
+            color: #fbbf24;
+        }
+
+        .sources {
+            background: #f9fafb;
+            padding: 30px;
+            border-radius: 12px;
+            margin-top: 30px;
+        }
+
+        .sources h3 {
+            color: #1e3a8a;
+            font-size: 18px;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .sources ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .sources li {
+            margin-bottom: 10px;
+        }
+
+        .sources a {
+            color: #2563eb;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .sources a:hover {
+            color: #d97706;
+            text-decoration: underline;
+        }
+
+        .footer {
+            background: #1f2937;
+            color: white;
+            text-align: center;
+            padding: 30px;
+            font-size: 14px;
+        }
+
+        .footer p {
+            opacity: 0.8;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .data-table thead {
+            background: linear-gradient(135deg, #1e3a8a, #2563eb);
+            color: white;
+        }
+
+        .data-table th {
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .data-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .data-table tr:hover {
+            background: #f0f9ff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🏨 한국 호텔 & 숙박 산업</h1>
+            <p class="subtitle">트렌드 분석 리포트</p>
+            <span class="report-number">REPORT #077</span>
+        </div>
+
+        <div class="summary-cards">
+            <div class="card">
+                <span class="card-icon">📊</span>
+                <div class="card-title">총 숙박 일수 (2024년)</div>
+                <div class="card-value">156,673천박</div>
+                <div class="card-change">전년 대비 -6.9%</div>
+            </div>
+
+            <div class="card">
+                <span class="card-icon">🏆</span>
+                <div class="card-title">1위 숙박시설</div>
+                <div class="card-value" style="font-size: 24px;">가족/친지집</div>
+                <div class="card-change">47,155천박</div>
+            </div>
+
+            <div class="card">
+                <span class="card-icon">📈</span>
+                <div class="card-title">분석 기간</div>
+                <div class="card-value" style="font-size: 28px;">2019-2024</div>
+                <div class="card-change">6개년 트렌드</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">🎯 주요 숙박시설 TOP 3 (2024년)</h2>
+            <div class="top-facilities">
+                <div class="facility-badge">
+                    <div class="rank">🥇 1위</div>
+                    <div class="name">가족/친지집</div>
+                    <div class="value">47,155</div>
+                    <div style="font-size: 12px; margin-top: 5px; opacity: 0.9;">천박</div>
+                </div>
+                <div class="facility-badge">
+                    <div class="rank">🥈 2위</div>
+                    <div class="name">펜션</div>
+                    <div class="value">39,761</div>
+                    <div style="font-size: 12px; margin-top: 5px; opacity: 0.9;">천박</div>
+                </div>
+                <div class="facility-badge">
+                    <div class="rank">🥉 3위</div>
+                    <div class="name">호텔</div>
+                    <div class="value">27,381</div>
+                    <div style="font-size: 12px; margin-top: 5px; opacity: 0.9;">천박</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">📈 숙박시설 이용 추이</h2>
+            <div class="chart-container">
+                <div id="line-chart"></div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">📊 최근 연도 비교 (2024년)</h2>
+            <div class="chart-container">
+                <div id="bar-chart"></div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">📰 2025년 한국 호텔 산업 동향</h2>
+            <div class="news-grid">
+
+                <div class="news-category">
+                    <h3>럭셔리 호텔 순위</h3>
+                    <ul>
+                        <li>롯데호텔 서울: 1979년 개관, 명동 중심가 1,015개 객실</li>
+                        <li>신라호텔 서울: 남산 기슭 464개 객실, 미슐랭 2스타 레스토랑 라연 운영</li>
+                        <li>그랜드 하얏트 서울: 1978년 개관, 남산 중턱 601개 객실</li>
+                        <li>포시즌스 호텔 서울: 2015년 개관, 광화문 중심가 317개 객실</li>
+                        <li>그랜드 인터컨티넨탈 서울 파르나스: 1988년 개관, 강남 516개 객실</li>
+                    </ul>
+                </div>
+
+                <div class="news-category">
+                    <h3>시장 동향</h3>
+                    <ul>
+                        <li>서울 호텔 1박 요금 $23부터 시작 (2025년 기준)</li>
+                        <li>제주 중문관광단지 가족 여행객 인기 증가</li>
+                        <li>비즈니스 호텔 수요 강남권 집중</li>
+                        <li>럭셔리 호텔 프리미엄 서비스 강화 추세</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="sources">
+                <h3>참고 자료</h3>
+                <ul>
+                    <li><a href="https://kr.trip.com/guide/hotels/국내+호텔+순위.html" target="_blank">2025년 5성급 국내 호텔 순위 및 브랜드 총정리</a></li>
+                    <li><a href="https://www.tripadvisor.com/Hotels-g294197-Seoul-Hotels.html" target="_blank">THE 10 BEST Hotels in Seoul, South Korea 2025</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>Generated on 2025-12-15 09:42:30</p>
+            <p>Data Source: KOSIS (Korean Statistical Information Service) & Web Search</p>
+            <p style="margin-top: 10px; font-size: 12px;">Report #077 - Hotel & Accommodation Industry Trend Analysis</p>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        var lineSpec = {"$schema": "https://vega.github.io/schema/vega-lite/v6.1.0.json", "config": {"axis": {"labelFont": "Malgun Gothic", "labelFontSize": 12, "titleFont": "Malgun Gothic", "titleFontSize": 14}, "legend": {"labelFont": "Malgun Gothic", "labelFontSize": 11, "titleFont": "Malgun Gothic"}, "title": {"anchor": "start", "color": "#1e3a8a", "font": "Malgun Gothic", "fontSize": 20}, "view": {"continuousHeight": 300, "continuousWidth": 300}}, "data": {"name": "data-192b5efcfc770927b1cfe1768856d5c7"}, "datasets": {"data-192b5efcfc770927b1cfe1768856d5c7": [{"facility_type": "\uac00\uc871/\uce5c\uc9c0\uc9d1", "nights": 50708, "unit": "\ucc9c\ubc15", "year": "2020"}, {"facility_type": "\ud39c\uc158", "nights": 29179, "unit": "\ucc9c\ubc15", "year": "2020"}, {"facility_type": "\ud638\ud154", "nights": 10890, "unit": "\ucc9c\ubc15", "year": "2020"}, {"facility_type": "\ucf58\ub3c4\ubbf8\ub2c8\uc5c4/\ub9ac\uc870\ud2b8", "nights": 10748, "unit": "\ucc9c\ubc15", "year": "2020"}, {"facility_type": "\ubaa8\ud154/\uc5ec\uad00", "nights": 7585, "unit": "\ucc9c\ubc15", "year": "2020"}, {"facility_type": "\uc57c\uc601(\ucea0\ud551)", "nights": 3254, "unit": "\ucc9c\ubc15", "year": "2020"}, {"facility_type": "\uc790\uc5f0\ud734\uc591\ub9bc\ub0b4 \uc219\ubc15\uc2dc\uc124", "nights": 1655, "unit": "\ucc9c\ubc15", "year": "2020"}, {"facility_type": "\ubbfc\ubc15", "nights": 2668, "unit": "\ucc9c\ubc15", "year": "2020"}, {"facility_type": "\uac00\uc871/\uce5c\uc9c0\uc9d1", "nights": 39821, "unit": "\ucc9c\ubc15", "year": "2021"}, {"facility_type": "\ud39c\uc158", "nights": 31896, "unit": "\ucc9c\ubc15", "year": "2021"}, {"facility_type": "\ud638\ud154", "nights": 15316, "unit": "\ucc9c\ubc15", "year": "2021"}, {"facility_type": "\ucf58\ub3c4\ubbf8\ub2c8\uc5c4/\ub9ac\uc870\ud2b8", "nights": 14091, "unit": "\ucc9c\ubc15", "year": "2021"}, {"facility_type": "\ubaa8\ud154/\uc5ec\uad00", "nights": 5405, "unit": "\ucc9c\ubc15", "year": "2021"}, {"facility_type": "\uc57c\uc601(\ucea0\ud551)", "nights": 3612, "unit": "\ucc9c\ubc15", "year": "2021"}, {"facility_type": "\uc790\uc5f0\ud734\uc591\ub9bc\ub0b4 \uc219\ubc15\uc2dc\uc124", "nights": 1478, "unit": "\ucc9c\ubc15", "year": "2021"}, {"facility_type": "\ubbfc\ubc15", "nights": 1707, "unit": "\ucc9c\ubc15", "year": "2021"}, {"facility_type": "\uac00\uc871/\uce5c\uc9c0\uc9d1", "nights": 49171, "unit": "\ucc9c\ubc15", "year": "2022"}, {"facility_type": "\ud39c\uc158", "nights": 40816, "unit": "\ucc9c\ubc15", "year": "2022"}, {"facility_type": "\ud638\ud154", "nights": 26393, "unit": "\ucc9c\ubc15", "year": "2022"}, {"facility_type": "\ucf58\ub3c4\ubbf8\ub2c8\uc5c4/\ub9ac\uc870\ud2b8", "nights": 19008, "unit": "\ucc9c\ubc15", "year": "2022"}, {"facility_type": "\ubaa8\ud154/\uc5ec\uad00", "nights": 7018, "unit": "\ucc9c\ubc15", "year": "2022"}, {"facility_type": "\uc57c\uc601(\ucea0\ud551)", "nights": 4544, "unit": "\ucc9c\ubc15", "year": "2022"}, {"facility_type": "\uc790\uc5f0\ud734\uc591\ub9bc\ub0b4 \uc219\ubc15\uc2dc\uc124", "nights": 2607, "unit": "\ucc9c\ubc15", "year": "2022"}, {"facility_type": "\ubbfc\ubc15", "nights": 2941, "unit": "\ucc9c\ubc15", "year": "2022"}, {"facility_type": "\uac00\uc871/\uce5c\uc9c0\uc9d1", "nights": 49855, "unit": "\ucc9c\ubc15", "year": "2023"}, {"facility_type": "\ud39c\uc158", "nights": 44385, "unit": "\ucc9c\ubc15", "year": "2023"}, {"facility_type": "\ud638\ud154", "nights": 29113, "unit": "\ucc9c\ubc15", "year": "2023"}, {"facility_type": "\ucf58\ub3c4\ubbf8\ub2c8\uc5c4/\ub9ac\uc870\ud2b8", "nights": 21864, "unit": "\ucc9c\ubc15", "year": "2023"}, {"facility_type": "\ubaa8\ud154/\uc5ec\uad00", "nights": 6324, "unit": "\ucc9c\ubc15", "year": "2023"}, {"facility_type": "\uc57c\uc601(\ucea0\ud551)", "nights": 4379, "unit": "\ucc9c\ubc15", "year": "2023"}, {"facility_type": "\uc790\uc5f0\ud734\uc591\ub9bc\ub0b4 \uc219\ubc15\uc2dc\uc124", "nights": 3027, "unit": "\ucc9c\ubc15", "year": "2023"}, {"facility_type": "\ubbfc\ubc15", "nights": 2439, "unit": "\ucc9c\ubc15", "year": "2023"}, {"facility_type": "\uac00\uc871/\uce5c\uc9c0\uc9d1", "nights": 47155, "unit": "\ucc9c\ubc15", "year": "2024"}, {"facility_type": "\ud39c\uc158", "nights": 39761, "unit": "\ucc9c\ubc15", "year": "2024"}, {"facility_type": "\ud638\ud154", "nights": 27381, "unit": "\ucc9c\ubc15", "year": "2024"}, {"facility_type": "\ucf58\ub3c4\ubbf8\ub2c8\uc5c4/\ub9ac\uc870\ud2b8", "nights": 19776, "unit": "\ucc9c\ubc15", "year": "2024"}, {"facility_type": "\ubaa8\ud154/\uc5ec\uad00", "nights": 6584, "unit": "\ucc9c\ubc15", "year": "2024"}, {"facility_type": "\uc57c\uc601(\ucea0\ud551)", "nights": 3672, "unit": "\ucc9c\ubc15", "year": "2024"}, {"facility_type": "\uc790\uc5f0\ud734\uc591\ub9bc\ub0b4 \uc219\ubc15\uc2dc\uc124", "nights": 3587, "unit": "\ucc9c\ubc15", "year": "2024"}, {"facility_type": "\ubbfc\ubc15", "nights": 2425, "unit": "\ucc9c\ubc15", "year": "2024"}]}, "encoding": {"color": {"field": "facility_type", "scale": {"scheme": "goldorange"}, "title": "\uc219\ubc15\uc2dc\uc124 \uc720\ud615", "type": "nominal"}, "tooltip": [{"field": "year", "title": "\uc5f0\ub3c4", "type": "ordinal"}, {"field": "facility_type", "title": "\uc2dc\uc124 \uc720\ud615", "type": "nominal"}, {"field": "nights", "format": ",", "title": "\uc219\ubc15 \uc77c\uc218 (\ucc9c\ubc15)", "type": "quantitative"}], "x": {"axis": {"labelAngle": 0}, "field": "year", "title": "\uc5f0\ub3c4", "type": "ordinal"}, "y": {"field": "nights", "scale": {"zero": false}, "title": "\uc219\ubc15 \uc77c\uc218 (\ucc9c\ubc15)", "type": "quantitative"}}, "height": 400, "mark": {"point": true, "strokeWidth": 3, "type": "line"}, "title": "\uc219\ubc15\uc2dc\uc124 \uc720\ud615\ubcc4 \uc774\uc6a9 \ucd94\uc774 (2019-2024)", "width": 800};
+        var barSpec = {"$schema": "https://vega.github.io/schema/vega-lite/v6.1.0.json", "config": {"axis": {"labelFont": "Malgun Gothic", "labelFontSize": 12, "titleFont": "Malgun Gothic", "titleFontSize": 14}, "title": {"anchor": "start", "color": "#1e3a8a", "font": "Malgun Gothic", "fontSize": 20}, "view": {"continuousHeight": 300, "continuousWidth": 300}}, "data": {"name": "data-a5a06b6f62006b39a483213452c470a5"}, "datasets": {"data-a5a06b6f62006b39a483213452c470a5": [{"facility_type": "\uac00\uc871/\uce5c\uc9c0\uc9d1", "nights": 47155, "unit": "\ucc9c\ubc15", "year": "2024"}, {"facility_type": "\ud39c\uc158", "nights": 39761, "unit": "\ucc9c\ubc15", "year": "2024"}, {"facility_type": "\ud638\ud154", "nights": 27381, "unit": "\ucc9c\ubc15", "year": "2024"}, {"facility_type": "\ucf58\ub3c4\ubbf8\ub2c8\uc5c4/\ub9ac\uc870\ud2b8", "nights": 19776, "unit": "\ucc9c\ubc15", "year": "2024"}, {"facility_type": "\ubaa8\ud154/\uc5ec\uad00", "nights": 6584, "unit": "\ucc9c\ubc15", "year": "2024"}, {"facility_type": "\uc57c\uc601(\ucea0\ud551)", "nights": 3672, "unit": "\ucc9c\ubc15", "year": "2024"}, {"facility_type": "\uc790\uc5f0\ud734\uc591\ub9bc\ub0b4 \uc219\ubc15\uc2dc\uc124", "nights": 3587, "unit": "\ucc9c\ubc15", "year": "2024"}, {"facility_type": "\ubbfc\ubc15", "nights": 2425, "unit": "\ucc9c\ubc15", "year": "2024"}]}, "encoding": {"tooltip": [{"field": "facility_type", "title": "\uc2dc\uc124 \uc720\ud615", "type": "nominal"}, {"field": "nights", "format": ",", "title": "\uc219\ubc15 \uc77c\uc218 (\ucc9c\ubc15)", "type": "quantitative"}], "x": {"axis": {"format": ","}, "field": "nights", "title": "\uc219\ubc15 \uc77c\uc218 (\ucc9c\ubc15)", "type": "quantitative"}, "y": {"field": "facility_type", "sort": "-x", "title": "\uc219\ubc15\uc2dc\uc124 \uc720\ud615", "type": "nominal"}}, "height": 300, "mark": {"color": "#d97706", "type": "bar"}, "title": "2024\ub144 \uc219\ubc15\uc2dc\uc124 \uc720\ud615\ubcc4 \uc774\uc6a9 \ud604\ud669", "width": 800};
+
+        vegaEmbed('#line-chart', lineSpec, {
+            actions: {export: true, source: false, editor: false}
+        });
+        vegaEmbed('#bar-chart', barSpec, {
+            actions: {export: true, source: false, editor: false}
+        });
+    </script>
+</body>
+</html>

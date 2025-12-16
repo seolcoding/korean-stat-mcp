@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>웹툰/만화산업 트렌드 분석 | KOSIS Report #95</title>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            background: white;
+            border-radius: 30px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255,182,193,0.3) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .header h1 {
+            font-size: 3em;
+            font-weight: 900;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+            position: relative;
+        }
+
+        .header .subtitle {
+            font-size: 1.2em;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .report-info {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .info-badge {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 700;
+        }
+
+        .section {
+            background: white;
+            border-radius: 30px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        .section h2 {
+            font-size: 2em;
+            font-weight: 900;
+            color: #667eea;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .section h2::before {
+            content: '';
+            width: 10px;
+            height: 40px;
+            background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
+            margin-right: 15px;
+            border-radius: 5px;
+        }
+
+        .speech-bubble {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            border-radius: 20px;
+            padding: 25px;
+            margin: 20px 0;
+            position: relative;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .speech-bubble::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 50px;
+            width: 0;
+            height: 0;
+            border-left: 20px solid transparent;
+            border-right: 20px solid transparent;
+            border-top: 20px solid #fcb69f;
+        }
+
+        .speech-bubble p {
+            font-size: 1.1em;
+            font-weight: 700;
+            color: #333;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            border-left: 5px solid #667eea;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+
+        .highlight-box h3 {
+            color: #667eea;
+            font-weight: 900;
+            margin-bottom: 10px;
+        }
+
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.3);
+            transition: transform 0.3s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-card .number {
+            font-size: 2.5em;
+            font-weight: 900;
+            margin-bottom: 10px;
+        }
+
+        .stat-card .label {
+            font-size: 1em;
+            opacity: 0.9;
+        }
+
+        .chart-container {
+            margin: 30px 0;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 15px;
+        }
+
+        .footer {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            margin-top: 30px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .footer p {
+            color: #666;
+            margin: 5px 0;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        ul li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        ul li::before {
+            content: '🎨';
+            position: absolute;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>웹툰/만화산업 트렌드 분석</h1>
+            <div class="subtitle">K-웹툰의 글로벌 성장 스토리</div>
+            <div class="report-info">
+                <span class="info-badge">Report #95</span>
+                <span class="info-badge">2025-12-15</span>
+                <span class="info-badge">KOSIS 데이터 기반</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>주요 인사이트</h2>
+            <div class="speech-bubble">
+                <p>2023년 국내 웹툰산업 규모가 <strong>2조원</strong>을 돌파했습니다! 전년 대비 <strong>19.7% 성장</strong>하며 K-콘텐츠의 글로벌 경쟁력을 입증했어요.</p>
+            </div>
+
+            <div class="stat-grid">
+                <div class="stat-card">
+                    <div class="number">2.19조</div>
+                    <div class="label">2023년 산업 규모 (원)</div>
+                </div>
+                <div class="stat-card">
+                    <div class="number">19.7%</div>
+                    <div class="label">전년 대비 성장률</div>
+                </div>
+                <div class="stat-card">
+                    <div class="number">4조</div>
+                    <div class="label">2027년 목표 (원)</div>
+                </div>
+                <div class="stat-card">
+                    <div class="number">601억$</div>
+                    <div class="label">2030년 글로벌 시장</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>산업 규모 성장 추이</h2>
+            <div class="highlight-box">
+                <h3>지속적인 성장세</h3>
+                <p>2018년부터 2022년까지 만화산업은 꾸준한 성장을 보여왔습니다. 특히 웹툰 플랫폼의 성장이 전체 산업을 견인하고 있습니다.</p>
+            </div>
+            <div class="chart-container">
+                <div id="revenue-chart"></div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>사업체 및 종사자 현황</h2>
+            <div class="stat-grid">
+                <div class="stat-card">
+                    <div class="number">5004</div>
+                    <div class="label">2022년 사업체 수 (개)</div>
+                </div>
+                <div class="stat-card">
+                    <div class="number">12185</div>
+                    <div class="label">2022년 종사자 수 (명)</div>
+                </div>
+            </div>
+            <div class="chart-container">
+                <div id="company-chart"></div>
+            </div>
+            <div class="chart-container">
+                <div id="employee-chart"></div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>글로벌 수출 현황</h2>
+            <div class="speech-bubble">
+                <p>일본이 <strong>40.3%</strong>로 최대 수출국이며, 북미 <strong>19.7%</strong>, 중화권 <strong>15.6%</strong> 순입니다. K-웹툰이 세계로 뻗어나가고 있어요!</p>
+            </div>
+            <div class="highlight-box">
+                <h3>주요 수출 시장</h3>
+                <ul>
+                    <li><strong>일본:</strong> 픽코마, 라인망가 등이 시장 1위 달성</li>
+                    <li><strong>북미:</strong> 전년 대비 6.2% 비중 증가</li>
+                    <li><strong>중화권:</strong> 안정적인 수출 시장 유지</li>
+                    <li><strong>동남아시아:</strong> 새로운 성장 동력으로 부상</li>
+                </ul>
+            </div>
+            <div class="chart-container">
+                <div id="export-chart"></div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>종사자 성별 구성</h2>
+            <div class="chart-container">
+                <div id="gender-chart"></div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>산업 전망 및 과제</h2>
+            <div class="highlight-box">
+                <h3>기회 요인</h3>
+                <ul>
+                    <li>2027년까지 4조원 규모 목표 (정부 정책 지원)</li>
+                    <li>글로벌 시장 2030년 601억 달러(약 80조원) 전망</li>
+                    <li>AI 기술 도입으로 제작 효율성 향상</li>
+                    <li>IP 사업 다각화 (드라마, 영화, 게임 등)</li>
+                </ul>
+            </div>
+            <div class="highlight-box">
+                <h3>주요 위험 요소</h3>
+                <ul>
+                    <li><strong>불법 복제:</strong> 피해액 약 4,465억원 (산업의 20%)</li>
+                    <li><strong>숏폼 콘텐츠 경쟁:</strong> 틱톡, 유튜브 쇼츠 등과의 경쟁 심화</li>
+                    <li><strong>작가 처우:</strong> 연간 중위 소득 3,800만원, 주 5.9일 10.1시간 고강도 노동</li>
+                </ul>
+            </div>
+            <div class="speech-bubble">
+                <p>2025년은 한국 웹툰이 진정한 글로벌 콘텐츠 강자로 도약하는 원년이 될 것입니다!</p>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p><strong>데이터 출처:</strong> KOSIS (통계청) - 한국콘텐츠진흥원</p>
+            <p><strong>생성일:</strong> 2025-12-15</p>
+            <p><strong>Report #95</strong> | 웹툰/만화산업 트렌드 분석</p>
+        </div>
+    </div>
+
+    <script>
+        // 매출액 추이 차트
+        const revenueSpec = {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "width": "container",
+            "height": 300,
+            "data": {
+                "values": [{"year": "2018", "revenue": 1178613}, {"year": "2019", "revenue": 1337248}, {"year": "2020", "revenue": 1534444}, {"year": "2021", "revenue": 2132149}, {"year": "2022", "revenue": 2624004}]
+            },
+            "mark": {
+                "type": "line",
+                "point": {
+                    "filled": true,
+                    "size": 100
+                },
+                "color": "#667eea",
+                "strokeWidth": 4
+            },
+            "encoding": {
+                "x": {
+                    "field": "year",
+                    "type": "ordinal",
+                    "title": "연도",
+                    "axis": {"labelAngle": 0}
+                },
+                "y": {
+                    "field": "revenue",
+                    "type": "quantitative",
+                    "title": "매출액 (백만원)",
+                    "axis": {"format": ","}
+                },
+                "tooltip": [
+                    {"field": "year", "title": "연도"},
+                    {"field": "revenue", "title": "매출액 (백만원)", "format": ","}
+                ]
+            },
+            "config": {
+                "axis": {"labelFontSize": 12, "titleFontSize": 14},
+                "view": {"strokeWidth": 0}
+            }
+        };
+
+        // 사업체 수 추이 차트
+        const companySpec = {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "width": "container",
+            "height": 250,
+            "data": {
+                "values": [{"year": "2018", "count": 6628}, {"year": "2019", "count": 6607}, {"year": "2020", "count": 6144}, {"year": "2021", "count": 4919}, {"year": "2022", "count": 5004}]
+            },
+            "mark": {
+                "type": "bar",
+                "color": "#764ba2",
+                "cornerRadiusEnd": 10
+            },
+            "encoding": {
+                "x": {
+                    "field": "year",
+                    "type": "ordinal",
+                    "title": "연도",
+                    "axis": {"labelAngle": 0}
+                },
+                "y": {
+                    "field": "count",
+                    "type": "quantitative",
+                    "title": "사업체 수 (개)",
+                    "axis": {"format": ","}
+                },
+                "tooltip": [
+                    {"field": "year", "title": "연도"},
+                    {"field": "count", "title": "사업체 수 (개)", "format": ","}
+                ]
+            },
+            "config": {
+                "axis": {"labelFontSize": 12, "titleFontSize": 14},
+                "view": {"strokeWidth": 0}
+            }
+        };
+
+        // 종사자 수 추이 차트
+        const employeeSpec = {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "width": "container",
+            "height": 250,
+            "data": {
+                "values": [{"year": "2018", "count": 10761}, {"year": "2019", "count": 11079}, {"year": "2020", "count": 11230}, {"year": "2021", "count": 10825}, {"year": "2022", "count": 12185}]
+            },
+            "mark": {
+                "type": "area",
+                "line": {
+                    "color": "#f5576c",
+                    "strokeWidth": 3
+                },
+                "color": {
+                    "gradient": "linear",
+                    "stops": [
+                        {"offset": 0, "color": "#f093fb"},
+                        {"offset": 1, "color": "#f5576c"}
+                    ]
+                }
+            },
+            "encoding": {
+                "x": {
+                    "field": "year",
+                    "type": "ordinal",
+                    "title": "연도",
+                    "axis": {"labelAngle": 0}
+                },
+                "y": {
+                    "field": "count",
+                    "type": "quantitative",
+                    "title": "종사자 수 (명)",
+                    "axis": {"format": ","}
+                },
+                "tooltip": [
+                    {"field": "year", "title": "연도"},
+                    {"field": "count", "title": "종사자 수 (명)", "format": ","}
+                ]
+            },
+            "config": {
+                "axis": {"labelFontSize": 12, "titleFontSize": 14},
+                "view": {"strokeWidth": 0}
+            }
+        };
+
+        // 수출 현황 차트
+        const exportSpec = {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "width": "container",
+            "height": 300,
+            "data": {
+                "values": [{"country": "\uc804\uccb4", "value": 107635}, {"country": "\uc77c\ubcf8", "value": 32791}, {"country": "\ub3d9\ub0a8\uc544", "value": 19835}, {"country": "\uc911\ud654\uad8c", "value": 19367}, {"country": "\uc720\ub7fd", "value": 15463}, {"country": "\ubd81\ubbf8", "value": 14051}, {"country": "\uae30 \ud0c0", "value": 6128}]
+            },
+            "mark": {
+                "type": "bar",
+                "cornerRadiusEnd": 10
+            },
+            "encoding": {
+                "x": {
+                    "field": "value",
+                    "type": "quantitative",
+                    "title": "수출액 (천 달러)",
+                    "axis": {"format": ","}
+                },
+                "y": {
+                    "field": "country",
+                    "type": "nominal",
+                    "title": "국가/지역",
+                    "sort": "-x"
+                },
+                "color": {
+                    "field": "value",
+                    "type": "quantitative",
+                    "scale": {
+                        "scheme": "purples"
+                    },
+                    "legend": null
+                },
+                "tooltip": [
+                    {"field": "country", "title": "국가/지역"},
+                    {"field": "value", "title": "수출액 (천 달러)", "format": ","}
+                ]
+            },
+            "config": {
+                "axis": {"labelFontSize": 12, "titleFontSize": 14},
+                "view": {"strokeWidth": 0}
+            }
+        };
+
+        // 성별 분포 차트
+        const genderSpec = {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "width": "container",
+            "height": 300,
+            "data": {
+                "values": [{"gender": "\ub0a8\uc790", "count": 5914}, {"gender": "\uc5ec\uc790", "count": 6272}]
+            },
+            "mark": {
+                "type": "arc",
+                "innerRadius": 80,
+                "stroke": "white",
+                "strokeWidth": 3
+            },
+            "encoding": {
+                "theta": {
+                    "field": "count",
+                    "type": "quantitative"
+                },
+                "color": {
+                    "field": "gender",
+                    "type": "nominal",
+                    "scale": {
+                        "domain": ["남자", "여자"],
+                        "range": ["#667eea", "#f5576c"]
+                    },
+                    "legend": {"title": "성별"}
+                },
+                "tooltip": [
+                    {"field": "gender", "title": "성별"},
+                    {"field": "count", "title": "종사자 수 (명)", "format": ","}
+                ]
+            },
+            "config": {
+                "view": {"strokeWidth": 0}
+            }
+        };
+
+        // 차트 렌더링
+        vegaEmbed('#revenue-chart', revenueSpec, {actions: false});
+        vegaEmbed('#company-chart', companySpec, {actions: false});
+        vegaEmbed('#employee-chart', employeeSpec, {actions: false});
+        vegaEmbed('#export-chart', exportSpec, {actions: false});
+        vegaEmbed('#gender-chart', genderSpec, {actions: false});
+    </script>
+</body>
+</html>

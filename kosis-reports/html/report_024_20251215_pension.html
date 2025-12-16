@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report #024 - 국민연금 수급 현황 분석</title>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Malgun Gothic', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2980b9 0%, #3498db 100%);
+            color: white;
+            padding: 60px 40px;
+            border-radius: 12px;
+            margin-bottom: 40px;
+            box-shadow: 0 8px 32px rgba(52, 152, 219, 0.2);
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .meta {
+            font-size: 0.95em;
+            opacity: 0.95;
+            margin-top: 10px;
+        }
+
+        .kpi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .kpi-card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+            border-left: 5px solid #3498db;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .kpi-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+        }
+
+        .kpi-label {
+            font-size: 0.9em;
+            color: #7f8c8d;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 10px;
+        }
+
+        .kpi-value {
+            font-size: 2.5em;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 8px;
+        }
+
+        .kpi-change {
+            font-size: 1.1em;
+            font-weight: 600;
+        }
+
+        .kpi-change.positive {
+            color: #27ae60;
+        }
+
+        .kpi-change.negative {
+            color: #e74c3c;
+        }
+
+        section {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+        }
+
+        h2 {
+            font-size: 1.8em;
+            color: #2c3e50;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #3498db;
+        }
+
+        h3 {
+            font-size: 1.3em;
+            color: #34495e;
+            margin: 25px 0 15px 0;
+        }
+
+        .chart-container {
+            margin: 30px 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .insights {
+            background: #e8f4f8;
+            border-left: 5px solid #3498db;
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 8px;
+        }
+
+        .insights h3 {
+            color: #2980b9;
+            border: none;
+            margin-top: 0;
+        }
+
+        .insights ul {
+            margin-left: 20px;
+            margin-top: 15px;
+        }
+
+        .insights li {
+            margin-bottom: 12px;
+            line-height: 1.8;
+        }
+
+        .warning-section {
+            background: #fff3cd;
+            border-left: 5px solid #f39c12;
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 8px;
+        }
+
+        .warning-section h3 {
+            color: #e67e22;
+            border: none;
+            margin-top: 0;
+        }
+
+        .sources {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 2px solid #ecf0f1;
+        }
+
+        .sources h3 {
+            font-size: 1.1em;
+            color: #7f8c8d;
+            margin-bottom: 15px;
+        }
+
+        .sources a {
+            color: #3498db;
+            text-decoration: none;
+            display: block;
+            padding: 8px 0;
+            transition: color 0.2s;
+        }
+
+        .sources a:hover {
+            color: #2980b9;
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            color: #95a5a6;
+            padding: 30px 0;
+            font-size: 0.9em;
+        }
+
+        .highlight {
+            background: #fff3cd;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>국민연금 수급 현황 분석</h1>
+            <div class="meta">
+                Report #024 | 생성일: 2025년 12월 15일 | 키워드: 국민연금, 연금수급, 노후보장
+            </div>
+        </header>
+
+        <div class="kpi-grid">
+            <div class="kpi-card">
+                <div class="kpi-label">최신 연도</div>
+                <div class="kpi-value">2024</div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-label">평균소득월액</div>
+                <div class="kpi-value">3,022,427<span style="font-size: 0.5em;">원</span></div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-label">전년 대비 증가율</div>
+                <div class="kpi-value" style="color: #27ae60;">↑ 5.3%</div>
+                <div class="kpi-change positive">
+                    151,757원 증가
+                </div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-label">노령화지수 (전국)</div>
+                <div class="kpi-value">522.4</div>
+                <div class="kpi-change negative">고령화 진행 중</div>
+            </div>
+        </div>
+
+        <section>
+            <h2>평균소득월액 추이</h2>
+            <div class="chart-container">
+                <div id="trendChart"></div>
+            </div>
+            <div class="insights">
+                <h3>주요 인사이트</h3>
+                <ul>
+                    <li><span class="highlight">2024년 평균소득월액은 3,022,427원</span>으로 지속적인 상승 추세를 보이고 있습니다.</li>
+                    <li>전년 대비 <strong>151,757원 (5.3%) 증가</strong>하며 임금 상승을 반영하고 있습니다.</li>
+                    <li>국민연금 기준소득월액은 매년 물가상승률과 임금상승률을 고려하여 조정됩니다.</li>
+                    <li>평균소득월액의 지속적 증가는 향후 연금 지급액 증가로 이어질 전망입니다.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>지역별 노령화지수 (상위 10개 지역)</h2>
+            <div class="chart-container">
+                <div id="agingChart"></div>
+            </div>
+            <div class="insights">
+                <h3>지역별 노령화 현황</h3>
+                <ul>
+                    <li>전국 평균 노령화지수는 <strong>522.4</strong>로 나타났습니다.</li>
+                    <li>농촌 지역을 중심으로 노령화가 급속히 진행되고 있습니다.</li>
+                    <li>노령화지수는 (65세 이상 인구 / 0-14세 인구) × 100으로 계산됩니다.</li>
+                    <li>지수가 100을 초과하면 고령인구가 유소년인구보다 많다는 의미입니다.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>국민연금 현황 및 과제</h2>
+            <div class="warning-section">
+                <h3>고령화에 따른 연금 재정 압박</h3>
+                <ul style="margin-left: 20px; margin-top: 15px;">
+                    <li><strong>수급자 급증</strong>: 베이비부머 세대의 은퇴로 연금 수급자가 빠르게 증가하고 있습니다.</li>
+                    <li><strong>기금 고갈 우려</strong>: 현행 제도 유지 시 2050년대 기금 고갈이 예상됩니다.</li>
+                    <li><strong>세대 간 형평성</strong>: 젊은 세대의 부담 증가와 세대 간 갈등 우려가 있습니다.</li>
+                    <li><strong>연금 개혁 필요성</strong>: 보험료율 인상, 수급 연령 조정 등 개혁 논의가 진행 중입니다.</li>
+                </ul>
+            </div>
+
+            <div class="insights">
+                <h3>제도 개선 방향</h3>
+                <ul>
+                    <li><strong>다층 연금체계 강화</strong>: 국민연금 외에 퇴직연금, 개인연금 활성화가 필요합니다.</li>
+                    <li><strong>소득대체율 개선</strong>: 노후 소득보장을 위한 적정 수준의 소득대체율 확보가 중요합니다.</li>
+                    <li><strong>사각지대 해소</strong>: 비정규직, 자영업자 등의 연금 가입률 제고가 필요합니다.</li>
+                    <li><strong>재정 안정화</strong>: 장기적 재정 건전성 확보를 위한 구조 개혁이 시급합니다.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>정책 제언</h2>
+            <div class="insights">
+                <h3>노후 소득보장 강화 방안</h3>
+                <ul>
+                    <li><strong>국민연금 개혁</strong>: 재정 안정화와 노후보장 강화를 동시에 달성할 수 있는 개혁안 마련이 필요합니다.</li>
+                    <li><strong>기초연금 확대</strong>: 저소득 노인의 기본적 생활보장을 위한 기초연금 강화가 중요합니다.</li>
+                    <li><strong>퇴직연금 활성화</strong>: 퇴직연금 의무화 및 운용수익률 제고 방안이 필요합니다.</li>
+                    <li><strong>노후준비 교육</strong>: 생애주기별 노후준비 교육 및 금융교육 강화가 필요합니다.</li>
+                    <li><strong>일자리 창출</strong>: 건강한 노인의 경제활동 참여를 위한 양질의 일자리 제공이 중요합니다.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="sources">
+            <h3>데이터 출처</h3>
+            <a href="https://kosis.kr" target="_blank">
+                KOSIS 국가통계포털
+            </a>
+            <a href="https://kosis.kr/statHtml/statHtml.do?orgId=322&tblId=DT_32202_B003" target="_blank">
+                국민연금공단 - 평균소득월액 및 재평가율 현황 (DT_32202_B003)
+            </a>
+            <a href="https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1YL12501E" target="_blank">
+                통계청 - 노령화지수 (DT_1YL12501E)
+            </a>
+            <a href="https://kosis.kr/statHtml/statHtml.do?orgId=322&tblId=DT_32202_B091" target="_blank">
+                국민연금공단 - 유족연금 심사 현황 (DT_32202_B091)
+            </a>
+        </section>
+
+        <footer>
+            <p>Generated by KOSIS Data Processor | Report #024 | 2025-12-15</p>
+            <p style="margin-top: 10px;">이 보고서는 KOSIS 공공데이터를 기반으로 자동 생성되었습니다.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Render trend chart
+        vegaEmbed('#trendChart', {"$schema": "https://vega.github.io/schema/vega-lite/v5.json", "width": 800, "height": 400, "data": {"values": [{"year": "1988", "income": 0.0}, {"year": "1989", "income": 374485.0}, {"year": "1990", "income": 451308.0}, {"year": "1991", "income": 540146.0}, {"year": "1992", "income": 619882.0}, {"year": "1993", "income": 726197.0}, {"year": "1994", "income": 819687.0}, {"year": "1995", "income": 900024.0}, {"year": "1996", "income": 943502.0}, {"year": "1997", "income": 1070474.0}, {"year": "1998", "income": 1216834.0}, {"year": "1999", "income": 1271595.0}, {"year": "2000", "income": 1271595.0}, {"year": "2001", "income": 1190870.0}, {"year": "2002", "income": 1290227.0}, {"year": "2003", "income": 1362212.0}, {"year": "2004", "income": 1454522.0}, {"year": "2005", "income": 1524859.0}, {"year": "2006", "income": 1586061.0}, {"year": "2007", "income": 1634687.0}, {"year": "2008", "income": 1692766.0}, {"year": "2009", "income": 1726533.0}, {"year": "2010", "income": 1779574.0}, {"year": "2011", "income": 1814477.0}, {"year": "2012", "income": 1882336.0}, {"year": "2013", "income": 1955395.0}, {"year": "2014", "income": 2016894.0}, {"year": "2015", "income": 2084920.0}, {"year": "2016", "income": 2159703.0}, {"year": "2017", "income": 2227788.0}, {"year": "2018", "income": 2319100.0}, {"year": "2019", "income": 2412593.0}, {"year": "2020", "income": 2530634.0}, {"year": "2021", "income": 2641611.0}, {"year": "2022", "income": 2728439.0}, {"year": "2023", "income": 2870670.0}, {"year": "2024", "income": 3022427.0}]}, "mark": {"type": "line", "point": true, "strokeWidth": 3, "color": "#3498db"}, "encoding": {"x": {"field": "year", "type": "ordinal", "title": "\uc5f0\ub3c4", "axis": {"labelAngle": -45}}, "y": {"field": "income", "type": "quantitative", "title": "\ud3c9\uade0\uc18c\ub4dd\uc6d4\uc561 (\uc6d0)", "axis": {"format": ","}}, "tooltip": [{"field": "year", "type": "ordinal", "title": "\uc5f0\ub3c4"}, {"field": "income", "type": "quantitative", "title": "\ud3c9\uade0\uc18c\ub4dd\uc6d4\uc561", "format": ","}]}, "config": {"font": "Malgun Gothic, sans-serif"}}, {
+            actions: {
+                export: true,
+                source: false,
+                compiled: false,
+                editor: false
+            }
+        });
+
+        // Render aging chart
+        vegaEmbed('#agingChart', {"$schema": "https://vega.github.io/schema/vega-lite/v5.json", "width": 700, "height": 400, "data": {"values": [{"region": "\uacbd\uc0c1\ubd81\ub3c4", "index": 793.7}, {"region": "\uc804\ub77c\ub0a8\ub3c4", "index": 783.3}, {"region": "\uacbd\uc0c1\ub0a8\ub3c4", "index": 733.1}, {"region": "\uc804\ubd81\ud2b9\ubcc4\uc790\uce58\ub3c4", "index": 690.9}, {"region": "\uac15\uc6d0\ud2b9\ubcc4\uc790\uce58\ub3c4", "index": 659.5}, {"region": "\uc6b8\uc0b0\uad11\uc5ed\uc2dc", "index": 607.7}, {"region": "\ucda9\uccad\ub0a8\ub3c4", "index": 597.3}, {"region": "\ubd80\uc0b0\uad11\uc5ed\uc2dc", "index": 593.4}, {"region": "\ucda9\uccad\ubd81\ub3c4", "index": 585.0}, {"region": "\ub300\uad6c\uad11\uc5ed\uc2dc", "index": 534.9}]}, "mark": {"type": "bar", "color": "#e74c3c"}, "encoding": {"x": {"field": "region", "type": "nominal", "title": "\uc9c0\uc5ed", "axis": {"labelAngle": -45}}, "y": {"field": "index", "type": "quantitative", "title": "\ub178\ub839\ud654\uc9c0\uc218"}, "tooltip": [{"field": "region", "type": "nominal", "title": "\uc9c0\uc5ed"}, {"field": "index", "type": "quantitative", "title": "\ub178\ub839\ud654\uc9c0\uc218", "format": ".1f"}]}, "config": {"font": "Malgun Gothic, sans-serif"}}, {
+            actions: {
+                export: true,
+                source: false,
+                compiled: false,
+                editor: false
+            }
+        });
+    </script>
+</body>
+</html>

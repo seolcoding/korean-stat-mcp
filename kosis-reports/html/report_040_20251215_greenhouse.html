@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>한국 온실가스 배출 현황과 탄소중립 2050</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            color: #1b5e20;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #2d5016 0%, #5a9216 100%);
+            color: white;
+            padding: 80px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 20px;
+            animation: fadeInDown 1s ease;
+        }
+
+        .hero .subtitle {
+            font-size: 1.3rem;
+            opacity: 0.95;
+            margin-bottom: 10px;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+
+        .hero .date {
+            font-size: 1rem;
+            opacity: 0.8;
+            animation: fadeInUp 1s ease 0.4s both;
+        }
+
+        /* Key Stats Section */
+        .key-stats {
+            background: linear-gradient(135deg, #5a9216 0%, #8bc34a 100%);
+            padding: 60px 40px;
+            text-align: center;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px 20px;
+            border-radius: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: fadeInUp 1s ease both;
+        }
+
+        .stat-card:nth-child(1) { animation-delay: 0.1s; }
+        .stat-card:nth-child(2) { animation-delay: 0.2s; }
+        .stat-card:nth-child(3) { animation-delay: 0.3s; }
+        .stat-card:nth-child(4) { animation-delay: 0.4s; }
+
+        .stat-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .stat-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: #2d5016;
+            margin: 10px 0;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: #5a9216;
+            font-weight: 600;
+        }
+
+        .stat-change {
+            font-size: 0.9rem;
+            margin-top: 10px;
+            padding: 5px 10px;
+            border-radius: 15px;
+            display: inline-block;
+        }
+
+        .stat-change.positive {
+            background: #c8e6c9;
+            color: #2d5016;
+        }
+
+        .stat-change.negative {
+            background: #ffcdd2;
+            color: #c62828;
+        }
+
+        /* Section Headers */
+        .section {
+            padding: 60px 40px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: #2d5016;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, #5a9216, #8bc34a);
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: #5a9216;
+            margin-top: 20px;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding: 40px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, #8bc34a, #2d5016);
+            border-radius: 2px;
+        }
+
+        .timeline-item {
+            display: flex;
+            align-items: center;
+            margin: 40px 0;
+            position: relative;
+            animation: fadeInRight 1s ease both;
+        }
+
+        .timeline-item:nth-child(even) {
+            flex-direction: row-reverse;
+            animation-name: fadeInLeft;
+        }
+
+        .timeline-content {
+            flex: 1;
+            padding: 30px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin: 0 30px;
+            position: relative;
+        }
+
+        .timeline-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #5a9216, #8bc34a);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            position: relative;
+            z-index: 2;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .timeline-year {
+            font-size: 2rem;
+            font-weight: 900;
+            color: #2d5016;
+            margin-bottom: 10px;
+        }
+
+        .timeline-event {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #5a9216;
+            margin-bottom: 10px;
+        }
+
+        .timeline-value {
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: #2d5016;
+        }
+
+        /* Target Section */
+        .target-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .target-card {
+            background: linear-gradient(135deg, #ffffff, #f1f8e9);
+            padding: 30px;
+            border-radius: 20px;
+            border: 3px solid #8bc34a;
+            transition: all 0.3s ease;
+            animation: fadeInUp 1s ease both;
+        }
+
+        .target-card:nth-child(1) { animation-delay: 0.1s; }
+        .target-card:nth-child(2) { animation-delay: 0.2s; }
+        .target-card:nth-child(3) { animation-delay: 0.3s; }
+        .target-card:nth-child(4) { animation-delay: 0.4s; }
+
+        .target-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(90, 146, 22, 0.3);
+        }
+
+        .target-sector {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #2d5016;
+            margin-bottom: 20px;
+        }
+
+        .target-bar {
+            background: #e8f5e9;
+            height: 40px;
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+            margin: 15px 0;
+        }
+
+        .target-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #5a9216, #8bc34a);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            transition: width 2s ease;
+        }
+
+        .target-values {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+            font-size: 0.9rem;
+            color: #5a9216;
+        }
+
+        /* Policy Actions */
+        .policy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .policy-card {
+            background: white;
+            padding: 30px 20px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            animation: scaleIn 0.6s ease both;
+        }
+
+        .policy-card:nth-child(1) { animation-delay: 0.1s; }
+        .policy-card:nth-child(2) { animation-delay: 0.2s; }
+        .policy-card:nth-child(3) { animation-delay: 0.3s; }
+        .policy-card:nth-child(4) { animation-delay: 0.4s; }
+
+        .policy-card:hover {
+            transform: translateY(-10px) rotate(2deg);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+        }
+
+        .policy-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+
+        .policy-category {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #2d5016;
+            margin-bottom: 20px;
+        }
+
+        .policy-actions {
+            list-style: none;
+            text-align: left;
+        }
+
+        .policy-actions li {
+            padding: 8px 0;
+            color: #5a9216;
+            font-size: 0.95rem;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .policy-actions li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #8bc34a;
+            font-weight: 700;
+        }
+
+        /* Comparison Chart */
+        .comparison-bars {
+            margin-top: 40px;
+        }
+
+        .comparison-item {
+            margin: 25px 0;
+            animation: slideInLeft 1s ease both;
+        }
+
+        .comparison-item:nth-child(1) { animation-delay: 0.1s; }
+        .comparison-item:nth-child(2) { animation-delay: 0.2s; }
+        .comparison-item:nth-child(3) { animation-delay: 0.3s; }
+        .comparison-item:nth-child(4) { animation-delay: 0.4s; }
+        .comparison-item:nth-child(5) { animation-delay: 0.5s; }
+
+        .comparison-label {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: #2d5016;
+        }
+
+        .comparison-emoji {
+            font-size: 1.5rem;
+            margin-right: 10px;
+        }
+
+        .comparison-bar {
+            height: 50px;
+            background: #e8f5e9;
+            border-radius: 25px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .comparison-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #2d5016, #5a9216);
+            border-radius: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 20px;
+            color: white;
+            font-weight: 700;
+            font-size: 1.2rem;
+            transition: width 2s ease;
+        }
+
+        .comparison-bar-fill.highlight {
+            background: linear-gradient(90deg, #8bc34a, #c5e1a5);
+            color: #2d5016;
+            font-weight: 900;
+        }
+
+        /* Big Number */
+        .big-number-container {
+            text-align: center;
+            padding: 60px 40px;
+            background: linear-gradient(135deg, #f1f8e9, #dcedc8);
+            margin: 40px 0;
+        }
+
+        .big-number {
+            font-size: 6rem;
+            font-weight: 900;
+            color: #2d5016;
+            line-height: 1;
+            margin: 20px 0;
+            animation: scaleIn 1s ease;
+        }
+
+        .big-number-label {
+            font-size: 1.5rem;
+            color: #5a9216;
+            font-weight: 600;
+        }
+
+        .big-number-description {
+            font-size: 1.1rem;
+            color: #5a9216;
+            margin-top: 20px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Footer */
+        .footer {
+            background: #2d5016;
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .sources {
+            margin: 30px 0;
+        }
+
+        .sources-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .sources-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .source-link {
+            color: #c5e1a5;
+            text-decoration: none;
+            padding: 10px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .source-link:hover {
+            background: rgba(197, 225, 165, 0.1);
+            color: white;
+        }
+
+        .footer-note {
+            margin-top: 30px;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .big-number {
+                font-size: 4rem;
+            }
+
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-item,
+            .timeline-item:nth-child(even) {
+                flex-direction: row;
+            }
+
+            .timeline-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>한국 온실가스 배출 현황과<br>탄소중립 2050</h1>
+                <p class="subtitle">대한민국의 온실가스 감축 목표와 실천 전략</p>
+                <p class="date">2025년 12월 15일 기준</p>
+            </div>
+        </section>
+
+        <!-- Key Stats -->
+        <section class="key-stats">
+            <h2 style="color: white; font-size: 2rem; margin-bottom: 10px;">2022년 온실가스 배출 현황</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">📊</div>
+                    <div class="stat-value">724.3</div>
+                    <div class="stat-label">백만톤</div>
+                    <div class="stat-change positive">전년 대비 -2.3%</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">📈</div>
+                    <div class="stat-value">+133%</div>
+                    <div class="stat-label">1990년 대비</div>
+                    <div class="stat-change negative">310.5 → 724.3</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">⚡</div>
+                    <div class="stat-value">86.9%</div>
+                    <div class="stat-label">에너지 부문</div>
+                    <div class="stat-change negative">최대 배출원</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">🎯</div>
+                    <div class="stat-value">40%</div>
+                    <div class="stat-label">2030 감축목표</div>
+                    <div class="stat-change positive">2018년 대비</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Timeline -->
+        <section class="section">
+            <div class="section-header">
+                <h2 class="section-title">탄소중립 로드맵</h2>
+                <p class="section-subtitle">1990년부터 2050년까지의 여정</p>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-icon">📊</div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">1990</div>
+                        <div class="timeline-event">기준연도 배출량</div>
+                        <div class="timeline-value">310.5백만톤</div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-icon">📈</div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">2018</div>
+                        <div class="timeline-event">NDC 기준연도</div>
+                        <div class="timeline-value">727.6백만톤</div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-icon">📉</div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">2022</div>
+                        <div class="timeline-event">최근 배출량 (전년比 -2.3%)</div>
+                        <div class="timeline-value">724.3백만톤</div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-icon">🎯</div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">2030</div>
+                        <div class="timeline-event">국가 온실가스 감축목표 (NDC)</div>
+                        <div class="timeline-value">436.6백만톤</div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-icon">🌱</div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">2050</div>
+                        <div class="timeline-event">탄소중립 달성</div>
+                        <div class="timeline-value">Net Zero</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Big Number -->
+        <div class="big-number-container">
+            <div class="big-number-label">2030 감축 목표</div>
+            <div class="big-number">40%</div>
+            <div class="big-number-description">
+                2018년 대비 291백만톤 감축<br>
+                연평균 감축률 4.17% - 주요 선진국 대비 가장 도전적인 목표
+            </div>
+        </div>
+
+        <!-- Sector Targets -->
+        <section class="section" style="background: #f1f8e9;">
+            <div class="section-header">
+                <h2 class="section-title">부문별 감축 목표</h2>
+                <p class="section-subtitle">2018년 기준 → 2030년 목표</p>
+            </div>
+
+            <div class="target-grid">
+                <div class="target-card">
+                    <div class="target-sector">⚡ 전환 (발전)</div>
+                    <div class="target-bar">
+                        <div class="target-bar-fill" style="width: 44.4%;">-44.4%</div>
+                    </div>
+                    <div class="target-values">
+                        <span>269.6백만톤</span>
+                        <span>→ 149.9백만톤</span>
+                    </div>
+                    <p style="margin-top: 15px; font-size: 0.9rem; color: #5a9216;">
+                        석탄발전 축소, 신재생에너지 확대
+                    </p>
+                </div>
+
+                <div class="target-card">
+                    <div class="target-sector">🏭 산업</div>
+                    <div class="target-bar">
+                        <div class="target-bar-fill" style="width: 14.5%;">-14.5%</div>
+                    </div>
+                    <div class="target-values">
+                        <span>260.5백만톤</span>
+                        <span>→ 222.6백만톤</span>
+                    </div>
+                    <p style="margin-top: 15px; font-size: 0.9rem; color: #5a9216;">
+                        철강 공정 전환, 석유화학 원료 전환
+                    </p>
+                </div>
+
+                <div class="target-card">
+                    <div class="target-sector">🚗 수송</div>
+                    <div class="target-bar">
+                        <div class="target-bar-fill" style="width: 37.8%;">-37.8%</div>
+                    </div>
+                    <div class="target-values">
+                        <span>98.1백만톤</span>
+                        <span>→ 61.0백만톤</span>
+                    </div>
+                    <p style="margin-top: 15px; font-size: 0.9rem; color: #5a9216;">
+                        전기차·수소차 보급, 대중교통 활성화
+                    </p>
+                </div>
+
+                <div class="target-card">
+                    <div class="target-sector">🏢 건물</div>
+                    <div class="target-bar">
+                        <div class="target-bar-fill" style="width: 32.8%;">-32.8%</div>
+                    </div>
+                    <div class="target-values">
+                        <span>52.1백만톤</span>
+                        <span>→ 35.0백만톤</span>
+                    </div>
+                    <p style="margin-top: 15px; font-size: 0.9rem; color: #5a9216;">
+                        제로에너지빌딩, 단열 성능 강화
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Policy Actions -->
+        <section class="section">
+            <div class="section-header">
+                <h2 class="section-title">핵심 정책 과제</h2>
+                <p class="section-subtitle">탄소중립을 위한 4대 전략</p>
+            </div>
+
+            <div class="policy-grid">
+                <div class="policy-card">
+                    <div class="policy-icon">⚡</div>
+                    <div class="policy-category">에너지 전환</div>
+                    <ul class="policy-actions">
+                        <li>석탄발전 축소</li>
+                        <li>신재생에너지 확대</li>
+                        <li>원자력 안전 활용</li>
+                    </ul>
+                </div>
+
+                <div class="policy-card">
+                    <div class="policy-icon">🏭</div>
+                    <div class="policy-category">산업 혁신</div>
+                    <ul class="policy-actions">
+                        <li>철강 공정 전환</li>
+                        <li>석유화학 원료 전환</li>
+                        <li>CCUS 기술 도입</li>
+                    </ul>
+                </div>
+
+                <div class="policy-card">
+                    <div class="policy-icon">🏢</div>
+                    <div class="policy-category">건물 효율화</div>
+                    <ul class="policy-actions">
+                        <li>제로에너지빌딩 확대</li>
+                        <li>단열 성능 강화</li>
+                        <li>스마트 에너지 관리</li>
+                    </ul>
+                </div>
+
+                <div class="policy-card">
+                    <div class="policy-icon">🚗</div>
+                    <div class="policy-category">친환경 교통</div>
+                    <ul class="policy-actions">
+                        <li>전기차 보급 확대</li>
+                        <li>수소차 상용화</li>
+                        <li>대중교통 활성화</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- International Comparison -->
+        <section class="section" style="background: #f1f8e9;">
+            <div class="section-header">
+                <h2 class="section-title">주요국 대비 감축률 비교</h2>
+                <p class="section-subtitle">연평균 온실가스 감축률 (기준연도 → 목표연도)</p>
+            </div>
+
+            <div class="comparison-bars">
+                <div class="comparison-item">
+                    <div class="comparison-label">
+                        <span class="comparison-emoji">🇰🇷</span>
+                        <span>한국</span>
+                    </div>
+                    <div class="comparison-bar">
+                        <div class="comparison-bar-fill highlight" style="width: 100%;">4.17%</div>
+                    </div>
+                </div>
+
+                <div class="comparison-item">
+                    <div class="comparison-label">
+                        <span class="comparison-emoji">🇯🇵</span>
+                        <span>일본</span>
+                    </div>
+                    <div class="comparison-bar">
+                        <div class="comparison-bar-fill" style="width: 85.4%;">3.56%</div>
+                    </div>
+                </div>
+
+                <div class="comparison-item">
+                    <div class="comparison-label">
+                        <span class="comparison-emoji">🇺🇸</span>
+                        <span>미국</span>
+                    </div>
+                    <div class="comparison-bar">
+                        <div class="comparison-bar-fill" style="width: 67.4%;">2.81%</div>
+                    </div>
+                </div>
+
+                <div class="comparison-item">
+                    <div class="comparison-label">
+                        <span class="comparison-emoji">🇬🇧</span>
+                        <span>영국</span>
+                    </div>
+                    <div class="comparison-bar">
+                        <div class="comparison-bar-fill" style="width: 67.4%;">2.81%</div>
+                    </div>
+                </div>
+
+                <div class="comparison-item">
+                    <div class="comparison-label">
+                        <span class="comparison-emoji">🇪🇺</span>
+                        <span>EU</span>
+                    </div>
+                    <div class="comparison-bar">
+                        <div class="comparison-bar-fill" style="width: 47.5%;">1.98%</div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-top: 40px; padding: 30px; background: white; border-radius: 15px; text-align: center;">
+                <p style="font-size: 1.1rem; color: #2d5016; font-weight: 600;">
+                    한국의 연평균 감축률은 주요 선진국 대비 <span style="font-size: 1.5rem; color: #5a9216; font-weight: 900;">가장 도전적인 수준</span>
+                </p>
+            </div>
+        </section>
+
+        <!-- Data Source -->
+        <section class="section" style="background: white;">
+            <div class="section-header">
+                <h2 class="section-title">데이터 출처</h2>
+                <p class="section-subtitle">KOSIS 국가통계포털</p>
+            </div>
+
+            <div style="background: #f1f8e9; padding: 30px; border-radius: 15px; max-width: 700px; margin: 0 auto;">
+                <h3 style="color: #2d5016; margin-bottom: 20px; font-size: 1.2rem;">대기 배출 계정 : 총 온실가스</h3>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; font-size: 0.95rem;">
+                    <div>
+                        <strong style="color: #5a9216;">테이블 ID:</strong> DT_2OEV029
+                    </div>
+                    <div>
+                        <strong style="color: #5a9216;">기관:</strong> 국가데이터처
+                    </div>
+                    <div>
+                        <strong style="color: #5a9216;">기간:</strong> 1990-2021
+                    </div>
+                    <div>
+                        <strong style="color: #5a9216;">주기:</strong> 연간
+                    </div>
+                </div>
+                <p style="margin-top: 20px; color: #5a9216; font-size: 0.9rem;">
+                    이산화탄소(CO2), 메탄(CH4), 아산화질소(N2O) 등 주요 온실가스의 산업별 배출량 데이터
+                </p>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="sources">
+                <div class="sources-title">참고 자료</div>
+                <div class="sources-list">
+                    <a href="https://www.2050cnc.go.kr/base/contents/view?contentsNo=59&menuLevel=2&menuNo=109" class="source-link" target="_blank">
+                        대통령직속 2050 탄소중립녹색성장위원회
+                    </a>
+                    <a href="https://www.index.go.kr/unity/potal/main/EachDtlPageDetail.do?idx_cd=1464" class="source-link" target="_blank">
+                        국가 온실가스 배출현황
+                    </a>
+                    <a href="https://www.index.go.kr/unify/idx-info.do?idxCd=4288" class="source-link" target="_blank">
+                        국가발전지표
+                    </a>
+                    <a href="https://www.gihoo.or.kr/menu.es?mid=a30211000000" class="source-link" target="_blank">
+                        탄소중립 정책포털
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-note">
+                <p>Report #040 | Generated on 2025-12-15</p>
+                <p style="margin-top: 10px;">KOSIS 데이터 기반 인포그래픽 리포트</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Animate bars on scroll
+        const observerOptions = {
+            threshold: 0.5,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.stat-card, .target-card, .policy-card, .comparison-item').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>

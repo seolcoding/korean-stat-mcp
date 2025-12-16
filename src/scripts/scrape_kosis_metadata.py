@@ -1,3 +1,20 @@
+"""
+⚠️ DEPRECATED: 이 스크립트는 더 이상 사용하지 않습니다.
+
+문제점:
+1. 검색어 기반 수집으로 전체 통계표를 수집하지 못함 (103K vs 252K)
+2. TBL_NM 기준 중복 제거로 같은 이름의 다른 테이블 누락
+
+대신 사용:
+- 메타데이터 수집: docs/METADATA_COLLECTION_GUIDE.md 참조
+- DB 로드: scripts/load_metadata.py --json-path data/metadata_api/tables.json
+
+올바른 메타데이터 파일:
+- 경로: data/metadata_api/tables.json
+- 레코드: 252,890개
+- 필드: 54개
+"""
+
 import re
 import requests
 import json

@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>대한민국 저출산 위기 심층 분석 | KOSIS 데이터 기반</title>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif; 
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ec 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 40px;
+            border-radius: 20px;
+            margin-bottom: 40px;
+            box-shadow: 0 20px 60px rgba(102, 126, 234, 0.4);
+        }
+        header h1 { font-size: 2.5rem; margin-bottom: 15px; font-weight: 800; }
+        header p { font-size: 1.1rem; opacity: 0.9; line-height: 1.6; }
+        .meta-info { margin-top: 20px; font-size: 0.9rem; opacity: 0.8; }
+        
+        .kpi-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+            gap: 25px; 
+            margin-bottom: 40px; 
+        }
+        .kpi-card {
+            background: white;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .kpi-card:hover { transform: translateY(-5px); box-shadow: 0 15px 50px rgba(0,0,0,0.12); }
+        .kpi-card.danger { border-left: 5px solid #e74c3c; }
+        .kpi-card.warning { border-left: 5px solid #f39c12; }
+        .kpi-card.info { border-left: 5px solid #3498db; }
+        .kpi-value { font-size: 3rem; font-weight: 800; color: #2c3e50; }
+        .kpi-value.negative { color: #e74c3c; }
+        .kpi-label { font-size: 1rem; color: #7f8c8d; margin-top: 10px; }
+        .kpi-sub { font-size: 0.85rem; color: #95a5a6; margin-top: 5px; }
+        
+        .section { 
+            background: white; 
+            border-radius: 20px; 
+            padding: 40px; 
+            margin-bottom: 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.06);
+        }
+        .section h2 { 
+            font-size: 1.5rem; 
+            color: #2c3e50; 
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #eee;
+        }
+        
+        .insight-box {
+            background: linear-gradient(135deg, #fff5f5 0%, #ffe8e8 100%);
+            border-left: 5px solid #e74c3c;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 25px 0;
+        }
+        .insight-box h3 { color: #c0392b; margin-bottom: 15px; }
+        .insight-box ul { margin-left: 20px; }
+        .insight-box li { margin: 10px 0; line-height: 1.7; }
+        
+        .chart-container { margin: 30px 0; }
+        .chart-title { font-size: 1.1rem; color: #555; margin-bottom: 15px; text-align: center; }
+        
+        .data-table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        .data-table th, .data-table td { 
+            padding: 15px; 
+            text-align: left; 
+            border-bottom: 1px solid #eee; 
+        }
+        .data-table th { 
+            background: #f8f9fa; 
+            font-weight: 600; 
+            color: #555;
+        }
+        .data-table tr:hover { background: #f8f9fa; }
+        .rank { 
+            width: 30px; 
+            height: 30px; 
+            background: #667eea; 
+            color: white; 
+            border-radius: 50%; 
+            display: inline-flex; 
+            align-items: center; 
+            justify-content: center; 
+            font-weight: bold;
+            font-size: 0.85rem;
+        }
+        .rank.top { background: #e74c3c; }
+        
+        .news-section { background: #f8f9fa; }
+        .news-item { 
+            padding: 20px; 
+            border-bottom: 1px solid #e0e0e0;
+            transition: background 0.2s;
+        }
+        .news-item:hover { background: #f0f0f0; }
+        .news-item:last-child { border-bottom: none; }
+        .news-item a { 
+            color: #667eea; 
+            text-decoration: none; 
+            font-weight: 600;
+            font-size: 1.05rem;
+        }
+        .news-item a:hover { text-decoration: underline; }
+        .news-source { font-size: 0.85rem; color: #888; margin-top: 8px; }
+        
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: #888;
+            font-size: 0.9rem;
+        }
+        footer a { color: #667eea; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🇰🇷 대한민국 저출산 위기 심층 분석</h1>
+            <p>KOSIS 공식 통계 데이터 기반 | 2014-2023년 합계출산율 추이와 지역별 현황</p>
+            <div class="meta-info">
+                📊 데이터 출처: KOSIS 국가통계포털 | 
+                📅 생성일: 2025-12-15 01:25 |
+                🏢 통계표: 시군구/합계출산율, 모의 연령별 출산율 (DT_1B81A17)
+            </div>
+        </header>
+        
+        <div class="kpi-grid">
+            <div class="kpi-card danger">
+                <div class="kpi-value negative">0.721</div>
+                <div class="kpi-label">2023년 합계출산율</div>
+                <div class="kpi-sub">OECD 최저 수준</div>
+            </div>
+            <div class="kpi-card warning">
+                <div class="kpi-value negative">-40.2%</div>
+                <div class="kpi-label">10년간 감소율</div>
+                <div class="kpi-sub">2014년 대비</div>
+            </div>
+            <div class="kpi-card danger">
+                <div class="kpi-value">0.552</div>
+                <div class="kpi-label">서울특별시</div>
+                <div class="kpi-sub">전국 최저 출산율</div>
+            </div>
+            <div class="kpi-card info">
+                <div class="kpi-value">0.972</div>
+                <div class="kpi-label">전라남도</div>
+                <div class="kpi-sub">전국 최고 출산율</div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>📈 전국 합계출산율 추이 (2014-2023)</h2>
+            <div class="chart-container" id="trend-chart"></div>
+            <div class="insight-box">
+                <h3>⚠️ 핵심 발견</h3>
+                <ul>
+                    <li><strong>10년간 40% 급락</strong>: 2014년 1.205명에서 2023년 0.721명으로 지속적 하락</li>
+                    <li><strong>0.7명대 진입</strong>: 2023년 처음으로 0.8명 아래로 떨어지며 역대 최저 기록</li>
+                    <li><strong>인구 감소 가속화</strong>: 합계출산율 2.1명이 인구 유지선, 현재의 3배 이상 필요</li>
+                    <li><strong>세계 최저 수준</strong>: OECD 평균(1.5)의 절반에도 미치지 못함</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>🗺️ 2023년 시도별 합계출산율</h2>
+            <div class="chart-container" id="region-chart"></div>
+            <table class="data-table">
+                <thead>
+                    <tr><th>순위</th><th>지역</th><th>출산율</th><th>비고</th></tr>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <td><span class="rank top">1</span></td>
+                        <td>서울특별시</td>
+                        <td><strong>0.552</strong></td>
+                        <td>🔴 최저</td>
+                    </tr>
+                    
+                    <tr>
+                        <td><span class="rank top">2</span></td>
+                        <td>부산광역시</td>
+                        <td><strong>0.664</strong></td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td><span class="rank top">3</span></td>
+                        <td>인천광역시</td>
+                        <td><strong>0.694</strong></td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td><span class="rank ">4</span></td>
+                        <td>대구광역시</td>
+                        <td><strong>0.702</strong></td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td><span class="rank ">5</span></td>
+                        <td>광주광역시</td>
+                        <td><strong>0.706</strong></td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td><span class="rank ">6</span></td>
+                        <td>경기도</td>
+                        <td><strong>0.766</strong></td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td><span class="rank ">7</span></td>
+                        <td>대전광역시</td>
+                        <td><strong>0.787</strong></td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td><span class="rank ">8</span></td>
+                        <td>경상남도</td>
+                        <td><strong>0.799</strong></td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td><span class="rank ">9</span></td>
+                        <td>울산광역시</td>
+                        <td><strong>0.814</strong></td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td><span class="rank ">10</span></td>
+                        <td>제주특별자치도</td>
+                        <td><strong>0.827</strong></td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td><span class="rank ">11</span></td>
+                        <td>충청남도</td>
+                        <td><strong>0.842</strong></td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td><span class="rank ">12</span></td>
+                        <td>경상북도</td>
+                        <td><strong>0.860</strong></td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td><span class="rank ">13</span></td>
+                        <td>충청북도</td>
+                        <td><strong>0.886</strong></td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td><span class="rank ">14</span></td>
+                        <td>강원특별자치도</td>
+                        <td><strong>0.893</strong></td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td><span class="rank ">15</span></td>
+                        <td>세종특별자치시</td>
+                        <td><strong>0.971</strong></td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td><span class="rank ">16</span></td>
+                        <td>전라남도</td>
+                        <td><strong>0.972</strong></td>
+                        <td>🟢 최고</td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="section news-section">
+            <h2>📰 관련 뉴스 동향</h2>
+            <div class="news-item">
+                <a href="https://www.chosun.com/economy/weeklybiz/2025/08/28/W6VIXYLNGNBQBC5JXTUWE7BAYU/" target="_blank">
+                    "韓, 3세대만 인구 86% 감소" - 저출산 전문가 페르난데스비야베르데 교수 인터뷰
+                </a>
+                <div class="news-source">조선일보 WEEKLY BIZ | 2025.08</div>
+            </div>
+            <div class="news-item">
+                <a href="https://m-i.kr/news/articleView.html?idxno=1225696" target="_blank">
+                    "OECD 출산율 꼴찌 한국"…122만 경단녀 시대
+                </a>
+                <div class="news-source">매일일보 | 2025</div>
+            </div>
+            <div class="news-item">
+                <a href="https://marketin.edaily.co.kr/News/ReadE?newsId=04359126642198440" target="_blank">
+                    日, 출생아 70만명 첫 붕괴…합계출산율 1.15명 '역대 최저'
+                </a>
+                <div class="news-source">이데일리 | 2025</div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>💡 종합 인사이트</h2>
+            <div class="insight-box" style="background: linear-gradient(135deg, #eef7ff 0%, #d6ecff 100%); border-left-color: #3498db;">
+                <h3 style="color: #2980b9;">📊 데이터가 말해주는 것</h3>
+                <ul>
+                    <li><strong>수도권 집중의 역설</strong>: 서울(0.552)·인천(0.694)·경기(0.766) 모두 전국 평균 이하. 높은 주거비와 교육비가 주요 원인으로 분석됨</li>
+                    <li><strong>지역 격차 심화</strong>: 최고(전남 0.972)와 최저(서울 0.552) 간 0.42명 차이. 76% 격차</li>
+                    <li><strong>대도시 저출산 심각</strong>: 서울·부산·대구·인천·광주 등 대도시가 하위권 차지</li>
+                    <li><strong>세종시 예외적 선방</strong>: 신도시 효과로 0.971명 기록, 정책적 시사점 존재</li>
+                </ul>
+            </div>
+        </div>
+        
+        <footer>
+            <p>
+                이 보고서는 <a href="https://kosis.kr" target="_blank">KOSIS 국가통계포털</a> API를 통해 수집된 공식 통계 데이터를 기반으로 자동 생성되었습니다.
+            </p>
+            <p style="margin-top: 10px;">
+                Report #001 | 생성: 2025-12-15 01:25:39
+            </p>
+        </footer>
+    </div>
+    
+    <script>
+        // 추이 차트
+        const trendSpec = {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "width": "container",
+            "height": 350,
+            "data": {
+                "values": [{"PRD_DE": "2014", "DT": 1.205}, {"PRD_DE": "2015", "DT": 1.239}, {"PRD_DE": "2016", "DT": 1.172}, {"PRD_DE": "2017", "DT": 1.052}, {"PRD_DE": "2018", "DT": 0.977}, {"PRD_DE": "2019", "DT": 0.918}, {"PRD_DE": "2020", "DT": 0.837}, {"PRD_DE": "2021", "DT": 0.808}, {"PRD_DE": "2022", "DT": 0.778}, {"PRD_DE": "2023", "DT": 0.721}]
+            },
+            "mark": {
+                "type": "line",
+                "point": {"filled": true, "size": 100},
+                "strokeWidth": 3,
+                "color": "#667eea"
+            },
+            "encoding": {
+                "x": {
+                    "field": "PRD_DE",
+                    "type": "ordinal",
+                    "title": "연도",
+                    "axis": {"labelAngle": 0}
+                },
+                "y": {
+                    "field": "DT",
+                    "type": "quantitative",
+                    "title": "합계출산율",
+                    "scale": {"domain": [0.6, 1.3]}
+                },
+                "tooltip": [
+                    {"field": "PRD_DE", "title": "연도"},
+                    {"field": "DT", "title": "출산율", "format": ".3f"}
+                ]
+            },
+            "config": {
+                "font": "Pretendard, sans-serif"
+            }
+        };
+        vegaEmbed('#trend-chart', trendSpec, {"actions": false});
+        
+        // 지역별 차트
+        const regionSpec = {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "width": "container",
+            "height": 400,
+            "data": {
+                "values": [{"C1_NM": "\uc11c\uc6b8\ud2b9\ubcc4\uc2dc", "DT": 0.552}, {"C1_NM": "\ubd80\uc0b0\uad11\uc5ed\uc2dc", "DT": 0.664}, {"C1_NM": "\uc778\ucc9c\uad11\uc5ed\uc2dc", "DT": 0.694}, {"C1_NM": "\ub300\uad6c\uad11\uc5ed\uc2dc", "DT": 0.702}, {"C1_NM": "\uad11\uc8fc\uad11\uc5ed\uc2dc", "DT": 0.706}, {"C1_NM": "\uacbd\uae30\ub3c4", "DT": 0.766}, {"C1_NM": "\ub300\uc804\uad11\uc5ed\uc2dc", "DT": 0.787}, {"C1_NM": "\uacbd\uc0c1\ub0a8\ub3c4", "DT": 0.799}, {"C1_NM": "\uc6b8\uc0b0\uad11\uc5ed\uc2dc", "DT": 0.814}, {"C1_NM": "\uc81c\uc8fc\ud2b9\ubcc4\uc790\uce58\ub3c4", "DT": 0.827}, {"C1_NM": "\ucda9\uccad\ub0a8\ub3c4", "DT": 0.842}, {"C1_NM": "\uacbd\uc0c1\ubd81\ub3c4", "DT": 0.86}, {"C1_NM": "\ucda9\uccad\ubd81\ub3c4", "DT": 0.886}, {"C1_NM": "\uac15\uc6d0\ud2b9\ubcc4\uc790\uce58\ub3c4", "DT": 0.893}, {"C1_NM": "\uc138\uc885\ud2b9\ubcc4\uc790\uce58\uc2dc", "DT": 0.971}, {"C1_NM": "\uc804\ub77c\ub0a8\ub3c4", "DT": 0.972}]
+            },
+            "mark": {
+                "type": "bar",
+                "cornerRadiusTopRight": 5,
+                "cornerRadiusTopLeft": 5
+            },
+            "encoding": {
+                "x": {
+                    "field": "C1_NM",
+                    "type": "nominal",
+                    "title": "지역",
+                    "sort": {"field": "DT", "order": "ascending"},
+                    "axis": {"labelAngle": -45}
+                },
+                "y": {
+                    "field": "DT",
+                    "type": "quantitative",
+                    "title": "합계출산율",
+                    "scale": {"domain": [0, 1.1]}
+                },
+                "color": {
+                    "field": "DT",
+                    "type": "quantitative",
+                    "scale": {"scheme": "redyellowgreen", "domain": [0.5, 1.0]},
+                    "legend": null
+                },
+                "tooltip": [
+                    {"field": "C1_NM", "title": "지역"},
+                    {"field": "DT", "title": "출산율", "format": ".3f"}
+                ]
+            },
+            "config": {
+                "font": "Pretendard, sans-serif"
+            }
+        };
+        vegaEmbed('#region-chart', regionSpec, {"actions": false});
+    </script>
+</body>
+</html>

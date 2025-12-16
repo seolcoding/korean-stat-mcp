@@ -1,0 +1,554 @@
+{
+  "report_number": "083",
+  "title": "철강/금속산업 트렌드 분석",
+  "theme": "steel",
+  "date": "20251215",
+  "data_sources": [
+    {
+      "name": "철강 생산량",
+      "org_id": "363",
+      "tbl_id": "TX_36301_A000",
+      "records": 170
+    },
+    {
+      "name": "조강 생산",
+      "org_id": "101",
+      "tbl_id": "DT_2KAA509",
+      "records": 875
+    },
+    {
+      "name": "가동률",
+      "org_id": "101",
+      "tbl_id": "DT_1F32001",
+      "records": 1800
+    }
+  ],
+  "charts": {
+    "steel_production_trend": {
+      "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+      "width": 800,
+      "height": 400,
+      "title": {
+        "text": "한국 철강재 생산량 추이 (2015-2024)",
+        "fontSize": 24,
+        "font": "Arial Black",
+        "fontWeight": 900,
+        "color": "#FF6600"
+      },
+      "data": {
+        "values": [
+          {
+            "year": "2015",
+            "production": 78722
+          },
+          {
+            "year": "2016",
+            "production": 80185
+          },
+          {
+            "year": "2017",
+            "production": 81312
+          },
+          {
+            "year": "2018",
+            "production": 81133
+          },
+          {
+            "year": "2019",
+            "production": 79924
+          },
+          {
+            "year": "2020",
+            "production": 76312
+          },
+          {
+            "year": "2021",
+            "production": 79454
+          },
+          {
+            "year": "2022",
+            "production": 72543
+          },
+          {
+            "year": "2023",
+            "production": 74647
+          },
+          {
+            "year": "2024",
+            "production": 70302
+          }
+        ]
+      },
+      "mark": {
+        "type": "bar",
+        "cornerRadiusTopLeft": 3,
+        "cornerRadiusTopRight": 3
+      },
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "ordinal",
+          "axis": {
+            "title": "연도",
+            "titleFontSize": 16,
+            "titleFontWeight": 700,
+            "labelFontSize": 14,
+            "labelAngle": 0,
+            "grid": false
+          }
+        },
+        "y": {
+          "field": "production",
+          "type": "quantitative",
+          "axis": {
+            "title": "생산량 (천톤)",
+            "titleFontSize": 16,
+            "titleFontWeight": 700,
+            "labelFontSize": 14,
+            "grid": true,
+            "gridColor": "#555555",
+            "gridOpacity": 0.3
+          }
+        },
+        "color": {
+          "field": "production",
+          "type": "quantitative",
+          "scale": {
+            "range": [
+              "#666666",
+              "#FF6600"
+            ]
+          },
+          "legend": null
+        },
+        "tooltip": [
+          {
+            "field": "year",
+            "title": "연도"
+          },
+          {
+            "field": "production",
+            "title": "생산량 (천톤)",
+            "format": ",.0f"
+          }
+        ]
+      },
+      "config": {
+        "background": "#2A2A2A",
+        "view": {
+          "stroke": "#FF6600",
+          "strokeWidth": 2
+        }
+      }
+    },
+    "crude_steel_comparison": {
+      "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+      "width": 800,
+      "height": 400,
+      "title": {
+        "text": "주요국 조강 생산량 비교",
+        "fontSize": 24,
+        "font": "Arial Black",
+        "fontWeight": 900,
+        "color": "#FF6600"
+      },
+      "data": {
+        "values": [
+          {
+            "year": "2015",
+            "country": "대한민국",
+            "production": 69670
+          },
+          {
+            "year": "2015",
+            "country": "미국",
+            "production": 78845
+          },
+          {
+            "year": "2015",
+            "country": "일본",
+            "production": 105134
+          },
+          {
+            "year": "2015",
+            "country": "중국",
+            "production": 803825
+          },
+          {
+            "year": "2016",
+            "country": "대한민국",
+            "production": 68576
+          },
+          {
+            "year": "2016",
+            "country": "미국",
+            "production": 78475
+          },
+          {
+            "year": "2016",
+            "country": "일본",
+            "production": 104775
+          },
+          {
+            "year": "2016",
+            "country": "중국",
+            "production": 807609
+          },
+          {
+            "year": "2017",
+            "country": "대한민국",
+            "production": 71030
+          },
+          {
+            "year": "2017",
+            "country": "미국",
+            "production": 81612
+          },
+          {
+            "year": "2017",
+            "country": "일본",
+            "production": 104661
+          },
+          {
+            "year": "2017",
+            "country": "중국",
+            "production": 870741
+          },
+          {
+            "year": "2018",
+            "country": "대한민국",
+            "production": 72464
+          },
+          {
+            "year": "2018",
+            "country": "미국",
+            "production": 86607
+          },
+          {
+            "year": "2018",
+            "country": "일본",
+            "production": 104319
+          },
+          {
+            "year": "2018",
+            "country": "중국",
+            "production": 929038
+          },
+          {
+            "year": "2019",
+            "country": "대한민국",
+            "production": 71412
+          },
+          {
+            "year": "2019",
+            "country": "미국",
+            "production": 87761
+          },
+          {
+            "year": "2019",
+            "country": "일본",
+            "production": 99284
+          },
+          {
+            "year": "2019",
+            "country": "중국",
+            "production": 995419
+          },
+          {
+            "year": "2020",
+            "country": "대한민국",
+            "production": 67079
+          },
+          {
+            "year": "2020",
+            "country": "미국",
+            "production": 72732
+          },
+          {
+            "year": "2020",
+            "country": "일본",
+            "production": 83186
+          },
+          {
+            "year": "2020",
+            "country": "중국",
+            "production": 1064732
+          },
+          {
+            "year": "2021",
+            "country": "대한민국",
+            "production": 70418
+          },
+          {
+            "year": "2021",
+            "country": "미국",
+            "production": 85791
+          },
+          {
+            "year": "2021",
+            "country": "일본",
+            "production": 96336
+          },
+          {
+            "year": "2021",
+            "country": "중국",
+            "production": 1035243
+          },
+          {
+            "year": "2022",
+            "country": "대한민국",
+            "production": 65846
+          },
+          {
+            "year": "2022",
+            "country": "미국",
+            "production": 80535
+          },
+          {
+            "year": "2022",
+            "country": "일본",
+            "production": 89227
+          },
+          {
+            "year": "2022",
+            "country": "중국",
+            "production": 1019080
+          },
+          {
+            "year": "2023",
+            "country": "대한민국",
+            "production": 66683
+          },
+          {
+            "year": "2023",
+            "country": "미국",
+            "production": 81392
+          },
+          {
+            "year": "2023",
+            "country": "일본",
+            "production": 87001
+          },
+          {
+            "year": "2023",
+            "country": "중국",
+            "production": 1019080
+          }
+        ]
+      },
+      "mark": {
+        "type": "line",
+        "point": true,
+        "strokeWidth": 3
+      },
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "ordinal",
+          "axis": {
+            "title": "연도",
+            "titleFontSize": 16,
+            "titleFontWeight": 700,
+            "labelFontSize": 14,
+            "labelAngle": 0,
+            "grid": false
+          }
+        },
+        "y": {
+          "field": "production",
+          "type": "quantitative",
+          "axis": {
+            "title": "생산량 (천 M/T)",
+            "titleFontSize": 16,
+            "titleFontWeight": 700,
+            "labelFontSize": 14,
+            "grid": true,
+            "gridColor": "#555555",
+            "gridOpacity": 0.3
+          }
+        },
+        "color": {
+          "field": "country",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "중국",
+              "미국",
+              "일본",
+              "대한민국"
+            ],
+            "range": [
+              "#FF6600",
+              "#999999",
+              "#CCCCCC",
+              "#FFB366"
+            ]
+          },
+          "legend": {
+            "title": "국가",
+            "titleFontSize": 16,
+            "titleFontWeight": 700,
+            "labelFontSize": 14,
+            "labelColor": "#CCCCCC",
+            "titleColor": "#FF6600"
+          }
+        },
+        "tooltip": [
+          {
+            "field": "year",
+            "title": "연도"
+          },
+          {
+            "field": "country",
+            "title": "국가"
+          },
+          {
+            "field": "production",
+            "title": "생산량",
+            "format": ",.0f"
+          }
+        ]
+      },
+      "config": {
+        "background": "#2A2A2A",
+        "view": {
+          "stroke": "#FF6600",
+          "strokeWidth": 2
+        }
+      }
+    },
+    "capacity_utilization": {
+      "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+      "width": 800,
+      "height": 400,
+      "title": {
+        "text": "1차 금속제조업 평균 가동률",
+        "fontSize": 24,
+        "font": "Arial Black",
+        "fontWeight": 900,
+        "color": "#FF6600"
+      },
+      "data": {
+        "values": [
+          {
+            "year": "2015",
+            "utilization": 104.797
+          },
+          {
+            "year": "2016",
+            "utilization": 105.754
+          },
+          {
+            "year": "2017",
+            "utilization": 106.257
+          },
+          {
+            "year": "2018",
+            "utilization": 104.559
+          },
+          {
+            "year": "2019",
+            "utilization": 103.3525
+          },
+          {
+            "year": "2020",
+            "utilization": 100.0
+          },
+          {
+            "year": "2021",
+            "utilization": 102.35
+          },
+          {
+            "year": "2022",
+            "utilization": 98.65
+          },
+          {
+            "year": "2023",
+            "utilization": 98.65
+          },
+          {
+            "year": "2024",
+            "utilization": 97.15
+          }
+        ]
+      },
+      "mark": {
+        "type": "area",
+        "line": {
+          "color": "#FF6600",
+          "strokeWidth": 3
+        },
+        "color": {
+          "gradient": "linear",
+          "stops": [
+            {
+              "offset": 0,
+              "color": "#FF6600"
+            },
+            {
+              "offset": 1,
+              "color": "#2A2A2A"
+            }
+          ]
+        }
+      },
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "ordinal",
+          "axis": {
+            "title": "연도",
+            "titleFontSize": 16,
+            "titleFontWeight": 700,
+            "labelFontSize": 14,
+            "labelAngle": 0,
+            "grid": false
+          }
+        },
+        "y": {
+          "field": "utilization",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              60,
+              100
+            ]
+          },
+          "axis": {
+            "title": "가동률 (%)",
+            "titleFontSize": 16,
+            "titleFontWeight": 700,
+            "labelFontSize": 14,
+            "grid": true,
+            "gridColor": "#555555",
+            "gridOpacity": 0.3
+          }
+        },
+        "tooltip": [
+          {
+            "field": "year",
+            "title": "연도"
+          },
+          {
+            "field": "utilization",
+            "title": "가동률 (%)",
+            "format": ".1f"
+          }
+        ]
+      },
+      "config": {
+        "background": "#2A2A2A",
+        "view": {
+          "stroke": "#FF6600",
+          "strokeWidth": 2
+        }
+      }
+    }
+  },
+  "summary": {
+    "export_value_2024": "246억 달러",
+    "demand_2024": "4,960만톤",
+    "crude_steel_2024": "6,310만톤",
+    "yoy_change": "-7.4%"
+  }
+}

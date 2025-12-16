@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>장애인 복지 트렌드 분석 2025 - 함께 만드는 포용사회</title>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 50%, #ffccbc 100%);
+            background-attachment: fixed;
+            padding: 20px;
+            color: #4a4a4a;
+            line-height: 1.7;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 30px;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.1);
+            padding: 60px;
+            position: relative;
+        }
+
+        /* Accessibility Icon */
+        .accessibility-icon {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            font-size: 3em;
+            opacity: 0.15;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 60px;
+            padding-bottom: 40px;
+            border-bottom: 3px solid #ff8a65;
+        }
+
+        h1 {
+            font-size: 3em;
+            color: #ff8a65;
+            margin-bottom: 20px;
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+
+        .subtitle {
+            font-size: 1.6em;
+            color: #ffb74d;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .date {
+            font-size: 1.1em;
+            color: #757575;
+            font-weight: 400;
+        }
+
+        .icon-row {
+            font-size: 2.5em;
+            margin: 25px 0;
+            letter-spacing: 10px;
+        }
+
+        /* KPI Cards */
+        .kpi-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin: 50px 0;
+        }
+
+        .kpi-card {
+            background: linear-gradient(135deg, #ff8a65 0%, #ff7043 100%);
+            color: white;
+            padding: 35px;
+            border-radius: 25px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(255, 138, 101, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .kpi-card:nth-child(1) {
+            background: linear-gradient(135deg, #ff8a65 0%, #ff7043 100%);
+        }
+
+        .kpi-card:nth-child(2) {
+            background: linear-gradient(135deg, #ffcc80 0%, #ffb74d 100%);
+        }
+
+        .kpi-card:nth-child(3) {
+            background: linear-gradient(135deg, #a5d6a7 0%, #81c784 100%);
+        }
+
+        .kpi-card:nth-child(4) {
+            background: linear-gradient(135deg, #90caf9 0%, #64b5f6 100%);
+        }
+
+        .kpi-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+        }
+
+        .kpi-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .kpi-label {
+            font-size: 1.1em;
+            font-weight: 600;
+            margin-bottom: 12px;
+            opacity: 0.95;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .kpi-value {
+            font-size: 2.8em;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+
+        .kpi-unit {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        .kpi-change {
+            font-size: 1em;
+            margin-top: 12px;
+            padding: 8px 15px;
+            background: rgba(255,255,255,0.25);
+            border-radius: 15px;
+            display: inline-block;
+        }
+
+        /* Section Styles */
+        .section {
+            margin: 60px 0;
+            padding: 40px;
+            background: linear-gradient(to right, #fff3e0, #ffe0b2);
+            border-radius: 25px;
+            border-left: 8px solid #ff8a65;
+        }
+
+        .section-title {
+            font-size: 2.2em;
+            color: #4a4a4a;
+            font-weight: 800;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .section-icon {
+            font-size: 1.2em;
+        }
+
+        /* Insight Box */
+        .insight-box {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            margin: 30px 0;
+            border-left: 8px solid #a5d6a7;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+        }
+
+        .insight-title {
+            font-size: 1.8em;
+            color: #66bb6a;
+            font-weight: 700;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .insight-content {
+            font-size: 1.2em;
+            line-height: 1.9;
+            color: #555;
+        }
+
+        .insight-content p {
+            margin-bottom: 18px;
+        }
+
+        .insight-content strong {
+            color: #ff8a65;
+            font-weight: 700;
+        }
+
+        /* Chart Container */
+        .chart-container {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            margin: 30px 0;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+        }
+
+        /* News Section */
+        .news-section {
+            background: linear-gradient(135deg, #ffcc80 0%, #ffb74d 100%);
+            padding: 40px;
+            border-radius: 25px;
+            margin: 50px 0;
+            box-shadow: 0 10px 30px rgba(255, 183, 77, 0.3);
+        }
+
+        .news-title {
+            font-size: 2.2em;
+            color: white;
+            font-weight: 800;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .news-item {
+            background: white;
+            padding: 30px;
+            border-radius: 18px;
+            margin: 20px 0;
+            border-left: 6px solid #ff8a65;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .news-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .news-item h3 {
+            font-size: 1.4em;
+            color: #4a4a4a;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .news-item p {
+            font-size: 1.05em;
+            color: #666;
+            line-height: 1.8;
+        }
+
+        .news-item a {
+            color: #ff8a65;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95em;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        .news-item a:hover {
+            text-decoration: underline;
+        }
+
+        /* Key Points List */
+        .key-points {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            padding: 35px;
+            border-radius: 20px;
+            margin: 30px 0;
+        }
+
+        .key-points ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .key-points li {
+            font-size: 1.15em;
+            line-height: 2;
+            color: #2e7d32;
+            margin-bottom: 12px;
+            padding-left: 35px;
+            position: relative;
+        }
+
+        .key-points li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            font-size: 1.3em;
+            color: #66bb6a;
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 80px;
+            padding-top: 40px;
+            border-top: 3px solid #ff8a65;
+            color: #757575;
+            font-size: 1em;
+        }
+
+        .footer-icon {
+            font-size: 2em;
+            margin: 15px 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            .kpi-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="accessibility-icon">♿</div>
+
+        <header>
+            <div class="icon-row">♿ 🤝 💚</div>
+            <h1>장애인 복지 트렌드 분석</h1>
+            <div class="subtitle">함께 만드는 포용사회, 모두의 행복을 위하여</div>
+            <div class="date">📊 2015-2023 데이터 분석 | 생성일: 2025년 12월 15일</div>
+        </header>
+
+        <div class="kpi-container">
+            <div class="kpi-card">
+                <span class="kpi-icon">♿</span>
+                <div class="kpi-label">등록장애인</div>
+                <div class="kpi-value">2,656,161</div>
+                <div class="kpi-unit">명</div>
+                <div class="kpi-change">2023년 기준</div>
+            </div>
+
+            <div class="kpi-card">
+                <span class="kpi-icon">💰</span>
+                <div class="kpi-label">장애인연금</div>
+                <div class="kpi-value">43.3</div>
+                <div class="kpi-unit">만원</div>
+                <div class="kpi-change">2025년 최대 지급액</div>
+            </div>
+
+            <div class="kpi-card">
+                <span class="kpi-icon">💼</span>
+                <div class="kpi-label">일자리</div>
+                <div class="kpi-value">33.5</div>
+                <div class="kpi-unit">만개</div>
+                <div class="kpi-change">2025년 목표</div>
+            </div>
+
+            <div class="kpi-card">
+                <span class="kpi-icon">📈</span>
+                <div class="kpi-label">복지예산 증가</div>
+                <div class="kpi-value">7.5</div>
+                <div class="kpi-unit">%</div>
+                <div class="kpi-change">전년 대비</div>
+            </div>
+        </div>
+
+        <div class="insight-box">
+            <div class="insight-title">
+                <span>💡</span>
+                <span>핵심 발견</span>
+            </div>
+            <div class="insight-content">
+                <p><strong>장애인연금 인상:</strong> 2025년 1월부터 저소득 중증장애인의 소득보장을 위한 장애인연금 급여액이 물가변동에 따른 기초급여액 인상을 반영하여 월 최대 43만 2,510원 지급됩니다.</p>
+
+                <p><strong>복지예산 확대:</strong> 장애인생활안정 및 재활 지원 프로그램 예산은 전년 대비 3,753억 원(7.5%)이 늘었으며, 장애인활동지원 사업은 최중증 발달장애인 긴급돌봄센터 2개소 신설과 활동지원 대상 확대에 따라 전년 대비 2,477억 원(10.8%)이 증가했습니다.</p>
+
+                <p><strong>일자리 확대:</strong> 장애인 일자리는 33만 5,000개로 늘어났으며, 최중증 장애인 대상 의료집중형 거주시설도 시범 도입합니다.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">📊</span>
+                <span>등록장애인 인구 추이</span>
+            </h2>
+            <div class="chart-container">
+                <div id="population-trend-chart"></div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">📈</span>
+                <span>장애 유형별 분포 (2023년)</span>
+            </h2>
+            <div class="chart-container">
+                <div id="disability-type-chart"></div>
+            </div>
+        </div>
+
+        <div class="news-section">
+            <h2 class="news-title">📰 2025년 장애인 복지 정책 & 뉴스</h2>
+
+            <div class="news-item">
+                <h3>2025년 1월부터 장애인연금 최대 43만 2,510원 지급</h3>
+                <p>2025년 1월부터 저소득 중증장애인의 소득보장을 위한 장애인연금 급여액이 물가변동에 따른 기초급여액 인상을 반영하여 월 최대 43만 2,510원 지급됩니다. 2024년 전국소비자물가변동률 2.3%를 반영하여 전년도 기초급여액(33만 4,810원) 대비 7,700원 인상된 34만 2,510원으로 결정되었습니다.</p>
+                <a href="https://www.mohw.go.kr/board.es?mid=a10503000000&bid=0027&act=view&list_no=1484215" target="_blank">자세히 보기 →</a>
+            </div>
+
+            <div class="news-item">
+                <h3>2025년 장애인복지 사업안내</h3>
+                <p>보건복지부는 18세 이상 경증장애인 대상으로는 월 6만 원의 장애수당을 지급하고 있습니다. 18세 미만 중증·경증 장애아동 대상으로는 월 최대 22만 원의 장애아동수당을 지급하고 있습니다.</p>
+                <a href="https://www.mohw.go.kr/board.es?mid=a10413000000&bid=0021&act=view&list_no=1485198" target="_blank">자세히 보기 →</a>
+            </div>
+
+            <div class="news-item">
+                <h3>2025년 새롭게 달라진 장애인정책 총정리</h3>
+                <p>장애인 개인예산제 시범사업은 17개 지역으로 전국 확대되고, 활동지원 서비스 외 다른 장애인지원 서비스까지 통합하는 신규모델을 시범적용합니다. 장애인 일자리는 33만 5,000개로 늘어났으며, 최중증 장애인 대상 의료집중형 거주시설도 시범 도입합니다.</p>
+                <a href="https://www.ablenews.co.kr/news/articleView.html?idxno=217939" target="_blank">자세히 보기 →</a>
+            </div>
+
+            <div class="news-item">
+                <h3>장애인 복지 예산 현황</h3>
+                <p>취약계층지원 부문 예산안은 전년 대비 3,304억 원(6.0%) 증가한 5조 8,322억 원으로 책정되었습니다. 장애인생활안정 및 재활 지원 프로그램 예산은 전년 대비 3,753억 원(7.5%)이 늘었으며, 장애인활동지원 사업은 최중증 발달장애인 긴급돌봄센터 2개소 신설과 활동지원 대상 확대에 따라 전년 대비 2,477억 원(10.8%)이 증가했습니다.</p>
+                <a href="https://www.mohw.go.kr" target="_blank">자세히 보기 →</a>
+            </div>
+
+        </div>
+
+        <div class="key-points">
+            <div class="insight-title">
+                <span>🎯</span>
+                <span>2025년 달라진 장애인 정책</span>
+            </div>
+            <ul>
+                <li><strong>장애인 개인예산제:</strong> 17개 지역으로 전국 확대, 활동지원 서비스 외 다른 장애인지원 서비스까지 통합하는 신규모델 시범적용</li>
+                <li><strong>선정기준액 인상:</strong> 2025년 선정기준액은 단독가구 기준 138만 원, 부부가구 기준 220만 8천 원으로 결정 (전년도 대비 단독 8만원, 부부 12만 8천원 인상)</li>
+                <li><strong>장애수당 지급:</strong> 18세 이상 경증장애인 대상으로는 월 6만 원, 18세 미만 중증·경증 장애아동 대상으로는 월 최대 22만 원 지급</li>
+                <li><strong>의무구매비율 상향:</strong> 모든 공공기관의 중증장애인생산품 법정 의무구매비율이 1%에서 1.1%로 상향</li>
+                <li><strong>기본 복지혜택:</strong> 전기요금 8,000~16,000원 할인, TV 수신료 면제, 지하철·버스 무료 또는 50% 할인, 고속도로 통행료 50% 감면</li>
+            </ul>
+        </div>
+
+        <div class="insight-box">
+            <div class="insight-title">
+                <span>🌟</span>
+                <span>포용사회를 향한 여정</span>
+            </div>
+            <div class="insight-content">
+                <p>장애인 복지 정책은 단순한 경제적 지원을 넘어, <strong>모든 사람이 존중받고 자립할 수 있는 사회</strong>를 만들기 위한 노력입니다.</p>
+                <p>2025년 정부는 장애인연금 인상, 활동지원 서비스 확대, 일자리 창출 등 다각도의 정책을 통해 장애인의 삶의 질을 높이고 사회 참여를 확대하고 있습니다.</p>
+                <p><strong>함께 만드는 포용사회,</strong> 모두가 행복한 대한민국을 향한 발걸음은 계속됩니다.</p>
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer-icon">🤝 💚 ♿</div>
+            <p><strong>데이터 출처:</strong> KOSIS 국가통계포털 (국가데이터처, 한국장애인고용공단)</p>
+            <p><strong>뉴스 출처:</strong> 보건복지부, 에이블뉴스</p>
+            <p><strong>리포트 생성:</strong> KOSIS Data Processor | Report #068</p>
+            <p style="margin-top: 20px;">Generated with Claude Code on 2025-12-15</p>
+        </footer>
+    </div>
+
+    <script>
+        // 등록장애인 인구 추이 차트
+        const populationTrendSpec = {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "width": 700,
+            "height": 400,
+            "data": {
+                "values": [{"year": "2015", "value": 2490406}, {"year": "2016", "value": 2511051}, {"year": "2017", "value": 2545637}, {"year": "2018", "value": 2585876}, {"year": "2019", "value": 2618918}, {"year": "2020", "value": 2633026}, {"year": "2021", "value": 2644700}, {"year": "2022", "value": 2652860}, {"year": "2023", "value": 2656161}]
+            },
+            "mark": {
+                "type": "line",
+                "point": {
+                    "filled": true,
+                    "size": 150
+                },
+                "strokeWidth": 4
+            },
+            "encoding": {
+                "x": {
+                    "field": "year",
+                    "type": "ordinal",
+                    "title": "연도",
+                    "axis": {
+                        "labelFontSize": 14,
+                        "titleFontSize": 16,
+                        "labelAngle": 0
+                    }
+                },
+                "y": {
+                    "field": "value",
+                    "type": "quantitative",
+                    "title": "등록장애인 수 (명)",
+                    "axis": {
+                        "labelFontSize": 14,
+                        "titleFontSize": 16,
+                        "format": ","
+                    }
+                },
+                "color": {
+                    "value": "#ff8a65"
+                },
+                "tooltip": [
+                    {"field": "year", "type": "ordinal", "title": "연도"},
+                    {"field": "value", "type": "quantitative", "title": "인구", "format": ","}
+                ]
+            },
+            "config": {
+                "view": {"strokeWidth": 0},
+                "axis": {"grid": false}
+            }
+        };
+
+        // 장애 유형별 분포 차트
+        const disabilityTypeData = [{"type": "\uc9c0\uccb4\uc7a5\uc560", "value": 488927}, {"type": "\uccad\uac01\uc7a5\uc560", "value": 431342}, {"type": "\uc2dc\uac01\uc7a5\uc560", "value": 252632}, {"type": "\ub1cc\ubcd1\ubcc0\uc7a5\uc560", "value": 250129}, {"type": "\uc9c0\uc801\uc7a5\uc560", "value": 219108}, {"type": "\uc815\uc2e0\uc7a5\uc560", "value": 103054}, {"type": "\uc2e0\uc7a5\uc7a5\uc560", "value": 99122}, {"type": "\uc790\ud3d0\uc131\uc7a5\uc560", "value": 36622}, {"type": "\ud638\ud761\uae30\uc7a5\uc560", "value": 12013}, {"type": "\uc2ec\uc7a5\uc7a5\uc560", "value": 5567}];
+
+        const disabilityTypeSpec = {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "width": 700,
+            "height": 400,
+            "data": {
+                "values": disabilityTypeData
+            },
+            "mark": {
+                "type": "bar",
+                "cornerRadiusEnd": 8
+            },
+            "encoding": {
+                "x": {
+                    "field": "type",
+                    "type": "nominal",
+                    "title": "장애 유형",
+                    "axis": {
+                        "labelFontSize": 13,
+                        "titleFontSize": 16,
+                        "labelAngle": -45
+                    },
+                    "sort": "-y"
+                },
+                "y": {
+                    "field": "value",
+                    "type": "quantitative",
+                    "title": "인구 (명)",
+                    "axis": {
+                        "labelFontSize": 14,
+                        "titleFontSize": 16,
+                        "format": ","
+                    }
+                },
+                "color": {
+                    "field": "type",
+                    "type": "nominal",
+                    "scale": {
+                        "range": ["#ff8a65", "#ffcc80", "#a5d6a7", "#90caf9", "#ce93d8", "#ffab91", "#c5e1a5", "#80deea", "#f48fb1", "#bcaaa4"]
+                    },
+                    "legend": null
+                },
+                "tooltip": [
+                    {"field": "type", "type": "nominal", "title": "유형"},
+                    {"field": "value", "type": "quantitative", "title": "인구", "format": ","}
+                ]
+            },
+            "config": {
+                "view": {"strokeWidth": 0},
+                "axis": {"grid": false}
+            }
+        };
+
+        // 차트 렌더링
+        vegaEmbed('#population-trend-chart', populationTrendSpec);
+        vegaEmbed('#disability-type-chart', disabilityTypeSpec);
+    </script>
+</body>
+</html>

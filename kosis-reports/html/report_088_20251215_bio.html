@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>한국 바이오/제약산업 트렌드 분석 #088</title>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #f5f9fc 0%, #e8f4f8 100%);
+            color: #2c3e50;
+            line-height: 1.6;
+        }
+
+        .dna-pattern {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.03;
+            pointer-events: none;
+            background-image:
+                repeating-linear-gradient(45deg, #00CED1 0px, #00CED1 2px, transparent 2px, transparent 10px),
+                repeating-linear-gradient(-45deg, #4682B4 0px, #4682B4 2px, transparent 2px, transparent 10px);
+            z-index: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        header {
+            background: linear-gradient(135deg, #00CED1 0%, #20B2AA 100%);
+            color: white;
+            padding: 60px 40px;
+            border-radius: 20px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 40px rgba(0, 206, 209, 0.3);
+        }
+
+        h1 {
+            font-size: 2.8em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            letter-spacing: -1px;
+        }
+
+        .subtitle {
+            font-size: 1.2em;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+
+        .report-meta {
+            display: flex;
+            gap: 30px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9em;
+        }
+
+        .section {
+            background: white;
+            padding: 40px;
+            margin-bottom: 30px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            border-left: 5px solid #00CED1;
+        }
+
+        h2 {
+            color: #00CED1;
+            font-size: 2em;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #e8f4f8;
+        }
+
+        h3 {
+            color: #4682B4;
+            font-size: 1.5em;
+            margin: 30px 0 15px 0;
+        }
+
+        .trend-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .trend-card {
+            background: linear-gradient(135deg, #f8fdff 0%, #e8f8fc 100%);
+            padding: 25px;
+            border-radius: 12px;
+            border: 2px solid #d0f0f5;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .trend-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 206, 209, 0.2);
+        }
+
+        .trend-card h4 {
+            color: #00CED1;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+
+        .trend-card p {
+            color: #546e7a;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+
+        .stat-highlight {
+            background: linear-gradient(135deg, #00CED1 0%, #20B2AA 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 12px;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .stat-highlight .number {
+            font-size: 3em;
+            font-weight: 700;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .stat-highlight .label {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        .chart-container {
+            margin: 30px 0;
+            padding: 20px;
+            background: #fafcfd;
+            border-radius: 12px;
+            border: 1px solid #e0f2f7;
+        }
+
+        .key-findings {
+            background: linear-gradient(135deg, #fff9f0 0%, #ffe8cc 100%);
+            padding: 30px;
+            border-radius: 12px;
+            border-left: 5px solid #ff9800;
+            margin: 30px 0;
+        }
+
+        .key-findings h3 {
+            color: #ff9800;
+            margin-top: 0;
+        }
+
+        .key-findings ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .key-findings li {
+            padding: 12px 0;
+            padding-left: 30px;
+            position: relative;
+            color: #5d4037;
+        }
+
+        .key-findings li:before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #ff9800;
+            font-weight: bold;
+        }
+
+        .data-source {
+            background: #f5f7f9;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 40px;
+            font-size: 0.9em;
+            color: #607d8b;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #78909c;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            header {
+                padding: 40px 20px;
+            }
+
+            .section {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="dna-pattern"></div>
+
+    <div class="container">
+        <header>
+            <h1>한국 바이오/제약산업 트렌드 분석</h1>
+            <p class="subtitle">2025년 헬스케어 산업 현황 및 전망</p>
+            <div class="report-meta">
+                <div class="meta-item">
+                    <span>📊</span>
+                    <span>Report #088</span>
+                </div>
+                <div class="meta-item">
+                    <span>📅</span>
+                    <span>2025년 12월 15일</span>
+                </div>
+                <div class="meta-item">
+                    <span>🔬</span>
+                    <span>바이오/제약 분야</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="section">
+            <h2>🌐 글로벌 시장 동향</h2>
+
+            <div class="stat-highlight">
+                <span class="number">$23.19B</span>
+                <span class="label">2025년 한국 의약품 시장 규모 (예상)</span>
+            </div>
+
+            <div class="trend-grid">
+                <div class="trend-card">
+                    <h4>📈 시장 성장률</h4>
+                    <p>2025-2030년 CAGR 2.40%로 성장하여 2030년 $26.11B 달성 전망</p>
+                </div>
+                <div class="trend-card">
+                    <h4>🧬 바이오의약품</h4>
+                    <p>2024년 $5.86B에서 2030년 $11.01B로 연평균 11.3% 성장 예상</p>
+                </div>
+                <div class="trend-card">
+                    <h4>🏆 혁신 순위</h4>
+                    <p>신약 발견 건수 세계 3위, 최근 3년간 1,300개 이상 신약 후보물질 발견</p>
+                </div>
+                <div class="trend-card">
+                    <h4>💰 라이선스 계약</h4>
+                    <p>2025년 총 $7.86B 규모, 전년 대비 113% 증가</p>
+                </div>
+            </div>
+
+            <div class="key-findings">
+                <h3>주요 발견사항</h3>
+                <ul>
+                    <li><strong>임상시험 허브:</strong> 2023년 서울은 세계 1위 임상시험 도시로 자리매김</li>
+                    <li><strong>FDA 승인:</strong> 유한의 폐암 신약 lazertinib, 한국 최초 FDA 승인 항암제</li>
+                    <li><strong>바이오시밀러:</strong> FDA 승인 바이오시밀러 생산 세계 2위</li>
+                    <li><strong>정부 지원:</strong> Bio Economy 2.0 계획으로 2025년 바이오 펀딩 367억원</li>
+                    <li><strong>개발 효율화:</strong> 신약 개발 기간 13.7년→6년, 비용 2조원→1조원 목표</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>💊 국내 건강보험 재정 현황</h2>
+            <p>건강보험공단 데이터 기반 재정 추이 분석 (2015-2023)</p>
+
+            <div class="chart-container">
+                <div id="finance-chart"></div>
+            </div>
+
+            <h3>데이터 인사이트</h3>
+            <p>
+                건강보험 재정은 지속적인 성장세를 보이고 있으며, 이는 고령화 사회 진입과
+                의료 서비스 이용 증가에 따른 자연스러운 현상입니다. 특히 바이오/제약 산업의
+                발전으로 신약 및 첨단 치료제 접근성이 향상되면서 건강보험 지출도 증가하고 있습니다.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>🔮 미래 전망</h2>
+
+            <div class="trend-grid">
+                <div class="trend-card">
+                    <h4>🧓 고령화 사회</h4>
+                    <p>2025년 65세 이상 인구 20% 돌파, 만성질환 유병률 급증</p>
+                </div>
+                <div class="trend-card">
+                    <h4>🎯 항암제 시장</h4>
+                    <p>종양학 분야 CAGR 4.30%로 가장 높은 성장세</p>
+                </div>
+                <div class="trend-card">
+                    <h4>🤖 AI 기반 신약개발</h4>
+                    <p>AI 스타트업들이 개발 주기 단축, 2024년 이후 $19.9M VC 투자 유치</p>
+                </div>
+                <div class="trend-card">
+                    <h4>📱 디지털 헬스케어</h4>
+                    <p>2025년 1월 시행 디지털의료제품법으로 디지털 치료제 표준화</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>💡 결론 및 시사점</h2>
+            <p>
+                한국의 바이오/제약 산업은 2025년 전환점을 맞이하고 있습니다.
+                정부의 적극적인 지원, 세계적 수준의 임상시험 인프라, 그리고 혁신적인
+                신약 개발 능력이 결합되어 글로벌 바이오 허브로 도약하고 있습니다.
+            </p>
+            <p style="margin-top: 20px;">
+                특히 <strong>FDA 승인 최초 한국산 항암제</strong>, <strong>세계 3위 신약 발견</strong>,
+                <strong>113% 증가한 라이선스 계약</strong> 등은 한국 바이오/제약 산업의
+                질적 성장을 보여주는 명확한 지표입니다.
+            </p>
+            <p style="margin-top: 20px;">
+                향후 AI 기반 신약 개발, 디지털 치료제, 바이오시밀러 등 신성장 동력이
+                산업을 견인할 것으로 전망됩니다.
+            </p>
+        </div>
+
+        <div class="data-source">
+            <h4 style="margin-bottom: 10px; color: #455a64;">📚 데이터 출처</h4>
+            <ul style="list-style: none; padding: 0;">
+                <li>• KOSIS 국민건강보험공단 통계 (2015-2023)</li>
+                <li>• Mordor Intelligence - Korea Pharmaceutical Market Report</li>
+                <li>• Statista - South Korea Pharmaceuticals Market Forecast</li>
+                <li>• Norstella - South Korea Innovation & Clinical Trials 2025</li>
+                <li>• Grand View Research - South Korea Biopharmaceutical Market</li>
+                <li>• InvestKOREA - Pharma & Bio Industry Status</li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        <p>Report #088 | 바이오/제약산업 트렌드 분석 | Generated on 2025-12-15</p>
+        <p style="margin-top: 10px;">KOSIS Data Processor | Healthcare Style Report</p>
+    </footer>
+
+    <script>
+        // Embed finance chart
+        vegaEmbed('#finance-chart', {"$schema": "https://vega.github.io/schema/vega-lite/v5.json", "width": 700, "height": 400, "data": {"values": [{"year": "2015", "category": "\uacc4(A)", "value": 53.292081273}, {"year": "2016", "category": "\uacc4(A)", "value": 56.459878174}, {"year": "2017", "category": "\uacc4(A)", "value": 58.818071225}, {"year": "2018", "category": "\uacc4(A)", "value": 62.715795218}, {"year": "2019", "category": "\uacc4(A)", "value": 69.173265702}, {"year": "2020", "category": "\uacc4(A)", "value": 75.114982734}, {"year": "2021", "category": "\uacc4(A)", "value": 81.708157705}, {"year": "2022", "category": "\uacc4(A)", "value": 91.00885587}, {"year": "2023", "category": "\uacc4(A)", "value": 96.416920599}]}, "mark": {"type": "line", "point": true, "strokeWidth": 3}, "encoding": {"x": {"field": "year", "type": "ordinal", "title": "\uc5f0\ub3c4", "axis": {"labelAngle": 0}}, "y": {"field": "value", "type": "quantitative", "title": "\uae08\uc561 (\uc2ed\uc5b5\uc6d0)", "axis": {"format": ",.0f"}}, "color": {"field": "category", "type": "nominal", "title": "\ud56d\ubaa9", "scale": {"range": ["#00CED1", "#4682B4", "#FF6B6B"]}}, "tooltip": [{"field": "year", "title": "\uc5f0\ub3c4"}, {"field": "category", "title": "\ud56d\ubaa9"}, {"field": "value", "title": "\uae08\uc561 (\uc2ed\uc5b5\uc6d0)", "format": ",.1f"}]}, "config": {"view": {"stroke": null}, "axis": {"grid": true, "gridOpacity": 0.2}}}, {
+            actions: {
+                export: true,
+                source: false,
+                compiled: false,
+                editor: false
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,135 @@
+{
+  "report_id": "fa027313-6e73-484f-ad77-26849e601425",
+  "timestamp": "2025-12-15T09:33:05.304441",
+  "user_query": "\n한국의 화재 및 재난 발생 트렌드 분석 보고서 (2015-2024)\n\n## 분석 요구사항:\n1. 연도별 화재 발생 건수 및 추세 분석\n2. 지역별 화재 발생 현황 비교\n3. 발화요인별 화재 발생 패턴 분석\n4. 화재 장소별 발생 현황 (주거, 상업, 산업시설 등)\n5. 월별 화재 발생 패턴 (계절성 분석)\n6. 인명피해 및 재산피해 규모 분석\n7. 주요 시사점 및 화재 예방 정책 제언\n\n## 컨텍스트:\n2025년 3월 대규모 산불로 32명 사망, 54명 부상 발생.\n고온건조한 기상환경으로 인해 역대 최대 산불 피해 기록.\n",
+  "parsed_query": {
+    "raw_query": "\n한국의 화재 및 재난 발생 트렌드 분석 보고서 (2015-2024)\n\n## 분석 요구사항:\n1. 연도별 화재 발생 건수 및 추세 분석\n2. 지역별 화재 발생 현황 비교\n3. 발화요인별 화재 발생 패턴 분석\n4. 화재 장소별 발생 현황 (주거, 상업, 산업시설 등)\n5. 월별 화재 발생 패턴 (계절성 분석)\n6. 인명피해 및 재산피해 규모 분석\n7. 주요 시사점 및 화재 예방 정책 제언\n\n## 컨텍스트:\n2025년 3월 대규모 산불로 32명 사망, 54명 부상 발생.\n고온건조한 기상환경으로 인해 역대 최대 산불 피해 기록.\n",
+    "target_regions": [
+      "계",
+      "산불",
+      "산업시설",
+      "주거"
+    ],
+    "target_periods": [
+      "2015",
+      "2016",
+      "2017",
+      "2018",
+      "2019",
+      "2020",
+      "2021",
+      "2022",
+      "2023",
+      "2024"
+    ],
+    "target_items": [],
+    "comparison_type": "regional",
+    "analysis_depth": "standard",
+    "include_visualization": true
+  },
+  "sections_determined": [
+    "summary",
+    "eda",
+    "comparison",
+    "stats",
+    "visualization"
+  ],
+  "processing_steps": [
+    {
+      "step": "parse_query",
+      "detail": "쿼리 파싱: '\n한국의 화재 및 재난 발생 트렌드 분석 보고서 (2015-2024)\n\n## 분석 요구사항:\n1. 연도별 화재 발생 건수 및 추세 분석\n2. 지역별 화재 발생 현황 비교\n3. 발화요인별 화재 발생 패턴 분석\n4. 화재 장소별 발생 현황 (주거, 상업, 산업시설 등)\n5. 월별 화재 발생 패턴 (계절성 분석)\n6. 인명피해 및 재산피해 규모 분석\n7. 주요 시사점 및 화재 예방 정책 제언\n\n## 컨텍스트:\n2025년 3월 대규모 산불로 32명 사망, 54명 부상 발생.\n고온건조한 기상환경으로 인해 역대 최대 산불 피해 기록.\n'",
+      "duration_ms": 8.621957967989147
+    },
+    {
+      "step": "determine_sections",
+      "detail": "섹션 결정: summary, eda, comparison, stats, visualization",
+      "sections": [
+        "summary",
+        "eda",
+        "comparison",
+        "stats",
+        "visualization"
+      ],
+      "duration_ms": 0.0023329630494117737
+    },
+    {
+      "step": "filter_data",
+      "detail": "데이터 필터링: 11399건 → 520건",
+      "records_before": 11399,
+      "records_after": 520,
+      "duration_ms": 5.291041044984013
+    },
+    {
+      "step": "generate_header",
+      "detail": "HTML 헤더 생성",
+      "duration_ms": 0.004500034265220165
+    },
+    {
+      "step": "generate_summary_card",
+      "detail": "요약 카드 생성",
+      "duration_ms": 0.126624945551157
+    },
+    {
+      "step": "generate_section_summary",
+      "detail": "섹션 생성: summary",
+      "success": false,
+      "duration_ms": 0.0024170149117708206
+    },
+    {
+      "step": "generate_section_eda",
+      "detail": "섹션 생성: eda",
+      "success": true,
+      "duration_ms": 3.3778329961933196
+    },
+    {
+      "step": "generate_section_comparison",
+      "detail": "섹션 생성: comparison",
+      "success": true,
+      "duration_ms": 2.7879999834112823
+    },
+    {
+      "step": "generate_section_stats",
+      "detail": "섹션 생성: stats",
+      "success": true,
+      "duration_ms": 0.567208044230938
+    },
+    {
+      "step": "generate_section_visualization",
+      "detail": "섹션 생성: visualization",
+      "success": true,
+      "duration_ms": 21.242208022158593
+    },
+    {
+      "step": "generate_footer",
+      "detail": "HTML 푸터 생성",
+      "duration_ms": 0.014416989870369434
+    }
+  ],
+  "data_info": {
+    "total_records": 11399,
+    "filtered_records": 520,
+    "columns": [
+      "TBL_ID",
+      "ORG_ID",
+      "ITM_NM_ENG",
+      "PRD_SE",
+      "ITM_NM",
+      "LST_CHN_DE",
+      "ITM_ID",
+      "UNIT_NM",
+      "C1",
+      "DT",
+      "UNIT_NM_ENG",
+      "C1_OBJ_NM_ENG",
+      "C1_NM",
+      "PRD_DE",
+      "C1_NM_ENG",
+      "TBL_NM",
+      "C1_OBJ_NM"
+    ],
+    "unique_regions": 96,
+    "unique_periods": 10
+  },
+  "output_path": "report_028_20251215_fire.html",
+  "total_duration_ms": 42.131541995331645
+}

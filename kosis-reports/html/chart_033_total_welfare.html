@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    #vis.vega-embed {
+      width: 100%;
+      display: flex;
+    }
+
+    #vis.vega-embed details,
+    #vis.vega-embed details summary {
+      position: relative;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@6"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@6.1.0"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@7"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}, "axis": {"labelFontSize": 12, "titleFontSize": 14}, "title": {"anchor": "start", "fontSize": 16}}, "data": {"name": "data-ab1314d5b3162f8a59f1d7caecf1ac19"}, "mark": {"type": "bar"}, "encoding": {"color": {"value": "#1f77b4"}, "tooltip": [{"field": "YEAR", "title": "\uc5f0\ub3c4", "type": "ordinal"}, {"field": "DT_NUM", "title": "GDP \ub300\ube44 \ube44\uc728 (%)", "type": "quantitative"}], "x": {"field": "YEAR", "title": "\uc5f0\ub3c4", "type": "ordinal"}, "y": {"field": "DT_NUM", "title": "GDP \ub300\ube44 \ube44\uc728 (%)", "type": "quantitative"}}, "height": 400, "title": "\ucd1d\uc0ac\ud68c\ubcf5\uc9c0\uc9c0\ucd9c \ube44\uc728 (GDP \ub300\ube44) \ucd94\uc774 (2015-2022)", "width": 700, "$schema": "https://vega.github.io/schema/vega-lite/v6.1.0.json", "datasets": {"data-ab1314d5b3162f8a59f1d7caecf1ac19": [{"TBL_ID": "DT_11777_N220", "ORG_ID": "117", "PRD_SE": "A", "ITM_NM": "\ube44\uc728", "LST_CHN_DE": "2025-08-11", "ITM_ID": "YEAR", "UNIT_NM": "%", "C1": "221", "DT": "11.8", "UNIT_NM_ENG": "%", "C1_NM": "\ucd1d\uacc4", "PRD_DE": "2015", "TBL_NM": "\ucd1d\uc0ac\ud68c\ubcf5\uc9c0\uc9c0\ucd9c \ube44\uc728 (GDP \ub300\ube44)", "C1_OBJ_NM": "\ucd1d\uc0ac\ud68c\ubcf5\uc9c0\uc9c0\ucd9c\ubcc4", "DT_NUM": 11.8, "YEAR": 2015}, {"TBL_ID": "DT_11777_N220", "ORG_ID": "117", "PRD_SE": "A", "ITM_NM": "\ube44\uc728", "LST_CHN_DE": "2025-05-14", "ITM_ID": "YEAR", "UNIT_NM": "%", "C1": "221", "DT": "11.8", "UNIT_NM_ENG": "%", "C1_NM": "\ucd1d\uacc4", "PRD_DE": "2016", "TBL_NM": "\ucd1d\uc0ac\ud68c\ubcf5\uc9c0\uc9c0\ucd9c \ube44\uc728 (GDP \ub300\ube44)", "C1_OBJ_NM": "\ucd1d\uc0ac\ud68c\ubcf5\uc9c0\uc9c0\ucd9c\ubcc4", "DT_NUM": 11.8, "YEAR": 2016}, {"TBL_ID": "DT_11777_N220", "ORG_ID": "117", "PRD_SE": "A", "ITM_NM": "\ube44\uc728", "LST_CHN_DE": "2025-05-14", "ITM_ID": "YEAR", "UNIT_NM": "%", "C1": "221", "DT": "12", "UNIT_NM_ENG": "%", "C1_NM": "\ucd1d\uacc4", "PRD_DE": "2017", "TBL_NM": "\ucd1d\uc0ac\ud68c\ubcf5\uc9c0\uc9c0\ucd9c \ube44\uc728 (GDP \ub300\ube44)", "C1_OBJ_NM": "\ucd1d\uc0ac\ud68c\ubcf5\uc9c0\uc9c0\ucd9c\ubcc4", "DT_NUM": 12.0, "YEAR": 2017}, {"TBL_ID": "DT_11777_N220", "ORG_ID": "117", "PRD_SE": "A", "ITM_NM": "\ube44\uc728", "LST_CHN_DE": "2025-05-14", "ITM_ID": "YEAR", "UNIT_NM": "%", "C1": "221", "DT": "13", "UNIT_NM_ENG": "%", "C1_NM": "\ucd1d\uacc4", "PRD_DE": "2018", "TBL_NM": "\ucd1d\uc0ac\ud68c\ubcf5\uc9c0\uc9c0\ucd9c \ube44\uc728 (GDP \ub300\ube44)", "C1_OBJ_NM": "\ucd1d\uc0ac\ud68c\ubcf5\uc9c0\uc9c0\ucd9c\ubcc4", "DT_NUM": 13.0, "YEAR": 2018}, {"TBL_ID": "DT_11777_N220", "ORG_ID": "117", "PRD_SE": "A", "ITM_NM": "\ube44\uc728", "LST_CHN_DE": "2025-08-11", "ITM_ID": "YEAR", "UNIT_NM": "%", "C1": "221", "DT": "14.4", "UNIT_NM_ENG": "%", "C1_NM": "\ucd1d\uacc4", "PRD_DE": "2019", "TBL_NM": "\ucd1d\uc0ac\ud68c\ubcf5\uc9c0\uc9c0\ucd9c \ube44\uc728 (GDP \ub300\ube44)", "C1_OBJ_NM": "\ucd1d\uc0ac\ud68c\ubcf5\uc9c0\uc9c0\ucd9c\ubcc4", "DT_NUM": 14.4, "YEAR": 2019}, {"TBL_ID": "DT_11777_N220", "ORG_ID": "117", "PRD_SE": "A", "ITM_NM": "\ube44\uc728", "LST_CHN_DE": "2025-08-11", "ITM_ID": "YEAR", "UNIT_NM": "%", "C1": "221", "DT": "18.4", "UNIT_NM_ENG": "%", "C1_NM": "\ucd1d\uacc4", "PRD_DE": "2020", "TBL_NM": "\ucd1d\uc0ac\ud68c\ubcf5\uc9c0\uc9c0\ucd9c \ube44\uc728 (GDP \ub300\ube44)", "C1_OBJ_NM": "\ucd1d\uc0ac\ud68c\ubcf5\uc9c0\uc9c0\ucd9c\ubcc4", "DT_NUM": 18.4, "YEAR": 2020}, {"TBL_ID": "DT_11777_N220", "ORG_ID": "117", "PRD_SE": "A", "ITM_NM": "\ube44\uc728", "LST_CHN_DE": "2025-08-11", "ITM_ID": "YEAR", "UNIT_NM": "%", "C1": "221", "DT": "18.8", "UNIT_NM_ENG": "%", "C1_NM": "\ucd1d\uacc4", "PRD_DE": "2021", "TBL_NM": "\ucd1d\uc0ac\ud68c\ubcf5\uc9c0\uc9c0\ucd9c \ube44\uc728 (GDP \ub300\ube44)", "C1_OBJ_NM": "\ucd1d\uc0ac\ud68c\ubcf5\uc9c0\uc9c0\ucd9c\ubcc4", "DT_NUM": 18.8, "YEAR": 2021}, {"TBL_ID": "DT_11777_N220", "ORG_ID": "117", "PRD_SE": "A", "ITM_NM": "\ube44\uc728", "LST_CHN_DE": "2025-08-11", "ITM_ID": "YEAR", "UNIT_NM": "%", "C1": "221", "DT": "19.7", "UNIT_NM_ENG": "%", "C1_NM": "\ucd1d\uacc4", "PRD_DE": "2022", "TBL_NM": "\ucd1d\uc0ac\ud68c\ubcf5\uc9c0\uc9c0\ucd9c \ube44\uc728 (GDP \ub300\ube44)", "C1_OBJ_NM": "\ucd1d\uc0ac\ud68c\ubcf5\uc9c0\uc9c0\ucd9c\ubcc4", "DT_NUM": 19.7, "YEAR": 2022}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>

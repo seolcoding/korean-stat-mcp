@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반려동물 트렌드 분석 리포트 2025 | KOSIS Data Report #056</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Jua&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background: linear-gradient(135deg, #ffd6e0 0%, #c1e7e3 50%, #fff5ba 100%);
+            color: #444;
+            line-height: 1.7;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 30px;
+            box-shadow: 0 10px 40px rgba(255, 150, 180, 0.3);
+            overflow: hidden;
+        }
+
+        /* Cute header with paw prints */
+        header {
+            background: linear-gradient(135deg, #ff9ec7 0%, #ffb7d5 100%);
+            padding: 60px 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '🐾';
+            position: absolute;
+            font-size: 120px;
+            opacity: 0.1;
+            top: -20px;
+            right: 50px;
+            transform: rotate(-15deg);
+        }
+
+        header::after {
+            content: '🐾';
+            position: absolute;
+            font-size: 80px;
+            opacity: 0.1;
+            bottom: -10px;
+            left: 40px;
+            transform: rotate(25deg);
+        }
+
+        h1 {
+            font-family: 'Jua', sans-serif;
+            font-size: 3em;
+            color: white;
+            text-align: center;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.2);
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .subtitle {
+            font-family: 'Jua', sans-serif;
+            text-align: center;
+            color: rgba(255,255,255,0.95);
+            font-size: 1.3em;
+            position: relative;
+            z-index: 1;
+        }
+
+        .meta-info {
+            background: #fff5f7;
+            padding: 25px 40px;
+            border-bottom: 3px dashed #ffc0d3;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .meta-item {
+            text-align: center;
+            padding: 10px 20px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 3px 10px rgba(255, 150, 180, 0.2);
+        }
+
+        .meta-item strong {
+            display: block;
+            color: #ff6b9d;
+            font-size: 0.9em;
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+
+        .meta-item span {
+            color: #666;
+            font-size: 0.95em;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        /* Cute section styling */
+        section {
+            margin-bottom: 50px;
+            background: linear-gradient(to bottom, #fff 0%, #fffaf8 100%);
+            border-radius: 25px;
+            padding: 35px;
+            box-shadow: 0 5px 20px rgba(255, 150, 180, 0.15);
+            border: 3px solid #ffe0eb;
+            position: relative;
+        }
+
+        section::before {
+            content: '🐕';
+            position: absolute;
+            top: -15px;
+            left: 30px;
+            font-size: 30px;
+            background: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        section:nth-child(even)::before {
+            content: '🐈';
+        }
+
+        h2 {
+            font-family: 'Jua', sans-serif;
+            font-size: 2em;
+            color: #ff6b9d;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px dotted #ffb7d5;
+            margin-top: 10px;
+        }
+
+        h3 {
+            font-family: 'Jua', sans-serif;
+            font-size: 1.5em;
+            color: #ff8fab;
+            margin: 25px 0 15px 0;
+            padding-left: 20px;
+            border-left: 5px solid #ffc0d3;
+        }
+
+        /* Cute stat cards */
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #fff5f7 0%, #ffffff 100%);
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            border: 3px solid #ffe0eb;
+            box-shadow: 0 5px 15px rgba(255, 150, 180, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(255, 150, 180, 0.3);
+        }
+
+        .stat-number {
+            font-family: 'Jua', sans-serif;
+            font-size: 2.5em;
+            color: #ff6b9d;
+            margin: 15px 0;
+            text-shadow: 2px 2px 4px rgba(255, 107, 157, 0.2);
+        }
+
+        .stat-label {
+            color: #666;
+            font-size: 1.1em;
+            font-weight: 500;
+        }
+
+        .stat-icon {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        /* Speech bubble style quotes */
+        .highlight-box {
+            background: white;
+            border: 3px solid #ffc0d3;
+            border-radius: 25px;
+            padding: 30px;
+            margin: 25px 0;
+            position: relative;
+            box-shadow: 0 5px 20px rgba(255, 150, 180, 0.15);
+        }
+
+        .highlight-box::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 50px;
+            width: 0;
+            height: 0;
+            border-left: 20px solid transparent;
+            border-right: 20px solid transparent;
+            border-top: 20px solid #ffc0d3;
+        }
+
+        .highlight-box p {
+            font-size: 1.15em;
+            line-height: 1.8;
+            color: #555;
+            margin: 0;
+        }
+
+        .highlight-box strong {
+            color: #ff6b9d;
+            font-weight: 700;
+        }
+
+        /* Cute list styling */
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        ul li {
+            padding: 12px 0 12px 40px;
+            position: relative;
+            color: #555;
+            font-size: 1.05em;
+        }
+
+        ul li::before {
+            content: '🐾';
+            position: absolute;
+            left: 0;
+            font-size: 1.2em;
+        }
+
+        /* Cute buttons */
+        .button {
+            display: inline-block;
+            background: linear-gradient(135deg, #ff9ec7 0%, #ffb7d5 100%);
+            color: white;
+            padding: 15px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1em;
+            box-shadow: 0 5px 15px rgba(255, 150, 180, 0.3);
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 150, 180, 0.4);
+        }
+
+        /* Photo frame style for images/charts */
+        .chart-container {
+            background: white;
+            padding: 25px;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(255, 150, 180, 0.2);
+            border: 5px solid #ffe0eb;
+            margin: 25px 0;
+            text-align: center;
+        }
+
+        /* Data table with cute styling */
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin: 25px 0;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(255, 150, 180, 0.15);
+        }
+
+        thead {
+            background: linear-gradient(135deg, #ff9ec7 0%, #ffb7d5 100%);
+        }
+
+        th {
+            padding: 18px;
+            text-align: left;
+            color: white;
+            font-weight: 700;
+            font-size: 1.05em;
+        }
+
+        td {
+            padding: 15px 18px;
+            border-bottom: 1px solid #ffe0eb;
+            color: #555;
+        }
+
+        tbody tr {
+            background: white;
+            transition: background 0.3s;
+        }
+
+        tbody tr:hover {
+            background: #fff5f7;
+        }
+
+        tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Cute footer */
+        footer {
+            background: linear-gradient(135deg, #ffd6e0 0%, #c1e7e3 100%);
+            padding: 40px;
+            text-align: center;
+            color: #666;
+            border-top: 3px dashed #ffc0d3;
+        }
+
+        footer p {
+            margin: 10px 0;
+        }
+
+        .footer-icon {
+            font-size: 2em;
+            margin: 10px 0;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            .content {
+                padding: 25px;
+            }
+
+            section {
+                padding: 25px;
+            }
+
+            .stat-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Additional cute elements */
+        .emoji-divider {
+            text-align: center;
+            font-size: 2em;
+            margin: 30px 0;
+            opacity: 0.6;
+        }
+
+        .trend-up {
+            color: #ff6b9d;
+            font-weight: 700;
+        }
+
+        .trend-down {
+            color: #c1e7e3;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🐕 한국 반려동물 트렌드 분석 2025 🐈</h1>
+            <div class="subtitle">귀여운 펫 친구들과 함께하는 대한민국</div>
+        </header>
+
+        <div class="meta-info">
+            <div class="meta-item">
+                <strong>리포트 번호</strong>
+                <span>#056</span>
+            </div>
+            <div class="meta-item">
+                <strong>작성일</strong>
+                <span>2025년 12월 15일</span>
+            </div>
+            <div class="meta-item">
+                <strong>데이터 출처</strong>
+                <span>KOSIS 국가통계포털</span>
+            </div>
+            <div class="meta-item">
+                <strong>주제</strong>
+                <span>반려동물, 펫코노미</span>
+            </div>
+        </div>
+
+        <div class="content">
+            <!-- Executive Summary -->
+            <section>
+                <h2>🌟 주요 발견사항</h2>
+
+                <div class="highlight-box">
+                    <p>
+                        <strong>2025년 한국 반려동물 시장은 약 15조원 규모</strong>로 성장했으며,
+                        2024년 기준 <strong>1,546만명 (전체 인구의 29.9%)</strong>이 반려동물과 함께 살고 있습니다.
+                        이는 반려견 주인 1,196만명과 반려묘 주인 346만명을 포함합니다.
+                    </p>
+                </div>
+
+                <div class="stat-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">🏪</div>
+                        <div class="stat-number">15조원</div>
+                        <div class="stat-label">펫케어 시장 규모</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">👨‍👩‍👧‍👦</div>
+                        <div class="stat-number">1,546만명</div>
+                        <div class="stat-label">반려동물 양육 인구</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">💰</div>
+                        <div class="stat-number">19.4만원</div>
+                        <div class="stat-label">월평균 양육비용</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">🏥</div>
+                        <div class="stat-number">102.7만원</div>
+                        <div class="stat-label">2년간 평균 의료비</div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="emoji-divider">🐾 🐾 🐾</div>
+
+            <!-- Market Growth -->
+            <section>
+                <h2>📈 시장 성장 전망</h2>
+
+                <h3>폭발적인 성장세</h3>
+                <p>
+                    농림축산식품부에 따르면 국내 반려동물 시장은 2022년 기준 약 <strong class="trend-up">8.5조원</strong>에서
+                    2032년에는 약 <strong class="trend-up">21조원</strong>으로 성장할 것으로 전망됩니다.
+                    이는 연평균 약 9.5%의 높은 성장률을 의미합니다.
+                </p>
+
+                <div class="chart-container">
+                    <h4 style="color: #ff6b9d; margin-bottom: 20px; font-family: 'Jua', sans-serif;">반려동물 시장 규모 전망</h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>연도</th>
+                                <th>시장 규모</th>
+                                <th>성장률</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>2022년</td>
+                                <td>8.5조원</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td>2025년</td>
+                                <td>15조원 (예상)</td>
+                                <td>+76%</td>
+                            </tr>
+                            <tr>
+                                <td>2032년</td>
+                                <td>21조원 (전망)</td>
+                                <td>+147%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <div class="emoji-divider">🦴 🦴 🦴</div>
+
+            <!-- Key Trends -->
+            <section>
+                <h2>🎯 2025 주요 트렌드</h2>
+
+                <h3>1. 펫휴머나이제이션 (Pet Humanization)</h3>
+                <div class="highlight-box">
+                    <p>
+                        반려동물을 가족 구성원으로 인식하는 경향이 강화되면서
+                        <strong>휴먼그레이드 수준의 펫푸드와 서비스</strong> 수요가 급증하고 있습니다.
+                    </p>
+                </div>
+
+                <h3>2. 월평균 양육비 증가</h3>
+                <ul>
+                    <li>2023년 15.4만원 → 2024년 <strong>19.4만원</strong> (26% 증가)</li>
+                    <li>2년간 평균 의료비: 57.7만원 → <strong>102.7만원</strong> (78% 증가)</li>
+                    <li>건강관리가 최대 관심사 (55.2%)</li>
+                </ul>
+
+                <h3>3. 서비스형 소비 확대</h3>
+                <p>
+                    식품 및 의료비가 안정화되면서 <strong>반려동물 유치원, 호텔, 미용</strong> 등
+                    서비스형 소비가 새로운 성장 동력으로 부상했습니다.
+                </p>
+                <ul>
+                    <li>반려동물 유치원/호텔 건당 평균 소비액: 7.4만원 → <strong>12.5만원</strong></li>
+                    <li>24시간 무인 펫샵 증가</li>
+                    <li>반려동물 보험, 상조 서비스 확대</li>
+                </ul>
+            </section>
+
+            <div class="emoji-divider">🎾 🎾 🎾</div>
+
+            <!-- Tourism Data -->
+            <section>
+                <h2>✈️ 반려동물과 함께하는 여행</h2>
+
+                <h3>2024 여행 동반 현황 (KOSIS 데이터)</h3>
+
+                <div class="stat-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">🏝️</div>
+                        <div class="stat-number">0.3%</div>
+                        <div class="stat-label">해외여행 동반</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">🏨</div>
+                        <div class="stat-number">22.2%</div>
+                        <div class="stat-label">반려동물 보유하지만<br>여행 비동반</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">🚫</div>
+                        <div class="stat-number">77.5%</div>
+                        <div class="stat-label">반려동물 미보유</div>
+                    </div>
+                </div>
+
+                <h3>성별 차이</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>구분</th>
+                            <th>반려동물 미보유</th>
+                            <th>보유하지만 비동반</th>
+                            <th>동반 여행</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>전체</strong></td>
+                            <td>77.5%</td>
+                            <td>22.2%</td>
+                            <td>0.3%</td>
+                        </tr>
+                        <tr>
+                            <td>남자</td>
+                            <td>79.5%</td>
+                            <td>20.4%</td>
+                            <td>0.1%</td>
+                        </tr>
+                        <tr>
+                            <td>여자</td>
+                            <td>75.5%</td>
+                            <td>24.0%</td>
+                            <td>0.5%</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="highlight-box">
+                    <p>
+                        <strong>여성이 남성보다 반려동물과 함께 여행하는 비율이 5배 높습니다</strong> (0.5% vs 0.1%).
+                        이는 여성이 반려동물과의 동행에 더 적극적임을 보여줍니다.
+                    </p>
+                </div>
+            </section>
+
+            <div class="emoji-divider">💕 💕 💕</div>
+
+            <!-- Social Issues -->
+            <section>
+                <h2>🤝 사회적 이슈와 인식</h2>
+
+                <h3>1. 펫로스 (Pet Loss) 증후군</h3>
+                <ul>
+                    <li>한국 반려가구의 <strong>54.7%</strong>가 펫로스 경험</li>
+                    <li><strong>16.3%</strong>는 1년 이상 지속되는 펫로스 증후군 겪음</li>
+                    <li>반려동물 상조 서비스 수요 증가</li>
+                </ul>
+
+                <h3>2. 펫티켓 인식 차이</h3>
+                <div class="chart-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>구분</th>
+                                <th>펫티켓 준수 인식</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>반려가구</td>
+                                <td><strong class="trend-up">71.4%</strong> "잘 지킨다"</td>
+                            </tr>
+                            <tr>
+                                <td>비반려가구</td>
+                                <td><strong class="trend-down">19.0%</strong> "잘 지킨다"</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="highlight-box">
+                    <p>
+                        펫티켓 준수 여부에 대한 <strong>반려가구와 비반려가구의 인식 차이가 52.4%p</strong>로 매우 큽니다.
+                        상호 이해와 소통이 필요한 영역입니다.
+                    </p>
+                </div>
+
+                <h3>3. 동물보호 강화 공감대</h3>
+                <ul>
+                    <li>동물학대 처벌 강화 필요: 반려가구 <strong>82.6%</strong>, 비반려가구 <strong>78.5%</strong></li>
+                    <li>동물유기 처벌 강화: 양측 모두 높은 공감대 형성</li>
+                    <li>동물복지에 대한 사회적 관심 증가</li>
+                </ul>
+            </section>
+
+            <div class="emoji-divider">🌈 🌈 🌈</div>
+
+            <!-- Future Outlook -->
+            <section>
+                <h2>🔮 향후 전망</h2>
+
+                <h3>단기 전망 (2025-2027)</h3>
+                <ul>
+                    <li>펫테크 (Pet Tech) 산업 성장 가속화</li>
+                    <li>AI 기반 반려동물 건강관리 서비스 확대</li>
+                    <li>펫 프렌들리 시설 증가</li>
+                    <li>구독형 펫 서비스 다양화</li>
+                </ul>
+
+                <h3>중장기 전망 (2028-2032)</h3>
+                <ul>
+                    <li>반려동물 시장 21조원 돌파</li>
+                    <li>펫 헬스케어 산업 독립적 성장</li>
+                    <li>반려동물 동반 여행 인프라 확충</li>
+                    <li>펫티켓 교육 제도화</li>
+                    <li>동물복지법 강화</li>
+                </ul>
+
+                <div class="highlight-box">
+                    <p>
+                        <strong>펫코노미는 단순한 소비 트렌드를 넘어 라이프스타일의 변화</strong>를 의미합니다.
+                        반려동물과 함께하는 삶이 더욱 보편화되고, 이를 지원하는
+                        사회적 인프라와 문화가 발전할 것으로 전망됩니다.
+                    </p>
+                </div>
+            </section>
+
+            <div class="emoji-divider">📊 📊 📊</div>
+
+            <!-- Data Sources -->
+            <section>
+                <h2>📚 데이터 출처</h2>
+
+                <h3>KOSIS 통계표</h3>
+                <ul>
+                    <li>해외여행 반려동물 동반 여부 (DT_113_STBL_1032428) - 문화체육관광부</li>
+                    <li>관광여행 반려동물 동반 여부 (DT_113_STBL_1032432) - 문화체육관광부</li>
+                    <li>관광 숙박여행 반려동물 동반 여부 (DT_113_STBL_1032433) - 문화체육관광부</li>
+                    <li>관광 당일여행 반려동물 동반 여부 (DT_113_STBL_1032434) - 문화체육관광부</li>
+                </ul>
+
+                <h3>참고 자료</h3>
+                <ul>
+                    <li><a href="https://www.dailyvet.co.kr/news/industry/214784" style="color: #ff6b9d; text-decoration: none; font-weight: 600;">국내 반려동물 시장규모 8.5조원 추산 - 데일리벳</a></li>
+                    <li><a href="https://kbthink.com/investment/deepdive/research/250629-1.html" style="color: #ff6b9d; text-decoration: none; font-weight: 600;">2025 한국 반려동물 보고서 - KB금융지주</a></li>
+                    <li><a href="https://www.kbfg.com/kbresearch/report/reportView.do?reportId=2000531" style="color: #ff6b9d; text-decoration: none; font-weight: 600;">2025 한국 반려동물 보고서 - KB경영연구소</a></li>
+                    <li><a href="https://assets.kpmg.com/content/dam/kpmg/kr/pdf/2024/issue-monitor/kpmg-korea-petmarket-trends-20240604.pdf" style="color: #ff6b9d; text-decoration: none; font-weight: 600;">반려동물 시장 트렌드 - KPMG</a></li>
+                </ul>
+            </section>
+
+            <div class="emoji-divider">🐕‍🦺 🐈‍⬛ 🐕‍🦺</div>
+
+            <!-- Conclusion -->
+            <section>
+                <h2>💭 마치며</h2>
+
+                <div class="highlight-box">
+                    <p>
+                        반려동물은 이제 단순한 '애완동물'이 아닌 <strong>가족의 일원</strong>으로 자리잡았습니다.
+                        이러한 인식 변화는 시장의 양적 성장을 넘어 질적 변화를 이끌고 있으며,
+                        반려동물과 함께하는 더 나은 삶을 위한 다양한 혁신이 이루어지고 있습니다.
+                    </p>
+                    <p style="margin-top: 20px;">
+                        앞으로도 펫코노미는 지속적으로 성장할 것이며,
+                        반려가구와 비반려가구가 서로를 이해하고 존중하는 문화가 더욱 중요해질 것입니다.
+                        <strong>모두가 행복한 반려동물 문화</strong>를 만들어가는 것이 우리의 과제입니다.
+                    </p>
+                </div>
+
+                <div style="text-align: center; margin-top: 40px;">
+                    <p style="font-size: 3em;">🐾 🐕 💕 🐈 🐾</p>
+                    <p style="font-family: 'Jua', sans-serif; font-size: 1.3em; color: #ff6b9d; margin-top: 20px;">
+                        사랑스러운 반려동물과 함께하는 행복한 대한민국
+                    </p>
+                </div>
+            </section>
+        </div>
+
+        <footer>
+            <div class="footer-icon">🐾</div>
+            <p><strong>KOSIS 데이터 기반 트렌드 분석 리포트 #056</strong></p>
+            <p>반려동물 트렌드 분석 2025</p>
+            <p style="margin-top: 20px; font-size: 0.9em; color: #888;">
+                데이터 출처: KOSIS 국가통계포털, KB금융지주, 농림축산식품부<br>
+                작성일: 2025년 12월 15일
+            </p>
+            <p style="margin-top: 15px; font-size: 0.85em; color: #999;">
+                이 리포트는 공개된 통계 데이터를 기반으로 작성되었습니다.
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

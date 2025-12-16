@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    #vis.vega-embed {
+      width: 100%;
+      display: flex;
+    }
+
+    #vis.vega-embed details,
+    #vis.vega-embed details summary {
+      position: relative;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@6"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@6.1.0"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@7"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}, "axis": {"labelFontSize": 12, "titleFontSize": 14}, "title": {"anchor": "start", "fontSize": 16}}, "data": {"name": "data-655655c9bfb3398d171dd01967391837"}, "mark": {"type": "line", "point": true}, "encoding": {"tooltip": [{"field": "YEAR", "title": "\uc5f0\ub3c4", "type": "ordinal"}, {"field": "DT_NUM", "title": "GDP \ub300\ube44 \ube44\uc728 (%)", "type": "quantitative"}], "x": {"field": "YEAR", "title": "\uc5f0\ub3c4", "type": "ordinal"}, "y": {"field": "DT_NUM", "scale": {"domain": [9, 15]}, "title": "GDP \ub300\ube44 \ube44\uc728 (%)", "type": "quantitative"}}, "height": 400, "title": "\uc0ac\ud68c\ubcf5\uc9c0\uc9c0\ucd9c \ube44\uc728 (GDP \ub300\ube44) \ucd94\uc774 (2015-2023)", "width": 700, "$schema": "https://vega.github.io/schema/vega-lite/v6.1.0.json", "datasets": {"data-655655c9bfb3398d171dd01967391837": [{"TBL_ID": "DT_11777_N120", "ORG_ID": "117", "ITM_NM_ENG": "Ratio", "PRD_SE": "A", "ITM_NM": "\ube44\uc728", "LST_CHN_DE": "2025-08-11", "ITM_ID": "YEAR", "UNIT_NM": "%", "C1": "121", "DT": "10", "UNIT_NM_ENG": "%", "C1_OBJ_NM_ENG": "By Financial Resources and function", "C1_NM": "\uc7ac\uc6d0\ubcc4", "PRD_DE": "2015", "C1_NM_ENG": "By financial resources", "TBL_NM": "\uc0ac\ud68c\ubcf5\uc9c0\uc9c0\ucd9c \ube44\uc728 (GDP \ub300\ube44)", "C1_OBJ_NM": "\uc0ac\ud68c\ubcf5\uc9c0\uc9c0\ucd9c\ubcc4", "DT_NUM": 10.0, "YEAR": 2015}, {"TBL_ID": "DT_11777_N120", "ORG_ID": "117", "ITM_NM_ENG": "Ratio", "PRD_SE": "A", "ITM_NM": "\ube44\uc728", "LST_CHN_DE": "2025-05-14", "ITM_ID": "YEAR", "UNIT_NM": "%", "C1": "121", "DT": "10.1", "UNIT_NM_ENG": "%", "C1_OBJ_NM_ENG": "By Financial Resources and function", "C1_NM": "\uc7ac\uc6d0\ubcc4", "PRD_DE": "2016", "C1_NM_ENG": "By financial resources", "TBL_NM": "\uc0ac\ud68c\ubcf5\uc9c0\uc9c0\ucd9c \ube44\uc728 (GDP \ub300\ube44)", "C1_OBJ_NM": "\uc0ac\ud68c\ubcf5\uc9c0\uc9c0\ucd9c\ubcc4", "DT_NUM": 10.1, "YEAR": 2016}, {"TBL_ID": "DT_11777_N120", "ORG_ID": "117", "ITM_NM_ENG": "Ratio", "PRD_SE": "A", "ITM_NM": "\ube44\uc728", "LST_CHN_DE": "2025-05-14", "ITM_ID": "YEAR", "UNIT_NM": "%", "C1": "121", "DT": "10.3", "UNIT_NM_ENG": "%", "C1_OBJ_NM_ENG": "By Financial Resources and function", "C1_NM": "\uc7ac\uc6d0\ubcc4", "PRD_DE": "2017", "C1_NM_ENG": "By financial resources", "TBL_NM": "\uc0ac\ud68c\ubcf5\uc9c0\uc9c0\ucd9c \ube44\uc728 (GDP \ub300\ube44)", "C1_OBJ_NM": "\uc0ac\ud68c\ubcf5\uc9c0\uc9c0\ucd9c\ubcc4", "DT_NUM": 10.3, "YEAR": 2017}, {"TBL_ID": "DT_11777_N120", "ORG_ID": "117", "ITM_NM_ENG": "Ratio", "PRD_SE": "A", "ITM_NM": "\ube44\uc728", "LST_CHN_DE": "2025-05-14", "ITM_ID": "YEAR", "UNIT_NM": "%", "C1": "121", "DT": "11", "UNIT_NM_ENG": "%", "C1_OBJ_NM_ENG": "By Financial Resources and function", "C1_NM": "\uc7ac\uc6d0\ubcc4", "PRD_DE": "2018", "C1_NM_ENG": "By financial resources", "TBL_NM": "\uc0ac\ud68c\ubcf5\uc9c0\uc9c0\ucd9c \ube44\uc728 (GDP \ub300\ube44)", "C1_OBJ_NM": "\uc0ac\ud68c\ubcf5\uc9c0\uc9c0\ucd9c\ubcc4", "DT_NUM": 11.0, "YEAR": 2018}, {"TBL_ID": "DT_11777_N120", "ORG_ID": "117", "ITM_NM_ENG": "Ratio", "PRD_SE": "A", "ITM_NM": "\ube44\uc728", "LST_CHN_DE": "2025-08-11", "ITM_ID": "YEAR", "UNIT_NM": "%", "C1": "121", "DT": "12.3", "UNIT_NM_ENG": "%", "C1_OBJ_NM_ENG": "By Financial Resources and function", "C1_NM": "\uc7ac\uc6d0\ubcc4", "PRD_DE": "2019", "C1_NM_ENG": "By financial resources", "TBL_NM": "\uc0ac\ud68c\ubcf5\uc9c0\uc9c0\ucd9c \ube44\uc728 (GDP \ub300\ube44)", "C1_OBJ_NM": "\uc0ac\ud68c\ubcf5\uc9c0\uc9c0\ucd9c\ubcc4", "DT_NUM": 12.3, "YEAR": 2019}, {"TBL_ID": "DT_11777_N120", "ORG_ID": "117", "ITM_NM_ENG": "Ratio", "PRD_SE": "A", "ITM_NM": "\ube44\uc728", "LST_CHN_DE": "2025-08-11", "ITM_ID": "YEAR", "UNIT_NM": "%", "C1": "121", "DT": "16", "UNIT_NM_ENG": "%", "C1_OBJ_NM_ENG": "By Financial Resources and function", "C1_NM": "\uc7ac\uc6d0\ubcc4", "PRD_DE": "2020", "C1_NM_ENG": "By financial resources", "TBL_NM": "\uc0ac\ud68c\ubcf5\uc9c0\uc9c0\ucd9c \ube44\uc728 (GDP \ub300\ube44)", "C1_OBJ_NM": "\uc0ac\ud68c\ubcf5\uc9c0\uc9c0\ucd9c\ubcc4", "DT_NUM": 16.0, "YEAR": 2020}, {"TBL_ID": "DT_11777_N120", "ORG_ID": "117", "ITM_NM_ENG": "Ratio", "PRD_SE": "A", "ITM_NM": "\ube44\uc728", "LST_CHN_DE": "2025-05-14", "ITM_ID": "YEAR", "UNIT_NM": "%", "C1": "121", "DT": "16.3", "UNIT_NM_ENG": "%", "C1_OBJ_NM_ENG": "By Financial Resources and function", "C1_NM": "\uc7ac\uc6d0\ubcc4", "PRD_DE": "2021", "C1_NM_ENG": "By financial resources", "TBL_NM": "\uc0ac\ud68c\ubcf5\uc9c0\uc9c0\ucd9c \ube44\uc728 (GDP \ub300\ube44)", "C1_OBJ_NM": "\uc0ac\ud68c\ubcf5\uc9c0\uc9c0\ucd9c\ubcc4", "DT_NUM": 16.3, "YEAR": 2021}, {"TBL_ID": "DT_11777_N120", "ORG_ID": "117", "ITM_NM_ENG": "Ratio", "PRD_SE": "A", "ITM_NM": "\ube44\uc728", "LST_CHN_DE": "2025-08-11", "ITM_ID": "YEAR", "UNIT_NM": "%", "C1": "121", "DT": "17.3", "UNIT_NM_ENG": "%", "C1_OBJ_NM_ENG": "By Financial Resources and function", "C1_NM": "\uc7ac\uc6d0\ubcc4", "PRD_DE": "2022", "C1_NM_ENG": "By financial resources", "TBL_NM": "\uc0ac\ud68c\ubcf5\uc9c0\uc9c0\ucd9c \ube44\uc728 (GDP \ub300\ube44)", "C1_OBJ_NM": "\uc0ac\ud68c\ubcf5\uc9c0\uc9c0\ucd9c\ubcc4", "DT_NUM": 17.3, "YEAR": 2022}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>

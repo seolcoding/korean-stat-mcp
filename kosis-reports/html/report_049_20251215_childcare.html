@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>어린이집 & 보육 트렌드 분석 2025 - Kids Edition!</title>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background: linear-gradient(135deg, #ffeaa7 0%, #fab1a0 50%, #fdcb6e 100%);
+            background-attachment: fixed;
+            padding: 20px;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* 귀여운 배경 도트 패턴 */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image:
+                radial-gradient(circle, #fff3 1px, transparent 1px),
+                radial-gradient(circle, #fff2 1px, transparent 1px);
+            background-size: 50px 50px, 30px 30px;
+            background-position: 0 0, 25px 25px;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 50px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            padding: 60px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* 귀여운 구름 장식 */
+        .cloud {
+            position: absolute;
+            background: white;
+            border-radius: 100px;
+            opacity: 0.3;
+            z-index: -1;
+        }
+
+        .cloud1 {
+            width: 150px;
+            height: 80px;
+            top: 50px;
+            left: -30px;
+        }
+
+        .cloud2 {
+            width: 200px;
+            height: 100px;
+            top: 200px;
+            right: -50px;
+        }
+
+        .cloud3 {
+            width: 120px;
+            height: 70px;
+            bottom: 300px;
+            left: 100px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 60px;
+            padding-bottom: 40px;
+            border-bottom: 5px dashed #ff6b6b;
+            position: relative;
+        }
+
+        h1 {
+            font-size: 3.5em;
+            color: #ff6b6b;
+            margin-bottom: 20px;
+            font-weight: 900;
+            text-shadow: 4px 4px 0 #feca57;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .subtitle {
+            font-size: 1.8em;
+            color: #1dd1a1;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .date {
+            font-size: 1.2em;
+            color: #636e72;
+            font-weight: 600;
+        }
+
+        .emoji-big {
+            font-size: 4em;
+            margin: 20px 0;
+            display: inline-block;
+            animation: wiggle 3s infinite;
+        }
+
+        @keyframes wiggle {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(-5deg); }
+            75% { transform: rotate(5deg); }
+        }
+
+        /* KPI 카드 */
+        .kpi-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+        }
+
+        .kpi-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 40px;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .kpi-card:nth-child(1) {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
+        }
+
+        .kpi-card:nth-child(2) {
+            background: linear-gradient(135deg, #48dbfb 0%, #0abde3 100%);
+        }
+
+        .kpi-card:nth-child(3) {
+            background: linear-gradient(135deg, #1dd1a1 0%, #10ac84 100%);
+        }
+
+        .kpi-card:nth-child(4) {
+            background: linear-gradient(135deg, #feca57 0%, #ff9ff3 100%);
+        }
+
+        .kpi-card:hover {
+            transform: scale(1.05) rotate(-2deg);
+        }
+
+        .kpi-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: pulse 4s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+        }
+
+        .kpi-emoji {
+            font-size: 4em;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .kpi-label {
+            font-size: 1.3em;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .kpi-value {
+            font-size: 3.5em;
+            font-weight: 900;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .kpi-unit {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .kpi-change {
+            font-size: 1.1em;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 20px;
+            display: inline-block;
+        }
+
+        /* 섹션 스타일 */
+        .section {
+            margin: 60px 0;
+            padding: 40px;
+            background: linear-gradient(to right, #ffeaa7, #fab1a0);
+            border-radius: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .section-title {
+            font-size: 2.5em;
+            color: #2d3436;
+            font-weight: 900;
+            margin-bottom: 30px;
+            text-align: center;
+            position: relative;
+            padding-bottom: 20px;
+        }
+
+        .section-title::after {
+            content: '★ ★ ★';
+            display: block;
+            font-size: 0.4em;
+            color: #ff6b6b;
+            margin-top: 10px;
+        }
+
+        /* 인사이트 박스 */
+        .insight-box {
+            background: white;
+            padding: 40px;
+            border-radius: 30px;
+            margin: 30px 0;
+            border-left: 10px solid #1dd1a1;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .insight-title {
+            font-size: 1.8em;
+            color: #1dd1a1;
+            font-weight: 700;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .insight-content {
+            font-size: 1.3em;
+            line-height: 1.8;
+            color: #2d3436;
+        }
+
+        /* 차트 컨테이너 */
+        .chart-container {
+            background: white;
+            padding: 30px;
+            border-radius: 30px;
+            margin: 30px 0;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        /* 뉴스 박스 */
+        .news-section {
+            background: linear-gradient(135deg, #fdcb6e 0%, #e17055 100%);
+            padding: 40px;
+            border-radius: 40px;
+            margin: 50px 0;
+        }
+
+        .news-title {
+            font-size: 2.2em;
+            color: white;
+            font-weight: 900;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .news-item {
+            background: white;
+            padding: 25px;
+            border-radius: 20px;
+            margin: 20px 0;
+            border-left: 8px solid #ff6b6b;
+        }
+
+        .news-item h3 {
+            font-size: 1.5em;
+            color: #2d3436;
+            margin-bottom: 10px;
+        }
+
+        .news-item p {
+            font-size: 1.1em;
+            color: #636e72;
+            line-height: 1.6;
+        }
+
+        /* 버튼 스타일 */
+        .cute-button {
+            display: inline-block;
+            padding: 20px 40px;
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.3em;
+            font-weight: 700;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cute-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 80px;
+            padding-top: 40px;
+            border-top: 5px dashed #ff6b6b;
+            color: #636e72;
+            font-size: 1.1em;
+        }
+
+        .footer-emoji {
+            font-size: 2em;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="cloud cloud1"></div>
+    <div class="cloud cloud2"></div>
+    <div class="cloud cloud3"></div>
+
+    <div class="container">
+        <header>
+            <div class="emoji-big">👶 🏫 🎨</div>
+            <h1>어린이집 & 보육 트렌드 분석</h1>
+            <div class="subtitle">우리 아이들의 행복한 공간 이야기</div>
+            <div class="date">📊 2015-2024년 데이터 분석 | 생성일: 2025년 12월 15일</div>
+        </header>
+
+        <div class="kpi-container">
+            <div class="kpi-card">
+                <span class="kpi-emoji">🏫</span>
+                <div class="kpi-label">2024년 어린이집</div>
+                <div class="kpi-value">27387</div>
+                <div class="kpi-unit">개소</div>
+                <div class="kpi-change">▼ 35.6% (vs 2015)</div>
+            </div>
+
+            <div class="kpi-card">
+                <span class="kpi-emoji">👶</span>
+                <div class="kpi-label">보육아동 수</div>
+                <div class="kpi-value">941303</div>
+                <div class="kpi-unit">명</div>
+                <div class="kpi-change">▼ 35.2% (vs 2015)</div>
+            </div>
+
+            <div class="kpi-card">
+                <span class="kpi-emoji">🎨</span>
+                <div class="kpi-label">국공립</div>
+                <div class="kpi-value">0</div>
+                <div class="kpi-unit">개소</div>
+            </div>
+
+            <div class="kpi-card">
+                <span class="kpi-emoji">💼</span>
+                <div class="kpi-label">직장</div>
+                <div class="kpi-value">1,305</div>
+                <div class="kpi-unit">개소</div>
+            </div>
+        </div>
+
+        <div class="insight-box">
+            <div class="insight-title">
+                <span>💡</span>
+                <span>주요 발견</span>
+            </div>
+            <div class="insight-content">
+                <p>📉 <strong>10년 새 어린이집 절반으로 감소!</strong></p>
+                <p>2015년 대비 2024년 어린이집 수는 <strong>-35.6%</strong> 감소했습니다.
+                저출산의 영향으로 전국 어린이집이 2013년 43,770개소에서 2024년 27,387개소로 약 40% 가까이 줄어들었습니다.</p>
+
+                <p>👨‍👩‍👧 <strong>보육아동도 감소 추세</strong></p>
+                <p>2015년 약 145만명이었던 보육아동 수가 2024년에는 감소하여
+                <strong>-35.2%</strong>의 변화를 보였습니다.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">📈 어린이집 수 변화 추이</h2>
+            <div class="chart-container">
+                <div id="facilities-trend-chart"></div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">👶 보육아동 수 변화 추이</h2>
+            <div class="chart-container">
+                <div id="enrollment-trend-chart"></div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">🏫 어린이집 유형별 분포 (2024년)</h2>
+            <div class="chart-container">
+                <div id="facilities-type-chart"></div>
+            </div>
+        </div>
+
+        <div class="news-section">
+            <h2 class="news-title">📰 2025년 보육 정책 & 뉴스</h2>
+
+            <div class="news-item">
+                <h3>🌟 서울시 2025년 보육사업안내</h3>
+                <p>어린이집을 다니는 외국인 0~5세 아동에게 보육료 50%를 지원합니다. 취약보육 어린이집 수당 등이 인상되었으며,
+                장난감도서관 육아용품 및 장애영유아 장난감 대여기간도 변경되었습니다.</p>
+            </div>
+
+            <div class="news-item">
+                <h3>📝 2025년 보육사업안내 주요 개정사항</h3>
+                <p>어린이집의 안정적인 운영과 서비스의 질적 유지를 보장할 수 있도록 3년 이상의 계약 기간을 권장하며,
+                1분기 정기 운영위원회는 반드시 3월에 실시해야 합니다.</p>
+            </div>
+
+            <div class="news-item">
+                <h3>🏆 부영그룹 어린이집 66건 수상</h3>
+                <p>부영그룹이 운영 지원 중인 부영 사랑으로 어린이집이 2025년 교육부장관상, 국회의원상, 도지사상, 시장상 등
+                총 66건의 수상 실적을 달성했습니다. 전국 부영 아파트 단지 내에 임대료 없는 어린이집을 운영하며,
+                면제된 임대료는 행사비·교재비·견학비·특별활동비 등으로 사용되어 학부모들의 실질적인 보육비 부담을 줄여주고 있습니다.</p>
+            </div>
+
+            <div class="news-item">
+                <h3>📊 1인 가구 36% 역대 최고, 어린이집 10년 새 반토막</h3>
+                <p>1인 가구 비중이 36%를 넘어서며 가족 구조와 돌봄 체계가 빠르게 재편되고 있습니다.
+                전국 어린이집은 2013년 4만 3,770곳에서 지난해 2만 7,387곳으로 40% 가까이 줄었습니다.</p>
+            </div>
+        </div>
+
+        <div class="insight-box">
+            <div class="insight-title">
+                <span>🎯</span>
+                <span>데이터가 말하는 이야기</span>
+            </div>
+            <div class="insight-content">
+                <ul style="font-size: 1.2em; line-height: 2; padding-left: 30px;">
+                    <li>📉 <strong>저출산의 직격탄:</strong> 어린이집과 보육아동 모두 감소 추세</li>
+                    <li>🏛️ <strong>국공립 확대:</strong> 정부는 국공립 어린이집 확충 정책 추진 중</li>
+                    <li>💼 <strong>직장 어린이집:</strong> 일-가정 양립을 위한 직장 어린이집 증가 추세</li>
+                    <li>🌍 <strong>다문화 지원:</strong> 외국인 아동 보육료 지원 등 포용적 정책 확대</li>
+                    <li>⚖️ <strong>양극화 해소:</strong> 민간 의존도 낮추고 공공 보육 인프라 강화</li>
+                </ul>
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer-emoji">🌈 ✨ 🎈</div>
+            <p><strong>데이터 출처:</strong> KOSIS 국가통계포털 (교육부)</p>
+            <p><strong>리포트 생성:</strong> KOSIS Data Processor | Report #049</p>
+            <p style="margin-top: 20px;">Generated with Claude Code on 2025-12-15</p>
+        </footer>
+    </div>
+
+    <script>
+        // 어린이집 수 추이 차트
+        const facilitiesTrendSpec = {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "width": 700,
+            "height": 400,
+            "data": {
+                "values": [{"year": "2015", "value": 42517}, {"year": "2016", "value": 41084}, {"year": "2017", "value": 40238}, {"year": "2018", "value": 39171}, {"year": "2019", "value": 37371}, {"year": "2020", "value": 35352}, {"year": "2021", "value": 33246}, {"year": "2022", "value": 30923}, {"year": "2023", "value": 28954}, {"year": "2024", "value": 27387}]
+            },
+            "mark": {
+                "type": "line",
+                "point": {
+                    "filled": true,
+                    "size": 150
+                },
+                "strokeWidth": 4
+            },
+            "encoding": {
+                "x": {
+                    "field": "year",
+                    "type": "ordinal",
+                    "title": "연도",
+                    "axis": {
+                        "labelFontSize": 14,
+                        "titleFontSize": 16,
+                        "labelAngle": 0
+                    }
+                },
+                "y": {
+                    "field": "value",
+                    "type": "quantitative",
+                    "title": "어린이집 수 (개소)",
+                    "axis": {
+                        "labelFontSize": 14,
+                        "titleFontSize": 16,
+                        "format": ","
+                    }
+                },
+                "color": {
+                    "value": "#ff6b6b"
+                },
+                "tooltip": [
+                    {"field": "year", "type": "ordinal", "title": "연도"},
+                    {"field": "value", "type": "quantitative", "title": "개소", "format": ","}
+                ]
+            },
+            "config": {
+                "view": {"strokeWidth": 0},
+                "axis": {"grid": false}
+            }
+        };
+
+        // 보육아동 수 추이 차트
+        const enrollmentTrendSpec = {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "width": 700,
+            "height": 400,
+            "data": {
+                "values": [{"year": "2015", "value": 1452813}, {"year": "2016", "value": 1451215}, {"year": "2017", "value": 1450243}, {"year": "2018", "value": 1415742}, {"year": "2019", "value": 1365085}, {"year": "2020", "value": 1244396}, {"year": "2021", "value": 1184716}, {"year": "2022", "value": 1095450}, {"year": "2023", "value": 1011813}, {"year": "2024", "value": 941303}]
+            },
+            "mark": {
+                "type": "area",
+                "line": {
+                    "strokeWidth": 4
+                },
+                "point": {
+                    "filled": true,
+                    "size": 150
+                }
+            },
+            "encoding": {
+                "x": {
+                    "field": "year",
+                    "type": "ordinal",
+                    "title": "연도",
+                    "axis": {
+                        "labelFontSize": 14,
+                        "titleFontSize": 16,
+                        "labelAngle": 0
+                    }
+                },
+                "y": {
+                    "field": "value",
+                    "type": "quantitative",
+                    "title": "보육아동 수 (명)",
+                    "axis": {
+                        "labelFontSize": 14,
+                        "titleFontSize": 16,
+                        "format": ","
+                    }
+                },
+                "color": {
+                    "value": "#48dbfb"
+                },
+                "tooltip": [
+                    {"field": "year", "type": "ordinal", "title": "연도"},
+                    {"field": "value", "type": "quantitative", "title": "명", "format": ","}
+                ]
+            },
+            "config": {
+                "view": {"strokeWidth": 0},
+                "axis": {"grid": false}
+            }
+        };
+
+        // 어린이집 유형별 분포 차트
+        const facilitiesTypeData = [{"type": "\uad6d\u00b7\uacf5\ub9bd", "value": 6521}, {"type": "\uc0ac\ud68c\ubcf5\uc9c0\ubc95\uc778", "value": 1171}, {"type": "\ubc95\uc778\u00b7\ub2e8\uccb4 \ub4f1", "value": 507}, {"type": "\ubbfc\uac04", "value": 8181}, {"type": "\uac00\uc815", "value": 9586}, {"type": "\ud611\ub3d9", "value": 116}, {"type": "\uc9c1\uc7a5", "value": 1305}];
+
+        const facilitiesTypeSpec = {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "width": 700,
+            "height": 400,
+            "data": {
+                "values": facilitiesTypeData
+            },
+            "mark": {
+                "type": "bar",
+                "cornerRadiusEnd": 10
+            },
+            "encoding": {
+                "x": {
+                    "field": "type",
+                    "type": "nominal",
+                    "title": "어린이집 유형",
+                    "axis": {
+                        "labelFontSize": 14,
+                        "titleFontSize": 16,
+                        "labelAngle": -45
+                    },
+                    "sort": "-y"
+                },
+                "y": {
+                    "field": "value",
+                    "type": "quantitative",
+                    "title": "개소",
+                    "axis": {
+                        "labelFontSize": 14,
+                        "titleFontSize": 16,
+                        "format": ","
+                    }
+                },
+                "color": {
+                    "field": "type",
+                    "type": "nominal",
+                    "scale": {
+                        "range": ["#ff6b6b", "#feca57", "#48dbfb", "#1dd1a1", "#ff9ff3", "#a29bfe", "#fd79a8"]
+                    },
+                    "legend": null
+                },
+                "tooltip": [
+                    {"field": "type", "type": "nominal", "title": "유형"},
+                    {"field": "value", "type": "quantitative", "title": "개소", "format": ","}
+                ]
+            },
+            "config": {
+                "view": {"strokeWidth": 0},
+                "axis": {"grid": false}
+            }
+        };
+
+        // 차트 렌더링
+        vegaEmbed('#facilities-trend-chart', facilitiesTrendSpec);
+        vegaEmbed('#enrollment-trend-chart', enrollmentTrendSpec);
+        vegaEmbed('#facilities-type-chart', facilitiesTypeSpec);
+    </script>
+</body>
+</html>

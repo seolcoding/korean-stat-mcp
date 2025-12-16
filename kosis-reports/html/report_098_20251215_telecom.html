@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>한국 통신/5G 산업 트렌드 분석 보고서 #98</title>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #0a0e27 0%, #1a1e3e 50%, #0a0e27 100%);
+            color: #e0e0e0;
+            line-height: 1.6;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Network pattern background */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image:
+                radial-gradient(circle at 20% 30%, rgba(0, 255, 255, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(255, 0, 255, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #00ffff22, #ff00ff22);
+            border: 1px solid #00ffff44;
+            border-radius: 16px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 32px rgba(0, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .header h1 {
+            font-size: 2.8em;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, #00ffff, #ff00ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 40px rgba(0, 255, 255, 0.3);
+        }
+
+        .header .subtitle {
+            font-size: 1.2em;
+            color: #00ffff;
+            margin-bottom: 10px;
+        }
+
+        .header .date {
+            color: #888;
+            font-size: 0.9em;
+        }
+
+        .section {
+            background: rgba(26, 30, 62, 0.8);
+            border: 1px solid #00ffff33;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .section h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #00ffff;
+            border-bottom: 2px solid #ff00ff44;
+            padding-bottom: 10px;
+        }
+
+        .section h3 {
+            font-size: 1.4em;
+            margin: 25px 0 15px 0;
+            color: #ff00ff;
+        }
+
+        .insights {
+            background: rgba(0, 255, 255, 0.05);
+            border-left: 4px solid #00ffff;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .insights ul {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        .insights li {
+            margin: 10px 0;
+            color: #e0e0e0;
+        }
+
+        .chart-container {
+            margin: 30px 0;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 8px;
+            border: 1px solid #00ffff22;
+        }
+
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, rgba(0, 255, 255, 0.1), rgba(255, 0, 255, 0.1));
+            border: 1px solid #00ffff44;
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(0, 255, 255, 0.2);
+        }
+
+        .stat-card .number {
+            font-size: 2.5em;
+            font-weight: bold;
+            background: linear-gradient(135deg, #00ffff, #ff00ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin: 10px 0;
+        }
+
+        .stat-card .label {
+            color: #888;
+            font-size: 0.9em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 30px;
+            color: #666;
+            border-top: 1px solid #00ffff22;
+            margin-top: 40px;
+        }
+
+        .source {
+            font-size: 0.85em;
+            color: #666;
+            margin-top: 10px;
+            font-style: italic;
+        }
+
+        /* Glowing effect */
+        .glow {
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 class="glow">한국 통신/5G 산업 트렌드 분석</h1>
+            <div class="subtitle">Korea Telecommunications & 5G Industry Report #98</div>
+            <div class="date">Generated: 2025년 12월 15일</div>
+        </div>
+
+        <!-- Executive Summary -->
+        <div class="section">
+            <h2>Executive Summary</h2>
+            <div class="insights">
+                <h3>주요 발견사항</h3>
+                <ul>
+                    <li><strong>5G 가입자 폭발적 성장:</strong> 2024년 3월 기준 3,340만명, 전체 모바일 이용자의 50% 이상이 5G 사용</li>
+                    <li><strong>산업용 5G 확대:</strong> 35개 기업, 56개 사이트에 프라이빗 5G 주파수 할당 완료</li>
+                    <li><strong>AI 융합 가속화:</strong> SK텔레콤 MIT AI 컨소시엄 참여, Aster AI 어시스턴트 출시</li>
+                    <li><strong>6G 선제 대응:</strong> LG와 KT, 6G 연구 협약 체결 (2024년 8월)</li>
+                    <li><strong>안정적 시장 성장:</strong> 2025-2033 CAGR 3.23% 예상, 엔터프라이즈 부문 4.17% CAGR</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Market Overview -->
+        <div class="section">
+            <h2>시장 현황 및 트렌드</h2>
+
+            <h3>1. 5G 시장 성숙도</h3>
+            <p>한국은 2019년 세계 최초로 5G 상용화를 시작했으며, 2024년 4월부터 전국적인 5G 커버리지를 달성했습니다.
+            정부의 커버리지 의무화와 좁은 국토 면적 덕분에 세계에서 가장 높은 5G 보급률을 자랑합니다.</p>
+
+            <div class="stat-grid">
+                <div class="stat-card">
+                    <div class="label">5G 가입자</div>
+                    <div class="number">3,340만</div>
+                    <div class="source">2024년 3월 기준</div>
+                </div>
+                <div class="stat-card">
+                    <div class="label">5G 점유율</div>
+                    <div class="number">50%+</div>
+                    <div class="source">전체 모바일 사용자 대비</div>
+                </div>
+                <div class="stat-card">
+                    <div class="label">시장 CAGR</div>
+                    <div class="number">3.23%</div>
+                    <div class="source">2025-2033 예상</div>
+                </div>
+                <div class="stat-card">
+                    <div class="label">IoT/M2M CAGR</div>
+                    <div class="number">3.88%</div>
+                    <div class="source">2025-2030 예상</div>
+                </div>
+            </div>
+
+            <h3>2. 산업별 5G 활용</h3>
+            <div class="insights">
+                <ul>
+                    <li><strong>스마트 팩토리:</strong> 현대자동차, RedCap 5G 도입 후 연결성 관련 다운타임 제로 달성</li>
+                    <li><strong>헬스케어:</strong> 28GHz 대역 활용한 원격의료 서비스 확대 중</li>
+                    <li><strong>스마트시티:</strong> IoT 인프라 기반 스마트시티 이니셔티브 활발</li>
+                    <li><strong>물류/유통:</strong> AI 기반 어시스턴트와 5G 결합으로 효율성 증대</li>
+                </ul>
+            </div>
+
+            <h3>3. 최신 기술 동향 (2024-2025)</h3>
+            <div class="insights">
+                <ul>
+                    <li><strong>2025년 2월:</strong> 삼성-현대, 업계 최초 프라이빗 5G RedCap 시험 완료 (2026년 EV 생산 스케일링 목표)</li>
+                    <li><strong>2025년 2월:</strong> SK텔레콤, MIT 생성형 AI 컨소시엄 가입 및 Aster AI 북미 베타 출시</li>
+                    <li><strong>2024년 8월:</strong> LG-KT, 6G 연구 협력 협약 체결</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- KOSIS Data Analysis -->
+        <div class="section">
+            <h2>KOSIS 데이터 분석</h2>
+
+            <h3>ICT 산업 생산액 추이</h3>
+            <div class="chart-container">
+                <div id="chart1"></div>
+            </div>
+            <p class="source">출처: 과학기술정보통신부, ICT생산액(매출액) 통계</p>
+
+            <h3>ICT 산업 인력 현황</h3>
+            <div class="chart-container">
+                <div id="chart2"></div>
+            </div>
+            <p class="source">출처: 과학기술정보통신부, ICT산업 인력현황 통계</p>
+        </div>
+
+        <!-- Challenges -->
+        <div class="section">
+            <h2>당면 과제</h2>
+            <div class="insights">
+                <ul>
+                    <li><strong>서비스 품질:</strong> 초기 예상보다 느린 가입자 증가율 - 낮은 서비스 품질, 킬러 앱 부재가 원인</li>
+                    <li><strong>인프라 격차:</strong> 28GHz 대역 배치 지연으로 초광대역/저지연 서비스 제공 한계</li>
+                    <li><strong>시장 집중:</strong> SK텔레콤, KT, LG유플러스 3사 과점 구조</li>
+                    <li><strong>수익성:</strong> 높은 인프라 투자 대비 ARPU 증가 제한적</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Future Outlook -->
+        <div class="section">
+            <h2>향후 전망</h2>
+
+            <h3>성장 동력</h3>
+            <div class="insights">
+                <ul>
+                    <li><strong>엔터프라이즈 시장:</strong> 4.17% CAGR로 가장 빠른 성장 예상 (2025-2030)</li>
+                    <li><strong>모바일 데이터 수익:</strong> 5년 CAGR 5.6%, 5G 확산과 후불제 고객 증가 견인</li>
+                    <li><strong>AI/IoT 융합:</strong> Industry 4.0 규제 지원 및 AI 어시스턴트 확산</li>
+                    <li><strong>OTT/Pay-TV:</strong> 통신-콘텐츠 결합 서비스 성장</li>
+                </ul>
+            </div>
+
+            <h3>2030년까지 주요 목표</h3>
+            <div class="stat-grid">
+                <div class="stat-card">
+                    <div class="label">5G 인프라 투자</div>
+                    <div class="number">$2.1B</div>
+                    <div class="source">Korean New Deal 일환</div>
+                </div>
+                <div class="stat-card">
+                    <div class="label">6G 상용화 목표</div>
+                    <div class="number">2028-30</div>
+                    <div class="source">LG-KT 연구 협력</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>본 보고서는 KOSIS(국가통계포털) 데이터와 글로벌 텔레콤 시장 조사를 기반으로 작성되었습니다.</p>
+            <p class="source">Data Sources: KOSIS, Statista, Mordor Intelligence, GlobalData, Omdia</p>
+        </div>
+    </div>
+
+    <script>
+        // Chart 1: ICT Production Trend
+        const spec1 = {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "width": 700,
+            "height": 400,
+            "data": {
+                "values": [{"year": "2015", "category": "\uc815\ubcf4\ud1b5\uc2e0\ubc29\uc1a1\uae30\uae30", "value": 24.820398}, {"year": "2015", "category": "\uc815\ubcf4\ud1b5\uc2e0\uc751\uc6a9\uae30\ubc18\uae30\uae30", "value": 4.905094}, {"year": "2016", "category": "\uc815\ubcf4\ud1b5\uc2e0\ubc29\uc1a1\uae30\uae30", "value": 26.7245}, {"year": "2016", "category": "\uc815\ubcf4\ud1b5\uc2e0\uc751\uc6a9\uae30\ubc18\uae30\uae30", "value": 4.54713}, {"year": "2017", "category": "\uc815\ubcf4\ud1b5\uc2e0\ubc29\uc1a1\uae30\uae30", "value": 31.581485}, {"year": "2018", "category": "\uc815\ubcf4\ud1b5\uc2e0\ubc29\uc1a1\uae30\uae30", "value": 29.012679}, {"year": "2019", "category": "\uc815\ubcf4\ud1b5\uc2e0\ubc29\uc1a1\uae30\uae30", "value": 27.519877}, {"year": "2020", "category": "\uc815\ubcf4\ud1b5\uc2e0\ubc29\uc1a1\uae30\uae30", "value": 30.081593}, {"year": "2021", "category": "\uc815\ubcf4\ud1b5\uc2e0\ubc29\uc1a1\uae30\uae30", "value": 33.991149}, {"year": "2022", "category": "\uc815\ubcf4\ud1b5\uc2e0\ubc29\uc1a1\uae30\uae30", "value": 29.805649}]
+            },
+            "mark": {
+                "type": "line",
+                "point": true,
+                "strokeWidth": 3
+            },
+            "encoding": {
+                "x": {
+                    "field": "year",
+                    "type": "ordinal",
+                    "title": "연도",
+                    "axis": {"labelAngle": 0}
+                },
+                "y": {
+                    "field": "value",
+                    "type": "quantitative",
+                    "title": "생산액 (조원)"
+                },
+                "color": {
+                    "field": "category",
+                    "type": "nominal",
+                    "title": "분류",
+                    "scale": {
+                        "range": ["#00ffff", "#ff00ff", "#00ff00"]
+                    }
+                },
+                "tooltip": [
+                    {"field": "year", "type": "ordinal", "title": "연도"},
+                    {"field": "category", "type": "nominal", "title": "분류"},
+                    {"field": "value", "type": "quantitative", "title": "생산액(조원)", "format": ".2f"}
+                ]
+            },
+            "config": {
+                "background": "transparent",
+                "axis": {
+                    "labelColor": "#e0e0e0",
+                    "titleColor": "#00ffff",
+                    "gridColor": "#333",
+                    "domainColor": "#666"
+                },
+                "legend": {
+                    "labelColor": "#e0e0e0",
+                    "titleColor": "#00ffff"
+                },
+                "view": {
+                    "stroke": "transparent"
+                }
+            }
+        };
+
+        // Chart 2: Workforce Trend
+        const spec2 = {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "width": 700,
+            "height": 400,
+            "data": {
+                "values": [{"year": "2022", "workers": 1770207}, {"year": "2023", "workers": 1831793}]
+            },
+            "mark": {
+                "type": "bar",
+                "cornerRadiusEnd": 4
+            },
+            "encoding": {
+                "x": {
+                    "field": "year",
+                    "type": "ordinal",
+                    "title": "연도",
+                    "axis": {"labelAngle": 0}
+                },
+                "y": {
+                    "field": "workers",
+                    "type": "quantitative",
+                    "title": "인력 수 (명)"
+                },
+                "color": {
+                    "value": "#00ffff"
+                },
+                "tooltip": [
+                    {"field": "year", "type": "ordinal", "title": "연도"},
+                    {"field": "workers", "type": "quantitative", "title": "인력수", "format": ","}
+                ]
+            },
+            "config": {
+                "background": "transparent",
+                "axis": {
+                    "labelColor": "#e0e0e0",
+                    "titleColor": "#00ffff",
+                    "gridColor": "#333",
+                    "domainColor": "#666"
+                },
+                "view": {
+                    "stroke": "transparent"
+                }
+            }
+        };
+
+        vegaEmbed('#chart1', spec1);
+        vegaEmbed('#chart2', spec2);
+    </script>
+</body>
+</html>
