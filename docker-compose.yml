@@ -27,7 +27,7 @@ services:
       dockerfile: Dockerfile
     container_name: kosis-mcp
     ports:
-      - "8000:8000"
+      - "8001:8000"
     environment:
       # FastMCP
       - FASTMCP_STATELESS_HTTP=true
