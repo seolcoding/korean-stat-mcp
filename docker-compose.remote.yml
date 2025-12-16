@@ -1,0 +1,54 @@
+# Docker Compose for Remote Server Deployment
+# Uses Tailscale to connect to Mac's PostgreSQL
+#
+# Usage:
+#   docker compose -f docker-compose.remote.yml up -d
+#
+# Prerequisites:
+#   - Tailscale installed and connected on both machines
+#   - Mac PostgreSQL running (docker compose up postgres)
+#   - .env.remote file configured
+
+services:
+  kosis-mcp:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: kosis-mcp
+    ports:
+      - "8001:8000"
+    environment:
+      # FastMCP
+      - FASTMCP_STATELESS_HTTP=true
+      # KOSIS API
+      - KOSIS_API_KEY=${KOSIS_API_KEY}
+      # PostgreSQL via Tailscale (Mac's DB)
+      - DATABASE_URL=postgresql://kosis:${POSTGRES_PASSWORD:-kosis_dev_password}@${TAILSCALE_DB_HOST}:5432/kosis
+      # Cloudflare R2
+      - R2_ACCOUNT_ID=${R2_ACCOUNT_ID:-}
+      - R2_ACCESS_KEY_ID=${R2_ACCESS_KEY_ID:-}
+      - R2_SECRET_ACCESS_KEY=${R2_SECRET_ACCESS_KEY:-}
+      - R2_BUCKET_NAME=${R2_BUCKET_NAME:-kosis-assets}
+      - R2_PUBLIC_URL=${R2_PUBLIC_URL:-}
+      - R2_REGION=${R2_REGION:-auto}
+      # OpenAI (for embeddings)
+      - OPENAI_API_KEY=${OPENAI_API_KEY:-}
+      # Artifact storage
+      - ARTIFACT_STORAGE=${ARTIFACT_STORAGE:-local}
+      - KOSIS_ARTIFACTS_DIR=/app/artifacts
+    volumes:
+      - ./artifacts:/app/artifacts
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+    # Tailscale network access
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+networks:
+  default:
+    name: kosis-network

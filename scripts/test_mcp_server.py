@@ -64,24 +64,24 @@ class MCPServerTester:
             self.log("Health Check", False, f"요청 실패: {e}")
             return False
 
-    async def test_root(self) -> bool:
-        """2. Root Endpoint 테스트."""
+    async def test_info(self) -> bool:
+        """2. Info Endpoint 테스트."""
         try:
-            resp = await self.client.get(f"{self.base_url}/")
+            resp = await self.client.get(f"{self.base_url}/info")
             data = resp.json()
 
             if data.get("service") == "KOSIS MCP Server":
-                self.log("Root Endpoint", True, f"버전 {data.get('version')}", data)
+                self.log("Info Endpoint", True, f"버전 {data.get('version')}", data)
                 return True
             else:
-                self.log("Root Endpoint", False, f"예상치 못한 응답: {data}")
+                self.log("Info Endpoint", False, f"예상치 못한 응답: {data}")
                 return False
         except Exception as e:
-            self.log("Root Endpoint", False, f"요청 실패: {e}")
+            self.log("Info Endpoint", False, f"요청 실패: {e}")
             return False
 
     async def mcp_call(self, method: str, params: dict = None) -> dict | None:
-        """MCP JSON-RPC 호출."""
+        """MCP JSON-RPC 호출 (StreamableHTTP 프로토콜)."""
         payload = {
             "jsonrpc": "2.0",
             "id": 1,
@@ -90,31 +90,36 @@ class MCPServerTester:
         if params:
             payload["params"] = params
 
-        # FastMCP HTTP 모드는 SSE 스트리밍 사용
-        headers = {"Content-Type": "application/json"}
+        # StreamableHTTP 프로토콜 필수 헤더
+        headers = {
+            "Content-Type": "application/json",
+            "Accept": "application/json, text/event-stream",
+        }
 
         try:
-            # /mcp/sse 엔드포인트 시도 (FastMCP stateless HTTP)
+            # MCP 엔드포인트는 루트 경로 "/"
             resp = await self.client.post(
-                f"{self.base_url}/mcp/sse",
+                f"{self.base_url}/",
                 json=payload,
                 headers=headers
             )
-            if resp.status_code == 200:
-                # SSE 응답 파싱
-                content = resp.text
-                for line in content.split("\n"):
-                    if line.startswith("data: "):
-                        return json.loads(line[6:])
 
-            # 일반 JSON-RPC 엔드포인트 시도
-            resp = await self.client.post(
-                f"{self.base_url}/mcp",
-                json=payload,
-                headers=headers
-            )
-            if resp.status_code == 200 and resp.text:
-                return resp.json()
+            if resp.status_code == 200:
+                content_type = resp.headers.get("content-type", "")
+
+                # SSE 응답 처리
+                if "text/event-stream" in content_type:
+                    content = resp.text
+                    for line in content.split("\n"):
+                        if line.startswith("data: "):
+                            return json.loads(line[6:])
+
+                # JSON 응답 처리
+                if resp.text:
+                    return resp.json()
+            else:
+                print(f"  [DEBUG] MCP response status: {resp.status_code}")
+                print(f"  [DEBUG] MCP response body: {resp.text[:200]}")
 
         except Exception as e:
             print(f"  [DEBUG] MCP call error: {e}")
@@ -203,7 +208,7 @@ class MCPServerTester:
 
         tests = [
             ("Health Check", self.test_health),
-            ("Root Endpoint", self.test_root),
+            ("Info Endpoint", self.test_info),
             ("Database Query", self.test_database_query),
             ("Static Files", self.test_static_files),
             ("MCP tools/list", self.test_mcp_tools_list),
