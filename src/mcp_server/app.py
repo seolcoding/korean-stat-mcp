@@ -138,8 +138,8 @@ def create_app() -> FastAPI:
         else:
             logger.info("Mounting MCP server in standard mode")
 
-        # Mount at /mcp path (path="/" since already mounted at /mcp)
-        mcp_app = mcp.http_app(path="/")
+        # Mount MCP app - use stateless_http parameter
+        mcp_app = mcp.http_app(stateless_http=stateless)
         api.mount("/mcp", mcp_app)
 
     except Exception as e:
