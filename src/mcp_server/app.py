@@ -32,39 +32,11 @@ from starlette.requests import Request
 logger = logging.getLogger(__name__)
 
 
-async def health_check(request: Request) -> JSONResponse:
-    """Health check endpoint for container orchestration."""
-    status = {"status": "healthy", "service": "kosis-mcp"}
-
-    # Check database if available
-    try:
-        from kosis_tools.database import check_database_health
-        db_health = await check_database_health()
-        status["database"] = db_health
-    except Exception as e:
-        status["database"] = {"status": "unavailable", "error": str(e)}
-
-    return JSONResponse(status)
-
-
-async def root(request: Request) -> JSONResponse:
-    """Root endpoint with API info."""
-    return JSONResponse({
-        "service": "KOSIS MCP Server",
-        "version": "0.2.0",
-        "description": "MCP server for Korean Statistical Data",
-        "endpoints": {
-            "health": "/health",
-            "mcp": "/mcp (MCP Streamable HTTP protocol)",
-        },
-    })
-
-
 def create_app() -> Starlette:
-    """Create the Starlette application with MCP server.
+    """Create the application with MCP server as main app.
 
-    Returns:
-        Starlette application instance.
+    FastMCP's http_app() is the main app, with custom routes added via
+    custom_route decorator or as additional routes.
     """
     from .server import mcp
 
@@ -78,9 +50,6 @@ def create_app() -> Starlette:
     else:
         logger.info("Creating MCP server in standard mode")
 
-    # Create MCP app (mounted at /mcp, so internal path is "/")
-    mcp_app = mcp.http_app(stateless_http=stateless)
-
     # Setup artifacts directory
     artifacts_dir = os.environ.get("KOSIS_ARTIFACTS_DIR", "/tmp/kosis_artifacts")
     artifacts_path = Path(artifacts_dir)
@@ -88,12 +57,54 @@ def create_app() -> Starlette:
         (artifacts_path / subdir).mkdir(parents=True, exist_ok=True)
     logger.info(f"Static files mounted at /artifacts -> {artifacts_path}")
 
-    # Create custom lifespan that initializes DB
-    @asynccontextmanager
-    async def lifespan(app: Starlette) -> AsyncGenerator:
-        # Startup
-        logger.info("KOSIS MCP Server starting up...")
+    # Add custom routes to the MCP server
+    @mcp.custom_route("/", methods=["GET"])
+    async def root_handler(request: Request) -> JSONResponse:
+        return JSONResponse({
+            "service": "KOSIS MCP Server",
+            "version": "0.2.0",
+            "description": "MCP server for Korean Statistical Data",
+            "endpoints": {
+                "health": "/health",
+                "mcp": "/ (MCP Streamable HTTP protocol - POST)",
+            },
+        })
 
+    @mcp.custom_route("/health", methods=["GET"])
+    async def health_handler(request: Request) -> JSONResponse:
+        status = {"status": "healthy", "service": "kosis-mcp"}
+        try:
+            from kosis_tools.database import check_database_health
+            db_health = await check_database_health()
+            status["database"] = db_health
+        except Exception as e:
+            status["database"] = {"status": "unavailable", "error": str(e)}
+        return JSONResponse(status)
+
+    # Create MCP app as main app with custom routes
+    mcp_app = mcp.http_app(
+        stateless_http=stateless,
+        routes=[
+            Mount("/artifacts", app=StaticFiles(directory=str(artifacts_path)), name="artifacts"),
+        ],
+        middleware=[
+            Middleware(
+                CORSMiddleware,
+                allow_origins=["*"],
+                allow_credentials=True,
+                allow_methods=["*"],
+                allow_headers=["*"],
+            )
+        ],
+    )
+
+    # Wrap with DB initialization lifespan
+    original_lifespan = mcp_app.lifespan
+
+    @asynccontextmanager
+    async def custom_lifespan(app):
+        # Initialize DB
+        logger.info("KOSIS MCP Server starting up...")
         database_url = os.environ.get("DATABASE_URL")
         if database_url:
             try:
@@ -102,11 +113,12 @@ def create_app() -> Starlette:
                 logger.info("Database pool initialized")
             except Exception as e:
                 logger.warning(f"Database initialization failed: {e}")
-                logger.warning("Hybrid search will not be available")
 
-        yield
+        # Call original MCP lifespan
+        async with original_lifespan(app):
+            yield
 
-        # Shutdown
+        # Shutdown DB
         logger.info("KOSIS MCP Server shutting down...")
         try:
             from kosis_tools.database import DatabasePool
@@ -114,33 +126,8 @@ def create_app() -> Starlette:
         except Exception:
             pass
 
-    # Build routes - MCP at /mcp, custom routes at root
-    routes = [
-        Route("/", root),
-        Route("/health", health_check),
-        Mount("/artifacts", app=StaticFiles(directory=str(artifacts_path)), name="artifacts"),
-        Mount("/mcp", app=mcp_app),
-    ]
-
-    # CORS middleware
-    middleware = [
-        Middleware(
-            CORSMiddleware,
-            allow_origins=["*"],
-            allow_credentials=True,
-            allow_methods=["*"],
-            allow_headers=["*"],
-        )
-    ]
-
-    # Create Starlette app with MCP lifespan
-    app = Starlette(
-        routes=routes,
-        middleware=middleware,
-        lifespan=lifespan,
-    )
-
-    return app
+    mcp_app.lifespan = custom_lifespan
+    return mcp_app
 
 
 # Create application instance
