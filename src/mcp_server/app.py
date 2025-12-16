@@ -98,12 +98,10 @@ def create_app() -> Starlette:
         allow_headers=["*"],
     )
 
-    # Wrap with DB initialization lifespan
-    original_lifespan = mcp_app.lifespan
+    # Add startup event for DB initialization
+    original_startup = mcp_app.on_startup if hasattr(mcp_app, 'on_startup') else []
 
-    @asynccontextmanager
-    async def custom_lifespan(app):
-        # Initialize DB
+    async def init_database():
         logger.info("KOSIS MCP Server starting up...")
         database_url = os.environ.get("DATABASE_URL")
         if database_url:
@@ -114,11 +112,7 @@ def create_app() -> Starlette:
             except Exception as e:
                 logger.warning(f"Database initialization failed: {e}")
 
-        # Call original MCP lifespan
-        async with original_lifespan(app):
-            yield
-
-        # Shutdown DB
+    async def close_database():
         logger.info("KOSIS MCP Server shutting down...")
         try:
             from kosis_tools.database import DatabasePool
@@ -126,7 +120,9 @@ def create_app() -> Starlette:
         except Exception:
             pass
 
-    mcp_app.lifespan = custom_lifespan
+    mcp_app.add_event_handler("startup", init_database)
+    mcp_app.add_event_handler("shutdown", close_database)
+
     return mcp_app
 
 
