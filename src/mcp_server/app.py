@@ -81,21 +81,21 @@ def create_app() -> Starlette:
             status["database"] = {"status": "unavailable", "error": str(e)}
         return JSONResponse(status)
 
-    # Create MCP app as main app with custom routes
-    mcp_app = mcp.http_app(
-        stateless_http=stateless,
-        routes=[
-            Mount("/artifacts", app=StaticFiles(directory=str(artifacts_path)), name="artifacts"),
-        ],
-        middleware=[
-            Middleware(
-                CORSMiddleware,
-                allow_origins=["*"],
-                allow_credentials=True,
-                allow_methods=["*"],
-                allow_headers=["*"],
-            )
-        ],
+    # Create MCP app as main app
+    mcp_app = mcp.http_app(stateless_http=stateless)
+
+    # Add static files route for artifacts
+    mcp_app.routes.append(
+        Mount("/artifacts", app=StaticFiles(directory=str(artifacts_path)), name="artifacts")
+    )
+
+    # Add CORS middleware
+    mcp_app.add_middleware(
+        CORSMiddleware,
+        allow_origins=["*"],
+        allow_credentials=True,
+        allow_methods=["*"],
+        allow_headers=["*"],
     )
 
     # Wrap with DB initialization lifespan
