@@ -57,15 +57,16 @@ def create_app() -> Starlette:
         (artifacts_path / subdir).mkdir(parents=True, exist_ok=True)
     logger.info(f"Static files mounted at /artifacts -> {artifacts_path}")
 
-    # Add custom routes to the MCP server
-    @mcp.custom_route("/", methods=["GET"])
-    async def root_handler(request: Request) -> JSONResponse:
+    # Add custom routes to the MCP server (avoid "/" to not interfere with MCP)
+    @mcp.custom_route("/info", methods=["GET"])
+    async def info_handler(request: Request) -> JSONResponse:
         return JSONResponse({
             "service": "KOSIS MCP Server",
             "version": "0.2.0",
             "description": "MCP server for Korean Statistical Data",
             "endpoints": {
                 "health": "/health",
+                "info": "/info",
                 "mcp": "/ (MCP Streamable HTTP protocol - POST)",
             },
         })
