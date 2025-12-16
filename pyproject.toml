@@ -37,9 +37,9 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/sdh/kosis-mcp"
-Documentation = "https://github.com/sdh/kosis-mcp#readme"
-Repository = "https://github.com/sdh/kosis-mcp"
+Homepage = "https://github.com/seolcoding/kosis-mcp"
+Documentation = "https://github.com/seolcoding/kosis-mcp#readme"
+Repository = "https://github.com/seolcoding/kosis-mcp"
 
 [project.scripts]
 kosis-mcp = "mcp_server.server:main"

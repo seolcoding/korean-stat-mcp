@@ -122,7 +122,7 @@ volumes:
 ## Directory Structure
 
 ```
-kosis-data-processor/
+kosis-mcp/
 ├── docker-compose.yml
 ├── .env                          # API 키, DB 비밀번호
 │

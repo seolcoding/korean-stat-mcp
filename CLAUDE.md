@@ -123,7 +123,7 @@
 ## 디렉토리 구조
 
 ```
-kosis-data-processor/
+kosis-mcp/
 ├── src/
 │   ├── mcp_server/
 │   │   ├── server.py              # MCP 서버 (도구 정의)

@@ -348,7 +348,7 @@ CREATE TABLE IF NOT EXISTS kosis_tables (
 ```bash
 # 1. 저장소 클론 및 환경 설정
 git clone <repo>
-cd kosis-data-processor
+cd kosis-mcp
 cp .env.example .env
 # .env 파일 편집
 

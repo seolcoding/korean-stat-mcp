@@ -225,7 +225,7 @@ data/metadata_api/
 
 ```bash
 # crontab 예시: 매월 1일 새벽 3시
-0 3 1 * * cd /path/to/kosis-data-processor && ./scripts/update_metadata.sh
+0 3 1 * * cd /path/to/kosis-mcp && ./scripts/update_metadata.sh
 ```
 
 ### update_metadata.sh
