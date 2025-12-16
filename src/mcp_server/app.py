@@ -45,6 +45,26 @@ def create_app() -> Starlette:
         "true", "1", "yes"
     )
 
+    # Initialize database pool at module load time (not just on startup event)
+    database_url = os.environ.get("DATABASE_URL")
+    if database_url:
+        import asyncio
+        from kosis_tools.database import DatabasePool
+
+        async def _init_db():
+            try:
+                await DatabasePool.initialize(database_url)
+                logger.info(f"Database pool initialized: {database_url.split('@')[1] if '@' in database_url else 'configured'}")
+            except Exception as e:
+                logger.warning(f"Database initialization failed: {e}")
+
+        # Run in event loop if available, otherwise create new one
+        try:
+            loop = asyncio.get_running_loop()
+            loop.create_task(_init_db())
+        except RuntimeError:
+            asyncio.run(_init_db())
+
     if stateless:
         logger.info("Creating MCP server in stateless HTTP mode")
     else:
