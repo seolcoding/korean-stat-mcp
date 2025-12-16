@@ -82,8 +82,8 @@ def create_app() -> Starlette:
             status["database"] = {"status": "unavailable", "error": str(e)}
         return JSONResponse(status)
 
-    # Create MCP app as main app
-    mcp_app = mcp.http_app(stateless_http=stateless)
+    # Create MCP app as main app with explicit root path
+    mcp_app = mcp.http_app(path="/", stateless_http=stateless)
 
     # Add static files route for artifacts
     mcp_app.routes.append(
