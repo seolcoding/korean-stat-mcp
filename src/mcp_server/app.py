@@ -15,138 +15,132 @@ Usage:
 """
 
 import os
+import json
 import logging
 from contextlib import asynccontextmanager
 from pathlib import Path
 from typing import AsyncGenerator
 
-from fastapi import FastAPI
-from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import JSONResponse
-from fastapi.staticfiles import StaticFiles
+from starlette.applications import Starlette
+from starlette.middleware import Middleware
+from starlette.middleware.cors import CORSMiddleware
+from starlette.responses import JSONResponse
+from starlette.routing import Route, Mount
+from starlette.staticfiles import StaticFiles
+from starlette.requests import Request
 
 logger = logging.getLogger(__name__)
 
 
-@asynccontextmanager
-async def lifespan(app: FastAPI) -> AsyncGenerator:
-    """Application lifespan handler for startup/shutdown."""
-    # Startup
-    logger.info("KOSIS MCP Server starting up...")
+async def health_check(request: Request) -> JSONResponse:
+    """Health check endpoint for container orchestration."""
+    status = {"status": "healthy", "service": "kosis-mcp"}
 
-    # Initialize database pool if DATABASE_URL is set
-    database_url = os.environ.get("DATABASE_URL")
-    if database_url:
-        try:
-            from kosis_tools.database import DatabasePool
-            await DatabasePool.initialize(database_url)
-            logger.info("Database pool initialized")
-        except Exception as e:
-            logger.warning(f"Database initialization failed: {e}")
-            logger.warning("Hybrid search will not be available")
-
-    yield
-
-    # Shutdown
-    logger.info("KOSIS MCP Server shutting down...")
+    # Check database if available
     try:
-        from kosis_tools.database import DatabasePool
-        await DatabasePool.close()
-    except Exception:
-        pass
+        from kosis_tools.database import check_database_health
+        db_health = await check_database_health()
+        status["database"] = db_health
+    except Exception as e:
+        status["database"] = {"status": "unavailable", "error": str(e)}
+
+    return JSONResponse(status)
 
 
-def create_app() -> FastAPI:
-    """Create the FastAPI application with MCP server mounted.
+async def root(request: Request) -> JSONResponse:
+    """Root endpoint with API info."""
+    return JSONResponse({
+        "service": "KOSIS MCP Server",
+        "version": "0.2.0",
+        "description": "MCP server for Korean Statistical Data",
+        "endpoints": {
+            "health": "/health",
+            "mcp": "/mcp (MCP Streamable HTTP protocol)",
+        },
+    })
+
+
+def create_app() -> Starlette:
+    """Create the Starlette application with MCP server.
 
     Returns:
-        FastAPI application instance.
+        Starlette application instance.
     """
-    # Create FastAPI app
-    api = FastAPI(
-        title="KOSIS MCP Server",
-        description="MCP server for Korean Statistical Data (KOSIS) API",
-        version="0.2.0",
+    from .server import mcp
+
+    # Check if stateless HTTP mode is enabled
+    stateless = os.environ.get("FASTMCP_STATELESS_HTTP", "").lower() in (
+        "true", "1", "yes"
+    )
+
+    if stateless:
+        logger.info("Creating MCP server in stateless HTTP mode")
+    else:
+        logger.info("Creating MCP server in standard mode")
+
+    # Create MCP app (mounted at /mcp, so internal path is "/")
+    mcp_app = mcp.http_app(stateless_http=stateless)
+
+    # Setup artifacts directory
+    artifacts_dir = os.environ.get("KOSIS_ARTIFACTS_DIR", "/tmp/kosis_artifacts")
+    artifacts_path = Path(artifacts_dir)
+    for subdir in ["charts", "reports", "data"]:
+        (artifacts_path / subdir).mkdir(parents=True, exist_ok=True)
+    logger.info(f"Static files mounted at /artifacts -> {artifacts_path}")
+
+    # Create custom lifespan that initializes DB
+    @asynccontextmanager
+    async def lifespan(app: Starlette) -> AsyncGenerator:
+        # Startup
+        logger.info("KOSIS MCP Server starting up...")
+
+        database_url = os.environ.get("DATABASE_URL")
+        if database_url:
+            try:
+                from kosis_tools.database import DatabasePool
+                await DatabasePool.initialize(database_url)
+                logger.info("Database pool initialized")
+            except Exception as e:
+                logger.warning(f"Database initialization failed: {e}")
+                logger.warning("Hybrid search will not be available")
+
+        yield
+
+        # Shutdown
+        logger.info("KOSIS MCP Server shutting down...")
+        try:
+            from kosis_tools.database import DatabasePool
+            await DatabasePool.close()
+        except Exception:
+            pass
+
+    # Build routes - MCP at /mcp, custom routes at root
+    routes = [
+        Route("/", root),
+        Route("/health", health_check),
+        Mount("/artifacts", app=StaticFiles(directory=str(artifacts_path)), name="artifacts"),
+        Mount("/mcp", app=mcp_app),
+    ]
+
+    # CORS middleware
+    middleware = [
+        Middleware(
+            CORSMiddleware,
+            allow_origins=["*"],
+            allow_credentials=True,
+            allow_methods=["*"],
+            allow_headers=["*"],
+        )
+    ]
+
+    # Create Starlette app with MCP lifespan
+    app = Starlette(
+        routes=routes,
+        middleware=middleware,
         lifespan=lifespan,
     )
 
-    # CORS middleware
-    api.add_middleware(
-        CORSMiddleware,
-        allow_origins=["*"],  # Configure for production
-        allow_credentials=True,
-        allow_methods=["*"],
-        allow_headers=["*"],
-    )
-
-    # Health check endpoint
-    @api.get("/health")
-    async def health_check():
-        """Health check endpoint for container orchestration."""
-        status = {"status": "healthy", "service": "kosis-mcp"}
-
-        # Check database if available
-        try:
-            from kosis_tools.database import check_database_health
-            db_health = await check_database_health()
-            status["database"] = db_health
-        except Exception as e:
-            status["database"] = {"status": "unavailable", "error": str(e)}
-
-        return JSONResponse(status)
-
-    @api.get("/")
-    async def root():
-        """Root endpoint with API info."""
-        return {
-            "service": "KOSIS MCP Server",
-            "version": "0.2.0",
-            "description": "MCP server for Korean Statistical Data",
-            "endpoints": {
-                "health": "/health",
-                "mcp": "/mcp (MCP protocol)",
-            },
-        }
-
-    # Mount static files for artifacts
-    artifacts_dir = os.environ.get("KOSIS_ARTIFACTS_DIR", "/tmp/kosis_artifacts")
-    artifacts_path = Path(artifacts_dir)
-
-    # Create artifact directories if they don't exist
-    for subdir in ["charts", "reports", "data"]:
-        (artifacts_path / subdir).mkdir(parents=True, exist_ok=True)
-
-    # Mount static files
-    api.mount(
-        "/artifacts",
-        StaticFiles(directory=str(artifacts_path)),
-        name="artifacts"
-    )
-    logger.info(f"Static files mounted at /artifacts -> {artifacts_path}")
-
-    # Mount MCP server
-    try:
-        from .server import mcp
-
-        # Check if stateless HTTP mode is enabled
-        stateless = os.environ.get("FASTMCP_STATELESS_HTTP", "").lower() in (
-            "true", "1", "yes"
-        )
-
-        if stateless:
-            logger.info("Mounting MCP server in stateless HTTP mode")
-        else:
-            logger.info("Mounting MCP server in standard mode")
-
-        # Mount MCP app - use stateless_http parameter
-        mcp_app = mcp.http_app(stateless_http=stateless)
-        api.mount("/mcp", mcp_app)
-
-    except Exception as e:
-        logger.error(f"Failed to mount MCP server: {e}")
-        raise
-
-    return api
+    return app
 
 
 # Create application instance
