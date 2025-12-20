@@ -6,8 +6,21 @@ KOSIS API 에러만 기록하는 테스트.
 실시간으로 결과 파일 업데이트.
 
 Usage:
+    # 전체 테스트
     nohup uv run python scripts/test_errors_only.py &
     tail -f test_errors.log
+
+    # 이전 테스트에서 이어서 (테스트된 테이블 스킵)
+    uv run python scripts/test_errors_only.py --resume
+
+    # 실패한 테이블만 재시도
+    uv run python scripts/test_errors_only.py --retry-errors
+
+Options:
+    --resume        이전 결과에서 이어서 테스트
+    --retry-errors  이전 실패한 테이블만 재시도
+    --parallel N    동시 실행 수 (기본 20)
+    --output FILE   결과 파일 (기본 test_errors_result.json)
 """
 
 import asyncio
@@ -57,9 +70,10 @@ class ErrorRecord:
 class ErrorOnlyTester:
     """에러만 기록하는 테스터."""
 
-    def __init__(self, metadata_path: str, output_path: str = "test_errors_result.json"):
+    def __init__(self, metadata_path: str, output_path: str = "test_errors_result.json", input_path: str = None):
         self.metadata_path = Path(metadata_path)
         self.output_path = Path(output_path)
+        self.input_path = Path(input_path) if input_path else self.output_path
         self.tables: List[Dict] = []
         self.client = StatisticsData()
         self.meta_client = TableMetadata(self.client.config)
@@ -79,8 +93,21 @@ class ErrorOnlyTester:
         }
         self.lock = asyncio.Lock()
 
-    def load_metadata(self, limit: int = None, offset: int = 0) -> None:
-        """메타데이터 로드."""
+    def load_metadata(
+        self,
+        limit: int = None,
+        offset: int = 0,
+        resume: bool = False,
+        retry_errors: bool = False
+    ) -> None:
+        """메타데이터 로드.
+
+        Args:
+            limit: 테스트할 테이블 수 제한
+            offset: 시작 위치
+            resume: True면 이전 결과 로드하고 성공한 테이블 스킵
+            retry_errors: True면 이전 실패한 테이블만 재시도
+        """
         logger.info(f"메타데이터 로드: {self.metadata_path}")
         with open(self.metadata_path, "r", encoding="utf-8") as f:
             data = json.load(f)
@@ -92,6 +119,41 @@ class ErrorOnlyTester:
         else:
             raise ValueError(f"알 수 없는 메타데이터 형식")
 
+        # 이전 결과에서 성공한 테이블 ID 로드
+        skip_table_ids = set()
+        retry_table_ids = set()
+
+        if (resume or retry_errors) and self.input_path.exists():
+            logger.info(f"이전 결과 로드: {self.input_path}")
+            with open(self.input_path, "r", encoding="utf-8") as f:
+                prev_results = json.load(f)
+
+            # 실패한 테이블 ID 추출
+            for err in prev_results.get("errors", []):
+                retry_table_ids.add(err["tbl_id"])
+
+            if retry_errors:
+                # retry_errors 모드: 실패한 테이블만 선택
+                all_tables = [t for t in all_tables if t["tbl_id"] in retry_table_ids]
+                logger.info(f"이전 실패 테이블 {len(all_tables)}개만 재시도")
+            elif resume:
+                # resume 모드: 테스트된 수 만큼 skip
+                tested_count = prev_results.get("tested", 0)
+                if tested_count > 0:
+                    all_tables = all_tables[tested_count:]
+                    # 이전 결과 유지
+                    self.results["tested"] = prev_results.get("tested", 0)
+                    self.results["success"] = prev_results.get("success", 0)
+                    self.results["failed"] = prev_results.get("failed", 0)
+                    self.results["meta_fail"] = prev_results.get("meta_fail", 0)
+                    self.results["errors"] = prev_results.get("errors", [])
+                    # by_period 복원
+                    for k, v in prev_results.get("by_period", {}).items():
+                        self.results["by_period"][k] = v
+                    for k, v in prev_results.get("by_error_type", {}).items():
+                        self.results["by_error_type"][k] = v
+                    logger.info(f"이전 진행 상황 복원: {tested_count}개 완료, 나머지 {len(all_tables)}개 테스트")
+
         # offset과 limit 적용
         if offset > 0:
             all_tables = all_tables[offset:]
@@ -99,7 +161,7 @@ class ErrorOnlyTester:
             all_tables = all_tables[:limit]
 
         self.tables = all_tables
-        self.results["total"] = len(self.tables)
+        self.results["total"] = len(self.tables) + self.results.get("tested", 0)
         logger.info(f"테이블 {len(self.tables)}개 로드 (offset={offset})")
 
     async def test_single_table(self, table: Dict) -> bool:
@@ -246,6 +308,12 @@ async def main():
     parser.add_argument("--parallel", type=int, default=20, help="동시 실행 수")
     parser.add_argument("--output", default="test_errors_result.json", help="결과 파일")
     parser.add_argument("--save-interval", type=int, default=500, help="저장 간격")
+    parser.add_argument("--resume", action="store_true",
+                        help="이전 결과에서 이어서 테스트 (테스트된 테이블 스킵)")
+    parser.add_argument("--retry-errors", action="store_true",
+                        help="이전 실패한 테이블만 재시도")
+    parser.add_argument("--input", default="test_errors_result.json",
+                        help="이전 결과 파일 (--resume, --retry-errors용)")
 
     args = parser.parse_args()
 
@@ -255,8 +323,13 @@ async def main():
         logger.error(f"메타데이터 파일 없음: {metadata_path}")
         sys.exit(1)
 
-    tester = ErrorOnlyTester(str(metadata_path), args.output)
-    tester.load_metadata(limit=args.limit, offset=args.offset)
+    tester = ErrorOnlyTester(str(metadata_path), args.output, args.input)
+    tester.load_metadata(
+        limit=args.limit,
+        offset=args.offset,
+        resume=args.resume,
+        retry_errors=args.retry_errors
+    )
 
     await tester.run_tests(
         max_concurrent=args.parallel,

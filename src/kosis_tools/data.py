@@ -305,11 +305,36 @@ class StatisticsData(KosisBaseClient):
         logger.debug(f"PRD_SE 변환: '{korean_prd_se}' -> '{actual_prd_se}'")
 
         # 기간 결정
-        def normalize_period(p: str) -> str:
-            """기간 문자열에서 점(.)을 제거하여 YYYYMM 또는 YYYY 형식으로 변환."""
-            if p:
-                return p.replace(".", "")
-            return p
+        def normalize_period(p: str, period_type: str = "Y") -> str:
+            """
+            기간 문자열을 API 형식으로 변환.
+
+            KOSIS 메타데이터 형식:
+            - 분기: "2025 3/4" → "202503" (Q3)
+            - 반기: "2025 1/2" → "202501" (H1)
+            - 월간: "2025.01" → "202501"
+            - 연간: "2025" → "2025"
+            """
+            if not p:
+                return p
+
+            # 분기 형식: "YYYY Q/4" → "YYYYQQ"
+            import re
+            quarter_match = re.match(r"(\d{4})\s*(\d)/4", p)
+            if quarter_match:
+                year = quarter_match.group(1)
+                quarter = quarter_match.group(2)
+                return f"{year}{quarter.zfill(2)}"
+
+            # 반기 형식: "YYYY H/2" → "YYYYHH"
+            semi_match = re.match(r"(\d{4})\s*(\d)/2", p)
+            if semi_match:
+                year = semi_match.group(1)
+                half = semi_match.group(2)
+                return f"{year}{half.zfill(2)}"
+
+            # 기존 형식: 점(.) 제거
+            return p.replace(".", "")
 
         strt_prd = normalize_period(info.get("STRT_PRD_DE", ""))
         end_prd = normalize_period(info.get("END_PRD_DE", ""))
