@@ -359,10 +359,49 @@ class StatisticsData(KosisBaseClient):
         logger.debug(f"분류 레벨 수: {obj_levels}")
 
         # 3. 분류 레벨에 맞는 retry 전략 실행
-        return self._execute_with_obj_retry(
+        result = self._execute_with_obj_retry(
             org_id, tbl_id, actual_start, actual_end, actual_prd_se,
             obj_vars, itm_id
         )
+
+        if result:
+            return result
+
+        # 4. 반기(S) 실패 시 년간(Y) 폴백 시도
+        if actual_prd_se == "S" and len(prd_info) > 1:
+            # 메타데이터에서 년간 주기 정보 찾기
+            yearly_info = next((p for p in prd_info if p.get("PRD_SE") == "년"), None)
+            if yearly_info:
+                yearly_start = normalize_period(yearly_info.get("STRT_PRD_DE", ""))
+                yearly_end = normalize_period(yearly_info.get("END_PRD_DE", ""))
+                if yearly_start and yearly_end:
+                    # 최신 2년만 조회
+                    try:
+                        end_year = int(yearly_end[:4])
+                        start_year = max(int(yearly_start[:4]), end_year - 1)
+                        fallback_start = str(start_year)
+                        fallback_end = str(end_year)
+                    except (ValueError, IndexError):
+                        fallback_start, fallback_end = yearly_start, yearly_end
+
+                    logger.info(f"반기→년간 폴백: {tbl_id}, 기간={fallback_start}~{fallback_end}")
+                    result = self._execute_with_obj_retry(
+                        org_id, tbl_id, fallback_start, fallback_end, "Y",
+                        obj_vars, itm_id
+                    )
+                    if result:
+                        return result
+
+        # 5. OBJ 메타데이터 없는 테이블용 추가 전략 (월간/지자체 테이블 등)
+        if obj_levels == 0:
+            logger.debug(f"OBJ 메타데이터 없음, 추가 전략 시도: {tbl_id}")
+            result = self._try_no_obj_metadata_strategies(
+                org_id, tbl_id, actual_start, actual_end, actual_prd_se, itm_id
+            )
+            if result:
+                return result
+
+        return []
 
     def _determine_period_range(
         self,
@@ -502,6 +541,87 @@ class StatisticsData(KosisBaseClient):
                 continue
 
         return first_values
+
+    def _try_no_obj_metadata_strategies(
+        self,
+        org_id: str,
+        tbl_id: str,
+        start_date: str,
+        end_date: str,
+        prd_se: str,
+        itm_id: str,
+    ) -> List[Dict[str, Any]]:
+        """
+        OBJ 메타데이터가 없는 테이블을 위한 추가 전략.
+
+        일부 지자체 테이블(DT_B* 등)은 OBJ 메타데이터 API에서 조회되지 않지만
+        실제 API 호출 시 objL 파라미터가 필요합니다.
+
+        전략:
+        1. 지역 코드 기반 objL1 시도 (지자체 테이블)
+        2. 연령/성별 분류 시도
+        3. 기간 단축 후 재시도
+        """
+        # 지자체 테이블용 지역 코드 (부산=26, 서울=11, 등)
+        region_codes = {
+            "202": ["26"],  # 부산광역시
+            "201": ["11"],  # 서울특별시
+            "203": ["27"],  # 대구광역시
+            "204": ["28"],  # 인천광역시
+            "205": ["29"],  # 광주광역시
+            "206": ["30"],  # 대전광역시
+            "207": ["31"],  # 울산광역시
+        }
+
+        # 전략 1: 지자체 테이블 - 지역 코드 + 연령/성별 분류
+        if org_id in region_codes:
+            for region_code in region_codes[org_id]:
+                # objL1=지역코드, objL2=연령(ALL), objL3=성별(ALL)
+                test_params = [
+                    {"obj_l1": region_code, "obj_l2": "ALL", "obj_l3": "ALL"},
+                    {"obj_l1": region_code, "obj_l2": "ALL"},
+                    {"obj_l1": "ALL", "obj_l2": region_code, "obj_l3": "ALL"},
+                ]
+                for params in test_params:
+                    logger.debug(f"지자체 전략: {params}")
+                    data = self._try_get_data(
+                        org_id, tbl_id, start_date, end_date, prd_se, params, itm_id
+                    )
+                    if data:
+                        return data
+
+        # 전략 2: 일반적인 분류 코드 시도
+        common_codes = [
+            {"obj_l1": "00", "obj_l2": "ALL", "obj_l3": "ALL"},  # 전국/전체
+            {"obj_l1": "T", "obj_l2": "ALL", "obj_l3": "ALL"},   # Total
+            {"obj_l1": "0", "obj_l2": "ALL", "obj_l3": "ALL"},   # 계
+            {"obj_l1": "ALL", "obj_l2": "00", "obj_l3": "ALL"},
+            {"obj_l1": "ALL", "obj_l2": "0", "obj_l3": "ALL"},
+        ]
+        for params in common_codes:
+            logger.debug(f"일반 분류 전략: {params}")
+            data = self._try_get_data(
+                org_id, tbl_id, start_date, end_date, prd_se, params, itm_id
+            )
+            if data:
+                return data
+
+        # 전략 3: 기간 단축 (최신 1개월/1분기만)
+        try:
+            if prd_se == "M" and len(end_date) >= 6:
+                short_start = end_date  # 마지막 1개월만
+                for max_level in [2, 3, 4]:
+                    params = {f"obj_l{i}": "ALL" for i in range(1, max_level + 1)}
+                    logger.debug(f"기간 단축 전략 (1개월): {short_start}")
+                    data = self._try_get_data(
+                        org_id, tbl_id, short_start, end_date, prd_se, params, itm_id
+                    )
+                    if data:
+                        return data
+        except (ValueError, IndexError):
+            pass
+
+        return []
 
     def _try_get_data(
         self,
