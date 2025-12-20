@@ -79,10 +79,16 @@
 - `execute_table` - HTML 테이블 (스타일링)
 - `execute_report` - 복합 리포트 (차트+분석+테이블)
 
-### 다음 단계 (Phase 4) 📋
-- Tailscale 또는 Cloudflare Tunnel 설정
-- 외부에서 MCP 서버 접근 가능하게
-- 인증/권한 설정
+**Phase 4: Remote Deployment** ✅ 완료 (2025-12-20)
+- Cloudflare Tunnel 설정 완료 (`https://schedule-fell-quizzes-comments.trycloudflare.com`)
+- 외부 접근 가능 (원격 서버: wai-3090ti)
+- E2E 테스트 통과 (11/11)
+- 프로덕션 운영 중
+
+### 다음 단계 (Phase 5) 📋
+- Cloudflare 영구 터널 설정 (현재는 임시 URL)
+- 사용자 인증/권한 시스템
+- 데이터 캐싱 최적화
 
 ---
 
@@ -183,6 +189,25 @@ kosis-mcp/
 
 ## 서버 실행
 
+### 프로덕션 서버 (원격 배포 완료) ✅
+
+**현재 운영 중인 서버:**
+```
+URL: https://schedule-fell-quizzes-comments.trycloudflare.com
+상태: ✅ 정상 운영 중
+서버: wai-3090ti (Ubuntu 24.04)
+업타임: 2일+ (PostgreSQL: 4일+)
+```
+
+**테스트:**
+```bash
+# 프로덕션 서버 헬스 체크
+curl https://schedule-fell-quizzes-comments.trycloudflare.com/health
+
+# E2E 워크플로 테스트
+uv run python scripts/test_e2e_workflow.py https://schedule-fell-quizzes-comments.trycloudflare.com
+```
+
 ### 로컬 개발 (Docker Compose)
 
 ```bash
@@ -196,11 +221,11 @@ KOSIS_BASE_URL="http://localhost:8000" \
 uv run uvicorn mcp_server.app:app --port 8000
 ```
 
-### 테스트
+### 로컬 테스트
 
 ```bash
 # 서버 상태 확인
-curl http://localhost:8000/health
+curl http://localhost:8001/health
 
 # E2E 테스트 슬래시 커맨드
 /test-mcp
@@ -270,4 +295,4 @@ return build_report(
 
 ---
 
-*마지막 업데이트: 2025-12-16*
+*마지막 업데이트: 2025-12-20 (Phase 4 배포 완료)*

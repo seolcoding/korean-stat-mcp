@@ -8,10 +8,40 @@
 <p align="center">
   <a href="#features">Features</a> •
   <a href="#quick-start">Quick Start</a> •
+  <a href="#production-server">Production Server</a> •
   <a href="#usage">Usage</a> •
   <a href="docs/USER_GUIDE.md">User Guide</a> •
   <a href="#contributing">Contributing</a>
 </p>
+
+---
+
+## 🚀 Production Server (Now Live!)
+
+**The KOSIS MCP Server is currently running in production:**
+
+```
+🌐 URL: https://schedule-fell-quizzes-comments.trycloudflare.com
+✅ Status: Operational
+📊 Database: 252,890 statistical tables with embeddings
+🔧 Server: wai-3090ti (Ubuntu 24.04)
+```
+
+**Connect to the production server:**
+
+```json
+// ~/Library/Application Support/Claude/claude_desktop_config.json
+{
+  "mcpServers": {
+    "kosis": {
+      "url": "https://schedule-fell-quizzes-comments.trycloudflare.com",
+      "transport": "streamable-http"
+    }
+  }
+}
+```
+
+> **Note**: This is a temporary Cloudflare Tunnel URL. A permanent domain will be configured in Phase 5.
 
 ---
 
@@ -92,21 +122,39 @@ uv run python -m mcp_server
 
 ## Claude Desktop Integration
 
-### HTTP Mode (with Docker)
+### Option 1: Production Server (Recommended)
 
-Add to your Claude Desktop config (`~/Library/Application Support/Claude/claude_desktop_config.json`):
+Connect to the live production server:
 
 ```json
 {
   "mcpServers": {
     "kosis": {
-      "url": "http://localhost:8000/mcp"
+      "url": "https://schedule-fell-quizzes-comments.trycloudflare.com",
+      "transport": "streamable-http"
     }
   }
 }
 ```
 
-### stdio Mode (Direct)
+### Option 2: Local Docker
+
+Run your own local server:
+
+```json
+{
+  "mcpServers": {
+    "kosis": {
+      "url": "http://localhost:8001",
+      "transport": "streamable-http"
+    }
+  }
+}
+```
+
+### Option 3: stdio Mode (Advanced)
+
+For development only:
 
 ```json
 {

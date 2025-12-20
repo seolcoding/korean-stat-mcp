@@ -1,7 +1,9 @@
 # KOSIS MCP Server - 배포 가이드
 
-> **상태**: 설계 검증 완료, 구현 대기
-> **최종 검증일**: 2024-12-15
+> **상태**: ✅ 프로덕션 운영 중 (Cloudflare Tunnel)
+> **배포일**: 2025-12-20
+> **서버**: wai-3090ti (Ubuntu 24.04)
+> **접속 URL**: https://schedule-fell-quizzes-comments.trycloudflare.com
 > **참조 문서**: FastMCP 공식문서, pgvector GitHub, Cloudflare R2 Docs
 
 ---
@@ -371,16 +373,54 @@ docker compose up -d --build
 
 ---
 
-## 6. 외부 접근 (TODO)
+## 6. 외부 접근 (✅ 완료)
 
-> 외부 접근 설정은 별도 조사 후 문서화 예정
+### Cloudflare Tunnel 설정 (현재 운영 중)
+
+**현재 배포 상태:**
+```bash
+# Cloudflare Tunnel URL (임시)
+https://schedule-fell-quizzes-comments.trycloudflare.com
+
+# 테스트
+curl https://schedule-fell-quizzes-comments.trycloudflare.com/health
+```
+
+**설정 방법:**
+```bash
+# Cloudflare Tunnel 설치 (원격 서버에서)
+# docker-compose.remote.yml 사용
+
+# 터널 시작 (포함됨)
+docker compose -f docker-compose.remote.yml up -d
+```
+
+**Claude Desktop 연결:**
+```json
+{
+  "mcpServers": {
+    "kosis": {
+      "url": "https://schedule-fell-quizzes-comments.trycloudflare.com",
+      "transport": "streamable-http"
+    }
+  }
+}
+```
+
+### 향후 개선 (Phase 5)
+
+| 작업 | 상태 | 비고 |
+|------|------|------|
+| **영구 터널 설정** | 📋 예정 | 현재는 임시 URL (재시작 시 변경됨) |
+| **커스텀 도메인** | 📋 예정 | `kosis-mcp.yourdomain.com` |
+| **인증 추가** | 📋 예정 | API Key 또는 OAuth |
 
 ### 옵션 비교
 
-| 방법 | 장점 | 단점 | 조사 상태 |
-|------|------|------|----------|
-| **Tailscale** | 포트 개방 불필요, 무료 | 클라이언트 설치 필요 | 🚧 조사 필요 |
-| **Cloudflare Tunnel** | 무료, 도메인 연결 | 설정 복잡 | 🚧 조사 필요 |
+| 방법 | 장점 | 단점 | 상태 |
+|------|------|------|------|
+| **Cloudflare Tunnel** | 무료, 포트 개방 불필요 | 임시 URL (영구 설정 필요) | ✅ **현재 사용 중** |
+| **Tailscale** | 포트 개방 불필요, 무료 | 클라이언트 설치 필요 | - |
 | **포트포워딩 + DDNS** | 표준 | 보안 설정 필요 | - |
 
 ---
