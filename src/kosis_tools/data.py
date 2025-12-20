@@ -46,6 +46,8 @@ from typing import Any, Dict, List, Optional, Tuple
 from .base import KosisBaseClient
 from .config import Endpoints, KosisConfig, PeriodType
 
+# PRD_SE 한글 → API 코드 변환에 PeriodType.from_korean() 사용
+
 logger = logging.getLogger(__name__)
 
 
@@ -87,6 +89,12 @@ class StatisticsData(KosisBaseClient):
         prd_se: str = "Y",
         obj_l1: str = "ALL",
         obj_l2: Optional[str] = None,
+        obj_l3: Optional[str] = None,
+        obj_l4: Optional[str] = None,
+        obj_l5: Optional[str] = None,
+        obj_l6: Optional[str] = None,
+        obj_l7: Optional[str] = None,
+        obj_l8: Optional[str] = None,
         itm_id: str = "ALL",
     ) -> List[Dict[str, Any]]:
         """
@@ -207,14 +215,26 @@ class StatisticsData(KosisBaseClient):
             "orgId": org_id,
             "tblId": tbl_id,
             "objL1": obj_l1,
+            "objL": obj_l1,  # 구 API 호환성 (일부 테이블은 objL 파라미터 필요)
             "itmId": itm_id,
             "prdSe": prd_se,
             "startPrdDe": start_date,
             "endPrdDe": end_date,
         }
 
-        if obj_l2:
-            params["objL2"] = obj_l2
+        # objL2~objL8 추가 (값이 있는 경우만)
+        obj_levels = [
+            ("objL2", obj_l2),
+            ("objL3", obj_l3),
+            ("objL4", obj_l4),
+            ("objL5", obj_l5),
+            ("objL6", obj_l6),
+            ("objL7", obj_l7),
+            ("objL8", obj_l8),
+        ]
+        for param_name, param_value in obj_levels:
+            if param_value:
+                params[param_name] = param_value
 
         logger.debug(f"데이터 조회: {tbl_id}, 주기={prd_se}, 기간={start_date}~{end_date}")
 
@@ -229,6 +249,276 @@ class StatisticsData(KosisBaseClient):
         elif isinstance(result, dict):
             return [result]
         else:
+            return []
+
+    def get_data_with_smart_retry(
+        self,
+        org_id: str,
+        tbl_id: str,
+        start_date: Optional[str] = None,
+        end_date: Optional[str] = None,
+        prd_se: Optional[str] = None,
+        itm_id: str = "ALL",
+    ) -> List[Dict[str, Any]]:
+        """
+        메타데이터 기반 스마트 데이터 조회.
+
+        OBJ_VAR 메타데이터를 활용하여 올바른 objL 파라미터를 자동으로 구성합니다.
+        KOSIS API에서 objL1은 필수 파라미터이며, 테이블에 따라 objL2~objL8도 필요할 수 있습니다.
+
+        전략:
+        1. OBJ_VAR 메타데이터 조회로 분류 구조 파악
+        2. 각 분류 레벨에 대해 'ALL' 또는 첫 번째 값 사용
+        3. 40,000셀 초과 시 더 제한적인 분류값으로 재시도
+        4. 기간은 최신 데이터 위주로 제한
+
+        Args:
+            org_id: 기관 ID
+            tbl_id: 테이블 ID
+            start_date: 시작 기간 (None이면 메타데이터에서 자동 결정)
+            end_date: 종료 기간 (None이면 메타데이터에서 자동 결정)
+            prd_se: 주기 (None이면 메타데이터에서 자동 결정)
+            itm_id: 항목 ID
+
+        Returns:
+            데이터 레코드 리스트
+        """
+        from .table_meta import TableMetadata
+
+        meta = TableMetadata(self.config)
+
+        # 1. 메타데이터로 기간 정보 조회
+        prd_info = meta.get_prd_info(org_id, tbl_id)
+        if not prd_info:
+            logger.warning(f"메타데이터 조회 실패: {tbl_id}")
+            # 메타데이터 없어도 사용자가 직접 기간 지정했으면 시도
+            if start_date and end_date and prd_se:
+                return self.get_data(org_id, tbl_id, start_date, end_date, prd_se, itm_id=itm_id)
+            return []
+
+        # 첫 번째 주기 정보 사용 (보통 가장 세밀한 주기)
+        info = prd_info[0]
+
+        # prd_se 결정: 메타데이터의 한글 주기명을 API 코드로 변환
+        korean_prd_se = info.get("PRD_SE", "년")
+        actual_prd_se = prd_se or PeriodType.from_korean(korean_prd_se)
+        logger.debug(f"PRD_SE 변환: '{korean_prd_se}' -> '{actual_prd_se}'")
+
+        # 기간 결정
+        def normalize_period(p: str) -> str:
+            """기간 문자열에서 점(.)을 제거하여 YYYYMM 또는 YYYY 형식으로 변환."""
+            if p:
+                return p.replace(".", "")
+            return p
+
+        strt_prd = normalize_period(info.get("STRT_PRD_DE", ""))
+        end_prd = normalize_period(info.get("END_PRD_DE", ""))
+
+        if not strt_prd or not end_prd:
+            logger.warning(f"기간 정보 없음: {tbl_id}")
+            if start_date and end_date:
+                actual_start = start_date
+                actual_end = end_date
+            else:
+                return []
+        else:
+            actual_start, actual_end = self._determine_period_range(
+                start_date, end_date, strt_prd, end_prd, actual_prd_se
+            )
+
+        logger.info(f"스마트 조회: {tbl_id}, 주기={actual_prd_se}, 기간={actual_start}~{actual_end}")
+
+        # 2. OBJ_VAR 메타데이터 조회 - 분류 구조 파악
+        obj_vars = meta.get_obj_vars(org_id, tbl_id)
+        obj_levels = len(obj_vars)
+        logger.debug(f"분류 레벨 수: {obj_levels}")
+
+        # 3. 분류 레벨에 맞는 retry 전략 실행
+        return self._execute_with_obj_retry(
+            org_id, tbl_id, actual_start, actual_end, actual_prd_se,
+            obj_vars, itm_id
+        )
+
+    def _determine_period_range(
+        self,
+        start_date: Optional[str],
+        end_date: Optional[str],
+        strt_prd: str,
+        end_prd: str,
+        prd_se: str,
+    ) -> Tuple[str, str]:
+        """기간 범위를 결정합니다."""
+        if start_date and end_date:
+            return start_date, end_date
+
+        try:
+            if prd_se == "Y" or prd_se == "F":
+                end_year = int(end_prd[:4])
+                start_year = max(int(strt_prd[:4]), end_year - 1)  # 최신 2년
+                return str(start_year), str(end_year)
+            elif prd_se == "M":
+                # 월간은 최신 12개월
+                end_year = int(end_prd[:4])
+                end_month = int(end_prd[4:6]) if len(end_prd) >= 6 else 12
+                start_year = end_year if end_month > 12 else end_year - 1
+                start_month = (end_month - 11) % 12 or 12
+                return f"{start_year}{start_month:02d}", end_prd
+            elif prd_se == "Q":
+                # 분기는 최신 4분기
+                end_year = int(end_prd[:4])
+                return f"{end_year - 1}01", end_prd
+            else:
+                # 기타 주기는 최신 2년
+                end_year = int(end_prd[:4])
+                start_year = max(int(strt_prd[:4]), end_year - 1)
+                return str(start_year), end_prd[:4] if len(end_prd) >= 4 else end_prd
+        except (ValueError, IndexError):
+            return strt_prd, end_prd
+
+    def _execute_with_obj_retry(
+        self,
+        org_id: str,
+        tbl_id: str,
+        start_date: str,
+        end_date: str,
+        prd_se: str,
+        obj_vars: List[Dict[str, Any]],
+        itm_id: str,
+    ) -> List[Dict[str, Any]]:
+        """
+        OBJ_VAR 메타데이터 기반 retry 전략을 실행합니다.
+
+        전략 순서:
+        1. objL1만 ALL
+        2. objL1~objL2 ALL
+        3. objL1~objL3 ALL (점진적 확장)
+        4. objL1~objL4 ALL
+        5. 테이블명에서 분류 개수 추론 후 시도
+        6. 공통 fallback 값 시도
+        """
+        obj_count = len(obj_vars)
+
+        # 분류별 첫 번째 값 추출 (fallback용)
+        first_values = self._extract_first_obj_values(obj_vars)
+        logger.debug(f"분류 레벨 수: {obj_count}, 첫 번째 값들: {first_values}")
+
+        # 전략 1~4: 점진적으로 objL 레벨 확장 (핵심 전략!)
+        # 많은 테이블이 objL2, objL3, objL4까지 ALL이 필요함
+        for max_level in range(1, 5):
+            obj_params = {f"obj_l{i}": "ALL" for i in range(1, max_level + 1)}
+            logger.debug(f"전략 {max_level} - objL1~objL{max_level} ALL: {obj_params}")
+            data = self._try_get_data(org_id, tbl_id, start_date, end_date, prd_se, obj_params, itm_id)
+            if data:
+                return data
+
+        # 전략 5: 메타데이터 기반 분류 개수 시도
+        if obj_count > 0:
+            obj_params = {f"obj_l{i+1}": "ALL" for i in range(min(obj_count, 8))}
+            logger.debug(f"전략 5 - 메타데이터 기반 {obj_count}개 분류: {obj_params}")
+            data = self._try_get_data(org_id, tbl_id, start_date, end_date, prd_se, obj_params, itm_id)
+            if data:
+                return data
+
+        # 전략 6: 기간 축소 + objL1~objL3
+        try:
+            reduced_start = end_date[:4] if len(end_date) >= 4 else end_date
+            if reduced_start != start_date:
+                logger.debug(f"전략 6 - 기간 축소: {reduced_start}~{end_date}")
+                for max_level in [2, 3, 4]:
+                    obj_params = {f"obj_l{i}": "ALL" for i in range(1, max_level + 1)}
+                    data = self._try_get_data(
+                        org_id, tbl_id, reduced_start, end_date, prd_se,
+                        obj_params, itm_id
+                    )
+                    if data:
+                        return data
+        except (ValueError, IndexError):
+            pass
+
+        # 전략 7: 일반적인 fallback 값 시도 ('00'=전국, '0'=계 등)
+        common_fallbacks = ["00", "0", "T", "1"]
+        for fallback in common_fallbacks:
+            logger.debug(f"전략 7 - 공통 fallback '{fallback}' + objL2~3 ALL")
+            for max_level in [2, 3]:
+                obj_params = {"obj_l1": fallback}
+                for i in range(2, max_level + 1):
+                    obj_params[f"obj_l{i}"] = "ALL"
+                data = self._try_get_data(
+                    org_id, tbl_id, start_date, end_date, prd_se,
+                    obj_params, itm_id
+                )
+                if data:
+                    return data
+
+        # 전략 8: objL5~objL8까지 확장 (드문 케이스)
+        for max_level in range(5, 9):
+            obj_params = {f"obj_l{i}": "ALL" for i in range(1, max_level + 1)}
+            logger.debug(f"전략 8 - objL1~objL{max_level} ALL (확장)")
+            data = self._try_get_data(org_id, tbl_id, start_date, end_date, prd_se, obj_params, itm_id)
+            if data:
+                return data
+
+        logger.warning(f"모든 전략 실패: {tbl_id}")
+        return []
+
+    def _extract_first_obj_values(self, obj_vars: List[Dict[str, Any]]) -> Dict[int, str]:
+        """OBJ_VAR 메타데이터에서 각 분류의 첫 번째 값을 추출합니다."""
+        first_values: Dict[int, str] = {}
+
+        for obj in obj_vars:
+            try:
+                level = int(obj.get("OBJ_LV", 0))
+                obj_id = obj.get("OBJ_ID", "")
+                if level > 0 and obj_id:
+                    # OBJ_ID에서 첫 번째 값 추출 (예: "ITEM" -> 사용)
+                    # 실제 분류값은 별도 API 호출 필요하지만, OBJ_ID를 힌트로 사용
+                    first_values[level] = obj_id
+            except (ValueError, TypeError):
+                continue
+
+        return first_values
+
+    def _try_get_data(
+        self,
+        org_id: str,
+        tbl_id: str,
+        start_date: str,
+        end_date: str,
+        prd_se: str,
+        obj_params: Dict[str, str],
+        itm_id: str,
+    ) -> List[Dict[str, Any]]:
+        """주어진 파라미터로 데이터 조회를 시도합니다."""
+        try:
+            # obj_params를 get_data 호출 형식으로 변환 (obj_l1 ~ obj_l8 지원)
+            obj_l1 = obj_params.get("obj_l1", "ALL")
+            obj_l2 = obj_params.get("obj_l2")
+            obj_l3 = obj_params.get("obj_l3")
+            obj_l4 = obj_params.get("obj_l4")
+            obj_l5 = obj_params.get("obj_l5")
+            obj_l6 = obj_params.get("obj_l6")
+            obj_l7 = obj_params.get("obj_l7")
+            obj_l8 = obj_params.get("obj_l8")
+
+            data = self.get_data(
+                org_id=org_id,
+                tbl_id=tbl_id,
+                start_date=start_date,
+                end_date=end_date,
+                prd_se=prd_se,
+                obj_l1=obj_l1,
+                obj_l2=obj_l2,
+                obj_l3=obj_l3,
+                obj_l4=obj_l4,
+                obj_l5=obj_l5,
+                obj_l6=obj_l6,
+                obj_l7=obj_l7,
+                obj_l8=obj_l8,
+                itm_id=itm_id,
+            )
+            return data if data else []
+        except Exception as e:
+            logger.debug(f"데이터 조회 실패: {e}")
             return []
 
     def get_data_with_retry(

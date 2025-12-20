@@ -240,6 +240,45 @@ class PeriodType:
         IRREGULAR: "부정기",
     }
 
+    # PRD 메타데이터 한글 → API 코드 매핑
+    # KOSIS getMeta PRD 응답의 PRD_SE 값을 API prdSe 파라미터로 변환
+    FROM_KOREAN = {
+        "월": MONTHLY,
+        "격월": MONTHLY,
+        "분기": QUARTERLY,
+        "반기": SEMI_ANNUAL,
+        "년": YEARLY,
+        "연": YEARLY,
+        "1년": YEARLY,
+        "2년": MULTI_YEAR,
+        "3년": MULTI_YEAR,
+        "4년": MULTI_YEAR,
+        "5년": MULTI_YEAR,
+        "10년": MULTI_YEAR,
+        "부정기": IRREGULAR,
+        "수시": IRREGULAR,
+    }
+
+    @classmethod
+    def from_korean(cls, korean_name: str) -> str:
+        """
+        PRD 메타데이터의 한글 주기명을 API 코드로 변환합니다.
+
+        Args:
+            korean_name: PRD 메타데이터의 PRD_SE 값 (예: "월", "년", "5년")
+
+        Returns:
+            API prdSe 파라미터 값 (예: "M", "Y", "F")
+            매핑되지 않으면 기본값 "Y" 반환
+
+        Example:
+            >>> PeriodType.from_korean("5년")
+            "F"
+            >>> PeriodType.from_korean("월")
+            "M"
+        """
+        return cls.FROM_KOREAN.get(korean_name, cls.YEARLY)
+
 
 # 데이터 저장 설정
 class DataStorageConfig:

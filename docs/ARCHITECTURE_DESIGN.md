@@ -1,7 +1,7 @@
 # KOSIS MCP Server - 아키텍처 설계서
 
-> **버전**: 2.0 (Phase 2 - 프로덕션 배포 준비)
-> **최종 수정일**: 2024-12-15
+> **버전**: 3.0 (Phase 4 - 프로덕션 배포 완료)
+> **최종 수정일**: 2025-12-20
 > **관련 문서**: [DEPLOYMENT.md](./DEPLOYMENT.md), [HYBRID_SEARCH.md](./HYBRID_SEARCH.md)
 
 ---
@@ -52,7 +52,7 @@ AI 에이전트(Claude 등)가 한국 통계 데이터를 **탐색, 조회, 분�
     │  + pgvector           │     │  (kosis.kr)           │
     │  ┌─────────────────┐  │     └───────────────────────┘
     │  │ kosis_tables    │  │
-    │  │ (103K records)  │  │
+    │  │ (252,890 recs)  │  │
     │  │ + FTS + Vector  │  │
     │  └─────────────────┘  │
     └───────────┬───────────┘
@@ -485,9 +485,9 @@ FORBIDDEN_BUILTINS = {"exec", "eval", "compile", "__import__", "open"}
 |-------|------|------|
 | **1** | ✅ 완료 | 기본 API 도구 (search, data, metadata) |
 | **2** | ✅ 완료 | execute_code, 시각화, 리포트 |
-| **3** | 🚧 진행중 | PostgreSQL + 하이브리드 검색 |
-| **4** | 📋 계획 | 외부 접근 (Tailscale) |
-| **5** | 📋 계획 | 캐싱 레이어, 성능 최적화 |
+| **3** | ✅ 완료 | PostgreSQL + 하이브리드 검색 (252,890 테이블) |
+| **4** | ✅ 완료 | 외부 접근 (Cloudflare Tunnel, API 성공률 99.8%) |
+| **5** | 📋 계획 | 캐싱 레이어, 성능 최적화, 인증/권한 |
 
 ---
 

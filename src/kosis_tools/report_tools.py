@@ -812,9 +812,9 @@ alt.Chart(df).mark_line().encode(x='PRD_DE:N', y='DT:Q', color='C1_NM:N')  # 차
 def fetch_data(
     org_id: str,
     tbl_id: str,
-    start_date: str,
-    end_date: str,
-    prd_se: str = "Y",
+    start_date: Optional[str] = None,
+    end_date: Optional[str] = None,
+    prd_se: Optional[str] = None,
     **filters,
 ) -> List[Dict[str, Any]]:
     """
@@ -822,13 +822,20 @@ def fetch_data(
 
     search_tables나 get_table_meta로 확인한 테이블의 실제 데이터를 가져옵니다.
 
+    **스마트 조회**:
+    - 기간을 지정하지 않으면 메타데이터를 조회하여 최신 데이터를 자동으로 가져옵니다
+    - objL 에러 발생 시 자동으로 objL2 파라미터를 추가하여 재시도합니다
+
     Args:
         org_id: 기관 ID (예: "101")
         tbl_id: 테이블 ID (예: "DT_1B040A3")
         start_date: 시작 기간 (예: "2019", "202301")
+                    None이면 메타데이터에서 자동 결정 (최신 2년)
         end_date: 종료 기간 (예: "2023", "202312")
+                  None이면 메타데이터에서 자동 결정
         prd_se: 기간 유형
                 "Y"=연간, "M"=월간, "Q"=분기, "S"=반기
+                None이면 메타데이터에서 자동 결정
         **filters: 추가 필터 (obj_l1, obj_l2, itm_id 등)
 
     Returns:
@@ -845,13 +852,19 @@ def fetch_data(
         ]
 
     Example:
-        >>> data = fetch_data("101", "DT_1B040A3", "2020", "2023", prd_se="Y")
+        # 기간 자동 결정 (최신 2년치)
+        >>> data = fetch_data("101", "DT_1B040A3")
         >>> print(f"총 {len(data)}건 조회")
+
+        # 기간 수동 지정
+        >>> data = fetch_data("101", "DT_1B040A3", "2020", "2023", "Y")
     """
     from .data import StatisticsData
 
     client = StatisticsData()
-    records = client.get_data(
+
+    # 스마트 조회 사용 (메타데이터 기반)
+    records = client.get_data_with_smart_retry(
         org_id=org_id,
         tbl_id=tbl_id,
         start_date=start_date,

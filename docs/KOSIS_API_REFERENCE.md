@@ -13,7 +13,8 @@
 5. [통계설명 API (statisticsExplData.do)](#5-통계설명-api)
 6. [HTML 콘텐츠 (statHtmlContent.do)](#6-html-콘텐츠-엔드포인트)
 7. [k-stat.go.kr 메타데이터](#7-k-statgokr-메타데이터)
-8. [대용량 데이터 처리 (40,000건 이상)](#8-대용량-데이터-처리-40000건-이상)
+8. [objL 파라미터 전략 (Progressive Expansion)](#8-objl-파라미터-전략-progressive-expansion) ⭐ **신규**
+9. [대용량 데이터 처리 (40,000건 이상)](#9-대용량-데이터-처리-40000건-이상)
 
 ---
 
@@ -520,7 +521,75 @@ GET https://www.k-stat.go.kr/metasvc/msba100/statsdcdta?statsConfmNo=101001
 
 ---
 
-## 8. 대용량 데이터 처리 (40,000건 이상)
+## 8. objL 파라미터 전략 (Progressive Expansion)
+
+일부 KOSIS 테이블은 `objL1="ALL"`만으로는 데이터를 조회할 수 없습니다. 이 경우 **Progressive objL Expansion** 전략을 사용합니다.
+
+### 문제 상황
+
+```python
+# 일부 테이블에서 발생하는 에러
+data.get_data(org_id="116", tbl_id="DT_MLTM_5387", objL1="ALL")
+# → {"errMsg": "필수요청변수값이 누락되었습니다."}
+```
+
+### 원인
+
+- KOSIS 테이블마다 필수 분류 변수(objL1~objL8)가 다름
+- 일부 테이블은 objL2, objL3까지 `ALL`을 명시해야 함
+- API 문서에는 이 요구사항이 명확히 기술되어 있지 않음
+
+### 해결: Progressive Expansion Strategy
+
+단계적으로 objL 파라미터를 확장하며 시도:
+
+```python
+# 구현 (data.py의 _execute_with_obj_retry)
+STRATEGIES = [
+    {"obj_l1": "ALL"},                                          # Stage 1
+    {"obj_l1": "ALL", "obj_l2": "ALL"},                        # Stage 2
+    {"obj_l1": "ALL", "obj_l2": "ALL", "obj_l3": "ALL"},       # Stage 3
+    # ... Stage 8까지 확장
+]
+
+for strategy in STRATEGIES:
+    result = get_data(org_id, tbl_id, **strategy)
+    if result:
+        return result  # 성공하면 즉시 반환
+```
+
+### 테스트 결과 (2025-12-20)
+
+| 항목 | 수치 |
+|------|------|
+| 총 테이블 | 252,890개 |
+| 테스트 완료 | 1,500개 (진행 중) |
+| 성공 | 1,497개 (99.8%) |
+| 실패 | 3개 |
+
+### 실패 케이스 분석
+
+| tbl_id | 테이블명 | 기관 | 주기 | 원인 |
+|--------|----------|------|------|------|
+| DT_MLTM_5387 | 주택건설 착공실적(월계) | 국토부 | 월 | 특수 분류 구조 |
+| DT_MLTM_5373 | 주택건설 준공실적(월계) | 국토부 | 월 | 특수 분류 구조 |
+| DT_EX012 | 노선별,연도별,차종별 주행거리 | 한국도로공사 | 년 | obj_vars 없음 |
+
+> **참고**: 실패한 테이블들은 메타데이터에 `obj_vars_count: 0`으로, 분류 변수 정보가 없는 특수 테이블입니다.
+
+### 주기별 성공률
+
+| 주기 | 성공 | 실패 | 성공률 |
+|------|------|------|--------|
+| 년 (Y) | 938 | 1 | 99.9% |
+| 2년 | 188 | 0 | 100% |
+| 3년 | 258 | 0 | 100% |
+| 5년 | 91 | 0 | 100% |
+| 월 (M) | 22 | 2 | 91.7% |
+
+---
+
+## 9. 대용량 데이터 처리 (40,000건 이상)
 
 KOSIS API는 1회 호출당 최대 40,000건까지만 반환합니다. 그 이상의 데이터가 필요한 경우 **기간을 분할**하여 여러 번 호출 후 병합해야 합니다.
 

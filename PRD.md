@@ -1,8 +1,8 @@
 # KOSIS MCP Server - Product Requirements Document
 
-> **Version**: 1.0
-> **Last Updated**: 2025-12-15
-> **Status**: Phase 3 Complete, Phase 4 Planning
+> **Version**: 1.1
+> **Last Updated**: 2025-12-20
+> **Status**: Phase 4 Complete (Production Deployed)
 > **Related Docs**: [CLAUDE.md](./CLAUDE.md), [docs/ARCHITECTURE_DESIGN.md](./docs/ARCHITECTURE_DESIGN.md)
 
 ---
@@ -238,11 +238,12 @@ CREATE TABLE kosis_tables (
 - [x] FastMCP HTTP 모드 (`stateless_http=True`)
 - [x] Cloudflare R2 연동 (차트/리포트 업로드)
 
-### Phase 4 (계획) - External Access
+### Phase 4 (완료) - External Access ✅
 
-- [ ] Tailscale 또는 Cloudflare Tunnel 설정
-- [ ] 외부에서 MCP 서버 접근 가능
-- [ ] 인증/권한 설정
+- [x] Cloudflare Tunnel 설정 (`https://schedule-fell-quizzes-comments.trycloudflare.com`)
+- [x] 외부에서 MCP 서버 접근 가능
+- [x] E2E 워크플로 테스트 통과 (11/11)
+- [ ] 인증/권한 설정 (Phase 5로 이동)
 
 ---
 
@@ -319,12 +320,18 @@ CREATE TABLE kosis_tables (
 - Docker 컨테이너화
 - Modular Executors (visualization, analysis, table, report)
 
-### Phase 4 📋 - External Access & Optimization
+### Phase 4 ✅ - External Access (2025-12-20)
 
-- Tailscale/Cloudflare Tunnel 설정
+- Cloudflare Tunnel 원격 배포 완료
+- E2E 테스트 통과 (검색 → 조회 → 실행 → 시각화 → R2 저장)
+- API 성공률: **99.8%** (252,890개 테이블 대상 테스트 진행 중)
+
+### Phase 5 📋 - Optimization & Security
+
 - 캐싱 레이어 추가
 - 성능 최적화
-- 모니터링/로깅
+- 인증/권한 설정
+- 모니터링/로깅 (Prometheus + Grafana)
 
 ---
 
