@@ -229,9 +229,10 @@ class KosisBaseClient:
                 data = fix_malformed_json(response.text)
 
                 # API 에러 체크 (errMsg 필드)
+                # Note: retry 전략에서 여러 번 호출되므로 DEBUG 레벨 사용
+                # 최종 실패 시 상위 호출자(data.py)에서 WARNING 로그 출력
                 if isinstance(data, dict) and "errMsg" in data:
-                    logger.warning(f"API 에러: {data.get('errMsg')}")
-                    logger.debug(f"에러 응답: {data}")
+                    logger.debug(f"API 에러: {data.get('errMsg')}")
                     return None
 
                 return data
