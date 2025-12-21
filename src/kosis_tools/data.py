@@ -500,9 +500,21 @@ class StatisticsData(KosisBaseClient):
             pass
 
         # 전략 7: 일반적인 fallback 값 시도 ('00'=전국, '0'=계 등)
+        # 5년 주기(F) 테이블은 특히 obj_l1='00'만으로 성공하는 경우 많음
         common_fallbacks = ["00", "0", "T", "1"]
         for fallback in common_fallbacks:
-            logger.debug(f"전략 7 - 공통 fallback '{fallback}' + objL2~3 ALL")
+            # obj_l1만 fallback (5년 주기 등 단순 테이블용)
+            obj_params = {"obj_l1": fallback}
+            logger.debug(f"전략 7a - objL1='{fallback}' 단독")
+            data = self._try_get_data(
+                org_id, tbl_id, start_date, end_date, prd_se,
+                obj_params, itm_id
+            )
+            if data:
+                return data
+
+            # obj_l1=fallback + objL2~3 ALL
+            logger.debug(f"전략 7b - objL1='{fallback}' + objL2~3 ALL")
             for max_level in [2, 3]:
                 obj_params = {"obj_l1": fallback}
                 for i in range(2, max_level + 1):
