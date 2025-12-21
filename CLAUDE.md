@@ -211,7 +211,7 @@ kosis-mcp/
 
 **현재 운영 중인 서버:**
 ```
-URL: https://schedule-fell-quizzes-comments.trycloudflare.com
+URL: https://kosis.seolcoding.com/
 상태: ✅ 정상 운영 중
 서버: wai-3090ti (Ubuntu 24.04)
 업타임: 2일+ (PostgreSQL: 4일+)
@@ -220,10 +220,10 @@ URL: https://schedule-fell-quizzes-comments.trycloudflare.com
 **테스트:**
 ```bash
 # 프로덕션 서버 헬스 체크
-curl https://schedule-fell-quizzes-comments.trycloudflare.com/health
+curl https://kosis.seolcoding.com/health
 
 # E2E 워크플로 테스트
-uv run python scripts/test_e2e_workflow.py https://schedule-fell-quizzes-comments.trycloudflare.com
+uv run python scripts/test_e2e_workflow.py https://kosis.seolcoding.com
 ```
 
 ### 로컬 개발 (Docker Compose)

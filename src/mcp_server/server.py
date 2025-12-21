@@ -36,9 +36,10 @@ logger = logging.getLogger(__name__)
 ARTIFACTS_DIR = os.environ.get("KOSIS_ARTIFACTS_DIR", "/tmp/kosis_artifacts")
 BASE_URL = os.environ.get("KOSIS_BASE_URL", "http://localhost:8000")
 
-# FastMCP 서버 생성
+# FastMCP 서버 생성 (json_response=True for standard MCP JSON responses)
 mcp = FastMCP(
     name="kosis-stats",
+    json_response=True,  # MCP 표준 JSON 응답 형식 사용
     instructions="""
     KOSIS(국가통계포털) 통계 데이터 서버입니다.
 
@@ -94,7 +95,7 @@ def search_statistics(
     keyword: str,
     org_id: Optional[str] = None,
     limit: int = 10,
-) -> str:
+) -> dict:
     """
     KOSIS 통계표를 키워드로 검색합니다.
 
@@ -131,17 +132,17 @@ def search_statistics(
             org_nm = r.get("org_nm", "기타")
             org_dist[org_nm] = org_dist.get(org_nm, 0) + 1
 
-        return json.dumps({
+        return {
             "query": keyword,
             "filter": {"org_id": org_id} if org_id else None,
             "result_count": len(results),
             "results": results,
             "org_distribution": org_dist,
             "next_step": "get_table_metadata(org_id, tbl_id)로 테이블 구조를 확인하세요"
-        }, ensure_ascii=False, indent=2)
+        }
     except Exception as e:
         logger.error(f"search_statistics error: {e}")
-        return json.dumps({"error": str(e)}, ensure_ascii=False)
+        return {"error": str(e)}
 
 
 @mcp.tool
@@ -150,7 +151,7 @@ async def search_tables_hybrid(
     limit: int = 10,
     fts_weight: float = 0.5,
     vector_weight: float = 0.5,
-) -> str:
+) -> dict:
     """
     자연어로 KOSIS 통계 테이블을 검색합니다 (하이브리드 검색).
 
@@ -195,12 +196,12 @@ async def search_tables_hybrid(
         from kosis_tools.database import DatabasePool
 
         if not DatabasePool._initialized:
-            return json.dumps({
+            return {
                 "error": "DATABASE_NOT_AVAILABLE",
                 "message": "PostgreSQL 데이터베이스가 연결되지 않았습니다.",
                 "fallback": "search_statistics(keyword)를 사용하세요 (KOSIS API 기반 키워드 검색)",
                 "setup_hint": "docker compose up postgres -d && python scripts/load_metadata.py"
-            }, ensure_ascii=False, indent=2)
+            }
 
         # 하이브리드 검색 실행
         from kosis_tools.hybrid_search import search_tables
@@ -212,14 +213,14 @@ async def search_tables_hybrid(
             vector_weight=vector_weight,
         )
 
-        return json.dumps({
+        return {
             "query": query,
             "search_type": "hybrid",
             "weights": {"fts": fts_weight, "vector": vector_weight},
             "count": len(results),
             "results": results,
             "next_step": "get_statistics_data(org_id, tbl_id, start_date, end_date)로 데이터 조회"
-        }, ensure_ascii=False, indent=2)
+        }
 
     except Exception as e:
         logger.error(f"search_tables_hybrid error: {e}")
@@ -227,20 +228,20 @@ async def search_tables_hybrid(
         # 데이터베이스 오류 시 대안 제시
         error_msg = str(e)
         if "database" in error_msg.lower() or "connection" in error_msg.lower():
-            return json.dumps({
+            return {
                 "error": "DATABASE_ERROR",
                 "message": error_msg,
                 "fallback": "search_statistics(keyword)를 사용하세요",
-            }, ensure_ascii=False, indent=2)
+            }
 
-        return json.dumps({"error": error_msg}, ensure_ascii=False)
+        return {"error": error_msg}
 
 
 @mcp.tool
 def browse_categories(
     by: str = "org",
     code: Optional[str] = None,
-) -> str:
+) -> dict:
     """
     기관별 또는 주제별로 통계 목록을 탐색합니다.
 
@@ -288,17 +289,17 @@ def browse_categories(
             response["categories"] = results
             response["usage"] = f"browse_categories(by='{by}', code='코드')로 해당 카테고리의 통계표 목록을 조회하세요"
 
-        return json.dumps(response, ensure_ascii=False, indent=2)
+        return response
     except Exception as e:
         logger.error(f"browse_categories error: {e}")
-        return json.dumps({"error": str(e)}, ensure_ascii=False)
+        return {"error": str(e)}
 
 
 @mcp.tool
 def get_table_metadata(
     org_id: str,
     tbl_id: str,
-) -> str:
+) -> dict:
     """
     통계표의 메타데이터(구조 정보)를 조회합니다.
 
@@ -363,17 +364,17 @@ def get_table_metadata(
             },
         }
 
-        return json.dumps(response, ensure_ascii=False, indent=2)
+        return response
     except Exception as e:
         logger.error(f"get_table_metadata error: {e}")
-        return json.dumps({"error": str(e)}, ensure_ascii=False)
+        return {"error": str(e)}
 
 
 @mcp.tool
 def get_available_values(
     data_json: str,
     field: str,
-) -> str:
+) -> dict:
     """
     데이터에서 특정 필드의 사용 가능한 값을 조회합니다.
 
@@ -421,17 +422,17 @@ def get_available_values(
             "ITM_NM": f"filter_statistics(data, items='{values[0] if values else ''}')",
         }
 
-        return json.dumps({
+        return {
             "field": field,
             "field_description": field_descriptions.get(field, field),
             "count": len(values),
             "values": values[:50] if len(values) > 50 else values,  # 최대 50개
             "truncated": len(values) > 50,
             "filter_example": filter_examples.get(field, "filter_statistics(data, ...)"),
-        }, ensure_ascii=False, indent=2)
+        }
     except Exception as e:
         logger.error(f"get_available_values error: {e}")
-        return json.dumps({"error": str(e)}, ensure_ascii=False)
+        return {"error": str(e)}
 
 
 # =============================================================================
@@ -446,7 +447,7 @@ def get_statistics_data(
     end_date: str,
     prd_se: str = "Y",
     format: str = "summary",
-) -> str:
+) -> dict:
     """
     KOSIS에서 통계 데이터를 조회합니다.
 
@@ -508,15 +509,15 @@ def get_statistics_data(
         )
 
         if format == "raw":
-            return json.dumps(data, ensure_ascii=False, indent=2)
+            return data
 
         # 기본: LLM 친화적 요약 형식
         formatted = format_data_for_llm(data, max_rows=50)
-        return json.dumps(formatted, ensure_ascii=False, indent=2)
+        return formatted
 
     except Exception as e:
         logger.error(f"get_statistics_data error: {e}")
-        return json.dumps({"error": str(e)}, ensure_ascii=False)
+        return {"error": str(e)}
 
 
 @mcp.tool
@@ -527,7 +528,7 @@ def filter_statistics(
     format: str = "summary",
     data_id: Optional[str] = None,
     data_json: Optional[str] = None,
-) -> str:
+) -> dict:
     """
     통계 데이터를 필터링합니다.
 
@@ -562,12 +563,12 @@ def filter_statistics(
         if data_id:
             loaded = load_raw_data(data_id)
             if "error" in loaded:
-                return json.dumps(loaded, ensure_ascii=False)
+                return loaded
             data = loaded["data"]
         elif data_json:
             data = json.loads(data_json)
         else:
-            return json.dumps({"error": "data_id 또는 data_json 중 하나를 제공해야 합니다"}, ensure_ascii=False)
+            return {"error": "data_id 또는 data_json 중 하나를 제공해야 합니다"}
 
         regions_list = [r.strip() for r in regions.split(",")] if regions else None
         periods_list = [p.strip() for p in periods.split(",")] if periods else None
@@ -581,15 +582,15 @@ def filter_statistics(
         )
 
         if format == "raw":
-            return json.dumps(filtered, ensure_ascii=False, indent=2)
+            return filtered
 
         # 기본: LLM 친화적 요약 형식 (필터 결과는 파일 저장 안 함)
         formatted = format_data_for_llm(filtered, max_rows=50, save_raw=False)
-        return json.dumps(formatted, ensure_ascii=False, indent=2)
+        return formatted
 
     except Exception as e:
         logger.error(f"filter_statistics error: {e}")
-        return json.dumps({"error": str(e)}, ensure_ascii=False)
+        return {"error": str(e)}
 
 
 @mcp.tool
@@ -599,7 +600,7 @@ def aggregate_statistics(
     format: str = "summary",
     data_id: Optional[str] = None,
     data_json: Optional[str] = None,
-) -> str:
+) -> dict:
     """
     통계 데이터를 그룹별로 집계합니다.
 
@@ -632,12 +633,12 @@ def aggregate_statistics(
         if data_id:
             loaded = load_raw_data(data_id)
             if "error" in loaded:
-                return json.dumps(loaded, ensure_ascii=False)
+                return loaded
             data = loaded["data"]
         elif data_json:
             data = json.loads(data_json)
         else:
-            return json.dumps({"error": "data_id 또는 data_json 중 하나를 제공해야 합니다"}, ensure_ascii=False)
+            return {"error": "data_id 또는 data_json 중 하나를 제공해야 합니다"}
 
         group_by_list = [g.strip() for g in group_by.split(",")]
 
@@ -647,15 +648,15 @@ def aggregate_statistics(
         aggregated = aggregate_data(data, group_by=group_by_list, agg_func=agg_func)
 
         if format == "raw":
-            return json.dumps(aggregated, ensure_ascii=False, indent=2)
+            return aggregated
 
         # 기본: LLM 친화적 요약 형식
         formatted = format_data_for_llm(aggregated, max_rows=50, save_raw=False)
-        return json.dumps(formatted, ensure_ascii=False, indent=2)
+        return formatted
 
     except Exception as e:
         logger.error(f"aggregate_statistics error: {e}")
-        return json.dumps({"error": str(e)}, ensure_ascii=False)
+        return {"error": str(e)}
 
 
 # =============================================================================
@@ -677,15 +678,15 @@ def _load_data_from_id_or_json(
     if data_id:
         loaded = load_raw_data(data_id)
         if "error" in loaded:
-            return None, json.dumps(loaded, ensure_ascii=False)
+            return None, loaded
         return loaded["data"], None
     elif data_json:
         try:
             return json.loads(data_json), None
         except json.JSONDecodeError as e:
-            return None, json.dumps({"error": f"JSON 파싱 오류: {e}"}, ensure_ascii=False)
+            return None, {"error": f"JSON 파싱 오류: {e}"}
     else:
-        return None, json.dumps({"error": "data_id 또는 data_json 중 하나를 제공해야 합니다"}, ensure_ascii=False)
+        return None, {"error": "data_id 또는 data_json 중 하나를 제공해야 합니다"}
 
 
 @mcp.tool
@@ -693,7 +694,7 @@ def analyze_trend(
     group_by: Optional[str] = None,
     data_id: Optional[str] = None,
     data_json: Optional[str] = None,
-) -> str:
+) -> dict:
     """
     데이터의 추세를 분석합니다.
 
@@ -740,7 +741,7 @@ def analyze_trend(
             cagr = metrics.get("cagr", 0)
             summary = f"전반적으로 {direction} 추세 (연평균 {cagr:+.1f}%)" if direction else "추세 분석 완료"
 
-        return json.dumps({
+        return {
             "analysis_type": result.type,
             "summary": summary,
             "group_by": group_by,
@@ -748,10 +749,10 @@ def analyze_trend(
             "metrics": result.metrics,
             "interpretation": result.interpretation,
             "visualization_suggestion": "create_quick_report()로 차트 포함 리포트 생성 가능",
-        }, ensure_ascii=False, indent=2)
+        }
     except Exception as e:
         logger.error(f"analyze_trend error: {e}")
-        return json.dumps({"error": str(e)}, ensure_ascii=False)
+        return {"error": str(e)}
 
 
 @mcp.tool
@@ -760,7 +761,7 @@ def analyze_comparison(
     period: Optional[str] = None,
     data_id: Optional[str] = None,
     data_json: Optional[str] = None,
-) -> str:
+) -> dict:
     """
     데이터를 비교 분석합니다.
 
@@ -808,7 +809,7 @@ def analyze_comparison(
         if gap:
             summary += f", 최대-최소 격차 {gap:,.0f}"
 
-        return json.dumps({
+        return {
             "analysis_type": result.type,
             "summary": summary,
             "comparison_targets": targets_list,
@@ -822,10 +823,10 @@ def analyze_comparison(
                 "rankings_preview": metrics.get("rankings", [])[:5],  # 상위 5개만
             },
             "interpretation": result.interpretation,
-        }, ensure_ascii=False, indent=2)
+        }
     except Exception as e:
         logger.error(f"analyze_comparison error: {e}")
-        return json.dumps({"error": str(e)}, ensure_ascii=False)
+        return {"error": str(e)}
 
 
 @mcp.tool
@@ -834,7 +835,7 @@ def analyze_ranking(
     period: Optional[str] = None,
     data_id: Optional[str] = None,
     data_json: Optional[str] = None,
-) -> str:
+) -> dict:
     """
     데이터의 순위를 분석합니다.
 
@@ -883,7 +884,7 @@ def analyze_ranking(
         top_1 = result.metrics.get("top_1", {})
         summary = f"1위 {top_1.get('C1_NM', '')}, 상위 {top_n}개 분석" if top_1 else f"상위 {top_n}개 순위 분석"
 
-        return json.dumps({
+        return {
             "analysis_type": result.type,
             "summary": summary,
             "period": result.metrics.get("period", period),
@@ -892,10 +893,10 @@ def analyze_ranking(
             "rankings": rankings,
             "findings": result.findings[:5],  # 상위 5개 발견사항만
             "interpretation": result.interpretation,
-        }, ensure_ascii=False, indent=2)
+        }
     except Exception as e:
         logger.error(f"analyze_ranking error: {e}")
-        return json.dumps({"error": str(e)}, ensure_ascii=False)
+        return {"error": str(e)}
 
 
 @mcp.tool
@@ -904,7 +905,7 @@ def create_quick_report(
     output_path: Optional[str] = None,
     data_id: Optional[str] = None,
     data_json: Optional[str] = None,
-) -> str:
+) -> dict:
     """
     데이터로 빠른 HTML 리포트를 생성합니다.
 
@@ -957,25 +958,25 @@ def create_quick_report(
         }
 
         if output_path:
-            return json.dumps({
+            return {
                 "status": "success",
                 "report_info": report_info,
                 "file_path": result,
                 "message": f"HTML 리포트가 '{result}'에 저장되었습니다. 브라우저에서 열어 확인하세요.",
-            }, ensure_ascii=False, indent=2)
+            }
         else:
             # output_path 없으면 저장 권장
-            return json.dumps({
+            return {
                 "status": "success",
                 "report_info": report_info,
                 "html_size": f"{len(result):,} bytes",
                 "message": "HTML 리포트가 생성되었습니다. output_path를 지정하여 파일로 저장하세요.",
                 "suggestion": "create_quick_report(data, title='제목', output_path='report.html')",
-            }, ensure_ascii=False, indent=2)
+            }
 
     except Exception as e:
         logger.error(f"create_quick_report error: {e}")
-        return json.dumps({"error": str(e)}, ensure_ascii=False)
+        return {"error": str(e)}
 
 
 # =============================================================================
@@ -983,7 +984,7 @@ def create_quick_report(
 # =============================================================================
 
 @mcp.tool
-def list_stored_data() -> str:
+def list_stored_data() -> dict:
     """
     저장된 원본 데이터 파일 목록을 조회합니다.
 
@@ -1013,15 +1014,15 @@ def list_stored_data() -> str:
 
     try:
         files = list_saved_data()
-        return json.dumps({
+        return {
             "stored_files": files[:20],  # 최근 20개만
             "total_files": len(files),
             "hint": "read_stored_data(data_id)로 전체 데이터 접근, "
                    "read_stored_data(data_id, chunk_index=0)로 청크별 접근",
-        }, ensure_ascii=False, indent=2)
+        }
     except Exception as e:
         logger.error(f"list_stored_data error: {e}")
-        return json.dumps({"error": str(e)}, ensure_ascii=False)
+        return {"error": str(e)}
 
 
 @mcp.tool
@@ -1029,7 +1030,7 @@ def read_stored_data(
     data_id: str,
     chunk_index: Optional[int] = None,
     chunk_size: int = 50,
-) -> str:
+) -> dict:
     """
     저장된 원본 데이터를 읽습니다.
 
@@ -1072,23 +1073,23 @@ def read_stored_data(
         result = load_raw_data(data_id, chunk_index=chunk_index, chunk_size=chunk_size)
 
         if "error" in result:
-            return json.dumps(result, ensure_ascii=False)
+            return result
 
         # 전체 데이터가 너무 크면 경고
         if chunk_index is None and len(result.get("data", [])) > 100:
-            return json.dumps({
+            return {
                 "warning": f"대용량 데이터 ({len(result['data'])}건). 청크별로 읽는 것을 권장합니다.",
                 "data_id": data_id,
                 "record_count": len(result.get("data", [])),
                 "suggestion": f"read_stored_data('{data_id}', chunk_index=0)로 청크별 접근",
                 "meta": result.get("meta", {}),
-            }, ensure_ascii=False, indent=2)
+            }
 
-        return json.dumps(result, ensure_ascii=False, indent=2)
+        return result
 
     except Exception as e:
         logger.error(f"read_stored_data error: {e}")
-        return json.dumps({"error": str(e)}, ensure_ascii=False)
+        return {"error": str(e)}
 
 
 # =============================================================================
@@ -1100,7 +1101,7 @@ def execute_code(
     code: str,
     data_id: Optional[str] = None,
     data_json: Optional[str] = None,
-) -> str:
+) -> dict:
     """
     Python 코드를 서버에서 실행합니다. 대용량 데이터 분석 시 토큰 98.7% 절감.
 
@@ -1131,7 +1132,7 @@ def execute_code(
             if "error" not in result:
                 data = result.get("data", [])
             else:
-                return json.dumps(result, ensure_ascii=False)
+                return result
         elif data_json:
             data = json.loads(data_json) if isinstance(data_json, str) else data_json
 
@@ -1176,14 +1177,14 @@ if not spec.get("data", {}).get("values"):
 return save_report(build_report("리포트", [{"type": "chart", "vega_spec": spec}]), "report")
 ''',
             }
-            return json.dumps(error_response, ensure_ascii=False, indent=2, default=str)
+            return error_response
 
-        return json.dumps(result, ensure_ascii=False, indent=2, default=str)
+        return result
 
     except Exception as e:
         logger.error(f"execute_code error: {e}")
         # 오류 시 모범 사례/코드 템플릿 제공
-        return json.dumps({
+        return {
             "success": False,
             "result": None,
             "stdout": "",
@@ -1234,7 +1235,7 @@ return stats
                 "chart_to_json(chart) → Vega-Lite JSON",
                 "chart_to_html(chart, title) → HTML 문자열"
             ]
-        }, ensure_ascii=False, indent=2)
+        }
 
 
 # =============================================================================
@@ -1246,7 +1247,7 @@ def execute_visualization(
     code: str,
     data_id: Optional[str] = None,
     data_json: Optional[str] = None,
-) -> str:
+) -> dict:
     """
     시각화 코드를 실행합니다. 차트/그래프 생성에 특화.
 
@@ -1285,16 +1286,16 @@ def execute_visualization(
             if "error" not in result:
                 data = result.get("data", [])
             else:
-                return json.dumps(result, ensure_ascii=False)
+                return result
         elif data_json:
             data = json.loads(data_json) if isinstance(data_json, str) else data_json
 
         result = _execute(code=code, data=data)
-        return json.dumps(result, ensure_ascii=False, indent=2, default=str)
+        return result
 
     except Exception as e:
         logger.error(f"execute_visualization error: {e}")
-        return json.dumps({"success": False, "error": str(e)}, ensure_ascii=False)
+        return {"success": False, "error": str(e)}
 
 
 @mcp.tool
@@ -1302,7 +1303,7 @@ def execute_analysis(
     code: str,
     data_id: Optional[str] = None,
     data_json: Optional[str] = None,
-) -> str:
+) -> dict:
     """
     데이터 분석 코드를 실행합니다. 통계/집계에 특화.
 
@@ -1349,16 +1350,16 @@ def execute_analysis(
             if "error" not in result:
                 data = result.get("data", [])
             else:
-                return json.dumps(result, ensure_ascii=False)
+                return result
         elif data_json:
             data = json.loads(data_json) if isinstance(data_json, str) else data_json
 
         result = _execute(code=code, data=data)
-        return json.dumps(result, ensure_ascii=False, indent=2, default=str)
+        return result
 
     except Exception as e:
         logger.error(f"execute_analysis error: {e}")
-        return json.dumps({"success": False, "error": str(e)}, ensure_ascii=False)
+        return {"success": False, "error": str(e)}
 
 
 @mcp.tool
@@ -1366,7 +1367,7 @@ def execute_table(
     code: str,
     data_id: Optional[str] = None,
     data_json: Optional[str] = None,
-) -> str:
+) -> dict:
     """
     테이블 생성 코드를 실행합니다. 예쁜 HTML 테이블 생성에 특화.
 
@@ -1405,16 +1406,16 @@ def execute_table(
             if "error" not in result:
                 data = result.get("data", [])
             else:
-                return json.dumps(result, ensure_ascii=False)
+                return result
         elif data_json:
             data = json.loads(data_json) if isinstance(data_json, str) else data_json
 
         result = _execute(code=code, data=data)
-        return json.dumps(result, ensure_ascii=False, indent=2, default=str)
+        return result
 
     except Exception as e:
         logger.error(f"execute_table error: {e}")
-        return json.dumps({"success": False, "error": str(e)}, ensure_ascii=False)
+        return {"success": False, "error": str(e)}
 
 
 @mcp.tool
@@ -1424,7 +1425,7 @@ def execute_report(
     charts_json: Optional[str] = None,
     tables_json: Optional[str] = None,
     data_id: Optional[str] = None,
-) -> str:
+) -> dict:
     """
     리포트 생성 코드를 실행합니다. 시각화+분석+테이블을 조합.
 
@@ -1473,15 +1474,15 @@ def execute_report(
             charts=charts,
             tables=tables,
         )
-        return json.dumps(result, ensure_ascii=False, indent=2, default=str)
+        return result
 
     except Exception as e:
         logger.error(f"execute_report error: {e}")
-        return json.dumps({"success": False, "error": str(e)}, ensure_ascii=False)
+        return {"success": False, "error": str(e)}
 
 
 @mcp.tool
-def get_executor_guide(executor_type: str) -> str:
+def get_executor_guide(executor_type: str) -> dict:
     """
     특화 실행기의 가이드라인을 조회합니다.
 
@@ -1509,10 +1510,10 @@ def get_executor_guide(executor_type: str) -> str:
     if guide:
         return guide
     else:
-        return json.dumps({
+        return {
             "error": f"알 수 없는 실행기 유형: {executor_type}",
             "available_types": list(guides.keys()),
-        }, ensure_ascii=False)
+        }
 
 
 # =============================================================================
@@ -1520,7 +1521,7 @@ def get_executor_guide(executor_type: str) -> str:
 # =============================================================================
 
 @mcp.resource("kosis://regions")
-def get_regions_resource() -> str:
+def get_regions_resource() -> dict:
     """
     시도/시군구 코드 매핑 데이터.
 
@@ -1547,11 +1548,11 @@ def get_regions_resource() -> str:
         "38": "경상남도",
         "39": "제주특별자치도",
     }
-    return json.dumps(regions, ensure_ascii=False, indent=2)
+    return regions
 
 
 @mcp.resource("kosis://org-codes")
-def get_org_codes_resource() -> str:
+def get_org_codes_resource() -> dict:
     """
     주요 기관 코드 목록.
 
@@ -1567,11 +1568,11 @@ def get_org_codes_resource() -> str:
         "138": "농림축산식품부",
         "118": "해양수산부",
     }
-    return json.dumps(orgs, ensure_ascii=False, indent=2)
+    return orgs
 
 
 @mcp.resource("kosis://period-types")
-def get_period_types_resource() -> str:
+def get_period_types_resource() -> dict:
     """
     기간 유형 코드 설명.
 
@@ -1584,7 +1585,7 @@ def get_period_types_resource() -> str:
         "S": "반기 (Semi-annual)",
         "D": "일간 (Daily)",
     }
-    return json.dumps(period_types, ensure_ascii=False, indent=2)
+    return period_types
 
 
 # =============================================================================
@@ -1592,7 +1593,7 @@ def get_period_types_resource() -> str:
 # =============================================================================
 
 @mcp.tool
-def get_report_templates() -> str:
+def get_report_templates() -> dict:
     """
     리포트 템플릿 목록 조회 (토큰 효율적).
 
@@ -1605,17 +1606,17 @@ def get_report_templates() -> str:
     from kosis_tools.story_templates import get_template_list
 
     templates = get_template_list()
-    return json.dumps({
+    return {
         "templates": templates,
         "usage": "상세 가이드: get_template_guide(template_id)",
-    }, ensure_ascii=False, indent=2)
+    }
 
 
 @mcp.tool
 def get_template_guide(
     template_id: str,
     step: Optional[int] = None,
-) -> str:
+) -> dict:
     """
     템플릿 가이드 조회 (단계별 또는 전체).
 
@@ -1635,18 +1636,18 @@ def get_template_guide(
         # 특정 단계만 반환 (토큰 절약)
         result = get_template_step(template_id, step)
         if not result:
-            return json.dumps({"error": f"템플릿 '{template_id}' 또는 단계 {step}을 찾을 수 없습니다."}, ensure_ascii=False)
-        return json.dumps(result, ensure_ascii=False, indent=2)
+            return {"error": f"템플릿 '{template_id}' 또는 단계 {step}을 찾을 수 없습니다."}
+        return result
     else:
         # 전체 구조 반환
         result = _get_guide(template_id)
         if not result:
-            return json.dumps({"error": f"템플릿 '{template_id}'을 찾을 수 없습니다."}, ensure_ascii=False)
-        return json.dumps(result, ensure_ascii=False, indent=2)
+            return {"error": f"템플릿 '{template_id}'을 찾을 수 없습니다."}
+        return result
 
 
 @mcp.tool
-def get_element_guide(element_type: str) -> str:
+def get_element_guide(element_type: str) -> dict:
     """
     특정 요소(차트, 카드 등)의 상세 가이드.
 
@@ -1664,11 +1665,11 @@ def get_element_guide(element_type: str) -> str:
     from kosis_tools.story_templates import get_element_guide as _get_element
 
     result = _get_element(element_type)
-    return json.dumps(result, ensure_ascii=False, indent=2)
+    return result
 
 
 @mcp.tool
-def recommend_template(data_id: Optional[str] = None) -> str:
+def recommend_template(data_id: Optional[str] = None) -> dict:
     """
     데이터 특성 기반 템플릿 추천.
 
@@ -1686,7 +1687,7 @@ def recommend_template(data_id: Optional[str] = None) -> str:
         from kosis_tools.report_tools import load_raw_data
         result = load_raw_data(data_id)
         if "error" in result:
-            return json.dumps(result, ensure_ascii=False)
+            return result
 
         data = result.get("data", [])
         # 데이터 시그니처 생성
@@ -1698,14 +1699,14 @@ def recommend_template(data_id: Optional[str] = None) -> str:
             "fields": list(signature.get("fields", {}).keys()),
             "records": signature.get("total_records", 0),
         }
-        return json.dumps(recommendation, ensure_ascii=False, indent=2)
+        return recommendation
     else:
         # 일반 가이드
-        return json.dumps({
+        return {
             "tip": "data_id를 제공하면 데이터 기반 추천을 받을 수 있습니다.",
             "available_templates": ["trend", "compare", "composition", "correlation", "dashboard", "ranking"],
             "default": "dashboard",
-        }, ensure_ascii=False, indent=2)
+        }
 
 
 # =============================================================================
@@ -1713,46 +1714,46 @@ def recommend_template(data_id: Optional[str] = None) -> str:
 # =============================================================================
 
 @mcp.resource("kosis://templates")
-def get_templates_resource() -> str:
+def get_templates_resource() -> dict:
     """
     리포트 템플릿 전체 목록 (리소스).
 
     각 템플릿의 ID, 이름, 용도, 섹션 수를 제공합니다.
     """
     from kosis_tools.story_templates import get_template_list
-    return json.dumps(get_template_list(), ensure_ascii=False, indent=2)
+    return get_template_list()
 
 
 @mcp.resource("kosis://templates/trend")
-def get_trend_template_resource() -> str:
+def get_trend_template_resource() -> dict:
     """트렌드 분석 템플릿 상세."""
     from kosis_tools.story_templates import get_template_guide
-    return json.dumps(get_template_guide("trend"), ensure_ascii=False, indent=2)
+    return get_template_guide("trend")
 
 
 @mcp.resource("kosis://templates/compare")
-def get_compare_template_resource() -> str:
+def get_compare_template_resource() -> dict:
     """비교 분석 템플릿 상세."""
     from kosis_tools.story_templates import get_template_guide
-    return json.dumps(get_template_guide("compare"), ensure_ascii=False, indent=2)
+    return get_template_guide("compare")
 
 
 @mcp.resource("kosis://templates/dashboard")
-def get_dashboard_template_resource() -> str:
+def get_dashboard_template_resource() -> dict:
     """대시보드 템플릿 상세."""
     from kosis_tools.story_templates import get_template_guide
-    return json.dumps(get_template_guide("dashboard"), ensure_ascii=False, indent=2)
+    return get_template_guide("dashboard")
 
 
 @mcp.resource("kosis://guide/charts")
-def get_chart_guide_resource() -> str:
+def get_chart_guide_resource() -> dict:
     """차트 선택 가이드."""
     from kosis_tools.story_templates import CHART_GUIDE
-    return json.dumps(CHART_GUIDE, ensure_ascii=False, indent=2)
+    return CHART_GUIDE
 
 
 @mcp.resource("kosis://guide/visualization")
-def get_visualization_guide_resource() -> str:
+def get_visualization_guide_resource() -> dict:
     """시각화 상세 가이드라인 - execute_code 사용 시 참조."""
     guide = {
         "title": "KOSIS 시각화 가이드라인",
@@ -1832,11 +1833,11 @@ def get_visualization_guide_resource() -> str:
             "response_field": "quality_warnings, quality_summary",
         },
     }
-    return json.dumps(guide, ensure_ascii=False, indent=2)
+    return guide
 
 
 @mcp.resource("kosis://guide/code-patterns")
-def get_code_patterns_resource() -> str:
+def get_code_patterns_resource() -> dict:
     """코드 패턴 예시 - 복사-붙여넣기 가능한 템플릿."""
     patterns = {
         "line_chart": '''# 라인 차트 (트렌드)
@@ -1900,7 +1901,7 @@ df = prepare_data(data, numeric_fields=["DT"])
 result = df.groupby("C1_NM")["DT"].agg(['sum', 'mean', 'count']).sort_values('sum', ascending=False)
 return result.head(10).to_dict()''',
     }
-    return json.dumps(patterns, ensure_ascii=False, indent=2)
+    return patterns
 
 
 # =============================================================================
