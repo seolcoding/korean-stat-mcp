@@ -1,0 +1,4 @@
+interface:
+  display_name: "KOSIS API"
+  short_description: "Search and analyze Korean public statistics via KOSIS OpenAPI"
+  default_prompt: "Use KOSIS OpenAPI to find, inspect, fetch, and analyze Korean statistical data using the local Python client modules."
