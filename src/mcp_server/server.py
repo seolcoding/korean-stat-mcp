@@ -1881,6 +1881,33 @@ from .discover import discover_tools as _discover_tools_impl  # noqa: E402
 from .discover import execute_tool as _execute_tool_impl  # noqa: E402
 from .exposed_tools import V1_EXPOSED_NAMES  # noqa: E402
 
+from kosis_tools.verify import verify_statistics as _verify_statistics_impl  # noqa: E402
+
+
+@mcp.tool
+async def verify_statistics(
+    claim: str,
+    table_id: Optional[str] = None,
+    tolerance: float = 0.01,
+) -> dict:
+    """LLM이 생성한 숫자 주장을 KOSIS 원본 데이터와 대조 검증합니다 (US-005).
+
+    한국어/영문 자연어 주장에서 숫자 + 시점 + 지역 + 지표를 추출하여
+    KOSIS의 실제 셀 값과 상대 오차 비교 후 일치 여부를 반환합니다.
+
+    Args:
+        claim: 검증할 주장 (예: "2023년 서울 인구는 9.4M명").
+        table_id: 알고 있는 KOSIS TBL_ID. 'org_id:tbl_id' 형식도 허용.
+            생략하면 키워드 검색으로 자동 추정합니다 (정확도 ↓).
+        tolerance: 상대 허용 오차. 기본 0.01 (= 1%).
+
+    Returns:
+        VerifyResult dict: match, expected, actual, diff_pct, tolerance,
+        table_id, source_url, confidence, explanation.
+    """
+    result = await _verify_statistics_impl(claim, table_id=table_id, tolerance=tolerance)
+    return result.to_dict()
+
 
 @mcp.tool
 def discover_tools() -> dict:

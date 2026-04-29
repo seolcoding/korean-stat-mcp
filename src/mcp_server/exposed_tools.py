@@ -25,7 +25,6 @@ class ExposedTool:
     purpose_en: str
 
 
-# NOTE: `verify_statistics` will be added in US-005 (raises count to 16).
 V1_EXPOSED: tuple[ExposedTool, ...] = (
     # ---- DISCOVER -------------------------------------------------------
     ExposedTool(
@@ -121,6 +120,13 @@ V1_EXPOSED: tuple[ExposedTool, ...] = (
         "META",
         "이름으로 임의의 등록된 도구 호출 (파워유저용)",
         "Invoke any registered tool by name (power-user escape hatch)",
+    ),
+    # ---- VERIFY ---------------------------------------------------------
+    ExposedTool(
+        "verify_statistics",
+        "VERIFY",
+        "LLM이 생성한 숫자 주장을 KOSIS 원본 데이터와 대조 검증",
+        "Cross-check LLM-produced numeric claims against KOSIS source data",
     ),
 )
 

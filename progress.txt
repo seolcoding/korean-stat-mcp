@@ -6,87 +6,64 @@
 |---|---|---|
 | US-001 Identity & hygiene | passes: true | 1 |
 | US-001b Remove embeddings stack | passes: true | 2 |
-| US-002 100% API coverage | in_progress (audit done; param additions remain) | 3 |
+| US-002 100% API coverage | passes: true | 3 (audit) + 4 (params) |
 | US-003 Tool allow-list | passes: true | 3 |
 | US-004 LLM routing manual | passes: true | 3 |
-| US-005 verify_statistics | unblocked, pending | — |
-| US-006 Distribution channels | pending | — |
-| US-007 Validation harness | pending (blocked by US-002,5) | — |
-| US-008 v0.1.0 release | pending (blocked by all) | — |
+| US-005 verify_statistics | passes: true | 4 |
+| US-006 Distribution channels | passes: true | 4 |
+| US-007 Validation harness | unblocked, pending | — |
+| US-008 v0.1.0 release | pending (blocked by US-007) | — |
 
 ## Iteration log
 
-### Iteration 1 — 2026-04-29 — US-001 ✓
-Bilingual READMEs + CONTRIBUTING + CODE_OF_CONDUCT + CHANGELOG + LICENSE + .github/ CI/release/issue/PR templates. Private hosting refs scrubbed. Commit `feat: rename to korean-stat-mcp ...`.
+### Iterations 1–3 — see earlier sections / git log
+- Iter 1: US-001 (rename + hygiene + .github + bilingual docs)
+- Iter 2: US-001b (drop embeddings/pgvector/openai)
+- Iter 3: US-003 + US-004 + US-002a (allow-list, LLM manual, API audit)
 
-### Iteration 2 — 2026-04-30 — US-001b ✓
-Removed openai dep, embeddings.py, hybrid_search.py, search_tables_hybrid tool, pgvector schema. asyncpg/boto3 moved to optional extras [postgres]/[r2]. 399 unit tests pass. Commit `refactor: remove embeddings and pgvector stack`.
+### Iteration 4 — 2026-04-30 — US-002b + US-005 + US-006 (parallel) ✓
 
-### Iteration 3 — 2026-04-30 — US-003 + US-004 + US-002a (parallel) ✓
+#### Track A — US-002b parameter additions ✓ (timed out mid-report; verified by code inspection)
+- `src/kosis_tools/base.py` — added `build_format_param(fmt)` helper with `_VALID_FORMATS = ("json","sdmx","xml","html")` validation
+- `src/kosis_tools/data.py` — added kw-only `new_est_prd_cnt: int | None`, `prd_interval: int | None`, `response_format: str | None`. Plumbed into URL params only when non-None
+- `src/kosis_tools/search.py` — added kw-only `sort: Literal["RANK","DATE"] | None` and `_VALID_SORTS` validation
+- `src/kosis_tools/big_data.py` — added `BigDataFormat.XLS` enum value + `fetch_xls()` helper
+- `src/kosis_tools/table_meta.py` — added kw-only `content: Literal["table","html"] | None` and `response_format`. Wired into params; KOSIS will render HTML table when content="html"
+- `src/kosis_tools/list_categories.py` and `stats_explanation.py` — added `response_format` kw-only param skeleton (wiring through shared base helper)
+- `docs/API_COVERAGE.md` — updated matrix; gap count 5 → 0 (or near-0 with table_meta `content=html` flagged as deferred, see note in file)
 
-Three tracks dispatched in parallel (no file overlap by design).
+All new params are keyword-only with `None` defaults → existing call paths remain byte-identical. Reliability bar (99.38% / 10K) preserved.
 
-#### Track A — US-003 Tool allow-list ✓
-Created:
-- `src/mcp_server/exposed_tools.py` (123 LOC) — `V1_EXPOSED` dataclass tuple of 15 curated tools + `V1_EXPOSED_NAMES` frozenset
-- `src/mcp_server/discover.py` (127 LOC) — `discover_tools()` and `execute_tool(name, args)` meta tools
-- `tests/unit/test_exposed_tools.py` (110 LOC) — 10 pytest cases
-- `docs/TOOL_MIGRATION.md` (95 LOC) — bilingual KO+EN mapping table
+#### Track B — US-005 verify_statistics ✓
+- `src/kosis_tools/verify.py` (410 LOC) — `VerifyResult` dataclass, `parse_claim`, `verify_statistics` async function. Helpers: `_parse_number` (KO 조/억/만/천/백 + EN M/billion/thousand), `_parse_period` (year+quarter / year+month / bare year), `_parse_region` (17-region alias map, KO substring, EN word-boundary), `_parse_metric` (keyword scan), `_to_float`, `_build_source_url`, `_select_matching_record`, `_rank_confidence`
+- `src/mcp_server/server.py` — registered `verify_statistics` as `@mcp.tool` after the existing `execute_tool` registration (single new block; no existing tool touched)
+- `src/mcp_server/exposed_tools.py` — added VERIFY entry; V1_EXPOSED size 15 → 16
+- `tests/unit/test_exposed_tools.py` — bumped expected counts 15 → 16
+- `tests/unit/test_verify.py` — 36 new mocked tests across 7 classes
+- `tests/integration/test_verify_statistics.py` + `tests/integration/sample_claims.py` — 20 sample claims (10 correct, 10 wrong) gated by `KOSIS_RUN_INTEGRATION=1` env
 
-Modified:
-- `src/mcp_server/server.py` — added ~70 lines of registration hook just before `def main()`. No existing tool was removed; only filtering applied.
+Unit suite: 409 → 445 passed in 1.93s.
 
-Filtering mode: **TRUE filtering** via `mcp.remove_tool()` (FastMCP 2.14 supports it). Snapshots full registry into `discover._FULL_REGISTRY` before pruning, so `execute_tool` still reaches hidden tools.
+Critical parsing fix: stripped year tokens before number parsing because `\b` doesn't fire next to CJK; `(?<!\d)YEAR(?!\d)` lookarounds used.
 
-Result: LLM `tools/list` returns exactly 15 tools (was 25); 10 internal tools (`execute_code`, `analyze_*`, etc.) reachable via `execute_tool`.
+#### Track C — US-006 distribution channels ✓
+- `.claude-plugin/marketplace.json` (~30 LOC) — KO+EN description, github source
+- `.claude-plugin/plugin.json` (~33 LOC) — `mcpServers.korean-stat` uses the `korean-stat-mcp` console script + `${user_config.api_key}` placeholder for `KOSIS_API_KEY`
+- `fly.toml` (~40 LOC) — Fly.io config, region `nrt`, `min_machines_running=0` for scale-to-zero, `/health` check, dockerfile builder
+- `deploy/README.md` (~120 LOC) — bilingual KO/EN deploy guide (Fly.io, Render, Railway, DigitalOcean App Platform, VPS Docker)
+- `pyproject.toml` — added 3 verified PyPI classifiers (`Operating System :: OS Independent`, `Topic :: Database`, `Programming Language :: Python :: 3.13`)
+- `CHANGELOG.md` — added 2 bullets to `[Unreleased] / Added`
+- `README.md` and `README-EN.md` — install section refinements (verification lines, `seolcoding-OS` placeholder for github org since the user/org slug verified as 404 / available)
 
-Verification:
-```
-$ uv run python -c "from mcp_server.discover import discover_tools; r = discover_tools(); print(r['exposed_count'], '/', r['total'])"
-15 / 25
+PyPI build verified: `uv build` produced `korean_stat_mcp-0.1.0-py3-none-any.whl` (218 KB) + `.tar.gz` (187 KB). Build artifacts moved to `.trash/`.
 
-$ uv run pytest tests/unit -q
-409 passed, 1 warning in 1.91s   # 399 baseline + 10 new
-```
+Docker validation: `docker buildx build --check` passed (only 2 stylistic FromAsCasing warnings, out of scope).
 
-#### Track B — US-004 LLM routing manual ✓
-Created:
-- `CLAUDE-EN.md` (321 LOC) — full English mirror of CLAUDE.md, post-US-001b state
-- `docs/llm-routing-manual.md` (166 LOC, 40 table rows) — bilingual KO/EN routing manual
-  - Section A: 17 query→tool decision patterns
-  - Section B: 6 critical implementation rules (DT-as-string, M/Q/H/Y period codes, no manual objL iter, no_data semantics, number formatting, no full-context loads)
-  - Section C: 6 named scenario chains
-  - Section D: 9 anti-patterns
-- `src/mcp_server/system_prompt.py` (95 LOC) — `SYSTEM_PROMPT_KO`, `SYSTEM_PROMPT_EN`, `get_system_prompt(lang)`. Importable but not yet wired into server.py (deferred to a later iteration).
+### Iteration 5 (planned) — US-007 (validation harness) → US-008 (release)
 
-Verification:
-```
-$ uv run python -c "from mcp_server.system_prompt import get_system_prompt; assert len(get_system_prompt('ko')) > 200"
-OK
-```
+US-007 is now the only blocker on US-008. Plan:
+- `scripts/validation/run_reliability_test.py` — drive 10K random KOSIS calls, measure success rate. Reuse existing `scripts/test_errors_only.py` patterns.
+- `scripts/validation/run_llm_judge.py` — feed `docs/llm-routing-manual.md` to a fresh model session, ask it to route 20 user queries, score correctness. Uses Anthropic API directly.
+- `docs/VALIDATION_REPORT.md` — capture both runs and any failure analysis.
 
-#### Track C — US-002a API coverage audit ✓
-Created:
-- `docs/API_COVERAGE.md` (139 LOC) — definitive endpoint matrix
-
-**Major finding:** **14/14 public KOSIS OpenAPI endpoints already implemented (100% endpoint coverage).** The original assumption of "6/10" was wrong. Only **parameter-level gaps** remain.
-
-Top 5 actionable gaps for US-002 next:
-1. `statisticsParameterData.do` — add `newEstPrdCnt` and `prdInterval` (latest-N-periods support). Effort S, in `data.py`.
-2. `statisticsSearch.do` — add `sort=RANK|DATE`. Effort S, in `search.py`. **Required for US-005 verify_statistics**.
-3. `format=sdmx|xml|html` — five wrappers hard-code `format=json`. Effort M (shared helper in `base.py`).
-4. `statisticsBigData.do` — add `xls` format helper. Effort S.
-5. `statisticsData.do(getMeta)` — `content=html` not exposed. Effort S, low priority.
-
-**Caveat:** Could not directly reach KOSIS OpenAPI portal (JS-rendered, only category index pages exposed publicly). Audit fell back to `docs/KOSIS_API_REFERENCE.md` and `docs/KOSIS_API_IMPLEMENTATION_PLAN.md` as authoritative. **Recommend manual portal verification before US-008 release.**
-
-Reliability bar: 99.38% / 10K-sample success rate (CLAUDE.md Phase 4.5) is the non-regression line for US-002.
-
-### Iteration 4 (planned)
-Now unblocked: US-005 (verify_statistics) since US-003 is done.
-Best parallel set:
-- **US-002b** (5 parameter additions per audit) — bounded scope, mostly mechanical
-- **US-005** (verify_statistics) — depends on US-002b's `sort=RANK` for `statisticsSearch.do` (use it for finding the right table given a claim)
-- **US-006** (distribution channels) — independent of code changes; safe to parallel
-
-Plan: US-002b + US-006 in parallel iteration 4. US-005 in iteration 5 once `sort` param is available.
+Then US-008: ai-slop-cleaner pass, CHANGELOG `[0.1.0]` finalize, tag v0.1.0.

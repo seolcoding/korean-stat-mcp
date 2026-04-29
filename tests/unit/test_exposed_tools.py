@@ -13,9 +13,9 @@ from mcp_server.exposed_tools import V1_EXPOSED, V1_EXPOSED_NAMES, ExposedTool
 
 
 def test_v1_exposed_count() -> None:
-    """V1 surface ships with exactly 15 tools (becomes 16 after US-005)."""
-    assert len(V1_EXPOSED) == 15
-    assert len(V1_EXPOSED_NAMES) == 15
+    """V1 surface ships with exactly 16 tools (15 from US-003 + verify_statistics)."""
+    assert len(V1_EXPOSED) == 16
+    assert len(V1_EXPOSED_NAMES) == 16
 
 
 def test_v1_exposed_entries_fully_populated() -> None:
@@ -68,8 +68,8 @@ def test_discover_tools_shape(loaded_server) -> None:
 
     result = discover_tools()
     assert set(result.keys()) == {"exposed", "internal", "total", "exposed_count"}
-    assert result["exposed_count"] == 15
-    assert result["total"] >= 15
+    assert result["exposed_count"] == 16
+    assert result["total"] >= 16
     # Each exposed entry carries name+layer+purpose fields
     for entry in result["exposed"]:
         assert {"name", "layer", "purpose_ko", "purpose_en"}.issubset(entry.keys())

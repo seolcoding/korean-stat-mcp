@@ -34,10 +34,12 @@ API Reference:
 from __future__ import annotations
 
 import logging
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, List, Literal, Optional
 
-from .base import KosisBaseClient
+from .base import KosisBaseClient, build_format_param
 from .config import Endpoints, KosisConfig
+
+_VALID_SORTS = ("RANK", "DATE")
 
 logger = logging.getLogger(__name__)
 
@@ -77,6 +79,9 @@ class StatisticsSearch(KosisBaseClient):
         start_date: Optional[str] = None,
         end_date: Optional[str] = None,
         result_count: int = 100,
+        *,
+        sort: Literal["RANK", "DATE"] | None = None,
+        response_format: str | None = None,
     ) -> List[Dict[str, Any]]:
         """
         통계표를 키워드로 검색합니다.
@@ -169,12 +174,21 @@ class StatisticsSearch(KosisBaseClient):
             logger.warning("검색어가 비어있습니다.")
             return []
 
+        # Gap 2: validate sort param
+        if sort is not None and sort not in _VALID_SORTS:
+            raise ValueError(
+                f"sort must be one of {_VALID_SORTS}, got: {sort!r}"
+            )
+
         params: Dict[str, Any] = {
             "method": "getList",
-            "format": "json",
+            "format": build_format_param(response_format),  # type: ignore[arg-type]
             "searchNm": keyword.strip(),
             "resultCount": str(min(result_count, 5000)),  # 최대 5000
         }
+
+        if sort is not None:
+            params["sort"] = sort
 
         if org_id:
             params["orgId"] = org_id

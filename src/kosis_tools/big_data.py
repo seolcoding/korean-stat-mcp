@@ -291,6 +291,54 @@ class StatisticsBigData(KosisBaseClient):
 
         return data
 
+    def fetch_xls(
+        self,
+        user_stats_id: str,
+        prd_se: str = "Y",
+        start_prd_de: str | None = None,
+        end_prd_de: str | None = None,
+        new_est_prd_cnt: int | None = None,
+        prd_interval: int | None = None,
+    ) -> bytes:
+        """
+        XLS 형식으로 대용량 데이터를 조회합니다 (Gap 4).
+
+        KOSIS의 statisticsBigData.do는 ``format=xls`` 를 지원하지만 응답이
+        바이너리이므로 ``bytes`` 를 그대로 반환합니다. 호출 측에서 파일로
+        저장하거나 ``openpyxl`` / ``pandas.read_excel`` 등으로 파싱하세요.
+
+        Args:
+            user_stats_id: 사용자 등록 통계표 ID.
+            prd_se: 수록주기 (필수).
+            start_prd_de: 시작 수록시점 (선택).
+            end_prd_de: 종료 수록시점 (선택).
+            new_est_prd_cnt: 최근 수록시점 개수 (선택).
+            prd_interval: 수록시점 간격 (선택).
+
+        Returns:
+            XLS 파일 바이트. 실패 시 빈 ``b""``.
+        """
+        if not user_stats_id or not user_stats_id.strip():
+            raise ValueError("user_stats_id는 필수입니다.")
+        if not prd_se:
+            raise ValueError("prd_se(수록주기)는 필수입니다.")
+
+        params: Dict[str, Any] = {
+            "format": BigDataFormat.XLS.value,
+            "userStatsId": user_stats_id.strip(),
+            "prdSe": prd_se,
+        }
+        if new_est_prd_cnt is not None:
+            params["newEstPrdCnt"] = str(new_est_prd_cnt)
+        elif start_prd_de and end_prd_de:
+            params["startPrdDe"] = start_prd_de
+            params["endPrdDe"] = end_prd_de
+        if prd_interval is not None:
+            params["prdInterval"] = str(prd_interval)
+
+        logger.info(f"대용량 XLS 조회: user_stats_id={user_stats_id}")
+        return self._request_raw_bytes(self.ENDPOINT, params) or b""
+
     def fetch_dsd(
         self,
         user_stats_id: str,
@@ -353,6 +401,32 @@ class StatisticsBigData(KosisBaseClient):
             )
             response.raise_for_status()
             return response.text
+        except requests.RequestException as e:
+            logger.error(f"HTTP 요청 실패: {e}")
+            return None
+
+    def _request_raw_bytes(
+        self,
+        endpoint: str,
+        params: Dict[str, Any],
+    ) -> Optional[bytes]:
+        """Raw bytes 응답 (XLS 등 바이너리용)."""
+        import time
+        import requests
+
+        time.sleep(self.config.rate_limit_delay)
+
+        url = f"{self.config.base_url}/{endpoint}"
+        params["apiKey"] = self.config.api_key
+
+        try:
+            response = requests.get(
+                url,
+                params=params,
+                timeout=self.config.timeout,
+            )
+            response.raise_for_status()
+            return response.content
         except requests.RequestException as e:
             logger.error(f"HTTP 요청 실패: {e}")
             return None

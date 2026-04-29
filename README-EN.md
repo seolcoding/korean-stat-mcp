@@ -21,8 +21,10 @@
 ### 1. Claude Code plugin marketplace
 
 ```bash
-/plugin marketplace add <github-user>/korean-stat-mcp
+/plugin marketplace add seolcoding-OS/korean-stat-mcp
 ```
+
+Verify with `korean-stat-mcp --version` (expected output: `korean-stat-mcp 0.1.0`).
 
 ### 2. Claude.ai custom connector (remote MCP)
 
@@ -32,7 +34,8 @@ In Claude.ai → Settings → Connectors → Add custom connector, use the remot
 https://korean-stat-mcp.example.com/mcp
 ```
 
-(Public hosted endpoint — TBD; self-host instructions in [docs/DEPLOYMENT.md](./docs/DEPLOYMENT.md).)
+(No official hosted endpoint yet — self-host using the Fly.io / Render / Railway / DigitalOcean / VPS recipes in [deploy/README.md](./deploy/README.md).)
+Verify with `curl https://<your-host>/health` returning `200 OK`.
 
 ### 3. Claude Desktop / Cursor / Windsurf (JSON config)
 
@@ -52,12 +55,16 @@ Add to your client config (`claude_desktop_config.json`, `.cursor/mcp.json`, etc
 }
 ```
 
+Verify with `korean-stat-mcp --version` (expected output: `korean-stat-mcp 0.1.0`).
+
 ### 4. PyPI
 
 ```bash
 pip install korean-stat-mcp
 korean-stat-mcp --help
 ```
+
+Verify with `korean-stat-mcp --version` (expected output: `korean-stat-mcp 0.1.0`).
 
 ## Tool overview
 

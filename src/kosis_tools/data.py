@@ -43,7 +43,7 @@ import logging
 import re
 from typing import Any, Dict, List, Optional, Tuple
 
-from .base import KosisBaseClient
+from .base import KosisBaseClient, build_format_param
 from .config import Endpoints, KosisConfig, PeriodType
 
 # PRD_SE 한글 → API 코드 변환에 PeriodType.from_korean() 사용
@@ -96,6 +96,10 @@ class StatisticsData(KosisBaseClient):
         obj_l7: Optional[str] = None,
         obj_l8: Optional[str] = None,
         itm_id: str = "ALL",
+        *,
+        new_est_prd_cnt: int | None = None,
+        prd_interval: int | None = None,
+        response_format: str | None = None,
     ) -> List[Dict[str, Any]]:
         """
         통계 데이터를 조회합니다.
@@ -211,7 +215,7 @@ class StatisticsData(KosisBaseClient):
 
         params: Dict[str, Any] = {
             "method": "getList",
-            "format": "json",
+            "format": build_format_param(response_format),  # type: ignore[arg-type]
             "orgId": org_id,
             "tblId": tbl_id,
             "objL1": obj_l1,
@@ -221,6 +225,12 @@ class StatisticsData(KosisBaseClient):
             "startPrdDe": start_date,
             "endPrdDe": end_date,
         }
+
+        # 최신 N 시점 / 시점 간격 (Gap 1: KOSIS newEstPrdCnt, prdInterval)
+        if new_est_prd_cnt is not None:
+            params["newEstPrdCnt"] = str(new_est_prd_cnt)
+        if prd_interval is not None:
+            params["prdInterval"] = str(prd_interval)
 
         # objL2~objL8 추가 (값이 있는 경우만)
         obj_levels = [

@@ -33,7 +33,7 @@ from __future__ import annotations
 import logging
 from typing import Any, Dict, List, Optional
 
-from .base import KosisBaseClient
+from .base import KosisBaseClient, build_format_param
 from .config import Endpoints, KosisConfig
 
 logger = logging.getLogger(__name__)
@@ -116,6 +116,8 @@ class StatsExplanation(KosisBaseClient):
         self,
         stat_id: str,
         meta_items: Optional[List[str]] = None,
+        *,
+        response_format: str | None = None,
     ) -> Optional[Dict[str, Any]]:
         """
         통계 ID로 통계설명을 조회합니다.
@@ -178,7 +180,7 @@ class StatsExplanation(KosisBaseClient):
 
         params: Dict[str, Any] = {
             "method": "getList",
-            "format": "json",
+            "format": build_format_param(response_format),  # type: ignore[arg-type]
             "statId": stat_id.strip(),
             "metaItm": meta_itm,
         }
@@ -202,6 +204,8 @@ class StatsExplanation(KosisBaseClient):
         org_id: str,
         tbl_id: str,
         meta_items: Optional[List[str]] = None,
+        *,
+        response_format: str | None = None,
     ) -> Optional[Dict[str, Any]]:
         """
         기관 ID와 테이블 ID로 통계설명을 조회합니다.
@@ -256,7 +260,7 @@ class StatsExplanation(KosisBaseClient):
 
         params: Dict[str, Any] = {
             "method": "getList",
-            "format": "json",
+            "format": build_format_param(response_format),  # type: ignore[arg-type]
             "orgId": org_id.strip(),
             "tblId": tbl_id.strip(),
             "metaItm": meta_itm,

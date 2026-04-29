@@ -33,7 +33,7 @@ from __future__ import annotations
 import logging
 from typing import Any, Dict, List, Optional
 
-from .base import KosisBaseClient
+from .base import KosisBaseClient, build_format_param
 from .config import Endpoints, KosisConfig
 
 logger = logging.getLogger(__name__)
@@ -122,6 +122,8 @@ class CategoryList(KosisBaseClient):
         self,
         org_id: str,
         parent_stat_id: Optional[str] = None,
+        *,
+        response_format: str | None = None,
     ) -> List[Dict[str, Any]]:
         """
         특정 기관의 통계표 목록을 조회합니다.
@@ -184,7 +186,7 @@ class CategoryList(KosisBaseClient):
 
         params: Dict[str, Any] = {
             "method": "getList",
-            "format": "json",
+            "format": build_format_param(response_format),  # type: ignore[arg-type]
             "vwCd": "MT_OTITLE",  # 기관별 통계 뷰
             "parentListId": org_id.strip(),  # 기관 ID를 parentListId로 전달
         }
@@ -207,7 +209,12 @@ class CategoryList(KosisBaseClient):
         else:
             return []
 
-    def list_by_theme(self, vw_cd: str) -> List[Dict[str, Any]]:
+    def list_by_theme(
+        self,
+        vw_cd: str,
+        *,
+        response_format: str | None = None,
+    ) -> List[Dict[str, Any]]:
         """
         특정 주제의 통계표 목록을 조회합니다.
 
@@ -251,7 +258,7 @@ class CategoryList(KosisBaseClient):
 
         params: Dict[str, Any] = {
             "method": "getList",
-            "format": "json",
+            "format": build_format_param(response_format),  # type: ignore[arg-type]
             "vwCd": "MT_ZTITLE",  # 주제별 통계 뷰
             "parentListId": vw_cd.strip(),  # 주제 코드를 parentListId로 전달
         }
@@ -271,7 +278,12 @@ class CategoryList(KosisBaseClient):
         else:
             return []
 
-    def list_statistics(self, org_id: str) -> List[Dict[str, Any]]:
+    def list_statistics(
+        self,
+        org_id: str,
+        *,
+        response_format: str | None = None,
+    ) -> List[Dict[str, Any]]:
         """
         기관의 상위 통계 목록을 조회합니다.
 
@@ -310,7 +322,7 @@ class CategoryList(KosisBaseClient):
 
         params: Dict[str, Any] = {
             "method": "getList",
-            "format": "json",
+            "format": build_format_param(response_format),  # type: ignore[arg-type]
             "vwCd": "MT_OTITLE",  # 기관별 통계 뷰
             "parentListId": org_id.strip(),  # 기관 ID를 parentListId로 전달
         }

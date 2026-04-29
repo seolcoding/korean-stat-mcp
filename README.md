@@ -25,10 +25,11 @@
 ### 1. Claude Code 플러그인 마켓 (가장 쉬움)
 
 ```bash
-/plugin marketplace add <github-user>/korean-stat-mcp
+/plugin marketplace add seolcoding-OS/korean-stat-mcp
 ```
 
 설치 후 `KOSIS_API_KEY` 환경변수만 설정하면 즉시 사용할 수 있습니다.
+설치 검증: `korean-stat-mcp --version` (예상 출력: `korean-stat-mcp 0.1.0`).
 
 ### 2. Claude.ai 커스텀 커넥터 (호스팅 인스턴스 사용)
 
@@ -38,7 +39,8 @@ Claude.ai의 **Settings → Connectors → Add custom connector** 에서 다음 
 https://korean-stat-mcp.example.com/mcp
 ```
 
-> ⚠️ 공식 호스팅 엔드포인트는 US-006에서 확정 예정입니다. 현재는 자체 호스팅 인스턴스 URL을 입력해 사용하세요.
+> ⚠️ 공식 호스팅 엔드포인트는 운영팀 결정 전입니다. 직접 호스팅하려면 [deploy/README.md](./deploy/README.md) 의 Fly.io / Render / Railway / DigitalOcean / VPS 가이드를 참고하세요.
+> 검증: `curl https://<your-host>/health` 가 `200 OK` 를 반환해야 합니다.
 
 ### 3. Claude Desktop / Cursor / Windsurf (JSON 설정)
 
@@ -64,6 +66,8 @@ pip install korean-stat-mcp
 - macOS Claude Desktop: `~/Library/Application Support/Claude/claude_desktop_config.json`
 - Cursor / Windsurf: 각 IDE의 MCP 설정 화면에서 위 JSON을 그대로 사용
 
+설치 검증: `korean-stat-mcp --version` (예상 출력: `korean-stat-mcp 0.1.0`).
+
 ### 4. PyPI 직접 설치 (스크립트/CLI)
 
 ```bash
@@ -74,6 +78,7 @@ export KOSIS_API_KEY="<여기에-KOSIS-API-키>"
 korean-stat-mcp
 ```
 
+설치 검증: `korean-stat-mcp --version` (예상 출력: `korean-stat-mcp 0.1.0`).
 KOSIS API 키는 [KOSIS OpenAPI 신청 페이지](https://kosis.kr/openapi/)에서 무료로 발급받을 수 있습니다.
 
 ---

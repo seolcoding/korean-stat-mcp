@@ -32,9 +32,9 @@ API Reference:
 from __future__ import annotations
 
 import logging
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, List, Literal, Optional
 
-from .base import KosisBaseClient
+from .base import KosisBaseClient, build_format_param
 from .config import Endpoints, KosisConfig
 
 logger = logging.getLogger(__name__)
@@ -72,6 +72,9 @@ class TableMetadata(KosisBaseClient):
         self,
         org_id: str,
         tbl_id: str,
+        *,
+        content: Literal["table", "html"] | None = None,
+        response_format: str | None = None,
     ) -> Optional[Dict[str, Any]]:
         """
         통계표 기본 정보를 조회합니다.
@@ -123,13 +126,21 @@ class TableMetadata(KosisBaseClient):
             logger.warning("테이블 ID가 비어있습니다.")
             return None
 
+        # Gap 5: validate content variant; "html" lets KOSIS render the table
+        if content is not None and content not in ("table", "html"):
+            raise ValueError(
+                f"content must be 'table' or 'html', got: {content!r}"
+            )
+
         params: Dict[str, Any] = {
             "method": "getMeta",
             "type": "TBL",
-            "format": "json",
+            "format": build_format_param(response_format),  # type: ignore[arg-type]
             "orgId": org_id.strip(),
             "tblId": tbl_id.strip(),
         }
+        if content is not None:
+            params["content"] = content
 
         logger.info(f"통계표 정보 조회: org_id={org_id}, tbl_id={tbl_id}")
 
