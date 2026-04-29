@@ -1,0 +1,72 @@
+name: Bug Report
+description: 버그를 신고합니다 / Report a bug
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 버그 신고 / Bug Report
+
+        **한국어:** 버그를 신고해 주셔서 감사합니다. 가능한 한 자세히 작성해 주세요.
+        **English:** Thank you for reporting a bug. Please fill in as much detail as possible.
+
+        > 신고 전에 [기존 이슈](../issues?q=is%3Aissue)를 먼저 검색해 주세요.
+        > Please search [existing issues](../issues?q=is%3Aissue) before submitting.
+
+  - type: input
+    id: kosis-table-id
+    attributes:
+      label: KOSIS Table ID (관련 시 / if applicable)
+      description: 문제가 발생한 KOSIS 테이블 ID (예. `DT_1B040A3`)
+      placeholder: DT_1B040A3
+    validations:
+      required: false
+
+  - type: input
+    id: version
+    attributes:
+      label: korean-stat-mcp 버전 / Version
+      description: "`korean-stat-mcp --version` 출력값을 붙여넣어 주세요."
+      placeholder: "0.1.0"
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: 재현 단계 / Steps to reproduce
+      description: 버그를 재현하기 위한 단계를 순서대로 적어주세요.
+      placeholder: |
+        1. ...
+        2. ...
+        3. ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected-actual
+    attributes:
+      label: 예상 동작 vs 실제 동작 / Expected vs actual behavior
+      description: 무엇을 기대했고, 실제로 어떤 일이 일어났는지 설명해 주세요.
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: 관련 로그 / Relevant logs
+      description: 관련 로그, 스택 트레이스, 또는 에러 메시지를 붙여넣어 주세요.
+      render: shell
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: preflight
+    attributes:
+      label: 사전 확인 / Pre-flight checks
+      options:
+        - label: 기존 이슈를 검색했으며 중복이 아닙니다 / I searched existing issues and this is not a duplicate.
+          required: true
+        - label: 최신 버전에서도 문제가 발생합니다 / The issue reproduces on the latest version.
+          required: true

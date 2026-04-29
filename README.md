@@ -1,315 +1,138 @@
-# KOSIS MCP Server
+# korean-stat-mcp
 
-<p align="center">
-  <strong>Korean Statistical Data at Your Fingertips</strong><br>
-  AI agents can now search, analyze, and visualize KOSIS statistics through MCP
-</p>
+> 한국 국가통계포털(KOSIS) 통합 MCP 도구 — Korean Statistics (KOSIS) MCP Server for LLM agents
 
-<p align="center">
-  <a href="#features">Features</a> •
-  <a href="#quick-start">Quick Start</a> •
-  <a href="#production-server">Production Server</a> •
-  <a href="#usage">Usage</a> •
-  <a href="docs/USER_GUIDE.md">User Guide</a> •
-  <a href="#contributing">Contributing</a>
-</p>
+[![PyPI](https://img.shields.io/pypi/v/korean-stat-mcp)](https://pypi.org/project/korean-stat-mcp/)
+[![Python](https://img.shields.io/badge/python-3.12%2B-blue)](https://www.python.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
+[![CI](https://img.shields.io/badge/CI-pending-lightgrey)](#)
+
+🌐 English version: [README-EN.md](./README-EN.md)
 
 ---
 
-## 🚀 Production Server (Now Live!)
+## 왜 이 도구인가
 
-**The KOSIS MCP Server is currently running in production:**
-
-```
-🌐 URL: https://schedule-fell-quizzes-comments.trycloudflare.com
-✅ Status: Operational
-📊 Database: 252,890 statistical tables with embeddings
-🔧 Server: wai-3090ti (Ubuntu 24.04)
-```
-
-**Connect to the production server:**
-
-```json
-// ~/Library/Application Support/Claude/claude_desktop_config.json
-{
-  "mcpServers": {
-    "kosis": {
-      "url": "https://schedule-fell-quizzes-comments.trycloudflare.com",
-      "transport": "streamable-http"
-    }
-  }
-}
-```
-
-> **Note**: This is a temporary Cloudflare Tunnel URL. A permanent domain will be configured in Phase 5.
+- **검증된 안정성**: KOSIS OpenAPI 호출 성공률 **99.38%** (10,000건 샘플 테스트). 분기/반기/지자체 fallback 자동화로 LLM이 단일 API 호출만 신경 쓰면 됩니다.
+- **큐레이션된 도구 표면**: 24개 내부 도구 중 LLM에게 정말 필요한 것만 노출하여 토큰 낭비 없이 빠른 의사결정 흐름을 만듭니다.
+- **`verify_statistics`**: LLM이 만든 수치 주장을 KOSIS 원천 데이터와 자동 대조하는 검증 도구. 환각(hallucination) 방어가 기본 내장입니다.
+- **한국 통계 LLM 표준을 지향**: 천 단위 한글 포맷, 과학적표기법 금지, 한국어/영어 라우팅 매뉴얼 등 한국어 LLM 워크플로에 최적화.
 
 ---
 
-## What is KOSIS MCP Server?
+## 🚀 Quick Start — 4가지 설치 채널
 
-**KOSIS MCP Server** is a [Model Context Protocol (MCP)](https://modelcontextprotocol.io/) server that enables AI agents like Claude to directly access and analyze Korean statistical data from [KOSIS (Korean Statistical Information Service)](https://kosis.kr/).
-
-### Key Benefits
-
-- **98% Token Savings**: Server-side data processing with chunked responses
-- **Natural Language Search**: Hybrid search combining vector similarity and BM25
-- **Rich Visualizations**: Generate interactive Altair charts with URL links
-- **Comprehensive Data**: Access to 250,000+ statistical tables
-
-## Features
-
-### 🔍 DISCOVER - Smart Data Search
-
-- **Hybrid Search**: Vector embeddings + BM25 full-text search with RRF ranking
-- **Category Browsing**: Navigate by organization or theme
-- **Metadata Access**: Explore table structures and classification values
-
-### 📥 FETCH - Efficient Data Retrieval
-
-- **Chunked Responses**: Large datasets split into manageable chunks
-- **Server-Side Storage**: Raw data stays on server, summaries to LLM
-- **Filtering & Aggregation**: Query data without loading it all
-
-### 📊 PRESENT - Analysis & Visualization
-
-- **Modular Executors**: Specialized tools for visualization, analysis, tables, reports
-- **Interactive Charts**: Altair-based visualizations served via URL
-- **Composite Reports**: Combine charts, analysis, and tables into HTML reports
-
-## Quick Start
-
-### Prerequisites
-
-- Python 3.12+
-- [uv](https://github.com/astral-sh/uv) package manager
-- KOSIS API Key ([Get one here](https://kosis.kr/openapi/))
-- Docker & Docker Compose (recommended)
-
-### Option 1: Docker (Recommended)
+### 1. Claude Code 플러그인 마켓 (가장 쉬움)
 
 ```bash
-# Clone the repository
-git clone https://github.com/sdh/kosis-mcp.git
-cd kosis-mcp
-
-# Configure environment
-cp .env.example .env
-# Edit .env with your API keys
-
-# Start services
-docker compose up -d
-
-# Verify
-curl http://localhost:8000/health
+/plugin marketplace add <github-user>/korean-stat-mcp
 ```
 
-### Option 2: Local Development
+설치 후 `KOSIS_API_KEY` 환경변수만 설정하면 즉시 사용할 수 있습니다.
+
+### 2. Claude.ai 커스텀 커넥터 (호스팅 인스턴스 사용)
+
+Claude.ai의 **Settings → Connectors → Add custom connector** 에서 다음 URL을 등록합니다.
+
+```
+https://korean-stat-mcp.example.com/mcp
+```
+
+> ⚠️ 공식 호스팅 엔드포인트는 US-006에서 확정 예정입니다. 현재는 자체 호스팅 인스턴스 URL을 입력해 사용하세요.
+
+### 3. Claude Desktop / Cursor / Windsurf (JSON 설정)
 
 ```bash
-# Clone and setup
-git clone https://github.com/sdh/kosis-mcp.git
-cd kosis-mcp
-
-# Install dependencies
-uv sync
-
-# Set environment variables
-export KOSIS_API_KEY="your-api-key"
-
-# Run MCP server (stdio mode)
-uv run python -m mcp_server
+pip install korean-stat-mcp
 ```
 
-## Claude Desktop Integration
-
-### Option 1: Production Server (Recommended)
-
-Connect to the live production server:
+설정 파일에 다음 블록을 추가합니다.
 
 ```json
 {
   "mcpServers": {
-    "kosis": {
-      "url": "https://schedule-fell-quizzes-comments.trycloudflare.com",
-      "transport": "streamable-http"
-    }
-  }
-}
-```
-
-### Option 2: Local Docker
-
-Run your own local server:
-
-```json
-{
-  "mcpServers": {
-    "kosis": {
-      "url": "http://localhost:8001",
-      "transport": "streamable-http"
-    }
-  }
-}
-```
-
-### Option 3: stdio Mode (Advanced)
-
-For development only:
-
-```json
-{
-  "mcpServers": {
-    "kosis": {
-      "command": "uv",
-      "args": ["run", "--directory", "/path/to/kosis-mcp", "python", "-m", "mcp_server"],
+    "korean-stat": {
+      "command": "korean-stat-mcp",
       "env": {
-        "KOSIS_API_KEY": "your-api-key"
+        "KOSIS_API_KEY": "<여기에-KOSIS-API-키>"
       }
     }
   }
 }
 ```
 
-## Usage
+- macOS Claude Desktop: `~/Library/Application Support/Claude/claude_desktop_config.json`
+- Cursor / Windsurf: 각 IDE의 MCP 설정 화면에서 위 JSON을 그대로 사용
 
-### Example: Population Trend Analysis
-
-```text
-User: "Show me Korea's population trend over the last 5 years"
-
-Claude uses:
-1. search_statistics("인구") → finds relevant tables
-2. get_statistics_data(org_id="101", tbl_id="DT_1B040A3") → retrieves data
-3. execute_visualization(code="...", data_id="...") → creates chart
-   → Returns: http://localhost:8000/artifacts/charts/population_trend.html
-```
-
-### Available MCP Tools
-
-| Layer | Tool | Description |
-|-------|------|-------------|
-| **DISCOVER** | `search_statistics` | Keyword-based table search |
-| | `search_tables_hybrid` | Semantic + keyword hybrid search |
-| | `get_table_metadata` | Get table structure and classifications |
-| **FETCH** | `get_statistics_data` | Retrieve statistical data |
-| | `filter_statistics` | Filter stored data |
-| | `aggregate_statistics` | Aggregate by groups |
-| **EXECUTE** | `execute_code` | Run Python code server-side |
-| | `execute_visualization` | Generate Altair charts |
-| | `execute_analysis` | Perform statistical analysis |
-| | `execute_report` | Create composite HTML reports |
-
-See [User Guide](docs/USER_GUIDE.md) for detailed tool documentation and examples.
-
-## Configuration
-
-### Environment Variables
-
-| Variable | Required | Description |
-|----------|----------|-------------|
-| `KOSIS_API_KEY` | Yes | KOSIS OpenAPI key |
-| `DATABASE_URL` | For hybrid search | PostgreSQL connection string |
-| `OPENAI_API_KEY` | For hybrid search | For generating embeddings |
-| `KOSIS_ARTIFACTS_DIR` | No | Artifact storage path (default: `/tmp/kosis_artifacts`) |
-| `KOSIS_BASE_URL` | No | Base URL for artifact links (default: `http://localhost:8000`) |
-
-See [.env.example](.env.example) for all configuration options.
-
-## Architecture
-
-```
-┌─────────────────────────────────────────────────────────────┐
-│                    MCP Client (Claude)                       │
-└──────────────────────────┬──────────────────────────────────┘
-                           │ MCP Protocol
-┌──────────────────────────▼──────────────────────────────────┐
-│                   KOSIS MCP Server                           │
-│  ┌────────────────────────────────────────────────────────┐ │
-│  │  Layer 3: EXECUTE (Code Execution & Visualization)     │ │
-│  │  • execute_code • execute_visualization • execute_report│ │
-│  ├────────────────────────────────────────────────────────┤ │
-│  │  Layer 2: FETCH (Data Operations)                      │ │
-│  │  • get_statistics_data • filter • aggregate            │ │
-│  ├────────────────────────────────────────────────────────┤ │
-│  │  Layer 1: DISCOVER (Search & Metadata)                 │ │
-│  │  • search_statistics • hybrid_search • metadata        │ │
-│  └────────────────────────────────────────────────────────┘ │
-└─────────────────┬───────────────────────┬───────────────────┘
-                  │                       │
-       ┌──────────▼──────────┐   ┌────────▼────────┐
-       │  PostgreSQL         │   │  KOSIS OpenAPI  │
-       │  + pgvector         │   │  (kosis.kr)     │
-       └─────────────────────┘   └─────────────────┘
-```
-
-## Development
+### 4. PyPI 직접 설치 (스크립트/CLI)
 
 ```bash
-# Install dev dependencies
-uv sync --dev
+pip install korean-stat-mcp
+export KOSIS_API_KEY="<여기에-KOSIS-API-키>"
 
-# Run tests
-uv run pytest tests/ -v
-
-# Run MCP Inspector for debugging
-uv run fastmcp dev src/mcp_server/server.py
-
-# Type checking
-uv run mypy src/
+# stdio 모드로 직접 실행
+korean-stat-mcp
 ```
 
-### Project Structure
+KOSIS API 키는 [KOSIS OpenAPI 신청 페이지](https://kosis.kr/openapi/)에서 무료로 발급받을 수 있습니다.
 
-```
-kosis-mcp/
-├── src/
-│   ├── mcp_server/          # MCP server entry points
-│   │   ├── server.py        # Tool definitions
-│   │   └── app.py           # HTTP mode ASGI app
-│   └── kosis_tools/         # Core functionality
-│       ├── search.py        # KOSIS API search
-│       ├── data.py          # Data retrieval
-│       ├── visualize.py     # Altair visualization
-│       ├── code_executor.py # Sandboxed code execution
-│       └── executors/       # Modular executors
-├── data/                    # Metadata cache
-├── docs/                    # Documentation
-├── tests/                   # Test suite
-├── docker-compose.yml       # Docker setup
-└── pyproject.toml           # Project config
-```
+---
 
-## Documentation
+## 도구 일람
 
-- [User Guide](docs/USER_GUIDE.md) - Detailed usage instructions
-- [Architecture Design](docs/ARCHITECTURE_DESIGN.md) - System architecture
-- [KOSIS API Reference](docs/KOSIS_API_REFERENCE.md) - API documentation
-- [Deployment Guide](docs/DEPLOYMENT.md) - Production deployment
-- [Hybrid Search Design](docs/HYBRID_SEARCH.md) - Search implementation
+LLM 에 노출되는 큐레이션 도구 (12-16개 수준). 자세한 시그니처와 마이그레이션 매핑은 [docs/TOOL_MIGRATION.md](./docs/TOOL_MIGRATION.md) 참조.
 
-## Contributing
+| 레이어 | 도구 | 설명 |
+|--------|------|------|
+| **DISCOVER** | `search_statistics` | KOSIS 검색 API 기반 통계표 검색 |
+| | `get_table_metadata` | 테이블 분류·항목 메타데이터 |
+| | `list_categories` | 기관·주제별 카테고리 탐색 |
+| **FETCH** | `get_statistics_data` | KOSIS 원천 데이터 조회 (chunked) |
+| | `filter_statistics` | 서버 측 필터링 |
+| | `aggregate_statistics` | 그룹 집계 |
+| | `get_data_chunk` | 큰 데이터셋의 청크 단위 접근 |
+| **VERIFY** | `verify_statistics` | LLM 수치 주장 ↔ KOSIS 원천 자동 대조 |
+| **PRESENT** | `execute_visualization` | Altair 차트 생성 (천 단위, 과학적표기법 금지) |
+| | `execute_analysis` | 변화율·CAGR·통계 분석 |
+| | `execute_table` | 스타일 적용된 HTML 테이블 |
+| | `execute_report` | 차트+분석+테이블 복합 리포트 |
 
-Contributions are welcome! Please see our contributing guidelines (coming soon).
+---
 
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+## 환경변수
 
-## License
+| 변수 | 필수 | 설명 |
+|------|------|------|
+| `KOSIS_API_KEY` | ✅ | KOSIS OpenAPI 키 ([발급](https://kosis.kr/openapi/)) |
+| `R2_BUCKET_NAME` | 선택 | Cloudflare R2 차트/리포트 호스팅 버킷 |
+| `R2_ACCESS_KEY_ID` / `R2_SECRET_ACCESS_KEY` | 선택 | R2 자격증명 |
+| `R2_PUBLIC_URL` | 선택 | R2 퍼블릭 URL prefix |
+| `KOSIS_ARTIFACTS_DIR` | 선택 | 로컬 아티팩트 저장 경로 (기본 `/tmp/kosis_artifacts`) |
+| `KOSIS_MCP_URL` | 선택 | 자체 호스팅 인스턴스 베이스 URL |
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+전체 설정 항목은 [.env.example](./.env.example) 참조.
 
-## Acknowledgments
+---
 
-- [KOSIS (Korean Statistical Information Service)](https://kosis.kr/) for providing the OpenAPI
-- [FastMCP](https://gofastmcp.com/) for the MCP server framework
-- [Altair](https://altair-viz.github.io/) for declarative visualization
+## 문서
 
-## Links
+- 프로젝트 진입점: [CLAUDE.md](./CLAUDE.md)
+- 사용 가이드: [docs/USER_GUIDE.md](./docs/USER_GUIDE.md)
+- 아키텍처: [docs/ARCHITECTURE_DESIGN.md](./docs/ARCHITECTURE_DESIGN.md)
+- KOSIS API 레퍼런스: [docs/KOSIS_API_REFERENCE.md](./docs/KOSIS_API_REFERENCE.md)
+- 배포 가이드: [docs/DEPLOYMENT.md](./docs/DEPLOYMENT.md)
+- 대용량 데이터 패턴: [docs/LARGE_DATA_MCP_PATTERNS.md](./docs/LARGE_DATA_MCP_PATTERNS.md)
 
-- [KOSIS Portal](https://kosis.kr/)
-- [KOSIS OpenAPI Guide](https://kosis.kr/openapi/)
-- [Model Context Protocol](https://modelcontextprotocol.io/)
-- [FastMCP Documentation](https://gofastmcp.com/)
+---
+
+## 기여
+
+이슈와 PR을 환영합니다. 개발 환경 셋업·코드 스타일·테스트 절차는 [CONTRIBUTING.md](./CONTRIBUTING.md) 를 참고해주세요. 행동 강령은 [CODE_OF_CONDUCT.md](./CODE_OF_CONDUCT.md) 를 따릅니다.
+
+---
+
+## 라이선스
+
+본 프로젝트는 MIT 라이선스를 따릅니다. 전체 조항은 [LICENSE](./LICENSE) 파일을 확인해주세요.
+
+데이터 출처는 [KOSIS 국가통계포털](https://kosis.kr/) 이며, 데이터 자체의 이용 조건은 KOSIS의 정책을 따릅니다.

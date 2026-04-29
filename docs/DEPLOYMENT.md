@@ -2,8 +2,8 @@
 
 > **상태**: ✅ 프로덕션 운영 중 (Cloudflare Tunnel)
 > **배포일**: 2025-12-20
-> **서버**: wai-3090ti (Ubuntu 24.04)
-> **접속 URL**: https://schedule-fell-quizzes-comments.trycloudflare.com
+> **서버**: 사용자 자체 호스팅 (예: Ubuntu 24.04+, Docker 환경)
+> **접속 URL**: ${KOSIS_MCP_URL}  # 사용자 자체 호스팅 인스턴스 주소
 > **참조 문서**: FastMCP 공식문서, pgvector GitHub, Cloudflare R2 Docs
 
 ---
@@ -380,10 +380,10 @@ docker compose up -d --build
 **현재 배포 상태:**
 ```bash
 # Cloudflare Tunnel URL (임시)
-https://schedule-fell-quizzes-comments.trycloudflare.com
+${KOSIS_MCP_URL}
 
 # 테스트
-curl https://schedule-fell-quizzes-comments.trycloudflare.com/health
+curl ${KOSIS_MCP_URL}/health
 ```
 
 **설정 방법:**
@@ -400,7 +400,7 @@ docker compose -f docker-compose.remote.yml up -d
 {
   "mcpServers": {
     "kosis": {
-      "url": "https://schedule-fell-quizzes-comments.trycloudflare.com",
+      "url": "${KOSIS_MCP_URL}",
       "transport": "streamable-http"
     }
   }

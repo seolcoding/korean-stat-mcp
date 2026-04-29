@@ -1060,7 +1060,7 @@ wheels = [
 ]
 
 [[package]]
-name = "kosis-mcp"
+name = "korean-stat-mcp"
 version = "0.1.0"
 source = { editable = "." }
 dependencies = [

@@ -80,8 +80,8 @@
 - `execute_report` - 복합 리포트 (차트+분석+테이블)
 
 **Phase 4: Remote Deployment** ✅ 완료 (2025-12-20)
-- Cloudflare Tunnel 설정 완료 (`https://schedule-fell-quizzes-comments.trycloudflare.com`)
-- 외부 접근 가능 (원격 서버: wai-3090ti)
+- Cloudflare Tunnel 설정 완료 (자체 호스팅 URL)
+- 외부 접근 가능 (원격 서버 (자체 호스팅))
 - E2E 테스트 통과 (11/11)
 - 프로덕션 운영 중
 
@@ -207,23 +207,23 @@ kosis-mcp/
 
 ## 서버 실행
 
-### 프로덕션 서버 (원격 배포 완료) ✅
+### 원격 호스팅 (선택)
 
-**현재 운영 중인 서버:**
+`korean-stat-mcp`는 사용자가 직접 자체 호스팅할 수 있습니다. 환경변수 `KOSIS_MCP_URL` 에 본인 인스턴스 주소를 지정하세요.
+
 ```
-URL: https://kosis.seolcoding.com/
-상태: ✅ 정상 운영 중
-서버: wai-3090ti (Ubuntu 24.04)
-업타임: 2일+ (PostgreSQL: 4일+)
+URL: ${KOSIS_MCP_URL}        # 예: https://kosis-mcp.example.com
+상태: 사용자 자체 호스팅
+서버: 사용자 자체 호스팅 (예: Ubuntu 24.04+, Docker 환경)
 ```
 
 **테스트:**
 ```bash
-# 프로덕션 서버 헬스 체크
-curl https://kosis.seolcoding.com/health
+# 헬스 체크 (자체 호스팅 인스턴스)
+curl ${KOSIS_MCP_URL}/health
 
 # E2E 워크플로 테스트
-uv run python scripts/test_e2e_workflow.py https://kosis.seolcoding.com
+uv run python scripts/test_e2e_workflow.py ${KOSIS_MCP_URL}
 ```
 
 ### 로컬 개발 (Docker Compose)

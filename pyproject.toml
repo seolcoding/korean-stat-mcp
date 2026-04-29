@@ -1,7 +1,7 @@
 [project]
-name = "kosis-mcp"
+name = "korean-stat-mcp"
 version = "0.1.0"
-description = "KOSIS(국가통계포털) MCP Server - Korean Statistical Data API Tools"
+description = "Korean Statistics (KOSIS) MCP Server — 한국 국가통계포털 통합 도구"
 readme = "README.md"
 requires-python = ">=3.12"
 license = "MIT"
@@ -37,12 +37,13 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/seolcoding/kosis-mcp"
-Documentation = "https://github.com/seolcoding/kosis-mcp#readme"
-Repository = "https://github.com/seolcoding/kosis-mcp"
+Homepage = "https://github.com/<github-user>/korean-stat-mcp"
+Documentation = "https://github.com/<github-user>/korean-stat-mcp#readme"
+Repository = "https://github.com/<github-user>/korean-stat-mcp"
+"Bug Tracker" = "https://github.com/<github-user>/korean-stat-mcp/issues"
 
 [project.scripts]
-kosis-mcp = "mcp_server.server:main"
+korean-stat-mcp = "mcp_server.server:main"
 
 [dependency-groups]
 dev = [
