@@ -1,0 +1,73 @@
+{
+  "id": "energy",
+  "title": "재생에너지",
+  "source_file": "kosis-reports/data/report_010_processed.json",
+  "records": 10,
+  "table_ids": [
+    "DT_38804_B03"
+  ],
+  "period_range": "2015-2024",
+  "unit": "TWh",
+  "series": [
+    {
+      "label": "재생에너지 발전량",
+      "values": [
+        {
+          "period": "2015",
+          "value": 17.634487
+        },
+        {
+          "period": "2016",
+          "value": 19.369412
+        },
+        {
+          "period": "2017",
+          "value": 22.60437
+        },
+        {
+          "period": "2018",
+          "value": 25.606886
+        },
+        {
+          "period": "2019",
+          "value": 24.592287
+        },
+        {
+          "period": "2020",
+          "value": 22.40038
+        },
+        {
+          "period": "2021",
+          "value": 25.792926
+        },
+        {
+          "period": "2022",
+          "value": 31.346868
+        },
+        {
+          "period": "2023",
+          "value": 33.714251
+        },
+        {
+          "period": "2024",
+          "value": 38.060311
+        }
+      ]
+    }
+  ],
+  "kpis": [
+    {
+      "label": "최신값",
+      "value": 38.06,
+      "unit": "TWh",
+      "detail": "2024"
+    },
+    {
+      "label": "기간 변화율",
+      "value": 115.8,
+      "unit": "%",
+      "detail": "2015 대비"
+    }
+  ],
+  "insight": "재생에너지 발전량은 중장기적으로 증가했지만 전력 구성 내 비중 해석이 함께 필요하다."
+}

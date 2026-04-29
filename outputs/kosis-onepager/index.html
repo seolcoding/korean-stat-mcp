@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>KOSIS 데이터 10면 원페이지</title>
+<style>
+* { box-sizing: border-box; }
+body { margin:0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color:#17202a; background:#f5f7fb; }
+header { padding:48px 40px 28px; background:#ffffff; border-bottom:1px solid #d8dee9; }
+h1 { margin:0; font-size:42px; letter-spacing:0; }
+header p { max-width:980px; line-height:1.6; color:#475569; }
+.summary { display:grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap:12px; margin-top:24px; }
+.summary div { padding:16px; background:#eef6f4; border:1px solid #cfe7e1; border-radius:8px; }
+.summary strong { display:block; font-size:26px; color:#0f766e; }
+main { padding:28px 40px 56px; display:grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap:18px; }
+.card { background:#fff; border:1px solid #d8dee9; border-radius:8px; overflow:hidden; display:grid; grid-template-columns:220px minmax(0, 1fr); min-height:300px; cursor:pointer; transition:border-color .15s ease, transform .15s ease; }
+.card:hover { border-color:#0f766e; transform:translateY(-1px); }
+.card img { width:100%; height:100%; object-fit:cover; background:#0f172a; }
+.body { padding:20px; min-width:0; }
+.meta, .source-line { color:#64748b; font-size:12px; }
+h2 { margin:6px 0 12px; font-size:24px; }
+.kpis { display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:10px; margin-bottom:14px; }
+.kpi-cell { min-width:0; padding:10px 12px; background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; }
+.kpi-label { display:block; color:#475569; font-size:12px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.kpis strong { display:block; font-size:26px; color:#0f766e; margin-top:2px; }
+.kpis em { display:block; color:#64748b; font-style:normal; font-size:12px; line-height:1.35; }
+.spark { width:100%; height:84px; margin:8px 0 14px; overflow:visible; }
+.spark polyline { fill:none; stroke:#2563eb; stroke-width:4; stroke-linecap:round; stroke-linejoin:round; }
+p { line-height:1.55; margin:0 0 12px; }
+.deep-link { display:inline-block; margin:0 0 8px; color:#2563eb; font-weight:700; font-size:13px; }
+details { margin-top:12px; border-top:1px solid #e2e8f0; padding-top:10px; }
+summary { cursor:pointer; color:#0f766e; font-weight:700; font-size:13px; }
+.source-line { margin:9px 0; line-height:1.5; }
+.source-line a { color:#2563eb; text-decoration:none; }
+.source-line a:hover { text-decoration:underline; }
+.live-badge { display:inline-block; margin:0 0 10px; padding:5px 8px; border-radius:999px; font-size:12px; font-weight:700; }
+.live-badge.ok { color:#0f766e; background:#e7f7f1; border:1px solid #b7e4d3; }
+.live-badge.pending { color:#92400e; background:#fff7ed; border:1px solid #fed7aa; }
+.data-table { width:100%; border-collapse:collapse; font-size:12px; }
+.data-table th, .data-table td { padding:7px 8px; border-bottom:1px solid #e2e8f0; text-align:right; }
+.data-table th:first-child, .data-table td:first-child { text-align:left; }
+.data-table th { color:#475569; background:#f8fafc; }
+.empty { color:#64748b; font-size:13px; }
+footer { padding:22px 40px; color:#64748b; border-top:1px solid #d8dee9; background:#fff; }
+@media (max-width: 900px) {
+  main { grid-template-columns:1fr; padding:18px; }
+  header { padding:32px 18px 20px; }
+  .summary { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .card { grid-template-columns:1fr; }
+  .card img { height:210px; }
+  h1 { font-size:32px; }
+}
+</style>
+</head>
+<body>
+<header>
+  <h1>KOSIS 데이터 10면 추출 · 시각화 원페이지</h1>
+  <p>로컬 저장소의 KOSIS 추출 데이터 10종을 요약하고, KOSIS 공식 API로 원천 응답을 대조했습니다. 각 주제는 요약 카드에서 원본 출처를 확인하고, 클릭하면 세부 딥 다이브 분석 문서로 이동합니다.</p>
+  <section class="summary">
+    <div><strong>10</strong>데이터 주제</div>
+    <div><strong>51,563</strong>원천 레코드</div>
+    <div><strong>13</strong>테이블 참조</div>
+    <div><strong>2026-04-29</strong>생성일</div>
+  </section>
+</header>
+<main>
+
+<article class="card" id="fertility" data-href="details/fertility.html" tabindex="0" role="link" aria-label="합계출산율 딥 다이브 보기">
+  <img src="assets/fertility.png" alt="" />
+  <div class="body">
+    <div class="meta">2014~2023 · 합계출산율: 여성 1명당 출생아 수 / 연령별 출산율: 여성 1천 명당 출생아 수</div>
+    <h2>합계출산율</h2>
+    <span class="live-badge ok">실시간 KOSIS API 검증 완료 · 10건</span>
+    <div class="kpis"><div class="kpi-cell"><span class="kpi-label">최신 합계출산율</span><strong>0.72</strong><em>여성 1명당 출생아 수 · 전국, 2023</em></div><div class="kpi-cell"><span class="kpi-label">합계출산율 변화</span><strong>-0.48</strong><em>여성 1명당 출생아 수 · 2014~2023, 1.205 → 0.721 (-40.2%)</em></div></div>
+    <svg class="spark" viewBox="0 0 280 84" preserveAspectRatio="none">
+<polyline points="0.0,5.5 31.1,0.0 62.2,10.9 93.3,30.3 124.4,42.5 155.6,52.1 186.7,65.2 217.8,69.9 248.9,74.8 280.0,84.0"></polyline>
+</svg>
+    <p>전국 합계출산율은 2014년 1.205에서 2023년 0.721로 낮아졌다. 30대 초반 출산율도 함께 확인해야 추세의 중심 연령대를 볼 수 있다.</p>
+    <a class="deep-link" href="details/fertility.html">딥 다이브 분석 보기 →</a>
+    <details>
+      <summary>원본 출처와 데이터 확인</summary>
+      <div class="source-line"><a href="items/fertility.json">가공 데이터</a> · <a href="../../kosis-reports/data/report_001_fertility_rate.json">원천 데이터 파일</a> · <span>통계표 ID: DT_1B81A17</span></div>
+      <table class="data-table"><thead><tr><th>기간</th><th>값</th><th>단위</th></tr></thead><tbody><tr><td>2014</td><td>1.21</td><td>출산율</td></tr><tr><td>2015</td><td>1.24</td><td>출산율</td></tr><tr><td>2016</td><td>1.17</td><td>출산율</td></tr><tr><td>2017</td><td>1.05</td><td>출산율</td></tr><tr><td>2018</td><td>0.98</td><td>출산율</td></tr><tr><td>2019</td><td>0.92</td><td>출산율</td></tr><tr><td>2020</td><td>0.84</td><td>출산율</td></tr><tr><td>2021</td><td>0.81</td><td>출산율</td></tr><tr><td>2022</td><td>0.78</td><td>출산율</td></tr><tr><td>2023</td><td>0.72</td><td>출산율</td></tr></tbody></table>
+    </details>
+  </div>
+</article>
+<article class="card" id="housing" data-href="details/housing.html" tabindex="0" role="link" aria-label="전국 주택매매가격 변동률 딥 다이브 보기">
+  <img src="assets/housing.png" alt="" />
+  <div class="body">
+    <div class="meta">201501~202312 · 월간 · 월간 변동률 %</div>
+    <h2>전국 주택매매가격 변동률</h2>
+    <span class="live-badge ok">실시간 KOSIS API 검증 완료 · 96건</span>
+    <div class="kpis"><div class="kpi-cell"><span class="kpi-label">최신 월간값</span><strong>-0.1</strong><em>% · 202312</em></div><div class="kpi-cell"><span class="kpi-label">상승 월수</span><strong>80</strong><em>월간 변동률 % · 201501~202312 · 월간</em></div></div>
+    <svg class="spark" viewBox="0 0 280 84" preserveAspectRatio="none">
+<polyline points="0.0,36.9 35.0,53.0 70.0,48.6 105.0,50.8 140.0,59.2 175.0,26.2 210.0,0.0 245.0,84.0 280.0,77.4"></polyline>
+</svg>
+    <p>전국 주택매매가격 변동률은 2021년 상승 폭이 컸고, 2022년 하락 구간을 거친 뒤 2023년 말에는 약한 하락세로 마무리됐다.</p>
+    <a class="deep-link" href="details/housing.html">딥 다이브 분석 보기 →</a>
+    <details>
+      <summary>원본 출처와 데이터 확인</summary>
+      <div class="source-line"><a href="items/housing.json">가공 데이터</a> · <a href="../../kosis-reports/data/report_002_housing_price.json">원천 데이터 파일</a> · <span>통계표 ID: DT_1YL1701</span></div>
+      <table class="data-table"><thead><tr><th>기간</th><th>값</th><th>단위</th></tr></thead><tbody><tr><td>2015</td><td>3.51</td><td>월간 %</td></tr><tr><td>2016</td><td>0.71</td><td>월간 %</td></tr><tr><td>2017</td><td>1.47</td><td>월간 %</td></tr><tr><td>2018</td><td>1.09</td><td>월간 %</td></tr><tr><td>2019</td><td>-0.37</td><td>월간 %</td></tr><tr><td>2020</td><td>5.37</td><td>월간 %</td></tr><tr><td>2021</td><td>9.93</td><td>월간 %</td></tr><tr><td>2022</td><td>-4.69</td><td>월간 %</td></tr><tr><td>2023</td><td>-3.54</td><td>월간 %</td></tr></tbody></table>
+    </details>
+  </div>
+</article>
+<article class="card" id="unemployment" data-href="details/unemployment.html" tabindex="0" role="link" aria-label="실업률과 경제활동인구 딥 다이브 보기">
+  <img src="assets/unemployment.png" alt="" />
+  <div class="body">
+    <div class="meta">2015~2024 · 실업률 %, 경제활동인구 천 명</div>
+    <h2>실업률과 경제활동인구</h2>
+    <span class="live-badge ok">실시간 KOSIS API 검증 완료 · 10건</span>
+    <div class="kpis"><div class="kpi-cell"><span class="kpi-label">최신값</span><strong>2.8</strong><em>% · 2024</em></div><div class="kpi-cell"><span class="kpi-label">실업률 변화</span><strong>-0.8</strong><em>% · 2015~2024</em></div></div>
+    <svg class="spark" viewBox="0 0 280 84" preserveAspectRatio="none">
+<polyline points="0.0,25.8 31.1,19.4 62.2,19.4 93.3,12.9 124.4,12.9 155.6,0.0 186.7,19.4 217.8,71.1 248.9,84.0 280.0,77.5"></polyline>
+</svg>
+    <p>실업률은 2020년 고점 이후 낮아졌고 2024년에는 2.8% 수준이다. 경제활동인구는 장기적으로 증가했다.</p>
+    <a class="deep-link" href="details/unemployment.html">딥 다이브 분석 보기 →</a>
+    <details>
+      <summary>원본 출처와 데이터 확인</summary>
+      <div class="source-line"><a href="items/unemployment.json">가공 데이터</a> · <a href="../../kosis-reports/data/report_003_unemployment.json">원천 데이터 파일</a> · <span>통계표 ID: DT_1DA7001S</span></div>
+      <table class="data-table"><thead><tr><th>기간</th><th>값</th><th>단위</th></tr></thead><tbody><tr><td>2015</td><td>3.6</td><td>%</td></tr><tr><td>2016</td><td>3.7</td><td>%</td></tr><tr><td>2017</td><td>3.7</td><td>%</td></tr><tr><td>2018</td><td>3.8</td><td>%</td></tr><tr><td>2019</td><td>3.8</td><td>%</td></tr><tr><td>2020</td><td>4</td><td>%</td></tr><tr><td>2021</td><td>3.7</td><td>%</td></tr><tr><td>2022</td><td>2.9</td><td>%</td></tr><tr><td>2023</td><td>2.7</td><td>%</td></tr><tr><td>2024</td><td>2.8</td><td>%</td></tr></tbody></table>
+    </details>
+  </div>
+</article>
+<article class="card" id="cpi" data-href="details/cpi.html" tabindex="0" role="link" aria-label="소비자물가 등락률 딥 다이브 보기">
+  <img src="assets/cpi.png" alt="" />
+  <div class="body">
+    <div class="meta">2015~2024 · 연간 · 전년 대비 %</div>
+    <h2>소비자물가 등락률</h2>
+    <span class="live-badge ok">실시간 KOSIS API 검증 완료 · 10건</span>
+    <div class="kpis"><div class="kpi-cell"><span class="kpi-label">최신값</span><strong>2.3</strong><em>전년 대비 % · 2024</em></div></div>
+    <svg class="spark" viewBox="0 0 280 84" preserveAspectRatio="none">
+<polyline points="0.0,78.6 31.1,73.3 62.2,57.2 93.3,64.3 124.4,84.0 155.6,82.2 186.7,46.5 217.8,0.0 248.9,26.8 280.0,50.0"></polyline>
+</svg>
+    <p>소비자물가 등락률은 2022년에 5.1%로 정점을 찍은 뒤 2024년 2.3%로 둔화됐다.</p>
+    <a class="deep-link" href="details/cpi.html">딥 다이브 분석 보기 →</a>
+    <details>
+      <summary>원본 출처와 데이터 확인</summary>
+      <div class="source-line"><a href="items/cpi.json">가공 데이터</a> · <a href="../../kosis-reports/data/report_004_cpi.json">원천 데이터 파일</a> · <span>통계표 ID: DT_1YL20581</span></div>
+      <table class="data-table"><thead><tr><th>기간</th><th>값</th><th>단위</th></tr></thead><tbody><tr><td>2015</td><td>0.7</td><td>%</td></tr><tr><td>2016</td><td>1</td><td>%</td></tr><tr><td>2017</td><td>1.9</td><td>%</td></tr><tr><td>2018</td><td>1.5</td><td>%</td></tr><tr><td>2019</td><td>0.4</td><td>%</td></tr><tr><td>2020</td><td>0.5</td><td>%</td></tr><tr><td>2021</td><td>2.5</td><td>%</td></tr><tr><td>2022</td><td>5.1</td><td>%</td></tr><tr><td>2023</td><td>3.6</td><td>%</td></tr><tr><td>2024</td><td>2.3</td><td>%</td></tr></tbody></table>
+    </details>
+  </div>
+</article>
+<article class="card" id="elderly" data-href="details/elderly.html" tabindex="0" role="link" aria-label="65세 이상 인구 딥 다이브 보기">
+  <img src="assets/elderly.png" alt="" />
+  <div class="body">
+    <div class="meta">2015~2024 · 명 / 전체 인구 대비 %</div>
+    <h2>65세 이상 인구</h2>
+    <span class="live-badge ok">실시간 KOSIS API 검증 완료 · 10건</span>
+    <div class="kpis"><div class="kpi-cell"><span class="kpi-label">65세 이상 인구</span><strong>10,256,782</strong><em>명 / 전체 인구 대비 % · 2024</em></div><div class="kpi-cell"><span class="kpi-label">65세 이상 인구 증가</span><strong>3,481,681</strong><em>명 / 전체 인구 대비 % · 2015~2024</em></div></div>
+    <svg class="spark" viewBox="0 0 280 84" preserveAspectRatio="none">
+<polyline points="0.0,84.0 31.1,78.7 62.2,70.0 93.3,62.9 124.4,53.8 155.6,42.5 186.7,33.9 217.8,23.9 248.9,12.7 280.0,0.0"></polyline>
+</svg>
+    <p>65세 이상 인구는 2024년 1,025만 명을 넘었고, 전체 인구 대비 비중은 20.0%에 도달했다.</p>
+    <a class="deep-link" href="details/elderly.html">딥 다이브 분석 보기 →</a>
+    <details>
+      <summary>원본 출처와 데이터 확인</summary>
+      <div class="source-line"><a href="items/elderly.json">가공 데이터</a> · <a href="../../kosis-reports/data/report_005_elderly.json">원천 데이터 파일</a> · <span>통계표 ID: DT_1YL20631</span></div>
+      <table class="data-table"><thead><tr><th>기간</th><th>값</th><th>단위</th></tr></thead><tbody><tr><td>2015</td><td>6,775,101</td><td>명</td></tr><tr><td>2016</td><td>6,995,652</td><td>명</td></tr><tr><td>2017</td><td>7,356,106</td><td>명</td></tr><tr><td>2018</td><td>7,650,408</td><td>명</td></tr><tr><td>2019</td><td>8,026,915</td><td>명</td></tr><tr><td>2020</td><td>8,496,077</td><td>명</td></tr><tr><td>2021</td><td>8,851,033</td><td>명</td></tr><tr><td>2022</td><td>9,267,290</td><td>명</td></tr><tr><td>2023</td><td>9,730,411</td><td>명</td></tr><tr><td>2024</td><td>10,256,782</td><td>명</td></tr></tbody></table>
+    </details>
+  </div>
+</article>
+<article class="card" id="single_household" data-href="details/single_household.html" tabindex="0" role="link" aria-label="1인 가구 딥 다이브 보기">
+  <img src="assets/single_household.png" alt="" />
+  <div class="body">
+    <div class="meta">2015~2024 · 가구 / 일반가구 대비 %</div>
+    <h2>1인 가구</h2>
+    <span class="live-badge ok">실시간 KOSIS API 검증 완료 · 10건</span>
+    <div class="kpis"><div class="kpi-cell"><span class="kpi-label">1인 가구</span><strong>8,044,948</strong><em>가구 / 일반가구 대비 % · 2024</em></div><div class="kpi-cell"><span class="kpi-label">1인 가구 증가</span><strong>2,841,508</strong><em>가구 / 일반가구 대비 % · 2015~2024</em></div></div>
+    <svg class="spark" viewBox="0 0 280 84" preserveAspectRatio="none">
+<polyline points="0.0,84.0 31.1,78.3 62.2,71.7 93.3,64.9 124.4,56.1 155.6,41.4 186.7,26.0 217.8,16.0 248.9,6.4 280.0,0.0"></polyline>
+</svg>
+    <p>전국 1인 가구는 2024년 804만 가구로, 일반가구의 36.1%를 차지한다. 2015년 이후 가구 수와 비중이 모두 크게 늘었다.</p>
+    <a class="deep-link" href="details/single_household.html">딥 다이브 분석 보기 →</a>
+    <details>
+      <summary>원본 출처와 데이터 확인</summary>
+      <div class="source-line"><a href="items/single_household.json">가공 데이터</a> · <a href="../../kosis-reports/data/report_006_single_household.json">원천 데이터 파일</a> · <span>통계표 ID: DT_1YL21161</span></div>
+      <table class="data-table"><thead><tr><th>기간</th><th>값</th><th>단위</th></tr></thead><tbody><tr><td>2015</td><td>5,203,440</td><td>가구</td></tr><tr><td>2016</td><td>5,397,615</td><td>가구</td></tr><tr><td>2017</td><td>5,618,677</td><td>가구</td></tr><tr><td>2018</td><td>5,848,594</td><td>가구</td></tr><tr><td>2019</td><td>6,147,516</td><td>가구</td></tr><tr><td>2020</td><td>6,643,354</td><td>가구</td></tr><tr><td>2021</td><td>7,165,788</td><td>가구</td></tr><tr><td>2022</td><td>7,502,350</td><td>가구</td></tr><tr><td>2023</td><td>7,829,035</td><td>가구</td></tr><tr><td>2024</td><td>8,044,948</td><td>가구</td></tr></tbody></table>
+    </details>
+  </div>
+</article>
+<article class="card" id="tourism" data-href="details/tourism.html" tabindex="0" role="link" aria-label="외래 관광객 딥 다이브 보기">
+  <img src="assets/tourism.png" alt="" />
+  <div class="body">
+    <div class="meta">2015~2023 · 천 명</div>
+    <h2>외래 관광객</h2>
+    <span class="live-badge ok">실시간 KOSIS API 검증 완료 · 8건</span>
+    <div class="kpis"><div class="kpi-cell"><span class="kpi-label">최신값</span><strong>7,200</strong><em>1000명 · 2023</em></div><div class="kpi-cell"><span class="kpi-label">기간 변화율</span><strong>-3.3</strong><em>% · 2015 대비</em></div></div>
+    <svg class="spark" viewBox="0 0 280 84" preserveAspectRatio="none">
+<polyline points="0.0,22.4 35.0,13.1 70.0,7.6 105.0,3.3 140.0,0.0 175.0,84.0 210.0,78.5 245.0,63.3 280.0,25.1"></polyline>
+</svg>
+    <p>외래 관광객 장기 추이는 팬데믹 충격과 회복 국면을 함께 보여준다.</p>
+    <a class="deep-link" href="details/tourism.html">딥 다이브 분석 보기 →</a>
+    <details>
+      <summary>원본 출처와 데이터 확인</summary>
+      <div class="source-line"><a href="items/tourism.json">가공 데이터</a> · <a href="../../kosis-reports/data/report_008_tourism.json">원천 데이터 파일</a> · <span>통계표 ID: DT_2KAAA14, DT_TRD_TRFF_ENT_AGG_MONTH</span></div>
+      <table class="data-table"><thead><tr><th>기간</th><th>값</th><th>단위</th></tr></thead><tbody><tr><td>2015</td><td>7,444</td><td>천 명</td></tr><tr><td>2016</td><td>8,300</td><td>천 명</td></tr><tr><td>2017</td><td>8,800</td><td>천 명</td></tr><tr><td>2018</td><td>9,200</td><td>천 명</td></tr><tr><td>2019</td><td>9,500</td><td>천 명</td></tr><tr><td>2020</td><td>1,800</td><td>천 명</td></tr><tr><td>2021</td><td>2,300</td><td>천 명</td></tr><tr><td>2022</td><td>3,700</td><td>천 명</td></tr><tr><td>2023</td><td>7,200</td><td>천 명</td></tr></tbody></table>
+    </details>
+  </div>
+</article>
+<article class="card" id="energy" data-href="details/energy.html" tabindex="0" role="link" aria-label="재생에너지 발전량 딥 다이브 보기">
+  <img src="assets/energy.png" alt="" />
+  <div class="body">
+    <div class="meta">2015~2024 · TWh</div>
+    <h2>재생에너지 발전량</h2>
+    <span class="live-badge ok">실시간 KOSIS API 검증 완료 · 10건</span>
+    <div class="kpis"><div class="kpi-cell"><span class="kpi-label">최신값</span><strong>38.06</strong><em>TWh · 2024</em></div><div class="kpi-cell"><span class="kpi-label">기간 변화율</span><strong>115.8</strong><em>% · 2015 대비</em></div></div>
+    <svg class="spark" viewBox="0 0 280 84" preserveAspectRatio="none">
+<polyline points="0.0,84.0 31.1,76.9 62.2,63.6 93.3,51.2 124.4,55.4 155.6,64.4 186.7,50.4 217.8,27.6 248.9,17.9 280.0,0.0"></polyline>
+</svg>
+    <p>재생에너지 발전량은 중장기적으로 증가했지만 전력 구성 내 비중 해석이 함께 필요하다.</p>
+    <a class="deep-link" href="details/energy.html">딥 다이브 분석 보기 →</a>
+    <details>
+      <summary>원본 출처와 데이터 확인</summary>
+      <div class="source-line"><a href="items/energy.json">가공 데이터</a> · <a href="../../kosis-reports/data/report_010_processed.json">원천 데이터 파일</a> · <span>통계표 ID: DT_38804_B03</span></div>
+      <table class="data-table"><thead><tr><th>기간</th><th>값</th><th>단위</th></tr></thead><tbody><tr><td>2015</td><td>17.63</td><td>TWh</td></tr><tr><td>2016</td><td>19.37</td><td>TWh</td></tr><tr><td>2017</td><td>22.6</td><td>TWh</td></tr><tr><td>2018</td><td>25.61</td><td>TWh</td></tr><tr><td>2019</td><td>24.59</td><td>TWh</td></tr><tr><td>2020</td><td>22.4</td><td>TWh</td></tr><tr><td>2021</td><td>25.79</td><td>TWh</td></tr><tr><td>2022</td><td>31.35</td><td>TWh</td></tr><tr><td>2023</td><td>33.71</td><td>TWh</td></tr><tr><td>2024</td><td>38.06</td><td>TWh</td></tr></tbody></table>
+    </details>
+  </div>
+</article>
+<article class="card" id="education" data-href="details/education.html" tabindex="0" role="link" aria-label="초등학생 수 딥 다이브 보기">
+  <img src="assets/education.png" alt="" />
+  <div class="body">
+    <div class="meta">2010~2024 · 명</div>
+    <h2>초등학생 수</h2>
+    <span class="live-badge ok">실시간 KOSIS API 검증 완료 · 15건</span>
+    <div class="kpis"><div class="kpi-cell"><span class="kpi-label">최신값</span><strong>2,495,005</strong><em>명 · 2024</em></div><div class="kpi-cell"><span class="kpi-label">기간 변화율</span><strong>-24.4</strong><em>% · 2010 대비</em></div></div>
+    <svg class="spark" viewBox="0 0 280 84" preserveAspectRatio="none">
+<polyline points="0.0,0.0 20.0,17.4 40.0,36.3 60.0,53.8 80.0,59.6 100.0,61.1 120.0,65.4 140.0,65.3 160.0,61.4 180.0,57.7 200.0,63.2 220.0,65.5 240.0,66.3 260.0,72.6 280.0,84.0"></polyline>
+</svg>
+    <p>초등학생 수는 저출산 효과가 시차를 두고 교육 현장으로 이동하는 지표다.</p>
+    <a class="deep-link" href="details/education.html">딥 다이브 분석 보기 →</a>
+    <details>
+      <summary>원본 출처와 데이터 확인</summary>
+      <div class="source-line"><a href="items/education.json">가공 데이터</a> · <a href="../../kosis-reports/data/report_016_education.json">원천 데이터 파일</a> · <span>통계표 ID: DT_1YL21241</span></div>
+      <table class="data-table"><thead><tr><th>기간</th><th>값</th><th>단위</th></tr></thead><tbody><tr><td>2015</td><td>2,714,610</td><td>명</td></tr><tr><td>2016</td><td>2,672,843</td><td>명</td></tr><tr><td>2017</td><td>2,674,227</td><td>명</td></tr><tr><td>2018</td><td>2,711,385</td><td>명</td></tr><tr><td>2019</td><td>2,747,219</td><td>명</td></tr><tr><td>2020</td><td>2,693,716</td><td>명</td></tr><tr><td>2021</td><td>2,672,340</td><td>명</td></tr><tr><td>2022</td><td>2,664,278</td><td>명</td></tr><tr><td>2023</td><td>2,603,929</td><td>명</td></tr><tr><td>2024</td><td>2,495,005</td><td>명</td></tr></tbody></table>
+    </details>
+  </div>
+</article>
+<article class="card" id="wage" data-href="details/wage.html" tabindex="0" role="link" aria-label="평균소득 딥 다이브 보기">
+  <img src="assets/wage.png" alt="" />
+  <div class="body">
+    <div class="meta">2016~2023 · 만원</div>
+    <h2>평균소득</h2>
+    <span class="live-badge ok">실시간 KOSIS API 검증 완료 · 8건</span>
+    <div class="kpis"><div class="kpi-cell"><span class="kpi-label">최신값</span><strong>363.07</strong><em>만원 · 2023</em></div><div class="kpi-cell"><span class="kpi-label">기간 변화율</span><strong>30.9</strong><em>% · 2016 대비</em></div></div>
+    <svg class="spark" viewBox="0 0 280 84" preserveAspectRatio="none">
+<polyline points="0.0,84.0 40.0,74.5 80.0,64.8 120.0,53.0 160.0,42.0 200.0,29.0 240.0,9.5 280.0,0.0"></polyline>
+</svg>
+    <p>평균소득은 상승하더라도 분포와 중위값을 함께 봐야 생활 체감과의 차이를 줄일 수 있다.</p>
+    <a class="deep-link" href="details/wage.html">딥 다이브 분석 보기 →</a>
+    <details>
+      <summary>원본 출처와 데이터 확인</summary>
+      <div class="source-line"><a href="items/wage.json">가공 데이터</a> · <a href="../../kosis-reports/data/report_018_wage.json">원천 데이터 파일</a> · <span>통계표 ID: DT_1EP_2021, DT_2KAA307, DT_2KAA314</span></div>
+      <table class="data-table"><thead><tr><th>기간</th><th>값</th><th>단위</th></tr></thead><tbody><tr><td>2016</td><td>277.41</td><td>만원</td></tr><tr><td>2017</td><td>287.11</td><td>만원</td></tr><tr><td>2018</td><td>296.94</td><td>만원</td></tr><tr><td>2019</td><td>309.05</td><td>만원</td></tr><tr><td>2020</td><td>320.19</td><td>만원</td></tr><tr><td>2021</td><td>333.45</td><td>만원</td></tr><tr><td>2022</td><td>353.35</td><td>만원</td></tr><tr><td>2023</td><td>363.07</td><td>만원</td></tr></tbody></table>
+    </details>
+  </div>
+</article>
+</main>
+<footer>로컬 생성 경로: outputs/kosis-onepager · 이미지 모델: gpt-image-2</footer>
+<script>
+document.querySelectorAll('.card[data-href]').forEach((card) => {
+  const go = () => { window.location.href = card.dataset.href; };
+  card.addEventListener('click', (event) => {
+    if (event.target.closest('a, details, summary, table')) return;
+    go();
+  });
+  card.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      go();
+    }
+  });
+});
+</script>
+</body>
+</html>

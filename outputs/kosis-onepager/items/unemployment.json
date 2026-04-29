@@ -1,0 +1,132 @@
+{
+  "id": "unemployment",
+  "title": "KOSIS Unemployment Overview",
+  "source_file": "kosis-reports/data/report_003_unemployment.json",
+  "records": 20,
+  "table_ids": [
+    "DT_1DA7001S"
+  ],
+  "period_range": "2015~2024",
+  "unit": {
+    "unemployment_rate": "%",
+    "economically_active_population": "thousand persons"
+  },
+  "series": [
+    {
+      "id": "unemployment_rate_total",
+      "label": "Unemployment rate, total",
+      "item": "실업률",
+      "group": "계",
+      "unit": "%",
+      "records": [
+        {
+          "period": "2015",
+          "value": 3.6
+        },
+        {
+          "period": "2016",
+          "value": 3.7
+        },
+        {
+          "period": "2017",
+          "value": 3.7
+        },
+        {
+          "period": "2018",
+          "value": 3.8
+        },
+        {
+          "period": "2019",
+          "value": 3.8
+        },
+        {
+          "period": "2020",
+          "value": 4.0
+        },
+        {
+          "period": "2021",
+          "value": 3.7
+        },
+        {
+          "period": "2022",
+          "value": 2.9
+        },
+        {
+          "period": "2023",
+          "value": 2.7
+        },
+        {
+          "period": "2024",
+          "value": 2.8
+        }
+      ]
+    },
+    {
+      "id": "economically_active_population_total",
+      "label": "Economically active population, total",
+      "item": "경제활동인구",
+      "group": "계",
+      "unit": "thousand persons",
+      "records": [
+        {
+          "period": "2015",
+          "value": 27153.4
+        },
+        {
+          "period": "2016",
+          "value": 27418.3
+        },
+        {
+          "period": "2017",
+          "value": 27747.7
+        },
+        {
+          "period": "2018",
+          "value": 27895.3
+        },
+        {
+          "period": "2019",
+          "value": 28186.2
+        },
+        {
+          "period": "2020",
+          "value": 28012.3
+        },
+        {
+          "period": "2021",
+          "value": 28310.0
+        },
+        {
+          "period": "2022",
+          "value": 28921.6
+        },
+        {
+          "period": "2023",
+          "value": 29203.0
+        },
+        {
+          "period": "2024",
+          "value": 29398.5
+        }
+      ]
+    }
+  ],
+  "kpis": {
+    "latest_year": "2024",
+    "latest_unemployment_rate": 2.8,
+    "latest_economically_active_population": 29398.5,
+    "unemployment_rate_peak": {
+      "period": "2020",
+      "value": 4.0
+    },
+    "unemployment_rate_low": {
+      "period": "2023",
+      "value": 2.7
+    },
+    "unemployment_rate_change_2015_to_2024": -0.8,
+    "unemployment_rate_change_2023_to_2024": 0.1,
+    "economically_active_population_change_2015_to_2024": 2245.1,
+    "economically_active_population_change_2023_to_2024": 195.5
+  },
+  "insight": "The total unemployment rate rose to 4.0% in 2020, then fell to 2.7% in 2023 before edging up to 2.8% in 2024. Over the same 2015-2024 period, the economically active population increased by 2,245.1 thousand people, reaching 29,398.5 thousand in 2024."
+}

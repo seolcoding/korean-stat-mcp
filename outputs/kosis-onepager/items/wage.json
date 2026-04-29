@@ -1,0 +1,67 @@
+{
+  "id": "wage",
+  "title": "평균소득",
+  "source_file": "kosis-reports/data/report_018_wage.json",
+  "records": 2318,
+  "table_ids": [
+    "DT_1EP_2021",
+    "DT_2KAA307",
+    "DT_2KAA314"
+  ],
+  "period_range": "2016-2023",
+  "unit": "만원",
+  "series": [
+    {
+      "label": "평균소득",
+      "values": [
+        {
+          "period": "2016",
+          "value": 277.4089
+        },
+        {
+          "period": "2017",
+          "value": 287.1118
+        },
+        {
+          "period": "2018",
+          "value": 296.9393
+        },
+        {
+          "period": "2019",
+          "value": 309.0488
+        },
+        {
+          "period": "2020",
+          "value": 320.1924
+        },
+        {
+          "period": "2021",
+          "value": 333.4532
+        },
+        {
+          "period": "2022",
+          "value": 353.3541
+        },
+        {
+          "period": "2023",
+          "value": 363.0686
+        }
+      ]
+    }
+  ],
+  "kpis": [
+    {
+      "label": "최신값",
+      "value": 363.07,
+      "unit": "만원",
+      "detail": "2023"
+    },
+    {
+      "label": "기간 변화율",
+      "value": 30.9,
+      "unit": "%",
+      "detail": "2016 대비"
+    }
+  ],
+  "insight": "평균소득은 상승하더라도 분포와 중위값을 함께 봐야 생활 체감과의 차이를 줄일 수 있다."
+}

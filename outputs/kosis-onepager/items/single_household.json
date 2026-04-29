@@ -1,0 +1,243 @@
+{
+  "id": "single_household",
+  "title": "National 1-person households and share",
+  "source_file": "kosis-reports/data/report_006_single_household.json",
+  "records": [
+    {
+      "period": "2015",
+      "region": "전국",
+      "single_households": 5203440,
+      "total_households": 19111030,
+      "single_household_share_pct": 27.2
+    },
+    {
+      "period": "2016",
+      "region": "전국",
+      "single_households": 5397615,
+      "total_households": 19367696,
+      "single_household_share_pct": 27.9
+    },
+    {
+      "period": "2017",
+      "region": "전국",
+      "single_households": 5618677,
+      "total_households": 19673875,
+      "single_household_share_pct": 28.6
+    },
+    {
+      "period": "2018",
+      "region": "전국",
+      "single_households": 5848594,
+      "total_households": 19979188,
+      "single_household_share_pct": 29.3
+    },
+    {
+      "period": "2019",
+      "region": "전국",
+      "single_households": 6147516,
+      "total_households": 20343188,
+      "single_household_share_pct": 30.2
+    },
+    {
+      "period": "2020",
+      "region": "전국",
+      "single_households": 6643354,
+      "total_households": 20926710,
+      "single_household_share_pct": 31.7
+    },
+    {
+      "period": "2021",
+      "region": "전국",
+      "single_households": 7165788,
+      "total_households": 21448463,
+      "single_household_share_pct": 33.4
+    },
+    {
+      "period": "2022",
+      "region": "전국",
+      "single_households": 7502350,
+      "total_households": 21773507,
+      "single_household_share_pct": 34.5
+    },
+    {
+      "period": "2023",
+      "region": "전국",
+      "single_households": 7829035,
+      "total_households": 22073158,
+      "single_household_share_pct": 35.5
+    },
+    {
+      "period": "2024",
+      "region": "전국",
+      "single_households": 8044948,
+      "total_households": 22294419,
+      "single_household_share_pct": 36.1
+    }
+  ],
+  "table_ids": [
+    "DT_1YL21161"
+  ],
+  "period_range": {
+    "start": "2015",
+    "end": "2024"
+  },
+  "unit": {
+    "single_households": "households",
+    "total_households": "households",
+    "single_household_share_pct": "%"
+  },
+  "series": [
+    {
+      "id": "single_households",
+      "label": "1-person households",
+      "unit": "households",
+      "values": [
+        {
+          "period": "2015",
+          "value": 5203440
+        },
+        {
+          "period": "2016",
+          "value": 5397615
+        },
+        {
+          "period": "2017",
+          "value": 5618677
+        },
+        {
+          "period": "2018",
+          "value": 5848594
+        },
+        {
+          "period": "2019",
+          "value": 6147516
+        },
+        {
+          "period": "2020",
+          "value": 6643354
+        },
+        {
+          "period": "2021",
+          "value": 7165788
+        },
+        {
+          "period": "2022",
+          "value": 7502350
+        },
+        {
+          "period": "2023",
+          "value": 7829035
+        },
+        {
+          "period": "2024",
+          "value": 8044948
+        }
+      ]
+    },
+    {
+      "id": "single_household_share_pct",
+      "label": "Share of 1-person households",
+      "unit": "%",
+      "values": [
+        {
+          "period": "2015",
+          "value": 27.2
+        },
+        {
+          "period": "2016",
+          "value": 27.9
+        },
+        {
+          "period": "2017",
+          "value": 28.6
+        },
+        {
+          "period": "2018",
+          "value": 29.3
+        },
+        {
+          "period": "2019",
+          "value": 30.2
+        },
+        {
+          "period": "2020",
+          "value": 31.7
+        },
+        {
+          "period": "2021",
+          "value": 33.4
+        },
+        {
+          "period": "2022",
+          "value": 34.5
+        },
+        {
+          "period": "2023",
+          "value": 35.5
+        },
+        {
+          "period": "2024",
+          "value": 36.1
+        }
+      ]
+    },
+    {
+      "id": "total_households",
+      "label": "Total ordinary households",
+      "unit": "households",
+      "values": [
+        {
+          "period": "2015",
+          "value": 19111030
+        },
+        {
+          "period": "2016",
+          "value": 19367696
+        },
+        {
+          "period": "2017",
+          "value": 19673875
+        },
+        {
+          "period": "2018",
+          "value": 19979188
+        },
+        {
+          "period": "2019",
+          "value": 20343188
+        },
+        {
+          "period": "2020",
+          "value": 20926710
+        },
+        {
+          "period": "2021",
+          "value": 21448463
+        },
+        {
+          "period": "2022",
+          "value": 21773507
+        },
+        {
+          "period": "2023",
+          "value": 22073158
+        },
+        {
+          "period": "2024",
+          "value": 22294419
+        }
+      ]
+    }
+  ],
+  "kpis": {
+    "latest_period": "2024",
+    "latest_single_households": 8044948,
+    "latest_single_household_share_pct": 36.1,
+    "count_change_since_start": 2841508,
+    "count_growth_pct_since_start": 54.6,
+    "share_change_pp_since_start": 8.9,
+    "yoy_count_change": 215913,
+    "yoy_share_change_pp": 0.6
+  },
+  "insight": "National 1-person households reached 8,044,948 in 2024, accounting for 36.1% of ordinary households. Since 2015, the count rose by 2,841,508 households (54.6%) and the share increased by 8.9 percentage points."
+}

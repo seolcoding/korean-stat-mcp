@@ -1,0 +1,70 @@
+{
+  "id": "tourism",
+  "title": "관광 유입",
+  "source_file": "kosis-reports/data/report_008_tourism.json",
+  "records": 12511,
+  "table_ids": [
+    "DT_2KAAA14",
+    "DT_TRD_TRFF_ENT_AGG_MONTH"
+  ],
+  "period_range": "2015-2023",
+  "unit": "1000명",
+  "series": [
+    {
+      "label": "외래 관광객",
+      "values": [
+        {
+          "period": "2015",
+          "value": 7444.0
+        },
+        {
+          "period": "2016",
+          "value": 8300.0
+        },
+        {
+          "period": "2017",
+          "value": 8800.0
+        },
+        {
+          "period": "2018",
+          "value": 9200.0
+        },
+        {
+          "period": "2019",
+          "value": 9500.0
+        },
+        {
+          "period": "2020",
+          "value": 1800.0
+        },
+        {
+          "period": "2021",
+          "value": 2300.0
+        },
+        {
+          "period": "2022",
+          "value": 3700.0
+        },
+        {
+          "period": "2023",
+          "value": 7200.0
+        }
+      ]
+    }
+  ],
+  "kpis": [
+    {
+      "label": "최신값",
+      "value": 7200.0,
+      "unit": "1000명",
+      "detail": "2023"
+    },
+    {
+      "label": "기간 변화율",
+      "value": -3.3,
+      "unit": "%",
+      "detail": "2015 대비"
+    }
+  ],
+  "insight": "외래 관광객 장기 추이는 팬데믹 충격과 회복 국면을 함께 보여준다."
+}

@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>합계출산율 딥 다이브</title>
+<style>
+* { box-sizing:border-box; }
+body { margin:0; font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color:#17202a; background:#f5f7fb; }
+a { color:#2563eb; text-decoration:none; }
+a:hover { text-decoration:underline; }
+header { padding:28px 40px; background:#fff; border-bottom:1px solid #d8dee9; }
+.back { display:inline-block; margin-bottom:18px; color:#0f766e; font-weight:700; }
+.hero { display:grid; grid-template-columns:360px minmax(0, 1fr); gap:28px; align-items:stretch; }
+.hero img { width:100%; height:100%; min-height:280px; object-fit:cover; border-radius:8px; background:#0f172a; }
+h1 { margin:0 0 10px; font-size:42px; letter-spacing:0; }
+.meta { color:#64748b; font-size:14px; margin-bottom:18px; }
+.kpis { display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:12px; margin:18px 0; }
+.kpi-cell { padding:14px 16px; background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; }
+.kpi-label { display:block; color:#475569; font-size:13px; }
+.kpis strong { display:block; font-size:30px; color:#0f766e; margin-top:4px; }
+.kpis em { display:block; color:#64748b; font-style:normal; font-size:13px; line-height:1.4; }
+p { line-height:1.7; }
+main { padding:28px 40px 56px; display:grid; gap:18px; }
+.panel { background:#fff; border:1px solid #d8dee9; border-radius:8px; padding:22px; }
+.panel h2 { margin:0 0 14px; font-size:22px; }
+.source-line { color:#64748b; line-height:1.6; }
+.spark { width:100%; height:120px; margin:8px 0 18px; overflow:visible; }
+.spark polyline { fill:none; stroke:#2563eb; stroke-width:4; stroke-linecap:round; stroke-linejoin:round; }
+.data-table { width:100%; border-collapse:collapse; font-size:13px; }
+.data-table th, .data-table td { padding:8px 10px; border-bottom:1px solid #e2e8f0; text-align:right; }
+.data-table th:first-child, .data-table td:first-child { text-align:left; }
+.data-table th { color:#475569; background:#f8fafc; }
+@media (max-width:900px) {
+  header, main { padding-left:18px; padding-right:18px; }
+  .hero { grid-template-columns:1fr; }
+  h1 { font-size:32px; }
+  .kpis { grid-template-columns:1fr; }
+}
+</style>
+</head>
+<body>
+<header>
+  <a class="back" href="../index.html">← 원페이지로 돌아가기</a>
+  <div class="hero">
+    <img src="../assets/fertility.png" alt="" />
+    <div>
+      <div class="meta">2014~2023 · 합계출산율: 여성 1명당 출생아 수 / 연령별 출산율: 여성 1천 명당 출생아 수</div>
+      <h1>합계출산율 딥 다이브</h1>
+      <p><span class="live-badge ok">실시간 KOSIS API 검증 완료 · 10건</span></p>
+      <div class="kpis"><div class="kpi-cell"><span class="kpi-label">최신 합계출산율</span><strong>0.72</strong><em>여성 1명당 출생아 수 · 전국, 2023</em></div><div class="kpi-cell"><span class="kpi-label">합계출산율 변화</span><strong>-0.48</strong><em>여성 1명당 출생아 수 · 2014~2023, 1.205 → 0.721 (-40.2%)</em></div></div>
+      <p>합계출산율 데이터는 2014~2023 범위의 합계출산율: 여성 1명당 출생아 수 / 연령별 출산율: 여성 1천 명당 출생아 수 지표를 바탕으로 요약했습니다. 최신 관측치는 2023년 기준 0.72입니다. 2014년 대비 2023년 값은 -40.17% 하락했습니다. 전국 합계출산율은 2014년 1.205에서 2023년 0.721로 낮아졌다. 30대 초반 출산율도 함께 확인해야 추세의 중심 연령대를 볼 수 있다. 세부 표에서는 원천 파일에서 추출한 기간별 값을 직접 확인할 수 있습니다.</p>
+    </div>
+  </div>
+</header>
+<main>
+  <section class="panel">
+    <h2>원본 출처</h2>
+    <div class="source-line"><a href="../items/fertility.json">가공 데이터</a> · <a href="../../../kosis-reports/data/report_001_fertility_rate.json">원천 데이터 파일</a> · <span>통계표 ID: DT_1B81A17</span></div>
+  </section>
+  
+<section class="panel">
+  <h2>실시간 KOSIS API 검증</h2>
+  <p><span class="live-badge ok">실시간 KOSIS API 검증 완료 · 10건</span></p>
+  <p class="source-line">엔드포인트: <a href="https://kosis.kr/openapi/Param/statisticsParameterData.do">https://kosis.kr/openapi/Param/statisticsParameterData.do</a></p>
+  <h3>호출 파라미터</h3>
+  <table class="data-table"><tbody><tr><td>orgId</td><td>101</td></tr><tr><td>tblId</td><td>DT_1B81A17</td></tr><tr><td>prdSe</td><td>Y</td></tr><tr><td>startPrdDe</td><td>2014</td></tr><tr><td>endPrdDe</td><td>2023</td></tr><tr><td>itmId</td><td>T1</td></tr><tr><td>objL1</td><td>00</td></tr></tbody></table>
+  <h3>응답 샘플</h3>
+  <table class="data-table"><thead><tr><th>기간</th><th>항목</th><th>분류</th><th>값</th><th>단위</th></tr></thead><tbody><tr><td>2014</td><td>합계출산율</td><td>전국</td><td>1.205</td><td></td></tr><tr><td>2015</td><td>합계출산율</td><td>전국</td><td>1.239</td><td></td></tr><tr><td>2016</td><td>합계출산율</td><td>전국</td><td>1.172</td><td></td></tr><tr><td>2017</td><td>합계출산율</td><td>전국</td><td>1.052</td><td></td></tr><tr><td>2018</td><td>합계출산율</td><td>전국</td><td>0.977</td><td></td></tr></tbody></table>
+</section>
+  
+<section class="panel">
+  <h2>전국 - 합계출산율</h2>
+  <svg class="spark" viewBox="0 0 280 84" preserveAspectRatio="none">
+<polyline points="0.0,5.5 31.1,0.0 62.2,10.9 93.3,30.3 124.4,42.5 155.6,52.1 186.7,65.2 217.8,69.9 248.9,74.8 280.0,84.0"></polyline>
+</svg>
+  <table class="data-table"><thead><tr><th>기간</th><th>값</th><th>단위</th></tr></thead><tbody><tr><td>2014</td><td>1.21</td><td>출산율</td></tr><tr><td>2015</td><td>1.24</td><td>출산율</td></tr><tr><td>2016</td><td>1.17</td><td>출산율</td></tr><tr><td>2017</td><td>1.05</td><td>출산율</td></tr><tr><td>2018</td><td>0.98</td><td>출산율</td></tr><tr><td>2019</td><td>0.92</td><td>출산율</td></tr><tr><td>2020</td><td>0.84</td><td>출산율</td></tr><tr><td>2021</td><td>0.81</td><td>출산율</td></tr><tr><td>2022</td><td>0.78</td><td>출산율</td></tr><tr><td>2023</td><td>0.72</td><td>출산율</td></tr></tbody></table>
+</section>
+<section class="panel">
+  <h2>전국 - 연령별 출산율: 15-19</h2>
+  <svg class="spark" viewBox="0 0 280 84" preserveAspectRatio="none">
+<polyline points="0.0,0.0 31.1,12.9 62.2,19.4 93.3,38.8 124.4,45.2 155.6,51.7 186.7,58.2 217.8,77.5 248.9,77.5 280.0,84.0"></polyline>
+</svg>
+  <table class="data-table"><thead><tr><th>기간</th><th>값</th><th>단위</th></tr></thead><tbody><tr><td>2014</td><td>1.6</td><td>출산율</td></tr><tr><td>2015</td><td>1.4</td><td>출산율</td></tr><tr><td>2016</td><td>1.3</td><td>출산율</td></tr><tr><td>2017</td><td>1</td><td>출산율</td></tr><tr><td>2018</td><td>0.9</td><td>출산율</td></tr><tr><td>2019</td><td>0.8</td><td>출산율</td></tr><tr><td>2020</td><td>0.7</td><td>출산율</td></tr><tr><td>2021</td><td>0.4</td><td>출산율</td></tr><tr><td>2022</td><td>0.4</td><td>출산율</td></tr><tr><td>2023</td><td>0.3</td><td>출산율</td></tr></tbody></table>
+</section>
+<section class="panel">
+  <h2>전국 - 연령별 출산율: 20-24</h2>
+  <svg class="spark" viewBox="0 0 280 84" preserveAspectRatio="none">
+<polyline points="0.0,0.0 31.1,5.4 62.2,14.5 93.3,31.6 124.4,44.3 155.6,54.2 186.7,62.3 217.8,73.2 248.9,81.3 280.0,84.0"></polyline>
+</svg>
+  <table class="data-table"><thead><tr><th>기간</th><th>값</th><th>단위</th></tr></thead><tbody><tr><td>2014</td><td>13.1</td><td>출산율</td></tr><tr><td>2015</td><td>12.5</td><td>출산율</td></tr><tr><td>2016</td><td>11.5</td><td>출산율</td></tr><tr><td>2017</td><td>9.6</td><td>출산율</td></tr><tr><td>2018</td><td>8.2</td><td>출산율</td></tr><tr><td>2019</td><td>7.1</td><td>출산율</td></tr><tr><td>2020</td><td>6.2</td><td>출산율</td></tr><tr><td>2021</td><td>5</td><td>출산율</td></tr><tr><td>2022</td><td>4.1</td><td>출산율</td></tr><tr><td>2023</td><td>3.8</td><td>출산율</td></tr></tbody></table>
+</section>
+<section class="panel">
+  <h2>전국 - 연령별 출산율: 25-29</h2>
+  <svg class="spark" viewBox="0 0 280 84" preserveAspectRatio="none">
+<polyline points="0.0,0.0 31.1,0.6 62.2,14.0 93.3,31.0 124.4,44.8 155.6,55.4 186.7,65.6 217.8,71.8 248.9,78.8 280.0,84.0"></polyline>
+</svg>
+  <table class="data-table"><thead><tr><th>기간</th><th>값</th><th>단위</th></tr></thead><tbody><tr><td>2014</td><td>63.4</td><td>출산율</td></tr><tr><td>2015</td><td>63.1</td><td>출산율</td></tr><tr><td>2016</td><td>56.4</td><td>출산율</td></tr><tr><td>2017</td><td>47.9</td><td>출산율</td></tr><tr><td>2018</td><td>41</td><td>출산율</td></tr><tr><td>2019</td><td>35.7</td><td>출산율</td></tr><tr><td>2020</td><td>30.6</td><td>출산율</td></tr><tr><td>2021</td><td>27.5</td><td>출산율</td></tr><tr><td>2022</td><td>24</td><td>출산율</td></tr><tr><td>2023</td><td>21.4</td><td>출산율</td></tr></tbody></table>
+</section>
+<section class="panel">
+  <h2>전국 - 연령별 출산율: 30-34</h2>
+  <svg class="spark" viewBox="0 0 280 84" preserveAspectRatio="none">
+<polyline points="0.0,4.9 31.1,0.0 62.2,11.1 93.3,31.9 124.4,42.5 155.6,51.2 186.7,63.5 217.8,68.2 248.9,72.6 280.0,84.0"></polyline>
+</svg>
+  <table class="data-table"><thead><tr><th>기간</th><th>값</th><th>단위</th></tr></thead><tbody><tr><td>2014</td><td>113.8</td><td>출산율</td></tr><tr><td>2015</td><td>116.7</td><td>출산율</td></tr><tr><td>2016</td><td>110.1</td><td>출산율</td></tr><tr><td>2017</td><td>97.7</td><td>출산율</td></tr><tr><td>2018</td><td>91.4</td><td>출산율</td></tr><tr><td>2019</td><td>86.2</td><td>출산율</td></tr><tr><td>2020</td><td>78.9</td><td>출산율</td></tr><tr><td>2021</td><td>76.1</td><td>출산율</td></tr><tr><td>2022</td><td>73.5</td><td>출산율</td></tr><tr><td>2023</td><td>66.7</td><td>출산율</td></tr></tbody></table>
+</section>
+<section class="panel">
+  <h2>전국 - 연령별 출산율: 35-39</h2>
+  <svg class="spark" viewBox="0 0 280 84" preserveAspectRatio="none">
+<polyline points="0.0,72.2 31.1,5.3 62.2,0.0 93.3,19.7 124.4,34.1 155.6,48.6 186.7,84.0 217.8,68.2 248.9,60.4 280.0,74.8"></polyline>
+</svg>
+  <table class="data-table"><thead><tr><th>기간</th><th>값</th><th>단위</th></tr></thead><tbody><tr><td>2014</td><td>43.2</td><td>출산율</td></tr><tr><td>2015</td><td>48.3</td><td>출산율</td></tr><tr><td>2016</td><td>48.7</td><td>출산율</td></tr><tr><td>2017</td><td>47.2</td><td>출산율</td></tr><tr><td>2018</td><td>46.1</td><td>출산율</td></tr><tr><td>2019</td><td>45</td><td>출산율</td></tr><tr><td>2020</td><td>42.3</td><td>출산율</td></tr><tr><td>2021</td><td>43.5</td><td>출산율</td></tr><tr><td>2022</td><td>44.1</td><td>출산율</td></tr><tr><td>2023</td><td>43</td><td>출산율</td></tr></tbody></table>
+</section>
+<section class="panel">
+  <h2>전국 - 연령별 출산율: 40-44</h2>
+  <svg class="spark" viewBox="0 0 280 84" preserveAspectRatio="none">
+<polyline points="0.0,84.0 31.1,72.0 62.2,63.0 93.3,60.0 124.4,48.0 155.6,30.0 186.7,27.0 217.8,12.0 248.9,0.0 280.0,3.0"></polyline>
+</svg>
+  <table class="data-table"><thead><tr><th>기간</th><th>값</th><th>단위</th></tr></thead><tbody><tr><td>2014</td><td>5.2</td><td>출산율</td></tr><tr><td>2015</td><td>5.6</td><td>출산율</td></tr><tr><td>2016</td><td>5.9</td><td>출산율</td></tr><tr><td>2017</td><td>6</td><td>출산율</td></tr><tr><td>2018</td><td>6.4</td><td>출산율</td></tr><tr><td>2019</td><td>7</td><td>출산율</td></tr><tr><td>2020</td><td>7.1</td><td>출산율</td></tr><tr><td>2021</td><td>7.6</td><td>출산율</td></tr><tr><td>2022</td><td>8</td><td>출산율</td></tr><tr><td>2023</td><td>7.9</td><td>출산율</td></tr></tbody></table>
+</section>
+<section class="panel">
+  <h2>전국 - 연령별 출산율: 45-49</h2>
+  <svg class="spark" viewBox="0 0 280 84" preserveAspectRatio="none">
+<polyline points="0.0,84.0 31.1,0.0 62.2,0.0 93.3,0.0 124.4,0.0 155.6,0.0 186.7,0.0 217.8,0.0 248.9,0.0 280.0,0.0"></polyline>
+</svg>
+  <table class="data-table"><thead><tr><th>기간</th><th>값</th><th>단위</th></tr></thead><tbody><tr><td>2014</td><td>0.1</td><td>출산율</td></tr><tr><td>2015</td><td>0.2</td><td>출산율</td></tr><tr><td>2016</td><td>0.2</td><td>출산율</td></tr><tr><td>2017</td><td>0.2</td><td>출산율</td></tr><tr><td>2018</td><td>0.2</td><td>출산율</td></tr><tr><td>2019</td><td>0.2</td><td>출산율</td></tr><tr><td>2020</td><td>0.2</td><td>출산율</td></tr><tr><td>2021</td><td>0.2</td><td>출산율</td></tr><tr><td>2022</td><td>0.2</td><td>출산율</td></tr><tr><td>2023</td><td>0.2</td><td>출산율</td></tr></tbody></table>
+</section>
+</main>
+</body>
+</html>

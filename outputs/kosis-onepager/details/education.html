@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>초등학생 수 딥 다이브</title>
+<style>
+* { box-sizing:border-box; }
+body { margin:0; font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color:#17202a; background:#f5f7fb; }
+a { color:#2563eb; text-decoration:none; }
+a:hover { text-decoration:underline; }
+header { padding:28px 40px; background:#fff; border-bottom:1px solid #d8dee9; }
+.back { display:inline-block; margin-bottom:18px; color:#0f766e; font-weight:700; }
+.hero { display:grid; grid-template-columns:360px minmax(0, 1fr); gap:28px; align-items:stretch; }
+.hero img { width:100%; height:100%; min-height:280px; object-fit:cover; border-radius:8px; background:#0f172a; }
+h1 { margin:0 0 10px; font-size:42px; letter-spacing:0; }
+.meta { color:#64748b; font-size:14px; margin-bottom:18px; }
+.kpis { display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:12px; margin:18px 0; }
+.kpi-cell { padding:14px 16px; background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; }
+.kpi-label { display:block; color:#475569; font-size:13px; }
+.kpis strong { display:block; font-size:30px; color:#0f766e; margin-top:4px; }
+.kpis em { display:block; color:#64748b; font-style:normal; font-size:13px; line-height:1.4; }
+p { line-height:1.7; }
+main { padding:28px 40px 56px; display:grid; gap:18px; }
+.panel { background:#fff; border:1px solid #d8dee9; border-radius:8px; padding:22px; }
+.panel h2 { margin:0 0 14px; font-size:22px; }
+.source-line { color:#64748b; line-height:1.6; }
+.spark { width:100%; height:120px; margin:8px 0 18px; overflow:visible; }
+.spark polyline { fill:none; stroke:#2563eb; stroke-width:4; stroke-linecap:round; stroke-linejoin:round; }
+.data-table { width:100%; border-collapse:collapse; font-size:13px; }
+.data-table th, .data-table td { padding:8px 10px; border-bottom:1px solid #e2e8f0; text-align:right; }
+.data-table th:first-child, .data-table td:first-child { text-align:left; }
+.data-table th { color:#475569; background:#f8fafc; }
+@media (max-width:900px) {
+  header, main { padding-left:18px; padding-right:18px; }
+  .hero { grid-template-columns:1fr; }
+  h1 { font-size:32px; }
+  .kpis { grid-template-columns:1fr; }
+}
+</style>
+</head>
+<body>
+<header>
+  <a class="back" href="../index.html">← 원페이지로 돌아가기</a>
+  <div class="hero">
+    <img src="../assets/education.png" alt="" />
+    <div>
+      <div class="meta">2010~2024 · 명</div>
+      <h1>초등학생 수 딥 다이브</h1>
+      <p><span class="live-badge ok">실시간 KOSIS API 검증 완료 · 15건</span></p>
+      <div class="kpis"><div class="kpi-cell"><span class="kpi-label">최신값</span><strong>2,495,005</strong><em>명 · 2024</em></div><div class="kpi-cell"><span class="kpi-label">기간 변화율</span><strong>-24.4</strong><em>% · 2010 대비</em></div></div>
+      <p>초등학생 수 데이터는 2010~2024 범위의 명 지표를 바탕으로 요약했습니다. 최신 관측치는 2024년 기준 2,495,005입니다. 2010년 대비 2024년 값은 -24.37% 하락했습니다. 초등학생 수는 저출산 효과가 시차를 두고 교육 현장으로 이동하는 지표다. 세부 표에서는 원천 파일에서 추출한 기간별 값을 직접 확인할 수 있습니다.</p>
+    </div>
+  </div>
+</header>
+<main>
+  <section class="panel">
+    <h2>원본 출처</h2>
+    <div class="source-line"><a href="../items/education.json">가공 데이터</a> · <a href="../../../kosis-reports/data/report_016_education.json">원천 데이터 파일</a> · <span>통계표 ID: DT_1YL21241</span></div>
+  </section>
+  
+<section class="panel">
+  <h2>실시간 KOSIS API 검증</h2>
+  <p><span class="live-badge ok">실시간 KOSIS API 검증 완료 · 15건</span></p>
+  <p class="source-line">엔드포인트: <a href="https://kosis.kr/openapi/Param/statisticsParameterData.do">https://kosis.kr/openapi/Param/statisticsParameterData.do</a></p>
+  <h3>호출 파라미터</h3>
+  <table class="data-table"><tbody><tr><td>orgId</td><td>101</td></tr><tr><td>tblId</td><td>DT_1YL21241</td></tr><tr><td>prdSe</td><td>Y</td></tr><tr><td>startPrdDe</td><td>2010</td></tr><tr><td>endPrdDe</td><td>2024</td></tr><tr><td>itmId</td><td>T10</td></tr><tr><td>objL1</td><td>00</td></tr></tbody></table>
+  <h3>응답 샘플</h3>
+  <table class="data-table"><thead><tr><th>기간</th><th>항목</th><th>분류</th><th>값</th><th>단위</th></tr></thead><tbody><tr><td>2010</td><td>학생수</td><td>전국</td><td>3299094</td><td>명</td></tr><tr><td>2011</td><td>학생수</td><td>전국</td><td>3132477</td><td>명</td></tr><tr><td>2012</td><td>학생수</td><td>전국</td><td>2951995</td><td>명</td></tr><tr><td>2013</td><td>학생수</td><td>전국</td><td>2784000</td><td>명</td></tr><tr><td>2014</td><td>학생수</td><td>전국</td><td>2728509</td><td>명</td></tr></tbody></table>
+</section>
+  
+<section class="panel">
+  <h2>전국 초등학생</h2>
+  <svg class="spark" viewBox="0 0 280 84" preserveAspectRatio="none">
+<polyline points="0.0,0.0 20.0,17.4 40.0,36.3 60.0,53.8 80.0,59.6 100.0,61.1 120.0,65.4 140.0,65.3 160.0,61.4 180.0,57.7 200.0,63.2 220.0,65.5 240.0,66.3 260.0,72.6 280.0,84.0"></polyline>
+</svg>
+  <table class="data-table"><thead><tr><th>기간</th><th>값</th><th>단위</th></tr></thead><tbody><tr><td>2010</td><td>3,299,094</td><td>명</td></tr><tr><td>2011</td><td>3,132,477</td><td>명</td></tr><tr><td>2012</td><td>2,951,995</td><td>명</td></tr><tr><td>2013</td><td>2,784,000</td><td>명</td></tr><tr><td>2014</td><td>2,728,509</td><td>명</td></tr><tr><td>2015</td><td>2,714,610</td><td>명</td></tr><tr><td>2016</td><td>2,672,843</td><td>명</td></tr><tr><td>2017</td><td>2,674,227</td><td>명</td></tr><tr><td>2018</td><td>2,711,385</td><td>명</td></tr><tr><td>2019</td><td>2,747,219</td><td>명</td></tr><tr><td>2020</td><td>2,693,716</td><td>명</td></tr><tr><td>2021</td><td>2,672,340</td><td>명</td></tr><tr><td>2022</td><td>2,664,278</td><td>명</td></tr><tr><td>2023</td><td>2,603,929</td><td>명</td></tr><tr><td>2024</td><td>2,495,005</td><td>명</td></tr></tbody></table>
+</section>
+</main>
+</body>
+</html>

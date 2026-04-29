@@ -1,0 +1,93 @@
+{
+  "id": "education",
+  "title": "초등학생 수",
+  "source_file": "kosis-reports/data/report_016_education.json",
+  "records": 11318,
+  "table_ids": [
+    "DT_1YL21241"
+  ],
+  "period_range": "2010-2024",
+  "unit": "명",
+  "series": [
+    {
+      "label": "전국 초등학생",
+      "values": [
+        {
+          "period": "2010",
+          "value": 3299094.0
+        },
+        {
+          "period": "2011",
+          "value": 3132477.0
+        },
+        {
+          "period": "2012",
+          "value": 2951995.0
+        },
+        {
+          "period": "2013",
+          "value": 2784000.0
+        },
+        {
+          "period": "2014",
+          "value": 2728509.0
+        },
+        {
+          "period": "2015",
+          "value": 2714610.0
+        },
+        {
+          "period": "2016",
+          "value": 2672843.0
+        },
+        {
+          "period": "2017",
+          "value": 2674227.0
+        },
+        {
+          "period": "2018",
+          "value": 2711385.0
+        },
+        {
+          "period": "2019",
+          "value": 2747219.0
+        },
+        {
+          "period": "2020",
+          "value": 2693716.0
+        },
+        {
+          "period": "2021",
+          "value": 2672340.0
+        },
+        {
+          "period": "2022",
+          "value": 2664278.0
+        },
+        {
+          "period": "2023",
+          "value": 2603929.0
+        },
+        {
+          "period": "2024",
+          "value": 2495005.0
+        }
+      ]
+    }
+  ],
+  "kpis": [
+    {
+      "label": "최신값",
+      "value": 2495005.0,
+      "unit": "명",
+      "detail": "2024"
+    },
+    {
+      "label": "기간 변화율",
+      "value": -24.4,
+      "unit": "%",
+      "detail": "2010 대비"
+    }
+  ],
+  "insight": "초등학생 수는 저출산 효과가 시차를 두고 교육 현장으로 이동하는 지표다."
+}

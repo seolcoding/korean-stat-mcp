@@ -1,0 +1,89 @@
+{
+  "id": "housing",
+  "title": "전국 주택매매가격 월간 변동률",
+  "source_file": "kosis-reports/data/report_002_housing_price.json",
+  "records": 108,
+  "table_ids": [
+    "DT_1YL1701"
+  ],
+  "period_range": {
+    "start": "201501",
+    "end": "202312",
+    "frequency": "monthly"
+  },
+  "unit": "%",
+  "series": [
+    {
+      "year": "2015",
+      "months": 12,
+      "avg_monthly_change_pct": 0.288,
+      "annual_compounded_change_pct": 3.51
+    },
+    {
+      "year": "2016",
+      "months": 12,
+      "avg_monthly_change_pct": 0.059,
+      "annual_compounded_change_pct": 0.71
+    },
+    {
+      "year": "2017",
+      "months": 12,
+      "avg_monthly_change_pct": 0.122,
+      "annual_compounded_change_pct": 1.47
+    },
+    {
+      "year": "2018",
+      "months": 12,
+      "avg_monthly_change_pct": 0.091,
+      "annual_compounded_change_pct": 1.09
+    },
+    {
+      "year": "2019",
+      "months": 12,
+      "avg_monthly_change_pct": -0.031,
+      "annual_compounded_change_pct": -0.37
+    },
+    {
+      "year": "2020",
+      "months": 12,
+      "avg_monthly_change_pct": 0.437,
+      "annual_compounded_change_pct": 5.37
+    },
+    {
+      "year": "2021",
+      "months": 12,
+      "avg_monthly_change_pct": 0.792,
+      "annual_compounded_change_pct": 9.93
+    },
+    {
+      "year": "2022",
+      "months": 12,
+      "avg_monthly_change_pct": -0.397,
+      "annual_compounded_change_pct": -4.69
+    },
+    {
+      "year": "2023",
+      "months": 12,
+      "avg_monthly_change_pct": -0.298,
+      "annual_compounded_change_pct": -3.54
+    }
+  ],
+  "kpis": {
+    "latest_month": {
+      "period": "202312",
+      "change_pct": -0.1
+    },
+    "peak_monthly_increase": {
+      "period": "202106",
+      "change_pct": 1.15
+    },
+    "steepest_monthly_decline": {
+      "period": "202212",
+      "change_pct": -1.98
+    },
+    "positive_months": 80,
+    "negative_months": 26,
+    "flat_months": 2
+  },
+  "insight": "전국 주택매매가격은 2020~2021년에 상승세가 강해져 2021년 연간 복리 변동률이 9.93%로 정점을 찍은 뒤, 2022년 -4.69%, 2023년 -3.54%로 2년 연속 하락 흐름을 보였다."
+}

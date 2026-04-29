@@ -1,0 +1,184 @@
+{
+  "id": "elderly",
+  "title": "National Population Aged 65+ and Elderly Share",
+  "source_file": "kosis-reports/data/report_005_elderly.json",
+  "records": [
+    {
+      "period": "2015",
+      "area": "전국",
+      "elderly_population": 6775101,
+      "total_population": 51529338,
+      "elderly_share": 13.1
+    },
+    {
+      "period": "2016",
+      "area": "전국",
+      "elderly_population": 6995652,
+      "total_population": 51696216,
+      "elderly_share": 13.5
+    },
+    {
+      "period": "2017",
+      "area": "전국",
+      "elderly_population": 7356106,
+      "total_population": 51778544,
+      "elderly_share": 14.2
+    },
+    {
+      "period": "2018",
+      "area": "전국",
+      "elderly_population": 7650408,
+      "total_population": 51826059,
+      "elderly_share": 14.8
+    },
+    {
+      "period": "2019",
+      "area": "전국",
+      "elderly_population": 8026915,
+      "total_population": 51849861,
+      "elderly_share": 15.5
+    },
+    {
+      "period": "2020",
+      "area": "전국",
+      "elderly_population": 8496077,
+      "total_population": 51829023,
+      "elderly_share": 16.4
+    },
+    {
+      "period": "2021",
+      "area": "전국",
+      "elderly_population": 8851033,
+      "total_population": 51638809,
+      "elderly_share": 17.1
+    },
+    {
+      "period": "2022",
+      "area": "전국",
+      "elderly_population": 9267290,
+      "total_population": 51439038,
+      "elderly_share": 18.0
+    },
+    {
+      "period": "2023",
+      "area": "전국",
+      "elderly_population": 9730411,
+      "total_population": 51325329,
+      "elderly_share": 19.0
+    },
+    {
+      "period": "2024",
+      "area": "전국",
+      "elderly_population": 10256782,
+      "total_population": 51217221,
+      "elderly_share": 20.0
+    }
+  ],
+  "table_ids": [
+    "DT_1YL20631"
+  ],
+  "period_range": {
+    "start": "2015",
+    "end": "2024"
+  },
+  "unit": {
+    "elderly_population": "명",
+    "total_population": "명",
+    "elderly_share": "%"
+  },
+  "series": {
+    "elderly_population": [
+      {
+        "period": "2015",
+        "value": 6775101
+      },
+      {
+        "period": "2016",
+        "value": 6995652
+      },
+      {
+        "period": "2017",
+        "value": 7356106
+      },
+      {
+        "period": "2018",
+        "value": 7650408
+      },
+      {
+        "period": "2019",
+        "value": 8026915
+      },
+      {
+        "period": "2020",
+        "value": 8496077
+      },
+      {
+        "period": "2021",
+        "value": 8851033
+      },
+      {
+        "period": "2022",
+        "value": 9267290
+      },
+      {
+        "period": "2023",
+        "value": 9730411
+      },
+      {
+        "period": "2024",
+        "value": 10256782
+      }
+    ],
+    "elderly_share": [
+      {
+        "period": "2015",
+        "value": 13.1
+      },
+      {
+        "period": "2016",
+        "value": 13.5
+      },
+      {
+        "period": "2017",
+        "value": 14.2
+      },
+      {
+        "period": "2018",
+        "value": 14.8
+      },
+      {
+        "period": "2019",
+        "value": 15.5
+      },
+      {
+        "period": "2020",
+        "value": 16.4
+      },
+      {
+        "period": "2021",
+        "value": 17.1
+      },
+      {
+        "period": "2022",
+        "value": 18.0
+      },
+      {
+        "period": "2023",
+        "value": 19.0
+      },
+      {
+        "period": "2024",
+        "value": 20.0
+      }
+    ]
+  },
+  "kpis": {
+    "latest_period": "2024",
+    "latest_elderly_population": 10256782,
+    "latest_elderly_share": 20.0,
+    "population_change_since_2015": 3481681,
+    "population_growth_since_2015_pct": 51.4,
+    "share_change_since_2015_pp": 6.9
+  },
+  "insight": "South Korea's national population aged 65+ reached 10,256,782 in 2024, or 20.0% of the total population. Since 2015, the 65+ population increased by 3,481,681 people while its population share rose by 6.9 percentage points."
+}

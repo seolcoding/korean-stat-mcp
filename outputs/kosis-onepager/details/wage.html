@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>평균소득 딥 다이브</title>
+<style>
+* { box-sizing:border-box; }
+body { margin:0; font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color:#17202a; background:#f5f7fb; }
+a { color:#2563eb; text-decoration:none; }
+a:hover { text-decoration:underline; }
+header { padding:28px 40px; background:#fff; border-bottom:1px solid #d8dee9; }
+.back { display:inline-block; margin-bottom:18px; color:#0f766e; font-weight:700; }
+.hero { display:grid; grid-template-columns:360px minmax(0, 1fr); gap:28px; align-items:stretch; }
+.hero img { width:100%; height:100%; min-height:280px; object-fit:cover; border-radius:8px; background:#0f172a; }
+h1 { margin:0 0 10px; font-size:42px; letter-spacing:0; }
+.meta { color:#64748b; font-size:14px; margin-bottom:18px; }
+.kpis { display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:12px; margin:18px 0; }
+.kpi-cell { padding:14px 16px; background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; }
+.kpi-label { display:block; color:#475569; font-size:13px; }
+.kpis strong { display:block; font-size:30px; color:#0f766e; margin-top:4px; }
+.kpis em { display:block; color:#64748b; font-style:normal; font-size:13px; line-height:1.4; }
+p { line-height:1.7; }
+main { padding:28px 40px 56px; display:grid; gap:18px; }
+.panel { background:#fff; border:1px solid #d8dee9; border-radius:8px; padding:22px; }
+.panel h2 { margin:0 0 14px; font-size:22px; }
+.source-line { color:#64748b; line-height:1.6; }
+.spark { width:100%; height:120px; margin:8px 0 18px; overflow:visible; }
+.spark polyline { fill:none; stroke:#2563eb; stroke-width:4; stroke-linecap:round; stroke-linejoin:round; }
+.data-table { width:100%; border-collapse:collapse; font-size:13px; }
+.data-table th, .data-table td { padding:8px 10px; border-bottom:1px solid #e2e8f0; text-align:right; }
+.data-table th:first-child, .data-table td:first-child { text-align:left; }
+.data-table th { color:#475569; background:#f8fafc; }
+@media (max-width:900px) {
+  header, main { padding-left:18px; padding-right:18px; }
+  .hero { grid-template-columns:1fr; }
+  h1 { font-size:32px; }
+  .kpis { grid-template-columns:1fr; }
+}
+</style>
+</head>
+<body>
+<header>
+  <a class="back" href="../index.html">← 원페이지로 돌아가기</a>
+  <div class="hero">
+    <img src="../assets/wage.png" alt="" />
+    <div>
+      <div class="meta">2016~2023 · 만원</div>
+      <h1>평균소득 딥 다이브</h1>
+      <p><span class="live-badge ok">실시간 KOSIS API 검증 완료 · 8건</span></p>
+      <div class="kpis"><div class="kpi-cell"><span class="kpi-label">최신값</span><strong>363.07</strong><em>만원 · 2023</em></div><div class="kpi-cell"><span class="kpi-label">기간 변화율</span><strong>30.9</strong><em>% · 2016 대비</em></div></div>
+      <p>평균소득 데이터는 2016~2023 범위의 만원 지표를 바탕으로 요약했습니다. 최신 관측치는 2023년 기준 363.07입니다. 2016년 대비 2023년 값은 30.88% 상승했습니다. 평균소득은 상승하더라도 분포와 중위값을 함께 봐야 생활 체감과의 차이를 줄일 수 있다. 세부 표에서는 원천 파일에서 추출한 기간별 값을 직접 확인할 수 있습니다.</p>
+    </div>
+  </div>
+</header>
+<main>
+  <section class="panel">
+    <h2>원본 출처</h2>
+    <div class="source-line"><a href="../items/wage.json">가공 데이터</a> · <a href="../../../kosis-reports/data/report_018_wage.json">원천 데이터 파일</a> · <span>통계표 ID: DT_1EP_2021, DT_2KAA307, DT_2KAA314</span></div>
+  </section>
+  
+<section class="panel">
+  <h2>실시간 KOSIS API 검증</h2>
+  <p><span class="live-badge ok">실시간 KOSIS API 검증 완료 · 8건</span></p>
+  <p class="source-line">엔드포인트: <a href="https://kosis.kr/openapi/Param/statisticsParameterData.do">https://kosis.kr/openapi/Param/statisticsParameterData.do</a></p>
+  <h3>호출 파라미터</h3>
+  <table class="data-table"><tbody><tr><td>orgId</td><td>101</td></tr><tr><td>tblId</td><td>DT_1EP_2021</td></tr><tr><td>prdSe</td><td>Y</td></tr><tr><td>startPrdDe</td><td>2016</td></tr><tr><td>endPrdDe</td><td>2023</td></tr><tr><td>itmId</td><td>T001</td></tr><tr><td>objL1</td><td>DATA</td></tr></tbody></table>
+  <h3>응답 샘플</h3>
+  <table class="data-table"><thead><tr><th>기간</th><th>항목</th><th>분류</th><th>값</th><th>단위</th></tr></thead><tbody><tr><td>2016</td><td>평균소득</td><td>데이터</td><td>277.4089</td><td>만원%</td></tr><tr><td>2017</td><td>평균소득</td><td>데이터</td><td>287.1118</td><td>만원%</td></tr><tr><td>2018</td><td>평균소득</td><td>데이터</td><td>296.9393</td><td>만원%</td></tr><tr><td>2019</td><td>평균소득</td><td>데이터</td><td>309.0488</td><td>만원%</td></tr><tr><td>2020</td><td>평균소득</td><td>데이터</td><td>320.1924</td><td>만원%</td></tr></tbody></table>
+</section>
+  
+<section class="panel">
+  <h2>평균소득</h2>
+  <svg class="spark" viewBox="0 0 280 84" preserveAspectRatio="none">
+<polyline points="0.0,84.0 40.0,74.5 80.0,64.8 120.0,53.0 160.0,42.0 200.0,29.0 240.0,9.5 280.0,0.0"></polyline>
+</svg>
+  <table class="data-table"><thead><tr><th>기간</th><th>값</th><th>단위</th></tr></thead><tbody><tr><td>2016</td><td>277.41</td><td>만원</td></tr><tr><td>2017</td><td>287.11</td><td>만원</td></tr><tr><td>2018</td><td>296.94</td><td>만원</td></tr><tr><td>2019</td><td>309.05</td><td>만원</td></tr><tr><td>2020</td><td>320.19</td><td>만원</td></tr><tr><td>2021</td><td>333.45</td><td>만원</td></tr><tr><td>2022</td><td>353.35</td><td>만원</td></tr><tr><td>2023</td><td>363.07</td><td>만원</td></tr></tbody></table>
+</section>
+</main>
+</body>
+</html>
