@@ -53,15 +53,20 @@ from .visualize import (
 )
 from .code_executor import execute_code, CodeExecutor
 
-# Phase 3: Database & Search (optional - requires PostgreSQL)
+# Optional backends — only loaded if their extras are installed
+# pip install korean-stat-mcp[postgres]  → asyncpg
+# pip install korean-stat-mcp[r2]        → boto3
 try:
     from .database import DatabasePool, DatabaseError, check_database_health
-    from .embeddings import EmbeddingGenerator, EmbeddingError, create_search_text
-    from .hybrid_search import HybridSearcher, SearchResult, search_tables as hybrid_search_tables
-    from .r2_storage import get_storage, upload_chart, upload_report, upload_data
-    PHASE3_AVAILABLE = True
+    POSTGRES_AVAILABLE = True
 except ImportError:
-    PHASE3_AVAILABLE = False
+    POSTGRES_AVAILABLE = False
+
+try:
+    from .r2_storage import get_storage, upload_chart, upload_report, upload_data
+    R2_AVAILABLE = True
+except ImportError:
+    R2_AVAILABLE = False
 
 from .report_generator import (
     ReportGenerator,
@@ -212,22 +217,20 @@ __all__ = [
     "StatisticsTable",
     "TablesFile",
     "DataSource",
-    # Phase 3: Database & Search (optional)
-    "PHASE3_AVAILABLE",
+    # Optional backend availability flags
+    "POSTGRES_AVAILABLE",
+    "R2_AVAILABLE",
 ]
 
-# Conditionally add Phase 3 exports
-if PHASE3_AVAILABLE:
+if POSTGRES_AVAILABLE:
     __all__.extend([
         "DatabasePool",
         "DatabaseError",
         "check_database_health",
-        "EmbeddingGenerator",
-        "EmbeddingError",
-        "create_search_text",
-        "HybridSearcher",
-        "SearchResult",
-        "hybrid_search_tables",
+    ])
+
+if R2_AVAILABLE:
+    __all__.extend([
         "get_storage",
         "upload_chart",
         "upload_report",

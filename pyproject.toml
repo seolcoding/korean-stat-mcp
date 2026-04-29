@@ -30,9 +30,20 @@ dependencies = [
     "aiohttp>=3.13.2",
     "fastapi>=0.124.4",
     "uvicorn>=0.38.0",
-    # Phase 3: Database & Storage
+]
+
+[project.optional-dependencies]
+# Optional: PostgreSQL backend for FTS-based metadata search and load_metadata script
+postgres = [
     "asyncpg>=0.30.0",
-    "openai>=1.58.0",
+]
+# Optional: Cloudflare R2 storage for chart/report hosting
+r2 = [
+    "boto3>=1.36.0",
+]
+# Convenience: install all optional extras
+all = [
+    "asyncpg>=0.30.0",
     "boto3>=1.36.0",
 ]
 

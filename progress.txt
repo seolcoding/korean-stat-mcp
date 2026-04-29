@@ -2,94 +2,79 @@
 
 ## Story status (PRD)
 
-| Story | Status | Iteration | Evidence |
-|---|---|---|---|
-| US-001 Identity & hygiene | passes: true | 1 | see Iteration 1 below |
-| US-001b Remove embeddings stack | pending | — | new task triggered by user pivot |
-| US-002 100% API coverage | pending | — | — |
-| US-003 Tool allow-list | pending (blocked by US-001b) | — | — |
-| US-004 LLM routing manual | pending | — | — |
-| US-005 verify_statistics | pending (blocked by US-003) | — | — |
-| US-006 Distribution channels | pending | — | — |
-| US-007 Validation harness | pending (blocked by US-002,3,4,5) | — | — |
-| US-008 v0.1.0 release | pending (blocked by all) | — | — |
+| Story | Status | Iteration |
+|---|---|---|
+| US-001 Identity & hygiene | passes: true | 1 |
+| US-001b Remove embeddings stack | passes: true | 2 |
+| US-002 100% API coverage | pending | — |
+| US-003 Tool allow-list | unblocked, pending | — |
+| US-004 LLM routing manual | pending | — |
+| US-005 verify_statistics | pending (blocked by US-003) | — |
+| US-006 Distribution channels | pending | — |
+| US-007 Validation harness | pending (blocked by US-002,3,4,5) | — |
+| US-008 v0.1.0 release | pending (blocked by all) | — |
 
 ## Iteration log
 
 ### Iteration 1 — 2026-04-29 — US-001 complete
+See git log `feat: rename to korean-stat-mcp and prepare open-source release (US-001)`.
+- 21 files, +940/-291. Bilingual READMEs, CONTRIBUTING, CODE_OF_CONDUCT, CHANGELOG, LICENSE, .github/ CI/release/issue/PR templates.
+- pyproject renamed kosis-mcp → korean-stat-mcp.
+- All private hosting refs scrubbed: 0 hits in active code.
+- Mid-iteration user pivot: 임베딩 제거 → US-001b created.
 
-**Mid-iteration user pivot:** "임베딩은 안쓸거" — embeddings stack to be removed.
-- Added US-001b (task #9): drop openai dep, embeddings.py, hybrid_search.py, search_tables_hybrid tool, pgvector schema bits.
-- US-003 (V1_EXPOSED list) now blocked on US-001b so the curated tool table doesn't list a tool we're about to remove.
-- Surface-level scrub of README and README-EN done immediately (removed search_tables_hybrid row, DATABASE_URL/OPENAI_API_KEY env rows, HYBRID_SEARCH.md doc link).
-- Code-level removal deferred to next iteration (US-001b).
-- CLAUDE.md still has tech-stack table mentions of pgvector/embeddings; deferred to US-004 (full rewrite).
+### Iteration 2 — 2026-04-30 — US-001b complete
 
-**Tracks dispatched in parallel:**
+**Goal:** remove all OpenAI embeddings + pgvector code paths so the OSS package has no required AI vendor key.
 
-- **Track A** (Hygiene scrub + README rewrite) — completed.
-  - `pyproject.toml` renamed to `korean-stat-mcp`, urls/script entrypoint/description updated, deps unchanged.
-  - `README.md` rewritten with 4 install channels (Claude Code marketplace / Claude.ai connector / Desktop+Cursor+Windsurf JSON / PyPI), 13-tool curated table.
-  - `CLAUDE.md`, `PRD.md`, `MCP_SERVER_REPORT.md`, `docs/DEPLOYMENT.md` surgical scrub.
-  - `docker-compose.yml`, `.env.example` audited — already clean.
+**Changes (all on branch `feat/oss-rename-and-hygiene`):**
 
-- **Track B** (Bilingual contributor docs) — completed (agent partially blocked by content filter on Contributor Covenant text; remainder finished by orchestrator).
-  - Created: `README-EN.md`, `CONTRIBUTING.md`, `CONTRIBUTING-EN.md` (by agent, before filter).
-  - Created: `CODE_OF_CONDUCT.md` (links to Contributor Covenant 2.1, no inline text), `CHANGELOG.md` (Keep a Changelog format).
-  - Updated: `LICENSE` copyright line → "2024-2026 korean-stat-mcp contributors".
+Code deletions:
+- `src/kosis_tools/embeddings.py` — deleted
+- `src/kosis_tools/hybrid_search.py` — deleted
+- `search_tables_hybrid` MCP tool removed from `src/mcp_server/server.py` (90-line block)
 
-- **Track C** (.github infrastructure) — completed.
-  - `.github/workflows/ci.yml` (push/PR, Python 3.12+3.13 matrix, ruff/mypy/pytest unit).
-  - `.github/workflows/release.yml` (tag-triggered PyPI Trusted Publishing + GHCR docker push).
-  - `.github/ISSUE_TEMPLATE/bug_report.yml`, `feature_request.yml`, `config.yml` (blank issues disabled, link to Discussions).
-  - `.github/PULL_REQUEST_TEMPLATE.md` (bilingual KO+EN with 6-item checklist).
-  - YAML lint passed for all 5 YAML files.
+Edits:
+- `pyproject.toml` — dropped `openai>=1.58.0`. Moved `asyncpg`/`boto3` to optional extras `[postgres]`, `[r2]`, plus a convenience `[all]`. `pip install korean-stat-mcp` now requires NO 3rd-party-AI key.
+- `src/kosis_tools/__init__.py` — replaced single `PHASE3_AVAILABLE` flag with two granular flags `POSTGRES_AVAILABLE` / `R2_AVAILABLE`. Conditional `__all__` extends accordingly.
+- `src/kosis_tools/database.py` — removed pgvector codec init, `check_pgvector_available()`, and module-level pgvector references in docstring.
+- `src/mcp_server/server.py` — removed `search_tables_hybrid` tool body and its `🔍 DISCOVER` instruction line.
+- `migrations/init.sql` — full rewrite. Dropped `CREATE EXTENSION vector`, `embedding VECTOR(1536)` column, the `hybrid_search()` SQL function. Kept Korean text-search config + tsvector + GIN-friendly schema for FTS-only operation.
+- `.env.example` — removed `OPENAI_API_KEY` section. Made `DATABASE_URL` optional with comment about `pip install korean-stat-mcp[postgres]` extra.
+- `CLAUDE.md` — tech-stack table no longer claims pgvector/OpenAI embeddings; "DB (선택) PostgreSQL FTS" + "검색 (기본) KOSIS statisticsSearch.do". File-tree diagram and Phase 3 status updated.
+- `scripts/test_e2e_workflow.py` — removed `test_2_hybrid_search` test from sequence.
 
-**Acceptance verification (fresh evidence captured):**
+Archived (not deleted; moved to legacy folders for reference):
+- `docs/HYBRID_SEARCH.md` → `docs/legacy/HYBRID_SEARCH.md`
+- `scripts/load_metadata.py` → `scripts/legacy/load_metadata_with_embeddings.py`
+  (A future FTS-only metadata loader script will be added when needed; deferred until US-002 reveals the data-loading shape.)
+
+**Acceptance verification (fresh evidence):**
 
 ```
-$ grep -rE "wai-3090ti|seolcoding\.com|schedule-fell-quizzes" . \
-    --exclude-dir=.git --exclude-dir=.worktrees --exclude-dir=.auto-claude \
-    --exclude-dir=outputs --exclude-dir=.venv --exclude-dir=kosis-reports \
-    --exclude-dir=reports --exclude-dir=.ralph --exclude-dir=.pytest_cache
-# 0 active hits (CHANGELOG abstracted, progress.txt audit-log this file)
+$ grep -rnE "from kosis_tools.embeddings|from kosis_tools.hybrid_search|search_tables_hybrid|EmbeddingGenerator|VECTOR\(1536\)|pgvector" src/ scripts/ migrations/ \
+    | grep -v "scripts/legacy"
+# (0 hits — the only previous output was stale egg-info build artifacts, since cleaned)
 
-$ grep -E '^name = ' pyproject.toml
-name = "korean-stat-mcp"
+$ grep -E '^\s*"openai"' pyproject.toml
+# (0 hits — openai dropped)
 
-$ grep -cE "Claude Code 플러그인|Claude\.ai|Claude Desktop|pip install" README.md
-7   # ≥4 required
+$ uv run python -c "from mcp_server import server"
+server module OK; tools registered: 47
 
-$ grep "korean-stat-mcp contributors" LICENSE
-Copyright (c) 2024-2026 korean-stat-mcp contributors
+$ uv run python -c "import kosis_tools; assert 'EmbeddingGenerator' not in kosis_tools.__all__"
+OK — no embedding exports
 
-$ uv run python -c "import yaml; ..."
-YAML OK: 5 files
-
-$ grep -ciE "embed|hybrid|pgvector|임베딩" README.md README-EN.md
-README-EN.md:0
-README.md:0
+$ uv run pytest tests/unit -q
+399 passed in 3.53s
 ```
 
-All US-001 acceptance criteria from `.claude/plans/...async-hellman.md` lines 45-50 verified with fresh evidence.
+**Side effect:** stale `.venv` had a wrong shebang path (`/Users/sdh/Dev/01_active_projects/...` vs actual `/Users/sdh/10_Dev/101_active/...`). Recreated venv (`uv sync --extra all --dev`); old venv moved to `.trash/venv-stale`.
 
-### Iteration 2 (planned) — US-001b: Remove embeddings stack
-- Drop `openai>=1.58.0` from pyproject.toml deps (and `boto3` audit).
-- Delete `src/kosis_tools/embeddings.py`, `src/kosis_tools/hybrid_search.py`.
-- Remove `search_tables_hybrid` and any embedding-related code from `src/mcp_server/server.py`.
-- Drop `vector` extension and embedding column from `migrations/init.sql` (or archive the file under `migrations/legacy/`).
-- Move `docs/HYBRID_SEARCH.md` to `docs/legacy/` (or delete) and update `docs/ARCHITECTURE_DESIGN.md`.
-- Update `CLAUDE.md` tech-stack table (drop pgvector + embeddings rows; this is partial scope of US-004 too).
-- Re-run `uv run pytest -q tests/unit -m "not network"` to confirm nothing broken.
+### Iteration 3 (planned)
+US-001b unblocked US-003 (tool allow-list). Best next move depends on what gives the biggest ROI:
+- **US-002** (API coverage matrix) — needed for legitimate "100% coverage" claim. High value, large scope.
+- **US-003** (V1_EXPOSED + discover_tools/execute_tool) — quick win, makes README's tool table truthful.
+- **US-004** (CLAUDE-EN.md + bilingual routing manual) — needed for international adoption.
 
-## Files created/modified — Iteration 1
-
-Modified:
-- `pyproject.toml`, `README.md`, `CLAUDE.md`, `PRD.md`, `MCP_SERVER_REPORT.md`, `docs/DEPLOYMENT.md`, `LICENSE`
-
-Created:
-- `README-EN.md`, `CONTRIBUTING.md`, `CONTRIBUTING-EN.md`, `CODE_OF_CONDUCT.md`, `CHANGELOG.md`
-- `.github/workflows/ci.yml`, `.github/workflows/release.yml`
-- `.github/ISSUE_TEMPLATE/bug_report.yml`, `feature_request.yml`, `config.yml`
-- `.github/PULL_REQUEST_TEMPLATE.md`
-- `progress.txt` (this file), `.ralph/mission.md`
+Plan: dispatch US-003 + US-004 in parallel (independent file scopes), then tackle US-002 in iteration 4.

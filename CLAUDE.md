@@ -43,7 +43,7 @@
 |------|------|------|
 | [docs/ARCHITECTURE_DESIGN.md](./docs/ARCHITECTURE_DESIGN.md) | 전체 시스템 아키텍처, 레이어 구조, 데이터 흐름 | ✅ 완료 |
 | [docs/DEPLOYMENT.md](./docs/DEPLOYMENT.md) | FastMCP HTTP, Docker, PostgreSQL | ✅ 완료 |
-| [docs/HYBRID_SEARCH.md](./docs/HYBRID_SEARCH.md) | pgvector HNSW, BM25 FTS, RRF 결합 | ✅ 완료 |
+| [docs/legacy/HYBRID_SEARCH.md](./docs/legacy/HYBRID_SEARCH.md) | (legacy) 이전 하이브리드 검색 설계. v0.1.0부터는 PG FTS만 사용 | 📦 archived |
 | [docs/DOCKER_ARCHITECTURE.md](./docs/DOCKER_ARCHITECTURE.md) | Docker Compose 배포 아키텍처 | 📋 계획 |
 
 ### 테스트 문서
@@ -66,11 +66,10 @@
 - 리포트 생성 (HTML 리포트)
 
 **Phase 3: Production Infrastructure** ✅ 완료
-- PostgreSQL + pgvector (252,890 테이블 메타데이터)
-- 하이브리드 검색 (벡터 + BM25 + RRF)
-- OpenAI 임베딩 (`text-embedding-3-small`)
+- PostgreSQL FTS (선택) — 252,890 테이블 메타데이터 풀텍스트 검색
+- KOSIS API 자체 검색 (`statisticsSearch.do`) 1차 사용
 - FastAPI HTTP 서버 (`app.py`)
-- Cloudflare R2 CDN (차트/리포트 호스팅)
+- Cloudflare R2 CDN (차트/리포트 호스팅, 선택)
 - Docker 컨테이너화
 
 **Modular Executors** ✅ 완료
@@ -133,8 +132,8 @@
 |------|------|------|
 | 시각화 | **Altair** | Plotly/Matplotlib 대신 |
 | 서버 | **FastMCP + FastAPI** | MCP + HTTP 듀얼 모드 |
-| DB | **PostgreSQL + pgvector** | 하이브리드 검색 |
-| 임베딩 | **OpenAI text-embedding-3-small** | 1536 차원 |
+| DB (선택) | **PostgreSQL FTS** | 메타데이터 풀텍스트 검색용 — 미설치 시 KOSIS API search로 fallback |
+| 검색 (기본) | **KOSIS `statisticsSearch.do`** | API 자체 검색을 1차 사용 |
 
 ### 4. 금지 사항
 
@@ -161,10 +160,8 @@ kosis-mcp/
 │       │   ├── analysis.py        # 분석 (통계 함수)
 │       │   ├── table.py           # 테이블 (스타일링)
 │       │   └── report.py          # 리포트 (조합)
-│       ├── database.py            # PostgreSQL 연결
-│       ├── embeddings.py          # OpenAI 임베딩
-│       ├── hybrid_search.py       # 벡터+BM25 검색
-│       └── r2_storage.py          # Cloudflare R2 스토리지
+│       ├── database.py            # PostgreSQL 연결 (선택)
+│       └── r2_storage.py          # Cloudflare R2 스토리지 (선택)
 ├── data/
 │   └── metadata_api/
 │       └── tables.json            # 메타데이터 (252,890 테이블)

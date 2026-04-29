@@ -1,4 +1,4 @@
-"""Database connection module for PostgreSQL + pgvector.
+"""Database connection module for PostgreSQL (optional, for FTS-based metadata search).
 
 Provides async connection pooling and helper functions for database operations.
 
@@ -89,7 +89,6 @@ class DatabasePool:
                 url,
                 min_size=min_size,
                 max_size=max_size,
-                # pgvector support: register vector type codec
                 init=cls._init_connection,
             )
             cls._initialized = True
@@ -99,14 +98,8 @@ class DatabasePool:
 
     @classmethod
     async def _init_connection(cls, conn: Connection) -> None:
-        """Initialize each connection with pgvector support."""
-        # Register pgvector type for vector operations
+        """Initialize each new database connection."""
         await conn.execute("SET search_path TO public")
-        # Enable pgvector if available (ignore if not)
-        try:
-            await conn.execute("SELECT 'vector'::regtype")
-        except Exception:
-            logger.warning("pgvector extension not available on this connection")
 
     @classmethod
     async def close(cls) -> None:
@@ -240,21 +233,6 @@ async def check_database_health() -> dict:
             "status": "unhealthy",
             "error": str(e),
         }
-
-
-async def check_pgvector_available() -> bool:
-    """Check if pgvector extension is available.
-
-    Returns:
-        True if pgvector is installed and enabled.
-    """
-    try:
-        result = await DatabasePool.fetchval(
-            "SELECT EXISTS(SELECT 1 FROM pg_extension WHERE extname = 'vector')"
-        )
-        return bool(result)
-    except Exception:
-        return False
 
 
 # Convenience function for creating tables during development
