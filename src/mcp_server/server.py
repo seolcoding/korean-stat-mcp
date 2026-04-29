@@ -1872,6 +1872,82 @@ def create_http_app():
 
 
 # =============================================================================
+# Tool surface filtering (US-003): expose only V1_EXPOSED to LLM clients.
+# Internal tools remain reachable via discover_tools() / execute_tool().
+# =============================================================================
+
+from .discover import _register_full_registry  # noqa: E402
+from .discover import discover_tools as _discover_tools_impl  # noqa: E402
+from .discover import execute_tool as _execute_tool_impl  # noqa: E402
+from .exposed_tools import V1_EXPOSED_NAMES  # noqa: E402
+
+
+@mcp.tool
+def discover_tools() -> dict:
+    """노출/내부 도구 전체 목록 조회.
+
+    LLM에 기본 노출되는 도구는 V1_EXPOSED 한정이지만, 모든 등록된
+    내부 도구는 execute_tool(name, args)로 호출할 수 있습니다.
+
+    Returns:
+        dict with keys: exposed, internal, total, exposed_count.
+    """
+    return _discover_tools_impl()
+
+
+@mcp.tool
+def execute_tool(name: str, args: Optional[dict] = None) -> dict:
+    """이름으로 임의의 등록된 도구를 호출 (파워유저 escape hatch).
+
+    Args:
+        name: 도구 이름 (discover_tools()로 확인 가능).
+        args: 도구에 전달할 키워드 인자. 시그니처와 맞지 않으면 에러 반환.
+
+    Returns:
+        {"tool": name, "result": ...} 또는 {"tool": name, "error": ...}.
+    """
+    return _execute_tool_impl(name, args or {})
+
+
+def _prune_unexposed_tools() -> None:
+    """Remove tools not in V1_EXPOSED from the public MCP tools/list response.
+
+    Functions remain importable and callable via execute_tool(); only the
+    LLM-facing tools/list surface is trimmed.
+    """
+    import asyncio as _asyncio
+
+    try:
+        registered = _asyncio.run(mcp.get_tools())
+    except RuntimeError:
+        # Already inside an event loop (e.g. during tests). Skip pruning;
+        # the harness will get the full surface, which is safe but verbose.
+        logger.warning("event loop running at import time; skipping tool pruning")
+        return
+
+    # Snapshot the FULL registry BEFORE pruning so execute_tool can still
+    # reach internal tools after they're hidden from tools/list.
+    _register_full_registry(registered)
+
+    removed = 0
+    for tool_name in list(registered.keys()):
+        if tool_name not in V1_EXPOSED_NAMES:
+            try:
+                mcp.remove_tool(tool_name)
+                removed += 1
+            except Exception as exc:  # pragma: no cover - defensive
+                logger.warning(f"failed to hide tool {tool_name!r}: {exc}")
+
+    logger.info(
+        f"tool surface filtered: {len(V1_EXPOSED_NAMES)} exposed, "
+        f"{removed} hidden (still reachable via execute_tool)"
+    )
+
+
+_prune_unexposed_tools()
+
+
+# =============================================================================
 # 엔트리포인트
 # =============================================================================
 
