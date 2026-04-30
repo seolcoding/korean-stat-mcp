@@ -2,8 +2,12 @@
 
 from __future__ import annotations
 
+import hashlib
 import os
 
+from limits import RateLimitItemPerMinute
+from limits.aio.storage import MemoryStorage
+from limits.aio.strategies import MovingWindowRateLimiter
 from starlette.middleware.base import BaseHTTPMiddleware
 from starlette.requests import Request
 from starlette.responses import JSONResponse, Response
@@ -46,13 +50,6 @@ def missing_api_key_response() -> Response:
         },
         status_code=401,
     )
-
-
-import hashlib
-
-from limits import RateLimitItemPerMinute
-from limits.aio.storage import MemoryStorage
-from limits.aio.strategies import MovingWindowRateLimiter
 
 
 def _bucket_key(request: Request) -> str:
