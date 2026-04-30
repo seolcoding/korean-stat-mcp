@@ -1,6 +1,6 @@
 [project]
 name = "korean-stat-mcp"
-version = "0.1.1"
+version = "0.1.2"
 description = "MCP server for Korean KOSIS OpenAPI statistics data"
 readme = "README.md"
 requires-python = ">=3.12"
@@ -23,15 +23,13 @@ dependencies = [
     "requests>=2.32.4",
     "pandas>=2.3.0",
     "altair>=5.5.0",
-    "vl-convert-python>=1.7.0",
     "python-dotenv>=1.1.0",
     "pyyaml>=6.0.1",
     "bs4>=0.0.2",
     "json5>=0.12.1",
-    "pymupdf>=1.26.7",
     "xlrd>=2.0.2",
     "aiohttp>=3.13.2",
-    "fastapi>=0.124.4",
+    "starlette>=0.50.0",
     "uvicorn>=0.38.0",
 ]
 

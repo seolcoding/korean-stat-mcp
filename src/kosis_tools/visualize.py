@@ -79,7 +79,7 @@ def save_chart(
 
     Args:
         chart: Altair Chart 객체
-        filename: 파일명 (확장자로 형식 결정: .html, .png, .svg)
+        filename: 파일명 (.html)
         output_dir: 저장 디렉토리 (기본: artifacts 디렉토리 사용)
         scale: PNG 해상도 배율
 
@@ -89,6 +89,11 @@ def save_chart(
     import os
 
     suffix = Path(filename).suffix.lower()
+    if suffix != ".html":
+        raise ValueError(
+            "Only .html chart artifacts are supported in the base package."
+        )
+
     artifacts_dir = os.environ.get("KOSIS_ARTIFACTS_DIR", "/tmp/kosis_artifacts")
     base_url = os.environ.get("KOSIS_BASE_URL", "http://localhost:8000")
 
@@ -96,10 +101,7 @@ def save_chart(
     output_path.mkdir(parents=True, exist_ok=True)
 
     final_path = output_path / filename
-    if suffix == ".png":
-        chart.save(final_path, scale_factor=scale)
-    else:
-        chart.save(final_path)
+    chart.save(final_path)
 
     return {
         "url": f"{base_url}/artifacts/charts/{filename}",

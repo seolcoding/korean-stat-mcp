@@ -43,7 +43,7 @@ AI 에이전트(Claude 등)가 한국 통계 데이터를 **탐색, 조회, 분�
 │  │  kosis_tools/                                                       │ │
 │  │  ├── API Clients (search, data, metadata, transform)               │ │
 │  │  ├── Code Executor (sandboxed Python runtime)                      │ │
-│  │  └── Visualize (Altair + vl-convert)                               │ │
+│  │  └── Visualize (Altair HTML)                                        │ │
 │  └────────────────────────────────────────────────────────────────────┘ │
 └───────────────┬─────────────────────────────┬───────────────────────────┘
                 │                             │

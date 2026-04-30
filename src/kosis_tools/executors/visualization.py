@@ -139,6 +139,11 @@ def save_chart(
     from pathlib import Path
 
     suffix = Path(filename).suffix.lower()
+    if suffix != ".html":
+        raise ValueError(
+            "Only .html chart artifacts are supported in the base package."
+        )
+
     artifacts_dir = os.environ.get("KOSIS_ARTIFACTS_DIR", "/tmp/kosis_artifacts")
     base_url = os.environ.get("KOSIS_BASE_URL", "http://localhost:8000")
 

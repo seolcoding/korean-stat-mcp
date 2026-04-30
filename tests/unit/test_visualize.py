@@ -78,15 +78,14 @@ class TestSaveChart:
             assert result["format"] == "html"
             assert Path(result["path"]).exists()
 
-    def test_save_svg(self, sample_data):
-        """SVG 저장."""
+    def test_save_non_html_rejected(self, sample_data):
+        """HTML 외 형식은 기본 패키지에서 지원하지 않음."""
         df = prepare_data(sample_data, numeric_fields=["DT"])
         chart = alt.Chart(df).mark_bar().encode(x="C1_NM:N", y="DT:Q")
 
         with tempfile.TemporaryDirectory() as tmpdir:
-            result = save_chart(chart, "test.svg", output_dir=tmpdir)
-            assert result["format"] == "svg"
-            assert Path(result["path"]).exists()
+            with pytest.raises(ValueError, match="Only .html"):
+                save_chart(chart, "test.svg", output_dir=tmpdir)
 
 
 class TestChartConversion:

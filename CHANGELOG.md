@@ -14,6 +14,13 @@ The format follows [Keep a Changelog 1.1.0](https://keepachangelog.com/en/1.1.0/
 
 ---
 
+## [0.1.2] — 2026-04-30
+
+### Changed
+- Trim heavyweight non-core dependencies from the base package by removing unused PDF tooling and binary chart export support; chart artifacts are HTML-only in the base install.
+
+---
+
 ## [0.1.1] — 2026-04-30
 
 ### Changed
@@ -59,6 +66,7 @@ Initial public release. The package is renamed and refactored from the private `
 
 ---
 
-[Unreleased]: https://github.com/seolcoding/korean-stat-mcp/compare/v0.1.1...HEAD
+[Unreleased]: https://github.com/seolcoding/korean-stat-mcp/compare/v0.1.2...HEAD
+[0.1.2]: https://github.com/seolcoding/korean-stat-mcp/compare/v0.1.1...v0.1.2
 [0.1.1]: https://github.com/seolcoding/korean-stat-mcp/compare/v0.1.0...v0.1.1
 [0.1.0]: https://github.com/seolcoding/korean-stat-mcp/releases/tag/v0.1.0
