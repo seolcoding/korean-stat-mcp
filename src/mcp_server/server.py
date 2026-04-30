@@ -855,6 +855,201 @@ async def verify_statistics(
 
 
 @mcp.tool
+def get_key_indicator(
+    by: str,
+    value: str,
+    page: int = 1,
+    limit: int = 10,
+) -> dict:
+    """KOSIS 통계주요지표(Key Indicator)의 설명자료를 조회합니다.
+
+    8개 KOSIS 통계주요지표 sub-service 중 설명자료 계열 두 가지를 by 인자로
+    구분합니다 (KOSIS dev guide §2.7).
+
+    Args:
+        by: "id"  → 지표 고유번호로 조회 (pkNumberService.do)
+            "name" → 지표명으로 조회 (indExpService.do)
+        value: by="id" 면 지표 ID(jipyoId), by="name" 이면 지표명(jipyoNm).
+        page: 페이지 번호 (기본 1).
+        limit: 페이지당 결과 수 (기본 10).
+
+    Returns:
+        {"by": ..., "value": ..., "count": <int>, "results": [{...}, ...]}
+        결과 항목은 IndicatorExplanation 의 dict 형태.
+
+    Example:
+        >>> get_key_indicator(by="id", value="160")
+        >>> get_key_indicator(by="name", value="실업률")
+    """
+    from dataclasses import asdict
+    from kosis_tools.key_indicators import KeyIndicators
+
+    if by not in ("id", "name"):
+        return {"error": f"by must be 'id' or 'name', got {by!r}"}
+    if not value:
+        return {"error": "value (jipyoId / jipyoNm) is required"}
+
+    try:
+        client = KeyIndicators()
+        if by == "id":
+            items = client.get_explanation_by_id(value, page, limit)
+        else:
+            items = client.get_explanation_by_name(value, page, limit)
+        return {
+            "by": by,
+            "value": value,
+            "count": len(items),
+            "results": [asdict(it) for it in items],
+        }
+    except Exception as e:
+        logger.error(f"get_key_indicator error: {e}")
+        return {"error": str(e)}
+
+
+@mcp.tool
+def list_key_indicators(
+    by: str = "category",
+    value: Optional[str] = None,
+    page: int = 1,
+    limit: int = 10,
+) -> dict:
+    """KOSIS 통계주요지표를 카테고리 또는 수록주기 기준으로 나열합니다.
+
+    Args:
+        by: "category" → 목록ID(listId)별 지표 (indiListService.do)
+            "period"   → 수록주기(prdSe)별 지표 (prListSearchRequest.do)
+        value: by="category" 면 listId(예: "A"). by="period" 면 prdSe(Y/M/Q/S).
+        page: 페이지 번호.
+        limit: 페이지당 결과 수.
+
+    Returns:
+        {"by": ..., "value": ..., "count": <int>, "results": [{...}, ...]}
+    """
+    from dataclasses import asdict
+    from kosis_tools.key_indicators import KeyIndicators
+
+    if by not in ("category", "period"):
+        return {"error": f"by must be 'category' or 'period', got {by!r}"}
+    if not value:
+        return {
+            "error": "value is required",
+            "hint": (
+                "by='category' needs a listId (e.g. 'A'); "
+                "by='period' needs prdSe in {Y, M, Q, S}"
+            ),
+        }
+
+    try:
+        client = KeyIndicators()
+        if by == "category":
+            items = client.get_by_list(value, page, limit)
+        else:
+            items = client.search_by_period_type(value, page, limit)
+        return {
+            "by": by,
+            "value": value,
+            "count": len(items),
+            "results": [asdict(it) for it in items],
+        }
+    except Exception as e:
+        logger.error(f"list_key_indicators error: {e}")
+        return {"error": str(e)}
+
+
+@mcp.tool
+def search_key_indicators(
+    by: str,
+    value: str,
+    page: int = 1,
+    limit: int = 10,
+) -> dict:
+    """KOSIS 통계주요지표를 이름 또는 고유번호로 검색합니다.
+
+    Args:
+        by: "name" → 지표명별 목록 검색 (indListSearchRequest.do, service=4)
+            "id"   → 고유번호별 검색 (indListSearchRequest.do, service=4)
+        value: by="name" 이면 지표명, by="id" 이면 jipyoId.
+        page: 페이지 번호.
+        limit: 페이지당 결과 수.
+
+    Returns:
+        {"by": ..., "value": ..., "count": <int>, "results": [{...}, ...]}
+    """
+    from dataclasses import asdict
+    from kosis_tools.key_indicators import KeyIndicators
+
+    if by not in ("name", "id"):
+        return {"error": f"by must be 'name' or 'id', got {by!r}"}
+    if not value:
+        return {"error": "value is required"}
+
+    try:
+        client = KeyIndicators()
+        if by == "name":
+            items = client.search_by_name(value, page, limit)
+        else:
+            items = client.search_by_id(value, page, limit)
+        return {
+            "by": by,
+            "value": value,
+            "count": len(items),
+            "results": [asdict(it) for it in items],
+        }
+    except Exception as e:
+        logger.error(f"search_key_indicators error: {e}")
+        return {"error": str(e)}
+
+
+@mcp.tool
+def get_key_indicator_details(
+    jipyo_id: str,
+    start_date: Optional[str] = None,
+    end_date: Optional[str] = None,
+    recent_n: Optional[int] = None,
+    page: int = 1,
+    limit: int = 10,
+) -> dict:
+    """KOSIS 통계주요지표의 시계열 상세 데이터를 조회합니다.
+
+    indIdDetailSearchRequest.do (service=4 / serviceDetail=indIdDetail).
+
+    Args:
+        jipyo_id: 지표 ID (필수).
+        start_date / end_date: 시점 기준 조회 (예: "2020", "2023").
+        recent_n: 최신자료 기준으로 최근 N개 시점만. start/end 와 동시 지정 시
+                  start/end 우선.
+        page, limit: 페이지네이션.
+
+    Returns:
+        {"jipyo_id": ..., "count": <int>, "results": [{period, value, ...}]}
+    """
+    from dataclasses import asdict
+    from kosis_tools.key_indicators import KeyIndicators
+
+    if not jipyo_id:
+        return {"error": "jipyo_id is required"}
+
+    try:
+        client = KeyIndicators()
+        items = client.get_detail(
+            jipyo_id=jipyo_id,
+            start_prd_de=start_date,
+            end_prd_de=end_date,
+            srv_rn=recent_n if (start_date is None and end_date is None) else None,
+            page_no=page,
+            num_of_rows=limit,
+        )
+        return {
+            "jipyo_id": jipyo_id,
+            "count": len(items),
+            "results": [asdict(it) for it in items],
+        }
+    except Exception as e:
+        logger.error(f"get_key_indicator_details error: {e}")
+        return {"error": str(e)}
+
+
+@mcp.tool
 def discover_tools() -> dict:
     """노출/내부 도구 전체 목록 조회.
 
