@@ -150,10 +150,12 @@ def create_app() -> Starlette:
     # Per-request KOSIS API key extraction. Must run before MCP handlers so
     # that load_config() inside any tool sees the request's key.
     from .middleware import ApiKeyMiddleware
+
     mcp_app.add_middleware(ApiKeyMiddleware)
 
     # Path-agnostic rate limiting (RATE_LIMIT_RPM env, default 300/min per IP+apiKey).
     from .middleware import RateLimitMiddleware
+
     mcp_app.add_middleware(RateLimitMiddleware)
 
     # Add startup event for DB initialization

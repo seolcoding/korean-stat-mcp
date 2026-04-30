@@ -74,7 +74,9 @@ class RateLimitMiddleware(BaseHTTPMiddleware):
         super().__init__(app)
         self._storage = MemoryStorage()
         self._strategy = MovingWindowRateLimiter(self._storage)
-        configured_rpm = rpm if rpm is not None else int(os.getenv("RATE_LIMIT_RPM", "300"))
+        configured_rpm = (
+            rpm if rpm is not None else int(os.getenv("RATE_LIMIT_RPM", "300"))
+        )
         self._limit = RateLimitItemPerMinute(configured_rpm)
 
     async def dispatch(self, request: Request, call_next):  # type: ignore[override]
