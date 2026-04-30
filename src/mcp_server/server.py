@@ -362,7 +362,7 @@ def get_statistics_data(
     end_date: str,
     prd_se: str = "Y",
     format: str = "summary",
-) -> dict:
+) -> dict | list[dict]:
     """
     KOSIS에서 통계 데이터를 조회합니다.
 
@@ -443,7 +443,7 @@ def filter_statistics(
     format: str = "summary",
     data_id: Optional[str] = None,
     data_json: Optional[str] = None,
-) -> dict:
+) -> dict | list[dict]:
     """
     통계 데이터를 필터링합니다.
 
@@ -515,7 +515,7 @@ def aggregate_statistics(
     format: str = "summary",
     data_id: Optional[str] = None,
     data_json: Optional[str] = None,
-) -> dict:
+) -> dict | list[dict]:
     """
     통계 데이터를 그룹별로 집계합니다.
 
@@ -1366,7 +1366,7 @@ def execute_report(
     charts_json: Optional[str] = None,
     tables_json: Optional[str] = None,
     data_id: Optional[str] = None,
-) -> dict:
+) -> dict | str:
     """
     리포트 생성 코드를 실행합니다. 시각화+분석+테이블을 조합.
 
@@ -1615,7 +1615,7 @@ def get_element_guide(element_type: str) -> dict:
 
 
 @mcp.tool
-def recommend_template(data_id: Optional[str] = None) -> dict:
+def recommend_template(data_id: Optional[str] = None) -> dict | None:
     """
     데이터 특성 기반 템플릿 추천.
 
