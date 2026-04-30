@@ -23,7 +23,7 @@ These are useful for server mode but should not be the skill's default path:
 
 - `src/mcp_server/server.py`
 - `src/mcp_server/app.py`
-- Docker/Cloudflare/R2 deployment flow
+- Docker deployment flow
 - PostgreSQL hybrid search, unless the user asks for semantic search or metadata indexing
 
 ## Basic Live Workflow

@@ -35,15 +35,8 @@ services:
       - KOSIS_API_KEY=${KOSIS_API_KEY}
       # PostgreSQL (asyncpg format)
       - DATABASE_URL=postgresql://kosis:${POSTGRES_PASSWORD:-kosis_dev_password}@postgres:5432/kosis
-      # Cloudflare R2
-      - R2_ACCOUNT_ID=${R2_ACCOUNT_ID:-}
-      - R2_ACCESS_KEY_ID=${R2_ACCESS_KEY_ID:-}
-      - R2_SECRET_ACCESS_KEY=${R2_SECRET_ACCESS_KEY:-}
-      - R2_BUCKET_NAME=${R2_BUCKET_NAME:-kosis-assets}
-      - R2_PUBLIC_URL=${R2_PUBLIC_URL:-}
-      - R2_REGION=${R2_REGION:-auto}
-      # Artifact storage mode: 'local' or 'r2'
-      - ARTIFACT_STORAGE=${ARTIFACT_STORAGE:-local}
+      # Local artifacts
+      - KOSIS_ARTIFACTS_DIR=/app/artifacts
     volumes:
       - ./artifacts:/app/artifacts
     depends_on:

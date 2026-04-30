@@ -133,16 +133,13 @@ and migration notes.
 | `KOSIS_API_KEY` | yes | KOSIS OpenAPI key |
 | `KOSIS_ARTIFACTS_DIR` | no | Local chart/report output directory |
 | `KOSIS_MCP_URL` | no | Base URL for a self-hosted server |
-| `R2_BUCKET_NAME` | no | Cloudflare R2 bucket |
-| `R2_ACCESS_KEY_ID` / `R2_SECRET_ACCESS_KEY` | no | Cloudflare R2 credentials |
-| `R2_PUBLIC_URL` | no | Public URL prefix for R2 artifacts |
 
 See [.env.example](./.env.example) for the full list.
 
 ## Validation
 
 - CI runs on Python 3.12 and 3.13.
-- As of 2026-04-30, the unit test suite has 446 passing tests.
+- As of 2026-04-30, the unit test suite has 449 passing tests.
 - A 100-table live KOSIS pilot had no API errors, timeouts, or parse errors.
   Two empty responses were classified as `no_data`.
 

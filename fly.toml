@@ -10,10 +10,9 @@ primary_region = "nrt"
   dockerfile = "Dockerfile"
 
 [env]
-  # Public, non-secret defaults. Sensitive values (KOSIS_API_KEY, R2_*) must be
+  # Public, non-secret defaults. Sensitive values (KOSIS_API_KEY) must be
   # set via `fly secrets set KOSIS_API_KEY=...` (see deploy/README.md).
   FASTMCP_STATELESS_HTTP = "true"
-  ARTIFACT_STORAGE = "auto"
   PYTHONUNBUFFERED = "1"
 
 [http_service]

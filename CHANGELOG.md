@@ -14,6 +14,15 @@ The format follows [Keep a Changelog 1.1.0](https://keepachangelog.com/en/1.1.0/
 
 ---
 
+## [0.1.1] — 2026-04-30
+
+### Changed
+- Standardize the first public deployment shape: local `stdio` by default and Streamable HTTP at `/mcp` for remote connectors.
+- Keep artifact handling local-only and remove the unused external object storage path, environment variables, optional extra, and Docker/Fly configuration.
+- Add regression tests for `/health`, `/info`, and `/mcp` HTTP deployment endpoints.
+
+---
+
 ## [0.1.0] — 2026-04-30
 
 Initial public release. The package is renamed and refactored from the private `kosis-mcp` codebase into a public open-source MCP server.
@@ -32,7 +41,7 @@ Initial public release. The package is renamed and refactored from the private `
 
 ### Changed
 - Renamed package from `kosis-mcp` to `korean-stat-mcp`.
-- `asyncpg` and `boto3` moved from required to optional extras (`[postgres]` / `[r2]` / `[all]`). The base `pip install korean-stat-mcp` now requires no third-party AI vendor key.
+- `asyncpg` moved from required to optional extras (`[postgres]` / `[all]`). The base `pip install korean-stat-mcp` now requires no third-party AI vendor key.
 
 ### Removed
 - OpenAI embeddings stack: `src/kosis_tools/embeddings.py` and `src/kosis_tools/hybrid_search.py` deleted; `search_tables_hybrid` MCP tool removed.
@@ -50,5 +59,6 @@ Initial public release. The package is renamed and refactored from the private `
 
 ---
 
-[Unreleased]: https://github.com/seolcoding/korean-stat-mcp/compare/v0.1.0...HEAD
+[Unreleased]: https://github.com/seolcoding/korean-stat-mcp/compare/v0.1.1...HEAD
+[0.1.1]: https://github.com/seolcoding/korean-stat-mcp/compare/v0.1.0...v0.1.1
 [0.1.0]: https://github.com/seolcoding/korean-stat-mcp/releases/tag/v0.1.0

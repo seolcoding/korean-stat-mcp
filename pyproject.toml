@@ -1,6 +1,6 @@
 [project]
 name = "korean-stat-mcp"
-version = "0.1.0"
+version = "0.1.1"
 description = "MCP server for Korean KOSIS OpenAPI statistics data"
 readme = "README.md"
 requires-python = ">=3.12"
@@ -40,14 +40,9 @@ dependencies = [
 postgres = [
     "asyncpg>=0.30.0",
 ]
-# Optional: Cloudflare R2 storage for chart/report hosting
-r2 = [
-    "boto3>=1.36.0",
-]
 # Convenience: install all optional extras
 all = [
     "asyncpg>=0.30.0",
-    "boto3>=1.36.0",
 ]
 
 [project.urls]

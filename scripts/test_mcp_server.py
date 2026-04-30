@@ -39,12 +39,9 @@ class MCPServerTester:
         """테스트 결과 로깅."""
         status = "✅ PASS" if success else "❌ FAIL"
         print(f"{status} | {test_name}: {message}")
-        self.results.append({
-            "test": test_name,
-            "success": success,
-            "message": message,
-            "data": data
-        })
+        self.results.append(
+            {"test": test_name, "success": success, "message": message, "data": data}
+        )
 
     async def test_health(self) -> bool:
         """1. Health Check 테스트."""
@@ -55,7 +52,9 @@ class MCPServerTester:
             if resp.status_code == 200 and data.get("status") == "healthy":
                 db_info = data.get("database", {})
                 table_count = db_info.get("table_count", 0)
-                self.log("Health Check", True, f"DB 연결됨, {table_count:,}개 테이블", data)
+                self.log(
+                    "Health Check", True, f"DB 연결됨, {table_count:,}개 테이블", data
+                )
                 return True
             else:
                 self.log("Health Check", False, f"상태 이상: {data}")
@@ -99,9 +98,7 @@ class MCPServerTester:
         try:
             # MCP 엔드포인트는 루트 경로 "/"
             resp = await self.client.post(
-                f"{self.base_url}/",
-                json=payload,
-                headers=headers
+                f"{self.base_url}/", json=payload, headers=headers
             )
 
             if resp.status_code == 200:
@@ -134,7 +131,12 @@ class MCPServerTester:
             if result and "result" in result:
                 tools = result["result"].get("tools", [])
                 tool_names = [t.get("name") for t in tools[:5]]
-                self.log("MCP tools/list", True, f"{len(tools)}개 도구 발견: {tool_names}...", {"count": len(tools)})
+                self.log(
+                    "MCP tools/list",
+                    True,
+                    f"{len(tools)}개 도구 발견: {tool_names}...",
+                    {"count": len(tools)},
+                )
                 return True
             else:
                 self.log("MCP tools/list", False, f"응답 없음 또는 오류: {result}")
@@ -146,17 +148,25 @@ class MCPServerTester:
     async def test_mcp_search(self) -> bool:
         """4. MCP 통계 검색 테스트."""
         try:
-            result = await self.mcp_call("tools/call", {
-                "name": "search_statistics",
-                "arguments": {"keyword": "인구", "limit": 3}
-            })
+            result = await self.mcp_call(
+                "tools/call",
+                {
+                    "name": "search_statistics",
+                    "arguments": {"keyword": "인구", "limit": 3},
+                },
+            )
 
             if result and "result" in result:
                 content = result["result"].get("content", [])
                 if content and len(content) > 0:
                     # 텍스트 결과 파싱
                     text = content[0].get("text", "")
-                    self.log("MCP 통계검색", True, f"'인구' 검색 결과 수신", {"preview": text[:100]})
+                    self.log(
+                        "MCP 통계검색",
+                        True,
+                        "'인구' 검색 결과 수신",
+                        {"preview": text[:100]},
+                    )
                     return True
 
             self.log("MCP 통계검색", False, f"검색 결과 없음: {result}")
@@ -166,23 +176,14 @@ class MCPServerTester:
             return False
 
     async def test_static_files(self) -> bool:
-        """5. 정적 파일 서빙 테스트 (R2 또는 로컬)."""
+        """5. 로컬 정적 파일 서빙 테스트."""
         try:
-            # R2 public URL 테스트
-            r2_url = "https://pub-2563a36b1b9e4e208ea0718e1056b358.r2.dev"
-            resp = await self.client.head(r2_url, follow_redirects=False)
-
-            if resp.status_code in (200, 403, 404):  # R2 버킷 접근 가능
-                self.log("Static Files (R2)", True, f"R2 버킷 접근 가능 ({r2_url})")
-                return True
-
-            # 로컬 artifacts 대체 테스트
             resp = await self.client.get(f"{self.base_url}/artifacts/")
             if resp.status_code != 404:
-                self.log("Static Files (Local)", True, f"로컬 artifacts 접근 가능")
+                self.log("Static Files (Local)", True, "로컬 artifacts 접근 가능")
                 return True
 
-            self.log("Static Files", False, "R2/로컬 모두 접근 불가")
+            self.log("Static Files", False, "로컬 artifacts 접근 불가")
             return False
         except Exception as e:
             self.log("Static Files", False, f"요청 실패: {e}")
@@ -207,10 +208,10 @@ class MCPServerTester:
 
     async def run_all_tests(self) -> dict:
         """모든 테스트 실행."""
-        print(f"\n{'='*60}")
-        print(f"KOSIS MCP Server Test")
+        print(f"\n{'=' * 60}")
+        print("KOSIS MCP Server Test")
         print(f"Target: {self.base_url}")
-        print(f"{'='*60}\n")
+        print(f"{'=' * 60}\n")
 
         tests = [
             ("Health Check", self.test_health),
@@ -235,16 +236,16 @@ class MCPServerTester:
                 self.log(name, False, f"예외 발생: {e}")
                 failed += 1
 
-        print(f"\n{'='*60}")
+        print(f"\n{'=' * 60}")
         print(f"Results: {passed} passed, {failed} failed")
-        print(f"{'='*60}\n")
+        print(f"{'=' * 60}\n")
 
         return {
             "url": self.base_url,
             "passed": passed,
             "failed": failed,
             "total": passed + failed,
-            "results": self.results
+            "results": self.results,
         }
 
 

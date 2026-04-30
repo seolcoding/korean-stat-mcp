@@ -292,7 +292,6 @@ EMBEDDING_DIMENSIONS=1536
 - [x] `kosis-mcp` 서비스 구현
   - [x] 기존 kosis_tools 통합
   - [x] 하이브리드 검색 구현 (pgvector + BM25 + RRF)
-  - [x] Cloudflare R2 연동
 - [x] `updater` 서비스 추가 (docker-compose.yml)
   - [x] `scripts/load_metadata.py` 재사용
   - [x] profiles로 선택적 실행

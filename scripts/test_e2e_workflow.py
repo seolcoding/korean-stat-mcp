@@ -5,7 +5,7 @@ KOSIS MCP Server E2E Workflow Test.
 전체 워크플로 테스트:
 1. 통계 검색 (search_statistics)
 2. 데이터 조회 (get_statistics_data)
-3. 시각화 생성 (execute_visualization) → R2 업로드
+3. 시각화 생성 (execute_visualization) → 로컬 artifacts 저장
 4. 분석 실행 (execute_analysis)
 
 Usage:
@@ -16,7 +16,6 @@ import sys
 import json
 import httpx
 import asyncio
-from typing import Any
 
 
 class MCPWorkflowTester:
@@ -30,7 +29,9 @@ class MCPWorkflowTester:
     async def close(self):
         await self.client.aclose()
 
-    async def mcp_call(self, method: str, tool_name: str = None, arguments: dict = None) -> dict | None:
+    async def mcp_call(
+        self, method: str, tool_name: str = None, arguments: dict = None
+    ) -> dict | None:
         """MCP JSON-RPC 호출."""
         payload = {
             "jsonrpc": "2.0",
@@ -46,7 +47,9 @@ class MCPWorkflowTester:
         }
 
         try:
-            resp = await self.client.post(f"{self.base_url}/", json=payload, headers=headers)
+            resp = await self.client.post(
+                f"{self.base_url}/", json=payload, headers=headers
+            )
             if resp.status_code == 200:
                 content_type = resp.headers.get("content-type", "")
                 if "text/event-stream" in content_type:
@@ -64,10 +67,9 @@ class MCPWorkflowTester:
         print("\n[1] 통계 검색 (search_statistics)")
         print("-" * 50)
 
-        result = await self.mcp_call("tools/call", "search_statistics", {
-            "keyword": "인구",
-            "limit": 5
-        })
+        result = await self.mcp_call(
+            "tools/call", "search_statistics", {"keyword": "인구", "limit": 5}
+        )
 
         if result and "result" in result:
             content = result["result"].get("content", [])
@@ -77,7 +79,9 @@ class MCPWorkflowTester:
                 if "results" in data:
                     print(f"  ✅ 검색 결과: {data.get('total_count', 0)}건")
                     for r in data["results"][:3]:
-                        print(f"     - {r.get('tbl_nm', 'N/A')} ({r.get('org_nm', '')})")
+                        print(
+                            f"     - {r.get('tbl_nm', 'N/A')} ({r.get('org_nm', '')})"
+                        )
                     return True
         print("  ❌ 검색 실패")
         return False
@@ -88,13 +92,17 @@ class MCPWorkflowTester:
         print("-" * 50)
 
         # 행정구역별 인구수 (통계청)
-        result = await self.mcp_call("tools/call", "get_statistics_data", {
-            "org_id": "101",
-            "tbl_id": "DT_1B040A3",
-            "start_date": "2020",
-            "end_date": "2023",
-            "format": "summary"
-        })
+        result = await self.mcp_call(
+            "tools/call",
+            "get_statistics_data",
+            {
+                "org_id": "101",
+                "tbl_id": "DT_1B040A3",
+                "start_date": "2020",
+                "end_date": "2023",
+                "format": "summary",
+            },
+        )
 
         if result and "result" in result:
             content = result["result"].get("content", [])
@@ -105,7 +113,7 @@ class MCPWorkflowTester:
                 # summary 형식 응답 처리
                 if "summary" in data:
                     summary = data["summary"]
-                    print(f"  ✅ 데이터 조회 성공")
+                    print("  ✅ 데이터 조회 성공")
                     print(f"     - 레코드 수: {summary.get('total_records', 'N/A')}")
                     print(f"     - 기간: {summary.get('period_range', 'N/A')}")
                     print(f"     - 항목: {', '.join(summary.get('items', [])[:3])}")
@@ -124,14 +132,14 @@ class MCPWorkflowTester:
         return False
 
     async def test_4_visualization(self) -> bool:
-        """4. 시각화 생성 (R2 업로드)."""
+        """4. 시각화 생성."""
         print("\n[4] 시각화 생성 (execute_visualization)")
         print("-" * 50)
 
         if not self.data_id:
             print("  ⚠️ data_id 없음, 샘플 데이터로 테스트")
             # 샘플 데이터로 차트 생성
-            code = '''
+            code = """
 import altair as alt
 import pandas as pd
 
@@ -153,9 +161,9 @@ chart = alt.Chart(df).mark_line(point=True).encode(
 )
 
 return save_chart(chart, "population_trend.html")
-'''
+"""
         else:
-            code = f'''
+            code = """
 df = prepare_data(data, numeric_fields=["DT"])
 df["인구_천명"] = df["DT"] / 1000
 
@@ -169,12 +177,13 @@ chart = alt.Chart(yearly).mark_line(point=True).encode(
 ).properties(title="연도별 인구 추이", width=500, height=300)
 
 return save_chart(chart, "population_trend.html")
-'''
+"""
 
-        result = await self.mcp_call("tools/call", "execute_visualization", {
-            "code": code,
-            "data_id": self.data_id
-        })
+        result = await self.mcp_call(
+            "tools/call",
+            "execute_visualization",
+            {"code": code, "data_id": self.data_id},
+        )
 
         if result and "result" in result:
             content = result["result"].get("content", [])
@@ -184,17 +193,15 @@ return save_chart(chart, "population_trend.html")
 
                 # 중첩된 result 구조 처리
                 inner_result = data.get("result", data)
-                url = inner_result.get("url") if isinstance(inner_result, dict) else None
+                url = (
+                    inner_result.get("url") if isinstance(inner_result, dict) else None
+                )
 
                 if url:
-                    print(f"  ✅ 차트 생성 성공!")
+                    print("  ✅ 차트 생성 성공!")
                     print(f"     - URL: {url}")
 
-                    # R2 URL인지 확인
-                    if "r2.dev" in url:
-                        print(f"     - 스토리지: Cloudflare R2 ✅")
-                    else:
-                        print(f"     - 스토리지: 로컬")
+                    print("     - 스토리지: 로컬 artifacts")
                     return True
                 elif data.get("error"):
                     print(f"  ⚠️ 시각화 오류: {data.get('error')}")
@@ -207,7 +214,7 @@ return save_chart(chart, "population_trend.html")
         print("\n[5] 분석 실행 (execute_analysis)")
         print("-" * 50)
 
-        code = '''
+        code = """
 # 샘플 분석
 import pandas as pd
 
@@ -229,12 +236,11 @@ return {
     },
     "insight": "2020년 대비 2023년 인구가 약 0.52% 감소했습니다."
 }
-'''
+"""
 
-        result = await self.mcp_call("tools/call", "execute_analysis", {
-            "code": code,
-            "data_id": self.data_id
-        })
+        result = await self.mcp_call(
+            "tools/call", "execute_analysis", {"code": code, "data_id": self.data_id}
+        )
 
         if result and "result" in result:
             content = result["result"].get("content", [])
@@ -243,7 +249,7 @@ return {
                 data = json.loads(text)
 
                 if "result" in data or "summary" in data:
-                    print(f"  ✅ 분석 완료!")
+                    print("  ✅ 분석 완료!")
                     result_data = data.get("result", data)
                     if isinstance(result_data, dict):
                         summary = result_data.get("summary", {})
@@ -268,7 +274,7 @@ return {
         tests = [
             ("통계 검색", self.test_1_search_statistics),
             ("데이터 조회", self.test_3_get_data),
-            ("시각화 (R2)", self.test_4_visualization),
+            ("시각화", self.test_4_visualization),
             ("분석 실행", self.test_5_analysis),
         ]
 

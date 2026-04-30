@@ -20,7 +20,7 @@ AI 에이전트(Claude 등)가 한국 통계 데이터를 **탐색, 조회, 분�
 | **LLM 컨텍스트 절감** | 대용량 데이터를 직접 전달하지 않음 | 서버사이드 처리, 요약 반환 |
 | **점진적 공개** | summary → sample → chunk 순서 | 3-Layer Tool 구조 |
 | **Stateless 설계** | 수평 확장 가능 | FastMCP stateless_http=True |
-| **외부 저장소 분리** | 정적 파일 CDN 분리 | Cloudflare R2 |
+| **로컬 아티팩트 제공** | 생성 파일을 서버 로컬 디렉토리에 저장 | `/artifacts/*` 정적 서빙 |
 
 ```
 ❌ 안티패턴: API → 전체 데이터 → LLM 컨텍스트 (토큰 폭발)
@@ -58,7 +58,7 @@ AI 에이전트(Claude 등)가 한국 통계 데이터를 **탐색, 조회, 분�
     └───────────┬───────────┘
                 │
     ┌───────────▼───────────┐
-    │  Cloudflare R2        │
+    │  Local Artifacts      │
     │  ├── /charts/         │
     │  ├── /reports/        │
     │  └── /data/           │
@@ -103,8 +103,8 @@ AI 에이전트(Claude 등)가 한국 통계 데이터를 **탐색, 조회, 분�
 ┌─────────▼───────────────────────────────────────────▼───────────────────┐
 │                        Infrastructure Layer                              │
 │  ┌─────────────────┐ ┌─────────────────┐ ┌─────────────────────────────┐ │
-│  │ PostgreSQL      │ │ KOSIS API       │ │ R2 Storage                  │ │
-│  │ + pgvector      │ │ (External)      │ │ (CDN)                       │ │
+│  │ PostgreSQL      │ │ KOSIS API       │ │ Local Artifacts             │ │
+│  │ + pgvector      │ │ (External)      │ │ (/artifacts/*)              │ │
 │  └─────────────────┘ └─────────────────┘ └─────────────────────────────┘ │
 └─────────────────────────────────────────────────────────────────────────┘
 ```
@@ -381,12 +381,10 @@ src/kosis_tools/
 │                         ▼               ▼               ▼               │
 │  ┌──────────────────────────────────────────────────────────────────┐   │
 │  │  External Services                                                │   │
-│  │  ┌─────────────┐  ┌─────────────┐  ┌─────────────────────────┐   │   │
-│  │  │ KOSIS API   │  │ OpenAI API  │  │ Cloudflare R2           │   │   │
-│  │  │ (kosis.kr)  │  │ (Embedding) │  │ ├─ /charts/*.html       │   │   │
-│  │  │             │  │             │  │ ├─ /reports/*.html      │   │   │
-│  │  │             │  │             │  │ └─ /data/*.json         │   │   │
-│  │  └─────────────┘  └─────────────┘  └─────────────────────────┘   │   │
+│  │  ┌─────────────┐  ┌─────────────┐                              │   │
+│  │  │ KOSIS API   │  │ OpenAI API  │                              │   │
+│  │  │ (kosis.kr)  │  │ (Embedding) │                              │   │
+│  │  └─────────────┘  └─────────────┘                              │   │
 │  └──────────────────────────────────────────────────────────────────┘   │
 │                                                                          │
 │  ┌──────────────────────────────────────────────────────────────────┐   │
@@ -407,7 +405,6 @@ services:
     environment:
       - FASTMCP_STATELESS_HTTP=true
       - DATABASE_URL=postgresql+asyncpg://...
-      - R2_*
       - OPENAI_API_KEY
     depends_on: [postgres]
 
@@ -451,13 +448,13 @@ CREATE INDEX idx_kosis_embedding ON kosis_tables USING hnsw (embedding vector_co
 ### 6.2 파일 저장 구조
 
 ```
-Local: /app/artifacts/        R2: s3://kosis-assets/
-├── data/                     ├── charts/
-│   └── {data_id}.json        │   └── {hash}.html
-├── charts/                   ├── reports/
-│   └── {chart_id}.html       │   └── {hash}.html
-└── reports/                  └── data/
-    └── {report_id}.html          └── {hash}.json
+Local: /app/artifacts/
+├── data/
+│   └── {data_id}.json
+├── charts/
+│   └── {chart_id}.html
+└── reports/
+    └── {report_id}.html
 ```
 
 ---
@@ -473,7 +470,7 @@ FORBIDDEN_BUILTINS = {"exec", "eval", "compile", "__import__", "open"}
 
 ### 7.2 API Key 관리
 
-- 환경변수로 주입 (`KOSIS_API_KEY`, `OPENAI_API_KEY`, `R2_*`)
+- 환경변수로 주입 (`KOSIS_API_KEY`, `OPENAI_API_KEY`)
 - `.env` 파일은 `.gitignore`에 포함
 - Docker secrets 또는 Vault 연동 가능
 

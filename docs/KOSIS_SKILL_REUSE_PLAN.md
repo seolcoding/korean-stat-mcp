@@ -122,7 +122,6 @@ description: Work with Korean Statistical Information Service KOSIS OpenAPI data
 - `src/mcp_server/app.py`
 - Docker and deployment docs
 - PostgreSQL hybrid search
-- Cloudflare R2 artifact hosting
 
 These are still useful for server deployment, but they should not be required for the skill's default workflow.
 

@@ -59,13 +59,12 @@ mcp.call_tool("execute_tool", {"name": "execute_code", "args": {...}})
 
 ## 4. 선택 의존성 분리 / Optional extras
 
-`asyncpg`, `boto3`는 더 이상 필수 의존성이 아닙니다.
+`asyncpg`는 더 이상 필수 의존성이 아닙니다.
 
 | 용도 / Use | 명령 / Install |
 |---|---|
 | 기본 (KOSIS API만) | `pip install korean-stat-mcp` |
 | PostgreSQL FTS 추가 | `pip install korean-stat-mcp[postgres]` |
-| Cloudflare R2 차트 호스팅 추가 | `pip install korean-stat-mcp[r2]` |
 | 전부 / Everything | `pip install korean-stat-mcp[all]` |
 
 ---

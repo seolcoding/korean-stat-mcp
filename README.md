@@ -129,16 +129,13 @@ curl https://<your-host>/health
 | `KOSIS_API_KEY` | 예 | KOSIS OpenAPI 인증키 |
 | `KOSIS_ARTIFACTS_DIR` | 아니오 | 로컬 차트/리포트 저장 경로 |
 | `KOSIS_MCP_URL` | 아니오 | 자체 호스팅 인스턴스의 base URL |
-| `R2_BUCKET_NAME` | 아니오 | Cloudflare R2 버킷 |
-| `R2_ACCESS_KEY_ID` / `R2_SECRET_ACCESS_KEY` | 아니오 | Cloudflare R2 인증 정보 |
-| `R2_PUBLIC_URL` | 아니오 | R2 공개 URL prefix |
 
 전체 예시는 [.env.example](./.env.example)에 있습니다.
 
 ## 검증 상태
 
 - Python 3.12 / 3.13 CI를 사용합니다.
-- 2026-04-30 기준 unit test는 446개가 통과했습니다.
+- 2026-04-30 기준 unit test는 449개가 통과했습니다.
 - KOSIS live pilot 100건에서 API 오류, timeout, parse 오류는 없었습니다.
   `no_data` 2건은 폐기되었거나 응답이 비어 있는 통계표로 분류했습니다.
 

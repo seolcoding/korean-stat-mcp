@@ -75,9 +75,7 @@ def save_chart(
     scale: float = 2.0,
 ) -> Dict[str, Any]:
     """
-    차트를 파일로 저장하고 URL을 반환.
-
-    R2가 설정되어 있으면 R2에 업로드, 아니면 로컬에 저장.
+    차트를 로컬 아티팩트 디렉토리에 저장하고 URL을 반환.
 
     Args:
         chart: Altair Chart 객체
@@ -89,55 +87,27 @@ def save_chart(
         {"url": 접근 URL, "path": 저장 경로, "format": 형식, "type": "chart"}
     """
     import os
-    import tempfile
 
     suffix = Path(filename).suffix.lower()
+    artifacts_dir = os.environ.get("KOSIS_ARTIFACTS_DIR", "/tmp/kosis_artifacts")
+    base_url = os.environ.get("KOSIS_BASE_URL", "http://localhost:8000")
 
-    # 임시 파일에 먼저 저장
-    with tempfile.NamedTemporaryFile(suffix=suffix, delete=False) as tmp:
-        tmp_path = tmp.name
+    output_path = Path(output_dir) if output_dir else Path(artifacts_dir) / "charts"
+    output_path.mkdir(parents=True, exist_ok=True)
 
+    final_path = output_path / filename
     if suffix == ".png":
-        chart.save(tmp_path, scale_factor=scale)
+        chart.save(final_path, scale_factor=scale)
     else:
-        chart.save(tmp_path)
+        chart.save(final_path)
 
-    # R2 또는 로컬 스토리지에 업로드
-    try:
-        from kosis_tools.r2_storage import get_storage, generate_artifact_key
-
-        storage = get_storage()
-        key = generate_artifact_key("charts", filename)
-        url = storage.upload_file(tmp_path, key)
-
-        return {
-            "url": url,
-            "path": key,
-            "local_path": tmp_path,
-            "format": suffix.lstrip("."),
-            "type": "chart",
-        }
-    except Exception as e:
-        # R2 실패 시 로컬 폴백
-        logger.warning(f"R2 upload failed, using local: {e}")
-        artifacts_dir = os.environ.get("KOSIS_ARTIFACTS_DIR", "/tmp/kosis_artifacts")
-        base_url = os.environ.get("KOSIS_BASE_URL", "http://localhost:8000")
-
-        output_path = Path(artifacts_dir) / "charts"
-        output_path.mkdir(parents=True, exist_ok=True)
-
-        import shutil
-
-        final_path = output_path / filename
-        shutil.move(tmp_path, final_path)
-
-        return {
-            "url": f"{base_url}/artifacts/charts/{filename}",
-            "path": str(final_path.absolute()),
-            "local_path": str(final_path.absolute()),
-            "format": suffix.lstrip("."),
-            "type": "chart",
-        }
+    return {
+        "url": f"{base_url}/artifacts/charts/{filename}",
+        "path": str(final_path.absolute()),
+        "local_path": str(final_path.absolute()),
+        "format": suffix.lstrip("."),
+        "type": "chart",
+    }
 
 
 def chart_to_json(chart: alt.Chart) -> str:

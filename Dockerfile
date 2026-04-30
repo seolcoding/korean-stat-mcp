@@ -62,7 +62,6 @@ ENV PATH="/app/.venv/bin:$PATH"
 
 # Default environment (can be overridden)
 ENV FASTMCP_STATELESS_HTTP=true
-ENV ARTIFACT_STORAGE=auto
 
 # Switch to non-root user
 USER appuser

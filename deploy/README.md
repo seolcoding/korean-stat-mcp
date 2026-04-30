@@ -23,7 +23,6 @@ Docker.
 | Variable | Required | Notes |
 |----------|----------|-------|
 | `KOSIS_API_KEY` | yes | Free at https://kosis.kr/openapi/ |
-| `R2_*` (R2 bucket / keys / public URL) | optional | Only if you want chart/report hosting on Cloudflare R2 |
 | `KOSIS_ARTIFACTS_DIR` | optional | Local artifact path (default `/tmp/kosis_artifacts`) |
 | `FASTMCP_STATELESS_HTTP` | optional | `true` for serverless / scale-to-zero hosts |
 

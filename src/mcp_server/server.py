@@ -2015,7 +2015,6 @@ Environment:
   KOSIS_HOST           HTTP host (default: 0.0.0.0; with --http only).
   KOSIS_ARTIFACTS_DIR  Local artifact dir (default: /tmp/kosis_artifacts).
   DATABASE_URL         Optional Postgres URL (with [postgres] extra).
-  R2_*                 Optional Cloudflare R2 credentials (with [r2] extra).
 
 Docs: https://github.com/seolcoding/korean-stat-mcp
 """
