@@ -206,10 +206,46 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
+      # Pre-deploy gate 1: full test suite (defense-in-depth even though
+      # workflow_run already required ci.yml green — protects against ci.yml
+      # being skipped or partially run)
+      - uses: astral-sh/setup-uv@v3
+      - run: uv sync --all-extras --dev
+      - run: uv run pytest -q
+
+      # Pre-deploy gate 2: build the production Docker image and smoke-test
+      # the HTTP server inside the container against the exact artifact that
+      # will ship to Fly.
+      - run: docker build -t korean-stat-mcp:ci .
+      - name: Container smoke test
+        run: |
+          docker run -d --rm --name kstat-smoke -p 8000:8000 \
+            -e KOSIS_API_KEY=ci-fake-key korean-stat-mcp:ci
+          for i in {1..20}; do
+            curl -fsS http://localhost:8000/health && break || sleep 1
+          done
+          curl -fsS http://localhost:8000/info | grep -q "korean-stat-mcp"
+          curl -fsS -X POST "http://localhost:8000/mcp?apiKey=fake" \
+               -H 'Content-Type: application/json' \
+               -d '{"jsonrpc":"2.0","id":1,"method":"initialize","params":{}}'
+          docker stop kstat-smoke
+
+      # Pre-deploy gate 3: actual deploy
       - uses: superfly/flyctl-actions/setup-flyctl@master
       - run: flyctl deploy --remote-only
         env:
           FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
+
+      # Post-deploy gate: confirm the freshly deployed instance actually
+      # serves /health and /info before the workflow reports success.
+      - name: Post-deploy health probe
+        run: |
+          for i in {1..30}; do
+            curl -fsS https://kosis.seolcoding.com/health && exit 0
+            sleep 2
+          done
+          echo "post-deploy health probe failed"; exit 1
 ```
 
 Tag pushes (`v*`) continue to drive the existing PyPI release pipeline; they
@@ -245,16 +281,69 @@ do not deploy to Fly. Only `main` HEAD goes to the hosted instance.
 
 ## 12. Test plan
 
-| Layer | Test |
-|---|---|
-| Unit | `request_context.py` set/get/reset; `load_config()` priority order: contextvar > env > raise |
-| Concurrency | Two concurrent asyncio requests with different `apiKey` values must each see only their own; assert via mock `aiohttp` capturing outbound `apiKey` |
-| Integration | Spin up Starlette app in test, hit `/mcp?apiKey=foo` and `/mcp?apiKey=bar` interleaved, assert KOSIS client receives matching keys |
-| Manual E2E | After Fly deploy: `verify_statistics` against a known KOSIS row using a real key; check 401 path with no key |
-| Soak | 24 h passive monitoring of Fly metrics post-deploy |
+### 12.1 Existing test refactor scope
 
-All 449 existing unit tests must keep passing; add new tests as a separate
-test file rather than modifying existing ones.
+The contextvar change touches `kosis_tools/config.py::load_config()`. Survey
+of existing tests (449 total):
+
+- **Most tests construct `KosisConfig(api_key="test-key")` directly** via the
+  `tests/conftest.py::test_config` fixture and never call `load_config()`.
+  These need **no change** — the fixture path is independent of the new
+  contextvar logic.
+- **`tests/unit/test_base.py::TestKosisConfig`** exercises `load_config()`'s
+  env-var path. Refactor to add coverage for:
+  - contextvar set → `load_config()` returns contextvar's key (env ignored)
+  - contextvar unset + env set → env path (current behavior preserved)
+  - contextvar unset + env unset → raises with the documented error
+  - contextvar reset on a different asyncio task does not bleed into a
+    sibling task
+- **No test currently asserts MCP HTTP request handling end-to-end** — that
+  is a gap the new integration test will close, not an existing-test rewrite.
+
+The bar: 449 → 449+N tests pass; zero existing tests modified beyond the
+`test_base.py::TestKosisConfig` class above. New tests live in new files
+(`tests/unit/test_request_context.py`, `tests/integration/test_byok_http.py`)
+to keep diffs reviewable.
+
+### 12.2 New tests
+
+| File | Layer | Coverage |
+|---|---|---|
+| `tests/unit/test_request_context.py` | Unit | `current_api_key` set/get/reset; isolation across asyncio tasks (`asyncio.gather` of two coroutines, each setting their own value, assert no bleed) |
+| `tests/unit/test_load_config_priority.py` | Unit | `load_config()` priority order: contextvar > env > raise. One test per branch. |
+| `tests/integration/test_byok_http.py` | Integration | Spin Starlette app via httpx test client. Issue concurrent POSTs to `/mcp?apiKey=foo` and `/mcp?apiKey=bar` with `aiohttp` outbound mocked; assert each KOSIS call carried the matching key. Cover 401 path (no key, no env). |
+| `tests/integration/test_health_info.py` (extend if exists) | Integration | `/health` and `/info` keep working with and without `apiKey` query param. |
+
+### 12.3 Pre-deploy gates (CI)
+
+Encoded in `.github/workflows/deploy.yml` (Section 8). In order:
+
+1. **Full pytest suite** runs again in the deploy workflow even though
+   `workflow_run` already required `ci.yml` to be green. Defense-in-depth
+   against `workflow_run` edge cases (skipped, re-run, etc.).
+2. **Docker build** of the production image — same Dockerfile that ships.
+3. **Container smoke test**: start the container, hit `/health`, `/info`, and
+   `/mcp?apiKey=fake` `initialize` against the live container. Catches
+   packaging regressions (missing files, wrong entrypoint, port binding
+   issues) that pytest cannot.
+4. **Fly deploy** runs only if 1–3 all pass.
+5. **Post-deploy health probe**: poll `https://kosis.seolcoding.com/health`
+   for up to 60 s; fail the workflow if it never returns 200.
+
+### 12.4 Manual verification (one-time, on first deploy)
+
+- `verify_statistics` against a known KOSIS row using a real key end-to-end
+  through `https://kosis.seolcoding.com/mcp?apiKey=<real_key>`.
+- 401 path: same URL without `?apiKey=`, expect `error: missing_api_key`.
+- Concurrent two-key smoke: run two `verify_statistics` calls with different
+  real keys interleaved, confirm each completes without cross-talk in
+  Fly logs.
+
+### 12.5 Soak
+
+24 h passive monitoring of Fly metrics post-deploy: VM crashes, p50/p99
+latency, egress, 5xx rate. Promote to "Stream A done" only after a clean
+soak window.
 
 ## 13. Open questions (resolve during plan/implementation)
 
@@ -278,11 +367,32 @@ test file rather than modifying existing ones.
 
 ## 15. Rollout order
 
-1. Land code changes (request_context + middleware + load_config patch) on
-   `feat/hosting` branch with new tests.
-2. Update `Dockerfile` and `fly.toml`; verify local `docker build` + `docker run` round-trip.
-3. Deploy to `korean-stat-mcp.fly.dev` (no custom domain yet); manual E2E.
-4. DNS + cert for `kosis.seolcoding.com`.
-5. README hosted-instance section + `MIGRATION.md` note for self-hosters.
-6. Open PR; merge after green CI + manual E2E.
-7. Post-merge: 24 h soak; capture egress baseline.
+1. **Code + tests on `feat/hosting`**:
+   - `request_context.py` + middleware + `load_config()` patch.
+   - New tests per Section 12.2.
+   - Refactor `test_base.py::TestKosisConfig` per Section 12.1.
+   - Local `pytest` green; existing 449 tests still pass.
+2. **Container parity**:
+   - Update `Dockerfile` + `fly.toml`.
+   - Local `docker build` + `docker run` smoke test (same script the CI
+     gate runs in Section 12.3).
+3. **CI gates wired**:
+   - `.github/workflows/deploy.yml` added with all five gates from
+     Section 12.3.
+   - Trigger via `workflow_dispatch` once on the branch with a dry-run
+     value (no `FLY_API_TOKEN`) to confirm gates 1–3 work; deploy step
+     skipped.
+4. **Open PR for review**.
+5. **Pre-merge manual deploy** to `korean-stat-mcp.fly.dev` (no custom
+   domain yet) using `flyctl deploy` from the branch — catches
+   infrastructure issues (Fly app naming, region, secret wiring) without
+   touching `main`.
+6. **Manual E2E** per Section 12.4 against `*.fly.dev`.
+7. **Merge `feat/hosting` → `main`** — automated deploy via the new
+   workflow takes over from this point.
+8. **DNS + cert** for `kosis.seolcoding.com` (Section 7) once the `fly.dev`
+   instance is stable.
+9. **README hosted-instance section** + `MIGRATION.md` note for
+   self-hosters — committed on a small docs PR after the URL is live so
+   public docs never reference an unreachable endpoint.
+10. **24 h soak**, capture egress baseline, then promote Stream A to done.
