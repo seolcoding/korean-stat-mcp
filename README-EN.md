@@ -92,6 +92,7 @@ See [.env.example](./.env.example) for the full list.
 ## Documentation
 
 - [CLAUDE-EN.md](./CLAUDE-EN.md) — English project context for AI coding agents
+- [MIGRATION.md](./MIGRATION.md) — Migration guide for previous `kosis-mcp` users
 - [docs/ARCHITECTURE_DESIGN.md](./docs/ARCHITECTURE_DESIGN.md) — System architecture
 - [docs/KOSIS_API_REFERENCE.md](./docs/KOSIS_API_REFERENCE.md) — KOSIS endpoint and field reference
 - [docs/DEPLOYMENT.md](./docs/DEPLOYMENT.md) — Self-hosting (Docker, FastMCP HTTP, PostgreSQL)

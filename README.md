@@ -122,6 +122,7 @@ LLM 에 노출되는 큐레이션 도구 (12-16개 수준). 자세한 시그니�
 ## 문서
 
 - 프로젝트 진입점: [CLAUDE.md](./CLAUDE.md)
+- 마이그레이션 가이드 (이전 `kosis-mcp` 사용자): [MIGRATION.md](./MIGRATION.md)
 - 사용 가이드: [docs/USER_GUIDE.md](./docs/USER_GUIDE.md)
 - 아키텍처: [docs/ARCHITECTURE_DESIGN.md](./docs/ARCHITECTURE_DESIGN.md)
 - KOSIS API 레퍼런스: [docs/KOSIS_API_REFERENCE.md](./docs/KOSIS_API_REFERENCE.md)
