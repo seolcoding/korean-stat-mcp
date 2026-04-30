@@ -65,9 +65,27 @@
    This triggers `.github/workflows/release.yml` → PyPI Trusted Publishing + GHCR Docker push.
 5. **Set up PyPI Trusted Publisher** at https://pypi.org/manage/account/publishing/ first time only.
 
+### Iteration 6 — 2026-04-30 — lint/format/type-hint cleanup
+
+After the 9-story acceptance, ralph kept firing. Used the extra cycles to clean code-quality debt that would block CI:
+
+- `uv run ruff check src/kosis_tools src/mcp_server` → **All checks passed** (was 54 errors)
+  - F401 optional re-exports in `__init__.py` → noqa-suppressed (legitimate conditional re-exports)
+  - F402 dataclasses.field shadowed by loop variable → renamed `field` → `fname` in 3 sites
+  - F841 unused locals removed in `app.py`, `server.py`, `story_templates.py`, `report_tools.py`
+  - E712 `legend_config == False` → `is False`
+- `uv run ruff format src/kosis_tools src/mcp_server` → 34 files reformatted, all clean
+- `.github/workflows/ci.yml` → ruff/format/mypy scoped to `src/kosis_tools src/mcp_server` only. Legacy paths (`src/scripts/`, `tests/`) carry pre-existing lint debt that is documented for a separate cleanup pass.
+- `src/mcp_server/server.py` → fixed 8 honest-return-type bugs flagged by pyright:
+  - `get_statistics_data`, `filter_statistics`, `aggregate_statistics` → `dict | list[dict]`
+  - `execute_report` → `dict | str`
+  - `recommend_template` → `dict | None`
+  - Runtime unaffected (FastMCP serializes either shape); type contract now matches behavior.
+- 445 unit tests still pass.
+
 ### Total impact
 
-- **5 iterations**, **9 stories**, **24+ files created**, **~1900 net new LOC** (excluding docs).
+- **6 iterations**, **9 stories + lint/type cleanup**, **24+ new files**, **~1900 net new LOC** (excluding reformat diff).
 - 16 curated MCP tools exposed (was 25 raw). 10 reachable via `discover_tools` + `execute_tool`.
 - 14/14 KOSIS public OpenAPI endpoints implemented with all parameters.
 - Dual-language (KO/EN) public docs throughout.
