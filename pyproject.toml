@@ -71,6 +71,8 @@ dev = [
 
 [tool.setuptools.packages.find]
 where = ["src"]
+include = ["kosis_tools", "kosis_tools.*", "mcp_server", "mcp_server.*"]
+exclude = ["scripts", "scripts.*"]
 
 [build-system]
 requires = ["setuptools>=75.0.0", "wheel"]

@@ -1,3 +1,6 @@
+> Note: generated HTML reports are local artifacts and are not tracked in Git.
+> The links below resolve after regenerating `kosis-reports/html/` locally.
+
 ## Report #078: 한국 보험산업 트렌드 분석 🛡️📊
 
 **생성일**: 2025-12-15

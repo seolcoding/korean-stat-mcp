@@ -8,11 +8,17 @@
 ```
 examples/gallery/
 ├── README.md                        # 이 파일
-├── output/                          # 생성된 차트 저장 폴더
+├── output/                          # 생성된 차트 저장 폴더 (Git 미추적)
 ├── 01_population_analysis.py        # 인구 통계 분석
 ├── 02_consumer_price_analysis.py    # 소비자물가지수 분석
 └── 03_employment_analysis.py        # 고용 통계 분석 (예정)
 ```
+
+생성된 HTML 갤러리와 디버그 산출물은 저장소에 커밋하지 않습니다.
+필요할 때 위 스크립트를 실행해 로컬에서 다시 만듭니다.
+`debug_viewer.html`은 로컬 산출물을 열어보는 정적 뷰어라서 예외적으로 추적합니다.
+새 예제를 추가할 때도 Python 소스와 README만 커밋하고, `output/`,
+`mcp_artifacts/`, `stories/*.html`은 로컬 생성물로 남겨 둡니다.
 
 ## 🚀 실행 방법
 

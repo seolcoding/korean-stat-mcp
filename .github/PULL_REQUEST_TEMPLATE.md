@@ -27,7 +27,9 @@
 
 - [ ] CHANGELOG.md `[Unreleased]` 섹션에 항목 추가 / Added entry to `[Unreleased]` in CHANGELOG.md
 - [ ] CONTRIBUTING 가이드를 따랐음 / Followed the CONTRIBUTING guide
-- [ ] `uv run pytest -q` 통과 / `uv run pytest -q` passes
-- [ ] `uv run ruff check .` 통과 / `uv run ruff check .` passes
+- [ ] `uv run pytest -q tests/unit -m "not network"` 통과 / unit tests pass
+- [ ] `uv run ruff check src/kosis_tools src/mcp_server` 통과 / scoped ruff check passes
+- [ ] `uv run ruff format --check src/kosis_tools src/mcp_server` 통과 / scoped format check passes
+- [ ] `uv run python scripts/validation/check_release_readiness.py --quiet` 통과 / release-readiness check passes
 - [ ] 새 기능에 docstring + 예시 추가 / Added docstrings and examples for new features
 - [ ] 사유 정보(API 키, 개인 도메인 등) 노출 없음 / No sensitive info (API keys, private domains, etc.) leaked
