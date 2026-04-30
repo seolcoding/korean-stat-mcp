@@ -89,7 +89,7 @@ Files touched:
 
 | File | Change |
 |---|---|
-| `src/mcp_server/request_context.py` (new) | Defines `current_api_key: ContextVar[str \| None]` |
+| `src/kosis_tools/request_context.py` (new) | Defines `current_api_key: ContextVar[str \| None]`. Located in `kosis_tools` (not `mcp_server`) so `config.load_config()` can read it without inverting the package layering. |
 | `src/mcp_server/app.py` | Adds `ApiKeyMiddleware` to the Starlette app — extracts query param, sets contextvar, resets on finally |
 | `src/kosis_tools/config.py` | `load_config()` checks contextvar first, then `KOSIS_API_KEY` env, then raises with the same 401-style message |
 | `tests/mcp_server/test_request_context.py` (new) | Unit + asyncio concurrency test: two concurrent requests with different keys never see each other's key |
