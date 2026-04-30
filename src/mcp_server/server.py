@@ -180,6 +180,7 @@ def browse_categories(
         >>> browse_categories(by="view", code="MT_ETITLE")     # 영문 KOSIS
         >>> browse_categories(by="view", code="MT_BUKHAN")     # 북한통계
     """
+    from kosis_tools.errors import error_to_dict
     from kosis_tools.list_categories import CategoryList, ViewCode
     from kosis_tools.report_tools import browse_categories as _browse
 
@@ -205,8 +206,9 @@ def browse_categories(
                     "error": f"지원하지 않는 vwCd: {view_code}",
                     "supported_view_codes": list(ViewCode.ALL),
                 }
-            results = CategoryList().list_by_view(view_code)
-            return {
+            client = CategoryList()
+            results = client.list_by_view(view_code)
+            response: dict = {
                 "browse_type": "view",
                 "code": view_code,
                 "count": len(results),
@@ -216,8 +218,12 @@ def browse_categories(
                     "get_statistics_data 호출"
                 ),
             }
+            if env := error_to_dict(client._last_error):
+                response["error"] = env
+            return response
 
-        results = _browse(by=by, code=code)
+        client = CategoryList()
+        results = _browse(by=by, code=code, client=client)
 
         # 응답 구조화
         response = {
@@ -239,6 +245,8 @@ def browse_categories(
                 f"browse_categories(by='{by}', code='코드')로 해당 카테고리의 통계표 목록을 조회하세요"
             )
 
+        if env := error_to_dict(client._last_error):
+            response["error"] = env
         return response
     except Exception as e:
         logger.error(f"browse_categories error: {e}")
@@ -284,10 +292,13 @@ def get_table_metadata(
     Example:
         >>> get_table_metadata("101", "DT_1B040A3")
     """
+    from kosis_tools.errors import error_to_dict
     from kosis_tools.report_tools import get_table_meta
+    from kosis_tools.table_meta import TableMetadata
 
     try:
-        result = get_table_meta(org_id, tbl_id)
+        client = TableMetadata()
+        result = get_table_meta(org_id, tbl_id, client=client)
         # raw 필드 제거 (너무 큼)
         if "raw" in result:
             del result["raw"]
@@ -314,6 +325,8 @@ def get_table_metadata(
             },
         }
 
+        if env := error_to_dict(client._last_error):
+            response["error"] = env
         return response
     except Exception as e:
         logger.error(f"get_table_metadata error: {e}")
@@ -907,6 +920,7 @@ def get_key_indicator(
         >>> get_key_indicator(by="name", value="실업률")
     """
     from dataclasses import asdict
+    from kosis_tools.errors import error_to_dict
     from kosis_tools.key_indicators import KeyIndicators
 
     if by not in ("id", "name"):
@@ -920,12 +934,15 @@ def get_key_indicator(
             items = client.get_explanation_by_id(value, page, limit)
         else:
             items = client.get_explanation_by_name(value, page, limit)
-        return {
+        response: dict = {
             "by": by,
             "value": value,
             "count": len(items),
             "results": [asdict(it) for it in items],
         }
+        if env := error_to_dict(client._last_error):
+            response["error"] = env
+        return response
     except Exception as e:
         logger.error(f"get_key_indicator error: {e}")
         return {"error": str(e)}
@@ -951,6 +968,7 @@ def list_key_indicators(
         {"by": ..., "value": ..., "count": <int>, "results": [{...}, ...]}
     """
     from dataclasses import asdict
+    from kosis_tools.errors import error_to_dict
     from kosis_tools.key_indicators import KeyIndicators
 
     if by not in ("category", "period"):
@@ -970,12 +988,15 @@ def list_key_indicators(
             items = client.get_by_list(value, page, limit)
         else:
             items = client.search_by_period_type(value, page, limit)
-        return {
+        response: dict = {
             "by": by,
             "value": value,
             "count": len(items),
             "results": [asdict(it) for it in items],
         }
+        if env := error_to_dict(client._last_error):
+            response["error"] = env
+        return response
     except Exception as e:
         logger.error(f"list_key_indicators error: {e}")
         return {"error": str(e)}
@@ -1001,6 +1022,7 @@ def search_key_indicators(
         {"by": ..., "value": ..., "count": <int>, "results": [{...}, ...]}
     """
     from dataclasses import asdict
+    from kosis_tools.errors import error_to_dict
     from kosis_tools.key_indicators import KeyIndicators
 
     if by not in ("name", "id"):
@@ -1014,12 +1036,15 @@ def search_key_indicators(
             items = client.search_by_name(value, page, limit)
         else:
             items = client.search_by_id(value, page, limit)
-        return {
+        response: dict = {
             "by": by,
             "value": value,
             "count": len(items),
             "results": [asdict(it) for it in items],
         }
+        if env := error_to_dict(client._last_error):
+            response["error"] = env
+        return response
     except Exception as e:
         logger.error(f"search_key_indicators error: {e}")
         return {"error": str(e)}
@@ -1049,6 +1074,7 @@ def get_key_indicator_details(
         {"jipyo_id": ..., "count": <int>, "results": [{period, value, ...}]}
     """
     from dataclasses import asdict
+    from kosis_tools.errors import error_to_dict
     from kosis_tools.key_indicators import KeyIndicators
 
     if not jipyo_id:
@@ -1064,11 +1090,14 @@ def get_key_indicator_details(
             page_no=page,
             num_of_rows=limit,
         )
-        return {
+        response: dict = {
             "jipyo_id": jipyo_id,
             "count": len(items),
             "results": [asdict(it) for it in items],
         }
+        if env := error_to_dict(client._last_error):
+            response["error"] = env
+        return response
     except Exception as e:
         logger.error(f"get_key_indicator_details error: {e}")
         return {"error": str(e)}
