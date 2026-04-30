@@ -138,6 +138,7 @@ def search_tables(
     limit: int = 10,
     *,
     sort: Optional[str] = None,
+    client: Any = None,
 ) -> list[dict[str, Any]]:
     """Search KOSIS statistics tables by keyword.
 
@@ -145,10 +146,15 @@ def search_tables(
         sort: KOSIS-native ordering — "RANK" (relevance, default) or
             "DATE" (most recently updated tables first). None defers to
             KOSIS's default (RANK).
+        client: optional StatisticsSearch instance. Pass one in if you
+            want to read `client._last_error` after the call to surface
+            classified KOSIS errors. Default: create a fresh client.
     """
     from .search import StatisticsSearch
 
-    results = StatisticsSearch().search(keyword, sort=sort)  # type: ignore[arg-type]
+    if client is None:
+        client = StatisticsSearch()
+    results = client.search(keyword, sort=sort)  # type: ignore[arg-type]
     if org_id:
         results = [r for r in results if r.get("ORG_ID") == org_id]
 
@@ -438,6 +444,7 @@ def fetch_data(
     *,
     new_est_prd_cnt: Optional[int] = None,
     prd_interval: Optional[int] = None,
+    client: Any = None,
     **filters: Any,
 ) -> list[dict[str, Any]]:
     """Fetch KOSIS records with the metadata-aware retry path.
@@ -448,11 +455,15 @@ def fetch_data(
             user's "last N" intent is preserved exactly.
         prd_interval: stride in periods (KOSIS `prdInterval`); e.g. 2 with
             prd_se='Y' yields biennial data.
+        client: optional StatisticsData instance. Pass one in to read
+            `client._last_error` after the call.
     """
     from .data import StatisticsData
 
+    if client is None:
+        client = StatisticsData()
     return (
-        StatisticsData().get_data_with_smart_retry(
+        client.get_data_with_smart_retry(
             org_id=org_id,
             tbl_id=tbl_id,
             start_date=start_date,
