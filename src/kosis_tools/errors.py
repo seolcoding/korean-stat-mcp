@@ -14,9 +14,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import Literal
 
-ErrorCategory = Literal[
-    "auth", "input", "query", "rate_limit", "server", "unknown"
-]
+ErrorCategory = Literal["auth", "input", "query", "rate_limit", "server", "unknown"]
 
 
 @dataclass(frozen=True)
