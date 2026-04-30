@@ -365,7 +365,59 @@ soak window.
 - Stream C: demo.gif, launch posts, comparison content, distribution.
 - Stream D: edge-case coverage, error message polish, tool-routing accuracy.
 
-## 15. Rollout order
+## 15. Setup prerequisites (one-time)
+
+These are **not** code changes — they are external account / credential /
+DNS setup steps that must complete before the implementation plan can run.
+Tracking them in the spec so they are not forgotten when the plan executes.
+
+### 15.1 Local developer machine (one-time)
+
+| Step | Command / action | Verification |
+|---|---|---|
+| Install flyctl | `brew install flyctl` (macOS) or `curl -L https://fly.io/install.sh \| sh` | `fly version` |
+| Sign up / log in | `fly auth login` (opens browser) — uses an existing Fly account or creates one | `fly auth whoami` |
+| Payment method on file | Add a card in the Fly dashboard. Free tier still works without paid resource use, but Fly requires a card for anti-abuse. | Fly dashboard → Billing |
+| Create the app | `fly apps create korean-stat-mcp` — if name is taken, fall back to `korean-stat-mcp-prod` (also update `app =` in `fly.toml`) | `fly apps list` shows it |
+| Verify region | Tokyo (`nrt`) is enabled by default for new apps. | `fly platform regions` |
+
+### 15.2 GitHub repository (one-time)
+
+| Step | Command / action | Verification |
+|---|---|---|
+| Mint deploy token | `fly tokens create deploy --name "korean-stat-mcp gh actions"` and copy the value | `fly tokens list` |
+| Add repo secret | GitHub → Settings → Secrets and variables → Actions → New repository secret named `FLY_API_TOKEN`, paste the token | Secret appears in the list (value is hidden) |
+| Confirm Actions allowed | Repo Settings → Actions → General → "Allow all actions and reusable workflows" (or the equivalent allow-list including `superfly/flyctl-actions/setup-flyctl@master`) | Workflow runs are not blocked |
+
+### 15.3 DNS — `seolcoding.com` zone (one-time)
+
+| Step | Action | Verification |
+|---|---|---|
+| Access the DNS zone | Log into the registrar / DNS provider managing `seolcoding.com` (Cloudflare, Route 53, Gabia, etc.) | Can edit records |
+| Reserve the subdomain | Confirm `kosis.seolcoding.com` is not already in use for something else | `dig kosis.seolcoding.com` returns NXDOMAIN |
+| Cloudflare orange-cloud decision | If on Cloudflare: keep the proxy *off* (gray cloud) for the initial Let's Encrypt cert issuance. Re-enable the proxy only after Fly cert is `READY`. | `flyctl certs show kosis.seolcoding.com` reaches `READY` |
+
+### 15.4 KOSIS OpenAPI key (test/QA use)
+
+| Step | Action |
+|---|---|
+| Issue a personal KOSIS key | Apply at <https://kosis.kr/openapi/> — used only for the manual E2E in §12.4. |
+| Store it locally | `echo 'KOSIS_API_KEY=...' >> ~/.config/korean-stat-mcp.env` (or whatever per-developer secret store you already use). **Never** commit it. |
+
+### 15.5 Stop conditions
+
+If any of these fails, the implementation plan stops at the corresponding
+step and surfaces the issue rather than working around it:
+
+- Fly account creation fails or requires manual review → escalate, do not
+  proceed.
+- KOSIS OpenAPI ToS review (open question §13.1) returns "no proxying with
+  user-supplied keys" → fall back to self-host-only, abandon §7 / DNS
+  setup, document the decision, and close Stream A as "won't ship hosted".
+- DNS zone access is unavailable on the day of cutover → ship to
+  `korean-stat-mcp.fly.dev` first, defer §7 until DNS is reachable.
+
+## 16. Rollout order
 
 1. **Code + tests on `feat/hosting`**:
    - `request_context.py` + middleware + `load_config()` patch.
