@@ -11,6 +11,13 @@ primary_region = "nrt"
   FASTMCP_STATELESS_HTTP = "true"
   PYTHONUNBUFFERED = "1"
   RATE_LIMIT_RPM = "300"
+  # Cap KOSIS upstream timing so the worst case (1 attempt + 1 retry + delay)
+  # stays under Fly's 60s HTTP proxy timeout. Defaults (60s timeout × 3 retries)
+  # could accumulate to 184s and surface as 502/503 to the client.
+  # Worst case here: 25 + 1 + 25 = 51s.
+  KOSIS_TIMEOUT = "25"
+  KOSIS_MAX_RETRIES = "1"
+  KOSIS_RETRY_DELAY = "1"
 
 [http_service]
   internal_port = 8000
