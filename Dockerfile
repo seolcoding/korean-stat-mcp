@@ -45,12 +45,6 @@ COPY --from=builder /app/.venv /app/.venv
 # Copy application source
 COPY src/ src/
 
-# Copy scripts for updater service
-COPY scripts/ scripts/
-
-# Note: Metadata is loaded into PostgreSQL via updater service
-# Data files are mounted as volumes, not copied into image
-
 # Create artifact directories
 RUN mkdir -p /app/artifacts/charts /app/artifacts/reports /app/artifacts/data \
     && chown -R appuser:appuser /app
@@ -62,6 +56,7 @@ ENV PATH="/app/.venv/bin:$PATH"
 
 # Default environment (can be overridden)
 ENV FASTMCP_STATELESS_HTTP=true
+ENV RATE_LIMIT_RPM=300
 
 # Switch to non-root user
 USER appuser

@@ -29,6 +29,44 @@ tables behave differently across monthly, quarterly, yearly, and local-governmen
 datasets. This server wraps those details behind MCP tools so the client setup
 stays small.
 
+## Hosted instance (no install)
+
+No `pip install` required — just paste one URL into a Claude.ai custom
+connector. A Claude Pro/Max/Team/Enterprise plan is required (Free allows
+only one connector).
+
+### Step 0: Get a KOSIS OpenAPI key (free, 1 minute)
+
+Sign up at the [KOSIS OpenAPI page](https://kosis.kr/openapi/), click
+"Open API 사용 신청", and you'll receive an authentication key.
+
+### Add the connector
+
+1. Sign in at [claude.ai](https://claude.ai).
+2. Bottom-left sidebar → **your name** → **Settings** → **Connectors**.
+3. Click **Add custom connector**.
+4. Fill in (replace `<YOUR_KEY>` with the key from Step 0):
+   - **Name**: `korean-stat`
+   - **URL**: `https://kosis.seolcoding.com/mcp?apiKey=<YOUR_KEY>`
+5. Click **Add**.
+6. Open **Configure** on the new connector and set every tool to **Always allow**.
+
+### Use it
+
+Ask in natural language and the `korean-stat` tools fire automatically:
+
+```
+"Show Korea's population trend from 2020 to 2023"
+"Compare the number of businesses across Seoul districts"
+```
+
+### Self-hosting still works
+
+The existing `pip install` + `KOSIS_API_KEY` env var path is unchanged — see
+the [Installation](#installation) section below.
+
+---
+
 ## Installation
 
 You need a KOSIS OpenAPI key. You can request one from the

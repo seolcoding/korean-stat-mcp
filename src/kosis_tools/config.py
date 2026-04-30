@@ -103,10 +103,12 @@ class KosisConfig:
 
 def load_config() -> KosisConfig:
     """
-    환경변수에서 KOSIS API 설정을 로드합니다.
+    환경변수 또는 요청 컨텍스트에서 KOSIS API 설정을 로드합니다.
 
-    필수 환경변수:
-        KOSIS_API_KEY: API 인증 키
+    우선순위: request_context.current_api_key > 환경변수 KOSIS_API_KEY > ValueError.
+
+    HTTP 호스팅 모드에서는 ApiKeyMiddleware가 요청별 키를 contextvar에 주입합니다.
+    stdio 모드와 자체 호스팅에서는 contextvar가 비어 있으므로 환경변수 경로를 그대로 사용합니다.
 
     선택 환경변수:
         KOSIS_API_ENDPOINT: API 기본 URL (기본값: https://kosis.kr/openapi)
@@ -119,7 +121,7 @@ def load_config() -> KosisConfig:
         KosisConfig: 설정 객체
 
     Raises:
-        ValueError: KOSIS_API_KEY 환경변수가 설정되지 않은 경우
+        ValueError: contextvar 와 환경변수 모두에서 키를 찾을 수 없는 경우
 
     Example:
         >>> # .env 파일 또는 환경변수 설정
@@ -134,11 +136,14 @@ def load_config() -> KosisConfig:
         >>> load_dotenv()
         >>> config = load_config()
     """
-    api_key = os.getenv("KOSIS_API_KEY")
+    from .request_context import current_api_key
+
+    api_key = current_api_key.get() or os.getenv("KOSIS_API_KEY")
     if not api_key:
         raise ValueError(
             "KOSIS_API_KEY 환경변수가 설정되지 않았습니다. "
-            ".env 파일이나 환경변수에 API 키를 설정해주세요."
+            ".env 파일이나 환경변수에 API 키를 설정하거나, "
+            "호스팅 모드에서는 URL에 ?apiKey=<key>를 포함해주세요."
         )
 
     return KosisConfig(

@@ -28,7 +28,11 @@ def test_http_app_exposes_health_check() -> None:
     assert response.json()["service"] == "korean-stat-mcp"
 
 
-def test_http_app_exposes_mcp_endpoint_at_mcp_path() -> None:
+def test_http_app_exposes_mcp_endpoint_at_mcp_path(monkeypatch) -> None:
+    # Pass the BYOK gate via env so this test exercises the MCP protocol layer,
+    # not the missing_api_key 401. The 401 path has dedicated coverage in
+    # tests/integration/test_byok_http.py.
+    monkeypatch.setenv("KOSIS_API_KEY", "test-key")
     with TestClient(create_app()) as client:
         response = client.get("/mcp")
 

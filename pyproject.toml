@@ -26,6 +26,7 @@ dependencies = [
     "aiohttp>=3.13.2",
     "starlette>=0.50.0",
     "uvicorn>=0.38.0",
+    "limits>=3.0",
 ]
 
 [project.optional-dependencies]
