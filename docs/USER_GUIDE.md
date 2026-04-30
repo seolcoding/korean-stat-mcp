@@ -1,20 +1,56 @@
-# KOSIS MCP Server - User Guide
+# korean-stat-mcp — User Guide
 
-> **버전**: 1.0
-> **최종 업데이트**: 2024-12-15
-> **대상 독자**: KOSIS MCP Server 사용자, Claude Desktop 사용자
+> **버전**: 2.0  ·  **최종 업데이트**: 2026-04-30  ·  **대상**: Claude.ai / Claude Desktop / Cursor / Windsurf 사용자
 
 ---
 
 ## 목차
 
-1. [시작하기](#1-시작하기)
+0. [30초 시작 — 호스팅 인스턴스](#0-30초-시작--호스팅-인스턴스)
+1. [시작하기 (호스팅 vs 자체 호스팅)](#1-시작하기)
 2. [기본 사용법](#2-기본-사용법)
 3. [MCP 도구 상세 가이드](#3-mcp-도구-상세-가이드)
 4. [실전 예제](#4-실전-예제)
 5. [시각화 가이드](#5-시각화-가이드)
-6. [트러블슈팅](#6-트러블슈팅)
+6. [트러블슈팅 — 에러 카테고리별 행동 가이드](#6-트러블슈팅)
 7. [FAQ](#7-faq)
+
+---
+
+## 0. 30초 시작 — 호스팅 인스턴스
+
+가장 빠른 길. `pip install` 없이, Claude.ai 커넥터에 URL 한 줄만 추가.
+
+### 준비물 (1분)
+1. **KOSIS API 키 발급** — [https://kosis.kr/openapi/](https://kosis.kr/openapi/) 회원가입 → "Open API 사용 신청" → 인증키 받기 (예: `honggildong`)
+2. **Claude Pro/Max/Team/Enterprise 요금제** (Free는 커스텀 커넥터 1개만 가능)
+
+### 등록 (30초)
+1. [claude.ai](https://claude.ai) 로그인
+2. 왼쪽 사이드바 하단 본인 이름 → **설정** → **커넥터** → **커스텀 커넥터 추가**
+3. 입력:
+   - **이름**: `korean-stat`
+   - **URL**: `https://korean-stat-mcp.seolcoding.com/mcp?apiKey=<발급받은 키>`
+4. **추가** → 등록 완료
+5. 새로 만든 커넥터의 **구성** → 도구 목록 → 모든 도구를 **항상 사용** 으로 토글
+
+### 첫 질문
+채팅 화면에서 자연어로 그냥 물어보면 됩니다.
+
+```
+"2020년부터 2025년까지 전국 인구 추이 보여줘"
+"서울 자치구별 사업체 수 비교"
+"GDP 지표 설명해줘"
+"실업률 지표 시계열 5년치"
+```
+
+LLM이 알맞은 도구를 자동으로 골라 호출합니다. 도구 이름을 외울 필요 없습니다.
+
+### 안 될 때
+- **401 missing_api_key**: URL 끝에 `?apiKey=<키>`가 붙어 있는지 확인
+- **403 / 키 만료**: KOSIS에서 인증키 갱신 (1년 만료)
+- **응답이 30초 넘게 안 옴**: KOSIS 서버 일시 지연. 잠깐 후 다시 시도하거나 기간 범위 줄이기
+- **자세한 에러 코드별 가이드**: [§6 트러블슈팅](#6-트러블슈팅)
 
 ---
 
@@ -35,7 +71,18 @@ KOSIS MCP Server는 AI 에이전트(Claude 등)가 KOSIS 데이터를 직접 검
 └─────────────────┘                        └─────────────────┘               └─────────────────┘
 ```
 
-### 1.3 설치 및 설정
+### 1.3 호스팅 인스턴스 vs 자체 호스팅 — 어느 쪽?
+
+| 상황 | 권장 |
+|---|---|
+| 그냥 써보고 싶다 / Claude.ai 웹/앱 위주 | **호스팅 인스턴스** ([§0](#0-30초-시작--호스팅-인스턴스)) |
+| 사내 네트워크 / 온프레미스 / VPN 필요 | **자체 호스팅** (아래) |
+| KOSIS 키 쿼터를 이 프로젝트와 분리 운영 | **자체 호스팅** |
+| 코드 직접 수정해 가며 개발 | **자체 호스팅** + `pip install -e .` |
+
+호스팅 인스턴스는 **본인 KOSIS 키 + 분당 1,000건 한도** 그대로 적용 (서버는 단순 프록시; 키 저장 안 함). KOSIS 약관·쿼터 모든 책임은 키 발급자에게 있습니다.
+
+### 1.4 설치 및 설정 (자체 호스팅)
 
 #### KOSIS API 키 발급
 
@@ -331,6 +378,56 @@ return build_report(
 
 ---
 
+### 3.4 통계주요지표 (Key Indicators) — 4개 도구
+
+KOSIS 통계주요지표(국가지표체계 등)에 특화된 도구. 일반 통계표와 다른 트리(`pkNumberService` / `indExpService` / `indiListService` / `indListSearchRequest` / `indIdDetailSearchRequest` / `prListSearchRequest`)를 사용.
+
+| 도구 | by | 용도 | 자연어 예시 |
+|---|---|---|---|
+| `get_key_indicator` | `id` / `name` | 지표 설명자료 조회 | "GDP 지표 설명해줘" / "지표 12345 뭐야?" |
+| `list_key_indicators` | `category` (listId) / `period` (prdSe) | 카테고리·주기별 목록 | "연간 발표되는 주요지표 목록" |
+| `search_key_indicators` | `name` / `id` | 카탈로그 검색 | "실업률 지표 찾아줘" |
+| `get_key_indicator_details` | jipyo_id + 기간 또는 recent_n | 시계열 상세 데이터 | "실업률 최근 5년 시계열" |
+
+워크플로우 예: "실업률 5년 추이 차트로"
+1. `search_key_indicators(by="name", value="실업률")` → jipyo_id 획득
+2. `get_key_indicator_details(jipyo_id, recent_n=5)` → 5개 시점 값
+3. (LLM 측 차트 도구로 시각화)
+
+### 3.5 vwCd — 12개 KOSIS 뷰
+
+`browse_categories(by="view", code="<vwCd>")` 로 일반 트리 외의 KOSIS 자료 접근:
+
+| vwCd | 트리 |
+|---|---|
+| `MT_ZTITLE` | 국내통계 주제별 (기본) |
+| `MT_OTITLE` | 국내통계 기관별 |
+| `MT_GTITLE01` / `MT_GTITLE02` | e-지방지표 (주제별/지역별) |
+| `MT_CHOSUN_TITLE` | 광복이전통계 (1908~1943) |
+| `MT_HANKUK_TITLE` | 대한민국통계연감 |
+| `MT_STOP_TITLE` | 작성중지통계 (과거 데이터) |
+| `MT_RTITLE` | 국제통계 |
+| `MT_BUKHAN` | 북한통계 |
+| `MT_TM1_TITLE` / `MT_TM2_TITLE` | 대상별 / 이슈별 통계 |
+| `MT_ETITLE` | 영문 KOSIS |
+
+자연어 예: "영문 KOSIS에 어떤 통계 있어?" → `browse_categories(by="view", code="MT_ETITLE")` → 29개 root 노드.
+
+### 3.6 기간 헬퍼 — newEstPrdCnt / prdInterval / sort
+
+`get_statistics_data` 와 `search_statistics` 의 KOSIS-네이티브 옵션. LLM이 직접 날짜 계산 안 하고 자연어 → 인자로 매핑.
+
+| 자연어 | 인자 |
+|---|---|
+| "최근 5년만" | `get_statistics_data(..., new_est_prd_cnt=5)` |
+| "격년" / "biennial" | `get_statistics_data(..., prd_se="Y", prd_interval=2)` |
+| "최신 갱신 순" | `search_statistics(keyword, sort="DATE")` |
+| (기본) "관련도 순" | `search_statistics(keyword)` (sort 미지정) |
+
+이걸 안 쓰고 LLM이 직접 `start_date="2020", end_date="2025"` 같이 계산하면 테이블 시점 범위가 바뀔 때마다 잘못된 답이 나오므로 가능하면 KOSIS 네이티브 옵션 사용.
+
+---
+
 ## 4. 실전 예제
 
 ### 4.1 인구 추이 분석
@@ -517,6 +614,35 @@ chart = alt.Chart(df).mark_bar().encode(
 ---
 
 ## 6. 트러블슈팅
+
+### 6.0 KOSIS 에러 카테고리별 행동 가이드
+
+도구 응답에 `error` 필드가 포함되면 KOSIS 측 분류된 에러입니다. 카테고리에 따라 **클라이언트(Claude)가 자동 복구**할지, **사용자 액션**이 필요한지 결정.
+
+| 카테고리 | KOSIS 코드 | 의미 | 무엇을 해야 하나 |
+|---|---|---|---|
+| `auth` | 10, 11 | 인증키 누락/만료 | URL의 `?apiKey=` 점검; 만료면 https://kosis.kr/openapi/ 에서 갱신 |
+| `input` | 20, 21 | 잘못된 인자 | 도구 docstring 보고 인자 정정 후 1회 재호출 (LLM 자동) |
+| `query` 30 | 30 | 결과 없음 | 키워드 넓히거나 기간/분류 필터 완화 |
+| `query` 31 | 31 | 결과가 너무 많음 (40,000셀 초과) | 기간·지역·항목 분할 호출 |
+| `rate_limit` | 40, 41, 42 | 분당 1,000건 또는 사용자별 한도 | 1초 이상 대기 후 1회 재시도; 42 지속 시 KOSIS 운영팀 문의 |
+| `server` | 50 | KOSIS 서버 일시 오류 | 잠시 후 재시도 (보통 일시적) |
+
+**`error` 응답 예시:**
+```json
+{
+  "result_count": 0,
+  "results": [],
+  "error": {
+    "code": "11",
+    "category": "auth",
+    "message": "인증키 기간만료",
+    "action": "https://kosis.kr/openapi/ 에서 인증키를 갱신하세요."
+  }
+}
+```
+
+LLM은 보통 `action` 텍스트를 사용자에게 그대로 전달. 사용자가 키 갱신 같은 외부 액션을 끝내면 같은 쿼리 재시도.
 
 ### 6.1 일반적인 오류
 
