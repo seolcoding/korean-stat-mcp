@@ -34,14 +34,6 @@ stays small.
 You need a KOSIS OpenAPI key. You can request one from the
 [KOSIS OpenAPI page](https://kosis.kr/openapi/).
 
-### Claude Code plugin
-
-```bash
-/plugin marketplace add seolcoding/korean-stat-mcp
-```
-
-Set `KOSIS_API_KEY` after installing.
-
 ### Claude Desktop / Cursor / Windsurf
 
 ```bash

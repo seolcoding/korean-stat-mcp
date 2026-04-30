@@ -20,8 +20,6 @@ from pathlib import Path
 REPO_ROOT = Path(__file__).resolve().parents[2]
 
 PUBLIC_FILES = (
-    ".claude-plugin/marketplace.json",
-    ".claude-plugin/plugin.json",
     ".env.example",
     ".github/ISSUE_TEMPLATE/config.yml",
     "CHANGELOG.md",

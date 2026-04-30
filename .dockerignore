@@ -1,11 +1,15 @@
 .git
+.claude
+.claude-plugin
 .github
 .mypy_cache
 .omx
 .pytest_cache
+.ralph
 .ruff_cache
 .trash
 .venv
+.vscode
 .worktrees
 .auto-claude
 
@@ -21,15 +25,10 @@ htmlcov
 site
 
 outputs
+data
+reports
+kosis_data
 kosis-reports
-data/metadata
-data/metadata_api
-data/metadata_files
-kosis_data/processed
-kosis_data/raw
-kosis_data/logs
-kosis_data/failed
-kosis_data/reports
 
 examples/gallery/output
 examples/gallery/mcp_artifacts

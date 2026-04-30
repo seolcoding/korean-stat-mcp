@@ -31,14 +31,6 @@ KOSIS API는 테이블마다 필요한 파라미터가 조금씩 다르고, 기�
 먼저 KOSIS OpenAPI 키가 필요합니다. 키는
 [KOSIS OpenAPI 신청 페이지](https://kosis.kr/openapi/)에서 발급받을 수 있습니다.
 
-### Claude Code 플러그인
-
-```bash
-/plugin marketplace add seolcoding/korean-stat-mcp
-```
-
-설치 후 `KOSIS_API_KEY`를 설정합니다.
-
 ### Claude Desktop / Cursor / Windsurf
 
 ```bash
