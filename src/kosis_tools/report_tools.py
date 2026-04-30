@@ -434,7 +434,9 @@ def browse_categories(
             {"code": ThemeCode.INTERNATIONAL, "name": "국제/북한"},
         ]
 
-    # code가 있으면 API 호출 필요
+    if not code:
+        return []
+
     from .list_categories import CategoryList
 
     client = CategoryList()
@@ -988,8 +990,8 @@ def aggregate_data(
     if isinstance(group_by, str):
         group_by = [group_by]
 
-    agg_dict = {value_field: agg_func}
-    grouped_df = tx.groupby(group_by, agg_dict)
+    agg_dict: dict[str, str] = {value_field: agg_func}
+    grouped_df = tx.groupby(group_by, agg_dict)  # type: ignore[arg-type]
 
     return grouped_df.to_dict("records")
 

@@ -1670,19 +1670,15 @@ def recommend_template(data_id: Optional[str] = None) -> dict | None:
 
 
 @mcp.resource("kosis://templates")
-def get_templates_resource() -> dict:
-    """
-    리포트 템플릿 전체 목록 (리소스).
-
-    각 템플릿의 ID, 이름, 용도, 섹션 수를 제공합니다.
-    """
+def get_templates_resource() -> dict | list[dict]:
+    """리포트 템플릿 전체 목록 (리소스). 각 템플릿의 ID·이름·용도·섹션 수."""
     from kosis_tools.story_templates import get_template_list
 
     return get_template_list()
 
 
 @mcp.resource("kosis://templates/trend")
-def get_trend_template_resource() -> dict:
+def get_trend_template_resource() -> dict | None:
     """트렌드 분석 템플릿 상세."""
     from kosis_tools.story_templates import get_template_guide
 
@@ -1690,7 +1686,7 @@ def get_trend_template_resource() -> dict:
 
 
 @mcp.resource("kosis://templates/compare")
-def get_compare_template_resource() -> dict:
+def get_compare_template_resource() -> dict | None:
     """비교 분석 템플릿 상세."""
     from kosis_tools.story_templates import get_template_guide
 
@@ -1698,7 +1694,7 @@ def get_compare_template_resource() -> dict:
 
 
 @mcp.resource("kosis://templates/dashboard")
-def get_dashboard_template_resource() -> dict:
+def get_dashboard_template_resource() -> dict | None:
     """대시보드 템플릿 상세."""
     from kosis_tools.story_templates import get_template_guide
 
@@ -2034,10 +2030,52 @@ _prune_unexposed_tools()
 # =============================================================================
 
 
+def _print_version() -> None:
+    """Print package name + version. Read version from installed metadata."""
+    try:
+        from importlib.metadata import version as _v
+
+        v = _v("korean-stat-mcp")
+    except Exception:
+        v = "unknown (not installed as a package)"
+    print(f"korean-stat-mcp {v}")
+
+
+def _print_help() -> None:
+    print(
+        """korean-stat-mcp — Korean Statistics (KOSIS) MCP server
+
+Usage:
+  korean-stat-mcp [--http] [--version] [--help]
+
+Options:
+  --http       Run as HTTP server (uvicorn). Defaults to stdio MCP mode.
+  --version    Print version and exit.
+  --help, -h   Show this message and exit.
+
+Environment:
+  KOSIS_API_KEY        Required. KOSIS OpenAPI key.
+  KOSIS_PORT           HTTP port (default: 8000; with --http only).
+  KOSIS_HOST           HTTP host (default: 0.0.0.0; with --http only).
+  KOSIS_ARTIFACTS_DIR  Local artifact dir (default: /tmp/kosis_artifacts).
+  DATABASE_URL         Optional Postgres URL (with [postgres] extra).
+  R2_*                 Optional Cloudflare R2 credentials (with [r2] extra).
+
+Docs: https://github.com/seolcoding-OS/korean-stat-mcp
+"""
+    )
+
+
 def main():
-    """MCP 서버 실행."""
+    """MCP 서버 실행 / CLI entrypoint."""
+    if "--version" in sys.argv:
+        _print_version()
+        return
+    if "--help" in sys.argv or "-h" in sys.argv:
+        _print_help()
+        return
+
     if "--http" in sys.argv:
-        # HTTP 모드
         import uvicorn
 
         port = int(os.environ.get("KOSIS_PORT", "8000"))
@@ -2050,7 +2088,6 @@ def main():
         app = create_http_app()
         uvicorn.run(app, host=host, port=port)
     else:
-        # stdio 모드 (기본)
         mcp.run()
 
 

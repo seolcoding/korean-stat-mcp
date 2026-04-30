@@ -590,8 +590,9 @@ def get_next_recommendation(
         }
 
     step_guide = get_template_step(template_id, next_step)
+    if step_guide is None:
+        return {"error": f"Step {next_step} not found in template {template_id}"}
 
-    # 맞춤 추천 추가
     if current_data:
         step_guide["personalized_tip"] = _get_personalized_tip(
             template.sections[next_step - 1],
