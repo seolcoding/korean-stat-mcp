@@ -147,6 +147,11 @@ def create_app() -> Starlette:
         allow_headers=["*"],
     )
 
+    # Per-request KOSIS API key extraction. Must run before MCP handlers so
+    # that load_config() inside any tool sees the request's key.
+    from .middleware import ApiKeyMiddleware
+    mcp_app.add_middleware(ApiKeyMiddleware)
+
     # Add startup event for DB initialization
     async def init_database():
         logger.info("KOSIS MCP Server starting up...")
