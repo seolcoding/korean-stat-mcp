@@ -111,4 +111,26 @@ def classify(body: object) -> KosisError | None:
     )
 
 
-__all__ = ["KosisError", "ErrorCategory", "classify"]
+def error_to_dict(err: KosisError | None) -> dict[str, str] | None:
+    """Convert a KosisError into the canonical 'error' envelope used in
+    every MCP tool response so the LLM always sees the same shape:
+
+    {"code": "11", "category": "auth", "message": "...", "action": "..."}
+
+    Returns None if err is None, so callers can do:
+
+        response = {...}
+        if (env := error_to_dict(client._last_error)):
+            response["error"] = env
+    """
+    if err is None:
+        return None
+    return {
+        "code": err.code,
+        "category": err.category,
+        "message": err.message,
+        "action": err.action,
+    }
+
+
+__all__ = ["KosisError", "ErrorCategory", "classify", "error_to_dict"]

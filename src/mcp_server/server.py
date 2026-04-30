@@ -109,10 +109,15 @@ def search_statistics(
         >>> search_statistics("고용", org_id="154")
         >>> search_statistics("최저임금", sort="DATE")  # 최신 갱신 순
     """
+    from kosis_tools.errors import error_to_dict
     from kosis_tools.report_tools import search_tables
+    from kosis_tools.search import StatisticsSearch
 
     try:
-        results = search_tables(keyword, org_id=org_id, limit=limit, sort=sort)
+        client = StatisticsSearch()
+        results = search_tables(
+            keyword, org_id=org_id, limit=limit, sort=sort, client=client
+        )
 
         # 기관별 분포 계산
         org_dist = {}
@@ -120,7 +125,7 @@ def search_statistics(
             org_nm = r.get("org_nm", "기타")
             org_dist[org_nm] = org_dist.get(org_nm, 0) + 1
 
-        return {
+        response: dict = {
             "query": keyword,
             "filter": {"org_id": org_id} if org_id else None,
             "result_count": len(results),
@@ -128,6 +133,12 @@ def search_statistics(
             "org_distribution": org_dist,
             "next_step": "get_table_metadata(org_id, tbl_id)로 테이블 구조를 확인하세요",
         }
+        # Surface KOSIS-classified error if results came back empty due to a
+        # known errMsg path (auth / quota / query 30 etc.). LLM should follow
+        # the action field rather than treat empty as 'no data'.
+        if env := error_to_dict(client._last_error):
+            response["error"] = env
+        return response
     except Exception as e:
         logger.error(f"search_statistics error: {e}")
         return {"error": str(e)}
@@ -446,9 +457,12 @@ def get_statistics_data(
         >>> get_statistics_data("101", "DT_1B040A3", "2019", "2023")
         >>> get_statistics_data("101", "DT_1B040A3", "2019", "2023", format="raw")
     """
+    from kosis_tools.data import StatisticsData
+    from kosis_tools.errors import error_to_dict
     from kosis_tools.report_tools import fetch_data, format_data_for_llm
 
     try:
+        client = StatisticsData()
         data = fetch_data(
             org_id=org_id,
             tbl_id=tbl_id,
@@ -457,13 +471,24 @@ def get_statistics_data(
             prd_se=prd_se,
             new_est_prd_cnt=new_est_prd_cnt,
             prd_interval=prd_interval,
+            client=client,
         )
 
         if format == "raw":
+            # raw 모드에서는 list 직접 반환이라 error envelope 부착할 곳이 없음.
+            # 빈 결과 + 에러가 있으면 dict 한 항목으로 wrap해서 정보 보존.
+            env = error_to_dict(client._last_error)
+            if env and not data:
+                return [{"_kosis_error": env}]
             return data
 
         # 기본: LLM 친화적 요약 형식
         formatted = format_data_for_llm(data, max_rows=50)
+        if env := error_to_dict(client._last_error):
+            if isinstance(formatted, dict):
+                formatted["error"] = env
+            else:
+                formatted = {"data": formatted, "error": env}  # fallback wrap
         return formatted
 
     except Exception as e:

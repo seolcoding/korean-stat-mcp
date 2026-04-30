@@ -81,3 +81,21 @@ def test_kosis_error_is_immutable():
     assert e is not None
     with pytest.raises((AttributeError, Exception)):
         e.code = "X"  # type: ignore[misc]
+
+
+def test_error_to_dict_returns_none_for_none():
+    from kosis_tools.errors import error_to_dict
+
+    assert error_to_dict(None) is None
+
+
+def test_error_to_dict_envelope_shape():
+    from kosis_tools.errors import error_to_dict
+
+    err = classify({"err": "11", "errMsg": "인증키 기간만료"})
+    env = error_to_dict(err)
+    assert env is not None
+    assert set(env.keys()) == {"code", "category", "message", "action"}
+    assert env["code"] == "11"
+    assert env["category"] == "auth"
+    assert "갱신" in env["action"]

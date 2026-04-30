@@ -138,3 +138,33 @@ def test_rate_limit_applies_to_mcp(monkeypatch):
     # The third must be rate limited.
     assert r3.status_code == 429
     assert "Retry-After" in r3.headers
+
+
+# ----------------------------------------------------------------------------
+# error envelope surfacing (PR5)
+# ----------------------------------------------------------------------------
+
+
+def test_search_statistics_surfaces_kosis_error_envelope(monkeypatch):
+    """When KOSIS responds with errMsg, search_statistics returns an
+    'error' envelope alongside the empty results so the LLM can act."""
+    import responses
+
+    monkeypatch.setenv("KOSIS_API_KEY", "test-key")
+    with responses.RequestsMock() as rsps:
+        rsps.add(
+            responses.GET,
+            "https://kosis.kr/openapi/statisticsSearch.do",
+            body='{"err":"11","errMsg":"인증키 기간만료"}',
+            status=200,
+        )
+        from mcp_server.server import search_statistics
+
+        result = search_statistics.fn(keyword="인구", limit=3)  # type: ignore[attr-defined]
+
+    assert result["result_count"] == 0
+    assert "error" in result
+    env = result["error"]
+    assert env["code"] == "11"
+    assert env["category"] == "auth"
+    assert "갱신" in env["action"]
