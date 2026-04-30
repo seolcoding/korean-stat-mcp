@@ -159,8 +159,11 @@ def prepare_data(
     for field in numeric_fields:
         if field in df.columns:
             df[field] = pd.to_numeric(
-                df[field].astype(str).str.replace(",", "").replace(["-", "", "*", "…"], None),
-                errors="coerce"
+                df[field]
+                .astype(str)
+                .str.replace(",", "")
+                .replace(["-", "", "*", "…"], None),
+                errors="coerce",
             )
 
     return df
@@ -225,17 +228,17 @@ def create_table(
     html_parts.append('<table class="styled-table">')
 
     # 헤더
-    html_parts.append('<thead><tr>')
+    html_parts.append("<thead><tr>")
     if show_index:
-        html_parts.append('<th>#</th>')
+        html_parts.append("<th>#</th>")
     for col in display_df.columns:
-        html_parts.append(f'<th>{col}</th>')
-    html_parts.append('</tr></thead>')
+        html_parts.append(f"<th>{col}</th>")
+    html_parts.append("</tr></thead>")
 
     # 바디
-    html_parts.append('<tbody>')
+    html_parts.append("<tbody>")
     for idx, row in display_df.iterrows():
-        html_parts.append('<tr>')
+        html_parts.append("<tr>")
         if show_index:
             html_parts.append(f'<td class="number">{idx + 1}</td>')
         for col in display_df.columns:
@@ -263,14 +266,16 @@ def create_table(
                 cell_class += " positive"
 
             html_parts.append(f'<td class="{cell_class}">{value}</td>')
-        html_parts.append('</tr>')
-    html_parts.append('</tbody>')
+        html_parts.append("</tr>")
+    html_parts.append("</tbody>")
 
-    html_parts.append('</table>')
+    html_parts.append("</table>")
 
     # 푸터 (더 많은 행이 있는 경우)
     if total_rows > max_rows:
-        html_parts.append(f'<div class="table-footer">전체 {total_rows:,}건 중 {max_rows}건 표시</div>')
+        html_parts.append(
+            f'<div class="table-footer">전체 {total_rows:,}건 중 {max_rows}건 표시</div>'
+        )
 
     return {
         "html": "\n".join(html_parts),
@@ -300,13 +305,15 @@ def create_summary_table(
         html_parts.append(f'<div class="table-title">{title}</div>')
 
     html_parts.append('<table class="styled-table">')
-    html_parts.append('<thead><tr><th>항목</th><th>값</th></tr></thead>')
-    html_parts.append('<tbody>')
+    html_parts.append("<thead><tr><th>항목</th><th>값</th></tr></thead>")
+    html_parts.append("<tbody>")
 
     for key, value in data.items():
-        html_parts.append(f'<tr><td class="text">{key}</td><td class="number">{value}</td></tr>')
+        html_parts.append(
+            f'<tr><td class="text">{key}</td><td class="number">{value}</td></tr>'
+        )
 
-    html_parts.append('</tbody></table>')
+    html_parts.append("</tbody></table>")
 
     return {
         "html": "\n".join(html_parts),
@@ -353,18 +360,20 @@ def execute_table(
     """
     # 테이블 전용 글로벌 환경
     safe_globals = get_base_globals()
-    safe_globals.update({
-        # 데이터 분석 라이브러리
-        "pd": pd,
-        "np": np,
-        # 테이블 헬퍼
-        "prepare_data": prepare_data,
-        "create_table": create_table,
-        "create_summary_table": create_summary_table,
-        "format_number": format_number,
-        # 데이터
-        "data": data or [],
-    })
+    safe_globals.update(
+        {
+            # 데이터 분석 라이브러리
+            "pd": pd,
+            "np": np,
+            # 테이블 헬퍼
+            "prepare_data": prepare_data,
+            "create_table": create_table,
+            "create_summary_table": create_summary_table,
+            "format_number": format_number,
+            # 데이터
+            "data": data or [],
+        }
+    )
 
     result = execute_with_context(code, safe_globals, context)
     result["guide"] = TABLE_GUIDE
@@ -373,6 +382,8 @@ def execute_table(
     if result["success"]:
         res = result.get("result")
         if not isinstance(res, dict) or "html" not in res:
-            result["warning"] = "create_table() 또는 create_summary_table()을 호출해야 합니다."
+            result["warning"] = (
+                "create_table() 또는 create_summary_table()을 호출해야 합니다."
+            )
 
     return result

@@ -49,7 +49,9 @@ EIGHT_COLUMN_FILES = [
 SEVEN_COLUMN_FILES = ["지역통계_기관별.xls"]
 
 
-def parse_period(period_str: Optional[str]) -> tuple[Optional[str], Optional[str], Optional[PeriodType]]:
+def parse_period(
+    period_str: Optional[str],
+) -> tuple[Optional[str], Optional[str], Optional[PeriodType]]:
     """수록기간 문자열 파싱.
 
     Args:
@@ -429,8 +431,16 @@ def build_category_tree(tables: list[StatisticsTable]) -> CategoryTree:
 
         for i, part in enumerate(path_parts):
             level = i + 1
-            cat_id = "_".join(table.path_ids[: i + 1]) if i < len(table.path_ids) else f"cat_{i}"
-            parent_id = "_".join(table.path_ids[:i]) if i > 0 and i <= len(table.path_ids) else None
+            cat_id = (
+                "_".join(table.path_ids[: i + 1])
+                if i < len(table.path_ids)
+                else f"cat_{i}"
+            )
+            parent_id = (
+                "_".join(table.path_ids[:i])
+                if i > 0 and i <= len(table.path_ids)
+                else None
+            )
 
             if cat_id not in categories_by_source[table.data_source]:
                 categories_by_source[table.data_source][cat_id] = Category(
@@ -490,7 +500,10 @@ def convert_all(
 
         data_source = FILE_SOURCE_MAP[filename]
         tables, categories = parse_statistics_file(
-            filepath, data_source, has_tbl_id=True, include_categories=include_categories
+            filepath,
+            data_source,
+            has_tbl_id=True,
+            include_categories=include_categories,
         )
         all_tables.extend(tables)
         all_categories.extend(categories)
@@ -506,12 +519,17 @@ def convert_all(
 
             data_source = FILE_SOURCE_MAP[filename]
             tables, categories = parse_statistics_file(
-                filepath, data_source, has_tbl_id=False, include_categories=include_categories
+                filepath,
+                data_source,
+                has_tbl_id=False,
+                include_categories=include_categories,
             )
             all_tables.extend(tables)
             all_categories.extend(categories)
             source_counts[data_source.value] = len(tables)
-            print(f"Parsed {filename}: {len(tables)} tables, {len(categories)} categories")
+            print(
+                f"Parsed {filename}: {len(tables)} tables, {len(categories)} categories"
+            )
 
     # 중복 제거 (TBL_ID 기준, 첫 번째 것 유지)
     if deduplicate:
@@ -532,7 +550,11 @@ def convert_all(
         # source_counts 재계산
         source_counts = {}
         for table in all_tables:
-            src = table.data_source.value if hasattr(table.data_source, 'value') else table.data_source
+            src = (
+                table.data_source.value
+                if hasattr(table.data_source, "value")
+                else table.data_source
+            )
             source_counts[src] = source_counts.get(src, 0) + 1
 
     # tables.json 저장 (실제 통계표만)
@@ -570,13 +592,18 @@ def convert_all(
     print(f"Saved categories.json: {len(unique_categories)} categories from XLS")
 
     # indicators.json 저장
-    for filename in ["OpenAPICodeList.xls", "OpenAPI 지표명 및 지표ID 코드표 (2025년 12월 14일).xls"]:
+    for filename in [
+        "OpenAPICodeList.xls",
+        "OpenAPI 지표명 및 지표ID 코드표 (2025년 12월 14일).xls",
+    ]:
         filepath = input_dir / filename
         if filepath.exists():
             indicators_file = parse_indicators_file(filepath)
             with open(output_dir / "indicators.json", "w", encoding="utf-8") as f:
                 json.dump(indicators_file.model_dump(), f, ensure_ascii=False, indent=2)
-            print(f"Saved indicators.json: {len(indicators_file.indicators)} indicators")
+            print(
+                f"Saved indicators.json: {len(indicators_file.indicators)} indicators"
+            )
             break
 
     # surveys.json 저장

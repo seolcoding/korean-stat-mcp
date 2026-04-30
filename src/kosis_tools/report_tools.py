@@ -63,6 +63,7 @@ logger = logging.getLogger(__name__)
 # 데이터 저장/조회 유틸리티 (MCP 패턴: 원본은 파일에, 요약만 LLM에)
 # =============================================================================
 
+
 def _generate_data_id(data: List[Dict[str, Any]]) -> str:
     """데이터 고유 ID 생성 (해시 기반)."""
     # 데이터의 첫 레코드와 마지막 레코드, 총 길이로 해시 생성
@@ -231,15 +232,17 @@ def list_saved_data() -> List[Dict[str, Any]]:
             with open(file_path, "r", encoding="utf-8") as f:
                 storage_obj = json.load(f)
             meta = storage_obj.get("meta", {})
-            result.append({
-                "data_id": meta.get("data_id", file_path.stem),
-                "file_path": str(file_path),
-                "file_size_kb": round(file_path.stat().st_size / 1024, 1),
-                "created_at": meta.get("created_at", ""),
-                "record_count": meta.get("record_count", 0),
-                "tbl_id": meta.get("tbl_id", ""),
-                "tbl_nm": meta.get("tbl_nm", ""),
-            })
+            result.append(
+                {
+                    "data_id": meta.get("data_id", file_path.stem),
+                    "file_path": str(file_path),
+                    "file_size_kb": round(file_path.stat().st_size / 1024, 1),
+                    "created_at": meta.get("created_at", ""),
+                    "record_count": meta.get("record_count", 0),
+                    "tbl_id": meta.get("tbl_id", ""),
+                    "tbl_nm": meta.get("tbl_nm", ""),
+                }
+            )
         except (json.JSONDecodeError, KeyError):
             continue
 
@@ -249,6 +252,7 @@ def list_saved_data() -> List[Dict[str, Any]]:
 # =============================================================================
 # 공통 데이터 클래스
 # =============================================================================
+
 
 @dataclass
 class ReportComponent:
@@ -267,6 +271,7 @@ class ReportComponent:
         priority: 배치 우선순위 (낮을수록 먼저)
         tags: 검색/필터용 태그
     """
+
     type: str
     html: str
     data: Any = None
@@ -290,6 +295,7 @@ class AnalysisResult:
         metrics: 계산된 지표들
         interpretation: 해석 텍스트
     """
+
     type: str
     findings: List[str]
     data: Any = None
@@ -300,6 +306,7 @@ class AnalysisResult:
 # =============================================================================
 # Layer 1: DISCOVER - 데이터 탐색 도구
 # =============================================================================
+
 
 def search_tables(
     keyword: str,
@@ -349,15 +356,21 @@ def search_tables(
     # 필드명 정규화
     normalized = []
     for r in results[:limit]:
-        normalized.append({
-            "tbl_id": r.get("TBL_ID", ""),
-            "tbl_nm": r.get("TBL_NM", ""),
-            "org_id": r.get("ORG_ID", ""),
-            "org_nm": r.get("ORG_NM", ""),
-            "start_prd": r.get("PRD_DE", "").split("~")[0].strip() if "~" in r.get("PRD_DE", "") else r.get("PRD_DE", ""),
-            "end_prd": r.get("PRD_DE", "").split("~")[-1].strip() if "~" in r.get("PRD_DE", "") else r.get("PRD_DE", ""),
-            "prd_se": r.get("PRD_SE", "Y"),
-        })
+        normalized.append(
+            {
+                "tbl_id": r.get("TBL_ID", ""),
+                "tbl_nm": r.get("TBL_NM", ""),
+                "org_id": r.get("ORG_ID", ""),
+                "org_nm": r.get("ORG_NM", ""),
+                "start_prd": r.get("PRD_DE", "").split("~")[0].strip()
+                if "~" in r.get("PRD_DE", "")
+                else r.get("PRD_DE", ""),
+                "end_prd": r.get("PRD_DE", "").split("~")[-1].strip()
+                if "~" in r.get("PRD_DE", "")
+                else r.get("PRD_DE", ""),
+                "prd_se": r.get("PRD_SE", "Y"),
+            }
+        )
 
     return normalized
 
@@ -421,8 +434,11 @@ def browse_categories(
             {"code": ThemeCode.INTERNATIONAL, "name": "국제/북한"},
         ]
 
-    # code가 있으면 API 호출 필요
+    if not code:
+        return []
+
     from .list_categories import CategoryList
+
     client = CategoryList()
 
     if by == "org":
@@ -489,6 +505,7 @@ def get_table_meta(
     if obj_vars:
         # 그룹핑: OBJ_ID별로
         from collections import defaultdict
+
         grouped = defaultdict(list)
         for v in obj_vars:
             obj_id = v.get("OBJ_ID", "C1")
@@ -507,10 +524,12 @@ def get_table_meta(
     items = []
     itm_vars = raw_meta.get("itm_vars") or []
     for itm in itm_vars:
-        items.append({
-            "id": itm.get("ITM_ID", ""),
-            "name": itm.get("ITM_NM", ""),
-        })
+        items.append(
+            {
+                "id": itm.get("ITM_ID", ""),
+                "name": itm.get("ITM_NM", ""),
+            }
+        )
 
     # 기간 정보 추출 (prd_info)
     prd_info = raw_meta.get("prd_info") or []
@@ -577,6 +596,7 @@ def get_available_values(
 # Layer 2: FETCH - 데이터 조회 도구
 # =============================================================================
 
+
 def format_data_for_llm(
     data: List[Dict[str, Any]],
     max_rows: int = 50,
@@ -626,31 +646,33 @@ def format_data_for_llm(
     unique_values = {}
     key_fields = ["PRD_DE", "C1_NM", "C2_NM", "C3_NM", "ITM_NM"]
 
-    for field in key_fields:
+    for fname in key_fields:
         values = set()
         for row in data:
-            val = row.get(field)
+            val = row.get(fname)
             if val:
                 values.add(val)
         if values:
-            unique_values[field] = sorted(list(values))
+            unique_values[fname] = sorted(list(values))
 
     # 3. 요약 정보 생성
     periods = unique_values.get("PRD_DE", [])
-    period_range = f"{periods[0]}~{periods[-1]}" if len(periods) > 1 else (periods[0] if periods else "N/A")
+    period_range = (
+        f"{periods[0]}~{periods[-1]}"
+        if len(periods) > 1
+        else (periods[0] if periods else "N/A")
+    )
 
     # 분류 항목 이름 추출
     dimensions = []
-    for field in ["C1_NM", "C2_NM", "C3_NM"]:
-        if field in unique_values:
-            # 필드에 해당하는 OBJ_NM을 찾아봄
-            obj_nm_field = field.replace("_NM", "_OBJ_NM") if "_NM" in field else None
+    for fname in ["C1_NM", "C2_NM", "C3_NM"]:
+        if fname in unique_values:
+            obj_nm_field = fname.replace("_NM", "_OBJ_NM") if "_NM" in fname else None
             if obj_nm_field and first.get(obj_nm_field):
                 dimensions.append(first.get(obj_nm_field))
             else:
-                # 필드명 기반으로 추정
                 dim_names = {"C1_NM": "분류1", "C2_NM": "분류2", "C3_NM": "분류3"}
-                dimensions.append(dim_names.get(field, field))
+                dimensions.append(dim_names.get(fname, fname))
 
     items = unique_values.get("ITM_NM", [])
 
@@ -660,7 +682,8 @@ def format_data_for_llm(
         "period_count": len(periods),
         "dimensions": dimensions,
         "dimension_counts": {
-            field: len(vals) for field, vals in unique_values.items()
+            field: len(vals)
+            for field, vals in unique_values.items()
             if field.startswith("C") and field.endswith("_NM")
         },
         "items": items,
@@ -698,7 +721,9 @@ def format_data_for_llm(
                         pass
             by_c1[c1] = c1_sum
         # 값 기준 정렬 (내림차순)
-        pivot_summary["by_c1"] = dict(sorted(by_c1.items(), key=lambda x: x[1], reverse=True))
+        pivot_summary["by_c1"] = dict(
+            sorted(by_c1.items(), key=lambda x: x[1], reverse=True)
+        )
 
     # 5. 샘플 데이터 (압축된 형태)
     data_preview = []
@@ -737,7 +762,7 @@ def format_data_for_llm(
                 "record_count": save_result["record_count"],
                 "file_size_kb": save_result["file_size_kb"],
                 "access_hint": f"load_raw_data('{save_result['data_id']}')로 전체 데이터 접근, "
-                              f"load_raw_data('{save_result['data_id']}', chunk_index=0)로 청크별 접근",
+                f"load_raw_data('{save_result['data_id']}', chunk_index=0)로 청크별 접근",
             }
 
     # 7. 전체 데이터 가용성 안내
@@ -745,7 +770,9 @@ def format_data_for_llm(
         "full_data_available": True,
         "sample_period": periods[-1] if periods else None,
         "sample_count": len(data_preview),
-        "note": f"전체 {len(data)}건 중 최근 기간({periods[-1] if periods else 'N/A'}) {len(data_preview)}건 샘플 제공" if len(data) > max_rows else "전체 데이터 제공",
+        "note": f"전체 {len(data)}건 중 최근 기간({periods[-1] if periods else 'N/A'}) {len(data_preview)}건 샘플 제공"
+        if len(data) > max_rows
+        else "전체 데이터 제공",
     }
 
     # 8. 동적 컬럼 스키마 생성 (Code Execution용)
@@ -779,7 +806,9 @@ def format_data_for_llm(
         "columns": actual_columns,
         "column_schema": column_schema,
         "value_column": "DT",  # 숫자 값 컬럼
-        "group_columns": [c for c in ["C1_NM", "C2_NM", "C3_NM", "ITM_NM"] if c in unique_values],
+        "group_columns": [
+            c for c in ["C1_NM", "C2_NM", "C3_NM", "ITM_NM"] if c in unique_values
+        ],
         "period_column": "PRD_DE" if "PRD_DE" in actual_columns else None,
         "usage_hint": """
 # Code Execution 예시:
@@ -961,8 +990,8 @@ def aggregate_data(
     if isinstance(group_by, str):
         group_by = [group_by]
 
-    agg_dict = {value_field: agg_func}
-    grouped_df = tx.groupby(group_by, agg_dict)
+    agg_dict: dict[str, str] = {value_field: agg_func}
+    grouped_df = tx.groupby(group_by, agg_dict)  # type: ignore[arg-type]
 
     return grouped_df.to_dict("records")
 
@@ -970,6 +999,7 @@ def aggregate_data(
 # =============================================================================
 # Layer 3: PRESENT - 시각화 도구
 # =============================================================================
+
 
 def viz_line_trend(
     data: List[Dict[str, Any]],
@@ -1019,13 +1049,19 @@ def viz_line_trend(
     df = prepare_data(data, numeric_fields=[y])
 
     # Altair 차트 생성
-    chart = alt.Chart(df).mark_line(point=True).encode(
-        x=alt.X(f'{x}:N', title=labels.get(x, x)),
-        y=alt.Y(f'{y}:Q', title=labels.get(y, y)),
+    chart = (
+        alt.Chart(df)
+        .mark_line(point=True)
+        .encode(
+            x=alt.X(f"{x}:N", title=labels.get(x, x)),
+            y=alt.Y(f"{y}:Q", title=labels.get(y, y)),
+        )
     )
 
     if color and color in df.columns:
-        chart = chart.encode(color=alt.Color(f'{color}:N', title=labels.get(color, color)))
+        chart = chart.encode(
+            color=alt.Color(f"{color}:N", title=labels.get(color, color))
+        )
 
     if title:
         chart = chart.properties(title=title)
@@ -1042,10 +1078,10 @@ def viz_line_trend(
 
     # Vega-Embed HTML 생성
     spec = chart.to_json()
-    html = f'''<div class="chart-container">
+    html = f"""<div class="chart-container">
         <div id="chart-{id(chart)}"></div>
         <script>vegaEmbed('#chart-{id(chart)}', {spec}, {{"renderer": "svg"}}).catch(console.error);</script>
-    </div>'''
+    </div>"""
 
     return ReportComponent(
         type="chart",
@@ -1112,19 +1148,29 @@ def viz_bar_comparison(
 
     # Altair 차트 생성
     if horizontal:
-        chart = alt.Chart(df).mark_bar().encode(
-            x=alt.X(f'{y}:Q', title=labels.get(y, y)),
-            y=alt.Y(f'{x}:N', title=labels.get(x, x), sort='-x'),
+        chart = (
+            alt.Chart(df)
+            .mark_bar()
+            .encode(
+                x=alt.X(f"{y}:Q", title=labels.get(y, y)),
+                y=alt.Y(f"{x}:N", title=labels.get(x, x), sort="-x"),
+            )
         )
     else:
-        sort_order = '-y' if sort else None
-        chart = alt.Chart(df).mark_bar().encode(
-            x=alt.X(f'{x}:N', title=labels.get(x, x), sort=sort_order),
-            y=alt.Y(f'{y}:Q', title=labels.get(y, y)),
+        sort_order = "-y" if sort else None
+        chart = (
+            alt.Chart(df)
+            .mark_bar()
+            .encode(
+                x=alt.X(f"{x}:N", title=labels.get(x, x), sort=sort_order),
+                y=alt.Y(f"{y}:Q", title=labels.get(y, y)),
+            )
         )
 
     if color and color in df.columns:
-        chart = chart.encode(color=alt.Color(f'{color}:N', title=labels.get(color, color)))
+        chart = chart.encode(
+            color=alt.Color(f"{color}:N", title=labels.get(color, color))
+        )
 
     if title:
         chart = chart.properties(title=title)
@@ -1138,10 +1184,10 @@ def viz_bar_comparison(
 
     # Vega-Embed HTML 생성
     spec = chart.to_json()
-    html = f'''<div class="chart-container">
+    html = f"""<div class="chart-container">
         <div id="chart-{id(chart)}"></div>
         <script>vegaEmbed('#chart-{id(chart)}', {spec}, {{"renderer": "svg"}}).catch(console.error);</script>
-    </div>'''
+    </div>"""
 
     return ReportComponent(
         type="chart",
@@ -1197,15 +1243,15 @@ def viz_kpi_card(
     if change is not None:
         change_color = "#10b981" if change >= 0 else "#ef4444"
         change_sign = "+" if change >= 0 else ""
-        change_html = f'''
+        change_html = f"""
             <div style="color: {change_color}; font-size: 0.9rem; margin-top: 5px;">
                 {change_sign}{change:.1f}% {change_label or ""}
             </div>
-        '''
+        """
 
     icon_html = f'<span style="font-size: 1.5rem;">{icon}</span>' if icon else ""
 
-    html = f'''
+    html = f"""
     <div class="kpi-card" style="
         background: white;
         border-radius: 12px;
@@ -1223,7 +1269,7 @@ def viz_kpi_card(
         </div>
         {change_html}
     </div>
-    '''
+    """
 
     summary = f"{label}: {formatted_value}"
     if change is not None:
@@ -1278,21 +1324,26 @@ def viz_pie_composition(
 
     # Altair 파이/도넛 차트 (arc mark)
     inner_radius = int(hole * 100) if hole > 0 else 0
-    chart = alt.Chart(df).mark_arc(innerRadius=inner_radius).encode(
-        theta=alt.Theta(f'{values}:Q'),
-        color=alt.Color(f'{names}:N'),
-        tooltip=[f'{names}:N', f'{values}:Q']
-    ).properties(width=400, height=400)
+    chart = (
+        alt.Chart(df)
+        .mark_arc(innerRadius=inner_radius)
+        .encode(
+            theta=alt.Theta(f"{values}:Q"),
+            color=alt.Color(f"{names}:N"),
+            tooltip=[f"{names}:N", f"{values}:Q"],
+        )
+        .properties(width=400, height=400)
+    )
 
     if title:
         chart = chart.properties(title=title)
 
     # Vega-Embed HTML 생성
     spec = chart.to_json()
-    html = f'''<div class="chart-container">
+    html = f"""<div class="chart-container">
         <div id="chart-{id(chart)}"></div>
         <script>vegaEmbed('#chart-{id(chart)}', {spec}, {{"renderer": "svg"}}).catch(console.error);</script>
-    </div>'''
+    </div>"""
 
     return ReportComponent(
         type="chart",
@@ -1344,12 +1395,17 @@ def viz_heatmap(
     scheme = scheme_map.get(color_scale, color_scale.lower())
 
     # Altair 히트맵
-    chart = alt.Chart(df).mark_rect().encode(
-        x=alt.X(f'{x}:N', title=x),
-        y=alt.Y(f'{y}:N', title=y),
-        color=alt.Color(f'{z}:Q', scale=alt.Scale(scheme=scheme)),
-        tooltip=[f'{x}:N', f'{y}:N', f'{z}:Q']
-    ).properties(width=600, height=400)
+    chart = (
+        alt.Chart(df)
+        .mark_rect()
+        .encode(
+            x=alt.X(f"{x}:N", title=x),
+            y=alt.Y(f"{y}:N", title=y),
+            color=alt.Color(f"{z}:Q", scale=alt.Scale(scheme=scheme)),
+            tooltip=[f"{x}:N", f"{y}:N", f"{z}:Q"],
+        )
+        .properties(width=600, height=400)
+    )
 
     if title:
         chart = chart.properties(title=title)
@@ -1359,10 +1415,10 @@ def viz_heatmap(
 
     # Vega-Embed HTML 생성
     spec = chart.to_json()
-    html = f'''<div class="chart-container">
+    html = f"""<div class="chart-container">
         <div id="chart-{id(chart)}"></div>
         <script>vegaEmbed('#chart-{id(chart)}', {spec}, {{"renderer": "svg"}}).catch(console.error);</script>
-    </div>'''
+    </div>"""
 
     return ReportComponent(
         type="chart",
@@ -1378,6 +1434,7 @@ def viz_heatmap(
 # =============================================================================
 # Layer 3: PRESENT - 분석 도구
 # =============================================================================
+
 
 def analyze_trend(
     data: List[Dict[str, Any]],
@@ -1445,7 +1502,13 @@ def analyze_trend(
                 else:
                     cagr = 0
 
-                direction = "증가" if total_change > 1 else "감소" if total_change < -1 else "보합"
+                direction = (
+                    "증가"
+                    if total_change > 1
+                    else "감소"
+                    if total_change < -1
+                    else "보합"
+                )
 
                 group_metrics[group] = {
                     "direction": direction,
@@ -1455,7 +1518,7 @@ def analyze_trend(
                 }
 
                 findings.append(
-                    f"{group}: {n_years+1}년간 {total_change:+.1f}% {direction} (연평균 {cagr:+.1f}%)"
+                    f"{group}: {n_years + 1}년간 {total_change:+.1f}% {direction} (연평균 {cagr:+.1f}%)"
                 )
 
         metrics = {"groups": group_metrics}
@@ -1477,7 +1540,9 @@ def analyze_trend(
             else:
                 cagr = 0
 
-            direction = "증가" if total_change > 1 else "감소" if total_change < -1 else "보합"
+            direction = (
+                "증가" if total_change > 1 else "감소" if total_change < -1 else "보합"
+            )
 
             metrics = {
                 "direction": direction,
@@ -1490,7 +1555,7 @@ def analyze_trend(
             }
 
             findings.append(
-                f"{n_years+1}년간 {total_change:+.1f}% {direction} (연평균 {cagr:+.1f}%)"
+                f"{n_years + 1}년간 {total_change:+.1f}% {direction} (연평균 {cagr:+.1f}%)"
             )
 
     interpretation = " ".join(findings) if findings else "분석할 데이터가 부족합니다."
@@ -1541,7 +1606,6 @@ def analyze_comparison(
         >>> print(result.findings[0])
         "서울특별시가 부산광역시보다 2.8배 많음"
     """
-    from .transform import KosisTransformer
 
     # 기간 필터
     if period:
@@ -1552,7 +1616,9 @@ def analyze_comparison(
         data = [r for r in data if r.get(compare_field) in targets]
 
     # 집계
-    aggregated = aggregate_data(data, group_by=compare_field, value_field=value_field, agg_func="sum")
+    aggregated = aggregate_data(
+        data, group_by=compare_field, value_field=value_field, agg_func="sum"
+    )
 
     if not aggregated:
         return AnalysisResult(
@@ -1580,7 +1646,9 @@ def analyze_comparison(
     if len(rankings) >= 2:
         first = rankings[0]
         second = rankings[1]
-        ratio = first[value_field] / second[value_field] if second[value_field] > 0 else 0
+        ratio = (
+            first[value_field] / second[value_field] if second[value_field] > 0 else 0
+        )
         findings.append(
             f"{first[compare_field]}({first[value_field]:,.0f})이 "
             f"{second[compare_field]}({second[value_field]:,.0f})보다 {ratio:.1f}배"
@@ -1589,7 +1657,11 @@ def analyze_comparison(
     # 최대 vs 최소
     if len(rankings) >= 2:
         gap = max_item[value_field] - min_item[value_field]
-        gap_ratio = max_item[value_field] / min_item[value_field] if min_item[value_field] > 0 else 0
+        gap_ratio = (
+            max_item[value_field] / min_item[value_field]
+            if min_item[value_field] > 0
+            else 0
+        )
         findings.append(
             f"최대({max_item[compare_field]})와 최소({min_item[compare_field]}) 격차: {gap:,.0f} ({gap_ratio:.1f}배)"
         )
@@ -1680,7 +1752,9 @@ def analyze_ranking(
         findings=findings,
         data=rankings,
         metrics=metrics,
-        interpretation=f"상위 {top_n}개 순위 ({period} 기준)" if period else f"상위 {top_n}개 순위",
+        interpretation=f"상위 {top_n}개 순위 ({period} 기준)"
+        if period
+        else f"상위 {top_n}개 순위",
     )
 
 
@@ -1753,6 +1827,7 @@ def analyze_stats(
 # Layer 3: PRESENT - 텍스트 생성 도구
 # =============================================================================
 
+
 def text_headline(
     analysis: Union[AnalysisResult, Dict[str, Any]],
     style: str = "news",
@@ -1821,12 +1896,12 @@ def text_headline(
         if style == "news":
             headline = f"1위 {top_1.get('C1_NM', 'N/A')}"
         else:
-            headline = f"순위 분석 결과"
+            headline = "순위 분석 결과"
 
     else:
         headline = findings[0] if findings else "분석 결과"
 
-    html = f'''
+    html = f"""
     <h2 style="
         font-size: 1.5rem;
         font-weight: 700;
@@ -1834,7 +1909,7 @@ def text_headline(
         margin: 20px 0;
         line-height: 1.4;
     ">{headline}</h2>
-    '''
+    """
 
     return ReportComponent(
         type="text",
@@ -1872,7 +1947,9 @@ def text_summary(
     regions = get_available_values(data, "C1_NM")
 
     if periods:
-        sentences.append(f"본 데이터는 {periods[0]}부터 {periods[-1]}까지의 기간을 포함합니다.")
+        sentences.append(
+            f"본 데이터는 {periods[0]}부터 {periods[-1]}까지의 기간을 포함합니다."
+        )
 
     if regions:
         sentences.append(f"총 {len(regions)}개 지역의 데이터가 포함되어 있습니다.")
@@ -1883,14 +1960,14 @@ def text_summary(
 
     summary_text = " ".join(sentences[:max_sentences])
 
-    html = f'''
+    html = f"""
     <p style="
         font-size: 1rem;
         color: #4a4a4a;
         line-height: 1.8;
         margin: 15px 0;
     ">{summary_text}</p>
-    '''
+    """
 
     return ReportComponent(
         type="text",
@@ -1941,7 +2018,9 @@ def text_insight(
         if direction == "감소":
             insights.append(f"지속적인 감소 추세가 관찰됩니다 (연평균 {cagr:.1f}%).")
             if depth in ["standard", "deep"]:
-                insights.append("이러한 추세가 지속될 경우 향후 정책적 대응이 필요할 수 있습니다.")
+                insights.append(
+                    "이러한 추세가 지속될 경우 향후 정책적 대응이 필요할 수 있습니다."
+                )
         elif direction == "증가":
             insights.append(f"꾸준한 증가 추세를 보이고 있습니다 (연평균 {cagr:.1f}%).")
 
@@ -1957,11 +2036,15 @@ def text_insight(
 
     elif analysis_type == "ranking":
         top_1 = metrics.get("top_1", {})
-        insights.append(f"{top_1.get('C1_NM', '')}이 가장 높은 수치를 기록하고 있습니다.")
+        insights.append(
+            f"{top_1.get('C1_NM', '')}이 가장 높은 수치를 기록하고 있습니다."
+        )
 
     # 관점별 추가 인사이트
     if perspective == "policy" and depth == "deep":
-        insights.append("정책 입안 시 이러한 추세를 고려한 대응 방안 마련이 필요합니다.")
+        insights.append(
+            "정책 입안 시 이러한 추세를 고려한 대응 방안 마련이 필요합니다."
+        )
     elif perspective == "economic" and depth == "deep":
         insights.append("경제적 관점에서 자원 배분의 효율성 검토가 요구됩니다.")
 
@@ -1971,7 +2054,7 @@ def text_insight(
 
     insight_text = " ".join(insights)
 
-    html = f'''
+    html = f"""
     <div style="
         background: linear-gradient(135deg, #f6f9fc 0%, #eef2f7 100%);
         border-left: 4px solid #667eea;
@@ -1984,7 +2067,7 @@ def text_insight(
             {insight_text}
         </p>
     </div>
-    '''
+    """
 
     return ReportComponent(
         type="text",
@@ -2027,7 +2110,7 @@ def text_data_note(
 
     notes_text = " | ".join(notes)
 
-    html = f'''
+    html = f"""
     <div style="
         font-size: 0.85rem;
         color: #888;
@@ -2037,7 +2120,7 @@ def text_data_note(
     ">
         {notes_text}
     </div>
-    '''
+    """
 
     return ReportComponent(
         type="text",
@@ -2053,6 +2136,7 @@ def text_data_note(
 # =============================================================================
 # Layer 3: PRESENT - 레이아웃 도구
 # =============================================================================
+
 
 def layout_section(
     title: str,
@@ -2080,7 +2164,7 @@ def layout_section(
     sorted_components = sorted(components, key=lambda c: c.priority)
     inner_html = "\n".join(c.html for c in sorted_components)
 
-    html = f'''
+    html = f"""
     <div class="report-section" style="margin: 30px 0;">
         <h3 style="
             font-size: 1.3rem;
@@ -2093,7 +2177,7 @@ def layout_section(
             {inner_html}
         </div>
     </div>
-    '''
+    """
 
     return ReportComponent(
         type="section",
@@ -2124,7 +2208,7 @@ def layout_card_grid(
     """
     cards_html = "\n".join(c.html for c in cards)
 
-    html = f'''
+    html = f"""
     <div style="
         display: grid;
         grid-template-columns: repeat({columns}, 1fr);
@@ -2133,7 +2217,7 @@ def layout_card_grid(
     ">
         {cards_html}
     </div>
-    '''
+    """
 
     return ReportComponent(
         type="layout",
@@ -2167,7 +2251,7 @@ def layout_two_column(
     ratios = {"1:1": ("1fr", "1fr"), "2:1": ("2fr", "1fr"), "1:2": ("1fr", "2fr")}
     left_fr, right_fr = ratios.get(ratio, ("1fr", "1fr"))
 
-    html = f'''
+    html = f"""
     <div style="
         display: grid;
         grid-template-columns: {left_fr} {right_fr};
@@ -2178,7 +2262,7 @@ def layout_two_column(
         <div>{left.html}</div>
         <div>{right.html}</div>
     </div>
-    '''
+    """
 
     return ReportComponent(
         type="layout",
@@ -2221,21 +2305,25 @@ def layout_highlight_box(
     }
     c = colors.get(style, colors["info"])
 
-    title_html = f'<strong style="display: block; margin-bottom: 8px;">{title}</strong>' if title else ""
+    title_html = (
+        f'<strong style="display: block; margin-bottom: 8px;">{title}</strong>'
+        if title
+        else ""
+    )
 
-    html = f'''
+    html = f"""
     <div style="
-        background: {c['bg']};
-        border-left: 4px solid {c['border']};
+        background: {c["bg"]};
+        border-left: 4px solid {c["border"]};
         padding: 15px 20px;
         margin: 20px 0;
         border-radius: 0 8px 8px 0;
-        color: {c['text']};
+        color: {c["text"]};
     ">
         {title_html}
         {content}
     </div>
-    '''
+    """
 
     return ReportComponent(
         type="layout",
@@ -2292,7 +2380,7 @@ def layout_table(
 
     table_html = df.to_html(index=False, classes="report-table", escape=False)
 
-    html = f'''
+    html = f"""
     <div style="overflow-x: auto; margin: 20px 0;">
         <style>
             .report-table {{
@@ -2317,7 +2405,7 @@ def layout_table(
         </style>
         {table_html}
     </div>
-    '''
+    """
 
     return ReportComponent(
         type="table",
@@ -2333,6 +2421,7 @@ def layout_table(
 # =============================================================================
 # Layer 3: PRESENT - 리포트 조립
 # =============================================================================
+
 
 def assemble_report(
     components: List[ReportComponent],
@@ -2391,14 +2480,19 @@ def assemble_report(
     }
     style = template_styles.get(template, template_styles["standard"])
 
-    subtitle_html = f'<p style="color: rgba(255,255,255,0.8); font-size: 1.1rem;">{subtitle}</p>' if subtitle else ""
+    subtitle_html = (
+        f'<p style="color: rgba(255,255,255,0.8); font-size: 1.1rem;">{subtitle}</p>'
+        if subtitle
+        else ""
+    )
 
     components_html = "\n".join(c.html for c in sorted_components)
 
     from datetime import datetime
+
     now = datetime.now().strftime("%Y-%m-%d %H:%M")
 
-    html = f'''<!DOCTYPE html>
+    html = f"""<!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
@@ -2418,14 +2512,14 @@ def assemble_report(
 
         body {{
             font-family: 'Noto Sans KR', 'Malgun Gothic', sans-serif;
-            background: {style['bg']};
+            background: {style["bg"]};
             min-height: 100vh;
             padding: 30px 20px;
             color: #333;
         }}
 
         .container {{
-            max-width: {style['max_width']};
+            max-width: {style["max_width"]};
             margin: 0 auto;
         }}
 
@@ -2477,7 +2571,7 @@ def assemble_report(
     </div>
 </body>
 </html>
-'''
+"""
 
     if output_path:
         path = Path(output_path)
@@ -2492,6 +2586,7 @@ def assemble_report(
 # =============================================================================
 # 편의 함수
 # =============================================================================
+
 
 def quick_report(
     data: List[Dict[str, Any]],
@@ -2514,33 +2609,25 @@ def quick_report(
     components = []
 
     # 1. KPI 카드들
-    from .transform import KosisTransformer
-    tx = KosisTransformer(data)
-
-    # 총 데이터 수
-    components.append(viz_kpi_card(
-        value=len(data),
-        label="총 데이터",
-        icon="📊"
-    ))
+    components.append(viz_kpi_card(value=len(data), label="총 데이터", icon="📊"))
 
     # 기간 수
     periods = get_available_values(data, "PRD_DE")
     if periods:
-        components.append(viz_kpi_card(
-            value=len(periods),
-            label=f"기간 ({periods[0]}~{periods[-1]})",
-            icon="📅"
-        ))
+        components.append(
+            viz_kpi_card(
+                value=len(periods),
+                label=f"기간 ({periods[0]}~{periods[-1]})",
+                icon="📅",
+            )
+        )
 
     # 분류 수
     regions = get_available_values(data, "C1_NM")
     if regions:
-        components.append(viz_kpi_card(
-            value=len(regions),
-            label="분류 항목",
-            icon="📍"
-        ))
+        components.append(
+            viz_kpi_card(value=len(regions), label="분류 항목", icon="📍")
+        )
 
     # 카드 그리드
     kpi_grid = layout_card_grid(components[:3], columns=3)

@@ -1,7 +1,7 @@
 [project]
-name = "kosis-mcp"
+name = "korean-stat-mcp"
 version = "0.1.0"
-description = "KOSIS(국가통계포털) MCP Server - Korean Statistical Data API Tools"
+description = "Korean Statistics (KOSIS) MCP Server — 한국 국가통계포털 통합 도구"
 readme = "README.md"
 requires-python = ">=3.12"
 license = "MIT"
@@ -13,6 +13,9 @@ classifiers = [
     "Development Status :: 4 - Beta",
     "Intended Audience :: Developers",
     "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Operating System :: OS Independent",
+    "Topic :: Database",
     "Topic :: Scientific/Engineering :: Information Analysis",
 ]
 dependencies = [
@@ -30,26 +33,40 @@ dependencies = [
     "aiohttp>=3.13.2",
     "fastapi>=0.124.4",
     "uvicorn>=0.38.0",
-    # Phase 3: Database & Storage
+]
+
+[project.optional-dependencies]
+# Optional: PostgreSQL backend for FTS-based metadata search and load_metadata script
+postgres = [
     "asyncpg>=0.30.0",
-    "openai>=1.58.0",
+]
+# Optional: Cloudflare R2 storage for chart/report hosting
+r2 = [
+    "boto3>=1.36.0",
+]
+# Convenience: install all optional extras
+all = [
+    "asyncpg>=0.30.0",
     "boto3>=1.36.0",
 ]
 
 [project.urls]
-Homepage = "https://github.com/seolcoding/kosis-mcp"
-Documentation = "https://github.com/seolcoding/kosis-mcp#readme"
-Repository = "https://github.com/seolcoding/kosis-mcp"
+Homepage = "https://github.com/seolcoding/korean-stat-mcp"
+Documentation = "https://github.com/seolcoding/korean-stat-mcp#readme"
+Repository = "https://github.com/seolcoding/korean-stat-mcp"
+"Bug Tracker" = "https://github.com/seolcoding/korean-stat-mcp/issues"
 
 [project.scripts]
-kosis-mcp = "mcp_server.server:main"
+korean-stat-mcp = "mcp_server.server:main"
 
 [dependency-groups]
 dev = [
+    "mypy>=1.13.0",
     "pytest>=9.0.2",
     "pytest-asyncio>=1.3.0",
     "pytest-cov>=7.0.0",
     "responses>=0.25.8",
+    "ruff>=0.8.0",
 ]
 
 [tool.setuptools.packages.find]

@@ -29,7 +29,7 @@ from __future__ import annotations
 import json
 import logging
 import time
-from typing import Any, Dict, List, Optional, Union
+from typing import Any, Dict, List, Literal, Optional, Union
 
 import json5
 import requests
@@ -38,6 +38,25 @@ from requests.exceptions import RequestException
 from .config import KosisConfig, load_config
 
 logger = logging.getLogger(__name__)
+
+
+_VALID_FORMATS = ("json", "sdmx", "xml", "html")
+
+
+def build_format_param(
+    fmt: Literal["json", "sdmx", "xml", "html"] | None = None,
+) -> str:
+    """
+    Resolve KOSIS API `format` query value (Gap 3 helper).
+
+    Returns "json" when ``fmt`` is None so existing call paths stay
+    byte-identical. Raises ``ValueError`` for unsupported values.
+    """
+    if fmt is None:
+        return "json"
+    if fmt not in _VALID_FORMATS:
+        raise ValueError(f"format must be one of {_VALID_FORMATS}, got: {fmt!r}")
+    return fmt
 
 
 def fix_malformed_json(response_text: str) -> Optional[Union[Dict, List]]:

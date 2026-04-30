@@ -14,7 +14,6 @@ import os
 import hashlib
 import logging
 from pathlib import Path
-from typing import Optional
 from abc import ABC, abstractmethod
 
 logger = logging.getLogger(__name__)
@@ -105,7 +104,9 @@ class R2Storage(StorageBackend):
             import boto3
             from botocore.config import Config
         except ImportError:
-            raise ImportError("boto3 is required for R2 storage. Install with: uv add boto3")
+            raise ImportError(
+                "boto3 is required for R2 storage. Install with: uv add boto3"
+            )
 
         self.account_id = os.environ["R2_ACCOUNT_ID"]
         self.bucket_name = os.environ["R2_BUCKET_NAME"]
@@ -224,7 +225,9 @@ def get_storage(force_local: bool = False) -> StorageBackend:
         try:
             return R2Storage()
         except Exception as e:
-            logger.warning(f"Failed to initialize R2 storage: {e}. Falling back to local.")
+            logger.warning(
+                f"Failed to initialize R2 storage: {e}. Falling back to local."
+            )
             return LocalStorage()
 
     return LocalStorage()
@@ -244,6 +247,7 @@ def generate_artifact_key(prefix: str, filename: str, add_hash: bool = True) -> 
     if add_hash:
         # Generate short hash from filename + timestamp
         import time
+
         hash_input = f"{filename}{time.time()}".encode()
         short_hash = hashlib.sha256(hash_input).hexdigest()[:8]
 

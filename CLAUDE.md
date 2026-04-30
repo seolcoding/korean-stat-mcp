@@ -43,7 +43,7 @@
 |------|------|------|
 | [docs/ARCHITECTURE_DESIGN.md](./docs/ARCHITECTURE_DESIGN.md) | 전체 시스템 아키텍처, 레이어 구조, 데이터 흐름 | ✅ 완료 |
 | [docs/DEPLOYMENT.md](./docs/DEPLOYMENT.md) | FastMCP HTTP, Docker, PostgreSQL | ✅ 완료 |
-| [docs/HYBRID_SEARCH.md](./docs/HYBRID_SEARCH.md) | pgvector HNSW, BM25 FTS, RRF 결합 | ✅ 완료 |
+| [docs/legacy/HYBRID_SEARCH.md](./docs/legacy/HYBRID_SEARCH.md) | (legacy) 이전 하이브리드 검색 설계. v0.1.0부터는 PG FTS만 사용 | 📦 archived |
 | [docs/DOCKER_ARCHITECTURE.md](./docs/DOCKER_ARCHITECTURE.md) | Docker Compose 배포 아키텍처 | 📋 계획 |
 
 ### 테스트 문서
@@ -66,11 +66,10 @@
 - 리포트 생성 (HTML 리포트)
 
 **Phase 3: Production Infrastructure** ✅ 완료
-- PostgreSQL + pgvector (252,890 테이블 메타데이터)
-- 하이브리드 검색 (벡터 + BM25 + RRF)
-- OpenAI 임베딩 (`text-embedding-3-small`)
+- PostgreSQL FTS (선택) — 252,890 테이블 메타데이터 풀텍스트 검색
+- KOSIS API 자체 검색 (`statisticsSearch.do`) 1차 사용
 - FastAPI HTTP 서버 (`app.py`)
-- Cloudflare R2 CDN (차트/리포트 호스팅)
+- Cloudflare R2 CDN (차트/리포트 호스팅, 선택)
 - Docker 컨테이너화
 
 **Modular Executors** ✅ 완료
@@ -80,8 +79,8 @@
 - `execute_report` - 복합 리포트 (차트+분석+테이블)
 
 **Phase 4: Remote Deployment** ✅ 완료 (2025-12-20)
-- Cloudflare Tunnel 설정 완료 (`https://schedule-fell-quizzes-comments.trycloudflare.com`)
-- 외부 접근 가능 (원격 서버: wai-3090ti)
+- Cloudflare Tunnel 설정 완료 (자체 호스팅 URL)
+- 외부 접근 가능 (원격 서버 (자체 호스팅))
 - E2E 테스트 통과 (11/11)
 - 프로덕션 운영 중
 
@@ -133,8 +132,8 @@
 |------|------|------|
 | 시각화 | **Altair** | Plotly/Matplotlib 대신 |
 | 서버 | **FastMCP + FastAPI** | MCP + HTTP 듀얼 모드 |
-| DB | **PostgreSQL + pgvector** | 하이브리드 검색 |
-| 임베딩 | **OpenAI text-embedding-3-small** | 1536 차원 |
+| DB (선택) | **PostgreSQL FTS** | 메타데이터 풀텍스트 검색용 — 미설치 시 KOSIS API search로 fallback |
+| 검색 (기본) | **KOSIS `statisticsSearch.do`** | API 자체 검색을 1차 사용 |
 
 ### 4. 금지 사항
 
@@ -161,10 +160,8 @@ kosis-mcp/
 │       │   ├── analysis.py        # 분석 (통계 함수)
 │       │   ├── table.py           # 테이블 (스타일링)
 │       │   └── report.py          # 리포트 (조합)
-│       ├── database.py            # PostgreSQL 연결
-│       ├── embeddings.py          # OpenAI 임베딩
-│       ├── hybrid_search.py       # 벡터+BM25 검색
-│       └── r2_storage.py          # Cloudflare R2 스토리지
+│       ├── database.py            # PostgreSQL 연결 (선택)
+│       └── r2_storage.py          # Cloudflare R2 스토리지 (선택)
 ├── data/
 │   └── metadata_api/
 │       └── tables.json            # 메타데이터 (252,890 테이블)
@@ -207,23 +204,23 @@ kosis-mcp/
 
 ## 서버 실행
 
-### 프로덕션 서버 (원격 배포 완료) ✅
+### 원격 호스팅 (선택)
 
-**현재 운영 중인 서버:**
+`korean-stat-mcp`는 사용자가 직접 자체 호스팅할 수 있습니다. 환경변수 `KOSIS_MCP_URL` 에 본인 인스턴스 주소를 지정하세요.
+
 ```
-URL: https://kosis.seolcoding.com/
-상태: ✅ 정상 운영 중
-서버: wai-3090ti (Ubuntu 24.04)
-업타임: 2일+ (PostgreSQL: 4일+)
+URL: ${KOSIS_MCP_URL}        # 예: https://kosis-mcp.example.com
+상태: 사용자 자체 호스팅
+서버: 사용자 자체 호스팅 (예: Ubuntu 24.04+, Docker 환경)
 ```
 
 **테스트:**
 ```bash
-# 프로덕션 서버 헬스 체크
-curl https://kosis.seolcoding.com/health
+# 헬스 체크 (자체 호스팅 인스턴스)
+curl ${KOSIS_MCP_URL}/health
 
 # E2E 워크플로 테스트
-uv run python scripts/test_e2e_workflow.py https://kosis.seolcoding.com
+uv run python scripts/test_e2e_workflow.py ${KOSIS_MCP_URL}
 ```
 
 ### 로컬 개발 (Docker Compose)

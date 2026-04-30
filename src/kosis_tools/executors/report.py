@@ -272,13 +272,13 @@ def build_stat_cards(stats: List[Dict[str, str]]) -> str:
 
     cards_html = '<div class="stat-cards">'
     for stat in stats:
-        cards_html += f'''
+        cards_html += f"""
         <div class="stat-card">
             <div class="label">{stat.get("label", "")}</div>
             <div class="value">{stat.get("value", "")}</div>
         </div>
-        '''
-    cards_html += '</div>'
+        """
+    cards_html += "</div>"
     return cards_html
 
 
@@ -301,7 +301,7 @@ def build_charts_section(charts: List[Dict[str, Any]]) -> tuple[str, str]:
 
     for i, chart in enumerate(charts):
         chart_id = f"chart_{i}"
-        title = chart.get("title", f"차트 {i+1}")
+        title = chart.get("title", f"차트 {i + 1}")
 
         charts_html += f'''
         <div class="chart-container">
@@ -313,18 +313,19 @@ def build_charts_section(charts: List[Dict[str, Any]]) -> tuple[str, str]:
         # Vega spec이 있으면 직접 embed
         if "vega_spec" in chart:
             import json
+
             spec_json = json.dumps(chart["vega_spec"])
-            vega_scripts.append(f'''
+            vega_scripts.append(f"""
             vegaEmbed('#{chart_id}', {spec_json}, {{"renderer": "svg"}}).catch(console.error);
-            ''')
+            """)
         # URL이 있으면 iframe으로 embed
         elif "url" in chart:
             charts_html = charts_html.replace(
                 f'<div class="chart-embed" id="{chart_id}"></div>',
-                f'<iframe src="{chart["url"]}" width="100%" height="400" frameborder="0"></iframe>'
+                f'<iframe src="{chart["url"]}" width="100%" height="400" frameborder="0"></iframe>',
             )
 
-    charts_html += '</section>'
+    charts_html += "</section>"
 
     scripts_html = ""
     if vega_scripts:
@@ -339,14 +340,14 @@ def build_insights_section(insights: List[str], title: str = "핵심 인사이�
         return ""
 
     items = "\n".join(f"<li>{insight}</li>" for insight in insights)
-    return f'''
+    return f"""
     <section class="section">
         <div class="insight-box">
             <h3>{title}</h3>
             <ul>{items}</ul>
         </div>
     </section>
-    '''
+    """
 
 
 def build_tables_section(tables: List[Dict[str, Any]]) -> str:
@@ -358,9 +359,9 @@ def build_tables_section(tables: List[Dict[str, Any]]) -> str:
     for table in tables:
         title = table.get("title", "")
         if title:
-            html += f'<h3>{title}</h3>'
+            html += f"<h3>{title}</h3>"
         html += f'<div class="table-section">{table.get("html", "")}</div>'
-    html += '</section>'
+    html += "</section>"
     return html
 
 
@@ -461,8 +462,11 @@ def prepare_data(
     for field in numeric_fields:
         if field in df.columns:
             df[field] = pd.to_numeric(
-                df[field].astype(str).str.replace(",", "").replace(["-", "", "*", "…"], None),
-                errors="coerce"
+                df[field]
+                .astype(str)
+                .str.replace(",", "")
+                .replace(["-", "", "*", "…"], None),
+                errors="coerce",
             )
 
     return df
@@ -511,24 +515,26 @@ def execute_report(
     """
     # 리포트 전용 글로벌 환경
     safe_globals = get_base_globals()
-    safe_globals.update({
-        # 데이터 분석 라이브러리
-        "pd": pd,
-        "np": np,
-        "alt": alt,
-        # 리포트 헬퍼
-        "build_report": build_report,
-        "build_stat_cards": build_stat_cards,
-        "build_charts_section": build_charts_section,
-        "build_insights_section": build_insights_section,
-        "build_tables_section": build_tables_section,
-        "prepare_data": prepare_data,
-        # 입력 데이터
-        "data": data or [],
-        "analysis": analysis or {},
-        "charts": charts or [],
-        "tables": tables or [],
-    })
+    safe_globals.update(
+        {
+            # 데이터 분석 라이브러리
+            "pd": pd,
+            "np": np,
+            "alt": alt,
+            # 리포트 헬퍼
+            "build_report": build_report,
+            "build_stat_cards": build_stat_cards,
+            "build_charts_section": build_charts_section,
+            "build_insights_section": build_insights_section,
+            "build_tables_section": build_tables_section,
+            "prepare_data": prepare_data,
+            # 입력 데이터
+            "data": data or [],
+            "analysis": analysis or {},
+            "charts": charts or [],
+            "tables": tables or [],
+        }
+    )
 
     result = execute_with_context(code, safe_globals, context)
     result["guide"] = REPORT_GUIDE

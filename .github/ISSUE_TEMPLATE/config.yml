@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Question / Discussion
+    url: https://github.com/seolcoding/korean-stat-mcp/discussions
+    about: Ask questions in GitHub Discussions instead of opening an issue.

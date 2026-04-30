@@ -240,7 +240,7 @@ CREATE TABLE kosis_tables (
 
 ### Phase 4 (완료) - External Access ✅
 
-- [x] Cloudflare Tunnel 설정 (`https://schedule-fell-quizzes-comments.trycloudflare.com`)
+- [x] Cloudflare Tunnel 설정 (사용자 자체 호스팅 URL)
 - [x] 외부에서 MCP 서버 접근 가능
 - [x] E2E 워크플로 테스트 통과 (11/11)
 - [ ] 인증/권한 설정 (Phase 5로 이동)

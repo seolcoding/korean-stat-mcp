@@ -1,8 +1,8 @@
 services:
-  # PostgreSQL with pgvector extension
+  # Optional PostgreSQL for FTS-based metadata search
   postgres:
-    image: pgvector/pgvector:pg16
-    container_name: kosis-postgres
+    image: postgres:16
+    container_name: korean-stat-postgres
     environment:
       POSTGRES_USER: kosis
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-kosis_dev_password}
@@ -20,14 +20,14 @@ services:
       retries: 5
       start_period: 10s
 
-  # KOSIS MCP Server (production mode)
-  kosis-mcp:
+  # korean-stat-mcp HTTP server
+  korean-stat-mcp:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: kosis-mcp
+    container_name: korean-stat-mcp
     ports:
-      - "8001:8000"
+      - "8000:8000"
     environment:
       # FastMCP
       - FASTMCP_STATELESS_HTTP=true
@@ -42,8 +42,6 @@ services:
       - R2_BUCKET_NAME=${R2_BUCKET_NAME:-kosis-assets}
       - R2_PUBLIC_URL=${R2_PUBLIC_URL:-}
       - R2_REGION=${R2_REGION:-auto}
-      # OpenAI (for embeddings)
-      - OPENAI_API_KEY=${OPENAI_API_KEY:-}
       # Artifact storage mode: 'local' or 'r2'
       - ARTIFACT_STORAGE=${ARTIFACT_STORAGE:-local}
     volumes:
@@ -59,33 +57,10 @@ services:
       retries: 3
       start_period: 30s
 
-  # Metadata Updater (batch job - run manually or via cron)
-  # Features: resume support, retry logic, incremental update
-  updater:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    container_name: kosis-updater
-    profiles: ["updater"]  # 수동 실행: docker-compose --profile updater run updater
-    command: >
-      python scripts/load_metadata.py
-      --resume
-      --create-indexes
-      --retry-count 5
-      --retry-delay 10
-    environment:
-      - DATABASE_URL=postgresql://kosis:${POSTGRES_PASSWORD:-kosis_dev_password}@postgres:5432/kosis
-      - OPENAI_API_KEY=${OPENAI_API_KEY:-}
-    volumes:
-      - ./data:/app/data:ro
-    depends_on:
-      postgres:
-        condition: service_healthy
-
 volumes:
   postgres_data:
     driver: local
 
 networks:
   default:
-    name: kosis-network
+    name: korean-stat-network

@@ -396,8 +396,7 @@ class MetadataEnricher:
                 batch = to_fetch[batch_start:batch_end]
 
                 tasks = [
-                    self.fetch_search_info(session, tbl_nm)
-                    for _, _, tbl_nm in batch
+                    self.fetch_search_info(session, tbl_nm) for _, _, tbl_nm in batch
                 ]
                 results = await asyncio.gather(*tasks)
 

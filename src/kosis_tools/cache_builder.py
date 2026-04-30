@@ -24,9 +24,7 @@ import time
 from dataclasses import dataclass, field
 from datetime import date
 from pathlib import Path
-from typing import Optional
 
-from .config import load_config
 from .metadata_enricher import MetadataEnricher
 from .metadata_fetcher import AsyncMetadataFetcher
 from .metadata_models import (
@@ -136,7 +134,11 @@ class CacheBuilder:
         if source_counts is None:
             source_counts = {}
             for t in tables:
-                src = t.data_source if isinstance(t.data_source, str) else t.data_source.value
+                src = (
+                    t.data_source
+                    if isinstance(t.data_source, str)
+                    else t.data_source.value
+                )
                 source_counts[src] = source_counts.get(src, 0) + 1
 
         tables_file = TablesFile(
@@ -172,7 +174,9 @@ class CacheBuilder:
             all_tables = [StatisticsTable(**t) for t in cache_data.get("tables", [])]
             self.progress.completed_vw_codes = cache_data.get("completed_vw_codes", [])
             source_counts = cache_data.get("source_counts", {})
-            print(f"캐시 로드: {len(all_tables):,}개, 완료된 뷰: {self.progress.completed_vw_codes}")
+            print(
+                f"캐시 로드: {len(all_tables):,}개, 완료된 뷰: {self.progress.completed_vw_codes}"
+            )
 
         def progress_callback(count, msg):
             print(f"  [{count:,}개] {msg}", flush=True)
@@ -191,7 +195,9 @@ class CacheBuilder:
             all_tables.extend(tables)
 
             source = fetcher.VW_CD_MAP.get(vw_cd, DataSource.SUBJECT)
-            source_counts[source.value] = source_counts.get(source.value, 0) + len(tables)
+            source_counts[source.value] = source_counts.get(source.value, 0) + len(
+                tables
+            )
 
             elapsed = time.time() - start
             self.progress.total_requests += fetcher._request_count
@@ -224,7 +230,9 @@ class CacheBuilder:
 
         return unique_tables
 
-    async def enrich_stats(self, tables: list[StatisticsTable]) -> list[StatisticsTable]:
+    async def enrich_stats(
+        self, tables: list[StatisticsTable]
+    ) -> list[StatisticsTable]:
         """통계설명 API로 보강."""
         print("\n" + "=" * 50)
         print("2단계: 통계설명 보강 (statisticsExplData API)")
@@ -237,8 +245,7 @@ class CacheBuilder:
 
         def progress_callback(done, total, enriched, requests, errors):
             print(
-                f"  [{done:,}/{total:,}] 보강: {enriched:,}개, "
-                f"요청: {requests:,}회",
+                f"  [{done:,}/{total:,}] 보강: {enriched:,}개, 요청: {requests:,}회",
                 flush=True,
             )
 
@@ -259,7 +266,9 @@ class CacheBuilder:
 
         return tables
 
-    async def enrich_english(self, tables: list[StatisticsTable]) -> list[StatisticsTable]:
+    async def enrich_english(
+        self, tables: list[StatisticsTable]
+    ) -> list[StatisticsTable]:
         """영문명 보강."""
         print("\n" + "=" * 50)
         print("3단계: 영문명 보강 (getMeta API)")
@@ -272,8 +281,7 @@ class CacheBuilder:
 
         def progress_callback(done, total, enriched, requests, errors):
             print(
-                f"  [{done:,}/{total:,}] 영문명: {enriched:,}개, "
-                f"요청: {requests:,}회",
+                f"  [{done:,}/{total:,}] 영문명: {enriched:,}개, 요청: {requests:,}회",
                 flush=True,
             )
 
@@ -417,6 +425,7 @@ Examples:
 
     # .env 로드
     from dotenv import load_dotenv
+
     load_dotenv()
 
     builder = CacheBuilder(

@@ -56,7 +56,11 @@ class ArtifactHost:
         """고유 ID 생성."""
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
         short_uuid = uuid.uuid4().hex[:8]
-        return f"{prefix}{timestamp}_{short_uuid}" if prefix else f"{timestamp}_{short_uuid}"
+        return (
+            f"{prefix}{timestamp}_{short_uuid}"
+            if prefix
+            else f"{timestamp}_{short_uuid}"
+        )
 
     def save_chart(
         self,
@@ -81,7 +85,9 @@ class ArtifactHost:
 
         # 바이너리 vs 텍스트
         if format == "png":
-            filepath.write_bytes(content if isinstance(content, bytes) else content.encode())
+            filepath.write_bytes(
+                content if isinstance(content, bytes) else content.encode()
+            )
         else:
             filepath.write_text(content, encoding="utf-8")
 
@@ -120,13 +126,13 @@ class ArtifactHost:
 
         if format == "csv":
             import pandas as pd
+
             df = pd.DataFrame(data) if isinstance(data, list) else pd.DataFrame([data])
             df.to_csv(filepath, index=False, encoding="utf-8-sig")
             record_count = len(df)
         else:
             filepath.write_text(
-                json.dumps(data, ensure_ascii=False, indent=2),
-                encoding="utf-8"
+                json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8"
             )
             record_count = len(data) if isinstance(data, list) else 1
 
@@ -161,8 +167,12 @@ class ArtifactHost:
         report_id = self._generate_id("report_")
 
         # 파일명에서 특수문자 제거
-        safe_title = "".join(c if c.isalnum() or c in "-_" else "_" for c in (title or ""))
-        filename = f"{safe_title}_{report_id}.html" if safe_title else f"{report_id}.html"
+        safe_title = "".join(
+            c if c.isalnum() or c in "-_" else "_" for c in (title or "")
+        )
+        filename = (
+            f"{safe_title}_{report_id}.html" if safe_title else f"{report_id}.html"
+        )
         filepath = self.artifacts_dir / "reports" / filename
 
         filepath.write_text(html_content, encoding="utf-8")
@@ -196,18 +206,24 @@ class ArtifactHost:
         """
         result = {}
 
-        types_to_list = [artifact_type] if artifact_type else ["charts", "reports", "data"]
+        types_to_list = (
+            [artifact_type] if artifact_type else ["charts", "reports", "data"]
+        )
 
         for atype in types_to_list:
             type_dir = self.artifacts_dir / atype
             if type_dir.exists():
-                files = sorted(type_dir.iterdir(), key=lambda x: x.stat().st_mtime, reverse=True)
+                files = sorted(
+                    type_dir.iterdir(), key=lambda x: x.stat().st_mtime, reverse=True
+                )
                 result[atype] = [
                     {
                         "filename": f.name,
                         "url": f"{self.base_url}/artifacts/{atype}/{f.name}",
                         "size_kb": f.stat().st_size / 1024,
-                        "modified": datetime.fromtimestamp(f.stat().st_mtime).isoformat(),
+                        "modified": datetime.fromtimestamp(
+                            f.stat().st_mtime
+                        ).isoformat(),
                     }
                     for f in files[:limit]
                 ]
@@ -227,6 +243,7 @@ _host: Optional[ArtifactHost] = None
 def get_artifact_host() -> ArtifactHost:
     """ArtifactHost 싱글톤 인스턴스 반환 (환경변수 사용)."""
     import os
+
     global _host
     if _host is None:
         base_url = os.environ.get("KOSIS_BASE_URL", "http://localhost:8000")
@@ -235,12 +252,16 @@ def get_artifact_host() -> ArtifactHost:
     return _host
 
 
-def save_chart(content: str, name: Optional[str] = None, format: str = "html") -> Dict[str, str]:
+def save_chart(
+    content: str, name: Optional[str] = None, format: str = "html"
+) -> Dict[str, str]:
     """차트 저장 편의 함수."""
     return get_artifact_host().save_chart(content, name, format)
 
 
-def save_data(data: Union[list, dict], name: Optional[str] = None, format: str = "json") -> Dict[str, str]:
+def save_data(
+    data: Union[list, dict], name: Optional[str] = None, format: str = "json"
+) -> Dict[str, str]:
     """데이터 저장 편의 함수."""
     return get_artifact_host().save_data(data, name, format)
 

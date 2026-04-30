@@ -4,10 +4,9 @@ KOSIS MCP Server E2E Workflow Test.
 
 전체 워크플로 테스트:
 1. 통계 검색 (search_statistics)
-2. 하이브리드 검색 (search_tables_hybrid)
-3. 데이터 조회 (get_statistics_data)
-4. 시각화 생성 (execute_visualization) → R2 업로드
-5. 분석 실행 (execute_analysis)
+2. 데이터 조회 (get_statistics_data)
+3. 시각화 생성 (execute_visualization) → R2 업로드
+4. 분석 실행 (execute_analysis)
 
 Usage:
     uv run python scripts/test_e2e_workflow.py https://your-tunnel.trycloudflare.com
@@ -81,35 +80,6 @@ class MCPWorkflowTester:
                         print(f"     - {r.get('tbl_nm', 'N/A')} ({r.get('org_nm', '')})")
                     return True
         print("  ❌ 검색 실패")
-        return False
-
-    async def test_2_hybrid_search(self) -> bool:
-        """2. 하이브리드 검색 (PostgreSQL + Vector)."""
-        print("\n[2] 하이브리드 검색 (search_tables_hybrid)")
-        print("-" * 50)
-
-        result = await self.mcp_call("tools/call", "search_tables_hybrid", {
-            "query": "저출산 고령화 인구 변화",
-            "limit": 5,
-            "vector_weight": 0.7
-        })
-
-        if result and "result" in result:
-            content = result["result"].get("content", [])
-            if content:
-                text = content[0].get("text", "")
-                data = json.loads(text)
-
-                if "error" in data:
-                    print(f"  ⚠️ {data.get('message', data.get('error'))}")
-                    return False
-
-                if "results" in data:
-                    print(f"  ✅ 하이브리드 검색 결과: {len(data['results'])}건")
-                    for r in data["results"][:3]:
-                        print(f"     - [{r.get('score', 0):.3f}] {r.get('tbl_nm', 'N/A')}")
-                    return True
-        print("  ❌ 하이브리드 검색 실패")
         return False
 
     async def test_3_get_data(self) -> bool:
@@ -297,7 +267,6 @@ return {
 
         tests = [
             ("통계 검색", self.test_1_search_statistics),
-            ("하이브리드 검색", self.test_2_hybrid_search),
             ("데이터 조회", self.test_3_get_data),
             ("시각화 (R2)", self.test_4_visualization),
             ("분석 실행", self.test_5_analysis),

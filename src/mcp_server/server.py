@@ -47,7 +47,6 @@ mcp = FastMCP(
 
     🔍 DISCOVER (데이터 탐색):
     - search_statistics: 키워드로 통계표 검색
-    - search_tables_hybrid: 자연어/의미 기반 검색 ⭐ (PostgreSQL 필요)
     - browse_categories: 기관/주제별 통계 목록
     - get_table_metadata: 테이블 상세 정보
     - get_available_values: 필터링 가능한 값 조회
@@ -89,6 +88,7 @@ mcp = FastMCP(
 # =============================================================================
 # Layer 1: DISCOVER - 데이터 탐색 도구
 # =============================================================================
+
 
 @mcp.tool
 def search_statistics(
@@ -138,103 +138,11 @@ def search_statistics(
             "result_count": len(results),
             "results": results,
             "org_distribution": org_dist,
-            "next_step": "get_table_metadata(org_id, tbl_id)로 테이블 구조를 확인하세요"
+            "next_step": "get_table_metadata(org_id, tbl_id)로 테이블 구조를 확인하세요",
         }
     except Exception as e:
         logger.error(f"search_statistics error: {e}")
         return {"error": str(e)}
-
-
-@mcp.tool
-async def search_tables_hybrid(
-    query: str,
-    limit: int = 10,
-    fts_weight: float = 0.5,
-    vector_weight: float = 0.5,
-) -> dict:
-    """
-    자연어로 KOSIS 통계 테이블을 검색합니다 (하이브리드 검색).
-
-    키워드 검색(BM25)과 의미 검색(벡터)을 결합한 고급 검색입니다.
-    "경제가 좋아졌나요?" 같은 자연어 질문도 이해합니다.
-
-    ⚠️ 이 기능은 PostgreSQL + pgvector가 필요합니다.
-
-    Args:
-        query: 검색어 (자연어 가능)
-               예: "출산율 감소 원인", "경제 성장률 추이", "지역별 고용률"
-        limit: 최대 결과 수 (기본 10, 최대 50)
-        fts_weight: 키워드 검색 가중치 (0-1, 기본 0.5)
-        vector_weight: 의미 검색 가중치 (0-1, 기본 0.5)
-
-    Returns:
-        {
-            "query": "출산율 감소",
-            "search_type": "hybrid",
-            "count": 10,
-            "results": [
-                {
-                    "tbl_id": "DT_1B8000F",
-                    "tbl_nm": "시도/성/연령별 출생아수",
-                    "org_nm": "통계청",
-                    "score": 0.0312,
-                    "fts_rank": 1,
-                    "vec_rank": 3,
-                    "period": "1997 ~ 2023"
-                },
-                ...
-            ],
-            "next_step": "get_statistics_data(org_id, tbl_id, ...)로 데이터 조회"
-        }
-
-    Example:
-        >>> search_tables_hybrid("경제 성장률")
-        >>> search_tables_hybrid("출산율 감소", vector_weight=0.7)
-    """
-    try:
-        # 데이터베이스 연결 확인
-        from kosis_tools.database import DatabasePool
-
-        if not DatabasePool._initialized:
-            return {
-                "error": "DATABASE_NOT_AVAILABLE",
-                "message": "PostgreSQL 데이터베이스가 연결되지 않았습니다.",
-                "fallback": "search_statistics(keyword)를 사용하세요 (KOSIS API 기반 키워드 검색)",
-                "setup_hint": "docker compose up postgres -d && python scripts/load_metadata.py"
-            }
-
-        # 하이브리드 검색 실행
-        from kosis_tools.hybrid_search import search_tables
-
-        results = await search_tables(
-            query=query,
-            limit=min(limit, 50),
-            fts_weight=fts_weight,
-            vector_weight=vector_weight,
-        )
-
-        return {
-            "query": query,
-            "search_type": "hybrid",
-            "weights": {"fts": fts_weight, "vector": vector_weight},
-            "count": len(results),
-            "results": results,
-            "next_step": "get_statistics_data(org_id, tbl_id, start_date, end_date)로 데이터 조회"
-        }
-
-    except Exception as e:
-        logger.error(f"search_tables_hybrid error: {e}")
-
-        # 데이터베이스 오류 시 대안 제시
-        error_msg = str(e)
-        if "database" in error_msg.lower() or "connection" in error_msg.lower():
-            return {
-                "error": "DATABASE_ERROR",
-                "message": error_msg,
-                "fallback": "search_statistics(keyword)를 사용하세요",
-            }
-
-        return {"error": error_msg}
 
 
 @mcp.tool
@@ -283,11 +191,15 @@ def browse_categories(
         if code:
             # 특정 카테고리의 통계표 목록
             response["statistics"] = results
-            response["next_step"] = "get_table_metadata(org_id, tbl_id)로 테이블 구조를 확인하세요"
+            response["next_step"] = (
+                "get_table_metadata(org_id, tbl_id)로 테이블 구조를 확인하세요"
+            )
         else:
             # 카테고리 목록
             response["categories"] = results
-            response["usage"] = f"browse_categories(by='{by}', code='코드')로 해당 카테고리의 통계표 목록을 조회하세요"
+            response["usage"] = (
+                f"browse_categories(by='{by}', code='코드')로 해당 카테고리의 통계표 목록을 조회하세요"
+            )
 
         return response
     except Exception as e:
@@ -428,7 +340,9 @@ def get_available_values(
             "count": len(values),
             "values": values[:50] if len(values) > 50 else values,  # 최대 50개
             "truncated": len(values) > 50,
-            "filter_example": filter_examples.get(field, "filter_statistics(data, ...)"),
+            "filter_example": filter_examples.get(
+                field, "filter_statistics(data, ...)"
+            ),
         }
     except Exception as e:
         logger.error(f"get_available_values error: {e}")
@@ -439,6 +353,7 @@ def get_available_values(
 # Layer 2: FETCH - 데이터 조회 도구
 # =============================================================================
 
+
 @mcp.tool
 def get_statistics_data(
     org_id: str,
@@ -447,7 +362,7 @@ def get_statistics_data(
     end_date: str,
     prd_se: str = "Y",
     format: str = "summary",
-) -> dict:
+) -> dict | list[dict]:
     """
     KOSIS에서 통계 데이터를 조회합니다.
 
@@ -528,7 +443,7 @@ def filter_statistics(
     format: str = "summary",
     data_id: Optional[str] = None,
     data_json: Optional[str] = None,
-) -> dict:
+) -> dict | list[dict]:
     """
     통계 데이터를 필터링합니다.
 
@@ -600,7 +515,7 @@ def aggregate_statistics(
     format: str = "summary",
     data_id: Optional[str] = None,
     data_json: Optional[str] = None,
-) -> dict:
+) -> dict | list[dict]:
     """
     통계 데이터를 그룹별로 집계합니다.
 
@@ -626,7 +541,11 @@ def aggregate_statistics(
         # 대안: data_json 직접 전달
         >>> aggregate_statistics(group_by="C1_NM", data_json=data)
     """
-    from kosis_tools.report_tools import aggregate_data, format_data_for_llm, load_raw_data
+    from kosis_tools.report_tools import (
+        aggregate_data,
+        format_data_for_llm,
+        load_raw_data,
+    )
 
     try:
         # data_id 우선 사용 (서버 사이드 처리)
@@ -662,6 +581,7 @@ def aggregate_statistics(
 # =============================================================================
 # Layer 3: PRESENT - 분석/시각화 도구
 # =============================================================================
+
 
 def _load_data_from_id_or_json(
     data_id: Optional[str] = None,
@@ -732,14 +652,16 @@ def analyze_trend(
         # 요약 생성
         metrics = result.metrics
         if group_by and "groups" in metrics:
-            # 그룹별 분석
             groups = metrics.get("groups", {})
-            directions = [g.get("direction", "") for g in groups.values()]
             summary = f"{len(groups)}개 그룹 분석 완료"
         else:
             direction = metrics.get("direction", "")
             cagr = metrics.get("cagr", 0)
-            summary = f"전반적으로 {direction} 추세 (연평균 {cagr:+.1f}%)" if direction else "추세 분석 완료"
+            summary = (
+                f"전반적으로 {direction} 추세 (연평균 {cagr:+.1f}%)"
+                if direction
+                else "추세 분석 완료"
+            )
 
         return {
             "analysis_type": result.type,
@@ -873,16 +795,22 @@ def analyze_ranking(
 
         # 순위 데이터 정리 (간결하게)
         rankings = []
-        for item in (result.data[:top_n] if result.data else []):
-            rankings.append({
-                "rank": item.get("rank", 0),
-                "name": item.get("C1_NM", item.get("name", "")),
-                "value": item.get("DT", item.get("value", 0)),
-            })
+        for item in result.data[:top_n] if result.data else []:
+            rankings.append(
+                {
+                    "rank": item.get("rank", 0),
+                    "name": item.get("C1_NM", item.get("name", "")),
+                    "value": item.get("DT", item.get("value", 0)),
+                }
+            )
 
         # 요약 생성
         top_1 = result.metrics.get("top_1", {})
-        summary = f"1위 {top_1.get('C1_NM', '')}, 상위 {top_n}개 분석" if top_1 else f"상위 {top_n}개 순위 분석"
+        summary = (
+            f"1위 {top_1.get('C1_NM', '')}, 상위 {top_n}개 분석"
+            if top_1
+            else f"상위 {top_n}개 순위 분석"
+        )
 
         return {
             "analysis_type": result.type,
@@ -954,7 +882,13 @@ def create_quick_report(
             "data_records": len(data),
             "period_range": f"{periods[0]}~{periods[-1]}" if periods else "N/A",
             "region_count": len(regions),
-            "components": ["KPI 카드 (3개)", "추이 라인 차트", "비교 막대 차트", "인사이트 박스", "데이터 출처"],
+            "components": [
+                "KPI 카드 (3개)",
+                "추이 라인 차트",
+                "비교 막대 차트",
+                "인사이트 박스",
+                "데이터 출처",
+            ],
         }
 
         if output_path:
@@ -982,6 +916,7 @@ def create_quick_report(
 # =============================================================================
 # Layer 4: DATA ACCESS - 저장된 데이터 접근 도구
 # =============================================================================
+
 
 @mcp.tool
 def list_stored_data() -> dict:
@@ -1018,7 +953,7 @@ def list_stored_data() -> dict:
             "stored_files": files[:20],  # 최근 20개만
             "total_files": len(files),
             "hint": "read_stored_data(data_id)로 전체 데이터 접근, "
-                   "read_stored_data(data_id, chunk_index=0)로 청크별 접근",
+            "read_stored_data(data_id, chunk_index=0)로 청크별 접근",
         }
     except Exception as e:
         logger.error(f"list_stored_data error: {e}")
@@ -1096,6 +1031,7 @@ def read_stored_data(
 # Layer 4: CODE EXECUTION - LLM 코드 실행
 # =============================================================================
 
+
 @mcp.tool
 def execute_code(
     code: str,
@@ -1128,6 +1064,7 @@ def execute_code(
         data = None
         if data_id:
             from kosis_tools.report_tools import load_raw_data
+
             result = load_raw_data(data_id)
             if "error" not in result:
                 data = result.get("data", [])
@@ -1151,7 +1088,7 @@ def execute_code(
                 "fix_hints": validation.get("fix_hints", []),
                 "data_signature": validation.get("data_signature", {}),
                 "action_required": "데이터 시그니처를 확인하고 시각화 코드를 수정해서 다시 실행하세요.",
-                "code_example": '''
+                "code_example": """
 # 올바른 코드 패턴 예시:
 df = prepare_data(data, numeric_fields=["DT"])
 
@@ -1175,7 +1112,7 @@ if not spec.get("data", {}).get("values"):
     raise ValueError("차트 데이터가 비어있습니다.")
 
 return save_report(build_report("리포트", [{"type": "chart", "vega_spec": spec}]), "report")
-''',
+""",
             }
             return error_response
 
@@ -1190,13 +1127,13 @@ return save_report(build_report("리포트", [{"type": "chart", "vega_spec": spe
             "stdout": "",
             "error": str(e),
             "code_templates": {
-                "data_aggregation": '''
+                "data_aggregation": """
 # 데이터 집계 예시
 df = prepare_data(data, numeric_fields=["DT"])
 result = df.groupby("C1_NM")["DT"].sum().sort_values(ascending=False)
 return result.head(10).to_dict()
-''',
-                "line_chart": '''
+""",
+                "line_chart": """
 # 라인 차트 예시
 df = prepare_data(data, numeric_fields=["DT"])
 chart = alt.Chart(df).mark_line(point=True).encode(
@@ -1205,8 +1142,8 @@ chart = alt.Chart(df).mark_line(point=True).encode(
     color='C1_NM:N'
 ).properties(title="추이", width=600, height=400)
 return chart_to_json(chart)
-''',
-                "bar_chart": '''
+""",
+                "bar_chart": """
 # 막대 차트 예시
 df = prepare_data(data, numeric_fields=["DT"])
 chart = alt.Chart(df).mark_bar().encode(
@@ -1214,8 +1151,8 @@ chart = alt.Chart(df).mark_bar().encode(
     y='DT:Q'
 ).properties(title="비교", width=600, height=400)
 return save_chart(chart, "result.html")
-''',
-                "statistics": '''
+""",
+                "statistics": """
 # 통계 분석 예시
 df = prepare_data(data, numeric_fields=["DT"])
 stats = {
@@ -1226,21 +1163,22 @@ stats = {
     "max": df["DT"].max()
 }
 return stats
-'''
+""",
             },
             "available_modules": ["pd (pandas)", "alt (altair)", "np (numpy)"],
             "available_functions": [
                 "prepare_data(data, numeric_fields=['DT']) → DataFrame",
                 "save_chart(chart, filename) → {'path': ..., 'format': ...}",
                 "chart_to_json(chart) → Vega-Lite JSON",
-                "chart_to_html(chart, title) → HTML 문자열"
-            ]
+                "chart_to_html(chart, title) → HTML 문자열",
+            ],
         }
 
 
 # =============================================================================
 # Layer 4.1: MODULAR EXECUTORS - 특화된 코드 실행
 # =============================================================================
+
 
 @mcp.tool
 def execute_visualization(
@@ -1282,6 +1220,7 @@ def execute_visualization(
         data = None
         if data_id:
             from kosis_tools.report_tools import load_raw_data
+
             result = load_raw_data(data_id)
             if "error" not in result:
                 data = result.get("data", [])
@@ -1346,6 +1285,7 @@ def execute_analysis(
         data = None
         if data_id:
             from kosis_tools.report_tools import load_raw_data
+
             result = load_raw_data(data_id)
             if "error" not in result:
                 data = result.get("data", [])
@@ -1402,6 +1342,7 @@ def execute_table(
         data = None
         if data_id:
             from kosis_tools.report_tools import load_raw_data
+
             result = load_raw_data(data_id)
             if "error" not in result:
                 data = result.get("data", [])
@@ -1425,7 +1366,7 @@ def execute_report(
     charts_json: Optional[str] = None,
     tables_json: Optional[str] = None,
     data_id: Optional[str] = None,
-) -> dict:
+) -> dict | str:
     """
     리포트 생성 코드를 실행합니다. 시각화+분석+테이블을 조합.
 
@@ -1459,6 +1400,7 @@ def execute_report(
         data = None
         if data_id:
             from kosis_tools.report_tools import load_raw_data
+
             result = load_raw_data(data_id)
             if "error" not in result:
                 data = result.get("data", [])
@@ -1519,6 +1461,7 @@ def get_executor_guide(executor_type: str) -> dict:
 # =============================================================================
 # Resources - 정적 데이터 리소스
 # =============================================================================
+
 
 @mcp.resource("kosis://regions")
 def get_regions_resource() -> dict:
@@ -1592,6 +1535,7 @@ def get_period_types_resource() -> dict:
 # 템플릿 가이드 도구 (토큰 효율적 계층 구조)
 # =============================================================================
 
+
 @mcp.tool
 def get_report_templates() -> dict:
     """
@@ -1636,7 +1580,9 @@ def get_template_guide(
         # 특정 단계만 반환 (토큰 절약)
         result = get_template_step(template_id, step)
         if not result:
-            return {"error": f"템플릿 '{template_id}' 또는 단계 {step}을 찾을 수 없습니다."}
+            return {
+                "error": f"템플릿 '{template_id}' 또는 단계 {step}을 찾을 수 없습니다."
+            }
         return result
     else:
         # 전체 구조 반환
@@ -1669,7 +1615,7 @@ def get_element_guide(element_type: str) -> dict:
 
 
 @mcp.tool
-def recommend_template(data_id: Optional[str] = None) -> dict:
+def recommend_template(data_id: Optional[str] = None) -> dict | None:
     """
     데이터 특성 기반 템플릿 추천.
 
@@ -1685,6 +1631,7 @@ def recommend_template(data_id: Optional[str] = None) -> dict:
 
     if data_id:
         from kosis_tools.report_tools import load_raw_data
+
         result = load_raw_data(data_id)
         if "error" in result:
             return result
@@ -1692,6 +1639,7 @@ def recommend_template(data_id: Optional[str] = None) -> dict:
         data = result.get("data", [])
         # 데이터 시그니처 생성
         from kosis_tools.code_executor import CodeExecutor
+
         executor = CodeExecutor()
         signature = executor._generate_data_signature(data)
         recommendation = _recommend(signature)
@@ -1704,7 +1652,14 @@ def recommend_template(data_id: Optional[str] = None) -> dict:
         # 일반 가이드
         return {
             "tip": "data_id를 제공하면 데이터 기반 추천을 받을 수 있습니다.",
-            "available_templates": ["trend", "compare", "composition", "correlation", "dashboard", "ranking"],
+            "available_templates": [
+                "trend",
+                "compare",
+                "composition",
+                "correlation",
+                "dashboard",
+                "ranking",
+            ],
             "default": "dashboard",
         }
 
@@ -1713,35 +1668,36 @@ def recommend_template(data_id: Optional[str] = None) -> dict:
 # 템플릿 리소스 (상세 참조용)
 # =============================================================================
 
-@mcp.resource("kosis://templates")
-def get_templates_resource() -> dict:
-    """
-    리포트 템플릿 전체 목록 (리소스).
 
-    각 템플릿의 ID, 이름, 용도, 섹션 수를 제공합니다.
-    """
+@mcp.resource("kosis://templates")
+def get_templates_resource() -> dict | list[dict]:
+    """리포트 템플릿 전체 목록 (리소스). 각 템플릿의 ID·이름·용도·섹션 수."""
     from kosis_tools.story_templates import get_template_list
+
     return get_template_list()
 
 
 @mcp.resource("kosis://templates/trend")
-def get_trend_template_resource() -> dict:
+def get_trend_template_resource() -> dict | None:
     """트렌드 분석 템플릿 상세."""
     from kosis_tools.story_templates import get_template_guide
+
     return get_template_guide("trend")
 
 
 @mcp.resource("kosis://templates/compare")
-def get_compare_template_resource() -> dict:
+def get_compare_template_resource() -> dict | None:
     """비교 분석 템플릿 상세."""
     from kosis_tools.story_templates import get_template_guide
+
     return get_template_guide("compare")
 
 
 @mcp.resource("kosis://templates/dashboard")
-def get_dashboard_template_resource() -> dict:
+def get_dashboard_template_resource() -> dict | None:
     """대시보드 템플릿 상세."""
     from kosis_tools.story_templates import get_template_guide
+
     return get_template_guide("dashboard")
 
 
@@ -1749,6 +1705,7 @@ def get_dashboard_template_resource() -> dict:
 def get_chart_guide_resource() -> dict:
     """차트 선택 가이드."""
     from kosis_tools.story_templates import CHART_GUIDE
+
     return CHART_GUIDE
 
 
@@ -1840,7 +1797,7 @@ def get_visualization_guide_resource() -> dict:
 def get_code_patterns_resource() -> dict:
     """코드 패턴 예시 - 복사-붙여넣기 가능한 템플릿."""
     patterns = {
-        "line_chart": '''# 라인 차트 (트렌드)
+        "line_chart": """# 라인 차트 (트렌드)
 df = prepare_data(data, numeric_fields=["DT"])
 chart = alt.Chart(df).mark_line(point=True).encode(
     x=alt.X('PRD_DE:N', title='연도'),
@@ -1848,18 +1805,16 @@ chart = alt.Chart(df).mark_line(point=True).encode(
     color=alt.Color('C1_NM:N', title='분류'),
     tooltip=['PRD_DE', 'C1_NM', alt.Tooltip('DT:Q', format=',')]
 ).properties(title='추이 분석', width=600, height=400)
-return save_chart(chart, "trend")''',
-
-        "bar_chart": '''# 막대 차트 (비교)
+return save_chart(chart, "trend")""",
+        "bar_chart": """# 막대 차트 (비교)
 df = prepare_data(data, numeric_fields=["DT"])
 chart = alt.Chart(df).mark_bar().encode(
     x=alt.X('C1_NM:N', sort='-y', title='분류'),
     y=alt.Y('sum(DT):Q', title='합계', axis=alt.Axis(format=',')),
     color=alt.value('#667eea')
 ).properties(title='비교 분석', width=600, height=400)
-return save_chart(chart, "comparison")''',
-
-        "donut_chart": '''# 도넛 차트 (비율)
+return save_chart(chart, "comparison")""",
+        "donut_chart": """# 도넛 차트 (비율)
 df = prepare_data(data, numeric_fields=["DT"])
 df_agg = df.groupby("C1_NM")["DT"].sum().reset_index()
 chart = alt.Chart(df_agg).mark_arc(innerRadius=50).encode(
@@ -1867,9 +1822,8 @@ chart = alt.Chart(df_agg).mark_arc(innerRadius=50).encode(
     color=alt.Color("C1_NM:N", title="구성"),
     tooltip=["C1_NM", alt.Tooltip("DT:Q", format=",")]
 ).properties(title='구성 비율', width=400, height=400)
-return save_chart(chart, "composition")''',
-
-        "full_report": '''# 완전한 리포트
+return save_chart(chart, "composition")""",
+        "full_report": """# 완전한 리포트
 df = prepare_data(data, numeric_fields=["DT"])
 
 # 핵심 수치 계산
@@ -1894,12 +1848,11 @@ html = build_report(
         {'type': 'table', 'html': to_table_html(df.head(10), title='상세 데이터')},
     ]
 )
-return save_report(html, 'analysis_report')''',
-
-        "aggregation": '''# 데이터 집계
+return save_report(html, 'analysis_report')""",
+        "aggregation": """# 데이터 집계
 df = prepare_data(data, numeric_fields=["DT"])
 result = df.groupby("C1_NM")["DT"].agg(['sum', 'mean', 'count']).sort_values('sum', ascending=False)
-return result.head(10).to_dict()''',
+return result.head(10).to_dict()""",
     }
     return patterns
 
@@ -1907,6 +1860,7 @@ return result.head(10).to_dict()''',
 # =============================================================================
 # HTTP 앱 생성 (아티팩트 서빙 포함)
 # =============================================================================
+
 
 def create_http_app():
     """
@@ -1940,7 +1894,9 @@ def create_http_app():
     )
 
     # 아티팩트 정적 파일 서빙
-    app.mount("/artifacts", StaticFiles(directory=str(artifacts_path)), name="artifacts")
+    app.mount(
+        "/artifacts", StaticFiles(directory=str(artifacts_path)), name="artifacts"
+    )
 
     # MCP 엔드포인트 마운트
     mcp_app = mcp.http_app(path="/mcp")
@@ -1965,14 +1921,163 @@ def create_http_app():
 
 
 # =============================================================================
+# Tool surface filtering (US-003): expose only V1_EXPOSED to LLM clients.
+# Internal tools remain reachable via discover_tools() / execute_tool().
+# =============================================================================
+
+from .discover import _register_full_registry  # noqa: E402
+from .discover import discover_tools as _discover_tools_impl  # noqa: E402
+from .discover import execute_tool as _execute_tool_impl  # noqa: E402
+from .exposed_tools import V1_EXPOSED_NAMES  # noqa: E402
+
+from kosis_tools.verify import verify_statistics as _verify_statistics_impl  # noqa: E402
+
+
+@mcp.tool
+async def verify_statistics(
+    claim: str,
+    table_id: Optional[str] = None,
+    tolerance: float = 0.01,
+) -> dict:
+    """LLM이 생성한 숫자 주장을 KOSIS 원본 데이터와 대조 검증합니다 (US-005).
+
+    한국어/영문 자연어 주장에서 숫자 + 시점 + 지역 + 지표를 추출하여
+    KOSIS의 실제 셀 값과 상대 오차 비교 후 일치 여부를 반환합니다.
+
+    Args:
+        claim: 검증할 주장 (예: "2023년 서울 인구는 9.4M명").
+        table_id: 알고 있는 KOSIS TBL_ID. 'org_id:tbl_id' 형식도 허용.
+            생략하면 키워드 검색으로 자동 추정합니다 (정확도 ↓).
+        tolerance: 상대 허용 오차. 기본 0.01 (= 1%).
+
+    Returns:
+        VerifyResult dict: match, expected, actual, diff_pct, tolerance,
+        table_id, source_url, confidence, explanation.
+    """
+    result = await _verify_statistics_impl(
+        claim, table_id=table_id, tolerance=tolerance
+    )
+    return result.to_dict()
+
+
+@mcp.tool
+def discover_tools() -> dict:
+    """노출/내부 도구 전체 목록 조회.
+
+    LLM에 기본 노출되는 도구는 V1_EXPOSED 한정이지만, 모든 등록된
+    내부 도구는 execute_tool(name, args)로 호출할 수 있습니다.
+
+    Returns:
+        dict with keys: exposed, internal, total, exposed_count.
+    """
+    return _discover_tools_impl()
+
+
+@mcp.tool
+def execute_tool(name: str, args: Optional[dict] = None) -> dict:
+    """이름으로 임의의 등록된 도구를 호출 (파워유저 escape hatch).
+
+    Args:
+        name: 도구 이름 (discover_tools()로 확인 가능).
+        args: 도구에 전달할 키워드 인자. 시그니처와 맞지 않으면 에러 반환.
+
+    Returns:
+        {"tool": name, "result": ...} 또는 {"tool": name, "error": ...}.
+    """
+    return _execute_tool_impl(name, args or {})
+
+
+def _prune_unexposed_tools() -> None:
+    """Remove tools not in V1_EXPOSED from the public MCP tools/list response.
+
+    Functions remain importable and callable via execute_tool(); only the
+    LLM-facing tools/list surface is trimmed.
+    """
+    import asyncio as _asyncio
+
+    try:
+        registered = _asyncio.run(mcp.get_tools())
+    except RuntimeError:
+        # Already inside an event loop (e.g. during tests). Skip pruning;
+        # the harness will get the full surface, which is safe but verbose.
+        logger.warning("event loop running at import time; skipping tool pruning")
+        return
+
+    # Snapshot the FULL registry BEFORE pruning so execute_tool can still
+    # reach internal tools after they're hidden from tools/list.
+    _register_full_registry(registered)
+
+    removed = 0
+    for tool_name in list(registered.keys()):
+        if tool_name not in V1_EXPOSED_NAMES:
+            try:
+                mcp.remove_tool(tool_name)
+                removed += 1
+            except Exception as exc:  # pragma: no cover - defensive
+                logger.warning(f"failed to hide tool {tool_name!r}: {exc}")
+
+    logger.info(
+        f"tool surface filtered: {len(V1_EXPOSED_NAMES)} exposed, "
+        f"{removed} hidden (still reachable via execute_tool)"
+    )
+
+
+_prune_unexposed_tools()
+
+
+# =============================================================================
 # 엔트리포인트
 # =============================================================================
 
+
+def _print_version() -> None:
+    """Print package name + version. Read version from installed metadata."""
+    try:
+        from importlib.metadata import version as _v
+
+        v = _v("korean-stat-mcp")
+    except Exception:
+        v = "unknown (not installed as a package)"
+    print(f"korean-stat-mcp {v}")
+
+
+def _print_help() -> None:
+    print(
+        """korean-stat-mcp — Korean Statistics (KOSIS) MCP server
+
+Usage:
+  korean-stat-mcp [--http] [--version] [--help]
+
+Options:
+  --http       Run as HTTP server (uvicorn). Defaults to stdio MCP mode.
+  --version    Print version and exit.
+  --help, -h   Show this message and exit.
+
+Environment:
+  KOSIS_API_KEY        Required. KOSIS OpenAPI key.
+  KOSIS_PORT           HTTP port (default: 8000; with --http only).
+  KOSIS_HOST           HTTP host (default: 0.0.0.0; with --http only).
+  KOSIS_ARTIFACTS_DIR  Local artifact dir (default: /tmp/kosis_artifacts).
+  DATABASE_URL         Optional Postgres URL (with [postgres] extra).
+  R2_*                 Optional Cloudflare R2 credentials (with [r2] extra).
+
+Docs: https://github.com/seolcoding/korean-stat-mcp
+"""
+    )
+
+
 def main():
-    """MCP 서버 실행."""
+    """MCP 서버 실행 / CLI entrypoint."""
+    if "--version" in sys.argv:
+        _print_version()
+        return
+    if "--help" in sys.argv or "-h" in sys.argv:
+        _print_help()
+        return
+
     if "--http" in sys.argv:
-        # HTTP 모드
         import uvicorn
+
         port = int(os.environ.get("KOSIS_PORT", "8000"))
         host = os.environ.get("KOSIS_HOST", "0.0.0.0")
 
@@ -1983,7 +2088,6 @@ def main():
         app = create_http_app()
         uvicorn.run(app, host=host, port=port)
     else:
-        # stdio 모드 (기본)
         mcp.run()
 
 

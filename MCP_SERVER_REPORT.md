@@ -258,7 +258,7 @@ return save_chart(chart, "population.html")
 
 **실행 방법**:
 ```bash
-uv run python scripts/test_mcp_server.py https://schedule-fell-quizzes-comments.trycloudflare.com
+uv run python scripts/test_mcp_server.py ${KOSIS_MCP_URL}
 ```
 
 ### E2E 워크플로 테스트 (5/5 통과) ✅
@@ -299,7 +299,7 @@ uv run python scripts/test_mcp_server.py https://schedule-fell-quizzes-comments.
 
 **실행 방법**:
 ```bash
-uv run python scripts/test_e2e_workflow.py https://schedule-fell-quizzes-comments.trycloudflare.com
+uv run python scripts/test_e2e_workflow.py ${KOSIS_MCP_URL}
 ```
 
 ### R2 스토리지 검증
@@ -320,11 +320,11 @@ Content-Type: text/html; charset=utf-8
 
 ## 🚀 배포 현황
 
-### 원격 서버 (wai-3090ti)
+### 원격 서버 (사용자 자체 호스팅 예시)
 
 | 항목 | 정보 |
 |------|------|
-| 호스트 | wai-3090ti-System-Product-Name |
+| 호스트 | 사용자 자체 호스팅 |
 | 업타임 | 1주 1일 5시간+ |
 | OS | Ubuntu 24.04 (Kernel 6.14.0-36) |
 | 디스크 | 457GB (사용률 57%) |
@@ -352,7 +352,7 @@ SELECT COUNT(*) FROM kosis_tables WHERE embedding IS NOT NULL;
 
 | 엔드포인트 | URL |
 |-----------|-----|
-| **Cloudflare Tunnel** | `https://schedule-fell-quizzes-comments.trycloudflare.com` |
+| **Cloudflare Tunnel** | `${KOSIS_MCP_URL}` |
 | Health Check | `/health` |
 | Info | `/info` |
 | MCP Protocol | `/` (POST, StreamableHTTP) |
@@ -387,7 +387,7 @@ code ~/Library/Application\ Support/Claude/claude_desktop_config.json
 {
   "mcpServers": {
     "kosis": {
-      "url": "https://schedule-fell-quizzes-comments.trycloudflare.com",
+      "url": "${KOSIS_MCP_URL}",
       "transport": "streamable-http"
     }
   }
@@ -410,7 +410,7 @@ Claude: [search_tables_hybrid 호출]
 ### 직접 API 호출
 
 ```bash
-curl -X POST https://schedule-fell-quizzes-comments.trycloudflare.com/ \
+curl -X POST ${KOSIS_MCP_URL}/ \
   -H "Content-Type: application/json" \
   -H "Accept: application/json, text/event-stream" \
   -d '{

@@ -159,31 +159,15 @@ search_statistics("출생", limit=5)
 }
 ```
 
-#### search_tables_hybrid
+#### 하이브리드 검색 제거 안내
 
-자연어/의미 기반 하이브리드 검색입니다. 벡터 유사도와 BM25 키워드 검색을 결합합니다.
+이전 하이브리드 검색 도구는 v0.1.0 공개 릴리스에서 제거되었습니다. 현재 기본 검색은 KOSIS 공식 `statisticsSearch.do`를 감싼 `search_statistics`입니다.
 
-> ⚠️ PostgreSQL + pgvector 설정 필요
-
-```
-파라미터:
-- query (필수): 검색어 (자연어 가능)
-- limit (선택): 최대 결과 수 (기본: 10)
-- fts_weight (선택): 키워드 검색 가중치 (0-1, 기본: 0.5)
-- vector_weight (선택): 의미 검색 가중치 (0-1, 기본: 0.5)
+```python
+search_statistics("경제", limit=10)
 ```
 
-**예시:**
-```
-search_tables_hybrid("경제가 좋아졌는지 알 수 있는 데이터")
-
-결과:
-- GDP 성장률
-- 경제활동인구
-- 고용률
-- 소비자물가지수
-...
-```
+PostgreSQL은 선택적 FTS 메타데이터 검색용으로만 남아 있으며, 기본 설치와 기본 MCP 도구 사용에는 필요하지 않습니다.
 
 #### get_table_metadata
 
@@ -606,7 +590,7 @@ read_stored_data(data_id="...", chunk_index=0)
 ### Q: 하이브리드 검색과 키워드 검색의 차이는?
 
 - **키워드 검색** (`search_statistics`): KOSIS API 직접 호출, 정확한 키워드 필요
-- **하이브리드 검색** (`search_tables_hybrid`): 의미 기반 검색 포함, PostgreSQL 필요
+- **하이브리드 검색**: v0.1.0에서 제거됨. 의미 검색이 필요하면 별도 애플리케이션 레이어에서 구현하세요.
 
 ### Q: 차트가 열리지 않아요
 
@@ -635,4 +619,4 @@ read_stored_data(data_id="...", chunk_index=0)
 
 ---
 
-*문서 피드백이나 질문은 [GitHub Issues](https://github.com/sdh/kosis-mcp/issues)에 남겨주세요.*
+*문서 피드백이나 질문은 [GitHub Issues](https://github.com/seolcoding/korean-stat-mcp/issues)에 남겨주세요.*

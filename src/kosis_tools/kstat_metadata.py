@@ -42,7 +42,6 @@ import requests
 from bs4 import BeautifulSoup
 
 from .base import KosisBaseClient
-from .config import KosisConfig
 
 logger = logging.getLogger(__name__)
 
@@ -303,7 +302,9 @@ class KstatMetadata(KosisBaseClient):
 
             # 최소한 통계명이라도 추출되었는지 확인
             if "stats_name" in metadata:
-                logger.info(f"k-stat 메타데이터 추출 완료: {metadata.get('stats_name')}")
+                logger.info(
+                    f"k-stat 메타데이터 추출 완료: {metadata.get('stats_name')}"
+                )
                 return metadata
 
             # 페이지 구조가 다른 경우 대체 파싱 시도

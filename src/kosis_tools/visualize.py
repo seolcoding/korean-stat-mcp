@@ -25,7 +25,7 @@ from __future__ import annotations
 
 import logging
 from pathlib import Path
-from typing import Any, Dict, List, Union
+from typing import Any, Dict, List
 
 import altair as alt
 import pandas as pd
@@ -58,8 +58,11 @@ def prepare_data(
     for field in numeric_fields:
         if field in df.columns:
             df[field] = pd.to_numeric(
-                df[field].astype(str).str.replace(",", "").replace(["-", "", "*"], None),
-                errors="coerce"
+                df[field]
+                .astype(str)
+                .str.replace(",", "")
+                .replace(["-", "", "*"], None),
+                errors="coerce",
             )
 
     return df
@@ -124,6 +127,7 @@ def save_chart(
         output_path.mkdir(parents=True, exist_ok=True)
 
         import shutil
+
         final_path = output_path / filename
         shutil.move(tmp_path, final_path)
 
@@ -144,7 +148,7 @@ def chart_to_json(chart: alt.Chart) -> str:
 def chart_to_html(chart: alt.Chart, title: str = "Chart") -> str:
     """차트를 standalone HTML로 변환."""
     spec = chart.to_json()
-    return f'''<!DOCTYPE html>
+    return f"""<!DOCTYPE html>
 <html>
 <head>
     <title>{title}</title>
@@ -158,4 +162,4 @@ def chart_to_html(chart: alt.Chart, title: str = "Chart") -> str:
         vegaEmbed('#chart', {spec}, {{"renderer": "svg"}}).catch(console.error);
     </script>
 </body>
-</html>'''
+</html>"""

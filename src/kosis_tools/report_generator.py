@@ -70,6 +70,7 @@ class UserQuery:
         include_visualization: 시각화 포함 여부
         custom_params: 추가 파라미터
     """
+
     raw_query: str
     target_regions: List[str] = field(default_factory=list)
     target_periods: List[str] = field(default_factory=list)
@@ -93,6 +94,7 @@ class ReportSection:
         charts: 관련 시각화 리스트
         data: 관련 데이터 (DataFrame 또는 dict)
     """
+
     name: str
     title: str
     content: str
@@ -161,12 +163,16 @@ class ReportGenerator:
         # 지역 키워드 추출
         available_regions = self.tx.get_unique_values(Fields.C1_NM)
         for region in available_regions:
-            if region in query or region.replace("특별시", "").replace("광역시", "") in query:
+            if (
+                region in query
+                or region.replace("특별시", "").replace("광역시", "") in query
+            ):
                 user_query.target_regions.append(region)
 
         # 기간 키워드 추출 (연도)
         available_periods = self.tx.get_unique_values(Fields.PERIOD)
         import re
+
         year_pattern = r"20\d{2}"
         years_in_query = re.findall(year_pattern, query)
         for year in years_in_query:
@@ -179,8 +185,7 @@ class ReportGenerator:
         if range_match:
             start, end = int(range_match.group(1)), int(range_match.group(2))
             user_query.target_periods = [
-                str(y) for y in range(start, end + 1)
-                if str(y) in available_periods
+                str(y) for y in range(start, end + 1) if str(y) in available_periods
             ]
 
         # 비교 유형 결정
@@ -203,9 +208,13 @@ class ReportGenerator:
             user_query.analysis_depth = "quick"
 
         # 시각화 여부
-        user_query.include_visualization = any(
-            word in query for word in ["차트", "그래프", "시각화", "chart", "graph", "plot"]
-        ) or "시각" not in query  # 기본적으로 시각화 포함
+        user_query.include_visualization = (
+            any(
+                word in query
+                for word in ["차트", "그래프", "시각화", "chart", "graph", "plot"]
+            )
+            or "시각" not in query
+        )  # 기본적으로 시각화 포함
 
         return user_query
 
@@ -254,14 +263,16 @@ class ReportGenerator:
         report_lines = []
 
         # 헤더
-        report_lines.append(f"# 📊 KOSIS 데이터 분석 리포트")
+        report_lines.append("# 📊 KOSIS 데이터 분석 리포트")
         report_lines.append("")
         report_lines.append(f"> **분석 요청**: {parsed_query.raw_query}")
         report_lines.append("")
 
         # 각 섹션 생성
         for section_name in sections:
-            section = self._generate_section(section_name, filtered_tx, parsed_query, output_dir)
+            section = self._generate_section(
+                section_name, filtered_tx, parsed_query, output_dir
+            )
             if section:
                 self._sections.append(section)
                 report_lines.append(f"## {section.title}")
@@ -317,34 +328,40 @@ class ReportGenerator:
             if user_query is None:
                 user_query = "전체 데이터 분석"
             parsed_query = self.parse_user_query(user_query)
-        debug_steps.append({
-            "step": "parse_query",
-            "detail": f"쿼리 파싱: '{parsed_query.raw_query}'",
-            "duration_ms": (time.perf_counter() - step_start) * 1000
-        })
+        debug_steps.append(
+            {
+                "step": "parse_query",
+                "detail": f"쿼리 파싱: '{parsed_query.raw_query}'",
+                "duration_ms": (time.perf_counter() - step_start) * 1000,
+            }
+        )
 
         # 2. 섹션 자동 결정
         step_start = time.perf_counter()
         if sections is None:
             sections = self._determine_sections(parsed_query)
-        debug_steps.append({
-            "step": "determine_sections",
-            "detail": f"섹션 결정: {', '.join(sections)}",
-            "sections": sections,
-            "duration_ms": (time.perf_counter() - step_start) * 1000
-        })
+        debug_steps.append(
+            {
+                "step": "determine_sections",
+                "detail": f"섹션 결정: {', '.join(sections)}",
+                "sections": sections,
+                "duration_ms": (time.perf_counter() - step_start) * 1000,
+            }
+        )
 
         # 3. 데이터 필터링
         step_start = time.perf_counter()
         filtered_tx = self._apply_query_filters(parsed_query)
         records_after = len(filtered_tx.df)
-        debug_steps.append({
-            "step": "filter_data",
-            "detail": f"데이터 필터링: {records_before}건 → {records_after}건",
-            "records_before": records_before,
-            "records_after": records_after,
-            "duration_ms": (time.perf_counter() - step_start) * 1000
-        })
+        debug_steps.append(
+            {
+                "step": "filter_data",
+                "detail": f"데이터 필터링: {records_before}건 → {records_after}건",
+                "records_before": records_before,
+                "records_after": records_after,
+                "duration_ms": (time.perf_counter() - step_start) * 1000,
+            }
+        )
 
         # 제목 설정
         report_title = title or f"KOSIS 데이터 분석: {parsed_query.raw_query}"
@@ -352,20 +369,24 @@ class ReportGenerator:
         # 4. HTML 헤더 생성
         step_start = time.perf_counter()
         html_parts = [self._html_header(report_title)]
-        debug_steps.append({
-            "step": "generate_header",
-            "detail": "HTML 헤더 생성",
-            "duration_ms": (time.perf_counter() - step_start) * 1000
-        })
+        debug_steps.append(
+            {
+                "step": "generate_header",
+                "detail": "HTML 헤더 생성",
+                "duration_ms": (time.perf_counter() - step_start) * 1000,
+            }
+        )
 
         # 5. 요약 정보 카드 생성
         step_start = time.perf_counter()
         html_parts.append(self._html_summary_card(filtered_tx, parsed_query))
-        debug_steps.append({
-            "step": "generate_summary_card",
-            "detail": "요약 카드 생성",
-            "duration_ms": (time.perf_counter() - step_start) * 1000
-        })
+        debug_steps.append(
+            {
+                "step": "generate_summary_card",
+                "detail": "요약 카드 생성",
+                "duration_ms": (time.perf_counter() - step_start) * 1000,
+            }
+        )
 
         # 6. 각 섹션 생성
         for section_name in sections:
@@ -375,21 +396,25 @@ class ReportGenerator:
             )
             if section_html:
                 html_parts.append(section_html)
-            debug_steps.append({
-                "step": f"generate_section_{section_name}",
-                "detail": f"섹션 생성: {section_name}",
-                "success": section_html is not None,
-                "duration_ms": (time.perf_counter() - step_start) * 1000
-            })
+            debug_steps.append(
+                {
+                    "step": f"generate_section_{section_name}",
+                    "detail": f"섹션 생성: {section_name}",
+                    "success": section_html is not None,
+                    "duration_ms": (time.perf_counter() - step_start) * 1000,
+                }
+            )
 
         # 7. 푸터 생성
         step_start = time.perf_counter()
         html_parts.append(self._html_footer())
-        debug_steps.append({
-            "step": "generate_footer",
-            "detail": "HTML 푸터 생성",
-            "duration_ms": (time.perf_counter() - step_start) * 1000
-        })
+        debug_steps.append(
+            {
+                "step": "generate_footer",
+                "detail": "HTML 푸터 생성",
+                "duration_ms": (time.perf_counter() - step_start) * 1000,
+            }
+        )
 
         html_content = "\n".join(html_parts)
 
@@ -428,13 +453,13 @@ class ReportGenerator:
                         "unique_periods": len(self.tx.get_unique_values(Fields.PERIOD)),
                     },
                     "output_path": output_path.name,
-                    "total_duration_ms": total_duration
+                    "total_duration_ms": total_duration,
                 }
 
-                debug_path = output_path.with_suffix('.debug.json')
+                debug_path = output_path.with_suffix(".debug.json")
                 debug_path.write_text(
                     json.dumps(debug_info, ensure_ascii=False, indent=2),
-                    encoding="utf-8"
+                    encoding="utf-8",
                 )
                 logger.info(f"디버그 정보 저장: {debug_path}")
 
@@ -444,7 +469,7 @@ class ReportGenerator:
 
     def _html_header(self, title: str) -> str:
         """HTML 헤더 생성"""
-        return f'''<!DOCTYPE html>
+        return f"""<!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
@@ -601,13 +626,14 @@ class ReportGenerator:
             <h1>📊 {title}</h1>
             <p class="subtitle">KOSIS 데이터 기반 자동 생성 분석 보고서</p>
         </div>
-'''
+"""
 
     def _html_footer(self) -> str:
         """HTML 푸터 생성"""
         from datetime import datetime
+
         now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-        return f'''
+        return f"""
         <div class="footer">
             <p>Generated by KOSIS Data Processor | {now}</p>
             <p>Data Source: <a href="https://kosis.kr" target="_blank">KOSIS (국가통계포털)</a></p>
@@ -615,7 +641,7 @@ class ReportGenerator:
     </div>
 </body>
 </html>
-'''
+"""
 
     def _html_summary_card(self, tx: KosisTransformer, query: UserQuery) -> str:
         """요약 카드 HTML 생성"""
@@ -629,7 +655,7 @@ class ReportGenerator:
         period_range = f"{periods[0]} ~ {periods[-1]}" if periods else "N/A"
         region_count = len(regions)
 
-        return f'''
+        return f"""
         <div class="card">
             <h2>📋 데이터 요약</h2>
             <div class="query-badge">분석 요청: {query.raw_query}</div>
@@ -648,7 +674,7 @@ class ReportGenerator:
                 </div>
             </div>
         </div>
-'''
+"""
 
     def _generate_html_section(
         self,
@@ -680,12 +706,11 @@ class ReportGenerator:
         context = FieldLabels.detect_context(tx.to_records(), query.raw_query)
 
         rows = ""
-        for field, info in list(field_info.items())[:8]:
-            # 필드명을 한국어 라벨로 변환
-            korean_label = FieldLabels.get_label(field, context)
+        for fname, info in list(field_info.items())[:8]:
+            korean_label = FieldLabels.get_label(fname, context)
             rows += f"<tr><td>{korean_label}</td><td>{info['dtype']}</td><td>{info['nunique']}</td></tr>"
 
-        return f'''
+        return f"""
         <div class="card">
             <h2>🔍 데이터 구조 탐색</h2>
             <table>
@@ -697,7 +722,7 @@ class ReportGenerator:
                 </tbody>
             </table>
         </div>
-'''
+"""
 
     def _html_stats(self, tx: KosisTransformer, query: UserQuery) -> str:
         """통계 섹션 HTML"""
@@ -706,29 +731,29 @@ class ReportGenerator:
 
         stats = tx.get_summary_stats()
 
-        return f'''
+        return f"""
         <div class="card">
             <h2>📈 주요 통계</h2>
             <div class="stats-grid">
                 <div class="stat-item">
-                    <div class="stat-value">{stats['mean'].iloc[0]:,.0f}</div>
+                    <div class="stat-value">{stats["mean"].iloc[0]:,.0f}</div>
                     <div class="stat-label">평균</div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-value">{stats['min'].iloc[0]:,.0f}</div>
+                    <div class="stat-value">{stats["min"].iloc[0]:,.0f}</div>
                     <div class="stat-label">최소값</div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-value">{stats['max'].iloc[0]:,.0f}</div>
+                    <div class="stat-value">{stats["max"].iloc[0]:,.0f}</div>
                     <div class="stat-label">최대값</div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-value">{stats['std'].iloc[0]:,.0f}</div>
+                    <div class="stat-value">{stats["std"].iloc[0]:,.0f}</div>
                     <div class="stat-label">표준편차</div>
                 </div>
             </div>
         </div>
-'''
+"""
 
     def _html_comparison(self, tx: KosisTransformer, query: UserQuery) -> str:
         """비교 섹션 HTML"""
@@ -743,7 +768,7 @@ class ReportGenerator:
         for _, row in grouped.iterrows():
             rows += f"<tr><td>{row[Fields.C1_NM]}</td><td>{row[Fields.VALUE]:,.0f}</td></tr>"
 
-        return f'''
+        return f"""
         <div class="card">
             <h2>⚖️ 지역별 비교</h2>
             <table>
@@ -755,7 +780,7 @@ class ReportGenerator:
                 </tbody>
             </table>
         </div>
-'''
+"""
 
     def _html_ranking(self, tx: KosisTransformer, query: UserQuery) -> str:
         """순위 섹션 HTML"""
@@ -773,7 +798,7 @@ class ReportGenerator:
             value = row.get(Fields.VALUE, 0)
             rows += f"<tr><td>{idx}</td><td>{region}</td><td>{value:,.0f}</td></tr>"
 
-        return f'''
+        return f"""
         <div class="card">
             <h2>🏆 순위 분석 ({latest} 기준)</h2>
             <table>
@@ -785,7 +810,7 @@ class ReportGenerator:
                 </tbody>
             </table>
         </div>
-'''
+"""
 
     def _html_trend(self, tx: KosisTransformer, query: UserQuery) -> str:
         """추이 섹션 HTML"""
@@ -807,10 +832,16 @@ class ReportGenerator:
             value = row.get(Fields.VALUE, 0)
             growth_pct = row.get("growth_pct", None)
             growth_str = f"{growth_pct:+.2f}%" if growth_pct is not None else "-"
-            color = "green" if growth_pct and growth_pct > 0 else "red" if growth_pct and growth_pct < 0 else "gray"
+            color = (
+                "green"
+                if growth_pct and growth_pct > 0
+                else "red"
+                if growth_pct and growth_pct < 0
+                else "gray"
+            )
             rows += f"<tr><td>{period}</td><td>{value:,.0f}</td><td style='color:{color}'>{growth_str}</td></tr>"
 
-        return f'''
+        return f"""
         <div class="card">
             <h2>📊 {target} 추이 분석</h2>
             <table>
@@ -822,7 +853,7 @@ class ReportGenerator:
                 </tbody>
             </table>
         </div>
-'''
+"""
 
     def _html_visualization(self, tx: KosisTransformer, query: UserQuery) -> str:
         """시각화 섹션 HTML (Altair/Vega-Embed)"""
@@ -847,60 +878,112 @@ class ReportGenerator:
 
         # 비교 유형에 따른 차트 선택
         if query.comparison_type == "temporal":
-            chart = alt.Chart(df).mark_line(point=True).encode(
-                x=alt.X(f'{Fields.PERIOD}:N', title=labels.get(Fields.PERIOD, '기간')),
-                y=alt.Y(f'{Fields.VALUE}:Q', title=labels.get(Fields.VALUE, '값')),
-                color=alt.Color(f'{Fields.C1_NM}:N', title=labels.get(Fields.C1_NM, '분류')) if Fields.C1_NM in df.columns else alt.value('steelblue'),
-            ).properties(title="시계열 추이", width=600, height=400)
+            chart = (
+                alt.Chart(df)
+                .mark_line(point=True)
+                .encode(
+                    x=alt.X(
+                        f"{Fields.PERIOD}:N", title=labels.get(Fields.PERIOD, "기간")
+                    ),
+                    y=alt.Y(f"{Fields.VALUE}:Q", title=labels.get(Fields.VALUE, "값")),
+                    color=alt.Color(
+                        f"{Fields.C1_NM}:N", title=labels.get(Fields.C1_NM, "분류")
+                    )
+                    if Fields.C1_NM in df.columns
+                    else alt.value("steelblue"),
+                )
+                .properties(title="시계열 추이", width=600, height=400)
+            )
             charts_html.append(chart_to_html(chart, f"chart_{uuid.uuid4().hex[:8]}"))
 
         elif query.comparison_type == "regional":
-            chart = alt.Chart(df).mark_bar().encode(
-                x=alt.X(f'{Fields.C1_NM}:N', title=labels.get(Fields.C1_NM, '지역')),
-                y=alt.Y(f'{Fields.VALUE}:Q', title=labels.get(Fields.VALUE, '값')),
-                color=alt.Color(f'{Fields.PERIOD}:N', title=labels.get(Fields.PERIOD, '기간')) if Fields.PERIOD in df.columns else alt.value('steelblue'),
-            ).properties(title="지역별 비교", width=600, height=400)
+            chart = (
+                alt.Chart(df)
+                .mark_bar()
+                .encode(
+                    x=alt.X(
+                        f"{Fields.C1_NM}:N", title=labels.get(Fields.C1_NM, "지역")
+                    ),
+                    y=alt.Y(f"{Fields.VALUE}:Q", title=labels.get(Fields.VALUE, "값")),
+                    color=alt.Color(
+                        f"{Fields.PERIOD}:N", title=labels.get(Fields.PERIOD, "기간")
+                    )
+                    if Fields.PERIOD in df.columns
+                    else alt.value("steelblue"),
+                )
+                .properties(title="지역별 비교", width=600, height=400)
+            )
             charts_html.append(chart_to_html(chart, f"chart_{uuid.uuid4().hex[:8]}"))
 
         elif query.comparison_type == "ranking":
             ranked = tx.rank_by(Fields.VALUE, top_n=10)
-            chart = alt.Chart(ranked).mark_bar().encode(
-                x=alt.X(f'{Fields.VALUE}:Q', title=labels.get(Fields.VALUE, '값')),
-                y=alt.Y(f'{Fields.C1_NM}:N', title=labels.get(Fields.C1_NM, '분류'), sort='-x'),
-            ).properties(title="상위 순위", width=600, height=400)
+            chart = (
+                alt.Chart(ranked)
+                .mark_bar()
+                .encode(
+                    x=alt.X(f"{Fields.VALUE}:Q", title=labels.get(Fields.VALUE, "값")),
+                    y=alt.Y(
+                        f"{Fields.C1_NM}:N",
+                        title=labels.get(Fields.C1_NM, "분류"),
+                        sort="-x",
+                    ),
+                )
+                .properties(title="상위 순위", width=600, height=400)
+            )
             charts_html.append(chart_to_html(chart, f"chart_{uuid.uuid4().hex[:8]}"))
 
         else:
             # 기본: 라인 차트 + 막대 차트
-            chart1 = alt.Chart(df).mark_line(point=True).encode(
-                x=alt.X(f'{Fields.PERIOD}:N', title=labels.get(Fields.PERIOD, '기간')),
-                y=alt.Y(f'{Fields.VALUE}:Q', title=labels.get(Fields.VALUE, '값')),
-                color=alt.Color(f'{Fields.C1_NM}:N', title=labels.get(Fields.C1_NM, '분류')) if Fields.C1_NM in df.columns else alt.value('steelblue'),
-            ).properties(title="시계열 추이", width=600, height=400)
+            chart1 = (
+                alt.Chart(df)
+                .mark_line(point=True)
+                .encode(
+                    x=alt.X(
+                        f"{Fields.PERIOD}:N", title=labels.get(Fields.PERIOD, "기간")
+                    ),
+                    y=alt.Y(f"{Fields.VALUE}:Q", title=labels.get(Fields.VALUE, "값")),
+                    color=alt.Color(
+                        f"{Fields.C1_NM}:N", title=labels.get(Fields.C1_NM, "분류")
+                    )
+                    if Fields.C1_NM in df.columns
+                    else alt.value("steelblue"),
+                )
+                .properties(title="시계열 추이", width=600, height=400)
+            )
             charts_html.append(chart_to_html(chart1, f"chart_{uuid.uuid4().hex[:8]}"))
 
             x_field = Fields.C1_NM if Fields.C1_NM in df.columns else Fields.PERIOD
-            chart2 = alt.Chart(df).mark_bar().encode(
-                x=alt.X(f'{x_field}:N', title=labels.get(x_field, '분류')),
-                y=alt.Y(f'{Fields.VALUE}:Q', title=labels.get(Fields.VALUE, '값')),
-            ).properties(title="분류별 비교", width=600, height=400)
+            chart2 = (
+                alt.Chart(df)
+                .mark_bar()
+                .encode(
+                    x=alt.X(f"{x_field}:N", title=labels.get(x_field, "분류")),
+                    y=alt.Y(f"{Fields.VALUE}:Q", title=labels.get(Fields.VALUE, "값")),
+                )
+                .properties(title="분류별 비교", width=600, height=400)
+            )
             charts_html.append(chart_to_html(chart2, f"chart_{uuid.uuid4().hex[:8]}"))
 
         all_charts = "\n".join(charts_html)
 
-        return f'''
+        return f"""
         <div class="card">
             <h2>📊 인터랙티브 시각화</h2>
             {all_charts}
         </div>
-'''
+"""
 
     def _build_labels(self, context: Optional[str] = None) -> Dict[str, str]:
         """컨텍스트 기반 필드 라벨 딕셔너리 생성"""
         # 모든 주요 필드에 대한 라벨 생성
         fields = [
-            Fields.PERIOD, Fields.C1_NM, Fields.C2_NM, Fields.C3_NM,
-            Fields.VALUE, Fields.UNIT, Fields.ITM_NM
+            Fields.PERIOD,
+            Fields.C1_NM,
+            Fields.C2_NM,
+            Fields.C3_NM,
+            Fields.VALUE,
+            Fields.UNIT,
+            Fields.ITM_NM,
         ]
         return {field: FieldLabels.get_label(field, context) for field in fields}
 
@@ -918,18 +1001,24 @@ class ReportGenerator:
                 max_region = max_row.get(Fields.C1_NM, "N/A")
                 max_period = max_row.get(Fields.PERIOD, "N/A")
                 max_val = max_row[Fields.VALUE]
-                insights.append(f"<li><strong>최대값</strong>: {max_region} ({max_period}) - {max_val:,.0f}</li>")
+                insights.append(
+                    f"<li><strong>최대값</strong>: {max_region} ({max_period}) - {max_val:,.0f}</li>"
+                )
 
             if pd.notna(min_idx):
                 min_row = df.loc[min_idx]
                 min_region = min_row.get(Fields.C1_NM, "N/A")
                 min_period = min_row.get(Fields.PERIOD, "N/A")
                 min_val = min_row[Fields.VALUE]
-                insights.append(f"<li><strong>최소값</strong>: {min_region} ({min_period}) - {min_val:,.0f}</li>")
+                insights.append(
+                    f"<li><strong>최소값</strong>: {min_region} ({min_period}) - {min_val:,.0f}</li>"
+                )
 
-        insights_html = "\n".join(insights) if insights else "<li>추가 분석이 필요합니다.</li>"
+        insights_html = (
+            "\n".join(insights) if insights else "<li>추가 분석이 필요합니다.</li>"
+        )
 
-        return f'''
+        return f"""
         <div class="card">
             <h2>💡 주요 인사이트</h2>
             <div class="insight-box">
@@ -939,7 +1028,7 @@ class ReportGenerator:
                 </ul>
             </div>
         </div>
-'''
+"""
 
     def _determine_sections(self, query: UserQuery) -> List[str]:
         """쿼리에 따른 섹션 자동 결정"""
@@ -1017,7 +1106,9 @@ class ReportGenerator:
 
         if Fields.PERIOD in df.columns:
             periods = tx.get_unique_values(Fields.PERIOD)
-            lines.append(f"- **기간**: {periods[0]} ~ {periods[-1]} ({len(periods)}개 시점)")
+            lines.append(
+                f"- **기간**: {periods[0]} ~ {periods[-1]} ({len(periods)}개 시점)"
+            )
 
         if Fields.C1_NM in df.columns:
             regions = tx.get_unique_values(Fields.C1_NM)
@@ -1048,8 +1139,8 @@ class ReportGenerator:
         lines.append("### 필드 구조")
         lines.append("```")
         field_info = tx.get_field_info()
-        for field, info in list(field_info.items())[:10]:
-            korean_label = FieldLabels.get_label(field, context)
+        for fname, info in list(field_info.items())[:10]:
+            korean_label = FieldLabels.get_label(fname, context)
             lines.append(f"{korean_label}: {info['dtype']}, {info['nunique']}개 고유값")
         lines.append("```")
 
@@ -1057,8 +1148,9 @@ class ReportGenerator:
         lines.append("")
         lines.append("### 샘플 데이터")
         lines.append("```")
-        sample_cols = [c for c in [Fields.PERIOD, Fields.C1_NM, Fields.VALUE]
-                       if c in tx.df.columns]
+        sample_cols = [
+            c for c in [Fields.PERIOD, Fields.C1_NM, Fields.VALUE] if c in tx.df.columns
+        ]
         lines.append(tx.df[sample_cols].head(5).to_string(index=False))
         lines.append("```")
 
@@ -1205,11 +1297,18 @@ class ReportGenerator:
         # 비교 유형에 따른 차트 선택
         if query.comparison_type == "temporal":
             # 라인 차트
-            chart = alt.Chart(df).mark_line(point=True).encode(
-                x=alt.X(f'{Fields.PERIOD}:N', title='기간'),
-                y=alt.Y(f'{Fields.VALUE}:Q', title='값'),
-                color=alt.Color(f'{Fields.C1_NM}:N') if Fields.C1_NM in df.columns else alt.value('steelblue'),
-            ).properties(title="시계열 추이", width=600, height=400)
+            chart = (
+                alt.Chart(df)
+                .mark_line(point=True)
+                .encode(
+                    x=alt.X(f"{Fields.PERIOD}:N", title="기간"),
+                    y=alt.Y(f"{Fields.VALUE}:Q", title="값"),
+                    color=alt.Color(f"{Fields.C1_NM}:N")
+                    if Fields.C1_NM in df.columns
+                    else alt.value("steelblue"),
+                )
+                .properties(title="시계열 추이", width=600, height=400)
+            )
             charts.append(chart)
             lines.append("📈 **시계열 추이 차트** 생성됨")
 
@@ -1219,11 +1318,18 @@ class ReportGenerator:
 
         elif query.comparison_type == "regional":
             # 막대 차트
-            chart = alt.Chart(df).mark_bar().encode(
-                x=alt.X(f'{Fields.C1_NM}:N', title='지역'),
-                y=alt.Y(f'{Fields.VALUE}:Q', title='값'),
-                color=alt.Color(f'{Fields.PERIOD}:N') if Fields.PERIOD in df.columns else alt.value('steelblue'),
-            ).properties(title="지역별 비교", width=600, height=400)
+            chart = (
+                alt.Chart(df)
+                .mark_bar()
+                .encode(
+                    x=alt.X(f"{Fields.C1_NM}:N", title="지역"),
+                    y=alt.Y(f"{Fields.VALUE}:Q", title="값"),
+                    color=alt.Color(f"{Fields.PERIOD}:N")
+                    if Fields.PERIOD in df.columns
+                    else alt.value("steelblue"),
+                )
+                .properties(title="지역별 비교", width=600, height=400)
+            )
             charts.append(chart)
             lines.append("📊 **지역별 비교 차트** 생성됨")
 
@@ -1234,10 +1340,15 @@ class ReportGenerator:
         elif query.comparison_type == "ranking":
             # 순위 막대 차트 (수평)
             ranked = tx.rank_by(Fields.VALUE, top_n=10)
-            chart = alt.Chart(ranked).mark_bar().encode(
-                x=alt.X(f'{Fields.VALUE}:Q', title='값'),
-                y=alt.Y(f'{Fields.C1_NM}:N', title='분류', sort='-x'),
-            ).properties(title="상위 순위", width=600, height=400)
+            chart = (
+                alt.Chart(ranked)
+                .mark_bar()
+                .encode(
+                    x=alt.X(f"{Fields.VALUE}:Q", title="값"),
+                    y=alt.Y(f"{Fields.C1_NM}:N", title="분류", sort="-x"),
+                )
+                .properties(title="상위 순위", width=600, height=400)
+            )
             charts.append(chart)
             lines.append("🏆 **순위 차트** 생성됨")
 
@@ -1273,14 +1384,18 @@ class ReportGenerator:
                 max_region = max_row.get(Fields.C1_NM, "N/A")
                 max_period = max_row.get(Fields.PERIOD, "N/A")
                 max_val = max_row[Fields.VALUE]
-                lines.append(f"1. **최대값**: {max_region} ({max_period}) - {max_val:,.0f}")
+                lines.append(
+                    f"1. **최대값**: {max_region} ({max_period}) - {max_val:,.0f}"
+                )
 
             if pd.notna(min_idx):
                 min_row = df.loc[min_idx]
                 min_region = min_row.get(Fields.C1_NM, "N/A")
                 min_period = min_row.get(Fields.PERIOD, "N/A")
                 min_val = min_row[Fields.VALUE]
-                lines.append(f"2. **최소값**: {min_region} ({min_period}) - {min_val:,.0f}")
+                lines.append(
+                    f"2. **최소값**: {min_region} ({min_period}) - {min_val:,.0f}"
+                )
 
         lines.append("")
         lines.append("### 💡 시사점")
@@ -1335,7 +1450,9 @@ class ReportGenerator:
             "data_info": {
                 "total_records": len(self.data),
                 "columns": list(self.tx.df.columns),
-                "numeric_columns": list(self.tx.df.select_dtypes(include=["number"]).columns),
+                "numeric_columns": list(
+                    self.tx.df.select_dtypes(include=["number"]).columns
+                ),
             },
             "available_dimensions": {
                 "periods": self.tx.get_unique_values(Fields.PERIOD),
@@ -1462,20 +1579,20 @@ def create_llm_prompt(
 {user_query}
 
 ## 데이터 정보
-- 총 레코드 수: {context['data_info']['total_records']}
-- 기간: {context['available_dimensions']['periods'][0]} ~ {context['available_dimensions']['periods'][-1]}
-- 지역 수: {len(context['available_dimensions']['regions'])}개
+- 총 레코드 수: {context["data_info"]["total_records"]}
+- 기간: {context["available_dimensions"]["periods"][0]} ~ {context["available_dimensions"]["periods"][-1]}
+- 지역 수: {len(context["available_dimensions"]["regions"])}개
 
 ## 파싱된 요청
-- 대상 지역: {context['parsed_query']['target_regions'] or '전체'}
-- 대상 기간: {context['parsed_query']['target_periods'] or '전체'}
-- 비교 유형: {context['parsed_query']['comparison_type']}
+- 대상 지역: {context["parsed_query"]["target_regions"] or "전체"}
+- 대상 기간: {context["parsed_query"]["target_periods"] or "전체"}
+- 비교 유형: {context["parsed_query"]["comparison_type"]}
 
 ## 샘플 데이터
-{json.dumps(context.get('sample_data', [])[:5], ensure_ascii=False, indent=2)}
+{json.dumps(context.get("sample_data", [])[:5], ensure_ascii=False, indent=2)}
 
 ## 제안 분석
-{chr(10).join('- ' + s for s in context['suggested_analysis'])}
+{chr(10).join("- " + s for s in context["suggested_analysis"])}
 
 위 정보를 바탕으로 유저의 요청에 맞는 분석을 수행해주세요.
 """

@@ -14,22 +14,27 @@ Usage:
     FASTMCP_STATELESS_HTTP=true uvicorn mcp_server.app:app
 """
 
-import os
-import json
 import logging
-from contextlib import asynccontextmanager
+import os
+from importlib.metadata import PackageNotFoundError, version
 from pathlib import Path
-from typing import AsyncGenerator
 
 from starlette.applications import Starlette
-from starlette.middleware import Middleware
 from starlette.middleware.cors import CORSMiddleware
 from starlette.responses import JSONResponse
-from starlette.routing import Route, Mount
+from starlette.routing import Mount
 from starlette.staticfiles import StaticFiles
 from starlette.requests import Request
 
 logger = logging.getLogger(__name__)
+
+
+def _package_version() -> str:
+    """Return the installed package version for deployment metadata."""
+    try:
+        return version("korean-stat-mcp")
+    except PackageNotFoundError:
+        return "0.1.0"
 
 
 def create_app() -> Starlette:
@@ -42,7 +47,9 @@ def create_app() -> Starlette:
 
     # Check if stateless HTTP mode is enabled
     stateless = os.environ.get("FASTMCP_STATELESS_HTTP", "").lower() in (
-        "true", "1", "yes"
+        "true",
+        "1",
+        "yes",
     )
 
     # Initialize database pool at module load time (not just on startup event)
@@ -54,7 +61,9 @@ def create_app() -> Starlette:
         async def _init_db():
             try:
                 await DatabasePool.initialize(database_url)
-                logger.info(f"Database pool initialized: {database_url.split('@')[1] if '@' in database_url else 'configured'}")
+                logger.info(
+                    f"Database pool initialized: {database_url.split('@')[1] if '@' in database_url else 'configured'}"
+                )
             except Exception as e:
                 logger.warning(f"Database initialization failed: {e}")
 
@@ -80,22 +89,25 @@ def create_app() -> Starlette:
     # Add custom routes to the MCP server (avoid "/" to not interfere with MCP)
     @mcp.custom_route("/info", methods=["GET"])
     async def info_handler(request: Request) -> JSONResponse:
-        return JSONResponse({
-            "service": "KOSIS MCP Server",
-            "version": "0.2.0",
-            "description": "MCP server for Korean Statistical Data",
-            "endpoints": {
-                "health": "/health",
-                "info": "/info",
-                "mcp": "/ (MCP Streamable HTTP protocol - POST)",
-            },
-        })
+        return JSONResponse(
+            {
+                "service": "korean-stat-mcp",
+                "version": _package_version(),
+                "description": "MCP server for Korean Statistical Data",
+                "endpoints": {
+                    "health": "/health",
+                    "info": "/info",
+                    "mcp": "/ (MCP Streamable HTTP protocol - POST)",
+                },
+            }
+        )
 
     @mcp.custom_route("/health", methods=["GET"])
     async def health_handler(request: Request) -> JSONResponse:
-        status = {"status": "healthy", "service": "kosis-mcp"}
+        status = {"status": "healthy", "service": "korean-stat-mcp"}
         try:
             from kosis_tools.database import check_database_health
+
             db_health = await check_database_health()
             status["database"] = db_health
         except Exception as e:
@@ -107,7 +119,11 @@ def create_app() -> Starlette:
 
     # Add static files route for artifacts
     mcp_app.routes.append(
-        Mount("/artifacts", app=StaticFiles(directory=str(artifacts_path)), name="artifacts")
+        Mount(
+            "/artifacts",
+            app=StaticFiles(directory=str(artifacts_path)),
+            name="artifacts",
+        )
     )
 
     # Add CORS middleware
@@ -120,14 +136,13 @@ def create_app() -> Starlette:
     )
 
     # Add startup event for DB initialization
-    original_startup = mcp_app.on_startup if hasattr(mcp_app, 'on_startup') else []
-
     async def init_database():
         logger.info("KOSIS MCP Server starting up...")
         database_url = os.environ.get("DATABASE_URL")
         if database_url:
             try:
                 from kosis_tools.database import DatabasePool
+
                 await DatabasePool.initialize(database_url)
                 logger.info("Database pool initialized")
             except Exception as e:
@@ -137,6 +152,7 @@ def create_app() -> Starlette:
         logger.info("KOSIS MCP Server shutting down...")
         try:
             from kosis_tools.database import DatabasePool
+
             await DatabasePool.close()
         except Exception:
             pass

@@ -10,12 +10,11 @@ Usage (Claude Desktop 설치):
     fastmcp install claude-desktop src/kosis_tools/mcp_server.py
 
 Usage (uvx 배포 후):
-    uvx kosis-mcp
+    uvx korean-stat-mcp
 """
 
 from __future__ import annotations
 
-import os
 import logging
 from typing import Any, Optional
 
@@ -26,26 +25,19 @@ from kosis_tools.search import StatisticsSearch
 from kosis_tools.list_categories import CategoryList, OrgCode, ThemeCode
 from kosis_tools.table_meta import TableMetadata
 from kosis_tools.data import StatisticsData
-from kosis_tools.transform import KosisTransformer, to_dataframe
 from kosis_tools.report_tools import (
-    ReportComponent,
-    AnalysisResult,
     get_available_values,
     filter_data,
     aggregate_data,
     viz_line_trend,
     viz_bar_comparison,
     viz_kpi_card,
-    viz_pie_composition,
     analyze_trend,
     analyze_comparison,
     analyze_ranking,
     analyze_stats,
-    text_headline,
-    text_summary,
     text_insight,
     text_data_note,
-    layout_section,
     layout_card_grid,
     layout_table,
     assemble_report,
@@ -87,6 +79,7 @@ mcp = FastMCP(
 # =============================================================================
 # Layer 1: DISCOVER - 데이터 탐색 도구
 # =============================================================================
+
 
 @mcp.tool
 def search_statistics(
@@ -130,15 +123,17 @@ def search_statistics(
     normalized = []
     for r in results[:limit]:
         prd_de = r.get("PRD_DE", "")
-        normalized.append({
-            "tbl_id": r.get("TBL_ID", ""),
-            "tbl_nm": r.get("TBL_NM", ""),
-            "org_id": r.get("ORG_ID", ""),
-            "org_nm": r.get("ORG_NM", ""),
-            "start_prd": prd_de.split("~")[0].strip() if "~" in prd_de else prd_de,
-            "end_prd": prd_de.split("~")[-1].strip() if "~" in prd_de else prd_de,
-            "prd_se": r.get("PRD_SE", "Y"),
-        })
+        normalized.append(
+            {
+                "tbl_id": r.get("TBL_ID", ""),
+                "tbl_nm": r.get("TBL_NM", ""),
+                "org_id": r.get("ORG_ID", ""),
+                "org_nm": r.get("ORG_NM", ""),
+                "start_prd": prd_de.split("~")[0].strip() if "~" in prd_de else prd_de,
+                "end_prd": prd_de.split("~")[-1].strip() if "~" in prd_de else prd_de,
+                "prd_se": r.get("PRD_SE", "Y"),
+            }
+        )
 
     return normalized
 
@@ -249,10 +244,12 @@ def get_table_metadata(org_id: str, tbl_id: str) -> dict[str, Any]:
     items = []
     if "ITM_VAR" in raw_meta and raw_meta["ITM_VAR"]:
         for itm in raw_meta["ITM_VAR"]:
-            items.append({
-                "id": itm.get("ITM_ID", ""),
-                "name": itm.get("ITM_NM", ""),
-            })
+            items.append(
+                {
+                    "id": itm.get("ITM_ID", ""),
+                    "name": itm.get("ITM_NM", ""),
+                }
+            )
 
     prd_de = raw_meta.get("PRD_DE", "")
 
@@ -272,6 +269,7 @@ def get_table_metadata(org_id: str, tbl_id: str) -> dict[str, Any]:
 # =============================================================================
 # Layer 2: FETCH - 데이터 조회 도구
 # =============================================================================
+
 
 @mcp.tool
 def get_statistics_data(
@@ -414,7 +412,9 @@ def get_statistics_data(
             "total_records": total,
             "data": records[start:end],
             "has_more": end < total,
-            "next_hint": f"다음 청크: chunk_index={chunk_index + 1}" if end < total else None,
+            "next_hint": f"다음 청크: chunk_index={chunk_index + 1}"
+            if end < total
+            else None,
         }
 
     # ============================================
@@ -519,6 +519,7 @@ def get_data_summary(data: list[dict[str, Any]]) -> dict[str, Any]:
 # =============================================================================
 # Layer 3: PRESENT - 분석 도구
 # =============================================================================
+
 
 @mcp.tool
 def analyze_data_trend(
@@ -658,6 +659,7 @@ def analyze_data_statistics(data: list[dict[str, Any]]) -> dict[str, Any]:
 # Layer 3: PRESENT - 리포트 생성 도구
 # =============================================================================
 
+
 @mcp.tool
 def create_quick_report(
     data: list[dict[str, Any]],
@@ -717,32 +719,30 @@ def create_custom_report(
         kpi_cards = []
 
         # 총 데이터 수
-        kpi_cards.append(viz_kpi_card(
-            value=len(data),
-            label="총 데이터",
-            icon="📊"
-        ))
+        kpi_cards.append(viz_kpi_card(value=len(data), label="총 데이터", icon="📊"))
 
         # 기간 수
         periods = get_available_values(data, "PRD_DE")
         if periods:
-            kpi_cards.append(viz_kpi_card(
-                value=len(periods),
-                label=f"기간 ({periods[0]}~{periods[-1]})",
-                icon="📅"
-            ))
+            kpi_cards.append(
+                viz_kpi_card(
+                    value=len(periods),
+                    label=f"기간 ({periods[0]}~{periods[-1]})",
+                    icon="📅",
+                )
+            )
 
         # 분류 수
         regions = get_available_values(data, "C1_NM")
         if regions:
-            kpi_cards.append(viz_kpi_card(
-                value=len(regions),
-                label="분류 항목",
-                icon="📍"
-            ))
+            kpi_cards.append(
+                viz_kpi_card(value=len(regions), label="분류 항목", icon="📍")
+            )
 
         if kpi_cards:
-            components.append(layout_card_grid(kpi_cards, columns=min(3, len(kpi_cards))))
+            components.append(
+                layout_card_grid(kpi_cards, columns=min(3, len(kpi_cards)))
+            )
 
     # 추이 차트
     if include_trend_chart:
@@ -759,11 +759,18 @@ def create_custom_report(
 
     # 테이블
     if include_table:
-        components.append(layout_table(
-            data[:20],
-            columns=["PRD_DE", "C1_NM", "DT", "ITM_NM"],
-            column_labels={"PRD_DE": "기간", "C1_NM": "분류", "DT": "값", "ITM_NM": "항목"}
-        ))
+        components.append(
+            layout_table(
+                data[:20],
+                columns=["PRD_DE", "C1_NM", "DT", "ITM_NM"],
+                column_labels={
+                    "PRD_DE": "기간",
+                    "C1_NM": "분류",
+                    "DT": "값",
+                    "ITM_NM": "항목",
+                },
+            )
+        )
 
     # 데이터 노트
     components.append(text_data_note(data))
@@ -778,6 +785,7 @@ def create_custom_report(
 # =============================================================================
 # 유틸리티 도구
 # =============================================================================
+
 
 @mcp.tool
 def get_available_field_values(
@@ -804,6 +812,7 @@ def get_available_field_values(
 # =============================================================================
 # Layer 4: DATA STORAGE - 저장된 데이터 관리 (MCP 패턴)
 # =============================================================================
+
 
 @mcp.tool
 def read_stored_data(
