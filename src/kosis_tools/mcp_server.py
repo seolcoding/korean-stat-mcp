@@ -10,7 +10,7 @@ Usage (Claude Desktop 설치):
     fastmcp install claude-desktop src/kosis_tools/mcp_server.py
 
 Usage (uvx 배포 후):
-    uvx kosis-mcp
+    uvx korean-stat-mcp
 """
 
 from __future__ import annotations

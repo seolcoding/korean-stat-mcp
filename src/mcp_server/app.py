@@ -14,8 +14,9 @@ Usage:
     FASTMCP_STATELESS_HTTP=true uvicorn mcp_server.app:app
 """
 
-import os
 import logging
+import os
+from importlib.metadata import PackageNotFoundError, version
 from pathlib import Path
 
 from starlette.applications import Starlette
@@ -26,6 +27,14 @@ from starlette.staticfiles import StaticFiles
 from starlette.requests import Request
 
 logger = logging.getLogger(__name__)
+
+
+def _package_version() -> str:
+    """Return the installed package version for deployment metadata."""
+    try:
+        return version("korean-stat-mcp")
+    except PackageNotFoundError:
+        return "0.1.0"
 
 
 def create_app() -> Starlette:
@@ -82,8 +91,8 @@ def create_app() -> Starlette:
     async def info_handler(request: Request) -> JSONResponse:
         return JSONResponse(
             {
-                "service": "KOSIS MCP Server",
-                "version": "0.2.0",
+                "service": "korean-stat-mcp",
+                "version": _package_version(),
                 "description": "MCP server for Korean Statistical Data",
                 "endpoints": {
                     "health": "/health",
@@ -95,7 +104,7 @@ def create_app() -> Starlette:
 
     @mcp.custom_route("/health", methods=["GET"])
     async def health_handler(request: Request) -> JSONResponse:
-        status = {"status": "healthy", "service": "kosis-mcp"}
+        status = {"status": "healthy", "service": "korean-stat-mcp"}
         try:
             from kosis_tools.database import check_database_health
 

@@ -83,9 +83,19 @@ After the 9-story acceptance, ralph kept firing. Used the extra cycles to clean 
   - Runtime unaffected (FastMCP serializes either shape); type contract now matches behavior.
 - 445 unit tests still pass.
 
+### Iteration 7 — 2026-04-30 — release metadata smoke
+
+Post-loop verification found one concrete stale runtime metadata issue:
+
+- `src/mcp_server/app.py` `/info` now reports package metadata for `korean-stat-mcp` instead of hard-coded `0.2.0`.
+- `/health` now reports `service: korean-stat-mcp` instead of the old `kosis-mcp` name.
+- `src/kosis_tools/mcp_server.py` legacy uvx usage string now points to `uvx korean-stat-mcp`.
+- Starlette smoke confirmed `/info` → version `0.1.0` and `/health` → service `korean-stat-mcp`.
+- Focused regression: `tests/unit/test_exposed_tools.py` + `tests/unit/test_mcp_guidelines.py` → 38 passed.
+
 ### Total impact
 
-- **6 iterations**, **9 stories + lint/type cleanup**, **24+ new files**, **~1900 net new LOC** (excluding reformat diff).
+- **7 iterations**, **9 stories + lint/type cleanup + release metadata smoke**, **24+ new files**, **~1900 net new LOC** (excluding reformat diff).
 - 16 curated MCP tools exposed (was 25 raw). 10 reachable via `discover_tools` + `execute_tool`.
 - 14/14 KOSIS public OpenAPI endpoints implemented with all parameters.
 - Dual-language (KO/EN) public docs throughout.
