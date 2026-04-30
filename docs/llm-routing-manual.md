@@ -39,6 +39,10 @@ KO: A 섹션에서 사용자 질의에 맞는 행을 찾아 좌→우 순서대�
 | 15 | "내가 받은 데이터 다시 보여줘" | "Show me the data I got earlier" | `list_stored_data` | `read_stored_data` (resource_id) | — |
 | 16 | "이 통계 수치 진짜 맞아?" | "Are these statistic values actually correct?" | `verify_statistics` | (cross-check) | report verification status |
 | 17 | "이 도구 말고 더 있어?" | "Are there other tools available?" | `discover_tools` | (filter by category) | call relevant tool |
+| 18 | "GDP 지표 설명해줘" | "Explain the GDP indicator" | `get_key_indicator` (by="name", value="GDP") | — | summarise concept/source/unit |
+| 19 | "월간 발표되는 주요지표 목록" | "List key indicators published monthly" | `list_key_indicators` (by="period", value="M") | — | report names/units |
+| 20 | "실업률 지표 시계열 5년치" | "Unemployment rate time-series, 5 years" | `search_key_indicators` (by="name", value="실업률") → get jipyo_id | `get_key_indicator_details` (jipyo_id, recent_n=5) | `execute_visualization` (line) |
+| 21 | "지표 12345 뭐야?" | "What is indicator 12345?" | `get_key_indicator` (by="id", value="12345") | (optional) `get_key_indicator_details` | — |
 
 > Notes / 비고
 > - `search_statistics` uses KOSIS `statisticsSearch.do` natively.

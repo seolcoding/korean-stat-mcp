@@ -102,6 +102,31 @@ V1_EXPOSED: tuple[ExposedTool, ...] = (
         "LLM이 생성한 숫자 주장을 KOSIS 원본 데이터와 대조 검증",
         "Cross-check LLM-produced numeric claims against KOSIS source data",
     ),
+    # ---- KEY INDICATORS / 통계주요지표 (KOSIS dev guide §2.7) -----------
+    ExposedTool(
+        "get_key_indicator",
+        "DISCOVER",
+        "통계주요지표 설명자료 조회 (id 또는 이름 기준)",
+        "Get key-indicator explanation by id or name",
+    ),
+    ExposedTool(
+        "list_key_indicators",
+        "DISCOVER",
+        "통계주요지표 카테고리·수록주기별 목록",
+        "List key indicators by category or period",
+    ),
+    ExposedTool(
+        "search_key_indicators",
+        "DISCOVER",
+        "통계주요지표 이름·고유번호 검색",
+        "Search key indicators by name or id",
+    ),
+    ExposedTool(
+        "get_key_indicator_details",
+        "FETCH",
+        "통계주요지표 시계열 상세 데이터",
+        "Fetch key-indicator time-series details",
+    ),
 )
 
 
