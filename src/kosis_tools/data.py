@@ -271,6 +271,9 @@ class StatisticsData(KosisBaseClient):
         end_date: Optional[str] = None,
         prd_se: Optional[str] = None,
         itm_id: str = "ALL",
+        *,
+        new_est_prd_cnt: int | None = None,
+        prd_interval: int | None = None,
     ) -> List[Dict[str, Any]]:
         """
         메타데이터 기반 스마트 데이터 조회.
@@ -297,6 +300,21 @@ class StatisticsData(KosisBaseClient):
         """
         from .table_meta import TableMetadata
 
+        # Short-circuit: 사용자가 newEstPrdCnt 또는 prdInterval 을 직접 지정한 경우,
+        # KOSIS가 그 파라미터를 자체적으로 처리하므로 메타데이터 기반 자동 retry 경로를
+        # 우회하고 _request 한 번만 호출해 사용자 의도(최근 N개 / 격N년)를 정확히 반영.
+        if new_est_prd_cnt is not None or prd_interval is not None:
+            return self.get_data(
+                org_id,
+                tbl_id,
+                start_date or "",
+                end_date or "",
+                prd_se or "Y",
+                itm_id=itm_id,
+                new_est_prd_cnt=new_est_prd_cnt,
+                prd_interval=prd_interval,
+            )
+
         meta = TableMetadata(self.config)
 
         # 1. 메타데이터로 기간 정보 조회
@@ -306,7 +324,14 @@ class StatisticsData(KosisBaseClient):
             # 메타데이터 없어도 사용자가 직접 기간 지정했으면 시도
             if start_date and end_date and prd_se:
                 return self.get_data(
-                    org_id, tbl_id, start_date, end_date, prd_se, itm_id=itm_id
+                    org_id,
+                    tbl_id,
+                    start_date,
+                    end_date,
+                    prd_se,
+                    itm_id=itm_id,
+                    new_est_prd_cnt=new_est_prd_cnt,
+                    prd_interval=prd_interval,
                 )
             return []
 
