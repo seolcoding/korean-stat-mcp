@@ -43,7 +43,7 @@ Claude Pro/Max/Team/Enterprise 요금제가 필요합니다 (Free는 커넥터 1
 3. **커스텀 커넥터 추가** 버튼을 클릭합니다.
 4. 아래 내용을 입력합니다 (`<YOUR_KEY>` 를 0단계에서 발급받은 키로 바꿉니다):
    - **이름**: `korean-stat`
-   - **URL**: `https://kosis.seolcoding.com/mcp?apiKey=<YOUR_KEY>`
+   - **URL**: `https://korean-stat-mcp.seolcoding.com/mcp?apiKey=<YOUR_KEY>`
 5. **추가** 버튼을 누르면 등록 완료.
 6. 추가한 커넥터의 **구성** → 도구 목록에서 모든 도구를 **항상 사용**으로 설정.
 

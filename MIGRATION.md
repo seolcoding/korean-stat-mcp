@@ -132,10 +132,10 @@ KOSIS API 호출 성공률 **99.38%** (10,000 샘플 테스트, Phase 4.5에서 
 
 ## 0.2.0 — Hosted instance + per-request API key
 
-A public hosted endpoint at `https://kosis.seolcoding.com/mcp` is now available. URL form:
+A public hosted endpoint at `https://korean-stat-mcp.seolcoding.com/mcp` is now available. URL form:
 
 ```
-https://kosis.seolcoding.com/mcp?apiKey=<your KOSIS OpenAPI key>
+https://korean-stat-mcp.seolcoding.com/mcp?apiKey=<your KOSIS OpenAPI key>
 ```
 
 For self-hosted deployments **nothing changes** — `KOSIS_API_KEY` env var still works exactly as before. The new behavior:

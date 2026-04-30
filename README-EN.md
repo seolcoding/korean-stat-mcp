@@ -47,7 +47,7 @@ Sign up at the [KOSIS OpenAPI page](https://kosis.kr/openapi/), click
 3. Click **Add custom connector**.
 4. Fill in (replace `<YOUR_KEY>` with the key from Step 0):
    - **Name**: `korean-stat`
-   - **URL**: `https://kosis.seolcoding.com/mcp?apiKey=<YOUR_KEY>`
+   - **URL**: `https://korean-stat-mcp.seolcoding.com/mcp?apiKey=<YOUR_KEY>`
 5. Click **Add**.
 6. Open **Configure** on the new connector and set every tool to **Always allow**.
 

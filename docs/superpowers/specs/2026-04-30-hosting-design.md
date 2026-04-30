@@ -8,13 +8,13 @@
 ## 1. Goal
 
 Stand up a public, hosted instance of `korean-stat-mcp` at
-`https://kosis.seolcoding.com/mcp` so that Claude.ai / Claude Code / Claude
+`https://korean-stat-mcp.seolcoding.com/mcp` so that Claude.ai / Claude Code / Claude
 Desktop / Cursor / Windsurf users can connect with **a single URL** plus their
 own KOSIS OpenAPI key — no `pip install`, no JSON config edits.
 
 Success criteria for v1:
 
-- Claude.ai custom connector pointed at `https://kosis.seolcoding.com/mcp?apiKey=<key>` can call `search_statistics`, `get_statistics_data`, `verify_statistics` end-to-end.
+- Claude.ai custom connector pointed at `https://korean-stat-mcp.seolcoding.com/mcp?apiKey=<key>` can call `search_statistics`, `get_statistics_data`, `verify_statistics` end-to-end.
 - Self-hosted users (existing PyPI consumers) keep working with `KOSIS_API_KEY` env var, unchanged.
 - 99%+ availability over a 7-day soak; cold-start ≤ 3 s; p50 KOSIS roundtrip from NRT region ≤ 600 ms.
 - Monthly egress under Fly free tier headroom for the first 1k DAU range.
@@ -33,13 +33,13 @@ Success criteria for v1:
 Public connector URL:
 
 ```
-https://kosis.seolcoding.com/mcp?apiKey=<KOSIS_API_KEY>
+https://korean-stat-mcp.seolcoding.com/mcp?apiKey=<KOSIS_API_KEY>
 ```
 
 Auxiliary endpoints (already present in `mcp_server/app.py`):
 
-- `GET https://kosis.seolcoding.com/health` → 200 with build info
-- `GET https://kosis.seolcoding.com/info`   → 200 with tool surface metadata
+- `GET https://korean-stat-mcp.seolcoding.com/health` → 200 with build info
+- `GET https://korean-stat-mcp.seolcoding.com/info`   → 200 with tool surface metadata
 
 Self-hosted entrypoint (unchanged):
 
@@ -166,7 +166,7 @@ CMD ["korean-stat-mcp", "--http"]
 The existing repo `Dockerfile` becomes the source of truth. Replace its current
 contents with the above; no separate `Dockerfile.fly`.
 
-## 7. DNS — `kosis.seolcoding.com`
+## 7. DNS — `korean-stat-mcp.seolcoding.com`
 
 Steps, in order:
 
@@ -175,14 +175,14 @@ Steps, in order:
    validate end-to-end before DNS work.
 3. In the seolcoding.com DNS zone, add:
    ```
-   kosis  CNAME  korean-stat-mcp.fly.dev.
+   korean-stat-mcp  CNAME  korean-stat-mcp.fly.dev.
    ```
-4. `flyctl certs add kosis.seolcoding.com` — provisions Let's Encrypt cert.
-5. Wait for `flyctl certs show kosis.seolcoding.com` to report `READY`.
+4. `flyctl certs add korean-stat-mcp.seolcoding.com` — provisions Let's Encrypt cert.
+5. Wait for `flyctl certs show korean-stat-mcp.seolcoding.com` to report `READY`.
 6. Verification:
    ```
-   curl -fsS https://kosis.seolcoding.com/health
-   curl -fsS "https://kosis.seolcoding.com/mcp?apiKey=<test_key>" -X POST \
+   curl -fsS https://korean-stat-mcp.seolcoding.com/health
+   curl -fsS "https://korean-stat-mcp.seolcoding.com/mcp?apiKey=<test_key>" -X POST \
         -H 'Content-Type: application/json' \
         -d '{"jsonrpc":"2.0","id":1,"method":"initialize","params":{}}'
    ```
@@ -242,7 +242,7 @@ jobs:
       - name: Post-deploy health probe
         run: |
           for i in {1..30}; do
-            curl -fsS https://kosis.seolcoding.com/health && exit 0
+            curl -fsS https://korean-stat-mcp.seolcoding.com/health && exit 0
             sleep 2
           done
           echo "post-deploy health probe failed"; exit 1
@@ -327,13 +327,13 @@ Encoded in `.github/workflows/deploy.yml` (Section 8). In order:
    packaging regressions (missing files, wrong entrypoint, port binding
    issues) that pytest cannot.
 4. **Fly deploy** runs only if 1–3 all pass.
-5. **Post-deploy health probe**: poll `https://kosis.seolcoding.com/health`
+5. **Post-deploy health probe**: poll `https://korean-stat-mcp.seolcoding.com/health`
    for up to 60 s; fail the workflow if it never returns 200.
 
 ### 12.4 Manual verification (one-time, on first deploy)
 
 - `verify_statistics` against a known KOSIS row using a real key end-to-end
-  through `https://kosis.seolcoding.com/mcp?apiKey=<real_key>`.
+  through `https://korean-stat-mcp.seolcoding.com/mcp?apiKey=<real_key>`.
 - 401 path: same URL without `?apiKey=`, expect `error: missing_api_key`.
 - Concurrent two-key smoke: run two `verify_statistics` calls with different
   real keys interleaved, confirm each completes without cross-talk in
@@ -394,8 +394,8 @@ Tracking them in the spec so they are not forgotten when the plan executes.
 | Step | Action | Verification |
 |---|---|---|
 | Access the DNS zone | Log into the registrar / DNS provider managing `seolcoding.com` (Cloudflare, Route 53, Gabia, etc.) | Can edit records |
-| Reserve the subdomain | Confirm `kosis.seolcoding.com` is not already in use for something else | `dig kosis.seolcoding.com` returns NXDOMAIN |
-| Cloudflare orange-cloud decision | If on Cloudflare: keep the proxy *off* (gray cloud) for the initial Let's Encrypt cert issuance. Re-enable the proxy only after Fly cert is `READY`. | `flyctl certs show kosis.seolcoding.com` reaches `READY` |
+| Reserve the subdomain | Confirm `korean-stat-mcp.seolcoding.com` is not already in use for something else | `dig korean-stat-mcp.seolcoding.com` returns NXDOMAIN |
+| Cloudflare orange-cloud decision | If on Cloudflare: keep the proxy *off* (gray cloud) for the initial Let's Encrypt cert issuance. Re-enable the proxy only after Fly cert is `READY`. | `flyctl certs show korean-stat-mcp.seolcoding.com` reaches `READY` |
 
 ### 15.4 KOSIS OpenAPI key (test/QA use)
 
@@ -442,7 +442,7 @@ step and surfaces the issue rather than working around it:
 6. **Manual E2E** per Section 12.4 against `*.fly.dev`.
 7. **Merge `feat/hosting` → `main`** — automated deploy via the new
    workflow takes over from this point.
-8. **DNS + cert** for `kosis.seolcoding.com` (Section 7) once the `fly.dev`
+8. **DNS + cert** for `korean-stat-mcp.seolcoding.com` (Section 7) once the `fly.dev`
    instance is stable.
 9. **README hosted-instance section** + `MIGRATION.md` note for
    self-hosters — committed on a small docs PR after the URL is live so

@@ -2,7 +2,7 @@
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** Stand up `https://kosis.seolcoding.com/mcp?apiKey=<key>` as a public hosted instance of `korean-stat-mcp` on Fly.io, with per-request BYOK key handling, full pre-deploy CI gates, and a documented manual cutover procedure.
+**Goal:** Stand up `https://korean-stat-mcp.seolcoding.com/mcp?apiKey=<key>` as a public hosted instance of `korean-stat-mcp` on Fly.io, with per-request BYOK key handling, full pre-deploy CI gates, and a documented manual cutover procedure.
 
 **Architecture:** Per-request KOSIS API key flows from URL query string → Starlette middleware → `ContextVar` → `load_config()` (contextvar wins, falls back to env for self-hosters). Single Fly.io VM in `nrt`, scale-to-zero with suspend-resume, slowapi rate limiting per IP and per key hash.
 
@@ -1004,7 +1004,7 @@ Claude Pro/Max/Team/Enterprise 요금제가 필요합니다 (Free는 커넥터 1
 3. **커스텀 커넥터 추가** 버튼을 클릭합니다.
 4. 아래 내용을 입력합니다 (`<YOUR_KEY>` 를 0단계에서 발급받은 키로 바꿉니다):
    - **이름**: `korean-stat`
-   - **URL**: `https://kosis.seolcoding.com/mcp?apiKey=<YOUR_KEY>`
+   - **URL**: `https://korean-stat-mcp.seolcoding.com/mcp?apiKey=<YOUR_KEY>`
 5. **추가** 버튼을 누르면 등록 완료.
 6. 추가한 커넥터의 **구성** → 도구 목록에서 모든 도구를 **항상 사용**으로 설정.
 
@@ -1051,10 +1051,10 @@ Append to `MIGRATION.md`:
 
 ## 0.2.0 — Hosted instance + per-request API key
 
-A public hosted endpoint at `https://kosis.seolcoding.com/mcp` is now available. URL form:
+A public hosted endpoint at `https://korean-stat-mcp.seolcoding.com/mcp` is now available. URL form:
 
 ```
-https://kosis.seolcoding.com/mcp?apiKey=<your KOSIS OpenAPI key>
+https://korean-stat-mcp.seolcoding.com/mcp?apiKey=<your KOSIS OpenAPI key>
 ```
 
 For self-hosted deployments **nothing changes** — `KOSIS_API_KEY` env var still works exactly as before. The new behavior:
@@ -1091,7 +1091,7 @@ git push -u origin feat/hosting
 ```bash
 gh pr create --title "Stream A: public hosted instance with BYOK" --body "$(cat <<'EOF'
 ## Summary
-- Public hosted endpoint at `https://kosis.seolcoding.com/mcp?apiKey=<key>`
+- Public hosted endpoint at `https://korean-stat-mcp.seolcoding.com/mcp?apiKey=<key>`
 - Per-request KOSIS key via URL query → contextvar → load_config (env fallback preserved for self-hosters)
 - 5-gate deploy pipeline: pytest → docker build → container smoke → fly deploy → post-deploy probe
 - slowapi rate limiting per IP + apiKey hash bucket
@@ -1235,7 +1235,7 @@ Expected: `deploy` workflow runs, all 5 gates pass, post-deploy probe returns 20
 
 ---
 
-## Task 14: DNS + cert for `kosis.seolcoding.com`
+## Task 14: DNS + cert for `korean-stat-mcp.seolcoding.com`
 
 **Files:**
 - N/A (manual ops)
@@ -1247,7 +1247,7 @@ Expected: `deploy` workflow runs, all 5 gates pass, post-deploy probe returns 20
 In the seolcoding.com DNS zone (Cloudflare / wherever):
 
 ```
-kosis  CNAME  korean-stat-mcp.fly.dev.   TTL 300
+korean-stat-mcp  CNAME  korean-stat-mcp.fly.dev.   TTL 300
 ```
 
 If on Cloudflare: keep proxy **off** (gray cloud) until cert is `READY`.
@@ -1255,7 +1255,7 @@ If on Cloudflare: keep proxy **off** (gray cloud) until cert is `READY`.
 - [ ] **Step 14.2: Provision the cert**
 
 ```bash
-flyctl certs add kosis.seolcoding.com -a korean-stat-mcp
+flyctl certs add korean-stat-mcp.seolcoding.com -a korean-stat-mcp
 ```
 
 - [ ] **Step 14.3: Wait for cert ready**
@@ -1263,7 +1263,7 @@ flyctl certs add kosis.seolcoding.com -a korean-stat-mcp
 Poll until status is `READY`:
 
 ```bash
-until flyctl certs show kosis.seolcoding.com -a korean-stat-mcp | grep -q "READY"; do
+until flyctl certs show korean-stat-mcp.seolcoding.com -a korean-stat-mcp | grep -q "READY"; do
   sleep 10
 done
 echo "cert ready"
@@ -1274,8 +1274,8 @@ Expected: usually 1–5 minutes.
 - [ ] **Step 14.4: Verify the URL works end-to-end**
 
 ```bash
-curl -fsS https://kosis.seolcoding.com/health
-curl -i -X POST https://kosis.seolcoding.com/mcp \
+curl -fsS https://korean-stat-mcp.seolcoding.com/health
+curl -i -X POST https://korean-stat-mcp.seolcoding.com/mcp \
   -H 'Content-Type: application/json' \
   -d '{"jsonrpc":"2.0","id":1,"method":"initialize","params":{}}'
 ```
@@ -1297,7 +1297,7 @@ Once the custom domain is live, switch the deploy workflow's post-deploy probe s
 
 - [ ] **Step 15.1: Edit deploy.yml**
 
-In `.github/workflows/deploy.yml`, replace `korean-stat-mcp.fly.dev` in the post-deploy probe step with `kosis.seolcoding.com`.
+In `.github/workflows/deploy.yml`, replace `korean-stat-mcp.fly.dev` in the post-deploy probe step with `korean-stat-mcp.seolcoding.com`.
 
 - [ ] **Step 15.2: Commit on a small follow-up PR**
 
@@ -1306,7 +1306,7 @@ git switch -c chore/probe-custom-domain
 git add .github/workflows/deploy.yml
 git commit -m "ci: probe custom domain in post-deploy gate"
 git push -u origin chore/probe-custom-domain
-gh pr create --title "ci: probe kosis.seolcoding.com in deploy gate" --body "Custom domain is live; switch the post-deploy probe to the user-facing URL." --fill
+gh pr create --title "ci: probe korean-stat-mcp.seolcoding.com in deploy gate" --body "Custom domain is live; switch the post-deploy probe to the user-facing URL." --fill
 ```
 
 Merge after CI green.
