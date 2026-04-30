@@ -31,7 +31,7 @@ Verify with `korean-stat-mcp --version` (expected output: `korean-stat-mcp 0.1.0
 In Claude.ai → Settings → Connectors → Add custom connector, use the remote URL:
 
 ```
-https://korean-stat-mcp.example.com/mcp
+https://<your-host>/mcp
 ```
 
 (No official hosted endpoint yet — self-host using the Fly.io / Render / Railway / DigitalOcean / VPS recipes in [deploy/README.md](./deploy/README.md).)

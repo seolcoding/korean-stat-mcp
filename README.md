@@ -5,7 +5,7 @@
 [![PyPI](https://img.shields.io/pypi/v/korean-stat-mcp)](https://pypi.org/project/korean-stat-mcp/)
 [![Python](https://img.shields.io/badge/python-3.12%2B-blue)](https://www.python.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
-[![CI](https://img.shields.io/badge/CI-pending-lightgrey)](#)
+[![CI](https://img.shields.io/github/actions/workflow/status/seolcoding/korean-stat-mcp/ci.yml?branch=main)](https://github.com/seolcoding/korean-stat-mcp/actions)
 
 🌐 English version: [README-EN.md](./README-EN.md)
 
@@ -36,7 +36,7 @@
 Claude.ai의 **Settings → Connectors → Add custom connector** 에서 다음 URL을 등록합니다.
 
 ```
-https://korean-stat-mcp.example.com/mcp
+https://<your-host>/mcp
 ```
 
 > ⚠️ 공식 호스팅 엔드포인트는 운영팀 결정 전입니다. 직접 호스팅하려면 [deploy/README.md](./deploy/README.md) 의 Fly.io / Render / Railway / DigitalOcean / VPS 가이드를 참고하세요.

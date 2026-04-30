@@ -74,8 +74,8 @@ KOSIS MCP Server는 AI 에이전트(Claude 등)가 KOSIS 데이터를 직접 검
 {
   "mcpServers": {
     "kosis": {
-      "command": "uv",
-      "args": ["run", "--directory", "/path/to/kosis-mcp", "python", "-m", "mcp_server"],
+      "command": "uvx",
+      "args": ["korean-stat-mcp"],
       "env": {
         "KOSIS_API_KEY": "your-api-key-here"
       }

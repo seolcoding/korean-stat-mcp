@@ -9,6 +9,7 @@ The format follows [Keep a Changelog 1.1.0](https://keepachangelog.com/en/1.1.0/
 - Stop tracking generated HTML report artifacts; keep source scripts and regeneration notes in Git instead.
 - Add packaging guardrails so local/generated artifacts such as `outputs/`, `kosis-reports/`, and `.omx/` do not enter release archives or Docker build context.
 - Align the PR checklist with the scoped CI quality gates used by this repository.
+- Replace pre-release placeholder URLs and marketplace owner strings with the public `seolcoding/korean-stat-mcp` repository path.
 
 ---
 
