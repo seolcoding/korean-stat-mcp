@@ -27,7 +27,7 @@
 
 ```bash
 # 1. 저장소 클론
-git clone https://github.com/<github-user>/korean-stat-mcp.git
+git clone https://github.com/seolcoding/korean-stat-mcp.git
 cd korean-stat-mcp
 
 # 2. 의존성 설치 (uv 사용)

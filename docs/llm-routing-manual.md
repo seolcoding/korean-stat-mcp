@@ -22,28 +22,28 @@ KO: A 섹션에서 사용자 질의에 맞는 행을 찾아 좌→우 순서대�
 
 | # | 한국어 질의 예시 | English query example | First tool | Then | Then |
 |:-:|------------------|-----------------------|------------|------|------|
-| 1 | "전국 인구 추이 보여줘" | "Show national population trend" | `search_statistics_tables` | `get_statistics_data` (PRD_DE range) | `execute_visualization` (line) |
-| 2 | "서울 vs 부산 인구 비교" | "Compare Seoul vs Busan population" | `search_statistics_tables` | `get_available_values` (regions) | `get_statistics_data` (objL1=서울,부산) → `execute_visualization` (grouped bar) |
-| 3 | "최근 5년 GDP 변화율" | "GDP change rate over the last 5 years" | `search_statistics_tables` (GDP) | `get_statistics_data` (PRD_DE last 5y) | `execute_analysis` (`calc_change_rate` / `calc_cagr`) |
-| 4 | "출산율 상위 10개 시군구" | "Top 10 municipalities by fertility rate" | `search_statistics_tables` (fertility) | `get_statistics_data` (all regions) | `aggregate_statistics` (sort, top-N) → `execute_table` |
-| 5 | "한국 가계 부채 규모는?" | "What is Korea's household debt level?" | `search_statistics_tables` (가계 부채) | `get_statistics_data` (latest PRD_DE) | summarize 1 number with units |
-| 6 | "분기별 실업률" | "Quarterly unemployment rate" | `search_statistics_tables` (실업률) | `get_statistics_data` (prdSe=Q, PRD_DE="2024Q1") | `execute_visualization` (line, x=PRD_DE) |
-| 7 | "반기별 고용 통계" | "Half-year employment statistics" | `search_statistics_tables` (고용) | `get_statistics_data` (prdSe=H, PRD_DE="2024H1") | `execute_table` |
-| 8 | "통계청 발표 보고서 목록" | "List statistics published by Statistics Korea" | `browse_by_organization` (ORG=통계청) | `search_statistics_tables` within results | `get_table_metadata` |
-| 9 | "인구·가구 부문 전체 목록" | "All tables in the Population & Households theme" | `browse_by_theme` (theme=인구·가구) | iterate / paginate | `get_table_metadata` |
-| 10 | "월별 소비자물가 지수" | "Monthly CPI" | `search_statistics_tables` (CPI/소비자물가) | `get_statistics_data` (prdSe=M, PRD_DE="202401") | `execute_visualization` (line) |
+| 1 | "전국 인구 추이 보여줘" | "Show national population trend" | `search_statistics` | `get_statistics_data` (PRD_DE range) | `execute_visualization` (line) |
+| 2 | "서울 vs 부산 인구 비교" | "Compare Seoul vs Busan population" | `search_statistics` | `get_available_values` (regions) | `get_statistics_data` (objL1=서울,부산) → `execute_visualization` (grouped bar) |
+| 3 | "최근 5년 GDP 변화율" | "GDP change rate over the last 5 years" | `search_statistics` (GDP) | `get_statistics_data` (PRD_DE last 5y) | `execute_analysis` (`calc_change_rate` / `calc_cagr`) |
+| 4 | "출산율 상위 10개 시군구" | "Top 10 municipalities by fertility rate" | `search_statistics` (fertility) | `get_statistics_data` (all regions) | `aggregate_statistics` (sort, top-N) → `execute_table` |
+| 5 | "한국 가계 부채 규모는?" | "What is Korea's household debt level?" | `search_statistics` (가계 부채) | `get_statistics_data` (latest PRD_DE) | summarize 1 number with units |
+| 6 | "분기별 실업률" | "Quarterly unemployment rate" | `search_statistics` (실업률) | `get_statistics_data` (prdSe=Q, PRD_DE="2024Q1") | `execute_visualization` (line, x=PRD_DE) |
+| 7 | "반기별 고용 통계" | "Half-year employment statistics" | `search_statistics` (고용) | `get_statistics_data` (prdSe=H, PRD_DE="2024H1") | `execute_table` |
+| 8 | "통계청 발표 보고서 목록" | "List statistics published by Statistics Korea" | `browse_categories` (by=org, code=101) | inspect results | `get_table_metadata` |
+| 9 | "인구·가구 부문 전체 목록" | "All tables in the Population & Households theme" | `browse_categories` (by=theme) | iterate / paginate | `get_table_metadata` |
+| 10 | "월별 소비자물가 지수" | "Monthly CPI" | `search_statistics` (CPI/소비자물가) | `get_statistics_data` (prdSe=M, PRD_DE="202401") | `execute_visualization` (line) |
 | 11 | "이 통계표에 어떤 분류 값이 있어?" | "What classification values does this table have?" | `get_available_values` (orgId, tblId) | (use values to filter) | `get_statistics_data` |
 | 12 | "이 통계표 상세 메타" | "Detailed metadata for this table" | `get_table_metadata` (orgId, tblId) | `get_available_values` | — |
 | 13 | "결과 데이터 일부만 차트로 그려줘" | "Chart only part of the result data" | `read_stored_data` (resource_id, slice) | `execute_visualization` | — |
 | 14 | "지역별 합계만 뽑아줘" | "Aggregate sum by region" | `aggregate_statistics` (group_by=C1_NM, agg=sum) | `execute_table` or `execute_visualization` | — |
 | 15 | "내가 받은 데이터 다시 보여줘" | "Show me the data I got earlier" | `list_stored_data` | `read_stored_data` (resource_id) | — |
-| 16 | "이 통계 수치 진짜 맞아?" | "Are these statistic values actually correct?" | `verify_statistics` *(upcoming, US-005)* | (cross-check) | report verification status |
+| 16 | "이 통계 수치 진짜 맞아?" | "Are these statistic values actually correct?" | `verify_statistics` | (cross-check) | report verification status |
 | 17 | "이 도구 말고 더 있어?" | "Are there other tools available?" | `discover_tools` | (filter by category) | call relevant tool |
 
 > Notes / 비고
-> - `search_statistics_tables` uses KOSIS `statisticsSearch.do` natively, with optional PG FTS augmentation.
+> - `search_statistics` uses KOSIS `statisticsSearch.do` natively.
 > - "First tool" is the **starting** point. Always prefer the leftmost cell unless the user already gave you the next-stage inputs (e.g. they pasted a `tblId`).
-> - Tool 16 (`verify_statistics`) is being added in US-005 — if it is not registered yet, fall back to "ask user to confirm against the KOSIS site URL" rather than fabricating verification.
+> - Tool 16 (`verify_statistics`) cross-checks numeric claims against KOSIS source data.
 
 ---
 
@@ -121,8 +121,8 @@ Named workflows. Each is a one-line description plus the canonical tool chain.
 
 | Name | Description / 설명 | Canonical chain |
 |------|-------|------|
-| `population_trend` | Single region over time / 단일 지역 시계열 | `search_statistics_tables` → `get_statistics_data` (objL1=region, prdSe=Y) → `execute_visualization` (line) |
-| `regional_compare` | Same metric across regions / 지역 간 동일 지표 비교 | `search_statistics_tables` → `get_available_values` → `get_statistics_data` (objL1=multi) → `execute_visualization` (grouped bar) |
+| `population_trend` | Single region over time / 단일 지역 시계열 | `search_statistics` → `get_statistics_data` (objL1=region, prdSe=Y) → `execute_visualization` (line) |
+| `regional_compare` | Same metric across regions / 지역 간 동일 지표 비교 | `search_statistics` → `get_available_values` → `get_statistics_data` (objL1=multi) → `execute_visualization` (grouped bar) |
 | `yoy_change` | Year-over-year change rate / 전년 대비 변화율 | `get_statistics_data` (PRD_DE last 2y) → `execute_analysis` (`calc_change_rate`) |
 | `ranking` | Top-N or bottom-N by metric / 상·하위 N | `get_statistics_data` (all regions, latest PRD_DE) → `aggregate_statistics` (sort) → `execute_table` |
 | `composition` | Pie/treemap of category breakdown / 구성비 | `get_statistics_data` (one PRD_DE, multi-category) → `execute_visualization` (arc/treemap) |
@@ -144,7 +144,7 @@ Do not do these. Each is a real failure mode observed in the wild.
   → Returns yearly aggregates and confuses the user. Use `prdSe=Q` and `PRD_DE="2024Q1"`.
 
 - ❌ **Trying to use a hybrid-search tool** / Hybrid search 도구 사용 시도
-  → Removed in US-001b. There is no `hybrid_search` / `vector_search` tool. Use `search_statistics_tables` (KOSIS native search).
+  → Removed in US-001b. There is no `hybrid_search` / `vector_search` tool. Use `search_statistics` (KOSIS native search).
 
 - ❌ **Writing directly into `outputs/`** / `outputs/` 디렉토리에 직접 쓰기
   → Forbidden. Only the server writes there. LLMs read via `read_stored_data` only.

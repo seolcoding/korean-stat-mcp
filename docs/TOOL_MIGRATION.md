@@ -1,10 +1,10 @@
 # Tool Surface Migration (US-003)
 
-## 기존 25개 도구 → V1 노출 15개
+## 등록 도구 26개 → V1 노출 16개
 
 ### KO
 
-`korean-stat-mcp`는 LLM 클라이언트가 가장 자주 쓰는 15개 도구만 기본
+`korean-stat-mcp`는 LLM 클라이언트가 가장 자주 쓰는 16개 도구만 기본
 노출하고, 나머지 내부 도구는 `execute_tool(name, args)` 한 곳으로 모아
 숨깁니다. 이렇게 하면 LLM의 도구 선택 정확도가 올라가고, 프롬프트에
 실리는 도구 스키마 토큰이 줄어듭니다.
@@ -13,7 +13,7 @@
 
 ### EN
 
-`korean-stat-mcp` exposes only the 15 most useful tools to LLM clients
+`korean-stat-mcp` exposes only the 16 most useful tools to LLM clients
 by default; the rest stay reachable through a single `execute_tool(name, args)`
 escape hatch. Result: better tool-selection accuracy and fewer schema tokens
 in the prompt.
@@ -41,19 +41,17 @@ in the prompt.
 | 13 | read_stored_data       | YES     | DATA     | 저장된 원본 데이터 청크 읽기                | Read stored raw data in chunks               |
 | 14 | discover_tools         | YES     | META     | 노출/내부 도구 전체 목록 조회               | List all exposed and internal tools          |
 | 15 | execute_tool           | YES     | META     | 이름으로 임의 도구 호출 (escape hatch)      | Invoke any registered tool by name           |
-| 16 | execute_code           | hidden  | -        | 범용 Python 코드 실행 (4 specialized 권장)  | Generic Python exec (use specialized 4)      |
-| 17 | analyze_trend          | hidden  | -        | 사전 정의 추세 분석 (legacy)                | Pre-baked trend analysis (legacy)            |
-| 18 | analyze_comparison     | hidden  | -        | 사전 정의 비교 분석 (legacy)                | Pre-baked comparison analysis (legacy)       |
-| 19 | analyze_ranking        | hidden  | -        | 사전 정의 순위 분석 (legacy)                | Pre-baked ranking analysis (legacy)          |
-| 20 | create_quick_report    | hidden  | -        | 빠른 HTML 리포트 (legacy)                   | Quick HTML report (legacy)                   |
-| 21 | get_executor_guide     | hidden  | -        | executor 사용법 가이드                      | Executor usage guide                         |
-| 22 | get_report_templates   | hidden  | -        | 리포트 템플릿 목록                          | Report template catalog                      |
-| 23 | get_template_guide     | hidden  | -        | 템플릿 단계별 가이드                        | Template step-by-step guide                  |
-| 24 | get_element_guide      | hidden  | -        | 요소(차트/카드) 가이드                      | Element (chart/card) guide                   |
-| 25 | recommend_template     | hidden  | -        | 데이터 기반 템플릿 추천                     | Data-driven template recommendation          |
-
-> `verify_statistics` (US-005)가 추가되면 노출 도구는 16개가 됩니다.
-> `verify_statistics` will be added in US-005, bumping the exposed count to 16.
+| 16 | verify_statistics      | YES     | VERIFY   | LLM 수치 주장을 KOSIS 원천 데이터와 대조    | Cross-check numeric claims against KOSIS     |
+| 17 | execute_code           | hidden  | -        | 범용 Python 코드 실행 (4 specialized 권장)  | Generic Python exec (use specialized 4)      |
+| 18 | analyze_trend          | hidden  | -        | 사전 정의 추세 분석 (legacy)                | Pre-baked trend analysis (legacy)            |
+| 19 | analyze_comparison     | hidden  | -        | 사전 정의 비교 분석 (legacy)                | Pre-baked comparison analysis (legacy)       |
+| 20 | analyze_ranking        | hidden  | -        | 사전 정의 순위 분석 (legacy)                | Pre-baked ranking analysis (legacy)          |
+| 21 | create_quick_report    | hidden  | -        | 빠른 HTML 리포트 (legacy)                   | Quick HTML report (legacy)                   |
+| 22 | get_executor_guide     | hidden  | -        | executor 사용법 가이드                      | Executor usage guide                         |
+| 23 | get_report_templates   | hidden  | -        | 리포트 템플릿 목록                          | Report template catalog                      |
+| 24 | get_template_guide     | hidden  | -        | 템플릿 단계별 가이드                        | Template step-by-step guide                  |
+| 25 | get_element_guide      | hidden  | -        | 요소(차트/카드) 가이드                      | Element (chart/card) guide                   |
+| 26 | recommend_template     | hidden  | -        | 데이터 기반 템플릿 추천                     | Data-driven template recommendation          |
 
 ---
 

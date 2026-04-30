@@ -104,7 +104,7 @@ Render auto-detects the repo `Dockerfile`. No additional config needed.
 The simplest path uses the repo's `docker-compose.yml`:
 
 ```bash
-git clone https://github.com/<github-user>/korean-stat-mcp.git
+git clone https://github.com/seolcoding/korean-stat-mcp.git
 cd korean-stat-mcp
 cp .env.example .env
 # edit .env: set KOSIS_API_KEY=...

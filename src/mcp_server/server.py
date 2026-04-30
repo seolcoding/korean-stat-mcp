@@ -2061,7 +2061,7 @@ Environment:
   DATABASE_URL         Optional Postgres URL (with [postgres] extra).
   R2_*                 Optional Cloudflare R2 credentials (with [r2] extra).
 
-Docs: https://github.com/seolcoding-OS/korean-stat-mcp
+Docs: https://github.com/seolcoding/korean-stat-mcp
 """
     )
 

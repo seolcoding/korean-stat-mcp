@@ -27,7 +27,7 @@ Welcome, and thank you for your interest in `korean-stat-mcp`. Even a one-line t
 
 ```bash
 # 1. Clone
-git clone https://github.com/<github-user>/korean-stat-mcp.git
+git clone https://github.com/seolcoding/korean-stat-mcp.git
 cd korean-stat-mcp
 
 # 2. Install dependencies (uv)

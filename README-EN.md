@@ -5,7 +5,7 @@
 [한국어 README](./README.md)
 
 [![PyPI](https://img.shields.io/pypi/v/korean-stat-mcp.svg)](https://pypi.org/project/korean-stat-mcp/)
-[![CI](https://img.shields.io/github/actions/workflow/status/<github-user>/korean-stat-mcp/ci.yml?branch=main)](https://github.com/<github-user>/korean-stat-mcp/actions)
+[![CI](https://img.shields.io/github/actions/workflow/status/seolcoding/korean-stat-mcp/ci.yml?branch=main)](https://github.com/seolcoding/korean-stat-mcp/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 [![MCP](https://img.shields.io/badge/MCP-compatible-blue)](https://modelcontextprotocol.io/)
 
@@ -21,7 +21,7 @@
 ### 1. Claude Code plugin marketplace
 
 ```bash
-/plugin marketplace add seolcoding-OS/korean-stat-mcp
+/plugin marketplace add seolcoding/korean-stat-mcp
 ```
 
 Verify with `korean-stat-mcp --version` (expected output: `korean-stat-mcp 0.1.0`).
@@ -72,9 +72,9 @@ The server exposes ~16 curated tools across these categories. See [docs/TOOL_MIG
 
 | Category | Example tools | Purpose |
 |---|---|---|
-| Discovery | `search_statistics`, `list_categories` | Find tables by keyword or browse the catalog hierarchy |
-| Metadata | `get_table_metadata`, `list_dimensions` | Inspect a table's classifications, periods, and items |
-| Data fetch | `query_table`, `get_indicator_series` | Retrieve actual statistical values |
+| Discovery | `search_statistics`, `browse_categories` | Find tables by keyword or browse the catalog hierarchy |
+| Metadata | `get_table_metadata`, `get_available_values` | Inspect a table's classifications, periods, and items |
+| Data fetch | `get_statistics_data`, `filter_statistics`, `aggregate_statistics` | Retrieve, filter, and aggregate statistical values |
 | Verification | `verify_statistics` | Re-fetch and cite a specific value the model is about to claim |
 | Analysis | `execute_analysis`, `execute_visualization` | Statistical helpers and Altair charts (server-side) |
 | Reporting | `execute_report`, `execute_table` | Composite HTML reports and styled tables |
@@ -95,7 +95,7 @@ See [.env.example](./.env.example) for the full list.
 - [MIGRATION.md](./MIGRATION.md) — Migration guide for previous `kosis-mcp` users
 - [docs/ARCHITECTURE_DESIGN.md](./docs/ARCHITECTURE_DESIGN.md) — System architecture
 - [docs/KOSIS_API_REFERENCE.md](./docs/KOSIS_API_REFERENCE.md) — KOSIS endpoint and field reference
-- [docs/DEPLOYMENT.md](./docs/DEPLOYMENT.md) — Self-hosting (Docker, FastMCP HTTP, PostgreSQL)
+- [deploy/README.md](./deploy/README.md) — Self-hosting (Docker, FastMCP HTTP)
 - [docs/USER_GUIDE.md](./docs/USER_GUIDE.md) — End-user tool guide
 
 ## Contributing

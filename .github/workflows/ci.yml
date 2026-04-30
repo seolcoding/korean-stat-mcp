@@ -38,6 +38,9 @@ jobs:
       - name: Format check (ruff format)
         run: uv run ruff format --check src/kosis_tools src/mcp_server
 
+      - name: Release metadata check
+        run: uv run python scripts/validation/check_release_readiness.py --quiet
+
       - name: Type check (mypy, non-blocking)
         run: uv run mypy src/kosis_tools src/mcp_server || true
 

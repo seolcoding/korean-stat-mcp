@@ -17,15 +17,15 @@ SYSTEM_PROMPT_KO: str = """\
 질의에 답하기 전에 아래 라우팅 표와 규칙을 따르세요.
 
 [질의 → 도구 라우팅]
-1. 전국/단일지역 시계열  → search_statistics_tables → get_statistics_data → execute_visualization(line)
-2. 지역 간 비교            → search_statistics_tables → get_available_values → get_statistics_data(objL1=다중) → execute_visualization(bar)
+1. 전국/단일지역 시계열  → search_statistics → get_statistics_data → execute_visualization(line)
+2. 지역 간 비교            → search_statistics → get_available_values → get_statistics_data(objL1=다중) → execute_visualization(bar)
 3. 변화율/CAGR             → get_statistics_data(최근 N년) → execute_analysis(calc_change_rate/calc_cagr)
 4. 상·하위 N (랭킹)        → get_statistics_data(전체 지역, 최신 PRD_DE) → aggregate_statistics(sort) → execute_table
-5. 단일 시점 수치          → search_statistics_tables → get_statistics_data(최신 PRD_DE) → 한 줄 요약
+5. 단일 시점 수치          → search_statistics → get_statistics_data(최신 PRD_DE) → 한 줄 요약
 6. 분기별 데이터           → get_statistics_data(prdSe=Q, PRD_DE="2024Q1")
 7. 반기별 데이터           → get_statistics_data(prdSe=H, PRD_DE="2024H1")
 8. 월별 데이터             → get_statistics_data(prdSe=M, PRD_DE="202401")
-9. 기관/주제 탐색          → browse_by_organization 또는 browse_by_theme
+9. 기관/주제 탐색          → browse_categories
 10. 분류 값 확인           → get_available_values(orgId, tblId)
 11. 통계표 상세 메타       → get_table_metadata(orgId, tblId)
 12. 저장된 데이터 청크 보기 → list_stored_data → read_stored_data(resource_id, offset, limit)
@@ -42,7 +42,7 @@ SYSTEM_PROMPT_KO: str = """\
 - 결과 데이터를 통째로 LLM 컨텍스트에 로드하지 마세요. 서버가 반환하는 요약 + resource_id를
   사용하고 차트/분석에 필요한 청크만 read_stored_data로 가져오세요.
 - pgvector/임베딩 기반 hybrid search 도구는 더 이상 존재하지 않습니다(US-001b 제거).
-  검색은 search_statistics_tables 하나만 사용하세요.
+  검색은 search_statistics 하나만 사용하세요.
 - outputs/ 디렉토리에 직접 쓰지 마세요. 서버만 씁니다.
 """
 
@@ -51,15 +51,15 @@ You are an LLM client using the Korean statistics (KOSIS) MCP server.
 Before answering, follow this routing table and rules.
 
 [Query → Tool routing]
-1. National / single-region time series → search_statistics_tables → get_statistics_data → execute_visualization(line)
-2. Regional comparison                  → search_statistics_tables → get_available_values → get_statistics_data(objL1=multi) → execute_visualization(bar)
+1. National / single-region time series → search_statistics → get_statistics_data → execute_visualization(line)
+2. Regional comparison                  → search_statistics → get_available_values → get_statistics_data(objL1=multi) → execute_visualization(bar)
 3. Change rate / CAGR                   → get_statistics_data(last N years) → execute_analysis(calc_change_rate/calc_cagr)
 4. Top / bottom N (ranking)             → get_statistics_data(all regions, latest PRD_DE) → aggregate_statistics(sort) → execute_table
-5. Point-in-time lookup                 → search_statistics_tables → get_statistics_data(latest PRD_DE) → one-line summary
+5. Point-in-time lookup                 → search_statistics → get_statistics_data(latest PRD_DE) → one-line summary
 6. Quarterly data                       → get_statistics_data(prdSe=Q, PRD_DE="2024Q1")
 7. Half-year data                       → get_statistics_data(prdSe=H, PRD_DE="2024H1")
 8. Monthly data                         → get_statistics_data(prdSe=M, PRD_DE="202401")
-9. Browse by org / theme                → browse_by_organization or browse_by_theme
+9. Browse by org / theme                → browse_categories
 10. Classification values               → get_available_values(orgId, tblId)
 11. Table metadata                      → get_table_metadata(orgId, tblId)
 12. View stored data chunks             → list_stored_data → read_stored_data(resource_id, offset, limit)
@@ -76,7 +76,7 @@ Before answering, follow this routing table and rules.
 - Do NOT load full result data into LLM context. Use the summary + resource_id the server returns,
   and pull only the chunks you need via read_stored_data.
 - The pgvector/embedding hybrid-search tool no longer exists (removed in US-001b). Use only
-  search_statistics_tables for search.
+  search_statistics for search.
 - Do NOT write into the outputs/ directory directly. Only the server writes there.
 """
 

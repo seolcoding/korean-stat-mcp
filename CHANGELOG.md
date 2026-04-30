@@ -46,5 +46,5 @@ Initial public release. The package is renamed and refactored from the private `
 
 ---
 
-[Unreleased]: https://github.com/<github-user>/korean-stat-mcp/compare/v0.1.0...HEAD
-[0.1.0]: https://github.com/<github-user>/korean-stat-mcp/releases/tag/v0.1.0
+[Unreleased]: https://github.com/seolcoding/korean-stat-mcp/compare/v0.1.0...HEAD
+[0.1.0]: https://github.com/seolcoding/korean-stat-mcp/releases/tag/v0.1.0

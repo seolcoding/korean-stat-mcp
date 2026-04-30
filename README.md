@@ -14,7 +14,7 @@
 ## 왜 이 도구인가
 
 - **검증된 안정성**: KOSIS OpenAPI 호출 성공률 **99.38%** (10,000건 샘플 테스트). 분기/반기/지자체 fallback 자동화로 LLM이 단일 API 호출만 신경 쓰면 됩니다.
-- **큐레이션된 도구 표면**: 24개 내부 도구 중 LLM에게 정말 필요한 것만 노출하여 토큰 낭비 없이 빠른 의사결정 흐름을 만듭니다.
+- **큐레이션된 도구 표면**: 26개 내부 도구 중 LLM에게 정말 필요한 16개만 노출하여 토큰 낭비 없이 빠른 의사결정 흐름을 만듭니다.
 - **`verify_statistics`**: LLM이 만든 수치 주장을 KOSIS 원천 데이터와 자동 대조하는 검증 도구. 환각(hallucination) 방어가 기본 내장입니다.
 - **한국 통계 LLM 표준을 지향**: 천 단위 한글 포맷, 과학적표기법 금지, 한국어/영어 라우팅 매뉴얼 등 한국어 LLM 워크플로에 최적화.
 
@@ -25,7 +25,7 @@
 ### 1. Claude Code 플러그인 마켓 (가장 쉬움)
 
 ```bash
-/plugin marketplace add seolcoding-OS/korean-stat-mcp
+/plugin marketplace add seolcoding/korean-stat-mcp
 ```
 
 설치 후 `KOSIS_API_KEY` 환경변수만 설정하면 즉시 사용할 수 있습니다.
@@ -91,11 +91,11 @@ LLM 에 노출되는 큐레이션 도구 (12-16개 수준). 자세한 시그니�
 |--------|------|------|
 | **DISCOVER** | `search_statistics` | KOSIS 검색 API 기반 통계표 검색 |
 | | `get_table_metadata` | 테이블 분류·항목 메타데이터 |
-| | `list_categories` | 기관·주제별 카테고리 탐색 |
+| | `browse_categories` | 기관·주제별 카테고리 탐색 |
 | **FETCH** | `get_statistics_data` | KOSIS 원천 데이터 조회 (chunked) |
 | | `filter_statistics` | 서버 측 필터링 |
 | | `aggregate_statistics` | 그룹 집계 |
-| | `get_data_chunk` | 큰 데이터셋의 청크 단위 접근 |
+| | `read_stored_data` | 큰 데이터셋의 청크 단위 접근 |
 | **VERIFY** | `verify_statistics` | LLM 수치 주장 ↔ KOSIS 원천 자동 대조 |
 | **PRESENT** | `execute_visualization` | Altair 차트 생성 (천 단위, 과학적표기법 금지) |
 | | `execute_analysis` | 변화율·CAGR·통계 분석 |
@@ -126,7 +126,7 @@ LLM 에 노출되는 큐레이션 도구 (12-16개 수준). 자세한 시그니�
 - 사용 가이드: [docs/USER_GUIDE.md](./docs/USER_GUIDE.md)
 - 아키텍처: [docs/ARCHITECTURE_DESIGN.md](./docs/ARCHITECTURE_DESIGN.md)
 - KOSIS API 레퍼런스: [docs/KOSIS_API_REFERENCE.md](./docs/KOSIS_API_REFERENCE.md)
-- 배포 가이드: [docs/DEPLOYMENT.md](./docs/DEPLOYMENT.md)
+- 배포 가이드: [deploy/README.md](./deploy/README.md)
 - 대용량 데이터 패턴: [docs/LARGE_DATA_MCP_PATTERNS.md](./docs/LARGE_DATA_MCP_PATTERNS.md)
 
 ---

@@ -51,10 +51,10 @@ all = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/<github-user>/korean-stat-mcp"
-Documentation = "https://github.com/<github-user>/korean-stat-mcp#readme"
-Repository = "https://github.com/<github-user>/korean-stat-mcp"
-"Bug Tracker" = "https://github.com/<github-user>/korean-stat-mcp/issues"
+Homepage = "https://github.com/seolcoding/korean-stat-mcp"
+Documentation = "https://github.com/seolcoding/korean-stat-mcp#readme"
+Repository = "https://github.com/seolcoding/korean-stat-mcp"
+"Bug Tracker" = "https://github.com/seolcoding/korean-stat-mcp/issues"
 
 [project.scripts]
 korean-stat-mcp = "mcp_server.server:main"

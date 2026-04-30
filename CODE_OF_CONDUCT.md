@@ -16,7 +16,7 @@ The full text is available at the link above; an official Korean translation is 
 
 If you witness or experience unacceptable behavior, please contact the project maintainers — open a private report via the GitHub repository, or email the maintainers directly if a private channel is needed.
 
-신고 채널 / Reporting channel: <https://github.com/<github-user>/korean-stat-mcp/issues>
+신고 채널 / Reporting channel: <https://github.com/seolcoding/korean-stat-mcp/issues>
 
 ---
 
