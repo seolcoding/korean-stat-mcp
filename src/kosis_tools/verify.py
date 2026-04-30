@@ -242,7 +242,13 @@ def parse_claim(claim: str) -> dict[str, Any]:
             -> equivalent dict (region resolved via 'seoul' alias).
     """
     if not claim or not claim.strip():
-        return {"value": None, "unit": None, "region": None, "period": None, "metric": None}
+        return {
+            "value": None,
+            "unit": None,
+            "region": None,
+            "period": None,
+            "metric": None,
+        }
 
     period = _parse_period(claim)
     region = _parse_region(claim)
@@ -323,7 +329,9 @@ def _to_float(raw: Any) -> float | None:
         return None
 
 
-def _period_to_kosis_dates(period: str | None, prd_se: str = "Y") -> tuple[str, str, str]:
+def _period_to_kosis_dates(
+    period: str | None, prd_se: str = "Y"
+) -> tuple[str, str, str]:
     """Map a parsed period token to ``(start, end, prd_se)`` for ``StatisticsData``.
 
     - ``"2023"`` -> ``("2023", "2023", "Y")``
@@ -386,7 +394,9 @@ def _select_matching_record(
     return best
 
 
-def _rank_confidence(parsed: dict[str, Any], match: bool, has_region_match: bool) -> Confidence:
+def _rank_confidence(
+    parsed: dict[str, Any], match: bool, has_region_match: bool
+) -> Confidence:
     """Decide a confidence label.
 
     - ``high``: claim has period+region+metric AND match succeeded AND we found

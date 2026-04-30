@@ -55,9 +55,7 @@ def build_format_param(
     if fmt is None:
         return "json"
     if fmt not in _VALID_FORMATS:
-        raise ValueError(
-            f"format must be one of {_VALID_FORMATS}, got: {fmt!r}"
-        )
+        raise ValueError(f"format must be one of {_VALID_FORMATS}, got: {fmt!r}")
     return fmt
 
 

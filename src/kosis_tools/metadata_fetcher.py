@@ -14,20 +14,14 @@ from typing import Optional
 
 import aiohttp
 import json5
-import requests
 
 from .config import Endpoints, load_config
 from .metadata_models import (
     DataSource,
-    Indicator,
-    IndicatorsFile,
     PeriodType,
     StatisticsTable,
-    Survey,
-    SurveysFile,
     TablesFile,
     TablesMetadata,
-    IndicatorList,
 )
 
 
@@ -57,7 +51,9 @@ class AsyncMetadataFetcher:
         self.semaphore: asyncio.Semaphore = None
         self._request_count = 0
 
-    async def _request(self, session: aiohttp.ClientSession, endpoint: str, params: dict) -> dict | list:
+    async def _request(
+        self, session: aiohttp.ClientSession, endpoint: str, params: dict
+    ) -> dict | list:
         """비동기 API 요청."""
         params["apiKey"] = self.config.api_key
         params["format"] = "json"
@@ -65,7 +61,9 @@ class AsyncMetadataFetcher:
 
         async with self.semaphore:
             await asyncio.sleep(self.rate_limit)
-            async with session.get(url, params=params, timeout=aiohttp.ClientTimeout(total=60)) as resp:
+            async with session.get(
+                url, params=params, timeout=aiohttp.ClientTimeout(total=60)
+            ) as resp:
                 resp.raise_for_status()
                 text = await resp.text()
                 self._request_count += 1
@@ -136,7 +134,13 @@ class AsyncMetadataFetcher:
 
                 try:
                     node_tables, children = await self._process_node(
-                        session, vw_cd, parent_id, path_names, path_ids, depth, data_source
+                        session,
+                        vw_cd,
+                        parent_id,
+                        path_names,
+                        path_ids,
+                        depth,
+                        data_source,
                     )
 
                     async with lock:
@@ -145,7 +149,10 @@ class AsyncMetadataFetcher:
                             await queue.put(child)
 
                         if callback and len(tables) % 5000 == 0:
-                            callback(len(tables), f"수집 중... (요청 {self._request_count}회, 대기 {queue.qsize()})")
+                            callback(
+                                len(tables),
+                                f"수집 중... (요청 {self._request_count}회, 대기 {queue.qsize()})",
+                            )
 
                 except Exception as e:
                     print(f"Error: {e}", flush=True)
@@ -156,7 +163,9 @@ class AsyncMetadataFetcher:
 
         async with aiohttp.ClientSession() as session:
             # 워커 시작
-            workers = [asyncio.create_task(worker(session)) for _ in range(self.concurrency)]
+            workers = [
+                asyncio.create_task(worker(session)) for _ in range(self.concurrency)
+            ]
 
             # 큐가 비고 모든 작업 완료될 때까지 대기
             await queue.join()
@@ -166,7 +175,9 @@ class AsyncMetadataFetcher:
                 w.cancel()
 
         if callback:
-            callback(len(tables), f"완료! {len(tables)}개 수집, 요청 {self._request_count}회")
+            callback(
+                len(tables), f"완료! {len(tables)}개 수집, 요청 {self._request_count}회"
+            )
 
         return tables
 
@@ -220,7 +231,9 @@ class AsyncMetadataFetcher:
                 )
                 tables.append(table)
             else:  # 카테고리 - 다음 레벨에서 처리
-                children.append((list_id, current_path_names, current_path_ids, depth + 1))
+                children.append(
+                    (list_id, current_path_names, current_path_ids, depth + 1)
+                )
 
         return tables, children
 
@@ -248,7 +261,9 @@ class AsyncMetadataFetcher:
         return sorted(keywords - stopwords)
 
 
-def _load_cache(cache_file: Path) -> tuple[list[StatisticsTable], set[str], dict[str, int]]:
+def _load_cache(
+    cache_file: Path,
+) -> tuple[list[StatisticsTable], set[str], dict[str, int]]:
     """캐시 파일 로드."""
     if not cache_file.exists():
         return [], set(), {}
@@ -336,7 +351,9 @@ async def async_fetch_and_cache(
         total_requests += fetcher._request_count
 
         elapsed = time.time() - start
-        print(f"  완료: {len(tables):,}개 ({elapsed:.1f}초, {fetcher._request_count}회 요청)")
+        print(
+            f"  완료: {len(tables):,}개 ({elapsed:.1f}초, {fetcher._request_count}회 요청)"
+        )
 
         # 뷰 코드 완료 후 캐시 저장
         completed_vw_codes.add(vw_cd)
@@ -380,13 +397,16 @@ async def async_fetch_and_cache(
 
 if __name__ == "__main__":
     from dotenv import load_dotenv
+
     load_dotenv()
 
     output_dir = Path("data/metadata_api")
-    result = asyncio.run(async_fetch_and_cache(
-        output_dir,
-        vw_codes=["MT_ZTITLE"],  # 테스트: 주제별통계만
-        concurrency=20,
-        rate_limit=0.02,
-    ))
+    result = asyncio.run(
+        async_fetch_and_cache(
+            output_dir,
+            vw_codes=["MT_ZTITLE"],  # 테스트: 주제별통계만
+            concurrency=20,
+            rate_limit=0.02,
+        )
+    )
     print(f"\n완료: {result}")

@@ -89,6 +89,7 @@ mcp = FastMCP(
 # Layer 1: DISCOVER - 데이터 탐색 도구
 # =============================================================================
 
+
 @mcp.tool
 def search_statistics(
     keyword: str,
@@ -137,7 +138,7 @@ def search_statistics(
             "result_count": len(results),
             "results": results,
             "org_distribution": org_dist,
-            "next_step": "get_table_metadata(org_id, tbl_id)로 테이블 구조를 확인하세요"
+            "next_step": "get_table_metadata(org_id, tbl_id)로 테이블 구조를 확인하세요",
         }
     except Exception as e:
         logger.error(f"search_statistics error: {e}")
@@ -190,11 +191,15 @@ def browse_categories(
         if code:
             # 특정 카테고리의 통계표 목록
             response["statistics"] = results
-            response["next_step"] = "get_table_metadata(org_id, tbl_id)로 테이블 구조를 확인하세요"
+            response["next_step"] = (
+                "get_table_metadata(org_id, tbl_id)로 테이블 구조를 확인하세요"
+            )
         else:
             # 카테고리 목록
             response["categories"] = results
-            response["usage"] = f"browse_categories(by='{by}', code='코드')로 해당 카테고리의 통계표 목록을 조회하세요"
+            response["usage"] = (
+                f"browse_categories(by='{by}', code='코드')로 해당 카테고리의 통계표 목록을 조회하세요"
+            )
 
         return response
     except Exception as e:
@@ -335,7 +340,9 @@ def get_available_values(
             "count": len(values),
             "values": values[:50] if len(values) > 50 else values,  # 최대 50개
             "truncated": len(values) > 50,
-            "filter_example": filter_examples.get(field, "filter_statistics(data, ...)"),
+            "filter_example": filter_examples.get(
+                field, "filter_statistics(data, ...)"
+            ),
         }
     except Exception as e:
         logger.error(f"get_available_values error: {e}")
@@ -345,6 +352,7 @@ def get_available_values(
 # =============================================================================
 # Layer 2: FETCH - 데이터 조회 도구
 # =============================================================================
+
 
 @mcp.tool
 def get_statistics_data(
@@ -533,7 +541,11 @@ def aggregate_statistics(
         # 대안: data_json 직접 전달
         >>> aggregate_statistics(group_by="C1_NM", data_json=data)
     """
-    from kosis_tools.report_tools import aggregate_data, format_data_for_llm, load_raw_data
+    from kosis_tools.report_tools import (
+        aggregate_data,
+        format_data_for_llm,
+        load_raw_data,
+    )
 
     try:
         # data_id 우선 사용 (서버 사이드 처리)
@@ -569,6 +581,7 @@ def aggregate_statistics(
 # =============================================================================
 # Layer 3: PRESENT - 분석/시각화 도구
 # =============================================================================
+
 
 def _load_data_from_id_or_json(
     data_id: Optional[str] = None,
@@ -639,14 +652,16 @@ def analyze_trend(
         # 요약 생성
         metrics = result.metrics
         if group_by and "groups" in metrics:
-            # 그룹별 분석
             groups = metrics.get("groups", {})
-            directions = [g.get("direction", "") for g in groups.values()]
             summary = f"{len(groups)}개 그룹 분석 완료"
         else:
             direction = metrics.get("direction", "")
             cagr = metrics.get("cagr", 0)
-            summary = f"전반적으로 {direction} 추세 (연평균 {cagr:+.1f}%)" if direction else "추세 분석 완료"
+            summary = (
+                f"전반적으로 {direction} 추세 (연평균 {cagr:+.1f}%)"
+                if direction
+                else "추세 분석 완료"
+            )
 
         return {
             "analysis_type": result.type,
@@ -780,16 +795,22 @@ def analyze_ranking(
 
         # 순위 데이터 정리 (간결하게)
         rankings = []
-        for item in (result.data[:top_n] if result.data else []):
-            rankings.append({
-                "rank": item.get("rank", 0),
-                "name": item.get("C1_NM", item.get("name", "")),
-                "value": item.get("DT", item.get("value", 0)),
-            })
+        for item in result.data[:top_n] if result.data else []:
+            rankings.append(
+                {
+                    "rank": item.get("rank", 0),
+                    "name": item.get("C1_NM", item.get("name", "")),
+                    "value": item.get("DT", item.get("value", 0)),
+                }
+            )
 
         # 요약 생성
         top_1 = result.metrics.get("top_1", {})
-        summary = f"1위 {top_1.get('C1_NM', '')}, 상위 {top_n}개 분석" if top_1 else f"상위 {top_n}개 순위 분석"
+        summary = (
+            f"1위 {top_1.get('C1_NM', '')}, 상위 {top_n}개 분석"
+            if top_1
+            else f"상위 {top_n}개 순위 분석"
+        )
 
         return {
             "analysis_type": result.type,
@@ -861,7 +882,13 @@ def create_quick_report(
             "data_records": len(data),
             "period_range": f"{periods[0]}~{periods[-1]}" if periods else "N/A",
             "region_count": len(regions),
-            "components": ["KPI 카드 (3개)", "추이 라인 차트", "비교 막대 차트", "인사이트 박스", "데이터 출처"],
+            "components": [
+                "KPI 카드 (3개)",
+                "추이 라인 차트",
+                "비교 막대 차트",
+                "인사이트 박스",
+                "데이터 출처",
+            ],
         }
 
         if output_path:
@@ -889,6 +916,7 @@ def create_quick_report(
 # =============================================================================
 # Layer 4: DATA ACCESS - 저장된 데이터 접근 도구
 # =============================================================================
+
 
 @mcp.tool
 def list_stored_data() -> dict:
@@ -925,7 +953,7 @@ def list_stored_data() -> dict:
             "stored_files": files[:20],  # 최근 20개만
             "total_files": len(files),
             "hint": "read_stored_data(data_id)로 전체 데이터 접근, "
-                   "read_stored_data(data_id, chunk_index=0)로 청크별 접근",
+            "read_stored_data(data_id, chunk_index=0)로 청크별 접근",
         }
     except Exception as e:
         logger.error(f"list_stored_data error: {e}")
@@ -1003,6 +1031,7 @@ def read_stored_data(
 # Layer 4: CODE EXECUTION - LLM 코드 실행
 # =============================================================================
 
+
 @mcp.tool
 def execute_code(
     code: str,
@@ -1035,6 +1064,7 @@ def execute_code(
         data = None
         if data_id:
             from kosis_tools.report_tools import load_raw_data
+
             result = load_raw_data(data_id)
             if "error" not in result:
                 data = result.get("data", [])
@@ -1058,7 +1088,7 @@ def execute_code(
                 "fix_hints": validation.get("fix_hints", []),
                 "data_signature": validation.get("data_signature", {}),
                 "action_required": "데이터 시그니처를 확인하고 시각화 코드를 수정해서 다시 실행하세요.",
-                "code_example": '''
+                "code_example": """
 # 올바른 코드 패턴 예시:
 df = prepare_data(data, numeric_fields=["DT"])
 
@@ -1082,7 +1112,7 @@ if not spec.get("data", {}).get("values"):
     raise ValueError("차트 데이터가 비어있습니다.")
 
 return save_report(build_report("리포트", [{"type": "chart", "vega_spec": spec}]), "report")
-''',
+""",
             }
             return error_response
 
@@ -1097,13 +1127,13 @@ return save_report(build_report("리포트", [{"type": "chart", "vega_spec": spe
             "stdout": "",
             "error": str(e),
             "code_templates": {
-                "data_aggregation": '''
+                "data_aggregation": """
 # 데이터 집계 예시
 df = prepare_data(data, numeric_fields=["DT"])
 result = df.groupby("C1_NM")["DT"].sum().sort_values(ascending=False)
 return result.head(10).to_dict()
-''',
-                "line_chart": '''
+""",
+                "line_chart": """
 # 라인 차트 예시
 df = prepare_data(data, numeric_fields=["DT"])
 chart = alt.Chart(df).mark_line(point=True).encode(
@@ -1112,8 +1142,8 @@ chart = alt.Chart(df).mark_line(point=True).encode(
     color='C1_NM:N'
 ).properties(title="추이", width=600, height=400)
 return chart_to_json(chart)
-''',
-                "bar_chart": '''
+""",
+                "bar_chart": """
 # 막대 차트 예시
 df = prepare_data(data, numeric_fields=["DT"])
 chart = alt.Chart(df).mark_bar().encode(
@@ -1121,8 +1151,8 @@ chart = alt.Chart(df).mark_bar().encode(
     y='DT:Q'
 ).properties(title="비교", width=600, height=400)
 return save_chart(chart, "result.html")
-''',
-                "statistics": '''
+""",
+                "statistics": """
 # 통계 분석 예시
 df = prepare_data(data, numeric_fields=["DT"])
 stats = {
@@ -1133,21 +1163,22 @@ stats = {
     "max": df["DT"].max()
 }
 return stats
-'''
+""",
             },
             "available_modules": ["pd (pandas)", "alt (altair)", "np (numpy)"],
             "available_functions": [
                 "prepare_data(data, numeric_fields=['DT']) → DataFrame",
                 "save_chart(chart, filename) → {'path': ..., 'format': ...}",
                 "chart_to_json(chart) → Vega-Lite JSON",
-                "chart_to_html(chart, title) → HTML 문자열"
-            ]
+                "chart_to_html(chart, title) → HTML 문자열",
+            ],
         }
 
 
 # =============================================================================
 # Layer 4.1: MODULAR EXECUTORS - 특화된 코드 실행
 # =============================================================================
+
 
 @mcp.tool
 def execute_visualization(
@@ -1189,6 +1220,7 @@ def execute_visualization(
         data = None
         if data_id:
             from kosis_tools.report_tools import load_raw_data
+
             result = load_raw_data(data_id)
             if "error" not in result:
                 data = result.get("data", [])
@@ -1253,6 +1285,7 @@ def execute_analysis(
         data = None
         if data_id:
             from kosis_tools.report_tools import load_raw_data
+
             result = load_raw_data(data_id)
             if "error" not in result:
                 data = result.get("data", [])
@@ -1309,6 +1342,7 @@ def execute_table(
         data = None
         if data_id:
             from kosis_tools.report_tools import load_raw_data
+
             result = load_raw_data(data_id)
             if "error" not in result:
                 data = result.get("data", [])
@@ -1366,6 +1400,7 @@ def execute_report(
         data = None
         if data_id:
             from kosis_tools.report_tools import load_raw_data
+
             result = load_raw_data(data_id)
             if "error" not in result:
                 data = result.get("data", [])
@@ -1426,6 +1461,7 @@ def get_executor_guide(executor_type: str) -> dict:
 # =============================================================================
 # Resources - 정적 데이터 리소스
 # =============================================================================
+
 
 @mcp.resource("kosis://regions")
 def get_regions_resource() -> dict:
@@ -1499,6 +1535,7 @@ def get_period_types_resource() -> dict:
 # 템플릿 가이드 도구 (토큰 효율적 계층 구조)
 # =============================================================================
 
+
 @mcp.tool
 def get_report_templates() -> dict:
     """
@@ -1543,7 +1580,9 @@ def get_template_guide(
         # 특정 단계만 반환 (토큰 절약)
         result = get_template_step(template_id, step)
         if not result:
-            return {"error": f"템플릿 '{template_id}' 또는 단계 {step}을 찾을 수 없습니다."}
+            return {
+                "error": f"템플릿 '{template_id}' 또는 단계 {step}을 찾을 수 없습니다."
+            }
         return result
     else:
         # 전체 구조 반환
@@ -1592,6 +1631,7 @@ def recommend_template(data_id: Optional[str] = None) -> dict:
 
     if data_id:
         from kosis_tools.report_tools import load_raw_data
+
         result = load_raw_data(data_id)
         if "error" in result:
             return result
@@ -1599,6 +1639,7 @@ def recommend_template(data_id: Optional[str] = None) -> dict:
         data = result.get("data", [])
         # 데이터 시그니처 생성
         from kosis_tools.code_executor import CodeExecutor
+
         executor = CodeExecutor()
         signature = executor._generate_data_signature(data)
         recommendation = _recommend(signature)
@@ -1611,7 +1652,14 @@ def recommend_template(data_id: Optional[str] = None) -> dict:
         # 일반 가이드
         return {
             "tip": "data_id를 제공하면 데이터 기반 추천을 받을 수 있습니다.",
-            "available_templates": ["trend", "compare", "composition", "correlation", "dashboard", "ranking"],
+            "available_templates": [
+                "trend",
+                "compare",
+                "composition",
+                "correlation",
+                "dashboard",
+                "ranking",
+            ],
             "default": "dashboard",
         }
 
@@ -1619,6 +1667,7 @@ def recommend_template(data_id: Optional[str] = None) -> dict:
 # =============================================================================
 # 템플릿 리소스 (상세 참조용)
 # =============================================================================
+
 
 @mcp.resource("kosis://templates")
 def get_templates_resource() -> dict:
@@ -1628,6 +1677,7 @@ def get_templates_resource() -> dict:
     각 템플릿의 ID, 이름, 용도, 섹션 수를 제공합니다.
     """
     from kosis_tools.story_templates import get_template_list
+
     return get_template_list()
 
 
@@ -1635,6 +1685,7 @@ def get_templates_resource() -> dict:
 def get_trend_template_resource() -> dict:
     """트렌드 분석 템플릿 상세."""
     from kosis_tools.story_templates import get_template_guide
+
     return get_template_guide("trend")
 
 
@@ -1642,6 +1693,7 @@ def get_trend_template_resource() -> dict:
 def get_compare_template_resource() -> dict:
     """비교 분석 템플릿 상세."""
     from kosis_tools.story_templates import get_template_guide
+
     return get_template_guide("compare")
 
 
@@ -1649,6 +1701,7 @@ def get_compare_template_resource() -> dict:
 def get_dashboard_template_resource() -> dict:
     """대시보드 템플릿 상세."""
     from kosis_tools.story_templates import get_template_guide
+
     return get_template_guide("dashboard")
 
 
@@ -1656,6 +1709,7 @@ def get_dashboard_template_resource() -> dict:
 def get_chart_guide_resource() -> dict:
     """차트 선택 가이드."""
     from kosis_tools.story_templates import CHART_GUIDE
+
     return CHART_GUIDE
 
 
@@ -1747,7 +1801,7 @@ def get_visualization_guide_resource() -> dict:
 def get_code_patterns_resource() -> dict:
     """코드 패턴 예시 - 복사-붙여넣기 가능한 템플릿."""
     patterns = {
-        "line_chart": '''# 라인 차트 (트렌드)
+        "line_chart": """# 라인 차트 (트렌드)
 df = prepare_data(data, numeric_fields=["DT"])
 chart = alt.Chart(df).mark_line(point=True).encode(
     x=alt.X('PRD_DE:N', title='연도'),
@@ -1755,18 +1809,16 @@ chart = alt.Chart(df).mark_line(point=True).encode(
     color=alt.Color('C1_NM:N', title='분류'),
     tooltip=['PRD_DE', 'C1_NM', alt.Tooltip('DT:Q', format=',')]
 ).properties(title='추이 분석', width=600, height=400)
-return save_chart(chart, "trend")''',
-
-        "bar_chart": '''# 막대 차트 (비교)
+return save_chart(chart, "trend")""",
+        "bar_chart": """# 막대 차트 (비교)
 df = prepare_data(data, numeric_fields=["DT"])
 chart = alt.Chart(df).mark_bar().encode(
     x=alt.X('C1_NM:N', sort='-y', title='분류'),
     y=alt.Y('sum(DT):Q', title='합계', axis=alt.Axis(format=',')),
     color=alt.value('#667eea')
 ).properties(title='비교 분석', width=600, height=400)
-return save_chart(chart, "comparison")''',
-
-        "donut_chart": '''# 도넛 차트 (비율)
+return save_chart(chart, "comparison")""",
+        "donut_chart": """# 도넛 차트 (비율)
 df = prepare_data(data, numeric_fields=["DT"])
 df_agg = df.groupby("C1_NM")["DT"].sum().reset_index()
 chart = alt.Chart(df_agg).mark_arc(innerRadius=50).encode(
@@ -1774,9 +1826,8 @@ chart = alt.Chart(df_agg).mark_arc(innerRadius=50).encode(
     color=alt.Color("C1_NM:N", title="구성"),
     tooltip=["C1_NM", alt.Tooltip("DT:Q", format=",")]
 ).properties(title='구성 비율', width=400, height=400)
-return save_chart(chart, "composition")''',
-
-        "full_report": '''# 완전한 리포트
+return save_chart(chart, "composition")""",
+        "full_report": """# 완전한 리포트
 df = prepare_data(data, numeric_fields=["DT"])
 
 # 핵심 수치 계산
@@ -1801,12 +1852,11 @@ html = build_report(
         {'type': 'table', 'html': to_table_html(df.head(10), title='상세 데이터')},
     ]
 )
-return save_report(html, 'analysis_report')''',
-
-        "aggregation": '''# 데이터 집계
+return save_report(html, 'analysis_report')""",
+        "aggregation": """# 데이터 집계
 df = prepare_data(data, numeric_fields=["DT"])
 result = df.groupby("C1_NM")["DT"].agg(['sum', 'mean', 'count']).sort_values('sum', ascending=False)
-return result.head(10).to_dict()''',
+return result.head(10).to_dict()""",
     }
     return patterns
 
@@ -1814,6 +1864,7 @@ return result.head(10).to_dict()''',
 # =============================================================================
 # HTTP 앱 생성 (아티팩트 서빙 포함)
 # =============================================================================
+
 
 def create_http_app():
     """
@@ -1847,7 +1898,9 @@ def create_http_app():
     )
 
     # 아티팩트 정적 파일 서빙
-    app.mount("/artifacts", StaticFiles(directory=str(artifacts_path)), name="artifacts")
+    app.mount(
+        "/artifacts", StaticFiles(directory=str(artifacts_path)), name="artifacts"
+    )
 
     # MCP 엔드포인트 마운트
     mcp_app = mcp.http_app(path="/mcp")
@@ -1905,7 +1958,9 @@ async def verify_statistics(
         VerifyResult dict: match, expected, actual, diff_pct, tolerance,
         table_id, source_url, confidence, explanation.
     """
-    result = await _verify_statistics_impl(claim, table_id=table_id, tolerance=tolerance)
+    result = await _verify_statistics_impl(
+        claim, table_id=table_id, tolerance=tolerance
+    )
     return result.to_dict()
 
 
@@ -1978,11 +2033,13 @@ _prune_unexposed_tools()
 # 엔트리포인트
 # =============================================================================
 
+
 def main():
     """MCP 서버 실행."""
     if "--http" in sys.argv:
         # HTTP 모드
         import uvicorn
+
         port = int(os.environ.get("KOSIS_PORT", "8000"))
         host = os.environ.get("KOSIS_HOST", "0.0.0.0")
 

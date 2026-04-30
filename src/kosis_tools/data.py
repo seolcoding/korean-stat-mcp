@@ -44,7 +44,7 @@ import re
 from typing import Any, Dict, List, Optional, Tuple
 
 from .base import KosisBaseClient, build_format_param
-from .config import Endpoints, KosisConfig, PeriodType
+from .config import Endpoints, PeriodType
 
 # PRD_SE 한글 → API 코드 변환에 PeriodType.from_korean() 사용
 
@@ -246,7 +246,9 @@ class StatisticsData(KosisBaseClient):
             if param_value:
                 params[param_name] = param_value
 
-        logger.debug(f"데이터 조회: {tbl_id}, 주기={prd_se}, 기간={start_date}~{end_date}")
+        logger.debug(
+            f"데이터 조회: {tbl_id}, 주기={prd_se}, 기간={start_date}~{end_date}"
+        )
 
         result = self._request("GET", Endpoints.STATISTICS_DATA, params)
 
@@ -303,7 +305,9 @@ class StatisticsData(KosisBaseClient):
             logger.warning(f"메타데이터 조회 실패: {tbl_id}")
             # 메타데이터 없어도 사용자가 직접 기간 지정했으면 시도
             if start_date and end_date and prd_se:
-                return self.get_data(org_id, tbl_id, start_date, end_date, prd_se, itm_id=itm_id)
+                return self.get_data(
+                    org_id, tbl_id, start_date, end_date, prd_se, itm_id=itm_id
+                )
             return []
 
         # 첫 번째 주기 정보 사용 (보통 가장 세밀한 주기)
@@ -330,6 +334,7 @@ class StatisticsData(KosisBaseClient):
 
             # 분기 형식: "YYYY Q/4" → "YYYYQQ"
             import re
+
             quarter_match = re.match(r"(\d{4})\s*(\d)/4", p)
             if quarter_match:
                 year = quarter_match.group(1)
@@ -361,7 +366,9 @@ class StatisticsData(KosisBaseClient):
                 start_date, end_date, strt_prd, end_prd, actual_prd_se
             )
 
-        logger.info(f"스마트 조회: {tbl_id}, 주기={actual_prd_se}, 기간={actual_start}~{actual_end}")
+        logger.info(
+            f"스마트 조회: {tbl_id}, 주기={actual_prd_se}, 기간={actual_start}~{actual_end}"
+        )
 
         # 2. OBJ_VAR 메타데이터 조회 - 분류 구조 파악
         obj_vars = meta.get_obj_vars(org_id, tbl_id)
@@ -370,8 +377,7 @@ class StatisticsData(KosisBaseClient):
 
         # 3. 분류 레벨에 맞는 retry 전략 실행
         result = self._execute_with_obj_retry(
-            org_id, tbl_id, actual_start, actual_end, actual_prd_se,
-            obj_vars, itm_id
+            org_id, tbl_id, actual_start, actual_end, actual_prd_se, obj_vars, itm_id
         )
 
         if result:
@@ -394,10 +400,17 @@ class StatisticsData(KosisBaseClient):
                     except (ValueError, IndexError):
                         fallback_start, fallback_end = yearly_start, yearly_end
 
-                    logger.info(f"반기→년간 폴백: {tbl_id}, 기간={fallback_start}~{fallback_end}")
+                    logger.info(
+                        f"반기→년간 폴백: {tbl_id}, 기간={fallback_start}~{fallback_end}"
+                    )
                     result = self._execute_with_obj_retry(
-                        org_id, tbl_id, fallback_start, fallback_end, "Y",
-                        obj_vars, itm_id
+                        org_id,
+                        tbl_id,
+                        fallback_start,
+                        fallback_end,
+                        "Y",
+                        obj_vars,
+                        itm_id,
                     )
                     if result:
                         return result
@@ -481,15 +494,19 @@ class StatisticsData(KosisBaseClient):
         for max_level in range(1, 5):
             obj_params = {f"obj_l{i}": "ALL" for i in range(1, max_level + 1)}
             logger.debug(f"전략 {max_level} - objL1~objL{max_level} ALL: {obj_params}")
-            data = self._try_get_data(org_id, tbl_id, start_date, end_date, prd_se, obj_params, itm_id)
+            data = self._try_get_data(
+                org_id, tbl_id, start_date, end_date, prd_se, obj_params, itm_id
+            )
             if data:
                 return data
 
         # 전략 5: 메타데이터 기반 분류 개수 시도
         if obj_count > 0:
-            obj_params = {f"obj_l{i+1}": "ALL" for i in range(min(obj_count, 8))}
+            obj_params = {f"obj_l{i + 1}": "ALL" for i in range(min(obj_count, 8))}
             logger.debug(f"전략 5 - 메타데이터 기반 {obj_count}개 분류: {obj_params}")
-            data = self._try_get_data(org_id, tbl_id, start_date, end_date, prd_se, obj_params, itm_id)
+            data = self._try_get_data(
+                org_id, tbl_id, start_date, end_date, prd_se, obj_params, itm_id
+            )
             if data:
                 return data
 
@@ -501,8 +518,13 @@ class StatisticsData(KosisBaseClient):
                 for max_level in [2, 3, 4]:
                     obj_params = {f"obj_l{i}": "ALL" for i in range(1, max_level + 1)}
                     data = self._try_get_data(
-                        org_id, tbl_id, reduced_start, end_date, prd_se,
-                        obj_params, itm_id
+                        org_id,
+                        tbl_id,
+                        reduced_start,
+                        end_date,
+                        prd_se,
+                        obj_params,
+                        itm_id,
                     )
                     if data:
                         return data
@@ -517,8 +539,7 @@ class StatisticsData(KosisBaseClient):
             obj_params = {"obj_l1": fallback}
             logger.debug(f"전략 7a - objL1='{fallback}' 단독")
             data = self._try_get_data(
-                org_id, tbl_id, start_date, end_date, prd_se,
-                obj_params, itm_id
+                org_id, tbl_id, start_date, end_date, prd_se, obj_params, itm_id
             )
             if data:
                 return data
@@ -530,8 +551,7 @@ class StatisticsData(KosisBaseClient):
                 for i in range(2, max_level + 1):
                     obj_params[f"obj_l{i}"] = "ALL"
                 data = self._try_get_data(
-                    org_id, tbl_id, start_date, end_date, prd_se,
-                    obj_params, itm_id
+                    org_id, tbl_id, start_date, end_date, prd_se, obj_params, itm_id
                 )
                 if data:
                     return data
@@ -540,14 +560,18 @@ class StatisticsData(KosisBaseClient):
         for max_level in range(5, 9):
             obj_params = {f"obj_l{i}": "ALL" for i in range(1, max_level + 1)}
             logger.debug(f"전략 8 - objL1~objL{max_level} ALL (확장)")
-            data = self._try_get_data(org_id, tbl_id, start_date, end_date, prd_se, obj_params, itm_id)
+            data = self._try_get_data(
+                org_id, tbl_id, start_date, end_date, prd_se, obj_params, itm_id
+            )
             if data:
                 return data
 
         logger.warning(f"모든 전략 실패: {tbl_id}")
         return []
 
-    def _extract_first_obj_values(self, obj_vars: List[Dict[str, Any]]) -> Dict[int, str]:
+    def _extract_first_obj_values(
+        self, obj_vars: List[Dict[str, Any]]
+    ) -> Dict[int, str]:
         """OBJ_VAR 메타데이터에서 각 분류의 첫 번째 값을 추출합니다."""
         first_values: Dict[int, str] = {}
 
@@ -615,8 +639,8 @@ class StatisticsData(KosisBaseClient):
         # 전략 2: 일반적인 분류 코드 시도
         common_codes = [
             {"obj_l1": "00", "obj_l2": "ALL", "obj_l3": "ALL"},  # 전국/전체
-            {"obj_l1": "T", "obj_l2": "ALL", "obj_l3": "ALL"},   # Total
-            {"obj_l1": "0", "obj_l2": "ALL", "obj_l3": "ALL"},   # 계
+            {"obj_l1": "T", "obj_l2": "ALL", "obj_l3": "ALL"},  # Total
+            {"obj_l1": "0", "obj_l2": "ALL", "obj_l3": "ALL"},  # 계
             {"obj_l1": "ALL", "obj_l2": "00", "obj_l3": "ALL"},
             {"obj_l1": "ALL", "obj_l2": "0", "obj_l3": "ALL"},
         ]
@@ -1057,9 +1081,7 @@ class StatisticsData(KosisBaseClient):
             elif prd_se == "S":
                 chunk_end_str = f"{current_end}02"
 
-            logger.info(
-                f"분할 조회 #{chunk_num}: {chunk_start_str} ~ {chunk_end_str}"
-            )
+            logger.info(f"분할 조회 #{chunk_num}: {chunk_start_str} ~ {chunk_end_str}")
 
             chunk_data = self.get_data(
                 org_id=org_id,
@@ -1089,7 +1111,9 @@ class StatisticsData(KosisBaseClient):
         # 중복 제거 (PRD_DE + 모든 분류 키 기준)
         unique_data = self._deduplicate_records(all_data)
 
-        logger.info(f"분할 조회 완료: 총 {len(unique_data)}건 (중복 제거 전: {len(all_data)}건)")
+        logger.info(
+            f"분할 조회 완료: 총 {len(unique_data)}건 (중복 제거 전: {len(all_data)}건)"
+        )
         return unique_data
 
     def _deduplicate_records(

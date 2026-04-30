@@ -57,13 +57,20 @@ from .code_executor import execute_code, CodeExecutor
 # pip install korean-stat-mcp[postgres]  → asyncpg
 # pip install korean-stat-mcp[r2]        → boto3
 try:
-    from .database import DatabasePool, DatabaseError, check_database_health
+    from .database import DatabasePool, DatabaseError, check_database_health  # noqa: F401
+
     POSTGRES_AVAILABLE = True
 except ImportError:
     POSTGRES_AVAILABLE = False
 
 try:
-    from .r2_storage import get_storage, upload_chart, upload_report, upload_data
+    from .r2_storage import (  # noqa: F401
+        get_storage,
+        upload_chart,
+        upload_report,
+        upload_data,
+    )
+
     R2_AVAILABLE = True
 except ImportError:
     R2_AVAILABLE = False
@@ -223,16 +230,20 @@ __all__ = [
 ]
 
 if POSTGRES_AVAILABLE:
-    __all__.extend([
-        "DatabasePool",
-        "DatabaseError",
-        "check_database_health",
-    ])
+    __all__.extend(
+        [
+            "DatabasePool",
+            "DatabaseError",
+            "check_database_health",
+        ]
+    )
 
 if R2_AVAILABLE:
-    __all__.extend([
-        "get_storage",
-        "upload_chart",
-        "upload_report",
-        "upload_data",
-    ])
+    __all__.extend(
+        [
+            "get_storage",
+            "upload_chart",
+            "upload_report",
+            "upload_data",
+        ]
+    )

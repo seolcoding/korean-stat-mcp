@@ -34,7 +34,7 @@ import logging
 from typing import Any, Dict, List, Optional
 
 from .base import KosisBaseClient, build_format_param
-from .config import Endpoints, KosisConfig
+from .config import Endpoints
 
 logger = logging.getLogger(__name__)
 

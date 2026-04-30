@@ -39,13 +39,13 @@ from enum import Enum
 from typing import Any, Dict, List, Optional, Union
 
 from .base import KosisBaseClient
-from .config import KosisConfig
 
 logger = logging.getLogger(__name__)
 
 
 class SdmxType(str, Enum):
     """SDMX 출력 유형."""
+
     DSD = "DSD"  # Data Structure Definition
     GENERIC = "Generic"  # Generic Data
     STRUCTURE_SPECIFIC = "StructureSpecific"  # Structure Specific Data
@@ -53,6 +53,7 @@ class SdmxType(str, Enum):
 
 class BigDataFormat(str, Enum):
     """대용량 데이터 출력 형식."""
+
     JSON = "json"
     SDMX = "sdmx"
     CSV = "csv"
@@ -164,7 +165,9 @@ class StatisticsBigData(KosisBaseClient):
                 sdmx_type = SdmxType(sdmx_type)
             except ValueError:
                 valid_types = [t.value for t in SdmxType]
-                raise ValueError(f"잘못된 sdmx_type: {sdmx_type}. 가능한 값: {valid_types}")
+                raise ValueError(
+                    f"잘못된 sdmx_type: {sdmx_type}. 가능한 값: {valid_types}"
+                )
 
         # DSD는 기간 파라미터 불필요
         if sdmx_type == SdmxType.DSD:
@@ -188,12 +191,16 @@ class StatisticsBigData(KosisBaseClient):
                 params["startPrdDe"] = start_prd_de
                 params["endPrdDe"] = end_prd_de
             elif start_prd_de or end_prd_de:
-                raise ValueError("시점기준 조회 시 startPrdDe와 endPrdDe 모두 필요합니다.")
+                raise ValueError(
+                    "시점기준 조회 시 startPrdDe와 endPrdDe 모두 필요합니다."
+                )
 
             if prd_interval is not None:
                 params["prdInterval"] = str(prd_interval)
 
-        logger.info(f"대용량 SDMX 조회: type={sdmx_type.value}, user_stats_id={user_stats_id}")
+        logger.info(
+            f"대용량 SDMX 조회: type={sdmx_type.value}, user_stats_id={user_stats_id}"
+        )
 
         result = self._request("GET", self.ENDPOINT, params)
 
@@ -284,6 +291,7 @@ class StatisticsBigData(KosisBaseClient):
         if as_dataframe:
             try:
                 import pandas as pd
+
                 return pd.DataFrame(data)
             except ImportError:
                 logger.warning("pandas가 설치되지 않아 List[Dict]로 반환합니다.")
@@ -469,9 +477,9 @@ class StatisticsBigData(KosisBaseClient):
 
             # 네임스페이스 처리
             ns = {
-                'message': 'http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message',
-                'common': 'http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common',
-                'data': 'http://www.sdmx.org/resources/sdmxml/schemas/v2_1/data/generic',
+                "message": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message",
+                "common": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common",
+                "data": "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/data/generic",
             }
 
             result: Dict[str, Any] = {
@@ -480,32 +488,36 @@ class StatisticsBigData(KosisBaseClient):
             }
 
             # Header 파싱
-            header = root.find('.//message:Header', ns)
+            header = root.find(".//message:Header", ns)
             if header is None:
-                header = root.find('.//Header')
+                header = root.find(".//Header")
             if header is not None:
                 result["header"] = self._parse_element_to_dict(header)
 
             # Series 파싱 (Generic/StructureSpecific)
-            for series in root.findall('.//data:Series', ns) + root.findall('.//Series'):
+            for series in root.findall(".//data:Series", ns) + root.findall(
+                ".//Series"
+            ):
                 series_data: Dict[str, Any] = {
                     "keys": {},
                     "observations": [],
                 }
 
                 # SeriesKey
-                for key in series.findall('.//data:Value', ns) + series.findall('.//Value'):
-                    key_id = key.get('id') or key.get('Id')
-                    key_value = key.get('value') or key.text
+                for key in series.findall(".//data:Value", ns) + series.findall(
+                    ".//Value"
+                ):
+                    key_id = key.get("id") or key.get("Id")
+                    key_value = key.get("value") or key.text
                     if key_id:
                         series_data["keys"][key_id] = key_value
 
                 # Observations
-                for obs in series.findall('.//data:Obs', ns) + series.findall('.//Obs'):
+                for obs in series.findall(".//data:Obs", ns) + series.findall(".//Obs"):
                     obs_data = {}
                     for child in obs:
-                        tag = child.tag.split('}')[-1]  # 네임스페이스 제거
-                        obs_data[tag] = child.get('value') or child.text
+                        tag = child.tag.split("}")[-1]  # 네임스페이스 제거
+                        obs_data[tag] = child.get("value") or child.text
                     if obs_data:
                         series_data["observations"].append(obs_data)
 
@@ -530,7 +542,7 @@ class StatisticsBigData(KosisBaseClient):
 
         # 자식 요소
         for child in element:
-            tag = child.tag.split('}')[-1]  # 네임스페이스 제거
+            tag = child.tag.split("}")[-1]  # 네임스페이스 제거
             child_data = self._parse_element_to_dict(child)
 
             if tag in result:
@@ -576,7 +588,9 @@ class StatisticsBigData(KosisBaseClient):
                 header = dsd["header"]
                 info["name"] = header.get("Name") or header.get("name")
                 if "Sender" in header:
-                    info["org"] = header["Sender"].get("Name") or header["Sender"].get("name")
+                    info["org"] = header["Sender"].get("Name") or header["Sender"].get(
+                        "name"
+                    )
 
             return info
 

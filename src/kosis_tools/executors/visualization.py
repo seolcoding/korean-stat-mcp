@@ -111,8 +111,11 @@ def prepare_data(
     for field in numeric_fields:
         if field in df.columns:
             df[field] = pd.to_numeric(
-                df[field].astype(str).str.replace(",", "").replace(["-", "", "*"], None),
-                errors="coerce"
+                df[field]
+                .astype(str)
+                .str.replace(",", "")
+                .replace(["-", "", "*"], None),
+                errors="coerce",
             )
 
     return df
@@ -170,6 +173,7 @@ def save_chart(
         output_path.mkdir(parents=True, exist_ok=True)
 
         import shutil
+
         final_path = output_path / filename
         shutil.move(tmp_path, final_path)
 
@@ -219,21 +223,23 @@ def execute_visualization(
     """
     # 시각화 전용 글로벌 환경
     safe_globals = get_base_globals()
-    safe_globals.update({
-        # 데이터 분석 라이브러리
-        "pd": pd,
-        "alt": alt,
-        "np": np,
-        # 시각화 헬퍼
-        "prepare_data": prepare_data,
-        "save_chart": save_chart,
-        # 단위 변환 헬퍼
-        "to_thousand": lambda v: v / 1000,
-        "to_man": lambda v: v / 10000,
-        "to_billion": lambda v: v / 100000000,
-        # 데이터
-        "data": data or [],
-    })
+    safe_globals.update(
+        {
+            # 데이터 분석 라이브러리
+            "pd": pd,
+            "alt": alt,
+            "np": np,
+            # 시각화 헬퍼
+            "prepare_data": prepare_data,
+            "save_chart": save_chart,
+            # 단위 변환 헬퍼
+            "to_thousand": lambda v: v / 1000,
+            "to_man": lambda v: v / 10000,
+            "to_billion": lambda v: v / 100000000,
+            # 데이터
+            "data": data or [],
+        }
+    )
 
     result = execute_with_context(code, safe_globals, context)
     result["guide"] = VISUALIZATION_GUIDE

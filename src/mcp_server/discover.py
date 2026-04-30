@@ -102,7 +102,8 @@ def discover_tools() -> dict:
     return {
         "exposed": exposed,
         "internal": internal,
-        "total": len(registered) + sum(1 for t in V1_EXPOSED if t.name not in registered),
+        "total": len(registered)
+        + sum(1 for t in V1_EXPOSED if t.name not in registered),
         "exposed_count": len(V1_EXPOSED),
     }
 

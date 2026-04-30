@@ -97,8 +97,11 @@ def prepare_data(
     for field in numeric_fields:
         if field in df.columns:
             df[field] = pd.to_numeric(
-                df[field].astype(str).str.replace(",", "").replace(["-", "", "*", "…"], None),
-                errors="coerce"
+                df[field]
+                .astype(str)
+                .str.replace(",", "")
+                .replace(["-", "", "*", "…"], None),
+                errors="coerce",
             )
 
     return df
@@ -177,20 +180,22 @@ def execute_analysis(
     """
     # 분석 전용 글로벌 환경
     safe_globals = get_base_globals()
-    safe_globals.update({
-        # 데이터 분석 라이브러리
-        "pd": pd,
-        "np": np,
-        # 분석 헬퍼
-        "prepare_data": prepare_data,
-        "calc_change_rate": calc_change_rate,
-        "calc_cagr": calc_cagr,
-        "calc_ratio": calc_ratio,
-        "to_thousand": to_thousand,
-        "format_stat": format_stat,
-        # 데이터
-        "data": data or [],
-    })
+    safe_globals.update(
+        {
+            # 데이터 분석 라이브러리
+            "pd": pd,
+            "np": np,
+            # 분석 헬퍼
+            "prepare_data": prepare_data,
+            "calc_change_rate": calc_change_rate,
+            "calc_cagr": calc_cagr,
+            "calc_ratio": calc_ratio,
+            "to_thousand": to_thousand,
+            "format_stat": format_stat,
+            # 데이터
+            "data": data or [],
+        }
+    )
 
     result = execute_with_context(code, safe_globals, context)
     result["guide"] = ANALYSIS_GUIDE

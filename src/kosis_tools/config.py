@@ -35,8 +35,7 @@ Example:
 from __future__ import annotations
 
 import os
-from dataclasses import dataclass, field
-from typing import Optional
+from dataclasses import dataclass
 
 
 @dataclass
@@ -293,6 +292,7 @@ class DataStorageConfig:
         MAX_AGE_HOURS: 파일 보존 시간 (기본 24시간)
         FILE_FORMAT: 저장 형식 (json, csv)
     """
+
     DATA_DIR = os.getenv("KOSIS_DATA_DIR", "/tmp/kosis_data")
     MAX_AGE_HOURS = int(os.getenv("KOSIS_DATA_MAX_AGE", "24"))
     FILE_FORMAT = "json"
@@ -301,6 +301,7 @@ class DataStorageConfig:
     def get_data_dir(cls) -> str:
         """데이터 저장 디렉토리를 반환하고, 없으면 생성합니다."""
         from pathlib import Path
+
         data_dir = Path(cls.DATA_DIR)
         data_dir.mkdir(parents=True, exist_ok=True)
         return str(data_dir)

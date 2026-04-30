@@ -37,7 +37,7 @@ import logging
 from typing import Any, Dict, List, Literal, Optional
 
 from .base import KosisBaseClient, build_format_param
-from .config import Endpoints, KosisConfig
+from .config import Endpoints
 
 _VALID_SORTS = ("RANK", "DATE")
 
@@ -176,9 +176,7 @@ class StatisticsSearch(KosisBaseClient):
 
         # Gap 2: validate sort param
         if sort is not None and sort not in _VALID_SORTS:
-            raise ValueError(
-                f"sort must be one of {_VALID_SORTS}, got: {sort!r}"
-            )
+            raise ValueError(f"sort must be one of {_VALID_SORTS}, got: {sort!r}")
 
         params: Dict[str, Any] = {
             "method": "getList",
@@ -199,7 +197,9 @@ class StatisticsSearch(KosisBaseClient):
         if end_date:
             params["endPrdDe"] = end_date
 
-        logger.info(f"통계표 검색: '{keyword}'" + (f" (기관: {org_id})" if org_id else ""))
+        logger.info(
+            f"통계표 검색: '{keyword}'" + (f" (기관: {org_id})" if org_id else "")
+        )
 
         result = self._request("GET", Endpoints.STATISTICS_SEARCH, params)
 
@@ -270,7 +270,7 @@ class StatisticsSearch(KosisBaseClient):
                 if item.get("TBL_ID") == tbl_id:
                     return item
             # 정확히 일치하는 것이 없으면 첫 번째 결과 반환 (유사 검색)
-            logger.debug(f"정확히 일치하는 테이블 없음, 첫 번째 결과 반환")
+            logger.debug("정확히 일치하는 테이블 없음, 첫 번째 결과 반환")
             return result[0] if result else None
         elif isinstance(result, dict):
             return result if result.get("TBL_ID") == tbl_id else None

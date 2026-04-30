@@ -71,8 +71,12 @@ class StatisticsTable(BaseModel):
     confm_no: Optional[str] = Field(None, description="승인번호")
 
     # 보강 필드 - 확장 (statisticsExplData API 추가 필드)
-    stats_kind: Optional[str] = Field(None, description="작성유형 (조사통계, 가공통계 등)")
-    stats_end: Optional[str] = Field(None, description="통계종류 (지정통계, 일반통계 등)")
+    stats_kind: Optional[str] = Field(
+        None, description="작성유형 (조사통계, 가공통계 등)"
+    )
+    stats_end: Optional[str] = Field(
+        None, description="통계종류 (지정통계, 일반통계 등)"
+    )
     stats_continue: Optional[str] = Field(None, description="계속여부")
     basis_law: Optional[str] = Field(None, description="법적근거")
     examin_pd: Optional[str] = Field(None, description="조사기간")
@@ -86,14 +90,18 @@ class StatisticsTable(BaseModel):
     pub_extent: Optional[str] = Field(None, description="공표범위")
     pub_date: Optional[str] = Field(None, description="공표시기")
     publict_mth: Optional[str] = Field(None, description="공표방법 및 URL")
-    examin_trget_pd: Optional[str] = Field(None, description="조사대상기간 및 조사기준시점")
+    examin_trget_pd: Optional[str] = Field(
+        None, description="조사대상기간 및 조사기준시점"
+    )
     data_user_note: Optional[str] = Field(None, description="자료이용시 유의사항")
     data_collect_mth: Optional[str] = Field(None, description="자료 수집방법")
     examin_history: Optional[str] = Field(None, description="조사연혁")
     confm_dt: Optional[str] = Field(None, description="승인일자")
 
     # 보강 필드 - 검색 API (statisticsSearch.do)
-    mt_atitle: Optional[str] = Field(None, description="분류 경로 (예: 국내통계 > 인구 > ...)")
+    mt_atitle: Optional[str] = Field(
+        None, description="분류 경로 (예: 국내통계 > 인구 > ...)"
+    )
     contents: Optional[str] = Field(None, description="데이터 내용 미리보기")
     item03: Optional[str] = Field(None, description="통계 설명/출처 정보")
     tbl_view_url: Optional[str] = Field(None, description="KOSIS 웹 뷰 URL")

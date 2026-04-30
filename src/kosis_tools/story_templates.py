@@ -12,13 +12,14 @@ MCP 클라이언트에게 토큰 효율적으로 가이드 제공.
 
 from __future__ import annotations
 
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from typing import Any, Dict, List, Optional
 from enum import Enum
 
 
 class ChartType(Enum):
     """차트 유형."""
+
     LINE = "line"
     BAR = "bar"
     GROUPED_BAR = "grouped_bar"
@@ -32,20 +33,22 @@ class ChartType(Enum):
 
 class SectionType(Enum):
     """리포트 섹션 유형."""
-    HOOK = "hook"           # 충격적 숫자로 시작
-    CONTEXT = "context"     # 배경/맥락 설명
-    STAT_CARDS = "stats"    # 핵심 수치 카드
-    CHART = "chart"         # 시각화
-    INSIGHT = "insight"     # 인사이트/해석
-    TABLE = "table"         # 데이터 테이블
-    BREAKDOWN = "breakdown" # 세부 분석
+
+    HOOK = "hook"  # 충격적 숫자로 시작
+    CONTEXT = "context"  # 배경/맥락 설명
+    STAT_CARDS = "stats"  # 핵심 수치 카드
+    CHART = "chart"  # 시각화
+    INSIGHT = "insight"  # 인사이트/해석
+    TABLE = "table"  # 데이터 테이블
+    BREAKDOWN = "breakdown"  # 세부 분석
     COMPARISON = "comparison"  # 비교
-    FORECAST = "forecast"   # 전망/시사점
+    FORECAST = "forecast"  # 전망/시사점
 
 
 @dataclass
 class SectionSpec:
     """섹션 명세."""
+
     type: SectionType
     title: str
     description: str
@@ -56,6 +59,7 @@ class SectionSpec:
 @dataclass
 class StoryTemplate:
     """스토리 템플릿."""
+
     id: str
     name: str
     description: str
@@ -101,12 +105,16 @@ class StoryTemplate:
         for section in self.sections:
             if section.type == SectionType.STAT_CARDS:
                 lines.append("# 통계 카드")
-                lines.append("stats = [{'label': '핵심지표', 'value': f'{df[\"DT\"].sum():,.0f}', 'unit': '명'}]")
+                lines.append(
+                    "stats = [{'label': '핵심지표', 'value': f'{df[\"DT\"].sum():,.0f}', 'unit': '명'}]"
+                )
                 lines.append("")
             elif section.type == SectionType.CHART and section.chart_type:
                 lines.append(f"# 차트 {chart_idx}: {section.title}")
                 if section.chart_type == ChartType.LINE:
-                    lines.append(f"chart{chart_idx} = alt.Chart(df).mark_line(point=True).encode(")
+                    lines.append(
+                        f"chart{chart_idx} = alt.Chart(df).mark_line(point=True).encode("
+                    )
                     lines.append("    x='PRD_DE:N', y='DT:Q', color='C1_NM:N'")
                     lines.append(f").properties(title='{section.title}')")
                 elif section.chart_type == ChartType.BAR:
@@ -141,113 +149,156 @@ def _register(template: StoryTemplate) -> StoryTemplate:
 
 
 # 1. 트렌드 분석 템플릿
-TREND_ANALYSIS = _register(StoryTemplate(
-    id="trend",
-    name="트렌드 분석",
-    description="시계열 데이터의 변화 추이를 분석. 과거→현재→미래 흐름 전달.",
-    when_to_use="연도별/월별 데이터가 있고, 시간에 따른 변화가 핵심일 때",
-    sections=[
-        SectionSpec(SectionType.HOOK, "충격 수치", "가장 최근 또는 극단적인 수치로 시작"),
-        SectionSpec(SectionType.STAT_CARDS, "핵심 지표", "3-4개 KPI 카드"),
-        SectionSpec(SectionType.CHART, "전체 추이", "시계열 트렌드", ChartType.LINE),
-        SectionSpec(SectionType.INSIGHT, "트렌드 해석", "상승/하락 원인 분석"),
-        SectionSpec(SectionType.CHART, "세부 분해", "카테고리별 비교", ChartType.GROUPED_BAR),
-        SectionSpec(SectionType.FORECAST, "전망", "향후 예측 및 시사점"),
-    ],
-    example_topics=["출산율", "GDP 성장률", "실업률", "물가지수", "수출입"],
-    golden_example="report_001_20251215_fertility_rate.html",
-))
+TREND_ANALYSIS = _register(
+    StoryTemplate(
+        id="trend",
+        name="트렌드 분석",
+        description="시계열 데이터의 변화 추이를 분석. 과거→현재→미래 흐름 전달.",
+        when_to_use="연도별/월별 데이터가 있고, 시간에 따른 변화가 핵심일 때",
+        sections=[
+            SectionSpec(
+                SectionType.HOOK, "충격 수치", "가장 최근 또는 극단적인 수치로 시작"
+            ),
+            SectionSpec(SectionType.STAT_CARDS, "핵심 지표", "3-4개 KPI 카드"),
+            SectionSpec(
+                SectionType.CHART, "전체 추이", "시계열 트렌드", ChartType.LINE
+            ),
+            SectionSpec(SectionType.INSIGHT, "트렌드 해석", "상승/하락 원인 분석"),
+            SectionSpec(
+                SectionType.CHART, "세부 분해", "카테고리별 비교", ChartType.GROUPED_BAR
+            ),
+            SectionSpec(SectionType.FORECAST, "전망", "향후 예측 및 시사점"),
+        ],
+        example_topics=["출산율", "GDP 성장률", "실업률", "물가지수", "수출입"],
+        golden_example="report_001_20251215_fertility_rate.html",
+    )
+)
 
 
 # 2. 비교 분석 템플릿
-COMPARISON = _register(StoryTemplate(
-    id="compare",
-    name="비교 분석",
-    description="여러 항목/지역/그룹 간 차이를 비교. 순위와 격차 강조.",
-    when_to_use="지역별, 연령별, 카테고리별 비교가 핵심일 때",
-    sections=[
-        SectionSpec(SectionType.STAT_CARDS, "Top 3 순위", "상위 3개 항목 강조"),
-        SectionSpec(SectionType.CHART, "전체 비교", "막대 그래프로 순위", ChartType.BAR),
-        SectionSpec(SectionType.INSIGHT, "격차 분석", "1위와 최하위 차이, 중간값 등"),
-        SectionSpec(SectionType.CHART, "그룹 비교", "그룹별 세부 비교", ChartType.GROUPED_BAR),
-        SectionSpec(SectionType.TABLE, "상세 데이터", "전체 데이터 테이블"),
-    ],
-    example_topics=["지역별 인구", "산업별 매출", "국가별 순위", "연령별 분포"],
-    golden_example="report_005_20251215_elderly.html",
-))
+COMPARISON = _register(
+    StoryTemplate(
+        id="compare",
+        name="비교 분석",
+        description="여러 항목/지역/그룹 간 차이를 비교. 순위와 격차 강조.",
+        when_to_use="지역별, 연령별, 카테고리별 비교가 핵심일 때",
+        sections=[
+            SectionSpec(SectionType.STAT_CARDS, "Top 3 순위", "상위 3개 항목 강조"),
+            SectionSpec(
+                SectionType.CHART, "전체 비교", "막대 그래프로 순위", ChartType.BAR
+            ),
+            SectionSpec(
+                SectionType.INSIGHT, "격차 분석", "1위와 최하위 차이, 중간값 등"
+            ),
+            SectionSpec(
+                SectionType.CHART,
+                "그룹 비교",
+                "그룹별 세부 비교",
+                ChartType.GROUPED_BAR,
+            ),
+            SectionSpec(SectionType.TABLE, "상세 데이터", "전체 데이터 테이블"),
+        ],
+        example_topics=["지역별 인구", "산업별 매출", "국가별 순위", "연령별 분포"],
+        golden_example="report_005_20251215_elderly.html",
+    )
+)
 
 
 # 3. 구성 분석 템플릿
-COMPOSITION = _register(StoryTemplate(
-    id="composition",
-    name="구성 분석",
-    description="전체를 100%로 보고 각 부분의 비율 분석. 파이/도넛 활용.",
-    when_to_use="전체 대비 비율, 점유율, 구성비가 핵심일 때",
-    sections=[
-        SectionSpec(SectionType.STAT_CARDS, "전체 규모", "총합 수치"),
-        SectionSpec(SectionType.CHART, "구성 비율", "파이/도넛 차트", ChartType.DONUT),
-        SectionSpec(SectionType.INSIGHT, "주요 구성", "상위 항목이 차지하는 비율"),
-        SectionSpec(SectionType.CHART, "구성 변화", "연도별 구성비 변화", ChartType.STACKED_BAR),
-    ],
-    example_topics=["예산 구성", "에너지원 비율", "산업 구조", "인구 구성"],
-    golden_example="report_063_20251215_budget.html",
-))
+COMPOSITION = _register(
+    StoryTemplate(
+        id="composition",
+        name="구성 분석",
+        description="전체를 100%로 보고 각 부분의 비율 분석. 파이/도넛 활용.",
+        when_to_use="전체 대비 비율, 점유율, 구성비가 핵심일 때",
+        sections=[
+            SectionSpec(SectionType.STAT_CARDS, "전체 규모", "총합 수치"),
+            SectionSpec(
+                SectionType.CHART, "구성 비율", "파이/도넛 차트", ChartType.DONUT
+            ),
+            SectionSpec(SectionType.INSIGHT, "주요 구성", "상위 항목이 차지하는 비율"),
+            SectionSpec(
+                SectionType.CHART,
+                "구성 변화",
+                "연도별 구성비 변화",
+                ChartType.STACKED_BAR,
+            ),
+        ],
+        example_topics=["예산 구성", "에너지원 비율", "산업 구조", "인구 구성"],
+        golden_example="report_063_20251215_budget.html",
+    )
+)
 
 
 # 4. 상관관계 분석 템플릿
-CORRELATION = _register(StoryTemplate(
-    id="correlation",
-    name="상관관계 분석",
-    description="두 변수 간의 관계 분석. 산점도와 추세선 활용.",
-    when_to_use="변수 간 관계, 원인-결과, 상관성 분석이 핵심일 때",
-    sections=[
-        SectionSpec(SectionType.CONTEXT, "가설", "분석하고자 하는 관계 설명"),
-        SectionSpec(SectionType.CHART, "상관관계", "산점도", ChartType.SCATTER),
-        SectionSpec(SectionType.INSIGHT, "관계 해석", "상관계수, 패턴 설명"),
-        SectionSpec(SectionType.CHART, "보조 분석", "각 변수의 분포", ChartType.BAR),
-    ],
-    example_topics=["소득-소비", "교육-취업", "인구-주택가격"],
-))
+CORRELATION = _register(
+    StoryTemplate(
+        id="correlation",
+        name="상관관계 분석",
+        description="두 변수 간의 관계 분석. 산점도와 추세선 활용.",
+        when_to_use="변수 간 관계, 원인-결과, 상관성 분석이 핵심일 때",
+        sections=[
+            SectionSpec(SectionType.CONTEXT, "가설", "분석하고자 하는 관계 설명"),
+            SectionSpec(SectionType.CHART, "상관관계", "산점도", ChartType.SCATTER),
+            SectionSpec(SectionType.INSIGHT, "관계 해석", "상관계수, 패턴 설명"),
+            SectionSpec(
+                SectionType.CHART, "보조 분석", "각 변수의 분포", ChartType.BAR
+            ),
+        ],
+        example_topics=["소득-소비", "교육-취업", "인구-주택가격"],
+    )
+)
 
 
 # 5. 대시보드 템플릿 (종합)
-DASHBOARD = _register(StoryTemplate(
-    id="dashboard",
-    name="종합 대시보드",
-    description="여러 지표를 한눈에 보여주는 종합 현황판.",
-    when_to_use="여러 관점의 데이터를 종합적으로 보여줄 때",
-    sections=[
-        SectionSpec(SectionType.STAT_CARDS, "KPI 카드", "4-6개 핵심 지표"),
-        SectionSpec(SectionType.CHART, "주요 트렌드", "가장 중요한 시계열", ChartType.LINE),
-        SectionSpec(SectionType.CHART, "비교 현황", "카테고리별 비교", ChartType.BAR),
-        SectionSpec(SectionType.CHART, "구성 비율", "비율 시각화", ChartType.DONUT),
-        SectionSpec(SectionType.TABLE, "상세 데이터", "전체 데이터"),
-        SectionSpec(SectionType.INSIGHT, "종합 인사이트", "핵심 발견점 요약"),
-    ],
-    example_topics=["월간 현황", "분기 리포트", "연간 종합"],
-    golden_example="report_017_20251215_healthcare.html",
-))
+DASHBOARD = _register(
+    StoryTemplate(
+        id="dashboard",
+        name="종합 대시보드",
+        description="여러 지표를 한눈에 보여주는 종합 현황판.",
+        when_to_use="여러 관점의 데이터를 종합적으로 보여줄 때",
+        sections=[
+            SectionSpec(SectionType.STAT_CARDS, "KPI 카드", "4-6개 핵심 지표"),
+            SectionSpec(
+                SectionType.CHART, "주요 트렌드", "가장 중요한 시계열", ChartType.LINE
+            ),
+            SectionSpec(
+                SectionType.CHART, "비교 현황", "카테고리별 비교", ChartType.BAR
+            ),
+            SectionSpec(SectionType.CHART, "구성 비율", "비율 시각화", ChartType.DONUT),
+            SectionSpec(SectionType.TABLE, "상세 데이터", "전체 데이터"),
+            SectionSpec(SectionType.INSIGHT, "종합 인사이트", "핵심 발견점 요약"),
+        ],
+        example_topics=["월간 현황", "분기 리포트", "연간 종합"],
+        golden_example="report_017_20251215_healthcare.html",
+    )
+)
 
 
 # 6. 순위/랭킹 템플릿
-RANKING = _register(StoryTemplate(
-    id="ranking",
-    name="순위/랭킹",
-    description="Top N 형식의 순위 분석. 1위 강조.",
-    when_to_use="순위, 베스트/워스트, Top 10 등이 핵심일 때",
-    sections=[
-        SectionSpec(SectionType.HOOK, "1위 강조", "1위 항목 대형 표시"),
-        SectionSpec(SectionType.CHART, "전체 순위", "수평 막대 그래프", ChartType.BAR),
-        SectionSpec(SectionType.INSIGHT, "순위 변동", "전년 대비 순위 변화"),
-        SectionSpec(SectionType.TABLE, "상세 순위", "전체 순위표"),
-    ],
-    example_topics=["기업 순위", "지역별 순위", "인기 순위"],
-))
+RANKING = _register(
+    StoryTemplate(
+        id="ranking",
+        name="순위/랭킹",
+        description="Top N 형식의 순위 분석. 1위 강조.",
+        when_to_use="순위, 베스트/워스트, Top 10 등이 핵심일 때",
+        sections=[
+            SectionSpec(SectionType.HOOK, "1위 강조", "1위 항목 대형 표시"),
+            SectionSpec(
+                SectionType.CHART, "전체 순위", "수평 막대 그래프", ChartType.BAR
+            ),
+            SectionSpec(SectionType.INSIGHT, "순위 변동", "전년 대비 순위 변화"),
+            SectionSpec(SectionType.TABLE, "상세 순위", "전체 순위표"),
+        ],
+        example_topics=["기업 순위", "지역별 순위", "인기 순위"],
+    )
+)
 
 
 # ============================================================================
 # 토큰 효율적 API
 # ============================================================================
+
 
 def get_template_list() -> List[Dict[str, Any]]:
     """
@@ -290,7 +341,6 @@ def recommend_template(data_signature: Dict[str, Any]) -> Dict[str, Any]:
     has_time = "PRD_DE" in fields
 
     # 지역 데이터 감지
-    has_region = "C1_NM" in fields
     region_samples = fields.get("C1_NM", {}).get("sample_values", [])
     is_regional = any("시" in v or "도" in v for v in region_samples)
 
@@ -333,6 +383,7 @@ def recommend_template(data_signature: Dict[str, Any]) -> Dict[str, Any]:
 # ============================================================================
 # 계층적 단계별 가이드 시스템
 # ============================================================================
+
 
 def get_template_step(template_id: str, step: int) -> Optional[Dict[str, Any]]:
     """
@@ -377,10 +428,14 @@ def get_template_step(template_id: str, step: int) -> Optional[Dict[str, Any]]:
 
     if has_next:
         next_section = sections[step]
-        result["next_preview"] = f"다음: {next_section.title} ({next_section.type.value})"
+        result["next_preview"] = (
+            f"다음: {next_section.title} ({next_section.type.value})"
+        )
     else:
         result["next_preview"] = "마지막 단계입니다. 리포트를 완성하세요."
-        result["finalize_hint"] = "return save_report(build_report(title, sections), 'report_name')"
+        result["finalize_hint"] = (
+            "return save_report(build_report(title, sections), 'report_name')"
+        )
 
     return result
 
@@ -388,25 +443,22 @@ def get_template_step(template_id: str, step: int) -> Optional[Dict[str, Any]]:
 def _get_step_code_hint(section: SectionSpec) -> str:
     """단계별 코드 힌트 생성."""
     hints = {
-        SectionType.HOOK: '''# HOOK: 충격적인 숫자
+        SectionType.HOOK: """# HOOK: 충격적인 숫자
 latest = df[df["PRD_DE"] == df["PRD_DE"].max()]["DT"].values[0]
-hook = {"type": "insight", "content": f"<h2>{latest:,.0f}</h2><p>최신 수치</p>"}''',
-
-        SectionType.STAT_CARDS: '''# 통계 카드 (3-4개)
+hook = {"type": "insight", "content": f"<h2>{latest:,.0f}</h2><p>최신 수치</p>"}""",
+        SectionType.STAT_CARDS: """# 통계 카드 (3-4개)
 stats = [
     {"label": "최신값", "value": f"{latest:,.0f}", "unit": "명"},
     {"label": "증감률", "value": f"{change:+.1f}%", "trend": "up" if change > 0 else "down"},
 ]
-section = {"type": "stats", "items": stats}''',
-
-        SectionType.CHART: '''# 차트 생성
+section = {"type": "stats", "items": stats}""",
+        SectionType.CHART: """# 차트 생성
 chart = alt.Chart(df).mark_line(point=True).encode(
     x=alt.X("PRD_DE:N", title="연도"),
     y=alt.Y("DT:Q", title="값", axis=alt.Axis(format=",")),
     color=alt.Color("C1_NM:N", title="분류")
 ).properties(title="차트 제목", width=600, height=400)
-section = {"type": "chart", "vega_spec": chart.to_dict(), "title": "...", "description": "..."}''',
-
+section = {"type": "chart", "vega_spec": chart.to_dict(), "title": "...", "description": "..."}""",
         SectionType.INSIGHT: '''# 인사이트 박스
 insight_text = """
 - 핵심 발견 1
@@ -414,29 +466,24 @@ insight_text = """
 - 시사점
 """
 section = {"type": "insight", "content": insight_text, "title": "주요 인사이트"}''',
-
-        SectionType.TABLE: '''# 데이터 테이블
-section = {"type": "table", "html": to_table_html(df.head(10), title="상세 데이터")}''',
-
-        SectionType.BREAKDOWN: '''# 세부 분해 (그룹별 비교)
+        SectionType.TABLE: """# 데이터 테이블
+section = {"type": "table", "html": to_table_html(df.head(10), title="상세 데이터")}""",
+        SectionType.BREAKDOWN: """# 세부 분해 (그룹별 비교)
 chart = alt.Chart(df).mark_bar().encode(
     x=alt.X("C1_NM:N", sort="-y"),
     y="sum(DT):Q",
     color="C1_NM:N"
 ).properties(title="카테고리별 비교")
-section = {"type": "chart", "vega_spec": chart.to_dict()}''',
-
-        SectionType.FORECAST: '''# 전망/시사점
-forecast = {"type": "insight", "content": "향후 전망: ...", "title": "시사점"}''',
-
-        SectionType.COMPARISON: '''# 비교 차트
+section = {"type": "chart", "vega_spec": chart.to_dict()}""",
+        SectionType.FORECAST: """# 전망/시사점
+forecast = {"type": "insight", "content": "향후 전망: ...", "title": "시사점"}""",
+        SectionType.COMPARISON: """# 비교 차트
 chart = alt.Chart(df).mark_bar().encode(
     y=alt.Y("C1_NM:N", sort="-x"),
     x="DT:Q"
-).properties(title="비교")''',
-
-        SectionType.CONTEXT: '''# 배경 설명
-context = {"type": "text", "content": "<p>분석 배경과 목적...</p>"}''',
+).properties(title="비교")""",
+        SectionType.CONTEXT: """# 배경 설명
+context = {"type": "text", "content": "<p>분석 배경과 목적...</p>"}""",
     }
     return hints.get(section.type, "# 해당 섹션 구현")
 
@@ -455,33 +502,37 @@ def get_element_guide(element_type: str) -> Dict[str, Any]:
         "line_chart": {
             "when": "시계열 데이터, 트렌드 분석",
             "must_have": ["제목", "축 라벨", "숫자 포맷(,)", "범례"],
-            "code": '''alt.Chart(df).mark_line(point=True).encode(
+            "code": """alt.Chart(df).mark_line(point=True).encode(
     x=alt.X("PRD_DE:N", title="연도"),
     y=alt.Y("DT:Q", title="값 (단위)", axis=alt.Axis(format=",")),
     color=alt.Color("C1_NM:N", legend=alt.Legend(title="분류")),
     tooltip=["PRD_DE", "C1_NM", alt.Tooltip("DT:Q", format=",")]
-).properties(title="명확한 제목", width=600, height=400)''',
-            "avoid": ["너무 많은 시리즈 (5개 이하)", "축 라벨 누락", "포맷 없는 큰 숫자"],
+).properties(title="명확한 제목", width=600, height=400)""",
+            "avoid": [
+                "너무 많은 시리즈 (5개 이하)",
+                "축 라벨 누락",
+                "포맷 없는 큰 숫자",
+            ],
         },
         "bar_chart": {
             "when": "비교, 순위, 카테고리별 분석",
             "must_have": ["정렬(sort)", "축 라벨", "숫자 포맷"],
-            "code": '''alt.Chart(df).mark_bar().encode(
+            "code": """alt.Chart(df).mark_bar().encode(
     x=alt.X("C1_NM:N", sort="-y", title="분류"),
     y=alt.Y("DT:Q", title="값", axis=alt.Axis(format=",")),
     color=alt.value("#667eea")  # 단색 또는 조건부
-).properties(title="비교 차트", width=600, height=400)''',
+).properties(title="비교 차트", width=600, height=400)""",
             "avoid": ["정렬 안 함", "너무 많은 막대 (15개 이하)", "3D 효과"],
         },
         "stat_cards": {
             "when": "핵심 KPI, 요약 수치",
             "must_have": ["3-4개", "단위", "변화율/트렌드"],
-            "code": '''stats = [
+            "code": """stats = [
     {"label": "총합", "value": f"{total:,.0f}", "unit": "명"},
     {"label": "평균", "value": f"{avg:,.1f}", "unit": "명"},
     {"label": "증감", "value": f"{change:+.1f}%", "trend": "up"},
 ]
-{"type": "stats", "items": stats}''',
+{"type": "stats", "items": stats}""",
             "avoid": ["너무 많은 카드 (6개 이하)", "단위 누락", "복잡한 계산식 표시"],
         },
         "insight_box": {
@@ -497,11 +548,11 @@ def get_element_guide(element_type: str) -> Dict[str, Any]:
         "donut_chart": {
             "when": "비율, 점유율, 구성비",
             "must_have": ["5개 이하 항목", "퍼센트 표시", "합계=100%"],
-            "code": '''alt.Chart(df).mark_arc(innerRadius=50).encode(
+            "code": """alt.Chart(df).mark_arc(innerRadius=50).encode(
     theta="DT:Q",
     color=alt.Color("C1_NM:N", legend=alt.Legend(title="구성")),
     tooltip=["C1_NM", alt.Tooltip("DT:Q", format=".1%")]
-).properties(title="구성 비율", width=400, height=400)''',
+).properties(title="구성 비율", width=400, height=400)""",
             "avoid": ["5개 초과 (기타로 묶기)", "3D 파이", "작은 조각들"],
         },
     }

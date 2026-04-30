@@ -52,31 +52,31 @@ class Fields:
     """
 
     # 기본 정보
-    ORG_ID = "ORG_ID"          # 기관 ID
-    ORG_NM = "ORG_NM"          # 기관명
-    TBL_ID = "TBL_ID"          # 테이블 ID
-    TBL_NM = "TBL_NM"          # 테이블명
+    ORG_ID = "ORG_ID"  # 기관 ID
+    ORG_NM = "ORG_NM"  # 기관명
+    TBL_ID = "TBL_ID"  # 테이블 ID
+    TBL_NM = "TBL_NM"  # 테이블명
 
     # 기간
-    PERIOD = "PRD_DE"          # 기간 (연도/월 등)
-    PERIOD_TYPE = "PRD_SE"     # 주기 구분
+    PERIOD = "PRD_DE"  # 기간 (연도/월 등)
+    PERIOD_TYPE = "PRD_SE"  # 주기 구분
 
     # 분류항목
-    C1 = "C1"                  # 분류1 코드
-    C1_NM = "C1_NM"            # 분류1 이름
-    REGION = "C1_NM"           # 지역 (보통 C1에 해당)
-    C2 = "C2"                  # 분류2 코드
-    C2_NM = "C2_NM"            # 분류2 이름
-    C3 = "C3"                  # 분류3 코드
-    C3_NM = "C3_NM"            # 분류3 이름
+    C1 = "C1"  # 분류1 코드
+    C1_NM = "C1_NM"  # 분류1 이름
+    REGION = "C1_NM"  # 지역 (보통 C1에 해당)
+    C2 = "C2"  # 분류2 코드
+    C2_NM = "C2_NM"  # 분류2 이름
+    C3 = "C3"  # 분류3 코드
+    C3_NM = "C3_NM"  # 분류3 이름
 
     # 항목
-    ITM_ID = "ITM_ID"          # 항목 ID
-    ITM_NM = "ITM_NM"          # 항목명
+    ITM_ID = "ITM_ID"  # 항목 ID
+    ITM_NM = "ITM_NM"  # 항목명
 
     # 데이터
-    VALUE = "DT"               # 데이터 값
-    UNIT = "UNIT_NM"           # 단위
+    VALUE = "DT"  # 데이터 값
+    UNIT = "UNIT_NM"  # 단위
 
 
 class FieldLabels:
@@ -97,7 +97,6 @@ class FieldLabels:
         # 기간 관련
         "PRD_DE": "기간",
         "PRD_SE": "주기",
-
         # 분류 관련
         "C1": "분류1 코드",
         "C1_NM": "분류",
@@ -105,15 +104,12 @@ class FieldLabels:
         "C2_NM": "분류2",
         "C3": "분류3 코드",
         "C3_NM": "분류3",
-
         # 항목 관련
         "ITM_ID": "항목코드",
         "ITM_NM": "항목",
-
         # 데이터 관련
         "DT": "값",
         "UNIT_NM": "단위",
-
         # 기관/통계표 관련
         "ORG_ID": "기관코드",
         "ORG_NM": "기관명",
@@ -166,7 +162,9 @@ class FieldLabels:
         return cls.DEFAULT_LABELS.get(field, field)
 
     @classmethod
-    def get_all_labels(cls, fields: List[str], context: Optional[str] = None) -> Dict[str, str]:
+    def get_all_labels(
+        cls, fields: List[str], context: Optional[str] = None
+    ) -> Dict[str, str]:
         """
         여러 필드의 한국어 라벨을 딕셔너리로 반환합니다.
 
@@ -180,7 +178,9 @@ class FieldLabels:
         return {field: cls.get_label(field, context) for field in fields}
 
     @classmethod
-    def rename_columns(cls, df: pd.DataFrame, context: Optional[str] = None) -> pd.DataFrame:
+    def rename_columns(
+        cls, df: pd.DataFrame, context: Optional[str] = None
+    ) -> pd.DataFrame:
         """
         DataFrame의 컬럼명을 한국어로 변환합니다.
 
@@ -195,7 +195,9 @@ class FieldLabels:
         return df.rename(columns=rename_map)
 
     @classmethod
-    def detect_context(cls, data: Union[List[Dict], pd.DataFrame], query: Optional[str] = None) -> Optional[str]:
+    def detect_context(
+        cls, data: Union[List[Dict], pd.DataFrame], query: Optional[str] = None
+    ) -> Optional[str]:
         """
         데이터 또는 쿼리에서 컨텍스트를 자동 감지합니다.
 
@@ -284,8 +286,7 @@ class KosisTransformer:
         # DT 필드 숫자 변환
         if Fields.VALUE in df.columns:
             df[Fields.VALUE] = pd.to_numeric(
-                df[Fields.VALUE].replace(["-", "", None], pd.NA),
-                errors="coerce"
+                df[Fields.VALUE].replace(["-", "", None], pd.NA), errors="coerce"
             )
 
         return df
@@ -724,7 +725,9 @@ class KosisTransformer:
 
         if Fields.PERIOD in self.df.columns:
             periods = self.get_unique_values(Fields.PERIOD)
-            dimensions.append(f"- 기간: {len(periods)}개 ({periods[0]} ~ {periods[-1] if periods else 'N/A'})")
+            dimensions.append(
+                f"- 기간: {len(periods)}개 ({periods[0]} ~ {periods[-1] if periods else 'N/A'})"
+            )
 
         for c_field, c_name in [
             (Fields.C1_NM, "분류1"),
@@ -736,7 +739,7 @@ class KosisTransformer:
                 if values:
                     sample = ", ".join(values[:5])
                     if len(values) > 5:
-                        sample += f" 외 {len(values)-5}개"
+                        sample += f" 외 {len(values) - 5}개"
                     dimensions.append(f"- {c_name}: {len(values)}개 ({sample})")
 
         if Fields.ITM_NM in self.df.columns:
@@ -744,7 +747,7 @@ class KosisTransformer:
             if items:
                 sample = ", ".join(items[:5])
                 if len(items) > 5:
-                    sample += f" 외 {len(items)-5}개"
+                    sample += f" 외 {len(items) - 5}개"
                 dimensions.append(f"- 항목: {len(items)}개 ({sample})")
 
         lines.extend(dimensions)
@@ -767,10 +770,18 @@ class KosisTransformer:
             lines.append("```")
             sample_df = self.df.head(sample_size)
             # 주요 컬럼만 선택
-            display_cols = [c for c in [
-                Fields.PERIOD, Fields.C1_NM, Fields.C2_NM,
-                Fields.ITM_NM, Fields.VALUE, Fields.UNIT
-            ] if c in sample_df.columns]
+            display_cols = [
+                c
+                for c in [
+                    Fields.PERIOD,
+                    Fields.C1_NM,
+                    Fields.C2_NM,
+                    Fields.ITM_NM,
+                    Fields.VALUE,
+                    Fields.UNIT,
+                ]
+                if c in sample_df.columns
+            ]
             if display_cols:
                 lines.append(sample_df[display_cols].to_string(index=False))
             else:

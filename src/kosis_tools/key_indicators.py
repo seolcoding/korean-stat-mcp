@@ -98,7 +98,9 @@ class IndicatorListItem:
             end_period=data.get("endPrdDe", ""),
             period_count=int(data.get("rn", 0)),
             period=data.get("prdDe", ""),
-            rep_jipyo_id=str(data.get("repJipyoId")) if data.get("repJipyoId") else None,
+            rep_jipyo_id=str(data.get("repJipyoId"))
+            if data.get("repJipyoId")
+            else None,
             rep_jipyo_nm=data.get("repJipyoNm"),
             rep_jipyo_url=data.get("repJipyoUrl"),
             explain_url=data.get("explainUrl"),

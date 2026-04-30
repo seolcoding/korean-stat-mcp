@@ -64,7 +64,9 @@ import pandas as pd
 logger = logging.getLogger(__name__)
 
 
-def to_table_html(df: pd.DataFrame, max_rows: int = 10, title: str = "", format_numbers: bool = True) -> str:
+def to_table_html(
+    df: pd.DataFrame, max_rows: int = 10, title: str = "", format_numbers: bool = True
+) -> str:
     """
     DataFrame을 HTML 테이블로 변환.
 
@@ -83,7 +85,7 @@ def to_table_html(df: pd.DataFrame, max_rows: int = 10, title: str = "", format_
     # 숫자 포맷팅 (천 단위 구분자)
     if format_numbers:
         for col in display_df.columns:
-            if display_df[col].dtype in ['int64', 'float64']:
+            if display_df[col].dtype in ["int64", "float64"]:
                 # 큰 숫자만 포맷팅 (1000 이상)
                 display_df[col] = display_df[col].apply(
                     lambda x: f"{x:,.0f}" if pd.notna(x) and abs(x) >= 1000 else x
@@ -91,7 +93,7 @@ def to_table_html(df: pd.DataFrame, max_rows: int = 10, title: str = "", format_
 
     html = '<div class="table-container">'
     if title:
-        html += f'<h3>{title}</h3>'
+        html += f"<h3>{title}</h3>"
 
     # DataFrame to HTML
     table_html = display_df.to_html(
@@ -105,52 +107,56 @@ def to_table_html(df: pd.DataFrame, max_rows: int = 10, title: str = "", format_
     if len(df) > max_rows:
         html += f'<p class="table-note">... 외 {len(df) - max_rows}건 더</p>'
 
-    html += '</div>'
+    html += "</div>"
     return html
+
 
 # 금지된 패턴 (보안)
 BLOCKED_PATTERNS = [
-    r'\bimport\s+os\b',
-    r'\bimport\s+subprocess\b',
-    r'\bimport\s+shutil\b',
-    r'\bfrom\s+os\b',
-    r'\bfrom\s+subprocess\b',
-    r'\b__import__\b',
-    r'\beval\s*\(',
-    r'\bexec\s*\(',
-    r'\bcompile\s*\(',
-    r'\bglobals\s*\(',
-    r'\blocals\s*\(',
-    r'\bgetattr\s*\(',
-    r'\bsetattr\s*\(',
-    r'\bdelattr\s*\(',
-    r'\bopen\s*\(',
-    r'\bbreakpoint\s*\(',
+    r"\bimport\s+os\b",
+    r"\bimport\s+subprocess\b",
+    r"\bimport\s+shutil\b",
+    r"\bfrom\s+os\b",
+    r"\bfrom\s+subprocess\b",
+    r"\b__import__\b",
+    r"\beval\s*\(",
+    r"\bexec\s*\(",
+    r"\bcompile\s*\(",
+    r"\bglobals\s*\(",
+    r"\blocals\s*\(",
+    r"\bgetattr\s*\(",
+    r"\bsetattr\s*\(",
+    r"\bdelattr\s*\(",
+    r"\bopen\s*\(",
+    r"\bbreakpoint\s*\(",
 ]
 
 
 class CodeExecutionError(Exception):
     """코드 실행 오류."""
+
     pass
 
 
 class CodeSecurityError(Exception):
     """보안 위반 오류."""
+
     pass
 
 
 class VisualizationValidationError(Exception):
     """시각화 검증 오류 - 빈 데이터 또는 잘못된 차트 구조."""
+
     pass
 
 
 # 품질 검사 기준
 QUALITY_THRESHOLDS = {
-    "max_series_for_line": 5,       # 라인 차트 최대 시리즈 수
-    "max_categories_for_bar": 15,   # 막대 차트 최대 카테고리 수
-    "max_slices_for_pie": 5,        # 파이/도넛 차트 최대 조각 수
-    "min_data_points": 2,           # 최소 데이터 포인트 수
-    "large_number_threshold": 1000, # 천 단위 포맷 필요 기준
+    "max_series_for_line": 5,  # 라인 차트 최대 시리즈 수
+    "max_categories_for_bar": 15,  # 막대 차트 최대 카테고리 수
+    "max_slices_for_pie": 5,  # 파이/도넛 차트 최대 조각 수
+    "min_data_points": 2,  # 최소 데이터 포인트 수
+    "large_number_threshold": 1000,  # 천 단위 포맷 필요 기준
 }
 
 
@@ -354,6 +360,7 @@ class CodeExecutor:
                 # JSON 문자열인 경우 파싱 시도
                 try:
                     import json
+
                     parsed = json.loads(raw_result)
                     if isinstance(parsed, dict) and self._is_vega_spec(parsed):
                         direct_vega_spec = parsed
@@ -385,12 +392,17 @@ class CodeExecutor:
                 )
                 if quality_warnings:
                     result["quality_warnings"] = quality_warnings
-                    result["quality_summary"] = self._summarize_quality(quality_warnings)
+                    result["quality_summary"] = self._summarize_quality(
+                        quality_warnings
+                    )
             else:
                 result["result"] = raw_result
                 # 출력 크기 제한
                 if len(str(result["result"])) > self.max_output_size:
-                    result["result"] = str(result["result"])[:self.max_output_size] + "... (truncated)"
+                    result["result"] = (
+                        str(result["result"])[: self.max_output_size]
+                        + "... (truncated)"
+                    )
 
                 # 직접 반환된 Vega-Lite 스펙에도 품질 검사 적용
                 if direct_vega_spec:
@@ -399,7 +411,9 @@ class CodeExecutor:
                     )
                     if quality_warnings:
                         result["quality_warnings"] = quality_warnings
-                        result["quality_summary"] = self._summarize_quality(quality_warnings)
+                        result["quality_summary"] = self._summarize_quality(
+                            quality_warnings
+                        )
 
         except Exception as e:
             result["error"] = f"{type(e).__name__}: {str(e)}"
@@ -455,7 +469,16 @@ class CodeExecutor:
             return False
 
         # Vega-Lite 스펙의 필수/일반적인 필드 확인
-        vega_indicators = ["$schema", "data", "mark", "encoding", "layer", "concat", "hconcat", "vconcat"]
+        vega_indicators = [
+            "$schema",
+            "data",
+            "mark",
+            "encoding",
+            "layer",
+            "concat",
+            "hconcat",
+            "vconcat",
+        ]
         return any(key in obj for key in vega_indicators)
 
     def _validate_visualization(
@@ -488,30 +511,33 @@ class CodeExecutor:
         # 1. HTML 콘텐츠에서 Vega-Lite spec 추출 및 검증
         if html_content:
             # vegaEmbed 호출에서 spec 추출
-            vega_pattern = r'vegaEmbed\s*\(\s*[\'"]#[^"\']+[\'"]\s*,\s*(\{[\s\S]*?\})\s*[,\)]'
+            vega_pattern = (
+                r'vegaEmbed\s*\(\s*[\'"]#[^"\']+[\'"]\s*,\s*(\{[\s\S]*?\})\s*[,\)]'
+            )
             matches = re.findall(vega_pattern, html_content)
 
             for i, spec_str in enumerate(matches):
                 try:
                     # JSON 파싱 시도
                     spec = json.loads(spec_str)
-                    validation = self._check_vega_spec(spec, f"chart_{i+1}")
+                    validation = self._check_vega_spec(spec, f"chart_{i + 1}")
                     if validation:
                         empty_charts.append(validation)
                 except json.JSONDecodeError:
                     # JSON 파싱 실패 시 정규식으로 빈 values 체크
                     if '"values": []' in spec_str or '"values":[]' in spec_str:
-                        empty_charts.append({
-                            "chart_id": f"chart_{i+1}",
-                            "issue": "빈 데이터 배열 (values: [])",
-                        })
+                        empty_charts.append(
+                            {
+                                "chart_id": f"chart_{i + 1}",
+                                "issue": "빈 데이터 배열 (values: [])",
+                            }
+                        )
 
         # 2. 아티팩트에서 직접 검증
         for artifact in artifacts:
             if artifact.get("type") == "chart" and "vega_spec" in artifact:
                 validation = self._check_vega_spec(
-                    artifact["vega_spec"],
-                    artifact.get("name", "unknown")
+                    artifact["vega_spec"], artifact.get("name", "unknown")
                 )
                 if validation:
                     empty_charts.append(validation)
@@ -540,7 +566,9 @@ class CodeExecutor:
 
         return None
 
-    def _check_vega_spec(self, spec: Dict[str, Any], chart_id: str) -> Optional[Dict[str, Any]]:
+    def _check_vega_spec(
+        self, spec: Dict[str, Any], chart_id: str
+    ) -> Optional[Dict[str, Any]]:
         """
         Vega-Lite spec에서 빈 데이터를 체크합니다.
 
@@ -552,6 +580,7 @@ class CodeExecutor:
             None: 데이터 정상
             Dict: 문제 발견 시 상세 정보
         """
+
         def check_data_values(data_obj: Any, path: str = "") -> Optional[Dict]:
             """재귀적으로 data.values 체크."""
             if isinstance(data_obj, dict):
@@ -601,7 +630,9 @@ class CodeExecutor:
 
         return None
 
-    def _generate_data_signature(self, data: Optional[List[Dict[str, Any]]]) -> Dict[str, Any]:
+    def _generate_data_signature(
+        self, data: Optional[List[Dict[str, Any]]]
+    ) -> Dict[str, Any]:
         """
         데이터 시그니처를 생성합니다.
 
@@ -686,12 +717,14 @@ class CodeExecutor:
 
         # 1. HTML에서 Vega-Lite spec 추출
         if html_content:
-            vega_pattern = r'vegaEmbed\s*\(\s*[\'"]#[^"\']+[\'"]\s*,\s*(\{[\s\S]*?\})\s*[,\)]'
+            vega_pattern = (
+                r'vegaEmbed\s*\(\s*[\'"]#[^"\']+[\'"]\s*,\s*(\{[\s\S]*?\})\s*[,\)]'
+            )
             matches = re.findall(vega_pattern, html_content)
             for i, spec_str in enumerate(matches):
                 try:
                     spec = json.loads(spec_str)
-                    specs_to_check.append((f"chart_{i+1}", spec))
+                    specs_to_check.append((f"chart_{i + 1}", spec))
                 except json.JSONDecodeError:
                     pass
 
@@ -729,21 +762,25 @@ class CodeExecutor:
         # 1. 제목 검사
         title = spec.get("title")
         if not title:
-            warnings.append({
-                "chart_id": chart_id,
-                "issue": "missing_title",
-                "severity": "medium",
-                "message": "차트 제목이 없습니다",
-                "fix": ".properties(title='명확한 차트 제목')",
-            })
+            warnings.append(
+                {
+                    "chart_id": chart_id,
+                    "issue": "missing_title",
+                    "severity": "medium",
+                    "message": "차트 제목이 없습니다",
+                    "fix": ".properties(title='명확한 차트 제목')",
+                }
+            )
         elif isinstance(title, str) and len(title) < 3:
-            warnings.append({
-                "chart_id": chart_id,
-                "issue": "short_title",
-                "severity": "low",
-                "message": f"차트 제목이 너무 짧습니다: '{title}'",
-                "fix": "제목을 더 구체적으로 작성하세요 (예: '연도별 인구 변화 추이')",
-            })
+            warnings.append(
+                {
+                    "chart_id": chart_id,
+                    "issue": "short_title",
+                    "severity": "low",
+                    "message": f"차트 제목이 너무 짧습니다: '{title}'",
+                    "fix": "제목을 더 구체적으로 작성하세요 (예: '연도별 인구 변화 추이')",
+                }
+            )
 
         # 2. 인코딩 검사
         encoding = spec.get("encoding", {})
@@ -754,13 +791,15 @@ class CodeExecutor:
             # 필드명만 있고 제목이 없는 경우
             field = x_encoding.get("field", "")
             if field and field in ["PRD_DE", "C1_NM", "DT"]:
-                warnings.append({
-                    "chart_id": chart_id,
-                    "issue": "missing_x_axis_title",
-                    "severity": "low",
-                    "message": f"X축 제목이 KOSIS 필드명 그대로입니다: '{field}'",
-                    "fix": f"alt.X('{field}:N', title='연도' or '지역' 등 의미있는 제목)",
-                })
+                warnings.append(
+                    {
+                        "chart_id": chart_id,
+                        "issue": "missing_x_axis_title",
+                        "severity": "low",
+                        "message": f"X축 제목이 KOSIS 필드명 그대로입니다: '{field}'",
+                        "fix": f"alt.X('{field}:N', title='연도' or '지역' 등 의미있는 제목)",
+                    }
+                )
 
         # Y축 제목 및 포맷 검사
         y_encoding = encoding.get("y", {})
@@ -770,13 +809,15 @@ class CodeExecutor:
 
             # 포맷 없이 큰 숫자 표시 가능성
             if not y_format:
-                warnings.append({
-                    "chart_id": chart_id,
-                    "issue": "missing_number_format",
-                    "severity": "medium",
-                    "message": "Y축 숫자 포맷이 없습니다 (큰 숫자가 읽기 어려울 수 있음)",
-                    "fix": "axis=alt.Axis(format=',') 추가로 천 단위 구분자 표시",
-                })
+                warnings.append(
+                    {
+                        "chart_id": chart_id,
+                        "issue": "missing_number_format",
+                        "severity": "medium",
+                        "message": "Y축 숫자 포맷이 없습니다 (큰 숫자가 읽기 어려울 수 있음)",
+                        "fix": "axis=alt.Axis(format=',') 추가로 천 단위 구분자 표시",
+                    }
+                )
 
         # 3. 차트 유형별 검사
         mark = spec.get("mark", "")
@@ -793,36 +834,51 @@ class CodeExecutor:
             color_encoding = encoding.get("color", {})
             if color_encoding:
                 # 색상으로 구분되는 시리즈가 있으면
-                if data_size.get("series_count", 0) > QUALITY_THRESHOLDS["max_series_for_line"]:
-                    warnings.append({
-                        "chart_id": chart_id,
-                        "issue": "too_many_line_series",
-                        "severity": "medium",
-                        "message": f"라인 차트에 시리즈가 너무 많습니다 ({data_size.get('series_count')}개)",
-                        "fix": "상위 5개만 표시하거나, 작은 값들을 '기타'로 그룹화하세요",
-                    })
+                if (
+                    data_size.get("series_count", 0)
+                    > QUALITY_THRESHOLDS["max_series_for_line"]
+                ):
+                    warnings.append(
+                        {
+                            "chart_id": chart_id,
+                            "issue": "too_many_line_series",
+                            "severity": "medium",
+                            "message": f"라인 차트에 시리즈가 너무 많습니다 ({data_size.get('series_count')}개)",
+                            "fix": "상위 5개만 표시하거나, 작은 값들을 '기타'로 그룹화하세요",
+                        }
+                    )
 
         # 막대 차트 카테고리 수 검사
         elif mark_type == "bar":
-            if data_size.get("category_count", 0) > QUALITY_THRESHOLDS["max_categories_for_bar"]:
-                warnings.append({
-                    "chart_id": chart_id,
-                    "issue": "too_many_bar_categories",
-                    "severity": "low",
-                    "message": f"막대 차트에 카테고리가 많습니다 ({data_size.get('category_count')}개)",
-                    "fix": "수평 막대 차트로 변경하거나 상위 항목만 표시하세요",
-                })
+            if (
+                data_size.get("category_count", 0)
+                > QUALITY_THRESHOLDS["max_categories_for_bar"]
+            ):
+                warnings.append(
+                    {
+                        "chart_id": chart_id,
+                        "issue": "too_many_bar_categories",
+                        "severity": "low",
+                        "message": f"막대 차트에 카테고리가 많습니다 ({data_size.get('category_count')}개)",
+                        "fix": "수평 막대 차트로 변경하거나 상위 항목만 표시하세요",
+                    }
+                )
 
         # 파이/도넛 차트 조각 수 검사
         elif mark_type == "arc":
-            if data_size.get("slice_count", 0) > QUALITY_THRESHOLDS["max_slices_for_pie"]:
-                warnings.append({
-                    "chart_id": chart_id,
-                    "issue": "too_many_pie_slices",
-                    "severity": "high",
-                    "message": f"파이/도넛 차트에 조각이 너무 많습니다 ({data_size.get('slice_count')}개)",
-                    "fix": "5개 이하로 줄이고 나머지는 '기타'로 그룹화하세요",
-                })
+            if (
+                data_size.get("slice_count", 0)
+                > QUALITY_THRESHOLDS["max_slices_for_pie"]
+            ):
+                warnings.append(
+                    {
+                        "chart_id": chart_id,
+                        "issue": "too_many_pie_slices",
+                        "severity": "high",
+                        "message": f"파이/도넛 차트에 조각이 너무 많습니다 ({data_size.get('slice_count')}개)",
+                        "fix": "5개 이하로 줄이고 나머지는 '기타'로 그룹화하세요",
+                    }
+                )
 
         # 4. 범례 검사 (다중 시리즈)
         if encoding.get("color") and not encoding.get("color", {}).get("legend"):
@@ -831,14 +887,16 @@ class CodeExecutor:
             if legend_config is None:
                 # 기본값이므로 OK
                 pass
-            elif legend_config == False:
-                warnings.append({
-                    "chart_id": chart_id,
-                    "issue": "disabled_legend",
-                    "severity": "medium",
-                    "message": "색상으로 구분되는 시리즈가 있지만 범례가 비활성화되었습니다",
-                    "fix": "legend=alt.Legend(title='분류명') 추가",
-                })
+            elif legend_config is False:
+                warnings.append(
+                    {
+                        "chart_id": chart_id,
+                        "issue": "disabled_legend",
+                        "severity": "medium",
+                        "message": "색상으로 구분되는 시리즈가 있지만 범례가 비활성화되었습니다",
+                        "fix": "legend=alt.Legend(title='분류명') 추가",
+                    }
+                )
 
         return warnings
 
@@ -914,62 +972,86 @@ class CodeExecutor:
         warnings = []
 
         # 1. 인사이트 섹션 검사
-        has_insight = any(keyword in html_content for keyword in [
-            "insight", "인사이트", "핵심", "발견", "분석 결과",
-            '<div class="insight', '<section class="insight'
-        ])
+        has_insight = any(
+            keyword in html_content
+            for keyword in [
+                "insight",
+                "인사이트",
+                "핵심",
+                "발견",
+                "분석 결과",
+                '<div class="insight',
+                '<section class="insight',
+            ]
+        )
         if not has_insight:
             # 차트만 있고 인사이트가 없는 경우
             if "vegaEmbed" in html_content:
-                warnings.append({
-                    "chart_id": "report",
-                    "issue": "missing_insights",
-                    "severity": "medium",
-                    "message": "차트는 있지만 인사이트/해석이 없습니다",
-                    "fix": "build_insight_box()로 핵심 발견점을 추가하세요",
-                })
+                warnings.append(
+                    {
+                        "chart_id": "report",
+                        "issue": "missing_insights",
+                        "severity": "medium",
+                        "message": "차트는 있지만 인사이트/해석이 없습니다",
+                        "fix": "build_insight_box()로 핵심 발견점을 추가하세요",
+                    }
+                )
 
         # 2. 통계 카드 검사
-        has_stats = any(keyword in html_content for keyword in [
-            "stat-card", "kpi", "metric",
-            '<div class="stat', '<div class="card'
-        ])
+        has_stats = any(
+            keyword in html_content
+            for keyword in [
+                "stat-card",
+                "kpi",
+                "metric",
+                '<div class="stat',
+                '<div class="card',
+            ]
+        )
         if not has_stats and "vegaEmbed" in html_content:
-            warnings.append({
-                "chart_id": "report",
-                "issue": "missing_stat_cards",
-                "severity": "low",
-                "message": "핵심 수치 카드가 없습니다",
-                "fix": "build_stat_cards()로 3-4개 핵심 KPI를 표시하세요",
-            })
+            warnings.append(
+                {
+                    "chart_id": "report",
+                    "issue": "missing_stat_cards",
+                    "severity": "low",
+                    "message": "핵심 수치 카드가 없습니다",
+                    "fix": "build_stat_cards()로 3-4개 핵심 KPI를 표시하세요",
+                }
+            )
 
         # 3. 데이터 출처 검사
-        has_source = any(keyword in html_content.lower() for keyword in [
-            "출처:", "source:", "kosis", "통계청", "데이터:"
-        ])
+        has_source = any(
+            keyword in html_content.lower()
+            for keyword in ["출처:", "source:", "kosis", "통계청", "데이터:"]
+        )
         if not has_source:
-            warnings.append({
-                "chart_id": "report",
-                "issue": "missing_data_source",
-                "severity": "low",
-                "message": "데이터 출처가 명시되지 않았습니다",
-                "fix": "리포트 하단에 '출처: KOSIS 통계청' 추가",
-            })
+            warnings.append(
+                {
+                    "chart_id": "report",
+                    "issue": "missing_data_source",
+                    "severity": "low",
+                    "message": "데이터 출처가 명시되지 않았습니다",
+                    "fix": "리포트 하단에 '출처: KOSIS 통계청' 추가",
+                }
+            )
 
         # 4. 포맷되지 않은 큰 숫자 검사 (HTML 텍스트)
         import re
+
         # 큰 숫자 패턴 (콤마 없는 5자리 이상 숫자)
-        large_numbers = re.findall(r'>\s*(\d{5,})\s*<', html_content)
+        large_numbers = re.findall(r">\s*(\d{5,})\s*<", html_content)
         if large_numbers:
             # 처음 3개만 표시
             examples = large_numbers[:3]
-            warnings.append({
-                "chart_id": "report",
-                "issue": "unformatted_large_numbers",
-                "severity": "medium",
-                "message": f"포맷되지 않은 큰 숫자가 있습니다: {', '.join(examples)}",
-                "fix": "f'{value:,.0f}' 또는 f'{value:,}' 형식으로 천 단위 구분자 추가",
-            })
+            warnings.append(
+                {
+                    "chart_id": "report",
+                    "issue": "unformatted_large_numbers",
+                    "severity": "medium",
+                    "message": f"포맷되지 않은 큰 숫자가 있습니다: {', '.join(examples)}",
+                    "fix": "f'{value:,.0f}' 또는 f'{value:,}' 형식으로 천 단위 구분자 추가",
+                }
+            )
 
         return warnings
 
@@ -997,11 +1079,17 @@ class CodeExecutor:
         # 권장 사항 생성
         recommendations = []
         if by_severity["high"] > 0:
-            recommendations.append("심각한 품질 이슈가 있습니다. 즉시 수정을 권장합니다.")
+            recommendations.append(
+                "심각한 품질 이슈가 있습니다. 즉시 수정을 권장합니다."
+            )
         if by_severity["medium"] > 0:
-            recommendations.append("중간 수준의 개선 사항이 있습니다. 가독성 향상을 위해 수정하세요.")
+            recommendations.append(
+                "중간 수준의 개선 사항이 있습니다. 가독성 향상을 위해 수정하세요."
+            )
         if not recommendations:
-            recommendations.append("경미한 개선 사항만 있습니다. 선택적으로 적용하세요.")
+            recommendations.append(
+                "경미한 개선 사항만 있습니다. 선택적으로 적용하세요."
+            )
 
         return {
             "total_warnings": len(warnings),
@@ -1017,11 +1105,11 @@ class CodeExecutor:
 
         마지막 표현식 또는 return 값을 __result__에 저장.
         """
-        lines = code.strip().split('\n')
+        lines = code.strip().split("\n")
 
         # return 문이 있으면 함수로 래핑
-        if any(line.strip().startswith('return ') for line in lines):
-            indented = '\n'.join('    ' + line for line in lines)
+        if any(line.strip().startswith("return ") for line in lines):
+            indented = "\n".join("    " + line for line in lines)
             return f"""
 def __execute__():
 {indented}
@@ -1033,15 +1121,27 @@ __result__ = __execute__()
             if lines:
                 last_line = lines[-1].strip()
                 # 할당문이 아닌 표현식인지 확인
-                if last_line and not any([
-                    '=' in last_line and '==' not in last_line,
-                    last_line.startswith(('if ', 'for ', 'while ', 'def ', 'class ', 'import ', 'from ')),
-                ]):
+                if last_line and not any(
+                    [
+                        "=" in last_line and "==" not in last_line,
+                        last_line.startswith(
+                            (
+                                "if ",
+                                "for ",
+                                "while ",
+                                "def ",
+                                "class ",
+                                "import ",
+                                "from ",
+                            )
+                        ),
+                    ]
+                ):
                     lines[-1] = f"__result__ = {last_line}"
                 else:
                     lines.append("__result__ = None")
 
-            return '\n'.join(lines)
+            return "\n".join(lines)
 
 
 # 싱글톤 인스턴스

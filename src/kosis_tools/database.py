@@ -25,6 +25,7 @@ logger = logging.getLogger(__name__)
 try:
     import asyncpg
     from asyncpg import Pool, Connection
+
     ASYNCPG_AVAILABLE = True
 except ImportError:
     ASYNCPG_AVAILABLE = False
@@ -34,6 +35,7 @@ except ImportError:
 
 class DatabaseError(Exception):
     """Database operation error."""
+
     pass
 
 
@@ -218,9 +220,7 @@ async def check_database_health() -> dict:
         )
 
         # Check table count
-        count = await DatabasePool.fetchval(
-            "SELECT COUNT(*) FROM kosis_tables"
-        )
+        count = await DatabasePool.fetchval("SELECT COUNT(*) FROM kosis_tables")
 
         return {
             "status": "healthy",

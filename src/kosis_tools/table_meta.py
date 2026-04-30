@@ -35,7 +35,7 @@ import logging
 from typing import Any, Dict, List, Literal, Optional
 
 from .base import KosisBaseClient, build_format_param
-from .config import Endpoints, KosisConfig
+from .config import Endpoints
 
 logger = logging.getLogger(__name__)
 
@@ -128,9 +128,7 @@ class TableMetadata(KosisBaseClient):
 
         # Gap 5: validate content variant; "html" lets KOSIS render the table
         if content is not None and content not in ("table", "html"):
-            raise ValueError(
-                f"content must be 'table' or 'html', got: {content!r}"
-            )
+            raise ValueError(f"content must be 'table' or 'html', got: {content!r}")
 
         params: Dict[str, Any] = {
             "method": "getMeta",
@@ -847,7 +845,9 @@ class TableMetadata(KosisBaseClient):
             - include_extended=True: 8개의 API 호출
             - 데이터 조회 전 테이블 구조 파악에 유용
         """
-        logger.info(f"전체 메타데이터 조회: org_id={org_id}, tbl_id={tbl_id}, extended={include_extended}")
+        logger.info(
+            f"전체 메타데이터 조회: org_id={org_id}, tbl_id={tbl_id}, extended={include_extended}"
+        )
 
         result = {
             "table_info": self.get_table_info(org_id, tbl_id),

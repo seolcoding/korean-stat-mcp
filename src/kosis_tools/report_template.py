@@ -293,14 +293,15 @@ def build_chart_section(
         HTML 문자열
     """
     import uuid
+
     chart_id = chart_id or f"chart-{uuid.uuid4().hex[:8]}"
     spec_json = json.dumps(vega_spec, ensure_ascii=False)
 
     html = '<div class="chart-container">'
     if title:
-        html += f'<h3>{title}</h3>'
+        html += f"<h3>{title}</h3>"
     html += f'<div id="{chart_id}" class="vega-chart" data-spec=\'{spec_json}\'></div>'
-    html += '</div>'
+    html += "</div>"
     return html
 
 
@@ -319,13 +320,13 @@ def build_stat_cards(stats: List[Dict[str, Any]]) -> str:
         value = stat.get("value", "")
         label = stat.get("label", "")
         unit = stat.get("unit", "")
-        html += f'''
+        html += f"""
         <div class="stat-card">
             <div class="value">{value}<span style="font-size: 0.5em">{unit}</span></div>
             <div class="label">{label}</div>
         </div>
-        '''
-    html += '</div>'
+        """
+    html += "</div>"
     return html
 
 
@@ -340,12 +341,12 @@ def build_insight_box(content: str, title: str = "핵심 인사이트") -> str:
     Returns:
         HTML 문자열
     """
-    return f'''
+    return f"""
     <div class="insight-box">
         <h4>{title}</h4>
         <p>{content}</p>
     </div>
-    '''
+    """
 
 
 def build_report(
@@ -378,7 +379,9 @@ def build_report(
         section_type = section.get("type", "html")
 
         if section_type == "text":
-            html = f'<div class="section text-content">{section.get("content", "")}</div>'
+            html = (
+                f'<div class="section text-content">{section.get("content", "")}</div>'
+            )
 
         elif section_type == "chart":
             vega_spec = section.get("vega_spec", {})
@@ -450,11 +453,13 @@ def quick_report(
 
     if chart_specs:
         for i, spec in enumerate(chart_specs):
-            sections.append({
-                "type": "chart",
-                "vega_spec": spec,
-                "title": spec.get("title", {}).get("text", f"차트 {i+1}"),
-            })
+            sections.append(
+                {
+                    "type": "chart",
+                    "vega_spec": spec,
+                    "title": spec.get("title", {}).get("text", f"차트 {i + 1}"),
+                }
+            )
 
     if tables:
         for table in tables:

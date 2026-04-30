@@ -10,38 +10,40 @@ import io
 import re
 import sys
 import logging
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, Optional
 
 logger = logging.getLogger(__name__)
 
 # 금지된 패턴 (보안)
 BLOCKED_PATTERNS = [
-    r'\bimport\s+os\b',
-    r'\bimport\s+subprocess\b',
-    r'\bimport\s+shutil\b',
-    r'\bfrom\s+os\b',
-    r'\bfrom\s+subprocess\b',
-    r'\b__import__\b',
-    r'\beval\s*\(',
-    r'\bexec\s*\(',
-    r'\bcompile\s*\(',
-    r'\bglobals\s*\(',
-    r'\blocals\s*\(',
-    r'\bgetattr\s*\(',
-    r'\bsetattr\s*\(',
-    r'\bdelattr\s*\(',
-    r'\bopen\s*\(',
-    r'\bbreakpoint\s*\(',
+    r"\bimport\s+os\b",
+    r"\bimport\s+subprocess\b",
+    r"\bimport\s+shutil\b",
+    r"\bfrom\s+os\b",
+    r"\bfrom\s+subprocess\b",
+    r"\b__import__\b",
+    r"\beval\s*\(",
+    r"\bexec\s*\(",
+    r"\bcompile\s*\(",
+    r"\bglobals\s*\(",
+    r"\blocals\s*\(",
+    r"\bgetattr\s*\(",
+    r"\bsetattr\s*\(",
+    r"\bdelattr\s*\(",
+    r"\bopen\s*\(",
+    r"\bbreakpoint\s*\(",
 ]
 
 
 class ExecutionError(Exception):
     """코드 실행 오류."""
+
     pass
 
 
 class SecurityError(Exception):
     """보안 위반 오류."""
+
     pass
 
 
@@ -101,11 +103,11 @@ def wrap_code(code: str) -> str:
 
     마지막 표현식 또는 return 값을 __result__에 저장.
     """
-    lines = code.strip().split('\n')
+    lines = code.strip().split("\n")
 
     # return 문이 있으면 함수로 래핑
-    if any(line.strip().startswith('return ') for line in lines):
-        indented = '\n'.join('    ' + line for line in lines)
+    if any(line.strip().startswith("return ") for line in lines):
+        indented = "\n".join("    " + line for line in lines)
         return f"""
 def __execute__():
 {indented}
@@ -116,15 +118,19 @@ __result__ = __execute__()
         # 마지막 줄이 표현식이면 __result__에 할당
         if lines:
             last_line = lines[-1].strip()
-            if last_line and not any([
-                '=' in last_line and '==' not in last_line,
-                last_line.startswith(('if ', 'for ', 'while ', 'def ', 'class ', 'import ', 'from ')),
-            ]):
+            if last_line and not any(
+                [
+                    "=" in last_line and "==" not in last_line,
+                    last_line.startswith(
+                        ("if ", "for ", "while ", "def ", "class ", "import ", "from ")
+                    ),
+                ]
+            ):
                 lines[-1] = f"__result__ = {last_line}"
             else:
                 lines.append("__result__ = None")
 
-        return '\n'.join(lines)
+        return "\n".join(lines)
 
 
 def execute_with_context(
