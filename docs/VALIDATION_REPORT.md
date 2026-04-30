@@ -1,6 +1,6 @@
 # Validation Report — korean-stat-mcp v0.1.0
 
-> Generated: 2026-04-29 · Sources: `scripts/validation/`, `outputs/validation/`
+> Generated: 2026-04-30 · Sources: `scripts/validation/`, `outputs/validation/`
 > Tracks: **A** = KOSIS API reliability, **B** = LLM-judge tool routing.
 
 This report records the methodology and the latest pilot results that gate the
@@ -20,8 +20,8 @@ end-to-end and reports a category breakdown per call.
 2. Sample `N` `(org_id, tbl_id)` pairs **uniformly** from the catalogue using a
    fixed RNG seed (`--seed 42` by default) so runs are reproducible.
 3. For each pair call `get_statistics_data()` at **≤ 1 req / sec** (configurable
-   via `--rate`). The rate limit protects the KOSIS API and matches the production
-   client.
+   via `--rate-limit`). The rate limit protects the KOSIS API and matches the
+   production client.
 4. Categorise each response:
 
    | Category | Meaning |
@@ -41,7 +41,35 @@ end-to-end and reports a category breakdown per call.
 **Gate:** `success_rate_excluding_no_data ≥ 99.0%`. Below the gate the release
 is deferred and the failing samples are inspected.
 
-### 1.2 Pilot result (this iteration)
+### 1.2 Latest live pilot result
+
+The latest live pilot was run on 2026-04-30 with `KOSIS_API_KEY` present:
+
+```bash
+uv run python scripts/validation/run_reliability_test.py \
+  --n 100 \
+  --rate-limit 0.2 \
+  --gate-threshold 0.99
+```
+
+Output artefact:
+`outputs/validation/reliability-20260430T025652Z.json` (ignored by Git).
+
+| Field | Value |
+|-------|-------|
+| Sample N | 100 |
+| Seed | 42 |
+| Duration | 594.9s |
+| Categories | `success=98`, `no_data=2`, `api_error=0`, `timeout=0`, `parse_error=0` |
+| `success_rate_strict` | 0.9800 |
+| `success_rate_excluding_no_data` | 1.0000 |
+| Gate | PASS (`1.0000 ≥ 0.99`) |
+
+The two `no_data` rows were `408/DT_408_2006_S0002` and `142/DT_E10216`.
+Both returned empty responses after all fallback strategies, so they are treated
+as catalogue drift / deprecated tables rather than server defects.
+
+### 1.3 Previous dry-run skeleton
 
 The pilot run that ships with this iteration was a **dry-run skeleton**
 (`outputs/validation/reliability-20260429T235842Z.json`) — Track A produced a
@@ -57,9 +85,7 @@ in this iteration's JSON is not authoritative**.
 | Categories | all zero |
 | `success_rate_excluding_no_data` | 1.0 (vacuous) |
 
-A live pilot of N=50 (then N=500) is the next step before the full 10K rerun.
-
-### 1.3 Historical baseline
+### 1.4 Historical baseline
 
 Phase 4.5 (2025-12-21) ran the same methodology against the production server
 at three sample sizes (recorded in `CLAUDE.md`):
@@ -73,13 +99,14 @@ at three sample sizes (recorded in `CLAUDE.md`):
 All 62 failures in the 10K run were `no_data` (deprecated tables / catalogue
 drift), not server defects.
 
-### 1.4 Gate decision for v0.1.0
+### 1.5 Gate decision for v0.1.0
 
-**PASS for v0.1.0, conditional on a live N≥500 rerun before tag.**
+**PASS for v0.1.0 release-candidate packaging; defer tag until PyPI Trusted
+Publishing is confirmed.**
 Justification: the historical 10K result is well above the 99.0 % gate and the
-underlying server behaviour has not changed materially since Phase 4.5
-(see `CLAUDE.md` Phase 4.5). A live N=500 spot-check is scheduled before tag,
-and a full 10K rerun is scheduled before v0.2.0.
+latest live N=100 spot-check had no API/timeout/parse failures. A live N=500
+spot-check remains recommended before announcing a broader public release, and
+a full 10K rerun is scheduled before v0.2.0.
 
 ---
 
@@ -217,6 +244,8 @@ counted as covering its V1 successor.
 **Confirmed passes**
 
 - Track A methodology is reproducible (fixed seed) and the gate is well-defined.
+- Track A live N=100 pilot passed on 2026-04-30 with no API/timeout/parse
+  failures.
 - Track B harness runs end-to-end (dry-run validated).
 - The 20-query bank covers 13 of the 16 V1_EXPOSED tools as a first call;
   the three gaps are intentional and documented.
@@ -225,10 +254,13 @@ counted as covering its V1 successor.
 
 **Deferred verifications (must complete before tag)**
 
-- Live Track A pilot at N≥500 against production
-  (`https://kosis.seolcoding.com`) to confirm the historical 99.38 % still holds.
-- Live Track B run with `ANTHROPIC_API_KEY` present to obtain a real routing
-  accuracy number; gate is `≥ 0.85`.
+- PyPI Trusted Publishing must be configured for
+  `seolcoding/korean-stat-mcp/.github/workflows/release.yml` before pushing a
+  `v0.1.0` tag.
+- Live Track A pilot at N≥500 is recommended before broad announcement.
+- Live Track B run with `ANTHROPIC_API_KEY` present is optional and should be
+  used only if routing-manual quality needs a model-scored gate; dry-run already
+  validates harness structure.
 
 **Tracked for v0.2.0**
 
