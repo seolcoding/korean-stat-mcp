@@ -242,3 +242,6 @@ docs/kosis_official_manual_raw.md
 .playwright-mcp/
 .env.remote
 outputs/
+
+# oh-my-codex local runtime state
+.omx/
