@@ -28,18 +28,43 @@ https://kosis.kr/openapi/
 ### 인증
 - API Key 필요 (발급: https://kosis.kr/openapi/)
 - 파라미터: `apiKey`
+- **HTTP 프로토콜 종료** (2026-03-05 이후): HTTPS만 사용 가능
 
 ### API 호출 제한
 
+> 출처: KOSIS 공식 공지 (2026-03-05 시행)
+
 | 항목 | 제한 |
 |------|------|
-| **Rate Limit** | 없음 (계정/IP 제한 없음) |
-| **1회 호출당 최대 결과** | 40,000건 (셀 수 기준) |
+| **Rate Limit** | **분당 1,000건 / 키** (2026-03-05 이후 적용) |
+| **프로토콜** | **HTTPS 전용** (HTTP 차단) |
+| **1회 호출당 최대 결과** | 40,000셀 (statisticsParameterData / 일반 SDMX) |
+| **대용량 (statisticsBigData) — SDMX** | 40,000셀 초과 시 SDMX 제공 불가 → XLS 사용 |
+| **대용량 (statisticsBigData) — XLS** | 200,000셀 초과 시 XLS 제공 불가 → 쿼리 분할 필수 |
 
 > **40,000건 제한이란?**
 > - API 1회 호출로 받을 수 있는 최대 결과 셀(수치 값) 수
 > - 예: 100개 지역 × 10개 항목 × 50년 = 50,000건 → 1회 호출로 불가능
 > - 해결: 기간/지역/항목을 분할하여 여러 번 호출 후 병합
+
+### 에러 메시지 (errMsg + err/errCode)
+
+KOSIS는 에러 시 `{"err": "<코드>", "errMsg": "<메시지>"}` 또는
+`{"errCode": "<코드>", "errMsg": "<메시지>"}` 형태로 응답합니다. 코드별 의미와
+권장 액션 (이 프로젝트는 `kosis_tools.errors.classify` 로 자동 분류):
+
+| 코드 | KOSIS 메시지 | 카테고리 | 권장 액션 |
+|------|---|---|---|
+| 10 | 인증키 누락 | auth | URL의 `?apiKey=` 확인 (호스팅 인스턴스는 키 누락 시 401 반환) |
+| 11 | 인증키 기간만료 | auth | https://kosis.kr/openapi/ 에서 갱신 |
+| 20 | 필수요청변수 누락 | input | 도구 docstring의 required 항목 확인 |
+| 21 | 잘못된 요청변수 | input | org_id/tbl_id, 기간 형식, 분류 코드 재확인 |
+| 30 | 조회결과 없음 | query | 키워드/기간/분류 필터를 완화 후 재시도 |
+| 31 | 조회결과 초과 | query | 기간·지역·항목을 분할하여 여러 번 호출 |
+| 40 | 호출가능건수 제한 | rate_limit | **분당 1,000건 한도** 도달 — 잠시 대기 후 재시도 |
+| 41 | 호출가능ROW수 제한 | rate_limit | 1회 호출 한도(40,000셀) 도달 — 쿼리 분할 |
+| 42 | 사용자별 이용 제한 | rate_limit | KOSIS 운영팀(국가데이터처) 문의 |
+| 50 | 서버오류 | server | 1~2초 대기 후 재시도 (대부분 일시적) |
 
 ### 응답 형식 주의
 KOSIS API는 **비표준 JSON**을 반환합니다. 키에 따옴표가 없는 형식:
@@ -103,7 +128,7 @@ GET https://kosis.kr/openapi/statisticsSearch.do?method=getList&apiKey={KEY}&for
   "ITEM03": "출처: UN 자료...",
   "REC_TBL_SE": "N",
   "TBL_VIEW_URL": "https://kosis.kr/statisticsList/...",
-  "LINK_URL": "http://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_XNN0011",
+  "LINK_URL": "https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_XNN0011",
   "STAT_DB_CNT": "104447",
   "QUERY": "인구"
 }
@@ -245,13 +270,22 @@ GET https://kosis.kr/openapi/statisticsList.do
 | `vwCd` | O | 뷰 코드 | `MT_ZTITLE` |
 | `parentListId` | X | 상위 분류 ID | `A` |
 
-### 뷰 코드 (vwCd) 값
+### 뷰 코드 (vwCd) 값 — 공식 12종 (KOSIS 개발가이드 §2.1)
 
 | 코드 | 설명 |
 |------|------|
 | `MT_ZTITLE` | 국내통계 주제별 |
-| `MT_GTITLE01` | e-지방지표 주제별 |
-| `MT_RTITLE01` | 국제/북한통계 |
+| `MT_OTITLE` | 국내통계 기관별 |
+| `MT_GTITLE01` | e-지방지표(주제별) |
+| `MT_GTITLE02` | e-지방지표(지역별) |
+| `MT_CHOSUN_TITLE` | 광복이전통계 (1908~1943) |
+| `MT_HANKUK_TITLE` | 대한민국통계연감 |
+| `MT_STOP_TITLE` | 작성중지통계 |
+| `MT_RTITLE` | 국제통계 |
+| `MT_BUKHAN` | 북한통계 |
+| `MT_TM1_TITLE` | 대상별통계 |
+| `MT_TM2_TITLE` | 이슈별통계 |
+| `MT_ETITLE` | 영문 KOSIS |
 
 ### 샘플 응답
 ```json

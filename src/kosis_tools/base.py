@@ -36,6 +36,7 @@ import requests
 from requests.exceptions import RequestException
 
 from .config import KosisConfig, load_config
+from .errors import KosisError, classify as classify_error
 
 logger = logging.getLogger(__name__)
 
@@ -161,6 +162,10 @@ class KosisBaseClient:
         self.config = config or load_config()
         self._session = requests.Session()
         self._last_request_time: float = 0.0
+        # Most-recent classified KOSIS error from this client. Populated when
+        # _request() encounters an errMsg envelope; consumers can read it to
+        # surface category/action to the LLM instead of the raw Korean text.
+        self._last_error: Optional[KosisError] = None
 
     def _apply_rate_limit(self) -> None:
         """
@@ -247,13 +252,23 @@ class KosisBaseClient:
                 # JSON 파싱
                 data = fix_malformed_json(response.text)
 
-                # API 에러 체크 (errMsg 필드)
-                # Note: retry 전략에서 여러 번 호출되므로 DEBUG 레벨 사용
-                # 최종 실패 시 상위 호출자(data.py)에서 WARNING 로그 출력
-                if isinstance(data, dict) and "errMsg" in data:
-                    logger.debug(f"API 에러: {data.get('errMsg')}")
+                # API 에러 체크 + 분류
+                # Note: retry 전략에서 여러 번 호출되므로 DEBUG 레벨 사용.
+                # 최종 실패 시 상위 호출자(data.py 등)에서 self._last_error를
+                # 읽어 사용자/LLM 응답에 카테고리·다음 액션을 surface 합니다.
+                err = classify_error(data)
+                if err is not None:
+                    self._last_error = err
+                    logger.debug(
+                        "KOSIS API error (code=%s, category=%s): %s",
+                        err.code,
+                        err.category,
+                        err.message,
+                    )
                     return None
 
+                # Reset on success so a stale error does not leak across calls.
+                self._last_error = None
                 return data
 
             except RequestException as e:

@@ -130,6 +130,27 @@ Named workflows. Each is a one-line description plus the canonical tool chain.
 
 ---
 
+## Section C.1 — KOSIS error response handling / KOSIS 에러 응답 처리
+
+When a tool returns no data and `client._last_error` is set (or the response
+includes an `_error` envelope in future PRs), the error has been classified
+into one of these categories. Use the **action** field to decide the next
+step instead of asking the user generic clarifying questions.
+
+| Category | KOSIS codes | What the LLM should do next |
+|---|---|---|
+| `auth` | 10, 11 | Surface the action (key 발급/갱신) verbatim. Do not retry. |
+| `input` | 20, 21 | Re-read the failed tool's docstring; correct the bad arg and re-call once. |
+| `query` (`30`) | 30 | Loosen filters (broader keyword, longer period range) and re-search. |
+| `query` (`31`) | 31 | Split the query: shorter date range or fewer regions/items. Use `get_available_values` to plan the split. |
+| `rate_limit` | 40, 41, 42 | Pause ≥1 second, then retry **once**. If 42 persists, surface to user. |
+| `server` | 50 | Retry once with a brief backoff. Consider it persistent if 3+ retries fail. |
+
+Rule of thumb: `auth` and `42` need user attention; everything else can be
+self-corrected by the LLM with one targeted retry.
+
+---
+
 ## Section D — Anti-patterns / 안티패턴
 
 Do not do these. Each is a real failure mode observed in the wild.
