@@ -59,3 +59,40 @@ async def test_concurrent_requests_do_not_bleed():
             ac.get("/echo?apiKey=k-b"),
         )
     assert {r.json()["api_key"] for r in results} == {"k-a", "k-b"}
+
+
+def test_mcp_endpoint_requires_api_key_without_env(monkeypatch):
+    """When env is unset and ?apiKey= is missing, /mcp returns 401."""
+    monkeypatch.delenv("KOSIS_API_KEY", raising=False)
+    from mcp_server.app import create_app
+
+    app = create_app()
+    client = TestClient(app)
+    response = client.post(
+        "/mcp",
+        json={"jsonrpc": "2.0", "id": 1, "method": "initialize", "params": {}},
+    )
+    assert response.status_code == 401
+    body = response.json()
+    assert body["error"] == "missing_api_key"
+    assert "kosis.kr/openapi" in body["issue_url"]
+
+
+def test_mcp_endpoint_accepts_api_key_via_query(monkeypatch):
+    """When ?apiKey= is set, the middleware does not 401 — request proceeds."""
+    monkeypatch.delenv("KOSIS_API_KEY", raising=False)
+    from mcp_server.app import create_app
+
+    app = create_app()
+    # raise_server_exceptions=False so FastMCP's uninitialized task group
+    # (expected in TestClient without full lifespan) yields a 500 rather
+    # than propagating as a Python exception.
+    client = TestClient(app, raise_server_exceptions=False)
+    response = client.post(
+        "/mcp?apiKey=k1",
+        json={"jsonrpc": "2.0", "id": 1, "method": "initialize", "params": {}},
+    )
+    # 401 is the only thing we ruled out; downstream may be 200 or another
+    # MCP-level status, depending on FastMCP. The point is that the gate
+    # passes when a key is supplied.
+    assert response.status_code != 401

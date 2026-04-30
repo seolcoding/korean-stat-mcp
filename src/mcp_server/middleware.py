@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+import os
+
 from starlette.middleware.base import BaseHTTPMiddleware
 from starlette.requests import Request
 from starlette.responses import JSONResponse, Response
@@ -10,14 +12,19 @@ from kosis_tools.request_context import current_api_key
 
 
 class ApiKeyMiddleware(BaseHTTPMiddleware):
-    """Read ?apiKey=<key> from the URL and pin it to the request's contextvar.
+    """Read ?apiKey=<key> from /mcp requests; 401 if no key and no env fallback."""
 
-    Resets the contextvar in `finally` so a request never leaks its key into
-    a subsequent task on the same event loop.
-    """
+    GUARDED_PATH_PREFIX = "/mcp"
 
     async def dispatch(self, request: Request, call_next):  # type: ignore[override]
         api_key = request.query_params.get("apiKey")
+        if (
+            request.url.path.startswith(self.GUARDED_PATH_PREFIX)
+            and not api_key
+            and not os.getenv("KOSIS_API_KEY")
+        ):
+            return missing_api_key_response()
+
         token = current_api_key.set(api_key) if api_key else None
         try:
             return await call_next(request)
