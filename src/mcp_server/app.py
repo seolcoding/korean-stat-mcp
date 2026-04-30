@@ -1,7 +1,9 @@
-"""FastMCP HTTP Application for Production Deployment.
+"""FastMCP Streamable HTTP application for production deployment.
 
 This module provides an ASGI application for running the KOSIS MCP server
-in HTTP mode (stateless), suitable for production deployment with uvicorn.
+with a Streamable HTTP MCP endpoint at /mcp, suitable for production deployment
+with uvicorn. The app itself serves plain HTTP on port 8000; deployment
+platforms or reverse proxies terminate HTTPS externally.
 
 Usage:
     # Development
@@ -28,6 +30,8 @@ from starlette.requests import Request
 
 logger = logging.getLogger(__name__)
 
+_CUSTOM_ROUTES_REGISTERED = False
+
 
 def _package_version() -> str:
     """Return the installed package version for deployment metadata."""
@@ -38,11 +42,9 @@ def _package_version() -> str:
 
 
 def create_app() -> Starlette:
-    """Create the application with MCP server as main app.
+    """Create the ASGI app exposed by local HTTP and remote deployments."""
+    global _CUSTOM_ROUTES_REGISTERED
 
-    FastMCP's http_app() is the main app, with custom routes added via
-    custom_route decorator or as additional routes.
-    """
     from .server import mcp
 
     # Check if stateless HTTP mode is enabled
@@ -86,36 +88,46 @@ def create_app() -> Starlette:
         (artifacts_path / subdir).mkdir(parents=True, exist_ok=True)
     logger.info(f"Static files mounted at /artifacts -> {artifacts_path}")
 
-    # Add custom routes to the MCP server (avoid "/" to not interfere with MCP)
-    @mcp.custom_route("/info", methods=["GET"])
-    async def info_handler(request: Request) -> JSONResponse:
-        return JSONResponse(
-            {
-                "service": "korean-stat-mcp",
-                "version": _package_version(),
-                "description": "MCP server for Korean Statistical Data",
-                "endpoints": {
-                    "health": "/health",
-                    "info": "/info",
-                    "mcp": "/ (MCP Streamable HTTP protocol - POST)",
-                },
-            }
-        )
+    if not _CUSTOM_ROUTES_REGISTERED:
+        # Add custom routes to the MCP server (avoid "/" to not interfere with MCP)
+        @mcp.custom_route("/info", methods=["GET"])
+        async def info_handler(request: Request) -> JSONResponse:
+            return JSONResponse(
+                {
+                    "service": "korean-stat-mcp",
+                    "version": _package_version(),
+                    "description": "MCP server for Korean Statistical Data",
+                    "endpoints": {
+                        "health": "/health",
+                        "info": "/info",
+                        "mcp": "/mcp",
+                        "artifacts": "/artifacts",
+                    },
+                    "protocol": "MCP Streamable HTTP",
+                }
+            )
 
-    @mcp.custom_route("/health", methods=["GET"])
-    async def health_handler(request: Request) -> JSONResponse:
-        status = {"status": "healthy", "service": "korean-stat-mcp"}
-        try:
-            from kosis_tools.database import check_database_health
+        @mcp.custom_route("/health", methods=["GET"])
+        async def health_handler(request: Request) -> JSONResponse:
+            status = {"status": "healthy", "service": "korean-stat-mcp"}
+            try:
+                from kosis_tools.database import check_database_health
 
-            db_health = await check_database_health()
-            status["database"] = db_health
-        except Exception as e:
-            status["database"] = {"status": "unavailable", "error": str(e)}
-        return JSONResponse(status)
+                db_health = await check_database_health()
+                status["database"] = db_health
+            except Exception as e:
+                status["database"] = {"status": "unavailable", "error": str(e)}
+            return JSONResponse(status)
 
-    # Create MCP app as main app with explicit root path
-    mcp_app = mcp.http_app(path="/", stateless_http=stateless)
+        _CUSTOM_ROUTES_REGISTERED = True
+
+    # Create MCP app with the public Streamable HTTP endpoint at /mcp. JSON
+    # responses are an HTTP transport choice; stdio mode keeps FastMCP defaults.
+    mcp_app = mcp.http_app(
+        path="/mcp",
+        json_response=True,
+        stateless_http=stateless,
+    )
 
     # Add static files route for artifacts
     mcp_app.routes.append(

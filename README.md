@@ -58,14 +58,13 @@ Claude Desktop의 macOS 설정 파일 위치:
 ~/Library/Application Support/Claude/claude_desktop_config.json
 ```
 
-### uvx로 실행
+### MCP 클라이언트 설정
 
 ```json
 {
   "mcpServers": {
     "korean-stat": {
-      "command": "uvx",
-      "args": ["korean-stat-mcp"],
+      "command": "korean-stat-mcp",
       "env": {
         "KOSIS_API_KEY": "<KOSIS_API_KEY>"
       }
@@ -79,7 +78,8 @@ Claude Desktop의 macOS 설정 파일 위치:
 ```bash
 pip install korean-stat-mcp
 export KOSIS_API_KEY="<KOSIS_API_KEY>"
-korean-stat-mcp
+korean-stat-mcp          # stdio MCP, 로컬 Claude Desktop/Cursor용
+korean-stat-mcp --http   # Streamable HTTP 서버, http://localhost:8000/mcp
 ```
 
 설치 확인:

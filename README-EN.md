@@ -61,14 +61,13 @@ On macOS, Claude Desktop uses:
 ~/Library/Application Support/Claude/claude_desktop_config.json
 ```
 
-### Run with uvx
+### MCP client config
 
 ```json
 {
   "mcpServers": {
     "korean-stat": {
-      "command": "uvx",
-      "args": ["korean-stat-mcp"],
+      "command": "korean-stat-mcp",
       "env": {
         "KOSIS_API_KEY": "<KOSIS_API_KEY>"
       }
@@ -82,7 +81,8 @@ On macOS, Claude Desktop uses:
 ```bash
 pip install korean-stat-mcp
 export KOSIS_API_KEY="<KOSIS_API_KEY>"
-korean-stat-mcp
+korean-stat-mcp          # stdio MCP for local Claude Desktop/Cursor
+korean-stat-mcp --http   # Streamable HTTP server at http://localhost:8000/mcp
 ```
 
 Check the install:

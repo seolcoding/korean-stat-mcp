@@ -4,12 +4,15 @@
 > 외부 접근 가능한 HTTP MCP 엔드포인트로 자체 호스팅하는 방법.
 
 The repository ships a production [`Dockerfile`](../Dockerfile) that runs the
-FastAPI HTTP server (`mcp_server.app:app`) on port 8000 with a `/health`
-endpoint. The same image works on Fly.io, Render, Railway, DigitalOcean
-App Platform, or any plain VPS with Docker.
+ASGI HTTP server (`mcp_server.app:app`) on internal port 8000. It exposes MCP
+Streamable HTTP at `/mcp`, health checks at `/health`, service metadata at
+`/info`, and generated artifacts under `/artifacts/*`. The same image works on
+Fly.io, Render, Railway, DigitalOcean App Platform, or any plain VPS with
+Docker.
 
-레포에 포함된 [`Dockerfile`](../Dockerfile) 은 8000 포트에서 FastAPI HTTP
-서버(`mcp_server.app:app`)를 구동하며 `/health` 엔드포인트를 제공합니다. 동일
+레포에 포함된 [`Dockerfile`](../Dockerfile) 은 내부 8000 포트에서 ASGI HTTP
+서버(`mcp_server.app:app`)를 구동합니다. MCP Streamable HTTP는 `/mcp`, 헬스체크는
+`/health`, 서비스 정보는 `/info`, 생성 산출물은 `/artifacts/*`로 제공합니다. 동일
 이미지를 Fly.io / Render / Railway / DigitalOcean App Platform / 일반 VPS 어디서나
 사용할 수 있습니다.
 
@@ -128,7 +131,7 @@ mcp.example.com {
 ```bash
 # Health check
 curl https://<your-host>/health
-# Expected: {"status":"ok",...}
+# Expected: {"status":"healthy",...}
 
 # MCP endpoint exists
 curl -i https://<your-host>/mcp

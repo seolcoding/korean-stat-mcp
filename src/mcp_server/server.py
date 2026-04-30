@@ -11,10 +11,10 @@ AI 에이전트가 한국 통계 데이터를 탐색, 조회, 시각화할 수 �
 
 Example:
     # stdio 모드로 실행 (기본)
-    python -m mcp_server
+    korean-stat-mcp
 
     # HTTP 모드로 실행
-    fastmcp run src/mcp_server/server.py --transport http --port 8000
+    korean-stat-mcp --http
 """
 
 from __future__ import annotations
@@ -24,7 +24,6 @@ import logging
 import os
 import sys
 from typing import Optional
-from pathlib import Path
 
 from fastmcp import FastMCP
 
@@ -32,14 +31,13 @@ from fastmcp import FastMCP
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-# 아티팩트 설정
-ARTIFACTS_DIR = os.environ.get("KOSIS_ARTIFACTS_DIR", "/tmp/kosis_artifacts")
-BASE_URL = os.environ.get("KOSIS_BASE_URL", "http://localhost:8000")
-
-# FastMCP 서버 생성 (json_response=True for standard MCP JSON responses)
+# FastMCP 서버 생성.
+#
+# Keep the server instance transport-neutral: local CLI defaults to stdio, while
+# HTTP-specific options such as json_response are applied only when creating the
+# Streamable HTTP ASGI app.
 mcp = FastMCP(
     name="kosis-stats",
-    json_response=True,  # MCP 표준 JSON 응답 형식 사용
     instructions="""
     KOSIS(국가통계포털) 통계 데이터 서버입니다.
 
@@ -1863,59 +1861,8 @@ return result.head(10).to_dict()""",
 
 
 def create_http_app():
-    """
-    HTTP 모드용 FastAPI 앱 생성.
-
-    MCP 엔드포인트와 아티팩트 정적 파일 서빙을 통합합니다.
-    """
-    from fastapi import FastAPI
-    from fastapi.staticfiles import StaticFiles
-    from fastapi.middleware.cors import CORSMiddleware
-
-    # 아티팩트 디렉토리 생성
-    artifacts_path = Path(ARTIFACTS_DIR)
-    for subdir in ["charts", "reports", "data"]:
-        (artifacts_path / subdir).mkdir(parents=True, exist_ok=True)
-
-    # FastAPI 앱 생성
-    app = FastAPI(
-        title="KOSIS MCP Server",
-        description="한국 통계 데이터 MCP 서버 (아티팩트 호스팅 포함)",
-        version="0.1.0",
-    )
-
-    # CORS 설정 (로컬 개발용)
-    app.add_middleware(
-        CORSMiddleware,
-        allow_origins=["*"],
-        allow_credentials=True,
-        allow_methods=["*"],
-        allow_headers=["*"],
-    )
-
-    # 아티팩트 정적 파일 서빙
-    app.mount(
-        "/artifacts", StaticFiles(directory=str(artifacts_path)), name="artifacts"
-    )
-
-    # MCP 엔드포인트 마운트
-    mcp_app = mcp.http_app(path="/mcp")
-    app.mount("/mcp", mcp_app)
-
-    # 서버 정보 엔드포인트
-    @app.get("/")
-    def root():
-        return {
-            "name": "KOSIS MCP Server",
-            "version": "0.1.0",
-            "mcp_endpoint": "/mcp",
-            "artifacts_endpoint": "/artifacts",
-            "artifacts_structure": {
-                "charts": "/artifacts/charts/{filename}",
-                "reports": "/artifacts/reports/{filename}",
-                "data": "/artifacts/data/{filename}",
-            },
-        }
+    """Create the single production-compatible HTTP ASGI app."""
+    from .app import app
 
     return app
 
@@ -1926,6 +1873,7 @@ def create_http_app():
 # =============================================================================
 
 from .discover import _register_full_registry  # noqa: E402
+from .discover import _list_registered_tools  # noqa: E402
 from .discover import discover_tools as _discover_tools_impl  # noqa: E402
 from .discover import execute_tool as _execute_tool_impl  # noqa: E402
 from .exposed_tools import V1_EXPOSED_NAMES  # noqa: E402
@@ -1995,31 +1943,39 @@ def _prune_unexposed_tools() -> None:
     """
     import asyncio as _asyncio
 
+    async def _prune_async() -> None:
+        registered = await _list_registered_tools(mcp)
+
+        # Snapshot the FULL registry BEFORE pruning so execute_tool can still
+        # reach internal tools after they're hidden from tools/list.
+        _register_full_registry(registered)
+
+        removed = 0
+        for tool_name in list(registered.keys()):
+            if tool_name not in V1_EXPOSED_NAMES:
+                try:
+                    local_provider = getattr(mcp, "local_provider", None)
+                    if local_provider is not None and hasattr(
+                        local_provider, "remove_tool"
+                    ):
+                        local_provider.remove_tool(tool_name)
+                    else:
+                        mcp.remove_tool(tool_name)
+                    removed += 1
+                except Exception as exc:  # pragma: no cover - defensive
+                    logger.warning(f"failed to hide tool {tool_name!r}: {exc}")
+
+        logger.info(
+            f"tool surface filtered: {len(V1_EXPOSED_NAMES)} exposed, "
+            f"{removed} hidden (still reachable via execute_tool)"
+        )
+
     try:
-        registered = _asyncio.run(mcp.get_tools())
+        loop = _asyncio.get_running_loop()
     except RuntimeError:
-        # Already inside an event loop (e.g. during tests). Skip pruning;
-        # the harness will get the full surface, which is safe but verbose.
-        logger.warning("event loop running at import time; skipping tool pruning")
-        return
-
-    # Snapshot the FULL registry BEFORE pruning so execute_tool can still
-    # reach internal tools after they're hidden from tools/list.
-    _register_full_registry(registered)
-
-    removed = 0
-    for tool_name in list(registered.keys()):
-        if tool_name not in V1_EXPOSED_NAMES:
-            try:
-                mcp.remove_tool(tool_name)
-                removed += 1
-            except Exception as exc:  # pragma: no cover - defensive
-                logger.warning(f"failed to hide tool {tool_name!r}: {exc}")
-
-    logger.info(
-        f"tool surface filtered: {len(V1_EXPOSED_NAMES)} exposed, "
-        f"{removed} hidden (still reachable via execute_tool)"
-    )
+        _asyncio.run(_prune_async())
+    else:
+        loop.create_task(_prune_async())
 
 
 _prune_unexposed_tools()

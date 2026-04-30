@@ -1,8 +1,7 @@
 {
   "mcpServers": {
-    "kosis-mcp": {
-      "command": "uvx",
-      "args": ["kosis-mcp"],
+    "korean-stat": {
+      "command": "korean-stat-mcp",
       "env": {
         "KOSIS_API_KEY": "your-api-key-here"
       }

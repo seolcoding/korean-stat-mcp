@@ -28,6 +28,20 @@ def _register_full_registry(registry: dict[str, Any]) -> None:
     _FULL_REGISTRY.update(registry)
 
 
+async def _list_registered_tools(mcp: Any) -> dict[str, Any]:
+    """Return FastMCP registered tools across FastMCP 2.x and 3.x APIs."""
+    get_tools = getattr(mcp, "get_tools", None)
+    if get_tools is not None:
+        return await get_tools()
+
+    list_tools = getattr(mcp, "list_tools", None)
+    if list_tools is not None:
+        tools = await list_tools()
+        return {tool.name: tool for tool in tools}
+
+    raise AttributeError("FastMCP instance has no tool listing API")
+
+
 def _get_mcp():
     """Lazy import of the FastMCP server to avoid circular imports."""
     from . import server as _server  # noqa: PLC0415
@@ -45,7 +59,7 @@ def _all_tools() -> dict[str, Any]:
     if _FULL_REGISTRY:
         return dict(_FULL_REGISTRY)
     mcp = _get_mcp()
-    coro = mcp.get_tools()
+    coro = _list_registered_tools(mcp)
     try:
         asyncio.get_running_loop()
     except RuntimeError:
