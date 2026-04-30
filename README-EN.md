@@ -1,6 +1,11 @@
 # korean-stat-mcp
 
-> Korean Statistics (KOSIS) MCP server — 100% public API coverage with allow-list curated tools and citation verification.
+A Python MCP server for working with Korean Statistical Information Service
+(KOSIS) OpenAPI data.
+
+It lets MCP clients such as Claude Desktop, Claude Code, Cursor, and Windsurf
+search KOSIS tables, inspect metadata, fetch source rows, and create simple
+charts or reports.
 
 [한국어 README](./README.md)
 
@@ -9,37 +14,62 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 [![MCP](https://img.shields.io/badge/MCP-compatible-blue)](https://modelcontextprotocol.io/)
 
-## Why this tool
+## What it does
 
-- **Proven reliability**: 99.38% success rate against the live KOSIS Open API, verified across a 10,000-table sample.
-- **Curated tool surface**: ~16 carefully designed tools instead of exposing all 24 raw endpoints — the LLM picks the right tool faster, with fewer hallucinated parameters.
-- **Citation verification**: A dedicated `verify_statistics` tool re-fetches source rows so the model can cite KOSIS values it actually retrieved, not numbers it invented.
-- **Standard LLM tool for Korean statistics**: Designed to be the default way LLM agents read public Korean statistical data — population, economy, labor, housing, education, and more.
+- Search KOSIS tables by keyword.
+- Browse tables by organization or topic.
+- Read table metadata, classifications, items, and periods.
+- Fetch source data from the KOSIS OpenAPI.
+- Filter and aggregate fetched data.
+- Create Altair charts and HTML reports.
+- Use `verify_statistics` to compare a claimed value with the source row.
 
-## 🚀 Quick Start — 4 install channels
+KOSIS tables often require slightly different parameter combinations. Some
+tables behave differently across monthly, quarterly, yearly, and local-government
+datasets. This server wraps those details behind MCP tools so the client setup
+stays small.
 
-### 1. Claude Code plugin marketplace
+## Installation
+
+You need a KOSIS OpenAPI key. You can request one from the
+[KOSIS OpenAPI page](https://kosis.kr/openapi/).
+
+### Claude Code plugin
 
 ```bash
 /plugin marketplace add seolcoding/korean-stat-mcp
 ```
 
-Verify with `korean-stat-mcp --version` (expected output: `korean-stat-mcp 0.1.0`).
+Set `KOSIS_API_KEY` after installing.
 
-### 2. Claude.ai custom connector (remote MCP)
+### Claude Desktop / Cursor / Windsurf
 
-In Claude.ai → Settings → Connectors → Add custom connector, use the remote URL:
-
-```
-https://<your-host>/mcp
+```bash
+pip install korean-stat-mcp
 ```
 
-(No official hosted endpoint yet — self-host using the Fly.io / Render / Railway / DigitalOcean / VPS recipes in [deploy/README.md](./deploy/README.md).)
-Verify with `curl https://<your-host>/health` returning `200 OK`.
+Add this to your MCP client config:
 
-### 3. Claude Desktop / Cursor / Windsurf (JSON config)
+```json
+{
+  "mcpServers": {
+    "korean-stat": {
+      "command": "korean-stat-mcp",
+      "env": {
+        "KOSIS_API_KEY": "<KOSIS_API_KEY>"
+      }
+    }
+  }
+}
+```
 
-Add to your client config (`claude_desktop_config.json`, `.cursor/mcp.json`, etc.):
+On macOS, Claude Desktop uses:
+
+```text
+~/Library/Application Support/Claude/claude_desktop_config.json
+```
+
+### Run with uvx
 
 ```json
 {
@@ -48,60 +78,93 @@ Add to your client config (`claude_desktop_config.json`, `.cursor/mcp.json`, etc
       "command": "uvx",
       "args": ["korean-stat-mcp"],
       "env": {
-        "KOSIS_API_KEY": "your_kosis_api_key_here"
+        "KOSIS_API_KEY": "<KOSIS_API_KEY>"
       }
     }
   }
 }
 ```
 
-Verify with `korean-stat-mcp --version` (expected output: `korean-stat-mcp 0.1.0`).
-
-### 4. PyPI
+### Run directly
 
 ```bash
 pip install korean-stat-mcp
-korean-stat-mcp --help
+export KOSIS_API_KEY="<KOSIS_API_KEY>"
+korean-stat-mcp
 ```
 
-Verify with `korean-stat-mcp --version` (expected output: `korean-stat-mcp 0.1.0`).
+Check the install:
 
-## Tool overview
+```bash
+korean-stat-mcp --version
+```
 
-The server exposes ~16 curated tools across these categories. See [docs/TOOL_MIGRATION.md](./docs/TOOL_MIGRATION.md) for the full tool→endpoint mapping.
+## Remote MCP hosting
 
-| Category | Example tools | Purpose |
+There is no official hosted endpoint yet. To use Claude.ai custom connectors,
+deploy the server yourself and register:
+
+```text
+https://<your-host>/mcp
+```
+
+Deployment notes are in [deploy/README.md](./deploy/README.md). The repo includes
+a Dockerfile and examples for Fly.io, Render, Railway, DigitalOcean App Platform,
+and a plain VPS.
+
+Health check:
+
+```bash
+curl https://<your-host>/health
+```
+
+## Main tools
+
+| Area | Tools | Purpose |
 |---|---|---|
-| Discovery | `search_statistics`, `browse_categories` | Find tables by keyword or browse the catalog hierarchy |
-| Metadata | `get_table_metadata`, `get_available_values` | Inspect a table's classifications, periods, and items |
-| Data fetch | `get_statistics_data`, `filter_statistics`, `aggregate_statistics` | Retrieve, filter, and aggregate statistical values |
-| Verification | `verify_statistics` | Re-fetch and cite a specific value the model is about to claim |
-| Analysis | `execute_analysis`, `execute_visualization` | Statistical helpers and Altair charts (server-side) |
-| Reporting | `execute_report`, `execute_table` | Composite HTML reports and styled tables |
+| Search | `search_statistics` | Find tables by keyword |
+| Browse | `browse_categories` | Browse by organization or topic |
+| Metadata | `get_table_metadata`, `get_available_values` | Inspect classifications, items, and periods |
+| Data | `get_statistics_data` | Fetch source rows |
+| Transform | `filter_statistics`, `aggregate_statistics` | Filter and group results |
+| Stored data | `read_stored_data`, `list_stored_data` | Read large results in chunks |
+| Verification | `verify_statistics` | Compare a value with source data |
+| Output | `execute_visualization`, `execute_table`, `execute_report` | Generate charts, tables, and reports |
+
+See [docs/TOOL_MIGRATION.md](./docs/TOOL_MIGRATION.md) for the full tool list
+and migration notes.
 
 ## Environment variables
 
 | Variable | Required | Description |
-|---|---|---|
-| `KOSIS_API_KEY` | ✅ | Get one at https://kosis.kr/openapi/index/index.jsp |
-| `R2_ACCOUNT_ID` / `R2_ACCESS_KEY_ID` / `R2_SECRET_ACCESS_KEY` / `R2_BUCKET` | optional | Cloudflare R2 credentials for hosting generated charts and reports |
-| `KOSIS_ARTIFACTS_DIR` | optional | Local directory for artifacts when R2 is not configured |
+|---|---:|---|
+| `KOSIS_API_KEY` | yes | KOSIS OpenAPI key |
+| `KOSIS_ARTIFACTS_DIR` | no | Local chart/report output directory |
+| `KOSIS_MCP_URL` | no | Base URL for a self-hosted server |
+| `R2_BUCKET_NAME` | no | Cloudflare R2 bucket |
+| `R2_ACCESS_KEY_ID` / `R2_SECRET_ACCESS_KEY` | no | Cloudflare R2 credentials |
+| `R2_PUBLIC_URL` | no | Public URL prefix for R2 artifacts |
 
 See [.env.example](./.env.example) for the full list.
 
+## Validation
+
+- CI runs on Python 3.12 and 3.13.
+- As of 2026-04-30, the unit test suite has 446 passing tests.
+- A 100-table live KOSIS pilot had no API errors, timeouts, or parse errors.
+  Two empty responses were classified as `no_data`.
+
+See [docs/VALIDATION_REPORT.md](./docs/VALIDATION_REPORT.md) for details.
+
 ## Documentation
 
-- [CLAUDE-EN.md](./CLAUDE-EN.md) — English project context for AI coding agents
-- [MIGRATION.md](./MIGRATION.md) — Migration guide for previous `kosis-mcp` users
-- [docs/ARCHITECTURE_DESIGN.md](./docs/ARCHITECTURE_DESIGN.md) — System architecture
-- [docs/KOSIS_API_REFERENCE.md](./docs/KOSIS_API_REFERENCE.md) — KOSIS endpoint and field reference
-- [deploy/README.md](./deploy/README.md) — Self-hosting (Docker, FastMCP HTTP)
-- [docs/USER_GUIDE.md](./docs/USER_GUIDE.md) — End-user tool guide
-
-## Contributing
-
-Contributions are very welcome. See [CONTRIBUTING-EN.md](./CONTRIBUTING-EN.md) for the development setup, code style, and PR checklist. All contributors are expected to follow the [Code of Conduct](./CODE_OF_CONDUCT.md).
+- [docs/USER_GUIDE.md](./docs/USER_GUIDE.md): user guide
+- [docs/KOSIS_API_REFERENCE.md](./docs/KOSIS_API_REFERENCE.md): KOSIS API notes
+- [docs/TOOL_MIGRATION.md](./docs/TOOL_MIGRATION.md): tool mapping and migration notes
+- [deploy/README.md](./deploy/README.md): deployment guide
+- [MIGRATION.md](./MIGRATION.md): notes for previous `kosis-mcp` users
+- [CONTRIBUTING-EN.md](./CONTRIBUTING-EN.md): development and PR workflow
 
 ## License
 
-MIT — see [LICENSE](./LICENSE).
+The code is MIT licensed. KOSIS data is subject to the KOSIS terms and policies.
