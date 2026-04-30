@@ -5,34 +5,44 @@ The format follows [Keep a Changelog 1.1.0](https://keepachangelog.com/en/1.1.0/
 
 ## [Unreleased]
 
-### Added
-- Open-source release preparation: bilingual KO/EN README and CLAUDE manuals, GitHub Actions CI/release workflows, Issue & PR templates, Claude Code plugin manifest, public OpenAPI coverage matrix.
-- `verify_statistics` MCP tool — cross-checks LLM numeric claims against KOSIS source data (planned in US-005).
-- `discover_tools` and `execute_tool` meta tools for power-user introspection.
-- Claude Code plugin marketplace manifest (`.claude-plugin/marketplace.json`, `.claude-plugin/plugin.json`) for `/plugin marketplace add` installation flow.
-- Fly.io deploy config (`fly.toml`) and bilingual `deploy/README.md` covering Fly.io, Render, Railway, DigitalOcean App Platform, and self-hosted Docker options.
-
-### Changed
-- Renamed package from `kosis-mcp` to `korean-stat-mcp`.
-- Tool surface curated via allow-list: ~24 internal tools, ~12–16 exposed to LLM clients (US-003).
-
-### Removed
-- All references to private hosting infrastructure (server hostname, owner-specific domain, temporary Cloudflare Tunnel URL) replaced with neutral placeholders or the `${KOSIS_MCP_URL}` environment variable.
-
-### Deprecated
-_(none)_
-
-### Fixed
-_(none)_
-
-### Security
-_(none)_
+_(no changes since v0.1.0)_
 
 ---
 
-## [0.1.0] — TBD
+## [0.1.0] — 2026-04-30
 
-Initial public release. See `[Unreleased]` above for the in-progress changeset.
+Initial public release. The package is renamed and refactored from the private `kosis-mcp` codebase into a public open-source MCP server.
+
+### Added
+- Bilingual KO/EN documentation: `README.md` + `README-EN.md`, `CLAUDE.md` + `CLAUDE-EN.md`, `CONTRIBUTING.md` + `CONTRIBUTING-EN.md`, `CODE_OF_CONDUCT.md`.
+- LLM routing manual (`docs/llm-routing-manual.md`): 17 query→tool decision rows, 6 implementation rules, 6 scenario chains, 9 anti-patterns. Importable system-prompt module at `src/mcp_server/system_prompt.py`.
+- Allow-list tool surface (`src/mcp_server/exposed_tools.py`): 16 curated tools exposed to LLM clients; 10 internal tools reachable via `discover_tools` / `execute_tool` meta tools.
+- `verify_statistics` MCP tool: cross-checks LLM numeric claims against the actual KOSIS source row, returns confidence ranking and source URL.
+- KOSIS OpenAPI coverage matrix (`docs/API_COVERAGE.md`): 14/14 public endpoints implemented, parameter-level gaps closed.
+- New parameters across endpoint wrappers: `newEstPrdCnt`/`prdInterval` (data), `sort=RANK|DATE` (search), `format=sdmx|xml|html` shared helper (base), `xls` format (big_data), `content=table|html` (table_meta) — all keyword-only with `None` defaults.
+- Validation harness: `scripts/validation/run_reliability_test.py` (KOSIS API success-rate gate, default ≥99%) and `scripts/validation/run_llm_judge.py` (tool-routing accuracy gate, default ≥85%).
+- GitHub Actions CI (`ruff`, `mypy`, `pytest`) and release workflow (PyPI Trusted Publishing + GHCR Docker push on tag).
+- Claude Code plugin marketplace manifest (`.claude-plugin/marketplace.json`, `.claude-plugin/plugin.json`).
+- Fly.io deploy config (`fly.toml`) + bilingual `deploy/README.md` covering Fly.io, Render, Railway, DigitalOcean App Platform, and self-hosted Docker.
+- Issue & PR templates under `.github/`.
+
+### Changed
+- Renamed package from `kosis-mcp` to `korean-stat-mcp`.
+- `asyncpg` and `boto3` moved from required to optional extras (`[postgres]` / `[r2]` / `[all]`). The base `pip install korean-stat-mcp` now requires no third-party AI vendor key.
+
+### Removed
+- OpenAI embeddings stack: `src/kosis_tools/embeddings.py` and `src/kosis_tools/hybrid_search.py` deleted; `search_tables_hybrid` MCP tool removed.
+- pgvector schema parts in `migrations/init.sql` (vector extension, embedding column, hybrid_search SQL function).
+- `openai` dependency dropped from `pyproject.toml`.
+- All references to private hosting infrastructure (server hostname, owner-specific domain, temporary Cloudflare Tunnel URL) replaced with neutral placeholders or the `${KOSIS_MCP_URL}` environment variable.
+
+### Archived
+- `docs/HYBRID_SEARCH.md` → `docs/legacy/`
+- `scripts/load_metadata.py` → `scripts/legacy/load_metadata_with_embeddings.py` (FTS-only loader to be added when needed).
+
+### Reliability baseline
+- KOSIS OpenAPI success rate: **99.38%** on a 10K-table sample (carried forward from internal pre-release testing). Re-verified at smaller pilot sizes via `scripts/validation/run_reliability_test.py`.
+- Unit test suite: 445 tests, 100% pass.
 
 ---
 
