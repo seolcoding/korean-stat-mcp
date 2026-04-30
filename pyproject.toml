@@ -1,14 +1,14 @@
 [project]
 name = "korean-stat-mcp"
 version = "0.1.0"
-description = "Korean Statistics (KOSIS) MCP Server — 한국 국가통계포털 통합 도구"
+description = "MCP server for Korean KOSIS OpenAPI statistics data"
 readme = "README.md"
 requires-python = ">=3.12"
 license = "MIT"
 authors = [
     { name = "korean-stat-mcp maintainers" }
 ]
-keywords = ["kosis", "mcp", "statistics", "korea", "llm", "claude", "fastmcp"]
+keywords = ["kosis", "mcp", "statistics", "korea", "python", "fastmcp"]
 classifiers = [
     "Development Status :: 4 - Beta",
     "Intended Audience :: Developers",
