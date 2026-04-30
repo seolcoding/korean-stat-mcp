@@ -16,7 +16,8 @@ v0.1.0 release. It is regenerated when the underlying JSON artefacts under
 `scripts/validation/run_reliability_test.py` exercises the public KOSIS API
 end-to-end and reports a category breakdown per call.
 
-1. Load the table catalogue (`outputs/kosis-api-catalog/tables.json`).
+1. Load the locally generated table catalogue
+   (`outputs/kosis-api-catalog/tables.json`, ignored by Git).
 2. Sample `N` `(org_id, tbl_id)` pairs **uniformly** from the catalogue using a
    fixed RNG seed (`--seed 42` by default) so runs are reproducible.
 3. For each pair call `get_statistics_data()` at **≤ 1 req / sec** (configurable
@@ -88,7 +89,7 @@ in this iteration's JSON is not authoritative**.
 ### 1.4 Historical baseline
 
 Phase 4.5 (2025-12-21) ran the same methodology against the production server
-at three sample sizes (recorded in `CLAUDE.md`):
+at three sample sizes (recorded in internal pre-release notes):
 
 | N | success | failures | success rate |
 |---:|---:|---:|---:|

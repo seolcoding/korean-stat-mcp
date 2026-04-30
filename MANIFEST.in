@@ -1,7 +1,15 @@
 prune .omx
+prune .claude
+prune .claude-plugin
+prune .github
+prune .ralph
+prune .vscode
 prune .worktrees
 prune .auto-claude
+prune data
 prune outputs
+prune reports
+prune kosis_data
 prune kosis-reports
 prune examples/gallery/output
 prune examples/gallery/mcp_artifacts

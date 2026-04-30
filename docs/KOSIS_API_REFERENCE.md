@@ -650,20 +650,19 @@ print(f"총 {len(records)}건 조회됨")
 
 | 파일 | 사용 API |
 |------|----------|
-| `src/scripts/scrape_kosis_metadata.py` | statisticsSearch.do |
-| `src/kosis_wrapper.py` | statisticsParameterData.do |
-| `src/api.py` | statisticsParameterData.do |
-| `src/scripts/scrape_kstat_metadata.py` | statHtmlContent.do, k-stat.go.kr |
-| (신규 구현 예정) | statisticsData.do (getMeta) |
-| (신규 구현 예정) | statisticsExplData.do |
+| `src/kosis_tools/search.py` | statisticsSearch.do |
+| `src/kosis_tools/data.py` | statisticsData.do |
+| `src/kosis_tools/table_meta.py` | statisticsParameterData.do, statisticsData.do (getMeta) |
+| `src/kosis_tools/stats_explanation.py` | statisticsExplData.do |
+| `src/kosis_tools/kstat_metadata.py` | statHtmlContent.do, k-stat.go.kr |
 
 ### 저장된 데이터 파일
 
 | 파일 | 내용 |
 |------|------|
-| `kosis_data/kosis_metadata_final.json` | 검색된 통계표 메타데이터 |
-| `kosis_data/kstat_urls.json` | k-stat.go.kr URL 매핑 |
-| `kosis_data/raw/*.json` | 개별 테이블 원본 데이터 |
+| `data/metadata_api/tables.json` | generated locally; full table metadata cache |
+| `outputs/validation/*.json` | generated locally; reliability and routing validation results |
+| `kosis_data/raw/*.json` | generated locally; individual raw table snapshots |
 
 ---
 

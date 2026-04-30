@@ -10,6 +10,7 @@ The format follows [Keep a Changelog 1.1.0](https://keepachangelog.com/en/1.1.0/
 - Add packaging guardrails so local/generated artifacts such as `outputs/`, `kosis-reports/`, and `.omx/` do not enter release archives or Docker build context.
 - Align the PR checklist with the scoped CI quality gates used by this repository.
 - Replace pre-release placeholder URLs and marketplace owner strings with the public `seolcoding/korean-stat-mcp` repository path.
+- Remove generated report/data folders, local editor/agent metadata, and legacy helper scripts from the public repository tree.
 
 ---
 
@@ -18,7 +19,7 @@ The format follows [Keep a Changelog 1.1.0](https://keepachangelog.com/en/1.1.0/
 Initial public release. The package is renamed and refactored from the private `kosis-mcp` codebase into a public open-source MCP server.
 
 ### Added
-- Bilingual KO/EN documentation: `README.md` + `README-EN.md`, `CLAUDE.md` + `CLAUDE-EN.md`, `CONTRIBUTING.md` + `CONTRIBUTING-EN.md`, `CODE_OF_CONDUCT.md`.
+- Bilingual KO/EN documentation: `README.md` + `README-EN.md`, `CONTRIBUTING.md` + `CONTRIBUTING-EN.md`, `CODE_OF_CONDUCT.md`.
 - LLM routing manual (`docs/llm-routing-manual.md`): 17 query→tool decision rows, 6 implementation rules, 6 scenario chains, 9 anti-patterns. Importable system-prompt module at `src/mcp_server/system_prompt.py`.
 - Allow-list tool surface (`src/mcp_server/exposed_tools.py`): 16 curated tools exposed to LLM clients; 10 internal tools reachable via `discover_tools` / `execute_tool` meta tools.
 - `verify_statistics` MCP tool: cross-checks LLM numeric claims against the actual KOSIS source row, returns confidence ranking and source URL.
@@ -26,7 +27,6 @@ Initial public release. The package is renamed and refactored from the private `
 - New parameters across endpoint wrappers: `newEstPrdCnt`/`prdInterval` (data), `sort=RANK|DATE` (search), `format=sdmx|xml|html` shared helper (base), `xls` format (big_data), `content=table|html` (table_meta) — all keyword-only with `None` defaults.
 - Validation harness: `scripts/validation/run_reliability_test.py` (KOSIS API success-rate gate, default ≥99%) and `scripts/validation/run_llm_judge.py` (tool-routing accuracy gate, default ≥85%).
 - GitHub Actions CI (`ruff`, `mypy`, `pytest`) and release workflow (PyPI Trusted Publishing + GHCR Docker push on tag).
-- Claude Code plugin marketplace manifest (`.claude-plugin/marketplace.json`, `.claude-plugin/plugin.json`).
 - Fly.io deploy config (`fly.toml`) + bilingual `deploy/README.md` covering Fly.io, Render, Railway, DigitalOcean App Platform, and self-hosted Docker.
 - Issue & PR templates under `.github/`.
 

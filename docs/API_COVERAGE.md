@@ -128,7 +128,7 @@ All gaps are parameter-level, not endpoint-level. Each is actionable for iterati
 
 ## Reliability evidence
 
-The current implementation is documented at **99.38% success rate** on a **10,000-table sample** (`CLAUDE.md` → "Phase 4.5: API Reliability Optimization"). The 62 failures were all `no_data` (deprecated tables or tables with no data), not API-call failures. US-002 work (parameter additions above) **must not regress** this number:
+The current implementation is documented at **99.38% success rate** on a **10,000-table sample** from internal pre-release validation. The 62 failures were all `no_data` (deprecated tables or tables with no data), not API-call failures. US-002 work (parameter additions above) **must not regress** this number:
 
 - All new parameters must be **optional** with `None` defaults so existing call paths are byte-identical.
 - The existing `_execute_with_obj_retry` 7-stage `objL` strategy in `data.py` and the period-fallback logic must remain the default path.
