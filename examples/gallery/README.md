@@ -16,6 +16,9 @@ examples/gallery/
 
 생성된 HTML 갤러리와 디버그 산출물은 저장소에 커밋하지 않습니다.
 필요할 때 위 스크립트를 실행해 로컬에서 다시 만듭니다.
+`debug_viewer.html`은 로컬 산출물을 열어보는 정적 뷰어라서 예외적으로 추적합니다.
+새 예제를 추가할 때도 Python 소스와 README만 커밋하고, `output/`,
+`mcp_artifacts/`, `stories/*.html`은 로컬 생성물로 남겨 둡니다.
 
 ## 🚀 실행 방법
 

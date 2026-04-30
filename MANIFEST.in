@@ -1,0 +1,14 @@
+prune .omx
+prune .worktrees
+prune .auto-claude
+prune outputs
+prune kosis-reports
+prune examples/gallery/output
+prune examples/gallery/mcp_artifacts
+prune examples/gallery/stories
+
+recursive-exclude src/scripts *
+
+global-exclude .DS_Store
+global-exclude *.py[cod]
+global-exclude __pycache__
