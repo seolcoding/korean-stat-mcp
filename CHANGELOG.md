@@ -14,6 +14,14 @@ The format follows [Keep a Changelog 1.1.0](https://keepachangelog.com/en/1.1.0/
 
 ---
 
+## [0.1.3] — 2026-04-30
+
+### Changed
+- Remove Altair from the base package and public MCP tool surface; native chart generation is delegated to client-side or dedicated visualization tools.
+- Keep table and analysis helpers in the core package while returning explicit placeholders for legacy visualization helper calls.
+
+---
+
 ## [0.1.2] — 2026-04-30
 
 ### Changed
@@ -66,7 +74,8 @@ Initial public release. The package is renamed and refactored from the private `
 
 ---
 
-[Unreleased]: https://github.com/seolcoding/korean-stat-mcp/compare/v0.1.2...HEAD
+[Unreleased]: https://github.com/seolcoding/korean-stat-mcp/compare/v0.1.3...HEAD
+[0.1.3]: https://github.com/seolcoding/korean-stat-mcp/compare/v0.1.2...v0.1.3
 [0.1.2]: https://github.com/seolcoding/korean-stat-mcp/compare/v0.1.1...v0.1.2
 [0.1.1]: https://github.com/seolcoding/korean-stat-mcp/compare/v0.1.0...v0.1.1
 [0.1.0]: https://github.com/seolcoding/korean-stat-mcp/releases/tag/v0.1.0

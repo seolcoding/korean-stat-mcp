@@ -19,8 +19,6 @@ from pathlib import Path
 from typing import Any, Dict, List, Optional
 
 import pandas as pd
-import numpy as np
-import altair as alt
 
 from .base import get_base_globals, execute_with_context
 
@@ -519,8 +517,6 @@ def execute_report(
         {
             # 데이터 분석 라이브러리
             "pd": pd,
-            "np": np,
-            "alt": alt,
             # 리포트 헬퍼
             "build_report": build_report,
             "build_stat_cards": build_stat_cards,

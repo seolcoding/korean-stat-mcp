@@ -8,16 +8,11 @@
 - 리포트 구조 검사
 """
 
-import json
 import pytest
-from pathlib import Path
-
-# 프로젝트 루트 추가
-import sys
-project_root = Path(__file__).parent.parent.parent
-sys.path.insert(0, str(project_root / "src"))
 
 from kosis_tools.code_executor import execute_code, CodeExecutor
+
+pytestmark = pytest.mark.skip(reason="Native visualization was removed from core MCP.")
 
 
 class TestVisualizationValidation:
@@ -27,23 +22,59 @@ class TestVisualizationValidation:
     def sample_data(self):
         """테스트용 KOSIS 데이터"""
         return [
-            {"PRD_DE": "2020", "C1_NM": "서울특별시", "DT": "9668465", "ITM_NM": "총인구", "UNIT_NM": "명"},
-            {"PRD_DE": "2021", "C1_NM": "서울특별시", "DT": "9509458", "ITM_NM": "총인구", "UNIT_NM": "명"},
-            {"PRD_DE": "2022", "C1_NM": "서울특별시", "DT": "9428372", "ITM_NM": "총인구", "UNIT_NM": "명"},
-            {"PRD_DE": "2020", "C1_NM": "부산광역시", "DT": "3391946", "ITM_NM": "총인구", "UNIT_NM": "명"},
-            {"PRD_DE": "2021", "C1_NM": "부산광역시", "DT": "3350380", "ITM_NM": "총인구", "UNIT_NM": "명"},
-            {"PRD_DE": "2022", "C1_NM": "부산광역시", "DT": "3314183", "ITM_NM": "총인구", "UNIT_NM": "명"},
+            {
+                "PRD_DE": "2020",
+                "C1_NM": "서울특별시",
+                "DT": "9668465",
+                "ITM_NM": "총인구",
+                "UNIT_NM": "명",
+            },
+            {
+                "PRD_DE": "2021",
+                "C1_NM": "서울특별시",
+                "DT": "9509458",
+                "ITM_NM": "총인구",
+                "UNIT_NM": "명",
+            },
+            {
+                "PRD_DE": "2022",
+                "C1_NM": "서울특별시",
+                "DT": "9428372",
+                "ITM_NM": "총인구",
+                "UNIT_NM": "명",
+            },
+            {
+                "PRD_DE": "2020",
+                "C1_NM": "부산광역시",
+                "DT": "3391946",
+                "ITM_NM": "총인구",
+                "UNIT_NM": "명",
+            },
+            {
+                "PRD_DE": "2021",
+                "C1_NM": "부산광역시",
+                "DT": "3350380",
+                "ITM_NM": "총인구",
+                "UNIT_NM": "명",
+            },
+            {
+                "PRD_DE": "2022",
+                "C1_NM": "부산광역시",
+                "DT": "3314183",
+                "ITM_NM": "총인구",
+                "UNIT_NM": "명",
+            },
         ]
 
     def test_empty_chart_detection(self, sample_data):
         """빈 차트 데이터 감지 테스트"""
-        code = '''
+        code = """
 df = prepare_data(data, numeric_fields=["DT"])
 # 존재하지 않는 지역으로 필터링 → 빈 DataFrame
 df = df[df["C1_NM"] == "존재하지않는지역"]
 chart = alt.Chart(df).mark_bar().encode(x='C1_NM:N', y='DT:Q')
 return chart_to_json(chart)
-'''
+"""
         result = execute_code(code, data=sample_data)
 
         assert result["success"] is False
@@ -53,7 +84,7 @@ return chart_to_json(chart)
 
     def test_successful_chart_with_quality_warnings(self, sample_data):
         """정상 차트이지만 품질 경고가 있는 경우"""
-        code = '''
+        code = """
 df = prepare_data(data, numeric_fields=["DT"])
 # 제목 없음, 축 포맷 없음
 chart = alt.Chart(df).mark_line().encode(
@@ -61,7 +92,7 @@ chart = alt.Chart(df).mark_line().encode(
     y='DT:Q'
 ).properties(width=600, height=400)
 return chart_to_json(chart)
-'''
+"""
         result = execute_code(code, data=sample_data)
 
         assert result["success"] is True
@@ -74,7 +105,7 @@ return chart_to_json(chart)
 
     def test_high_quality_chart_no_warnings(self, sample_data):
         """고품질 차트는 경고가 적어야 함"""
-        code = '''
+        code = """
 df = prepare_data(data, numeric_fields=["DT"])
 chart = alt.Chart(df).mark_line(point=True).encode(
     x=alt.X('PRD_DE:N', title='연도'),
@@ -86,14 +117,16 @@ chart = alt.Chart(df).mark_line(point=True).encode(
     height=400
 )
 return chart_to_json(chart)
-'''
+"""
         result = execute_code(code, data=sample_data)
 
         assert result["success"] is True
         # 고품질 차트는 경고가 없거나 적어야 함
         warnings = result.get("quality_warnings", [])
         high_severity = [w for w in warnings if w["severity"] == "high"]
-        assert len(high_severity) == 0, f"고품질 차트에 심각한 경고가 있습니다: {high_severity}"
+        assert len(high_severity) == 0, (
+            f"고품질 차트에 심각한 경고가 있습니다: {high_severity}"
+        )
 
 
 class TestQualityFeedbackDetails:
@@ -111,11 +144,11 @@ class TestQualityFeedbackDetails:
 
     def test_quality_summary_structure(self, sample_data):
         """품질 요약 구조 확인"""
-        code = '''
+        code = """
 df = prepare_data(data, numeric_fields=["DT"])
 chart = alt.Chart(df).mark_bar().encode(x='C1_NM:N', y='DT:Q')
 return chart_to_json(chart)
-'''
+"""
         result = execute_code(code, data=sample_data)
 
         if "quality_summary" in result:
@@ -129,11 +162,11 @@ return chart_to_json(chart)
 
     def test_fix_hints_provided(self, sample_data):
         """수정 힌트가 제공되는지 확인"""
-        code = '''
+        code = """
 df = prepare_data(data, numeric_fields=["DT"])
 chart = alt.Chart(df).mark_bar().encode(x='C1_NM:N', y='DT:Q')
 return chart_to_json(chart)
-'''
+"""
         result = execute_code(code, data=sample_data)
 
         if "quality_warnings" in result:
@@ -185,7 +218,7 @@ class TestVegaSpecAnalysis:
             "datasets": {"data_0": []},
             "data": {"name": "data_0"},
             "mark": "bar",
-            "encoding": {"x": {"field": "x"}, "y": {"field": "y"}}
+            "encoding": {"x": {"field": "x"}, "y": {"field": "y"}},
         }
 
         result = executor._check_vega_spec(spec, "test_chart")
@@ -199,7 +232,7 @@ class TestVegaSpecAnalysis:
             "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
             "data": {"values": []},
             "mark": "bar",
-            "encoding": {"x": {"field": "x"}, "y": {"field": "y"}}
+            "encoding": {"x": {"field": "x"}, "y": {"field": "y"}},
         }
 
         result = executor._check_vega_spec(spec, "test_chart")
@@ -213,7 +246,7 @@ class TestVegaSpecAnalysis:
             "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
             "data": {"values": [{"x": 1, "y": 2}]},
             "mark": "bar",
-            "encoding": {"x": {"field": "x"}, "y": {"field": "y"}}
+            "encoding": {"x": {"field": "x"}, "y": {"field": "y"}},
         }
 
         result = executor._check_vega_spec(spec, "test_chart")

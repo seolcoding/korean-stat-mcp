@@ -7,6 +7,8 @@ execute_code에서 빈 차트 데이터를 감지하고
 import pytest
 from kosis_tools.code_executor import CodeExecutor
 
+pytestmark = pytest.mark.skip(reason="Native visualization was removed from core MCP.")
+
 
 @pytest.fixture
 def executor():
@@ -18,12 +20,48 @@ def executor():
 def sample_kosis_data():
     """샘플 KOSIS 데이터."""
     return [
-        {"PRD_DE": "2021", "C1_NM": "서울", "DT": "9500000", "ITM_NM": "총인구", "UNIT_NM": "명"},
-        {"PRD_DE": "2022", "C1_NM": "서울", "DT": "9400000", "ITM_NM": "총인구", "UNIT_NM": "명"},
-        {"PRD_DE": "2023", "C1_NM": "서울", "DT": "9300000", "ITM_NM": "총인구", "UNIT_NM": "명"},
-        {"PRD_DE": "2021", "C1_NM": "경기", "DT": "13000000", "ITM_NM": "총인구", "UNIT_NM": "명"},
-        {"PRD_DE": "2022", "C1_NM": "경기", "DT": "13200000", "ITM_NM": "총인구", "UNIT_NM": "명"},
-        {"PRD_DE": "2023", "C1_NM": "경기", "DT": "13500000", "ITM_NM": "총인구", "UNIT_NM": "명"},
+        {
+            "PRD_DE": "2021",
+            "C1_NM": "서울",
+            "DT": "9500000",
+            "ITM_NM": "총인구",
+            "UNIT_NM": "명",
+        },
+        {
+            "PRD_DE": "2022",
+            "C1_NM": "서울",
+            "DT": "9400000",
+            "ITM_NM": "총인구",
+            "UNIT_NM": "명",
+        },
+        {
+            "PRD_DE": "2023",
+            "C1_NM": "서울",
+            "DT": "9300000",
+            "ITM_NM": "총인구",
+            "UNIT_NM": "명",
+        },
+        {
+            "PRD_DE": "2021",
+            "C1_NM": "경기",
+            "DT": "13000000",
+            "ITM_NM": "총인구",
+            "UNIT_NM": "명",
+        },
+        {
+            "PRD_DE": "2022",
+            "C1_NM": "경기",
+            "DT": "13200000",
+            "ITM_NM": "총인구",
+            "UNIT_NM": "명",
+        },
+        {
+            "PRD_DE": "2023",
+            "C1_NM": "경기",
+            "DT": "13500000",
+            "ITM_NM": "총인구",
+            "UNIT_NM": "명",
+        },
     ]
 
 
@@ -32,7 +70,7 @@ class TestVisualizationValidation:
 
     def test_valid_chart_passes_validation(self, executor, sample_kosis_data):
         """정상적인 차트 데이터는 검증 통과."""
-        code = '''
+        code = """
 df = prepare_data(data, numeric_fields=["DT"])
 chart = alt.Chart(df).mark_line().encode(
     x='PRD_DE:N',
@@ -40,16 +78,19 @@ chart = alt.Chart(df).mark_line().encode(
     color='C1_NM:N'
 ).properties(width=600, height=400)
 return chart_to_json(chart)
-'''
+"""
         result = executor.execute(code, data=sample_kosis_data)
 
         assert result["success"] is True
-        assert "validation_details" not in result or result.get("validation_details") is None
+        assert (
+            "validation_details" not in result
+            or result.get("validation_details") is None
+        )
 
     def test_empty_chart_fails_validation(self, executor, sample_kosis_data):
         """빈 차트 데이터는 검증 실패."""
         # 존재하지 않는 지역으로 필터링 → 빈 DataFrame
-        code = '''
+        code = """
 df = prepare_data(data, numeric_fields=["DT"])
 df = df[df["C1_NM"] == "존재하지않는지역"]  # 빈 결과
 chart = alt.Chart(df).mark_line().encode(
@@ -57,7 +98,7 @@ chart = alt.Chart(df).mark_line().encode(
     y='DT:Q'
 ).properties(width=600, height=400)
 return chart_to_json(chart)
-'''
+"""
         result = executor.execute(code, data=sample_kosis_data)
 
         # 검증 실패 확인
@@ -68,12 +109,12 @@ return chart_to_json(chart)
 
     def test_validation_includes_data_signature(self, executor, sample_kosis_data):
         """검증 실패 시 데이터 시그니처 포함."""
-        code = '''
+        code = """
 df = prepare_data(data, numeric_fields=["DT"])
 df = df[df["C1_NM"] == "없는지역"]  # 빈 결과
 chart = alt.Chart(df).mark_bar().encode(x='C1_NM:N', y='DT:Q')
 return chart_to_json(chart)
-'''
+"""
         result = executor.execute(code, data=sample_kosis_data)
 
         assert result["success"] is False
@@ -94,12 +135,12 @@ return chart_to_json(chart)
 
     def test_validation_includes_fix_hints(self, executor, sample_kosis_data):
         """검증 실패 시 수정 힌트 포함."""
-        code = '''
+        code = """
 df = prepare_data(data, numeric_fields=["DT"])
 df = df.head(0)  # 의도적으로 빈 DataFrame
 chart = alt.Chart(df).mark_line().encode(x='PRD_DE:N', y='DT:Q')
 return chart_to_json(chart)
-'''
+"""
         result = executor.execute(code, data=sample_kosis_data)
 
         assert result["success"] is False
@@ -109,12 +150,12 @@ return chart_to_json(chart)
 
     def test_kosis_hints_in_signature(self, executor, sample_kosis_data):
         """데이터 시그니처에 KOSIS 힌트 포함."""
-        code = '''
+        code = """
 df = prepare_data(data, numeric_fields=["DT"])
 df = df[df["DT"] > 99999999999]  # 불가능한 조건
 chart = alt.Chart(df).mark_bar().encode(x='C1_NM:N', y='DT:Q')
 return chart_to_json(chart)
-'''
+"""
         result = executor.execute(code, data=sample_kosis_data)
 
         assert result["success"] is False
@@ -135,7 +176,7 @@ class TestCheckVegaSpec:
         spec = {
             "data": {"values": []},
             "mark": "line",
-            "encoding": {"x": {"field": "x"}, "y": {"field": "y"}}
+            "encoding": {"x": {"field": "x"}, "y": {"field": "y"}},
         }
 
         result = executor._check_vega_spec(spec, "test_chart")
@@ -149,7 +190,7 @@ class TestCheckVegaSpec:
         spec = {
             "layer": [
                 {"data": {"values": []}, "mark": "line"},
-                {"data": {"values": [{"x": 1, "y": 2}]}, "mark": "point"}
+                {"data": {"values": [{"x": 1, "y": 2}]}, "mark": "point"},
             ]
         }
 
@@ -163,7 +204,7 @@ class TestCheckVegaSpec:
         spec = {
             "data": {"values": [{"x": 1, "y": 2}, {"x": 2, "y": 4}]},
             "mark": "line",
-            "encoding": {"x": {"field": "x"}, "y": {"field": "y"}}
+            "encoding": {"x": {"field": "x"}, "y": {"field": "y"}},
         }
 
         result = executor._check_vega_spec(spec, "valid_chart")

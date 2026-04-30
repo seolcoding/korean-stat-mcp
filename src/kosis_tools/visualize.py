@@ -1,24 +1,8 @@
-"""
-KOSIS 시각화 유틸리티.
+"""KOSIS data preparation helpers.
 
-Code Execution 패턴용 헬퍼 함수들.
-LLM이 작성한 코드에서 import하여 사용.
-
-Example (LLM이 작성하는 코드):
-    ```python
-    import altair as alt
-    from kosis_tools.visualize import prepare_data, save_chart
-
-    df = prepare_data(data, numeric_fields=["DT"])
-
-    chart = alt.Chart(df).mark_line(point=True).encode(
-        x='PRD_DE:N',
-        y='DT:Q',
-        color='C1_NM:N'
-    ).properties(title="인구 추이")
-
-    result = save_chart(chart, "population_trend.html")
-    ```
+Native chart generation is intentionally not part of the base MCP package.
+Agents should render visualizations in the client/tooling layer after fetching
+structured KOSIS data.
 """
 
 from __future__ import annotations
@@ -27,13 +11,9 @@ import logging
 from pathlib import Path
 from typing import Any, Dict, List
 
-import altair as alt
 import pandas as pd
 
 logger = logging.getLogger(__name__)
-
-# Altair 설정
-alt.data_transformers.disable_max_rows()
 
 
 def prepare_data(
@@ -69,16 +49,16 @@ def prepare_data(
 
 
 def save_chart(
-    chart: alt.Chart,
+    chart: Any,
     filename: str,
     output_dir: str | None = None,
     scale: float = 2.0,
 ) -> Dict[str, Any]:
     """
-    차트를 로컬 아티팩트 디렉토리에 저장하고 URL을 반환.
+    외부에서 만든 chart 객체를 로컬 아티팩트 디렉토리에 저장하고 URL을 반환.
 
     Args:
-        chart: Altair Chart 객체
+        chart: ``save(path)`` 메서드를 제공하는 외부 chart 객체
         filename: 파일명 (.html)
         output_dir: 저장 디렉토리 (기본: artifacts 디렉토리 사용)
         scale: PNG 해상도 배율
@@ -93,6 +73,8 @@ def save_chart(
         raise ValueError(
             "Only .html chart artifacts are supported in the base package."
         )
+    if not hasattr(chart, "save"):
+        raise TypeError("chart must provide a save(path) method")
 
     artifacts_dir = os.environ.get("KOSIS_ARTIFACTS_DIR", "/tmp/kosis_artifacts")
     base_url = os.environ.get("KOSIS_BASE_URL", "http://localhost:8000")
@@ -112,13 +94,15 @@ def save_chart(
     }
 
 
-def chart_to_json(chart: alt.Chart) -> str:
-    """차트를 Vega-Lite JSON으로 변환."""
+def chart_to_json(chart: Any) -> str:
+    """외부 chart 객체를 JSON으로 변환."""
+    if not hasattr(chart, "to_json"):
+        raise TypeError("chart must provide a to_json() method")
     return chart.to_json()
 
 
-def chart_to_html(chart: alt.Chart, title: str = "Chart") -> str:
-    """차트를 standalone HTML로 변환."""
+def chart_to_html(chart: Any, title: str = "Chart") -> str:
+    """외부 chart 객체를 standalone HTML로 변환."""
     spec = chart.to_json()
     return f"""<!DOCTYPE html>
 <html>

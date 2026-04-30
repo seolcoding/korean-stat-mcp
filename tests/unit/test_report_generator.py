@@ -96,10 +96,7 @@ class TestReportGeneratorMarkdown:
 
     def test_generate_with_sections(self, generator: ReportGenerator):
         """섹션 지정 리포트 생성."""
-        report = generator.generate(
-            user_query="테스트",
-            sections=["summary", "stats"]
-        )
+        report = generator.generate(user_query="테스트", sections=["summary", "stats"])
         assert "데이터 요약" in report
         assert "주요 통계" in report
 
@@ -116,27 +113,26 @@ class TestReportGeneratorHTML:
         """HTML 문자열 생성."""
         html = generator.generate_html(user_query="인구 추이 분석")
         assert "<!DOCTYPE html>" in html
-        assert "<html lang=\"ko\">" in html
-        assert "vegaEmbed" in html or "vega-lite" in html.lower()
+        assert '<html lang="ko">' in html
+        assert "네이티브 차트 생성은 기본 패키지에 포함되지 않습니다" in html
 
     def test_generate_html_file(self, generator: ReportGenerator):
         """HTML 파일 저장."""
         with tempfile.TemporaryDirectory() as tmpdir:
             output_path = Path(tmpdir) / "test_report.html"
             result = generator.generate_html(
-                user_query="테스트",
-                output_path=output_path
+                user_query="테스트", output_path=output_path
             )
             assert output_path.exists()
             assert result == str(output_path)
             content = output_path.read_text(encoding="utf-8")
             assert "<!DOCTYPE html>" in content
 
-    def test_html_contains_vega_chart(self, generator: ReportGenerator):
-        """Vega-Lite 차트 임베드 확인."""
+    def test_html_notes_visualization_removed(self, generator: ReportGenerator):
+        """기본 패키지에서는 네이티브 차트 생성을 포함하지 않음."""
         html = generator.generate_html(user_query="추이 분석")
-        assert "vega-lite" in html.lower() or "cdn.jsdelivr.net/npm/vega" in html
-        assert "vegaEmbed" in html
+        assert "네이티브 차트 생성은 기본 패키지에 포함되지 않습니다" in html
+        assert "vegaEmbed" not in html
 
     def test_html_korean_fonts(self, generator: ReportGenerator):
         """한글 폰트 적용 확인."""
@@ -154,10 +150,7 @@ class TestReportGeneratorHTML:
 
     def test_html_with_custom_title(self, generator: ReportGenerator):
         """커스텀 제목 테스트."""
-        html = generator.generate_html(
-            user_query="테스트",
-            title="커스텀 제목 테스트"
-        )
+        html = generator.generate_html(user_query="테스트", title="커스텀 제목 테스트")
         assert "커스텀 제목 테스트" in html
 
 
@@ -187,9 +180,7 @@ class TestConvenienceFunctions:
         with tempfile.TemporaryDirectory() as tmpdir:
             output_path = Path(tmpdir) / "test.html"
             result = generate_html_report(
-                sample_data,
-                "테스트",
-                output_path=str(output_path)
+                sample_data, "테스트", output_path=str(output_path)
             )
             assert Path(result).exists()
 

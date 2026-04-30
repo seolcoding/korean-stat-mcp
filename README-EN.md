@@ -4,8 +4,8 @@ A Python MCP server for working with Korean Statistical Information Service
 (KOSIS) OpenAPI data.
 
 It lets MCP clients such as Claude Desktop, Claude Code, Cursor, and Windsurf
-search KOSIS tables, inspect metadata, fetch source rows, and create simple
-charts or reports.
+search KOSIS tables, inspect metadata, fetch source rows, and run simple
+analysis helpers.
 
 [한국어 README](./README.md)
 
@@ -21,7 +21,7 @@ charts or reports.
 - Read table metadata, classifications, items, and periods.
 - Fetch source data from the KOSIS OpenAPI.
 - Filter and aggregate fetched data.
-- Create Altair charts and HTML reports.
+- Read stored data chunks and use table/analysis helpers.
 - Use `verify_statistics` to compare a claimed value with the source row.
 
 KOSIS tables often require slightly different parameter combinations. Some
@@ -121,7 +121,7 @@ curl https://<your-host>/health
 | Transform | `filter_statistics`, `aggregate_statistics` | Filter and group results |
 | Stored data | `read_stored_data`, `list_stored_data` | Read large results in chunks |
 | Verification | `verify_statistics` | Compare a value with source data |
-| Output | `execute_visualization`, `execute_table`, `execute_report` | Generate charts, tables, and reports |
+| Output | `execute_table`, `execute_analysis` | Generate tables and simple analysis |
 
 See [docs/TOOL_MIGRATION.md](./docs/TOOL_MIGRATION.md) for the full tool list
 and migration notes.

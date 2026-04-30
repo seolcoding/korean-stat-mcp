@@ -8,7 +8,6 @@ kosis_tools.visualize 모듈 유닛 테스트.
 """
 
 import pytest
-import altair as alt
 import pandas as pd
 import tempfile
 from pathlib import Path
@@ -19,6 +18,14 @@ from kosis_tools.visualize import (
     chart_to_json,
     chart_to_html,
 )
+
+
+class DummyChart:
+    def save(self, path):
+        Path(path).write_text("<html>chart</html>", encoding="utf-8")
+
+    def to_json(self):
+        return '{"mark": "line"}'
 
 
 @pytest.fixture
@@ -70,22 +77,16 @@ class TestSaveChart:
 
     def test_save_html(self, sample_data):
         """HTML 저장."""
-        df = prepare_data(sample_data, numeric_fields=["DT"])
-        chart = alt.Chart(df).mark_line().encode(x="PRD_DE:N", y="DT:Q")
-
         with tempfile.TemporaryDirectory() as tmpdir:
-            result = save_chart(chart, "test.html", output_dir=tmpdir)
+            result = save_chart(DummyChart(), "test.html", output_dir=tmpdir)
             assert result["format"] == "html"
             assert Path(result["path"]).exists()
 
     def test_save_non_html_rejected(self, sample_data):
         """HTML 외 형식은 기본 패키지에서 지원하지 않음."""
-        df = prepare_data(sample_data, numeric_fields=["DT"])
-        chart = alt.Chart(df).mark_bar().encode(x="C1_NM:N", y="DT:Q")
-
         with tempfile.TemporaryDirectory() as tmpdir:
             with pytest.raises(ValueError, match="Only .html"):
-                save_chart(chart, "test.svg", output_dir=tmpdir)
+                save_chart(DummyChart(), "test.svg", output_dir=tmpdir)
 
 
 class TestChartConversion:
@@ -93,19 +94,13 @@ class TestChartConversion:
 
     def test_chart_to_json(self, sample_data):
         """JSON 변환."""
-        df = prepare_data(sample_data, numeric_fields=["DT"])
-        chart = alt.Chart(df).mark_line().encode(x="PRD_DE:N", y="DT:Q")
-
-        json_str = chart_to_json(chart)
+        json_str = chart_to_json(DummyChart())
         assert isinstance(json_str, str)
         assert '"mark"' in json_str
 
     def test_chart_to_html(self, sample_data):
         """HTML 변환."""
-        df = prepare_data(sample_data, numeric_fields=["DT"])
-        chart = alt.Chart(df).mark_line().encode(x="PRD_DE:N", y="DT:Q")
-
-        html = chart_to_html(chart, title="Test Chart")
+        html = chart_to_html(DummyChart(), title="Test Chart")
         assert "<!DOCTYPE html>" in html
         assert "vega-embed" in html
         assert "Test Chart" in html

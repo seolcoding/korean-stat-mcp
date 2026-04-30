@@ -52,11 +52,11 @@ from typing import Any, Dict, List, Optional, Union, Callable
 from pathlib import Path
 
 import pandas as pd
-import altair as alt
 
 from .config import DataStorageConfig
 
 logger = logging.getLogger(__name__)
+alt: Any = None  # Native Altair support was removed from the base package.
 
 
 # =============================================================================
@@ -301,6 +301,34 @@ class AnalysisResult:
     data: Any = None
     metrics: Dict[str, Any] = field(default_factory=dict)
     interpretation: str = ""
+
+
+def _native_visualization_removed(
+    chart_type: str,
+    summary: str = "",
+    title: Optional[str] = None,
+    metadata: Optional[Dict[str, Any]] = None,
+    tags: Optional[List[str]] = None,
+) -> ReportComponent:
+    """Return a lightweight placeholder for removed native chart helpers."""
+    message = (
+        "Native visualization is not included in korean-stat-mcp. "
+        "Use the returned KOSIS data in the client or a dedicated visualization tool."
+    )
+    return ReportComponent(
+        type="chart",
+        html=f'<div class="chart-container"><p class="note">{message}</p></div>',
+        data={"chart_type": chart_type, "available": False},
+        summary=summary or message,
+        metadata={
+            "chart_type": chart_type,
+            "title": title,
+            "native_visualization": False,
+            **(metadata or {}),
+        },
+        priority=30,
+        tags=tags or ["visualization", chart_type],
+    )
 
 
 # =============================================================================
@@ -1043,6 +1071,13 @@ def viz_line_trend(
         >>> print(chart.summary)
         "4개 지역의 2020-2023 추이를 보여주는 라인 차트"
     """
+    return _native_visualization_removed(
+        "line",
+        "라인 차트는 클라이언트 시각화로 생성하세요.",
+        title=title,
+        tags=["visualization", "line", "trend"],
+    )
+
     from .visualize import prepare_data
 
     labels = labels or {}
@@ -1135,6 +1170,19 @@ def viz_bar_comparison(
         ...     labels={"C1_NM": "지역", "DT": "인구수"}
         ... )
     """
+    summary = (
+        f"상위 {top_n}개 항목의 비교 막대 차트"
+        if top_n
+        else "막대 차트는 클라이언트 시각화로 생성하세요."
+    )
+    return _native_visualization_removed(
+        "bar",
+        summary,
+        title=title,
+        metadata={"sorted": sort, "top_n": top_n},
+        tags=["visualization", "bar", "comparison"],
+    )
+
     from .visualize import prepare_data
 
     labels = labels or {}
@@ -1310,6 +1358,14 @@ def viz_pie_composition(
     Returns:
         ReportComponent (type="chart")
     """
+    return _native_visualization_removed(
+        "pie",
+        f"상위 {top_n}개 항목의 구성비 차트",
+        title=title,
+        metadata={"top_n": top_n},
+        tags=["visualization", "pie", "composition"],
+    )
+
     from .visualize import prepare_data
 
     df = prepare_data(data, numeric_fields=[values])
@@ -1381,6 +1437,13 @@ def viz_heatmap(
     Returns:
         ReportComponent (type="chart")
     """
+    return _native_visualization_removed(
+        "heatmap",
+        "히트맵은 클라이언트 시각화로 생성하세요.",
+        title=title,
+        tags=["visualization", "heatmap", "matrix"],
+    )
+
     from .visualize import prepare_data
 
     df = prepare_data(data, numeric_fields=[z])

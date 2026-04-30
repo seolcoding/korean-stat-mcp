@@ -1,71 +1,23 @@
-"""
-시각화 코드 실행 엔진.
+"""Visualization executor placeholder.
 
-차트/그래프 생성에 특화된 실행 환경과 가이드라인을 제공합니다.
-
-가이드라인:
-    - 숫자 단위: 천 명/천 원/천 개 (1,000 기준)
-    - Y축 포맷: format=",.0f" 사용, 과학적 표기법 금지
-    - 축 제목: 반드시 단위 명시 (예: "인구 (천 명)")
-    - 시리즈: 5개 이하 권장
-    - 색상: 색맹 친화적 팔레트 사용
+Native chart generation is intentionally excluded from the base MCP package.
+The server returns structured data; agents should render charts in the client
+or a dedicated visualization tool.
 """
 
 from __future__ import annotations
 
-import logging
 from typing import Any, Dict, List, Optional
 
 import pandas as pd
-import altair as alt
-import numpy as np
-
-from .base import get_base_globals, execute_with_context
-
-logger = logging.getLogger(__name__)
 
 # 시각화 가이드라인 (LLM에게 전달)
 VISUALIZATION_GUIDE = """
-## 시각화 가이드라인
+## 시각화 안내
 
-### 1. 숫자 단위 규칙 (필수)
-- 기본 단위: **천 (1,000)** 기준
-  - 인구: 천 명 (예: 51,325천 명 = 5,132만 명)
-  - 금액: 천 원, 백만 원, 억 원
-  - 수량: 천 개, 만 개
-- **과학적 표기법(1e+7) 절대 금지**
-- 데이터 변환: `df["값_천단위"] = df["DT"] / 1000`
-
-### 2. 축 포맷팅 (필수)
-```python
-# Y축 설정 예시
-y=alt.Y("값_천단위:Q",
-    title="인구 (천 명)",           # 단위 반드시 명시
-    axis=alt.Axis(format=",.0f"))  # 천 단위 구분자
-```
-
-### 3. 차트 유형별 권장사항
-| 유형 | 최대 시리즈 | 용도 |
-|------|------------|------|
-| 라인 | 5개 | 시계열 추이 |
-| 막대 | 10개 | 비교 |
-| 파이/도넛 | 5개 | 구성비 (비권장) |
-
-### 4. 필수 속성
-```python
-chart.properties(
-    title="명확한 차트 제목",
-    width=600,
-    height=350
-)
-```
-
-### 5. 색상
-- 기본: Altair 기본 팔레트 사용
-- 강조: `color=alt.value("#2563eb")` (단일 시리즈)
-
-### 6. 반환 형식
-반드시 `save_chart(chart, "파일명.html")` 호출하여 URL 반환
+이 패키지는 기본 MCP 서버에 네이티브 차트 생성을 포함하지 않습니다.
+`get_statistics_data`, `read_stored_data`, `execute_table`, `execute_analysis`로
+구조화 데이터를 받은 뒤 클라이언트/노트북/문서 도구에서 시각화하세요.
 """
 
 # 단위 변환 헬퍼
@@ -121,15 +73,12 @@ def prepare_data(
     return df
 
 
-def save_chart(
-    chart: alt.Chart,
-    filename: str,
-) -> Dict[str, Any]:
+def save_chart(chart: Any, filename: str) -> Dict[str, Any]:
     """
     차트를 로컬 아티팩트 디렉토리에 저장하고 URL을 반환.
 
     Args:
-        chart: Altair Chart 객체
+        chart: ``save(path)`` 메서드를 제공하는 외부 chart 객체
         filename: 파일명 (확장자 포함)
 
     Returns:
@@ -143,6 +92,8 @@ def save_chart(
         raise ValueError(
             "Only .html chart artifacts are supported in the base package."
         )
+    if not hasattr(chart, "save"):
+        raise TypeError("chart must provide a save(path) method")
 
     artifacts_dir = os.environ.get("KOSIS_ARTIFACTS_DIR", "/tmp/kosis_artifacts")
     base_url = os.environ.get("KOSIS_BASE_URL", "http://localhost:8000")
@@ -197,33 +148,14 @@ def execute_visualization(
         ...     return save_chart(chart, "population.html")
         ... ''', data=kosis_data)
     """
-    # 시각화 전용 글로벌 환경
-    safe_globals = get_base_globals()
-    safe_globals.update(
-        {
-            # 데이터 분석 라이브러리
-            "pd": pd,
-            "alt": alt,
-            "np": np,
-            # 시각화 헬퍼
-            "prepare_data": prepare_data,
-            "save_chart": save_chart,
-            # 단위 변환 헬퍼
-            "to_thousand": lambda v: v / 1000,
-            "to_man": lambda v: v / 10000,
-            "to_billion": lambda v: v / 100000000,
-            # 데이터
-            "data": data or [],
-        }
-    )
-
-    result = execute_with_context(code, safe_globals, context)
-    result["guide"] = VISUALIZATION_GUIDE
-
-    # 결과 검증: URL이 반환되었는지 확인
-    if result["success"]:
-        res = result.get("result")
-        if not isinstance(res, dict) or "url" not in res:
-            result["warning"] = "save_chart()를 호출하여 URL을 반환해야 합니다."
-
-    return result
+    return {
+        "success": False,
+        "result": None,
+        "stdout": "",
+        "error": "Native visualization is not included in korean-stat-mcp.",
+        "guide": VISUALIZATION_GUIDE,
+        "suggestion": (
+            "Fetch structured data with get_statistics_data/read_stored_data and "
+            "render charts in the client or a dedicated visualization tool."
+        ),
+    }

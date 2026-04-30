@@ -6,14 +6,9 @@ LLM이 작성한 Python 코드를 안전하게 실행.
 
 사용 가능한 모듈:
     - pandas (as pd)
-    - altair (as alt)
-    - numpy (as np)
 
-사용 가능한 헬퍼 - 시각화:
+사용 가능한 헬퍼 - 데이터 준비:
     - prepare_data(data, numeric_fields): KOSIS 데이터 → DataFrame
-    - save_chart(chart, name): Altair 차트 저장 → {url, ...}
-    - chart_to_json(chart): Altair 차트 → Vega-Lite JSON
-    - chart_to_html(chart): Altair 차트 → 독립형 HTML
 
 사용 가능한 헬퍼 - 아티팩트:
     - save_report(html, name): HTML 리포트 저장 → {url, ...}
@@ -33,13 +28,9 @@ LLM이 작성한 Python 코드를 안전하게 실행.
 Example:
     >>> result = execute_code('''
     ...     df = prepare_data(data, numeric_fields=["DT"])
-    ...     chart = alt.Chart(df).mark_line().encode(
-    ...         x="PRD_DE:N", y="DT:Q", color="C1_NM:N"
-    ...     )
     ...     html = build_report(
     ...         title="인구 분석",
     ...         sections=[
-    ...             {"type": "chart", "vega_spec": chart.to_dict()},
     ...             {"type": "table", "html": to_table_html(df)}
     ...         ]
     ...     )
@@ -229,14 +220,7 @@ class CodeExecutor:
 
         # 2. 안전한 글로벌 환경 구성
         import pandas as pd
-        import altair as alt
-        import numpy as np
-        from kosis_tools.visualize import (
-            prepare_data,
-            save_chart,
-            chart_to_json,
-            chart_to_html,
-        )
+        from kosis_tools.visualize import prepare_data
         from kosis_tools.artifact_host import (
             save_report,
             save_data,
@@ -281,13 +265,8 @@ class CodeExecutor:
             "type": type,
             # 데이터 분석 라이브러리
             "pd": pd,
-            "alt": alt,
-            "np": np,
-            # KOSIS 헬퍼 - 시각화
+            # KOSIS 헬퍼 - 데이터 준비
             "prepare_data": prepare_data,
-            "save_chart": save_chart,
-            "chart_to_json": chart_to_json,
-            "chart_to_html": chart_to_html,
             # KOSIS 헬퍼 - 아티팩트 저장
             "save_report": save_report,
             "save_data": save_data,

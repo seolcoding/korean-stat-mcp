@@ -43,7 +43,7 @@ AI 에이전트(Claude 등)가 한국 통계 데이터를 **탐색, 조회, 분�
 │  │  kosis_tools/                                                       │ │
 │  │  ├── API Clients (search, data, metadata, transform)               │ │
 │  │  ├── Code Executor (sandboxed Python runtime)                      │ │
-│  │  └── Visualize (Altair HTML)                                        │ │
+│  │  └── Present (analysis/table helpers; visualization client-side)    │ │
 │  └────────────────────────────────────────────────────────────────────┘ │
 └───────────────┬─────────────────────────────┬───────────────────────────┘
                 │                             │
@@ -210,7 +210,7 @@ src/kosis_tools/
 │
 ├── # Data Processing
 ├── transform.py         # pandas 변환/집계
-├── visualize.py         # Altair 시각화
+├── visualize.py         # 외부 chart 객체 저장 호환 헬퍼
 ├── code_executor.py     # 코드 샌드박스 실행 ⭐
 │
 ├── # Report Generation

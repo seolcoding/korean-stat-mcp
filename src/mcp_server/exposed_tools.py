@@ -6,7 +6,7 @@ This list is the single source of truth for the public tool surface.
 Layer taxonomy:
     DISCOVER  - Find / browse statistics tables
     FETCH     - Retrieve / filter / aggregate raw data
-    PRESENT   - Visualize, analyze, tabulate, report
+    PRESENT   - Analyze and tabulate fetched data
     DATA      - Inspect server-stored artifacts
     META      - Tool introspection (escape hatch)
     VERIFY    - Sanity-check numbers against the source (US-005, future)
@@ -72,12 +72,6 @@ V1_EXPOSED: tuple[ExposedTool, ...] = (
     ),
     # ---- PRESENT --------------------------------------------------------
     ExposedTool(
-        "execute_visualization",
-        "PRESENT",
-        "Altair 차트 생성 (천 단위 포맷, 과학적 표기 금지)",
-        "Generate Altair charts (thousands format, no scientific notation)",
-    ),
-    ExposedTool(
         "execute_analysis",
         "PRESENT",
         "통계 분석 (변화율, CAGR 등 헬퍼 포함)",
@@ -88,12 +82,6 @@ V1_EXPOSED: tuple[ExposedTool, ...] = (
         "PRESENT",
         "스타일이 적용된 HTML 테이블 생성",
         "Render styled HTML tables",
-    ),
-    ExposedTool(
-        "execute_report",
-        "PRESENT",
-        "차트/분석/테이블을 결합한 종합 리포트 생성",
-        "Build composite report combining charts, analysis, tables",
     ),
     # ---- DATA -----------------------------------------------------------
     ExposedTool(

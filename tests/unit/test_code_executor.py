@@ -100,16 +100,16 @@ return df["DT"].mean()
         assert result["success"] is True
         assert result["result"] == 29825000.0
 
-    def test_altair_chart(self, executor, sample_data):
-        """Altair 차트 생성."""
+    def test_altair_not_available(self, executor, sample_data):
+        """Altair는 기본 코드 실행 환경에 포함하지 않음."""
         code = """
 df = prepare_data(data, numeric_fields=["DT"])
 chart = alt.Chart(df).mark_line().encode(x='PRD_DE:N', y='DT:Q')
 return chart_to_json(chart)
 """
         result = executor.execute(code, data=sample_data)
-        assert result["success"] is True
-        assert '"mark"' in result["result"]
+        assert result["success"] is False
+        assert "NameError" in result["error"]
 
     def test_stdout_capture(self, executor, sample_data):
         """print 출력 캡처."""

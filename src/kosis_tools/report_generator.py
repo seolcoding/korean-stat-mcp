@@ -11,8 +11,7 @@ LLM이 유저의 질문이나 요청에 맞춰 맞춤형 분석을 수행할 수
     - LLM 친화적 구조: 프롬프트 생성 지원
 
 시각화:
-    - Altair 기반 인터랙티브 차트 (Vega-Lite)
-    - HTML 보고서에 Vega-Embed로 임베드
+    - 기본 패키지는 네이티브 차트 생성을 포함하지 않음
 
 Example:
     기본 사용:
@@ -47,11 +46,11 @@ from pathlib import Path
 from typing import Any, Dict, List, Optional, Union
 
 import pandas as pd
-import altair as alt
 
 from .transform import KosisTransformer, Fields, FieldLabels
 
 logger = logging.getLogger(__name__)
+alt: Any = None  # Native Altair support was removed from the base package.
 
 
 @dataclass
@@ -856,7 +855,14 @@ class ReportGenerator:
 """
 
     def _html_visualization(self, tx: KosisTransformer, query: UserQuery) -> str:
-        """시각화 섹션 HTML (Altair/Vega-Embed)"""
+        """시각화 섹션 HTML."""
+        return """
+        <div class="card">
+            <h2>시각화</h2>
+            <p>네이티브 차트 생성은 기본 패키지에 포함되지 않습니다.</p>
+        </div>
+"""
+
         import uuid
 
         charts_html = []
@@ -1284,6 +1290,13 @@ class ReportGenerator:
         self, tx: KosisTransformer, query: UserQuery, output_dir: Optional[Path]
     ) -> ReportSection:
         """시각화 섹션 생성"""
+        return ReportSection(
+            name="visualization",
+            title="시각화",
+            content="네이티브 차트 생성은 기본 패키지에 포함되지 않습니다.",
+            charts=[],
+        )
+
         from .visualize import save_chart
 
         lines = []
