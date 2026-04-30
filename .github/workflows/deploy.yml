@@ -67,12 +67,12 @@ jobs:
         env:
           FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
 
-      # Gate 5: post-deploy health probe (uses fly.dev hostname; DNS comes
-      # online in the manual cutover step in spec section 15)
+      # Gate 5: post-deploy health probe against the user-facing custom domain
+      # (DNS + Let's Encrypt cert provisioned via Cloudflare CNAME + flyctl certs).
       - name: Post-deploy health probe
         run: |
           for i in $(seq 1 30); do
-            if curl -fsS https://korean-stat-mcp.fly.dev/health; then exit 0; fi
+            if curl -fsS https://korean-stat-mcp.seolcoding.com/health; then exit 0; fi
             sleep 2
           done
           echo "post-deploy health probe failed"; exit 1
