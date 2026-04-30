@@ -20,6 +20,8 @@ from pathlib import Path
 REPO_ROOT = Path(__file__).resolve().parents[2]
 
 PUBLIC_FILES = (
+    ".claude-plugin/marketplace.json",
+    ".claude-plugin/plugin.json",
     ".env.example",
     ".github/ISSUE_TEMPLATE/config.yml",
     "CHANGELOG.md",
@@ -83,6 +85,11 @@ RULES: tuple[Rule, ...] = (
     Rule("<github-user>", re.compile(r"<github-user>")),
     Rule("seolcoding-OS/korean-stat-mcp", re.compile(r"seolcoding-OS/korean-stat-mcp")),
     Rule("github.com/sdh/kosis-mcp", re.compile(r"github\.com/sdh/kosis-mcp")),
+    Rule(
+        "placeholder connector URL",
+        re.compile(r"https://korean-stat-mcp\.example\.com/mcp"),
+    ),
+    Rule("pending CI badge", re.compile(r"CI-pending")),
     Rule("uvx kosis-mcp", re.compile(r"\buvx\s+kosis-mcp\b")),
     Rule("hard-coded 0.2.0 runtime version", re.compile(r'"version"\s*:\s*"0\.2\.0"')),
     Rule("kosis-mcp runtime service id", re.compile(r'"service"\s*:\s*"kosis-mcp"')),

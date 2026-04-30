@@ -6,7 +6,7 @@ readme = "README.md"
 requires-python = ">=3.12"
 license = "MIT"
 authors = [
-    { name = "SDH", email = "sdh@example.com" }
+    { name = "korean-stat-mcp maintainers" }
 ]
 keywords = ["kosis", "mcp", "statistics", "korea", "llm", "claude", "fastmcp"]
 classifiers = [
