@@ -31,7 +31,14 @@ jobs:
       - name: Container smoke test
         run: |
           set -eu
-          docker run -d --rm --name kstat-smoke -p 8000:8000 \
+
+          # Clean any leftover container from a prior run (--rm + stop has a
+          # race where the next run can hit a name collision).
+          docker rm -f kstat-smoke-env 2>/dev/null || true
+          docker rm -f kstat-smoke-noenv 2>/dev/null || true
+
+          # Stage 1: env-based key path. /health and /info must succeed.
+          docker run -d --rm --name kstat-smoke-env -p 8000:8000 \
             -e KOSIS_API_KEY=ci-fake-key korean-stat-mcp:ci
           for i in $(seq 1 20); do
             if curl -fsS http://localhost:8000/health >/dev/null; then break; fi
@@ -39,9 +46,10 @@ jobs:
           done
           curl -fsS http://localhost:8000/health
           curl -fsS http://localhost:8000/info | grep -q "korean-stat-mcp"
-          # 401 path: container with no env, expect missing_api_key
-          docker stop kstat-smoke
-          docker run -d --rm --name kstat-smoke -p 8000:8000 korean-stat-mcp:ci
+          docker rm -f kstat-smoke-env
+
+          # Stage 2: no env, no ?apiKey= -> /mcp returns 401 missing_api_key.
+          docker run -d --rm --name kstat-smoke-noenv -p 8000:8000 korean-stat-mcp:ci
           for i in $(seq 1 20); do
             if curl -fsS http://localhost:8000/health >/dev/null; then break; fi
             sleep 1
@@ -51,7 +59,7 @@ jobs:
             -d '{"jsonrpc":"2.0","id":1,"method":"initialize","params":{}}')
           test "$code" = "401"
           grep -q '"missing_api_key"' /tmp/body
-          docker stop kstat-smoke
+          docker rm -f kstat-smoke-noenv
 
       # Gate 4: deploy
       - uses: superfly/flyctl-actions/setup-flyctl@master
