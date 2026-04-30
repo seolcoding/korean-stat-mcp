@@ -245,9 +245,7 @@ class TestListByView:
         assert "method=getList" in url
 
     @responses.activate
-    def test_list_by_view_with_parent_list_id(
-        self, category_client: CategoryList
-    ):
+    def test_list_by_view_with_parent_list_id(self, category_client: CategoryList):
         responses.add(
             responses.GET,
             "https://kosis.kr/openapi/statisticsList.do",
@@ -262,9 +260,7 @@ class TestListByView:
         assert "parentListId=A" in url
 
     @responses.activate
-    def test_list_by_view_omits_parent_when_none(
-        self, category_client: CategoryList
-    ):
+    def test_list_by_view_omits_parent_when_none(self, category_client: CategoryList):
         responses.add(
             responses.GET,
             "https://kosis.kr/openapi/statisticsList.do",
@@ -277,15 +273,14 @@ class TestListByView:
         url = responses.calls[0].request.url
         assert "parentListId" not in url
 
-    def test_list_by_view_empty_code_returns_empty(
-        self, category_client: CategoryList
-    ):
+    def test_list_by_view_empty_code_returns_empty(self, category_client: CategoryList):
         assert category_client.list_by_view("") == []
         assert category_client.list_by_view("   ") == []
 
 
 def test_view_code_constants_match_official_12():
     from kosis_tools.list_categories import ViewCode
+
     assert len(ViewCode.ALL) == 12
     assert "MT_ZTITLE" in ViewCode.ALL
     assert "MT_BUKHAN" in ViewCode.ALL

@@ -104,6 +104,21 @@ Always thousand separators. Never scientific notation.
 ### B.6 Don't pull whole tables into LLM context / 전체 데이터 컨텍스트 로드 금지
 The server stores results and returns a **summary + resource_id**. Use that summary to answer simple questions; for chart/analysis use `read_stored_data` to fetch the chunk you actually need.
 
+### B.7 Recent-N / stride / sort — let KOSIS handle it / KOSIS 네이티브 기간 옵션 사용
+`get_statistics_data` and `search_statistics` expose KOSIS-native pagination
+helpers. Map natural-language intents directly:
+
+| User intent | Tool arg |
+|-------------|----------|
+| "최근 5년만", "last 5 periods" | `get_statistics_data(..., new_est_prd_cnt=5)` |
+| "격년 데이터", "every other year", "biennial" | `get_statistics_data(..., prd_se="Y", prd_interval=2)` |
+| "최신 갱신 순", "most recently updated" | `search_statistics(keyword, sort="DATE")` |
+| "관련도 순", default | `search_statistics(keyword)` (sort defaults to RANK) |
+
+Do NOT compute the date math yourself — passing `new_est_prd_cnt` lets KOSIS
+return exactly N most-recent periods regardless of how the table's range
+shifts over time.
+
 ```
 Wrong:  data = get_statistics_data(...); LLM reads all 50,000 rows
 Right:  summary, resource_id = get_statistics_data(...);

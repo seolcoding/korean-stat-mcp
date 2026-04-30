@@ -136,11 +136,19 @@ def search_tables(
     keyword: str,
     org_id: Optional[str] = None,
     limit: int = 10,
+    *,
+    sort: Optional[str] = None,
 ) -> list[dict[str, Any]]:
-    """Search KOSIS statistics tables by keyword."""
+    """Search KOSIS statistics tables by keyword.
+
+    Args:
+        sort: KOSIS-native ordering — "RANK" (relevance, default) or
+            "DATE" (most recently updated tables first). None defers to
+            KOSIS's default (RANK).
+    """
     from .search import StatisticsSearch
 
-    results = StatisticsSearch().search(keyword)
+    results = StatisticsSearch().search(keyword, sort=sort)  # type: ignore[arg-type]
     if org_id:
         results = [r for r in results if r.get("ORG_ID") == org_id]
 
@@ -427,9 +435,20 @@ def fetch_data(
     start_date: Optional[str] = None,
     end_date: Optional[str] = None,
     prd_se: Optional[str] = None,
+    *,
+    new_est_prd_cnt: Optional[int] = None,
+    prd_interval: Optional[int] = None,
     **filters: Any,
 ) -> list[dict[str, Any]]:
-    """Fetch KOSIS records with the metadata-aware retry path."""
+    """Fetch KOSIS records with the metadata-aware retry path.
+
+    Period helpers (KOSIS native):
+        new_est_prd_cnt: limit response to the most-recent N periods
+            (KOSIS `newEstPrdCnt`). Bypasses metadata-driven retry so the
+            user's "last N" intent is preserved exactly.
+        prd_interval: stride in periods (KOSIS `prdInterval`); e.g. 2 with
+            prd_se='Y' yields biennial data.
+    """
     from .data import StatisticsData
 
     return (
@@ -439,6 +458,8 @@ def fetch_data(
             start_date=start_date,
             end_date=end_date,
             prd_se=prd_se,
+            new_est_prd_cnt=new_est_prd_cnt,
+            prd_interval=prd_interval,
             **filters,
         )
         or []

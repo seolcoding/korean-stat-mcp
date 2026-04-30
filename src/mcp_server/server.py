@@ -76,6 +76,7 @@ def search_statistics(
     keyword: str,
     org_id: Optional[str] = None,
     limit: int = 10,
+    sort: Optional[str] = None,
 ) -> dict:
     """
     KOSIS 통계표를 키워드로 검색합니다.
@@ -88,6 +89,11 @@ def search_statistics(
         org_id: 기관 ID로 필터링 (선택)
                 "101"=통계청, "154"=고용노동부, "301"=한국은행
         limit: 최대 결과 수 (기본 10)
+        sort: 정렬 기준 (선택)
+              - "RANK": 관련도 순 (KOSIS 기본)
+              - "DATE": 최신 갱신일 순 — verify_statistics 같이 최신 데이터가
+                중요할 때 권장
+              None이면 KOSIS 기본(RANK).
 
     Returns:
         {
@@ -101,11 +107,12 @@ def search_statistics(
     Example:
         >>> search_statistics("인구")
         >>> search_statistics("고용", org_id="154")
+        >>> search_statistics("최저임금", sort="DATE")  # 최신 갱신 순
     """
     from kosis_tools.report_tools import search_tables
 
     try:
-        results = search_tables(keyword, org_id=org_id, limit=limit)
+        results = search_tables(keyword, org_id=org_id, limit=limit, sort=sort)
 
         # 기관별 분포 계산
         org_dist = {}
@@ -382,6 +389,8 @@ def get_statistics_data(
     end_date: str,
     prd_se: str = "Y",
     format: str = "summary",
+    new_est_prd_cnt: Optional[int] = None,
+    prd_interval: Optional[int] = None,
 ) -> dict | list[dict]:
     """
     KOSIS에서 통계 데이터를 조회합니다.
@@ -399,6 +408,11 @@ def get_statistics_data(
         format: 응답 형식
                 "summary" (기본): LLM 친화적 요약 형식 (메타데이터 + 피벗 요약 + 샘플)
                 "raw": 전체 원본 데이터 (주의: 컨텍스트 초과 가능)
+        new_est_prd_cnt: 최근 N개 시점만 반환 (선택). KOSIS `newEstPrdCnt` 매핑.
+                         예: 5 → 가장 최근 5개 기간만. start_date/end_date를 자동
+                         제한하므로 "최근 5년만" 같은 자연어 쿼리에 직접 사용.
+        prd_interval: 기간 stride (선택). KOSIS `prdInterval` 매핑.
+                      예: prd_se="Y" + prd_interval=2 → 격년 데이터.
 
     Returns:
         format="summary" (기본):
@@ -441,6 +455,8 @@ def get_statistics_data(
             start_date=start_date,
             end_date=end_date,
             prd_se=prd_se,
+            new_est_prd_cnt=new_est_prd_cnt,
+            prd_interval=prd_interval,
         )
 
         if format == "raw":

@@ -339,3 +339,64 @@ class TestPeriodTypeConstants:
         """한글 이름 매핑."""
         assert PeriodType.NAMES["M"] == "월간"
         assert PeriodType.NAMES["Y"] == "연간"
+
+
+class TestPeriodHelpers:
+    """get_data with newEstPrdCnt / prdInterval keyword-only args."""
+
+    @responses.activate
+    def test_new_est_prd_cnt_passthrough(self, data_client: StatisticsData):
+        responses.add(
+            responses.GET,
+            "https://kosis.kr/openapi/Param/statisticsParameterData.do",
+            body="[]",
+            status=200,
+        )
+        data_client.get_data(
+            org_id="101",
+            tbl_id="DT_1B040A3",
+            start_date="",
+            end_date="",
+            prd_se="Y",
+            new_est_prd_cnt=5,
+        )
+        url = responses.calls[0].request.url
+        assert "newEstPrdCnt=5" in url
+
+    @responses.activate
+    def test_prd_interval_passthrough(self, data_client: StatisticsData):
+        responses.add(
+            responses.GET,
+            "https://kosis.kr/openapi/Param/statisticsParameterData.do",
+            body="[]",
+            status=200,
+        )
+        data_client.get_data(
+            org_id="101",
+            tbl_id="DT_1B040A3",
+            start_date="2010",
+            end_date="2023",
+            prd_se="Y",
+            prd_interval=2,
+        )
+        url = responses.calls[0].request.url
+        assert "prdInterval=2" in url
+
+    @responses.activate
+    def test_omitted_when_none(self, data_client: StatisticsData):
+        responses.add(
+            responses.GET,
+            "https://kosis.kr/openapi/Param/statisticsParameterData.do",
+            body="[]",
+            status=200,
+        )
+        data_client.get_data(
+            org_id="101",
+            tbl_id="DT_1B040A3",
+            start_date="2023",
+            end_date="2023",
+            prd_se="Y",
+        )
+        url = responses.calls[0].request.url
+        assert "newEstPrdCnt" not in url
+        assert "prdInterval" not in url

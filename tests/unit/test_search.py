@@ -189,3 +189,46 @@ class TestSearchByTableId:
         result = search_client.search_by_table_id("NOT_EXIST_ID")
 
         assert result is None
+
+
+class TestSearchSortParam:
+    """sort='RANK'|'DATE' propagation."""
+
+    @responses.activate
+    def test_sort_rank_passthrough(self, search_client: StatisticsSearch):
+        responses.add(
+            responses.GET,
+            "https://kosis.kr/openapi/statisticsSearch.do",
+            body="[]",
+            status=200,
+        )
+        search_client.search("인구", sort="RANK")
+        assert "sort=RANK" in responses.calls[0].request.url
+
+    @responses.activate
+    def test_sort_date_passthrough(self, search_client: StatisticsSearch):
+        responses.add(
+            responses.GET,
+            "https://kosis.kr/openapi/statisticsSearch.do",
+            body="[]",
+            status=200,
+        )
+        search_client.search("인구", sort="DATE")
+        assert "sort=DATE" in responses.calls[0].request.url
+
+    @responses.activate
+    def test_sort_omitted_when_none(self, search_client: StatisticsSearch):
+        responses.add(
+            responses.GET,
+            "https://kosis.kr/openapi/statisticsSearch.do",
+            body="[]",
+            status=200,
+        )
+        search_client.search("인구")
+        assert "sort=" not in responses.calls[0].request.url
+
+    def test_invalid_sort_raises(self, search_client: StatisticsSearch):
+        import pytest
+
+        with pytest.raises(ValueError, match="sort"):
+            search_client.search("인구", sort="OLDEST")  # type: ignore[arg-type]
