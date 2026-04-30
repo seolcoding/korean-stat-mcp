@@ -96,3 +96,21 @@ def test_mcp_endpoint_accepts_api_key_via_query(monkeypatch):
     # MCP-level status, depending on FastMCP. The point is that the gate
     # passes when a key is supplied.
     assert response.status_code != 401
+
+
+def test_rate_limit_returns_429(monkeypatch):
+    """After RATE_LIMIT_RPM, subsequent requests within the window get 429."""
+    monkeypatch.setenv("RATE_LIMIT_RPM", "2")
+    monkeypatch.setenv("KOSIS_API_KEY", "env-key")  # so 401 gate passes
+    from mcp_server.app import create_app
+
+    app = create_app()
+    client = TestClient(app)
+
+    r1 = client.get("/health")
+    r2 = client.get("/health")
+    r3 = client.get("/health")
+    assert r1.status_code == 200
+    assert r2.status_code == 200
+    assert r3.status_code == 429
+    assert "Retry-After" in r3.headers

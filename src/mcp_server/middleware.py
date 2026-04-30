@@ -48,4 +48,39 @@ def missing_api_key_response() -> Response:
     )
 
 
-__all__ = ["ApiKeyMiddleware", "missing_api_key_response"]
+import hashlib
+
+from slowapi import Limiter
+from slowapi.errors import RateLimitExceeded
+from slowapi.util import get_remote_address
+
+
+def _key_func(request: Request) -> str:
+    """Rate-limit bucket = client IP + first 8 chars of apiKey hash.
+
+    Using only IP would let one buggy user starve everyone behind the same NAT;
+    using only the apiKey would let one user rotate IPs to bypass it. The
+    composite bucket caps both axes.
+    """
+    ip = get_remote_address(request)
+    api_key = request.query_params.get("apiKey", "")
+    digest = hashlib.sha256(api_key.encode()).hexdigest()[:8] if api_key else "anon"
+    return f"{ip}:{digest}"
+
+
+def build_rate_limiter() -> Limiter:
+    """Create a slowapi Limiter using `RATE_LIMIT_RPM` from env (default 300)."""
+    rpm = int(os.getenv("RATE_LIMIT_RPM", "300"))
+    return Limiter(
+        key_func=_key_func,
+        default_limits=[f"{rpm}/minute"],
+        headers_enabled=True,
+    )
+
+
+__all__ = [
+    "ApiKeyMiddleware",
+    "missing_api_key_response",
+    "build_rate_limiter",
+    "RateLimitExceeded",
+]
