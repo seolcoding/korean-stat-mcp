@@ -1,7 +1,5 @@
 # fly.toml - Fly.io deployment for korean-stat-mcp
-# This is a TEMPLATE. App name `korean-stat-mcp` is a placeholder; pick an
-# available one with `fly launch --no-deploy` or `fly apps create <name>`.
-# Region `nrt` (Tokyo) is closest to Korea; change if your users are elsewhere.
+# Region nrt (Tokyo) keeps RTT to Korean users in the 30-50ms range.
 
 app = "korean-stat-mcp"
 primary_region = "nrt"
@@ -10,17 +8,18 @@ primary_region = "nrt"
   dockerfile = "Dockerfile"
 
 [env]
-  # Public, non-secret defaults. Sensitive values (KOSIS_API_KEY) must be
-  # set via `fly secrets set KOSIS_API_KEY=...` (see deploy/README.md).
   FASTMCP_STATELESS_HTTP = "true"
   PYTHONUNBUFFERED = "1"
+  RATE_LIMIT_RPM = "300"
 
 [http_service]
   internal_port = 8000
   force_https = true
-  auto_stop_machines = "stop"
+  # Suspend (instead of stop) preserves the running process state, so warm
+  # starts are sub-second; falls back to a true cold start only after long
+  # idleness. Keeps the cost-control benefit of scale-to-zero.
+  auto_stop_machines = "suspend"
   auto_start_machines = true
-  # Cost control: scale to zero when idle.
   min_machines_running = 0
   processes = ["app"]
 
@@ -33,6 +32,8 @@ primary_region = "nrt"
 
 [[vm]]
   size = "shared-cpu-1x"
+  # 512mb keeps headroom for asyncio + json5 parsing on large KOSIS payloads.
+  # If memory metrics show steady RSS < 200MB after the soak, downsize to 256.
   memory = "512mb"
   cpu_kind = "shared"
   cpus = 1
