@@ -126,19 +126,33 @@ korean-stat-mcp --version
 
 ## 원격 MCP로 호스팅하기
 
-공식 호스팅 엔드포인트는 아직 없습니다. Claude.ai의 custom connector에서 쓰려면
-직접 배포한 뒤 아래 형태의 URL을 등록합니다.
+공식 호스팅 엔드포인트:
 
 ```text
-https://<your-host>/mcp
+https://korean-stat-mcp.seolcoding.com/mcp?apiKey=<YOUR_KOSIS_KEY>
 ```
 
-배포 예시는 [deploy/README.md](./deploy/README.md)에 정리되어 있습니다. Docker,
-Fly.io, Render, Railway, DigitalOcean App Platform, 일반 VPS 배포를 다룹니다.
+이 URL을 그대로 Claude.ai 커넥터에 붙이거나 다른 MCP 클라이언트의 Streamable
+HTTP endpoint로 사용할 수 있습니다. 자세한 등록 절차는 위
+[호스팅 인스턴스로 바로 사용](#호스팅-인스턴스로-바로-사용-설치-없음) 섹션 참고.
 
-상태 확인:
+상태·메타 확인:
 
 ```bash
+curl https://korean-stat-mcp.seolcoding.com/health
+curl https://korean-stat-mcp.seolcoding.com/info
+```
+
+### 자체 호스팅도 가능합니다
+
+본인 KOSIS 키 쿼터를 별도로 분리하고 싶거나, 사내 네트워크/온프레미스 환경에서
+운영해야 하면 직접 띄울 수 있습니다. Docker, Fly.io, Render, Railway,
+DigitalOcean App Platform, 일반 VPS 배포 가이드는
+[deploy/README.md](./deploy/README.md)에 정리되어 있습니다.
+
+```bash
+# 직접 띄울 때
+KOSIS_API_KEY=<YOUR_KEY> korean-stat-mcp --http
 curl https://<your-host>/health
 ```
 

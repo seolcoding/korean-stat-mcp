@@ -131,20 +131,34 @@ korean-stat-mcp --version
 
 ## Remote MCP hosting
 
-There is no official hosted endpoint yet. To use Claude.ai custom connectors,
-deploy the server yourself and register:
+Official hosted endpoint:
 
 ```text
-https://<your-host>/mcp
+https://korean-stat-mcp.seolcoding.com/mcp?apiKey=<YOUR_KOSIS_KEY>
 ```
 
-Deployment notes are in [deploy/README.md](./deploy/README.md). The repo includes
-a Dockerfile and examples for Fly.io, Render, Railway, DigitalOcean App Platform,
-and a plain VPS.
+Paste this URL straight into a Claude.ai custom connector or use it as the
+Streamable HTTP endpoint from any MCP client. See the
+[Hosted instance (no install)](#hosted-instance-no-install) section above for
+the step-by-step Claude.ai setup.
 
-Health check:
+Health and info:
 
 ```bash
+curl https://korean-stat-mcp.seolcoding.com/health
+curl https://korean-stat-mcp.seolcoding.com/info
+```
+
+### Self-hosting is still supported
+
+Self-host if you want to keep your KOSIS key quota separate from the public
+instance, or if you need to run inside a corporate / on-prem network. The
+[deploy/README.md](./deploy/README.md) covers Docker, Fly.io, Render, Railway,
+DigitalOcean App Platform, and plain VPS deployments.
+
+```bash
+# Self-hosted
+KOSIS_API_KEY=<YOUR_KEY> korean-stat-mcp --http
 curl https://<your-host>/health
 ```
 
