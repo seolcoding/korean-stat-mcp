@@ -1,0 +1,288 @@
+# Stream A — Public Hosting Design
+
+- **Status**: Draft, pending review
+- **Date**: 2026-04-30
+- **Owner**: seolcoding
+- **Reference project**: [chrisryugj/korean-law-mcp](https://github.com/chrisryugj/korean-law-mcp) (mirroring the hosting + connector UX pattern)
+
+## 1. Goal
+
+Stand up a public, hosted instance of `korean-stat-mcp` at
+`https://kosis.seolcoding.com/mcp` so that Claude.ai / Claude Code / Claude
+Desktop / Cursor / Windsurf users can connect with **a single URL** plus their
+own KOSIS OpenAPI key — no `pip install`, no JSON config edits.
+
+Success criteria for v1:
+
+- Claude.ai custom connector pointed at `https://kosis.seolcoding.com/mcp?apiKey=<key>` can call `search_statistics`, `get_statistics_data`, `verify_statistics` end-to-end.
+- Self-hosted users (existing PyPI consumers) keep working with `KOSIS_API_KEY` env var, unchanged.
+- 99%+ availability over a 7-day soak; cold-start ≤ 3 s; p50 KOSIS roundtrip from NRT region ≤ 600 ms.
+- Monthly egress under Fly free tier headroom for the first 1k DAU range.
+
+## 2. Non-goals
+
+- Shared/server-side KOSIS key (rejected — KOSIS terms risk + quota exhaustion).
+- Plugin marketplace (Claude Code) registration — separate stream after the
+  user guide is finalized.
+- demo.gif, launch posts, video assets — Stream C (marketing repo).
+- New MCP tools, expanded edge-case coverage — Stream D (reliability).
+- Multi-region replication, blue/green deploys, paid uptime SLOs.
+
+## 3. URL contract
+
+Public connector URL:
+
+```
+https://kosis.seolcoding.com/mcp?apiKey=<KOSIS_API_KEY>
+```
+
+Auxiliary endpoints (already present in `mcp_server/app.py`):
+
+- `GET https://kosis.seolcoding.com/health` → 200 with build info
+- `GET https://kosis.seolcoding.com/info`   → 200 with tool surface metadata
+
+Self-hosted entrypoint (unchanged):
+
+```
+KOSIS_API_KEY=... korean-stat-mcp --http
+# → http://localhost:8000/mcp
+```
+
+Parameter naming choice: `apiKey` matches the native KOSIS OpenAPI field name.
+The reference project uses `?oc=` for the same reason — it's the law portal's
+native field. Consistency with the upstream API trumps short-URL aesthetics.
+
+Error semantics when the key is missing **and** there is no env fallback:
+
+```
+HTTP 401
+{
+  "error": "missing_api_key",
+  "message": "Provide ?apiKey=<your KOSIS OpenAPI key> in the connector URL.",
+  "issue_url": "https://kosis.kr/openapi/"
+}
+```
+
+## 4. Per-request key flow (code change scope)
+
+Today's flow:
+
+```
+process start
+ └─ KosisConfig.load_config()
+     └─ os.getenv("KOSIS_API_KEY")
+         └─ singleton config injected into every kosis_tools.* client
+```
+
+Required flow for hosted multi-tenant mode:
+
+```
+HTTP request (per call)
+ └─ Starlette middleware reads ?apiKey=
+     └─ contextvar `current_api_key.set(...)`
+         └─ tool handler runs → KosisConfig.load_config()
+             └─ contextvar wins; falls back to env if unset (self-host)
+         └─ middleware token reset on response
+```
+
+Files touched:
+
+| File | Change |
+|---|---|
+| `src/mcp_server/request_context.py` (new) | Defines `current_api_key: ContextVar[str \| None]` |
+| `src/mcp_server/app.py` | Adds `ApiKeyMiddleware` to the Starlette app — extracts query param, sets contextvar, resets on finally |
+| `src/kosis_tools/config.py` | `load_config()` checks contextvar first, then `KOSIS_API_KEY` env, then raises with the same 401-style message |
+| `tests/mcp_server/test_request_context.py` (new) | Unit + asyncio concurrency test: two concurrent requests with different keys never see each other's key |
+
+The contextvar approach is preferred over passing `request` through the entire
+tool tree because:
+
+- FastMCP tool handlers are decorated functions; rewriting them all to take a
+  request object is a bigger blast radius than the goal warrants.
+- `ContextVar` propagates correctly through `asyncio` tasks and `aiohttp`
+  client calls, which is what the KOSIS clients use.
+- stdio mode keeps working without any conditional — the contextvar is just
+  empty there, env wins.
+
+## 5. Fly.io infrastructure
+
+Mirrors the reference project's `fly.toml` with Python-specific tweaks.
+
+```toml
+app = 'korean-stat-mcp'
+primary_region = 'nrt'
+
+[build]
+  dockerfile = 'Dockerfile'
+
+[env]
+  KOSIS_HOST = '0.0.0.0'
+  KOSIS_PORT = '8000'
+  RATE_LIMIT_RPM = '300'
+  PYTHONUNBUFFERED = '1'
+
+[http_service]
+  internal_port = 8000
+  force_https = true
+  auto_stop_machines = 'suspend'
+  auto_start_machines = true
+  min_machines_running = 0
+
+[[vm]]
+  memory = '256mb'
+  cpu_kind = 'shared'
+  cpus = 1
+```
+
+Region `nrt` (Tokyo) keeps RTT to Korean users in the 30–50 ms range.
+`auto_stop_machines = 'suspend'` is preferred over `stop` so warm starts are
+sub-second; falls back to a cold start only after extended idleness.
+
+## 6. Dockerfile (Python, 2-stage, non-root)
+
+```dockerfile
+# --- Build stage ---
+FROM python:3.13-slim AS builder
+WORKDIR /app
+RUN pip install --no-cache-dir --upgrade pip uv
+COPY pyproject.toml uv.lock README.md ./
+COPY src ./src
+RUN uv pip install --system --no-cache .
+
+# --- Runtime stage ---
+FROM python:3.13-slim
+RUN useradd --create-home --shell /bin/bash app
+WORKDIR /app
+COPY --from=builder /usr/local/lib/python3.13/site-packages /usr/local/lib/python3.13/site-packages
+COPY --from=builder /usr/local/bin/korean-stat-mcp /usr/local/bin/
+USER app
+EXPOSE 8000
+ENV PYTHONUNBUFFERED=1 KOSIS_HOST=0.0.0.0 KOSIS_PORT=8000
+HEALTHCHECK --interval=30s --timeout=5s --start-period=10s --retries=3 \
+  CMD python -c "import urllib.request,sys;sys.exit(0 if urllib.request.urlopen('http://localhost:8000/health').status==200 else 1)"
+CMD ["korean-stat-mcp", "--http"]
+```
+
+The existing repo `Dockerfile` becomes the source of truth. Replace its current
+contents with the above; no separate `Dockerfile.fly`.
+
+## 7. DNS — `kosis.seolcoding.com`
+
+Steps, in order:
+
+1. `flyctl apps create korean-stat-mcp` (if not yet created)
+2. `flyctl deploy` once with the default `korean-stat-mcp.fly.dev` hostname to
+   validate end-to-end before DNS work.
+3. In the seolcoding.com DNS zone, add:
+   ```
+   kosis  CNAME  korean-stat-mcp.fly.dev.
+   ```
+4. `flyctl certs add kosis.seolcoding.com` — provisions Let's Encrypt cert.
+5. Wait for `flyctl certs show kosis.seolcoding.com` to report `READY`.
+6. Verification:
+   ```
+   curl -fsS https://kosis.seolcoding.com/health
+   curl -fsS "https://kosis.seolcoding.com/mcp?apiKey=<test_key>" -X POST \
+        -H 'Content-Type: application/json' \
+        -d '{"jsonrpc":"2.0","id":1,"method":"initialize","params":{}}'
+   ```
+
+## 8. CI/CD
+
+`.github/workflows/deploy.yml` — gated on the existing `ci.yml` workflow
+completing successfully on `main`:
+
+```yaml
+name: deploy
+on:
+  workflow_run:
+    workflows: ["ci"]      # name of the existing CI workflow
+    branches: [main]
+    types: [completed]
+  workflow_dispatch:
+jobs:
+  deploy:
+    if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: superfly/flyctl-actions/setup-flyctl@master
+      - run: flyctl deploy --remote-only
+        env:
+          FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
+```
+
+Tag pushes (`v*`) continue to drive the existing PyPI release pipeline; they
+do not deploy to Fly. Only `main` HEAD goes to the hosted instance.
+
+## 9. Rate limiting & abuse guards
+
+- Per-IP: 60 req/min, 600 req/hour
+- Per-`apiKey`: same thresholds (a single user can't drown others by sharing a
+  key across many IPs)
+- Implementation: `slowapi` (Starlette-compatible) with an in-memory store —
+  good enough for a single-VM deployment; revisit if multi-region.
+- Single response cap: 5 MB. Larger payloads route through the existing
+  `read_stored_data` chunked path.
+- 429 response includes `Retry-After`.
+
+## 10. Observability
+
+- stderr structured logs (JSON one-line per record): `request_id`, `method`,
+  `tool_name`, `apiKey_hash` (first 8 chars of SHA-256, never the raw key),
+  `latency_ms`, `status`.
+- Fly built-in metrics: CPU, memory, request rate, egress bytes.
+- Alerts (Fly built-in): VM crash, daily egress > 5 GB.
+- No Sentry / external APM in v1.
+
+## 11. Backward compatibility
+
+- Existing self-hosters using `KOSIS_API_KEY` env keep working unchanged.
+- Existing PyPI install path (`pip install korean-stat-mcp`) untouched.
+- README adds a new **"Hosted instance (no install)"** section *above* the
+  existing install methods, mirroring the law-mcp ordering: Claude.ai web
+  connector first, then Claude Code plugin (later), then desktop apps.
+
+## 12. Test plan
+
+| Layer | Test |
+|---|---|
+| Unit | `request_context.py` set/get/reset; `load_config()` priority order: contextvar > env > raise |
+| Concurrency | Two concurrent asyncio requests with different `apiKey` values must each see only their own; assert via mock `aiohttp` capturing outbound `apiKey` |
+| Integration | Spin up Starlette app in test, hit `/mcp?apiKey=foo` and `/mcp?apiKey=bar` interleaved, assert KOSIS client receives matching keys |
+| Manual E2E | After Fly deploy: `verify_statistics` against a known KOSIS row using a real key; check 401 path with no key |
+| Soak | 24 h passive monitoring of Fly metrics post-deploy |
+
+All 449 existing unit tests must keep passing; add new tests as a separate
+test file rather than modifying existing ones.
+
+## 13. Open questions (resolve during plan/implementation)
+
+1. **KOSIS OpenAPI ToS** — verify that "user supplies own key, our server
+   forwards their request to KOSIS using their key" is allowed. Expected
+   answer: yes (analogous to any client library). If "no": fall back to
+   self-host-only, no public hosting.
+2. **Claude.ai connector query-string preservation** — confirm by adding the
+   draft URL to a Claude.ai connector during implementation. Reference project
+   already proves the mechanism works for `?oc=`; expect identical behavior.
+3. **slowapi vs hand-rolled middleware** — final pick during implementation;
+   no behavioral difference visible to the user.
+4. **Fly app name conflict** — `korean-stat-mcp` is the intended slug; pick a
+   `-prod` suffix if taken.
+
+## 14. Out of scope (handled in other streams)
+
+- Stream B: user guide, cookbook, troubleshooting (will reference this URL).
+- Stream C: demo.gif, launch posts, comparison content, distribution.
+- Stream D: edge-case coverage, error message polish, tool-routing accuracy.
+
+## 15. Rollout order
+
+1. Land code changes (request_context + middleware + load_config patch) on
+   `feat/hosting` branch with new tests.
+2. Update `Dockerfile` and `fly.toml`; verify local `docker build` + `docker run` round-trip.
+3. Deploy to `korean-stat-mcp.fly.dev` (no custom domain yet); manual E2E.
+4. DNS + cert for `kosis.seolcoding.com`.
+5. README hosted-instance section + `MIGRATION.md` note for self-hosters.
+6. Open PR; merge after green CI + manual E2E.
+7. Post-merge: 24 h soak; capture egress baseline.
