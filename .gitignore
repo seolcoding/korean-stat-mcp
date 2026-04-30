@@ -225,6 +225,12 @@ kosis_data/reports/
 ai-docs/
 logos/
 
+# Generated HTML/report artifacts
+kosis-reports/html/
+examples/gallery/mcp_artifacts/
+examples/gallery/output/
+examples/gallery/stories/*.html
+
 # Large metadata files (use LFS or regenerate)
 data/metadata/
 data/metadata_api/
