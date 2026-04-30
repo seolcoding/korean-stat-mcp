@@ -168,3 +168,96 @@ def test_search_statistics_surfaces_kosis_error_envelope(monkeypatch):
     assert env["code"] == "11"
     assert env["category"] == "auth"
     assert "갱신" in env["action"]
+
+
+def test_browse_categories_surfaces_kosis_error_envelope(monkeypatch):
+    """browse_categories (org/theme) surfaces KosisError envelope."""
+    import responses
+
+    monkeypatch.setenv("KOSIS_API_KEY", "test-key")
+    with responses.RequestsMock() as rsps:
+        rsps.add(
+            responses.GET,
+            "https://kosis.kr/openapi/statisticsList.do",
+            body='{"err":"11","errMsg":"인증키 기간만료"}',
+            status=200,
+        )
+        from mcp_server.server import browse_categories
+
+        result = browse_categories.fn(by="org", code="101")  # type: ignore[attr-defined]
+
+    assert result["count"] == 0
+    assert "error" in result
+    env = result["error"]
+    assert env["code"] == "11"
+    assert env["category"] == "auth"
+
+
+def test_browse_categories_view_surfaces_kosis_error_envelope(monkeypatch):
+    """browse_categories (by='view') surfaces KosisError envelope too."""
+    import responses
+
+    monkeypatch.setenv("KOSIS_API_KEY", "test-key")
+    with responses.RequestsMock() as rsps:
+        rsps.add(
+            responses.GET,
+            "https://kosis.kr/openapi/statisticsList.do",
+            body='{"err":"30","errMsg":"제공되지 않는 서비스"}',
+            status=200,
+        )
+        from mcp_server.server import browse_categories
+
+        result = browse_categories.fn(by="view", code="MT_ETITLE")  # type: ignore[attr-defined]
+
+    assert result["count"] == 0
+    assert "error" in result
+    env = result["error"]
+    assert env["code"] == "30"
+
+
+def test_get_table_metadata_surfaces_kosis_error_envelope(monkeypatch):
+    """get_table_metadata surfaces KosisError envelope when KOSIS errMsg returns."""
+    import responses
+
+    monkeypatch.setenv("KOSIS_API_KEY", "test-key")
+    with responses.RequestsMock(assert_all_requests_are_fired=False) as rsps:
+        # TableMetadata fans out to statisticsData.do per metadata sub-type.
+        rsps.add(
+            responses.GET,
+            "https://kosis.kr/openapi/statisticsData.do",
+            body='{"err":"11","errMsg":"인증키 기간만료"}',
+            status=200,
+        )
+        from mcp_server.server import get_table_metadata
+
+        result = get_table_metadata.fn(  # type: ignore[attr-defined]
+            org_id="101", tbl_id="DT_1B040A3"
+        )
+
+    assert "error" in result
+    env = result["error"]
+    assert env["code"] == "11"
+    assert env["category"] == "auth"
+
+
+def test_get_key_indicator_surfaces_kosis_error_envelope(monkeypatch):
+    """get_key_indicator surfaces KosisError envelope on errMsg."""
+    import responses
+
+    monkeypatch.setenv("KOSIS_API_KEY", "test-key")
+    with responses.RequestsMock() as rsps:
+        rsps.add(
+            responses.GET,
+            "https://kosis.kr/openapi/pkNumberService.do",
+            body='{"err":"11","errMsg":"인증키 기간만료"}',
+            status=200,
+        )
+        from mcp_server.server import get_key_indicator
+
+        result = get_key_indicator.fn(by="id", value="160")  # type: ignore[attr-defined]
+
+    assert result["count"] == 0
+    assert "error" in result
+    env = result["error"]
+    assert env["code"] == "11"
+    assert env["category"] == "auth"

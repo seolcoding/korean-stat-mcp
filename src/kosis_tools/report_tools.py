@@ -184,8 +184,16 @@ def search_tables(
 def browse_categories(
     by: str = "org",
     code: Optional[str] = None,
+    *,
+    client: Any = None,
 ) -> list[dict[str, Any]]:
-    """Browse statistics by organization or theme."""
+    """Browse statistics by organization or theme.
+
+    Args:
+        client: optional CategoryList instance. Pass one in if you want to
+            read `client._last_error` after the call to surface classified
+            KOSIS errors. Default: create a fresh client.
+    """
     from .list_categories import CategoryList, OrgCode, ThemeCode
 
     if by == "org" and not code:
@@ -221,7 +229,8 @@ def browse_categories(
     if not code:
         return []
 
-    client = CategoryList()
+    if client is None:
+        client = CategoryList()
     if by == "org":
         return client.list_by_org(code)
     if by == "theme":
@@ -229,13 +238,26 @@ def browse_categories(
     return []
 
 
-def get_table_meta(org_id: str, tbl_id: str) -> dict[str, Any]:
-    """Fetch KOSIS OpenAPI metadata for a table."""
+def get_table_meta(
+    org_id: str,
+    tbl_id: str,
+    *,
+    client: Any = None,
+) -> dict[str, Any]:
+    """Fetch KOSIS OpenAPI metadata for a table.
+
+    Args:
+        client: optional TableMetadata instance. Pass one in if you want to
+            read `client._last_error` after the call to surface classified
+            KOSIS errors. Default: create a fresh client.
+    """
     from collections import defaultdict
 
     from .table_meta import TableMetadata
 
-    raw_meta = TableMetadata().get_all_metadata(org_id, tbl_id)
+    if client is None:
+        client = TableMetadata()
+    raw_meta = client.get_all_metadata(org_id, tbl_id)
     if not raw_meta:
         return {}
 
