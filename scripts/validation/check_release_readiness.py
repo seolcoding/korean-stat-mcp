@@ -39,7 +39,6 @@ PUBLIC_FILES = (
     "src/mcp_server/app.py",
     "src/mcp_server/server.py",
     "src/mcp_server/system_prompt.py",
-    "src/kosis_tools/mcp_server.py",
 )
 
 CURRENT_DEPLOY_FILES = {

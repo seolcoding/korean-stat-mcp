@@ -51,7 +51,9 @@ class TestStatisticsDataGetData:
         assert result == []
 
     @responses.activate
-    def test_get_data_success(self, data_client: StatisticsData, sample_data_response: str):
+    def test_get_data_success(
+        self, data_client: StatisticsData, sample_data_response: str
+    ):
         """데이터 조회 성공."""
         responses.add(
             responses.GET,
@@ -68,7 +70,9 @@ class TestStatisticsDataGetData:
         assert result[1]["C1_NM"] == "서울특별시"
 
     @responses.activate
-    def test_get_data_with_period_type(self, data_client: StatisticsData, sample_data_response: str):
+    def test_get_data_with_period_type(
+        self, data_client: StatisticsData, sample_data_response: str
+    ):
         """주기 타입 지정 조회."""
         responses.add(
             responses.GET,
@@ -82,7 +86,9 @@ class TestStatisticsDataGetData:
         assert "prdSe=Y" in responses.calls[0].request.url
 
     @responses.activate
-    def test_get_data_with_obj_l2(self, data_client: StatisticsData, sample_data_response: str):
+    def test_get_data_with_obj_l2(
+        self, data_client: StatisticsData, sample_data_response: str
+    ):
         """objL2 파라미터 포함 조회."""
         responses.add(
             responses.GET,
@@ -96,7 +102,9 @@ class TestStatisticsDataGetData:
         assert "objL2=ALL" in responses.calls[0].request.url
 
     @responses.activate
-    def test_get_data_single_result(self, data_client: StatisticsData, single_data_response: str):
+    def test_get_data_single_result(
+        self, data_client: StatisticsData, single_data_response: str
+    ):
         """단일 결과 조회 (dict 반환을 list로 변환)."""
         responses.add(
             responses.GET,
@@ -129,7 +137,9 @@ class TestStatisticsDataWithRetry:
     """StatisticsData.get_data_with_retry 테스트."""
 
     @responses.activate
-    def test_first_attempt_success(self, data_client: StatisticsData, sample_data_response: str):
+    def test_first_attempt_success(
+        self, data_client: StatisticsData, sample_data_response: str
+    ):
         """첫 번째 시도 성공."""
         responses.add(
             responses.GET,
@@ -146,7 +156,9 @@ class TestStatisticsDataWithRetry:
         assert "objL2" not in responses.calls[0].request.url
 
     @responses.activate
-    def test_second_attempt_success(self, data_client: StatisticsData, sample_data_response: str):
+    def test_second_attempt_success(
+        self, data_client: StatisticsData, sample_data_response: str
+    ):
         """첫 번째 실패 후 두 번째 성공."""
         # 첫 번째 시도: 실패
         responses.add(
@@ -196,7 +208,9 @@ class TestStatisticsDataAutoPeriod:
     """StatisticsData.get_data_auto_period 테스트."""
 
     @responses.activate
-    def test_auto_period_first_try_success(self, data_client: StatisticsData, sample_data_response: str):
+    def test_auto_period_first_try_success(
+        self, data_client: StatisticsData, sample_data_response: str
+    ):
         """첫 번째 주기(월간)에서 성공."""
         responses.add(
             responses.GET,
@@ -213,7 +227,9 @@ class TestStatisticsDataAutoPeriod:
         assert len(result["data"]) == 3
 
     @responses.activate
-    def test_auto_period_yearly_success(self, data_client: StatisticsData, sample_data_response: str):
+    def test_auto_period_yearly_success(
+        self, data_client: StatisticsData, sample_data_response: str
+    ):
         """월간, 분기, 반기 실패 후 연간 성공."""
         # M, Q, S 실패 (각각 2번씩 시도 = 6회)
         for _ in range(6):

@@ -74,7 +74,9 @@ class TestStatsExplanationGetByStatId:
         assert result is None
 
     @responses.activate
-    def test_get_by_stat_id_success(self, expl_client: StatsExplanation, sample_expl_response: str):
+    def test_get_by_stat_id_success(
+        self, expl_client: StatsExplanation, sample_expl_response: str
+    ):
         """통계 ID로 조회 성공."""
         responses.add(
             responses.GET,
@@ -95,7 +97,9 @@ class TestStatsExplanationGetByStatId:
         assert "metaItm=All" in responses.calls[0].request.url
 
     @responses.activate
-    def test_get_by_stat_id_with_meta_items(self, expl_client: StatsExplanation, sample_purpose_response: str):
+    def test_get_by_stat_id_with_meta_items(
+        self, expl_client: StatsExplanation, sample_purpose_response: str
+    ):
         """특정 메타 항목만 조회."""
         responses.add(
             responses.GET,
@@ -140,7 +144,9 @@ class TestStatsExplanationGetByTable:
         assert result is None
 
     @responses.activate
-    def test_get_by_table_success(self, expl_client: StatsExplanation, sample_expl_response: str):
+    def test_get_by_table_success(
+        self, expl_client: StatsExplanation, sample_expl_response: str
+    ):
         """테이블 ID로 조회 성공."""
         responses.add(
             responses.GET,
@@ -162,7 +168,9 @@ class TestStatsExplanationConvenienceMethods:
     """편의 메서드 테스트."""
 
     @responses.activate
-    def test_get_survey_purpose(self, expl_client: StatsExplanation, sample_purpose_response: str):
+    def test_get_survey_purpose(
+        self, expl_client: StatsExplanation, sample_purpose_response: str
+    ):
         """조사목적 조회."""
         responses.add(
             responses.GET,
@@ -182,7 +190,9 @@ class TestStatsExplanationConvenienceMethods:
         assert result is None
 
     @responses.activate
-    def test_get_llm_context(self, expl_client: StatsExplanation, sample_expl_response: str):
+    def test_get_llm_context(
+        self, expl_client: StatsExplanation, sample_expl_response: str
+    ):
         """LLM 컨텍스트 조회."""
         responses.add(
             responses.GET,

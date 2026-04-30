@@ -21,7 +21,6 @@ from kosis_tools.key_indicators import (
     IndicatorEndpoint,
     IndicatorExplanation,
     IndicatorListItem,
-    IndicatorSearchResult,
     IndicatorDetailData,
 )
 
@@ -145,12 +144,16 @@ def sample_detail_response() -> dict:
 class TestKeyIndicatorsValidation:
     """KeyIndicators 파라미터 검증 테스트."""
 
-    def test_get_explanation_by_id_empty_raises_error(self, indicator_client: KeyIndicators):
+    def test_get_explanation_by_id_empty_raises_error(
+        self, indicator_client: KeyIndicators
+    ):
         """빈 jipyo_id는 ValueError를 발생시켜야 함."""
         with pytest.raises(ValueError, match="jipyo_id는 필수"):
             indicator_client.get_explanation_by_id("")
 
-    def test_get_explanation_by_name_empty_raises_error(self, indicator_client: KeyIndicators):
+    def test_get_explanation_by_name_empty_raises_error(
+        self, indicator_client: KeyIndicators
+    ):
         """빈 jipyo_nm은 ValueError를 발생시켜야 함."""
         with pytest.raises(ValueError, match="jipyo_nm은 필수"):
             indicator_client.get_explanation_by_name("")
@@ -175,7 +178,9 @@ class TestKeyIndicatorsValidation:
         with pytest.raises(ValueError, match="jipyo_id는 필수"):
             indicator_client.get_detail("")
 
-    def test_search_by_period_type_empty_raises_error(self, indicator_client: KeyIndicators):
+    def test_search_by_period_type_empty_raises_error(
+        self, indicator_client: KeyIndicators
+    ):
         """빈 prd_se는 ValueError를 발생시켜야 함."""
         with pytest.raises(ValueError, match="prd_se는 필수"):
             indicator_client.search_by_period_type("")
@@ -603,41 +608,19 @@ class TestExtractItems:
 
     def test_extract_from_nested_response(self, indicator_client: KeyIndicators):
         """중첩된 response 형식에서 추출."""
-        response = {
-            "response": {
-                "body": {
-                    "items": {
-                        "item": [{"id": 1}]
-                    }
-                }
-            }
-        }
+        response = {"response": {"body": {"items": {"item": [{"id": 1}]}}}}
         result = indicator_client._extract_items(response)
         assert len(result) == 1
 
     def test_extract_from_body_items(self, indicator_client: KeyIndicators):
         """body > items 형식에서 추출."""
-        response = {
-            "body": {
-                "items": {
-                    "item": [{"id": 1}, {"id": 2}]
-                }
-            }
-        }
+        response = {"body": {"items": {"item": [{"id": 1}, {"id": 2}]}}}
         result = indicator_client._extract_items(response)
         assert len(result) == 2
 
     def test_extract_single_item_as_dict(self, indicator_client: KeyIndicators):
         """단일 항목이 dict인 경우."""
-        response = {
-            "response": {
-                "body": {
-                    "items": {
-                        "item": {"id": 1}
-                    }
-                }
-            }
-        }
+        response = {"response": {"body": {"items": {"item": {"id": 1}}}}}
         result = indicator_client._extract_items(response)
         assert len(result) == 1
         assert result[0]["id"] == 1
@@ -650,8 +633,6 @@ class TestExtractItems:
 
     def test_extract_from_items_direct(self, indicator_client: KeyIndicators):
         """items 직접 형식에서 추출."""
-        response = {
-            "items": [{"id": 1}]
-        }
+        response = {"items": [{"id": 1}]}
         result = indicator_client._extract_items(response)
         assert len(result) == 1

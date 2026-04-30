@@ -21,7 +21,7 @@ analysis helpers.
 - Read table metadata, classifications, items, and periods.
 - Fetch source data from the KOSIS OpenAPI.
 - Filter and aggregate fetched data.
-- Read stored data chunks and use table/analysis helpers.
+- Read stored data chunks and verify source values.
 - Use `verify_statistics` to compare a claimed value with the source row.
 
 KOSIS tables often require slightly different parameter combinations. Some
@@ -121,7 +121,6 @@ curl https://<your-host>/health
 | Transform | `filter_statistics`, `aggregate_statistics` | Filter and group results |
 | Stored data | `read_stored_data`, `list_stored_data` | Read large results in chunks |
 | Verification | `verify_statistics` | Compare a value with source data |
-| Output | `execute_table`, `execute_analysis` | Generate tables and simple analysis |
 
 See [docs/TOOL_MIGRATION.md](./docs/TOOL_MIGRATION.md) for the full tool list
 and migration notes.

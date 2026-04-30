@@ -19,6 +19,7 @@ Usage:
     # Dry run (no live calls; just validates the sampling logic)
     uv run python scripts/validation/run_reliability_test.py --dry-run --n 100
 """
+
 from __future__ import annotations
 
 import argparse
@@ -46,7 +47,12 @@ except ModuleNotFoundError:  # pragma: no cover — fallback for envs without lo
             self._logger = _logging.getLogger("reliability_test")
             if not self._logger.handlers:
                 handler = _logging.StreamHandler()
-                handler.setFormatter(_logging.Formatter("%(asctime)s | %(levelname)-7s | %(message)s", datefmt="%H:%M:%S"))
+                handler.setFormatter(
+                    _logging.Formatter(
+                        "%(asctime)s | %(levelname)-7s | %(message)s",
+                        datefmt="%H:%M:%S",
+                    )
+                )
                 self._logger.addHandler(handler)
             self._logger.setLevel(_logging.INFO)
 
@@ -54,16 +60,33 @@ except ModuleNotFoundError:  # pragma: no cover — fallback for envs without lo
             for h in list(self._logger.handlers):
                 self._logger.removeHandler(h)
 
-        def add(self, sink: Any, *, level: str = "INFO", format: str | None = None) -> None:  # noqa: A002
-            handler = _logging.StreamHandler(sink) if hasattr(sink, "write") else _logging.StreamHandler()
-            handler.setFormatter(_logging.Formatter("%(asctime)s | %(levelname)-7s | %(message)s", datefmt="%H:%M:%S"))
+        def add(
+            self, sink: Any, *, level: str = "INFO", format: str | None = None
+        ) -> None:  # noqa: A002
+            handler = (
+                _logging.StreamHandler(sink)
+                if hasattr(sink, "write")
+                else _logging.StreamHandler()
+            )
+            handler.setFormatter(
+                _logging.Formatter(
+                    "%(asctime)s | %(levelname)-7s | %(message)s", datefmt="%H:%M:%S"
+                )
+            )
             self._logger.addHandler(handler)
             self._logger.setLevel(getattr(_logging, level.upper(), _logging.INFO))
 
-        def debug(self, msg: str) -> None: self._logger.debug(msg)
-        def info(self, msg: str) -> None: self._logger.info(msg)
-        def warning(self, msg: str) -> None: self._logger.warning(msg)
-        def error(self, msg: str) -> None: self._logger.error(msg)
+        def debug(self, msg: str) -> None:
+            self._logger.debug(msg)
+
+        def info(self, msg: str) -> None:
+            self._logger.info(msg)
+
+        def warning(self, msg: str) -> None:
+            self._logger.warning(msg)
+
+        def error(self, msg: str) -> None:
+            self._logger.error(msg)
 
     logger = _StdlibLoggerShim()  # type: ignore[assignment]
 
@@ -80,14 +103,34 @@ FALLBACK_CATALOG = REPO_ROOT / "outputs" / "kosis-api-catalog" / "tables.json"
 
 
 def parse_args() -> argparse.Namespace:
-    p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    p.add_argument("--n", type=int, default=100, help="Sample size (default 100, max 10000)")
+    p = argparse.ArgumentParser(
+        description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter
+    )
+    p.add_argument(
+        "--n", type=int, default=100, help="Sample size (default 100, max 10000)"
+    )
     p.add_argument("--seed", type=int, default=42, help="Random seed (default 42)")
-    p.add_argument("--dry-run", action="store_true", help="Skip live API calls; only validate sampling")
-    p.add_argument("--rate-limit", type=float, default=1.0, help="Seconds between requests (default 1.0)")
-    p.add_argument("--catalog-path", type=Path, default=DEFAULT_CATALOG, help="Path to tables.json")
+    p.add_argument(
+        "--dry-run",
+        action="store_true",
+        help="Skip live API calls; only validate sampling",
+    )
+    p.add_argument(
+        "--rate-limit",
+        type=float,
+        default=1.0,
+        help="Seconds between requests (default 1.0)",
+    )
+    p.add_argument(
+        "--catalog-path", type=Path, default=DEFAULT_CATALOG, help="Path to tables.json"
+    )
     p.add_argument("--out", type=Path, default=None, help="Output JSON path")
-    p.add_argument("--gate-threshold", type=float, default=0.99, help="Pass threshold for exit-code 0")
+    p.add_argument(
+        "--gate-threshold",
+        type=float,
+        default=0.99,
+        help="Pass threshold for exit-code 0",
+    )
     return p.parse_args()
 
 
@@ -130,7 +173,9 @@ def load_catalog(path: Path) -> tuple[list[dict[str, Any]], Path | None]:
     return [], None
 
 
-def sample_pairs(records: list[dict[str, Any]], n: int, seed: int) -> list[tuple[str, str]]:
+def sample_pairs(
+    records: list[dict[str, Any]], n: int, seed: int
+) -> list[tuple[str, str]]:
     """Sample (org_id, tbl_id) pairs without replacement."""
     valid = [
         (str(r["org_id"]), str(r["tbl_id"]))
@@ -142,7 +187,9 @@ def sample_pairs(records: list[dict[str, Any]], n: int, seed: int) -> list[tuple
     rng = random.Random(seed)
     k = min(n, len(valid))
     if k < n:
-        logger.warning(f"Requested n={n} but only {len(valid)} valid records; sampling all of them.")
+        logger.warning(
+            f"Requested n={n} but only {len(valid)} valid records; sampling all of them."
+        )
     return rng.sample(valid, k)
 
 
@@ -157,9 +204,7 @@ def categorize_failure(exc: BaseException) -> tuple[Category, str]:
     return "api_error", msg
 
 
-def run_one(
-    fetcher: Any, org_id: str, tbl_id: str
-) -> tuple[Category, str | None]:
+def run_one(fetcher: Any, org_id: str, tbl_id: str) -> tuple[Category, str | None]:
     """Fetch one table, returning (category, message)."""
     try:
         rows = fetcher.get_data_with_smart_retry(org_id=org_id, tbl_id=tbl_id)
@@ -192,7 +237,9 @@ def print_summary(payload: dict[str, Any]) -> None:
         print(f"  {k:<14} {cats.get(k, 0):>6}")
     print("-" * 56)
     print(f"  success_rate_strict             = {payload['success_rate_strict']:.4f}")
-    print(f"  success_rate_excluding_no_data  = {payload['success_rate_excluding_no_data']:.4f}")
+    print(
+        f"  success_rate_excluding_no_data  = {payload['success_rate_excluding_no_data']:.4f}"
+    )
     print("=" * 56)
 
 
@@ -205,7 +252,13 @@ def make_stub(reason: str, args: argparse.Namespace, out_path: Path) -> dict[str
         "completed_at": now,
         "duration_seconds": 0.0,
         "rate_limit_sec": args.rate_limit,
-        "categories": {"success": 0, "no_data": 0, "api_error": 0, "timeout": 0, "parse_error": 0},
+        "categories": {
+            "success": 0,
+            "no_data": 0,
+            "api_error": 0,
+            "timeout": 0,
+            "parse_error": 0,
+        },
         "success_rate_strict": 0.0,
         "success_rate_excluding_no_data": 1.0,  # vacuous pass — nothing failed
         "failures": [],
@@ -224,10 +277,15 @@ def main() -> int:
     args.n = min(args.n, 10_000)
 
     logger.remove()
-    logger.add(sys.stderr, level="INFO", format="{time:HH:mm:ss} | {level: <7} | {message}")
+    logger.add(
+        sys.stderr, level="INFO", format="{time:HH:mm:ss} | {level: <7} | {message}"
+    )
 
     timestamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
-    out_path = args.out or REPO_ROOT / "outputs" / "validation" / f"reliability-{timestamp}.json"
+    out_path = (
+        args.out
+        or REPO_ROOT / "outputs" / "validation" / f"reliability-{timestamp}.json"
+    )
 
     # Load catalog (with fallback).
     records, source = load_catalog(args.catalog_path)
@@ -255,28 +313,40 @@ def main() -> int:
         print()
         # Also write a dry-run artifact so callers can inspect the sample.
         now = datetime.now(timezone.utc).isoformat()
-        write_result(out_path, {
-            "n": len(pairs),
-            "seed": args.seed,
-            "dry_run": True,
-            "started_at": now,
-            "completed_at": now,
-            "duration_seconds": 0.0,
-            "rate_limit_sec": args.rate_limit,
-            "catalog_source": str(source),
-            "categories": {"success": 0, "no_data": 0, "api_error": 0, "timeout": 0, "parse_error": 0},
-            "success_rate_strict": 0.0,
-            "success_rate_excluding_no_data": 1.0,
-            "failures": [],
-            "sample": [{"org_id": o, "tbl_id": t} for o, t in pairs],
-        })
+        write_result(
+            out_path,
+            {
+                "n": len(pairs),
+                "seed": args.seed,
+                "dry_run": True,
+                "started_at": now,
+                "completed_at": now,
+                "duration_seconds": 0.0,
+                "rate_limit_sec": args.rate_limit,
+                "catalog_source": str(source),
+                "categories": {
+                    "success": 0,
+                    "no_data": 0,
+                    "api_error": 0,
+                    "timeout": 0,
+                    "parse_error": 0,
+                },
+                "success_rate_strict": 0.0,
+                "success_rate_excluding_no_data": 1.0,
+                "failures": [],
+                "sample": [{"org_id": o, "tbl_id": t} for o, t in pairs],
+            },
+        )
         return 0
 
     # Live mode: need API key + canonical fetcher.
     import os
+
     if not os.getenv("KOSIS_API_KEY"):
         stub_path = REPO_ROOT / "outputs" / "validation" / "reliability-pilot-stub.json"
-        logger.warning("KOSIS_API_KEY not set; writing stub (skipped pilot) and exiting 0.")
+        logger.warning(
+            "KOSIS_API_KEY not set; writing stub (skipped pilot) and exiting 0."
+        )
         payload = make_stub("KOSIS_API_KEY not set in env", args, stub_path)
         print_summary(payload)
         return 0
@@ -291,7 +361,13 @@ def main() -> int:
 
     started = datetime.now(timezone.utc)
     t0 = time.monotonic()
-    counts: dict[str, int] = {"success": 0, "no_data": 0, "api_error": 0, "timeout": 0, "parse_error": 0}
+    counts: dict[str, int] = {
+        "success": 0,
+        "no_data": 0,
+        "api_error": 0,
+        "timeout": 0,
+        "parse_error": 0,
+    }
     failures: list[dict[str, str]] = []
 
     total = len(pairs)
@@ -299,12 +375,14 @@ def main() -> int:
         cat, msg = run_one(fetcher, org_id, tbl_id)
         counts[cat] = counts.get(cat, 0) + 1
         if cat != "success":
-            failures.append({
-                "org_id": org_id,
-                "tbl_id": tbl_id,
-                "category": cat,
-                "message": msg or "",
-            })
+            failures.append(
+                {
+                    "org_id": org_id,
+                    "tbl_id": tbl_id,
+                    "category": cat,
+                    "message": msg or "",
+                }
+            )
         if i % 25 == 0 or i == total:
             logger.info(
                 f"progress {i}/{total} "

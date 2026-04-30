@@ -37,18 +37,24 @@ def single_result_response() -> str:
 class TestStatisticsSearch:
     """StatisticsSearch 클래스 테스트."""
 
-    def test_search_empty_keyword_returns_empty_list(self, search_client: StatisticsSearch):
+    def test_search_empty_keyword_returns_empty_list(
+        self, search_client: StatisticsSearch
+    ):
         """빈 키워드는 빈 리스트를 반환해야 함."""
         result = search_client.search("")
         assert result == []
 
-    def test_search_whitespace_keyword_returns_empty_list(self, search_client: StatisticsSearch):
+    def test_search_whitespace_keyword_returns_empty_list(
+        self, search_client: StatisticsSearch
+    ):
         """공백만 있는 키워드는 빈 리스트를 반환해야 함."""
         result = search_client.search("   ")
         assert result == []
 
     @responses.activate
-    def test_search_success(self, search_client: StatisticsSearch, sample_search_response: str):
+    def test_search_success(
+        self, search_client: StatisticsSearch, sample_search_response: str
+    ):
         """성공적인 검색."""
         responses.add(
             responses.GET,
@@ -65,7 +71,9 @@ class TestStatisticsSearch:
         assert result[1]["TBL_ID"] == "DT_1B040B3"
 
     @responses.activate
-    def test_search_with_org_filter(self, search_client: StatisticsSearch, sample_search_response: str):
+    def test_search_with_org_filter(
+        self, search_client: StatisticsSearch, sample_search_response: str
+    ):
         """기관 필터링 검색."""
         responses.add(
             responses.GET,
@@ -81,7 +89,9 @@ class TestStatisticsSearch:
         assert "orgId=101" in responses.calls[0].request.url
 
     @responses.activate
-    def test_search_single_result(self, search_client: StatisticsSearch, single_result_response: str):
+    def test_search_single_result(
+        self, search_client: StatisticsSearch, single_result_response: str
+    ):
         """단일 결과 검색 (dict 반환을 list로 변환)."""
         responses.add(
             responses.GET,
@@ -124,7 +134,9 @@ class TestStatisticsSearch:
         assert result == []
 
     @responses.activate
-    def test_search_api_key_included(self, search_client: StatisticsSearch, sample_search_response: str):
+    def test_search_api_key_included(
+        self, search_client: StatisticsSearch, sample_search_response: str
+    ):
         """요청에 API 키가 포함되어야 함."""
         responses.add(
             responses.GET,
@@ -147,7 +159,9 @@ class TestSearchByTableId:
         assert result is None
 
     @responses.activate
-    def test_search_by_table_id_exact_match(self, search_client: StatisticsSearch, sample_search_response: str):
+    def test_search_by_table_id_exact_match(
+        self, search_client: StatisticsSearch, sample_search_response: str
+    ):
         """테이블 ID 정확히 일치하는 결과 반환."""
         responses.add(
             responses.GET,

@@ -135,37 +135,6 @@ CASES: tuple[JudgeCase, ...] = (
         "aggregate_statistics",
         "Stored data + group/agg request",
     ),
-    # --- PRESENT: execute_visualization (2) ------------------------------
-    JudgeCase(
-        "c15",
-        "en",
-        "I already have ds_002 loaded — draw a line chart of population by year",
-        "execute_visualization",
-        "Stored data + explicit chart request",
-    ),
-    JudgeCase(
-        "c16",
-        "ko",
-        "ds_003 데이터로 지역별 막대 차트 만들어줘",
-        "execute_visualization",
-        "Stored data + chart request (bar)",
-    ),
-    # --- PRESENT: execute_analysis (1) -----------------------------------
-    JudgeCase(
-        "c17",
-        "ko",
-        "ds_004 데이터의 2019→2023 변화율과 CAGR 계산해줘",
-        "execute_analysis",
-        "Numeric analysis (change-rate / CAGR) on stored data",
-    ),
-    # --- PRESENT: execute_report (1) -------------------------------------
-    JudgeCase(
-        "c18",
-        "en",
-        "Build a full HTML report (chart + analysis + table) from stored ds_005 about national population",
-        "execute_report",
-        "Composite report request — chart + analysis + table",
-    ),
     # --- VERIFY: verify_statistics (2) -----------------------------------
     JudgeCase(
         "c19",

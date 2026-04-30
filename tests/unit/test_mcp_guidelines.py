@@ -20,7 +20,6 @@ from typing import Any, Dict, List
 
 from kosis_tools.report_tools import (
     format_data_for_llm,
-    get_available_values,
     filter_data,
     aggregate_data,
 )
@@ -41,6 +40,7 @@ TOKEN_REDUCTION_TARGET = 0.90  # 목표 토큰 절감률 (90%+)
 # 테스트 데이터 Fixtures
 # =============================================================================
 
+
 @pytest.fixture
 def large_dataset() -> List[Dict[str, Any]]:
     """
@@ -50,10 +50,23 @@ def large_dataset() -> List[Dict[str, Any]]:
     """
     data = []
     regions = [
-        "서울특별시", "부산광역시", "대구광역시", "인천광역시", "광주광역시",
-        "대전광역시", "울산광역시", "세종특별자치시", "경기도", "강원특별자치도",
-        "충청북도", "충청남도", "전라북도", "전라남도", "경상북도",
-        "경상남도", "제주특별자치도"
+        "서울특별시",
+        "부산광역시",
+        "대구광역시",
+        "인천광역시",
+        "광주광역시",
+        "대전광역시",
+        "울산광역시",
+        "세종특별자치시",
+        "경기도",
+        "강원특별자치도",
+        "충청북도",
+        "충청남도",
+        "전라북도",
+        "전라남도",
+        "경상북도",
+        "경상남도",
+        "제주특별자치도",
     ]
     years = [str(y) for y in range(2010, 2024)]  # 14년
     items = ["인구수", "세대수", "인구밀도", "면적"]
@@ -61,20 +74,22 @@ def large_dataset() -> List[Dict[str, Any]]:
     for year in years:
         for region in regions:
             for item in items:
-                data.append({
-                    "TBL_ID": "DT_TEST001",
-                    "TBL_NM": "테스트 통계표",
-                    "ORG_ID": "101",
-                    "ORG_NM": "통계청",
-                    "PRD_DE": year,
-                    "PRD_SE": "Y",
-                    "C1_NM": region,
-                    "C1": f"R{regions.index(region):02d}",
-                    "ITM_NM": item,
-                    "ITM_ID": f"I{items.index(item):02d}",
-                    "DT": str(1000000 + hash((year, region, item)) % 9000000),
-                    "UNIT_NM": "명" if item == "인구수" else "개",
-                })
+                data.append(
+                    {
+                        "TBL_ID": "DT_TEST001",
+                        "TBL_NM": "테스트 통계표",
+                        "ORG_ID": "101",
+                        "ORG_NM": "통계청",
+                        "PRD_DE": year,
+                        "PRD_SE": "Y",
+                        "C1_NM": region,
+                        "C1": f"R{regions.index(region):02d}",
+                        "ITM_NM": item,
+                        "ITM_ID": f"I{items.index(item):02d}",
+                        "DT": str(1000000 + hash((year, region, item)) % 9000000),
+                        "UNIT_NM": "명" if item == "인구수" else "개",
+                    }
+                )
 
     return data  # 17지역 × 14년 × 4항목 = 952건
 
@@ -88,17 +103,19 @@ def small_dataset() -> List[Dict[str, Any]]:
 
     for year in years:
         for region in regions:
-            data.append({
-                "TBL_ID": "DT_TEST002",
-                "TBL_NM": "소규모 테스트",
-                "ORG_ID": "101",
-                "ORG_NM": "통계청",
-                "PRD_DE": year,
-                "C1_NM": region,
-                "ITM_NM": "인구수",
-                "DT": str(5000000 + hash((year, region)) % 5000000),
-                "UNIT_NM": "명",
-            })
+            data.append(
+                {
+                    "TBL_ID": "DT_TEST002",
+                    "TBL_NM": "소규모 테스트",
+                    "ORG_ID": "101",
+                    "ORG_NM": "통계청",
+                    "PRD_DE": year,
+                    "C1_NM": region,
+                    "ITM_NM": "인구수",
+                    "DT": str(5000000 + hash((year, region)) % 5000000),
+                    "UNIT_NM": "명",
+                }
+            )
 
     return data
 
@@ -114,17 +131,19 @@ def medium_dataset() -> List[Dict[str, Any]]:
     for year in years:
         for region in regions:
             for item in items:
-                data.append({
-                    "TBL_ID": "DT_TEST003",
-                    "TBL_NM": "중간 규모 테스트",
-                    "ORG_ID": "101",
-                    "ORG_NM": "통계청",
-                    "PRD_DE": year,
-                    "C1_NM": region,
-                    "ITM_NM": item,
-                    "DT": str(100 + hash((year, region, item)) % 900),
-                    "UNIT_NM": "단위",
-                })
+                data.append(
+                    {
+                        "TBL_ID": "DT_TEST003",
+                        "TBL_NM": "중간 규모 테스트",
+                        "ORG_ID": "101",
+                        "ORG_NM": "통계청",
+                        "PRD_DE": year,
+                        "C1_NM": region,
+                        "ITM_NM": item,
+                        "DT": str(100 + hash((year, region, item)) % 900),
+                        "UNIT_NM": "단위",
+                    }
+                )
 
     return data  # 5지역 × 10년 × 4항목 = 200건
 
@@ -132,6 +151,7 @@ def medium_dataset() -> List[Dict[str, Any]]:
 # =============================================================================
 # 응답 길이 테스트
 # =============================================================================
+
 
 class TestResponseLength:
     """응답 길이 제한 테스트."""
@@ -192,14 +212,13 @@ class TestResponseLength:
         )
 
         by_c1 = pivot.get("by_c1", {})
-        assert len(by_c1) <= 10, (
-            f"by_c1이 너무 많음: {len(by_c1)}개 > 10개 제한"
-        )
+        assert len(by_c1) <= 10, f"by_c1이 너무 많음: {len(by_c1)}개 > 10개 제한"
 
 
 # =============================================================================
 # 토큰 효율성 테스트
 # =============================================================================
+
 
 class TestTokenEfficiency:
     """토큰 효율성 테스트."""
@@ -271,6 +290,7 @@ class TestTokenEfficiency:
 # 응답 구조 테스트
 # =============================================================================
 
+
 class TestResponseStructure:
     """응답 구조 검증 테스트."""
 
@@ -339,14 +359,15 @@ class TestResponseStructure:
         available = result["available_values"]
 
         # 주요 필드가 포함되어야 함
-        assert any(k.startswith("PRD") or k.startswith("C") for k in available.keys()), (
-            "available_values에 기간 또는 분류 필드 누락"
-        )
+        assert any(
+            k.startswith("PRD") or k.startswith("C") for k in available.keys()
+        ), "available_values에 기간 또는 분류 필드 누락"
 
 
 # =============================================================================
 # 안티패턴 탐지 테스트
 # =============================================================================
+
 
 class TestAntiPatternDetection:
     """안티패턴 탐지 테스트."""
@@ -409,6 +430,7 @@ class TestAntiPatternDetection:
 # 샘플 데이터 품질 테스트
 # =============================================================================
 
+
 class TestSampleDataQuality:
     """샘플 데이터 품질 테스트."""
 
@@ -455,6 +477,7 @@ class TestSampleDataQuality:
 # 엣지 케이스 테스트
 # =============================================================================
 
+
 class TestEdgeCases:
     """엣지 케이스 테스트."""
 
@@ -463,21 +486,25 @@ class TestEdgeCases:
         result = format_data_for_llm([])
 
         assert "error" in result or result.get("total_records") == 0
-        assert result.get("summary", {}).get("total_records", -1) == 0 or "error" in result
+        assert (
+            result.get("summary", {}).get("total_records", -1) == 0 or "error" in result
+        )
 
     def test_single_record(self):
         """단일 레코드 처리."""
-        single = [{
-            "TBL_ID": "TEST",
-            "TBL_NM": "테스트",
-            "ORG_ID": "101",
-            "ORG_NM": "통계청",
-            "PRD_DE": "2023",
-            "C1_NM": "서울",
-            "ITM_NM": "값",
-            "DT": "1000",
-            "UNIT_NM": "단위",
-        }]
+        single = [
+            {
+                "TBL_ID": "TEST",
+                "TBL_NM": "테스트",
+                "ORG_ID": "101",
+                "ORG_NM": "통계청",
+                "PRD_DE": "2023",
+                "C1_NM": "서울",
+                "ITM_NM": "값",
+                "DT": "1000",
+                "UNIT_NM": "단위",
+            }
+        ]
 
         result = format_data_for_llm(single)
 
@@ -498,17 +525,19 @@ class TestEdgeCases:
 
     def test_non_numeric_values(self):
         """비숫자 값 처리."""
-        text_values = [{
-            "TBL_ID": "TEST",
-            "TBL_NM": "테스트",
-            "ORG_ID": "101",
-            "ORG_NM": "통계청",
-            "PRD_DE": "2023",
-            "C1_NM": "서울",
-            "ITM_NM": "상태",
-            "DT": "양호",  # 비숫자
-            "UNIT_NM": "-",
-        }]
+        text_values = [
+            {
+                "TBL_ID": "TEST",
+                "TBL_NM": "테스트",
+                "ORG_ID": "101",
+                "ORG_NM": "통계청",
+                "PRD_DE": "2023",
+                "C1_NM": "서울",
+                "ITM_NM": "상태",
+                "DT": "양호",  # 비숫자
+                "UNIT_NM": "-",
+            }
+        ]
 
         result = format_data_for_llm(text_values)
 
@@ -519,6 +548,7 @@ class TestEdgeCases:
 # =============================================================================
 # MCP 서버 응답 시뮬레이션 테스트
 # =============================================================================
+
 
 class TestMCPServerResponse:
     """MCP 서버 응답 형식 테스트."""
@@ -585,6 +615,7 @@ class TestMCPServerResponse:
 # =============================================================================
 # filter_data, aggregate_data 가이드라인 테스트
 # =============================================================================
+
 
 class TestDataProcessingGuidelines:
     """데이터 처리 함수 가이드라인 테스트."""

@@ -8,7 +8,6 @@ kosis_tools.base 모듈 유닛 테스트.
 
 import pytest
 import responses
-from responses import matchers
 
 from kosis_tools.base import KosisBaseClient, fix_malformed_json
 from kosis_tools.config import KosisConfig

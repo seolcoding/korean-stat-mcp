@@ -18,9 +18,9 @@ SYSTEM_PROMPT_KO: str = """\
 
 [질의 → 도구 라우팅]
 1. 전국/단일지역 시계열  → search_statistics → get_statistics_data → 클라이언트에서 시각화
-2. 지역 간 비교            → search_statistics → get_available_values → get_statistics_data(objL1=다중) → execute_table 또는 클라이언트 시각화
-3. 변화율/CAGR             → get_statistics_data(최근 N년) → execute_analysis(calc_change_rate/calc_cagr)
-4. 상·하위 N (랭킹)        → get_statistics_data(전체 지역, 최신 PRD_DE) → aggregate_statistics(sort) → execute_table
+2. 지역 간 비교            → search_statistics → get_available_values → get_statistics_data(objL1=다중)
+3. 변화율/CAGR             → get_statistics_data(최근 N년) → 클라이언트에서 계산
+4. 상·하위 N (랭킹)        → get_statistics_data(전체 지역, 최신 PRD_DE) → aggregate_statistics(sort)
 5. 단일 시점 수치          → search_statistics → get_statistics_data(최신 PRD_DE) → 한 줄 요약
 6. 분기별 데이터           → get_statistics_data(prdSe=Q, PRD_DE="2024Q1")
 7. 반기별 데이터           → get_statistics_data(prdSe=H, PRD_DE="2024H1")
@@ -29,11 +29,11 @@ SYSTEM_PROMPT_KO: str = """\
 10. 분류 값 확인           → get_available_values(orgId, tblId)
 11. 통계표 상세 메타       → get_table_metadata(orgId, tblId)
 12. 저장된 데이터 청크 보기 → list_stored_data → read_stored_data(resource_id, offset, limit)
-13. 그룹 집계              → aggregate_statistics(group_by, agg) → execute_table
+13. 그룹 집계              → aggregate_statistics(group_by, agg)
 14. 도구 카탈로그          → discover_tools
 
 [필수 규칙]
-- DT 필드는 문자열입니다. "-", "*" 같은 특수값은 pd.to_numeric(..., errors="coerce")로 NaN 처리.
+- DT 필드는 문자열입니다. "-", "*" 같은 특수값은 숫자 변환 시 결측값으로 처리.
 - 기간 코드: 분기=Q, 반기=H, 월=M, 연=Y. 분기는 "2024Q1", 반기는 "2024H1" 형식.
 - objL1~objL8은 서버가 7단계 자동 fallback. LLM이 직접 반복하지 마세요.
 - 지자체 테이블 no_data는 deprecated 의미. 재시도 금지, 사용자에게 안내.
@@ -52,9 +52,9 @@ Before answering, follow this routing table and rules.
 
 [Query → Tool routing]
 1. National / single-region time series → search_statistics → get_statistics_data → render in client
-2. Regional comparison                  → search_statistics → get_available_values → get_statistics_data(objL1=multi) → execute_table or render in client
-3. Change rate / CAGR                   → get_statistics_data(last N years) → execute_analysis(calc_change_rate/calc_cagr)
-4. Top / bottom N (ranking)             → get_statistics_data(all regions, latest PRD_DE) → aggregate_statistics(sort) → execute_table
+2. Regional comparison                  → search_statistics → get_available_values → get_statistics_data(objL1=multi)
+3. Change rate / CAGR                   → get_statistics_data(last N years) → compute in client
+4. Top / bottom N (ranking)             → get_statistics_data(all regions, latest PRD_DE) → aggregate_statistics(sort)
 5. Point-in-time lookup                 → search_statistics → get_statistics_data(latest PRD_DE) → one-line summary
 6. Quarterly data                       → get_statistics_data(prdSe=Q, PRD_DE="2024Q1")
 7. Half-year data                       → get_statistics_data(prdSe=H, PRD_DE="2024H1")
@@ -63,11 +63,11 @@ Before answering, follow this routing table and rules.
 10. Classification values               → get_available_values(orgId, tblId)
 11. Table metadata                      → get_table_metadata(orgId, tblId)
 12. View stored data chunks             → list_stored_data → read_stored_data(resource_id, offset, limit)
-13. Group aggregation                   → aggregate_statistics(group_by, agg) → execute_table
+13. Group aggregation                   → aggregate_statistics(group_by, agg)
 14. Tool catalog                        → discover_tools
 
 [Mandatory rules]
-- The DT field is a STRING. Coerce "-", "*" with pd.to_numeric(..., errors="coerce") → NaN.
+- The DT field is a STRING. Treat "-", "*" as missing values when coercing to numbers.
 - Period codes: quarter=Q, half-year=H, month=M, year=Y. Use "2024Q1" for quarters, "2024H1" for halves.
 - Do NOT manually iterate objL1..objL8. The server runs a 7-step fallback automatically.
 - For local-government tables, `no_data` means deprecated/discontinued. Do not retry; tell the user.

@@ -13,9 +13,9 @@ from mcp_server.exposed_tools import V1_EXPOSED, V1_EXPOSED_NAMES, ExposedTool
 
 
 def test_v1_exposed_count() -> None:
-    """V1 surface ships with exactly 14 core tools."""
-    assert len(V1_EXPOSED) == 14
-    assert len(V1_EXPOSED_NAMES) == 14
+    """V1 surface ships with exactly 12 core tools."""
+    assert len(V1_EXPOSED) == 12
+    assert len(V1_EXPOSED_NAMES) == 12
 
 
 def test_v1_exposed_entries_fully_populated() -> None:
@@ -23,7 +23,7 @@ def test_v1_exposed_entries_fully_populated() -> None:
     for tool in V1_EXPOSED:
         assert isinstance(tool, ExposedTool)
         assert tool.name and isinstance(tool.name, str)
-        assert tool.layer in {"DISCOVER", "FETCH", "PRESENT", "VERIFY", "DATA", "META"}
+        assert tool.layer in {"DISCOVER", "FETCH", "VERIFY", "DATA", "META"}
         assert tool.purpose_ko and isinstance(tool.purpose_ko, str)
         assert tool.purpose_en and isinstance(tool.purpose_en, str)
 
@@ -43,12 +43,12 @@ def test_core_tools_present() -> None:
     expected = {
         "search_statistics",
         "get_statistics_data",
-        "execute_analysis",
-        "execute_table",
         "discover_tools",
         "execute_tool",
     }
     assert expected.issubset(V1_EXPOSED_NAMES)
+    assert "execute_analysis" not in V1_EXPOSED_NAMES
+    assert "execute_table" not in V1_EXPOSED_NAMES
     assert "execute_visualization" not in V1_EXPOSED_NAMES
     assert "execute_report" not in V1_EXPOSED_NAMES
 
@@ -71,8 +71,8 @@ def test_discover_tools_shape(loaded_server) -> None:
 
     result = discover_tools()
     assert set(result.keys()) == {"exposed", "internal", "total", "exposed_count"}
-    assert result["exposed_count"] == 14
-    assert result["total"] >= 14
+    assert result["exposed_count"] == 12
+    assert result["total"] >= 12
     # Each exposed entry carries name+layer+purpose fields
     for entry in result["exposed"]:
         assert {"name", "layer", "purpose_ko", "purpose_en"}.issubset(entry.keys())

@@ -36,10 +36,7 @@ def sample_sdmx_json_response() -> dict:
             "id": "101_DT_1IN1502",
             "name": "총조사인구",
             "prepared": "2024-01-15T10:00:00",
-            "sender": {
-                "id": "KOSTAT",
-                "name": "통계청"
-            }
+            "sender": {"id": "KOSTAT", "name": "통계청"},
         },
         "dataSets": [
             {
@@ -48,12 +45,12 @@ def sample_sdmx_json_response() -> dict:
                         "observations": {
                             "0": [51829023],
                             "1": [51709098],
-                            "2": [51558034]
+                            "2": [51558034],
                         }
                     }
                 }
             }
-        ]
+        ],
     }
 
 
@@ -103,7 +100,9 @@ def sample_sdmx_xml_response() -> str:
 class TestStatisticsBigDataValidation:
     """StatisticsBigData 파라미터 검증 테스트."""
 
-    def test_fetch_sdmx_empty_user_stats_id_raises_error(self, big_data_client: StatisticsBigData):
+    def test_fetch_sdmx_empty_user_stats_id_raises_error(
+        self, big_data_client: StatisticsBigData
+    ):
         """빈 user_stats_id는 ValueError를 발생시켜야 함."""
         with pytest.raises(ValueError, match="user_stats_id는 필수"):
             big_data_client.fetch_sdmx("", prd_se="Y")
@@ -120,7 +119,9 @@ class TestStatisticsBigDataValidation:
     ):
         """잘못된 sdmx_type은 ValueError를 발생시켜야 함."""
         with pytest.raises(ValueError, match="잘못된 sdmx_type"):
-            big_data_client.fetch_sdmx(sample_user_stats_id, sdmx_type="InvalidType", prd_se="Y")
+            big_data_client.fetch_sdmx(
+                sample_user_stats_id, sdmx_type="InvalidType", prd_se="Y"
+            )
 
     def test_fetch_sdmx_partial_period_raises_error(
         self, big_data_client: StatisticsBigData, sample_user_stats_id: str
@@ -130,11 +131,13 @@ class TestStatisticsBigDataValidation:
             big_data_client.fetch_sdmx(
                 sample_user_stats_id,
                 prd_se="Y",
-                start_prd_de="2020"
+                start_prd_de="2020",
                 # end_prd_de 누락
             )
 
-    def test_fetch_csv_empty_user_stats_id_raises_error(self, big_data_client: StatisticsBigData):
+    def test_fetch_csv_empty_user_stats_id_raises_error(
+        self, big_data_client: StatisticsBigData
+    ):
         """CSV 조회 시 빈 user_stats_id는 ValueError를 발생시켜야 함."""
         with pytest.raises(ValueError, match="user_stats_id는 필수"):
             big_data_client.fetch_csv("", prd_se="Y")
@@ -293,7 +296,9 @@ class TestStatisticsBigDataFetchCsv:
 class TestStatisticsBigDataParsing:
     """StatisticsBigData 파싱 테스트."""
 
-    def test_parse_csv_success(self, big_data_client: StatisticsBigData, sample_csv_response: str):
+    def test_parse_csv_success(
+        self, big_data_client: StatisticsBigData, sample_csv_response: str
+    ):
         """CSV 파싱 성공."""
         result = big_data_client._parse_csv(sample_csv_response)
 

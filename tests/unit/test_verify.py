@@ -159,10 +159,17 @@ class TestBuildSourceUrl:
 # ---------------------------------------------------------------------------
 
 
-def _mock_clients(records: list[dict[str, Any]], *, tbl_id: str = "DT_1B040A3", org_id: str = "101"):
+def _mock_clients(
+    records: list[dict[str, Any]], *, tbl_id: str = "DT_1B040A3", org_id: str = "101"
+):
     search = MagicMock()
     search.search.return_value = [
-        {"TBL_ID": tbl_id, "TBL_NM": "행정구역별 인구수", "ORG_ID": org_id, "ORG_NM": "통계청"}
+        {
+            "TBL_ID": tbl_id,
+            "TBL_NM": "행정구역별 인구수",
+            "ORG_ID": org_id,
+            "ORG_NM": "통계청",
+        }
     ]
     search.search_by_table_id.return_value = {
         "TBL_ID": tbl_id,
@@ -179,7 +186,13 @@ class TestVerifyStatistics:
     async def test_match_within_tolerance(self) -> None:
         """Claim within 1% of source -> match=True, confidence='high'."""
         records = [
-            {"PRD_DE": "2023", "C1_NM": "서울특별시", "DT": "9411453", "ITM_NM": "총인구", "UNIT_NM": "명"},
+            {
+                "PRD_DE": "2023",
+                "C1_NM": "서울특별시",
+                "DT": "9411453",
+                "ITM_NM": "총인구",
+                "UNIT_NM": "명",
+            },
         ]
         search, data = _mock_clients(records)
         result = await verify_statistics(
@@ -229,7 +242,10 @@ class TestVerifyStatistics:
             _data=data,
         )
         assert result.confidence == "unverifiable"
-        assert "table_id" in result.explanation.lower() or "metric" in result.explanation.lower()
+        assert (
+            "table_id" in result.explanation.lower()
+            or "metric" in result.explanation.lower()
+        )
 
     async def test_table_id_explicit_skips_search(self) -> None:
         records = [

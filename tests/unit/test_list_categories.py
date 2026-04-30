@@ -81,7 +81,9 @@ class TestCategoryListByOrg:
         assert result == []
 
     @responses.activate
-    def test_list_by_org_success(self, category_client: CategoryList, sample_list_response: str):
+    def test_list_by_org_success(
+        self, category_client: CategoryList, sample_list_response: str
+    ):
         """기관별 목록 조회 성공."""
         responses.add(
             responses.GET,
@@ -99,7 +101,9 @@ class TestCategoryListByOrg:
         assert "parentListId=101" in responses.calls[0].request.url
 
     @responses.activate
-    def test_list_by_org_with_parent_stat_id(self, category_client: CategoryList, sample_list_response: str):
+    def test_list_by_org_with_parent_stat_id(
+        self, category_client: CategoryList, sample_list_response: str
+    ):
         """상위 통계 ID로 필터링."""
         responses.add(
             responses.GET,
@@ -137,7 +141,9 @@ class TestCategoryListByTheme:
         assert result == []
 
     @responses.activate
-    def test_list_by_theme_success(self, category_client: CategoryList, sample_list_response: str):
+    def test_list_by_theme_success(
+        self, category_client: CategoryList, sample_list_response: str
+    ):
         """주제별 목록 조회 성공."""
         responses.add(
             responses.GET,
@@ -154,7 +160,9 @@ class TestCategoryListByTheme:
         assert "parentListId=A" in responses.calls[0].request.url
 
     @responses.activate
-    def test_list_by_theme_with_constant(self, category_client: CategoryList, sample_list_response: str):
+    def test_list_by_theme_with_constant(
+        self, category_client: CategoryList, sample_list_response: str
+    ):
         """ThemeCode 상수 사용."""
         responses.add(
             responses.GET,
@@ -177,7 +185,9 @@ class TestCategoryListStatistics:
         assert result == []
 
     @responses.activate
-    def test_list_statistics_success(self, category_client: CategoryList, sample_stat_list_response: str):
+    def test_list_statistics_success(
+        self, category_client: CategoryList, sample_stat_list_response: str
+    ):
         """기관 통계 목록 조회 성공."""
         responses.add(
             responses.GET,

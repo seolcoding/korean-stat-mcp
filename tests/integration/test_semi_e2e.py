@@ -27,18 +27,16 @@ load_dotenv()
 
 # API 키가 없으면 테스트 스킵
 pytestmark = pytest.mark.skipif(
-    not os.getenv("KOSIS_API_KEY"),
-    reason="KOSIS_API_KEY not set in environment"
+    not os.getenv("KOSIS_API_KEY"), reason="KOSIS_API_KEY not set in environment"
 )
 
-from kosis_tools import (
+from kosis_tools import (  # noqa: E402
     KosisConfig,
     StatisticsSearch,
     CategoryList,
     StatisticsData,
     TableMetadata,
     StatsExplanation,
-    KstatMetadata,
     OrgCode,
     ThemeCode,
     PeriodType,
@@ -86,12 +84,6 @@ def expl_client(config: KosisConfig) -> StatsExplanation:
     return StatsExplanation(config)
 
 
-@pytest.fixture(scope="module")
-def kstat_client(config: KosisConfig) -> KstatMetadata:
-    """k-stat 메타데이터 클라이언트."""
-    return KstatMetadata(config)
-
-
 class TestScenarioSearchAndQuery:
     """
     시나리오 1: 검색 → 데이터 조회
@@ -118,7 +110,7 @@ class TestScenarioSearchAndQuery:
 
         # 상위 5개 결과 출력
         for i, r in enumerate(results[:5]):
-            print(f"  [{i+1}] {r.get('TBL_NM', 'N/A')} ({r.get('ORG_NM', 'N/A')})")
+            print(f"  [{i + 1}] {r.get('TBL_NM', 'N/A')} ({r.get('ORG_NM', 'N/A')})")
             assert "TBL_ID" in r
             assert "TBL_NM" in r
 
@@ -142,9 +134,7 @@ class TestScenarioSearchAndQuery:
             print(f"  - {r.get('TBL_NM')}")
 
     def test_fetch_data_from_search_result(
-        self,
-        search_client: StatisticsSearch,
-        data_client: StatisticsData
+        self, search_client: StatisticsSearch, data_client: StatisticsData
     ):
         """
         Step 3: 검색 결과에서 선택한 테이블의 데이터 조회.
@@ -169,19 +159,20 @@ class TestScenarioSearchAndQuery:
 
         # 데이터 조회 (자동 주기 탐색)
         result = data_client.get_data_auto_period(
-            org_id=org_id,
-            tbl_id=tbl_id,
-            start_date="2020",
-            end_date="2023"
+            org_id=org_id, tbl_id=tbl_id, start_date="2020", end_date="2023"
         )
 
         if result:
-            print(f"조회 성공: 주기={result['period_name']}, 레코드={len(result['data'])}건")
+            print(
+                f"조회 성공: 주기={result['period_name']}, 레코드={len(result['data'])}건"
+            )
             assert len(result["data"]) > 0
 
             # 첫 번째 데이터 샘플 출력
             sample = result["data"][0]
-            print(f"  샘플 데이터: {sample.get('PRD_DE')} - {sample.get('C1_NM', 'N/A')}: {sample.get('DT')}")
+            print(
+                f"  샘플 데이터: {sample.get('PRD_DE')} - {sample.get('C1_NM', 'N/A')}: {sample.get('DT')}"
+            )
         else:
             print("⚠️ 데이터 조회 실패 (일부 테이블은 추가 파라미터 필요)")
             pytest.skip("이 테이블은 추가 파라미터가 필요할 수 있음")
@@ -211,7 +202,7 @@ class TestScenarioOrgExploration:
 
         # 상위 10개 출력
         for i, r in enumerate(results[:10]):
-            print(f"  [{i+1}] {r.get('TBL_NM', 'N/A')}")
+            print(f"  [{i + 1}] {r.get('TBL_NM', 'N/A')}")
 
     def test_list_bok_tables(self, category_client: CategoryList):
         """
@@ -228,7 +219,7 @@ class TestScenarioOrgExploration:
 
         if len(results) > 0:
             for i, r in enumerate(results[:5]):
-                print(f"  [{i+1}] {r.get('TBL_NM', 'N/A')}")
+                print(f"  [{i + 1}] {r.get('TBL_NM', 'N/A')}")
         else:
             print("  (결과 없음 - 한국은행은 별도 API 사용 가능)")
 
@@ -256,7 +247,9 @@ class TestScenarioThemeExploration:
 
         if len(results) > 0:
             for i, r in enumerate(results[:10]):
-                print(f"  [{i+1}] {r.get('TBL_NM', 'N/A')} ({r.get('ORG_NM', 'N/A')})")
+                print(
+                    f"  [{i + 1}] {r.get('TBL_NM', 'N/A')} ({r.get('ORG_NM', 'N/A')})"
+                )
         else:
             print("  (주제별 조회는 일부 제한될 수 있음)")
 
@@ -272,7 +265,9 @@ class TestScenarioThemeExploration:
 
         if len(results) > 0:
             for i, r in enumerate(results[:10]):
-                print(f"  [{i+1}] {r.get('TBL_NM', 'N/A')} ({r.get('ORG_NM', 'N/A')})")
+                print(
+                    f"  [{i + 1}] {r.get('TBL_NM', 'N/A')} ({r.get('ORG_NM', 'N/A')})"
+                )
 
 
 class TestScenarioAutoPeriodDetection:
@@ -294,10 +289,7 @@ class TestScenarioAutoPeriodDetection:
         print("\n=== 시나리오 4-1: 연간 데이터 자동 탐색 ===")
 
         result = data_client.get_data_auto_period(
-            org_id="101",
-            tbl_id="DT_1B040A3",
-            start_date="2020",
-            end_date="2023"
+            org_id="101", tbl_id="DT_1B040A3", start_date="2020", end_date="2023"
         )
 
         if result:
@@ -306,7 +298,9 @@ class TestScenarioAutoPeriodDetection:
 
             # 샘플 데이터 출력
             for sample in result["data"][:3]:
-                print(f"  {sample.get('PRD_DE')} | {sample.get('C1_NM', 'N/A')}: {sample.get('DT')}")
+                print(
+                    f"  {sample.get('PRD_DE')} | {sample.get('C1_NM', 'N/A')}: {sample.get('DT')}"
+                )
 
             assert result["period_type"] in PeriodType.PRIORITY_ORDER
         else:
@@ -326,7 +320,7 @@ class TestScenarioAutoPeriodDetection:
             tbl_id="DT_1B040A3",
             start_date="2022",
             end_date="2023",
-            prd_se="Y"
+            prd_se="Y",
         )
 
         print(f"조회된 레코드: {len(records)}건")
@@ -370,7 +364,7 @@ class TestScenarioRetryLogic:
             tbl_id="DT_1B040A3",
             start_date="2023",
             end_date="2023",
-            prd_se="Y"
+            prd_se="Y",
         )
 
         print(f"조회된 레코드: {len(records)}건")
@@ -378,7 +372,9 @@ class TestScenarioRetryLogic:
         if records:
             print("✅ 재시도 로직 성공")
             sample = records[0]
-            print(f"  샘플: {sample.get('PRD_DE')} - {sample.get('C1_NM')}: {sample.get('DT')}")
+            print(
+                f"  샘플: {sample.get('PRD_DE')} - {sample.get('C1_NM')}: {sample.get('DT')}"
+            )
         else:
             print("⚠️ 데이터 없음 (테이블 특성에 따라 다름)")
 
@@ -396,9 +392,7 @@ class TestScenarioEndToEnd:
     """
 
     def test_full_workflow(
-        self,
-        search_client: StatisticsSearch,
-        data_client: StatisticsData
+        self, search_client: StatisticsSearch, data_client: StatisticsData
     ):
         """
         전체 워크플로우 테스트.
@@ -414,7 +408,7 @@ class TestScenarioEndToEnd:
 
         print(f"검색 결과: {len(search_results)}건")
         for i, r in enumerate(search_results[:3]):
-            print(f"  [{i+1}] {r.get('TBL_NM')}")
+            print(f"  [{i + 1}] {r.get('TBL_NM')}")
 
         # Step 2: 첫 번째 테이블 선택
         selected = search_results[0]
@@ -424,12 +418,12 @@ class TestScenarioEndToEnd:
         print(f"  - 기간: {selected.get('STRT_PRD_DE')} ~ {selected.get('END_PRD_DE')}")
 
         # Step 3: 데이터 조회
-        print(f"\n[Step 3] 데이터 조회 (자동 주기 탐색)...")
+        print("\n[Step 3] 데이터 조회 (자동 주기 탐색)...")
         result = data_client.get_data_auto_period(
             org_id=selected.get("ORG_ID"),
             tbl_id=selected.get("TBL_ID"),
             start_date="2022",
-            end_date="2023"
+            end_date="2023",
         )
 
         if not result:
@@ -439,18 +433,18 @@ class TestScenarioEndToEnd:
                 tbl_id=selected.get("TBL_ID"),
                 start_date="2022",
                 end_date="2023",
-                prd_se="Y"
+                prd_se="Y",
             )
             if records:
                 result = {"data": records, "period_type": "Y", "period_name": "연간"}
 
         if result:
-            print(f"✅ 조회 성공!")
+            print("✅ 조회 성공!")
             print(f"  - 주기: {result['period_name']}")
             print(f"  - 레코드 수: {len(result['data'])}")
 
             # Step 4: 간단한 분석
-            print(f"\n[Step 4] 데이터 분석...")
+            print("\n[Step 4] 데이터 분석...")
             data = result["data"]
 
             # 기간별 집계
@@ -461,7 +455,7 @@ class TestScenarioEndToEnd:
                     periods[prd] = 0
                 periods[prd] += 1
 
-            print(f"  기간별 레코드 수:")
+            print("  기간별 레코드 수:")
             for prd, count in sorted(periods.items()):
                 print(f"    {prd}: {count}건")
 
@@ -474,6 +468,7 @@ class TestScenarioEndToEnd:
 # =====================
 # Phase 4: 메타데이터 테스트
 # =====================
+
 
 class TestScenarioTableMetadata:
     """
@@ -517,7 +512,9 @@ class TestScenarioTableMetadata:
         print(f"분류항목 수: {len(result)}개")
         if result:
             for obj in result:
-                print(f"  - objL{obj.get('OBJ_LV', '?')}: {obj.get('OBJ_NM', 'N/A')} ({obj.get('OBJ_VAR_CNT', '?')}개)")
+                print(
+                    f"  - objL{obj.get('OBJ_LV', '?')}: {obj.get('OBJ_NM', 'N/A')} ({obj.get('OBJ_VAR_CNT', '?')}개)"
+                )
             assert len(result) > 0
         else:
             print("  (분류항목 없음 또는 API 응답 형식 다름)")
@@ -536,7 +533,9 @@ class TestScenarioTableMetadata:
         print(f"항목 수: {len(result)}개")
         if result:
             for itm in result[:10]:  # 상위 10개만 출력
-                print(f"  - {itm.get('ITM_ID', '?')}: {itm.get('ITM_NM', 'N/A')} ({itm.get('UNIT_NM', '')})")
+                print(
+                    f"  - {itm.get('ITM_ID', '?')}: {itm.get('ITM_NM', 'N/A')} ({itm.get('UNIT_NM', '')})"
+                )
         else:
             print("  (항목 없음 또는 API 응답 형식 다름)")
 
@@ -605,7 +604,7 @@ class TestScenarioStatsExplanation:
             print(f"   작성유형: {result.get('statsKind', 'N/A')}")
             print(f"   조사주기: {result.get('statsPeriod', 'N/A')}")
             print(f"   승인번호: {result.get('confmNo', 'N/A')}")
-            if result.get('writingPurps'):
+            if result.get("writingPurps"):
                 print(f"   목적: {result.get('writingPurps', '')[:100]}...")
         else:
             print("⚠️ 통계설명 조회 실패 (일부 테이블은 통계설명이 없음)")
@@ -626,7 +625,7 @@ class TestScenarioStatsExplanation:
         result = expl_client.get_llm_context(org_id="101", tbl_id="DT_1IN0001")
 
         if result:
-            print(f"✅ LLM 컨텍스트 생성 성공:")
+            print("✅ LLM 컨텍스트 생성 성공:")
             print(f"   name: {result.get('name', 'N/A')}")
             print(f"   kind: {result.get('kind', 'N/A')}")
             print(f"   period: {result.get('period', 'N/A')}")
@@ -647,127 +646,10 @@ class TestScenarioStatsExplanation:
         result = expl_client.get_survey_purpose(org_id="101", tbl_id="DT_1IN0001")
 
         if result:
-            print(f"✅ 조사목적:")
+            print("✅ 조사목적:")
             print(f"   {result[:200]}...")
         else:
             print("⚠️ 조사목적 조회 실패")
-
-
-class TestScenarioKstatMetadata:
-    """
-    시나리오 9: k-stat.go.kr 메타데이터 조회
-
-    사용자 스토리:
-    KOSIS 테이블과 연결된 k-stat.go.kr의 상세 메타데이터를 조회하고 싶다.
-    """
-
-    def test_get_kstat_url(self, kstat_client: KstatMetadata):
-        """
-        Step 1: k-stat URL 추출.
-
-        기대 결과:
-        - k-stat URL이 있는 테이블에서 URL 추출 성공
-        """
-        print("\n=== 시나리오 9-1: k-stat URL 추출 ===")
-
-        # 주민등록인구 테이블 (k-stat 링크 있음)
-        result = kstat_client.get_kstat_url("101", "DT_1IN1503")
-
-        if result:
-            print(f"✅ k-stat URL: {result}")
-            assert "k-stat.go.kr" in result
-        else:
-            print("⚠️ k-stat URL 없음 (일부 테이블만 k-stat 링크가 있음)")
-            # 다른 테이블로 재시도
-            result = kstat_client.get_kstat_url("101", "DT_1B040A3")
-            if result:
-                print(f"✅ (대체 테이블) k-stat URL: {result}")
-
-    def test_has_kstat_link(self, kstat_client: KstatMetadata):
-        """
-        Step 2: k-stat 링크 존재 여부 확인.
-
-        기대 결과:
-        - 링크 존재 여부를 boolean으로 반환
-        """
-        print("\n=== 시나리오 9-2: k-stat 링크 확인 ===")
-
-        # k-stat 링크가 있는 것으로 알려진 테이블
-        tables_to_check = [
-            ("101", "DT_1IN1503"),
-            ("101", "DT_1B040A3"),
-            ("101", "DT_1IN0001"),
-        ]
-
-        found_any = False
-        for org_id, tbl_id in tables_to_check:
-            has_link = kstat_client.has_kstat_link(org_id, tbl_id)
-            status = "✅" if has_link else "❌"
-            print(f"  {status} {tbl_id}: k-stat {'있음' if has_link else '없음'}")
-            if has_link:
-                found_any = True
-
-        if not found_any:
-            print("⚠️ 테스트한 모든 테이블에 k-stat 링크 없음")
-
-    def test_fetch_metadata(self, kstat_client: KstatMetadata):
-        """
-        Step 3: k-stat 메타데이터 조회.
-
-        기대 결과:
-        - k-stat.go.kr에서 통계명, 작성기관, 작성주기 등 파싱
-        """
-        print("\n=== 시나리오 9-3: k-stat 메타데이터 ===")
-
-        # 먼저 k-stat URL이 있는 테이블 찾기
-        confm_no = kstat_client.get_stats_confm_no("101", "DT_1IN1503")
-
-        if not confm_no:
-            # 다른 테이블 시도
-            confm_no = kstat_client.get_stats_confm_no("101", "DT_1B040A3")
-
-        if confm_no:
-            print(f"승인번호: {confm_no}")
-            result = kstat_client.fetch_metadata(confm_no)
-
-            if result:
-                print(f"✅ k-stat 메타데이터:")
-                print(f"   통계명: {result.get('stats_name', 'N/A')}")
-                print(f"   작성기관: {result.get('org_name', 'N/A')}")
-                print(f"   작성주기: {result.get('period', 'N/A')}")
-                print(f"   목적: {result.get('purpose', 'N/A')[:100] if result.get('purpose') else 'N/A'}...")
-            else:
-                print("⚠️ k-stat 메타데이터 파싱 실패")
-        else:
-            print("⚠️ 테스트 테이블에서 k-stat 링크를 찾지 못함")
-            pytest.skip("k-stat 링크 없음")
-
-    def test_get_metadata_by_table(self, kstat_client: KstatMetadata):
-        """
-        Step 4: 테이블 ID로 k-stat 메타데이터 통합 조회.
-
-        기대 결과:
-        - URL 추출 → 메타데이터 조회를 한 번에 수행
-        """
-        print("\n=== 시나리오 9-4: 통합 조회 ===")
-
-        # k-stat 링크가 있는 테이블로 시도
-        result = kstat_client.get_metadata_by_table("101", "DT_1IN1503")
-
-        if result:
-            print(f"✅ 통합 조회 성공:")
-            print(f"   org_id: {result.get('org_id')}")
-            print(f"   tbl_id: {result.get('tbl_id')}")
-            print(f"   통계명: {result.get('stats_name', 'N/A')}")
-            print(f"   승인번호: {result.get('stats_confm_no', 'N/A')}")
-        else:
-            # 대체 테이블 시도
-            result = kstat_client.get_metadata_by_table("101", "DT_1B040A3")
-            if result:
-                print(f"✅ (대체 테이블) 통합 조회 성공:")
-                print(f"   통계명: {result.get('stats_name', 'N/A')}")
-            else:
-                print("⚠️ 테스트 테이블에서 k-stat 메타데이터 조회 실패")
 
 
 class TestScenarioMetadataWorkflow:
@@ -828,10 +710,7 @@ class TestScenarioMetadataWorkflow:
         # Step 4: 데이터 조회
         print("\n[Step 4] 데이터 조회...")
         result = data_client.get_data_auto_period(
-            org_id=org_id,
-            tbl_id=tbl_id,
-            start_date="2020",
-            end_date="2023"
+            org_id=org_id, tbl_id=tbl_id, start_date="2020", end_date="2023"
         )
 
         if result:

@@ -6,7 +6,6 @@ This list is the single source of truth for the public tool surface.
 Layer taxonomy:
     DISCOVER  - Find / browse statistics tables
     FETCH     - Retrieve / filter / aggregate raw data
-    PRESENT   - Analyze and tabulate fetched data
     DATA      - Inspect server-stored artifacts
     META      - Tool introspection (escape hatch)
     VERIFY    - Sanity-check numbers against the source (US-005, future)
@@ -20,7 +19,7 @@ from dataclasses import dataclass
 @dataclass(frozen=True)
 class ExposedTool:
     name: str
-    layer: str  # "DISCOVER" | "FETCH" | "PRESENT" | "VERIFY" | "DATA" | "META"
+    layer: str  # "DISCOVER" | "FETCH" | "VERIFY" | "DATA" | "META"
     purpose_ko: str
     purpose_en: str
 
@@ -69,19 +68,6 @@ V1_EXPOSED: tuple[ExposedTool, ...] = (
         "FETCH",
         "저장된 데이터를 그룹/집계 연산",
         "Group and aggregate stored statistics data",
-    ),
-    # ---- PRESENT --------------------------------------------------------
-    ExposedTool(
-        "execute_analysis",
-        "PRESENT",
-        "통계 분석 (변화율, CAGR 등 헬퍼 포함)",
-        "Statistical analysis (helpers for change-rate, CAGR, etc.)",
-    ),
-    ExposedTool(
-        "execute_table",
-        "PRESENT",
-        "스타일이 적용된 HTML 테이블 생성",
-        "Render styled HTML tables",
     ),
     # ---- DATA -----------------------------------------------------------
     ExposedTool(

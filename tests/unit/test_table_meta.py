@@ -72,7 +72,9 @@ class TestTableMetadataGetTableInfo:
         assert result is None
 
     @responses.activate
-    def test_get_table_info_success(self, meta_client: TableMetadata, sample_tbl_response: str):
+    def test_get_table_info_success(
+        self, meta_client: TableMetadata, sample_tbl_response: str
+    ):
         """테이블 정보 조회 성공."""
         responses.add(
             responses.GET,
@@ -116,7 +118,9 @@ class TestTableMetadataGetObjVars:
         assert meta_client.get_obj_vars("101", "") == []
 
     @responses.activate
-    def test_get_obj_vars_success(self, meta_client: TableMetadata, sample_obj_var_response: str):
+    def test_get_obj_vars_success(
+        self, meta_client: TableMetadata, sample_obj_var_response: str
+    ):
         """분류항목 조회 성공."""
         responses.add(
             responses.GET,
@@ -144,7 +148,9 @@ class TestTableMetadataGetItmVars:
         assert meta_client.get_itm_vars("101", "") == []
 
     @responses.activate
-    def test_get_itm_vars_success(self, meta_client: TableMetadata, sample_itm_var_response: str):
+    def test_get_itm_vars_success(
+        self, meta_client: TableMetadata, sample_itm_var_response: str
+    ):
         """항목 조회 성공."""
         responses.add(
             responses.GET,
@@ -172,7 +178,9 @@ class TestTableMetadataGetPrdInfo:
         assert meta_client.get_prd_info("101", "") == []
 
     @responses.activate
-    def test_get_prd_info_success(self, meta_client: TableMetadata, sample_prd_response: str):
+    def test_get_prd_info_success(
+        self, meta_client: TableMetadata, sample_prd_response: str
+    ):
         """수록기간 조회 성공."""
         responses.add(
             responses.GET,
@@ -205,10 +213,30 @@ class TestTableMetadataGetAllMetadata:
     ):
         """전체 메타데이터 조회 성공."""
         # 4개의 API 호출을 mock
-        responses.add(responses.GET, "https://kosis.kr/openapi/statisticsData.do", body=sample_tbl_response, status=200)
-        responses.add(responses.GET, "https://kosis.kr/openapi/statisticsData.do", body=sample_obj_var_response, status=200)
-        responses.add(responses.GET, "https://kosis.kr/openapi/statisticsData.do", body=sample_itm_var_response, status=200)
-        responses.add(responses.GET, "https://kosis.kr/openapi/statisticsData.do", body=sample_prd_response, status=200)
+        responses.add(
+            responses.GET,
+            "https://kosis.kr/openapi/statisticsData.do",
+            body=sample_tbl_response,
+            status=200,
+        )
+        responses.add(
+            responses.GET,
+            "https://kosis.kr/openapi/statisticsData.do",
+            body=sample_obj_var_response,
+            status=200,
+        )
+        responses.add(
+            responses.GET,
+            "https://kosis.kr/openapi/statisticsData.do",
+            body=sample_itm_var_response,
+            status=200,
+        )
+        responses.add(
+            responses.GET,
+            "https://kosis.kr/openapi/statisticsData.do",
+            body=sample_prd_response,
+            status=200,
+        )
 
         result = meta_client.get_all_metadata("101", "DT_1IN0001")
 
@@ -284,7 +312,9 @@ class TestTableMetadataGetComments:
         assert result == []
 
     @responses.activate
-    def test_get_comments_success(self, meta_client: TableMetadata, sample_cmmt_response: str):
+    def test_get_comments_success(
+        self, meta_client: TableMetadata, sample_cmmt_response: str
+    ):
         """주석 조회 성공."""
         responses.add(
             responses.GET,
@@ -330,7 +360,9 @@ class TestTableMetadataGetSource:
         assert result is None
 
     @responses.activate
-    def test_get_source_success(self, meta_client: TableMetadata, sample_source_response: str):
+    def test_get_source_success(
+        self, meta_client: TableMetadata, sample_source_response: str
+    ):
         """출처 조회 성공."""
         responses.add(
             responses.GET,
@@ -363,7 +395,9 @@ class TestTableMetadataGetWeight:
         assert result == []
 
     @responses.activate
-    def test_get_weight_success(self, meta_client: TableMetadata, sample_weight_response: str):
+    def test_get_weight_success(
+        self, meta_client: TableMetadata, sample_weight_response: str
+    ):
         """가중치 조회 성공."""
         responses.add(
             responses.GET,
@@ -383,7 +417,9 @@ class TestTableMetadataGetWeight:
         assert "type=WGT" in responses.calls[0].request.url
 
     @responses.activate
-    def test_get_weight_with_filters(self, meta_client: TableMetadata, sample_weight_response: str):
+    def test_get_weight_with_filters(
+        self, meta_client: TableMetadata, sample_weight_response: str
+    ):
         """분류코드 및 항목 필터로 가중치 조회."""
         responses.add(
             responses.GET,
@@ -393,9 +429,7 @@ class TestTableMetadataGetWeight:
         )
 
         result = meta_client.get_weight(
-            "101", "DT_1IN0001",
-            obj_codes={"C1": "00"},
-            itm_id="T001"
+            "101", "DT_1IN0001", obj_codes={"C1": "00"}, itm_id="T001"
         )
 
         assert len(result) >= 1
@@ -419,7 +453,9 @@ class TestTableMetadataGetUpdateDate:
         assert result == []
 
     @responses.activate
-    def test_get_update_date_success(self, meta_client: TableMetadata, sample_ncd_response: str):
+    def test_get_update_date_success(
+        self, meta_client: TableMetadata, sample_ncd_response: str
+    ):
         """자료갱신일 조회 성공."""
         responses.add(
             responses.GET,
@@ -438,7 +474,9 @@ class TestTableMetadataGetUpdateDate:
         assert "type=NCD" in responses.calls[0].request.url
 
     @responses.activate
-    def test_get_update_date_with_prd_se(self, meta_client: TableMetadata, sample_ncd_response: str):
+    def test_get_update_date_with_prd_se(
+        self, meta_client: TableMetadata, sample_ncd_response: str
+    ):
         """수록주기 필터로 자료갱신일 조회."""
         responses.add(
             responses.GET,
@@ -468,7 +506,9 @@ class TestTableMetadataGetUnit:
         assert result == []
 
     @responses.activate
-    def test_get_unit_success(self, meta_client: TableMetadata, sample_unit_response: str):
+    def test_get_unit_success(
+        self, meta_client: TableMetadata, sample_unit_response: str
+    ):
         """단위 조회 성공."""
         responses.add(
             responses.GET,
@@ -495,7 +535,9 @@ class TestTableMetadataGetOrgInfo:
         assert result is None
 
     @responses.activate
-    def test_get_org_info_success(self, meta_client: TableMetadata, sample_org_response: str):
+    def test_get_org_info_success(
+        self, meta_client: TableMetadata, sample_org_response: str
+    ):
         """기관 정보 조회 성공."""
         responses.add(
             responses.GET,
@@ -535,16 +577,58 @@ class TestTableMetadataGetAllMetadataExtended:
     ):
         """확장 메타데이터 포함 전체 조회 성공."""
         # 8개의 API 호출을 mock (기본 4개 + 확장 4개)
-        responses.add(responses.GET, "https://kosis.kr/openapi/statisticsData.do", body=sample_tbl_response, status=200)
-        responses.add(responses.GET, "https://kosis.kr/openapi/statisticsData.do", body=sample_obj_var_response, status=200)
-        responses.add(responses.GET, "https://kosis.kr/openapi/statisticsData.do", body=sample_itm_var_response, status=200)
-        responses.add(responses.GET, "https://kosis.kr/openapi/statisticsData.do", body=sample_prd_response, status=200)
-        responses.add(responses.GET, "https://kosis.kr/openapi/statisticsData.do", body=sample_cmmt_response, status=200)
-        responses.add(responses.GET, "https://kosis.kr/openapi/statisticsData.do", body=sample_source_response, status=200)
-        responses.add(responses.GET, "https://kosis.kr/openapi/statisticsData.do", body=sample_unit_response, status=200)
-        responses.add(responses.GET, "https://kosis.kr/openapi/statisticsData.do", body=sample_ncd_response, status=200)
+        responses.add(
+            responses.GET,
+            "https://kosis.kr/openapi/statisticsData.do",
+            body=sample_tbl_response,
+            status=200,
+        )
+        responses.add(
+            responses.GET,
+            "https://kosis.kr/openapi/statisticsData.do",
+            body=sample_obj_var_response,
+            status=200,
+        )
+        responses.add(
+            responses.GET,
+            "https://kosis.kr/openapi/statisticsData.do",
+            body=sample_itm_var_response,
+            status=200,
+        )
+        responses.add(
+            responses.GET,
+            "https://kosis.kr/openapi/statisticsData.do",
+            body=sample_prd_response,
+            status=200,
+        )
+        responses.add(
+            responses.GET,
+            "https://kosis.kr/openapi/statisticsData.do",
+            body=sample_cmmt_response,
+            status=200,
+        )
+        responses.add(
+            responses.GET,
+            "https://kosis.kr/openapi/statisticsData.do",
+            body=sample_source_response,
+            status=200,
+        )
+        responses.add(
+            responses.GET,
+            "https://kosis.kr/openapi/statisticsData.do",
+            body=sample_unit_response,
+            status=200,
+        )
+        responses.add(
+            responses.GET,
+            "https://kosis.kr/openapi/statisticsData.do",
+            body=sample_ncd_response,
+            status=200,
+        )
 
-        result = meta_client.get_all_metadata("101", "DT_1IN0001", include_extended=True)
+        result = meta_client.get_all_metadata(
+            "101", "DT_1IN0001", include_extended=True
+        )
 
         # 기본 메타데이터
         assert result["org_id"] == "101"
@@ -575,12 +659,34 @@ class TestTableMetadataGetAllMetadataExtended:
     ):
         """include_extended=False일 때 확장 필드는 포함되지 않음."""
         # 기본 4개만 mock
-        responses.add(responses.GET, "https://kosis.kr/openapi/statisticsData.do", body=sample_tbl_response, status=200)
-        responses.add(responses.GET, "https://kosis.kr/openapi/statisticsData.do", body=sample_obj_var_response, status=200)
-        responses.add(responses.GET, "https://kosis.kr/openapi/statisticsData.do", body=sample_itm_var_response, status=200)
-        responses.add(responses.GET, "https://kosis.kr/openapi/statisticsData.do", body=sample_prd_response, status=200)
+        responses.add(
+            responses.GET,
+            "https://kosis.kr/openapi/statisticsData.do",
+            body=sample_tbl_response,
+            status=200,
+        )
+        responses.add(
+            responses.GET,
+            "https://kosis.kr/openapi/statisticsData.do",
+            body=sample_obj_var_response,
+            status=200,
+        )
+        responses.add(
+            responses.GET,
+            "https://kosis.kr/openapi/statisticsData.do",
+            body=sample_itm_var_response,
+            status=200,
+        )
+        responses.add(
+            responses.GET,
+            "https://kosis.kr/openapi/statisticsData.do",
+            body=sample_prd_response,
+            status=200,
+        )
 
-        result = meta_client.get_all_metadata("101", "DT_1IN0001", include_extended=False)
+        result = meta_client.get_all_metadata(
+            "101", "DT_1IN0001", include_extended=False
+        )
 
         # 기본 메타데이터만 있어야 함
         assert "table_info" in result

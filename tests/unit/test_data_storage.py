@@ -7,8 +7,6 @@ MCP 패턴에 따라 원본 데이터를 파일로 저장하고
 
 import json
 import pytest
-import tempfile
-import os
 from pathlib import Path
 from typing import List, Dict, Any
 
@@ -25,6 +23,7 @@ from kosis_tools.config import DataStorageConfig
 # Fixtures
 # =============================================================================
 
+
 @pytest.fixture
 def sample_data() -> List[Dict[str, Any]]:
     """테스트용 샘플 데이터."""
@@ -40,11 +39,16 @@ def sample_data() -> List[Dict[str, Any]]:
             "DT": str(1000000 + i * 1000),
             "UNIT_NM": "명",
         }
-        for i, (year, region) in enumerate([
-            (2021, "서울특별시"), (2021, "부산광역시"),
-            (2022, "서울특별시"), (2022, "부산광역시"),
-            (2023, "서울특별시"), (2023, "부산광역시"),
-        ])
+        for i, (year, region) in enumerate(
+            [
+                (2021, "서울특별시"),
+                (2021, "부산광역시"),
+                (2022, "서울특별시"),
+                (2022, "부산광역시"),
+                (2023, "서울특별시"),
+                (2023, "부산광역시"),
+            ]
+        )
     ]
 
 
@@ -59,17 +63,19 @@ def large_data() -> List[Dict[str, Any]]:
     for year in years:
         for region in regions:
             for item in items:
-                data.append({
-                    "TBL_ID": "DT_LARGE001",
-                    "TBL_NM": "대용량 테스트 통계표",
-                    "ORG_ID": "101",
-                    "ORG_NM": "통계청",
-                    "PRD_DE": year,
-                    "C1_NM": region,
-                    "ITM_NM": item,
-                    "DT": str(hash((year, region, item)) % 10000000),
-                    "UNIT_NM": "단위",
-                })
+                data.append(
+                    {
+                        "TBL_ID": "DT_LARGE001",
+                        "TBL_NM": "대용량 테스트 통계표",
+                        "ORG_ID": "101",
+                        "ORG_NM": "통계청",
+                        "PRD_DE": year,
+                        "C1_NM": region,
+                        "ITM_NM": item,
+                        "DT": str(hash((year, region, item)) % 10000000),
+                        "UNIT_NM": "단위",
+                    }
+                )
     return data
 
 
@@ -85,6 +91,7 @@ def temp_data_dir(tmp_path):
 # =============================================================================
 # save_raw_data 테스트
 # =============================================================================
+
 
 class TestSaveRawData:
     """save_raw_data 함수 테스트."""
@@ -136,6 +143,7 @@ class TestSaveRawData:
 # =============================================================================
 # load_raw_data 테스트
 # =============================================================================
+
 
 class TestLoadRawData:
     """load_raw_data 함수 테스트."""
@@ -202,6 +210,7 @@ class TestLoadRawData:
 # list_saved_data 테스트
 # =============================================================================
 
+
 class TestListSavedData:
     """list_saved_data 함수 테스트."""
 
@@ -236,6 +245,7 @@ class TestListSavedData:
 # format_data_for_llm 통합 테스트
 # =============================================================================
 
+
 class TestFormatDataForLLMWithStorage:
     """format_data_for_llm의 파일 저장 기능 테스트."""
 
@@ -259,7 +269,7 @@ class TestFormatDataForLLMWithStorage:
         result = format_data_for_llm(sample_data, save_raw=True)
 
         assert "access_hint" in result["raw_data_file"]
-        assert "load_raw_data" in result["raw_data_file"]["access_hint"]
+        assert "read_stored_data" in result["raw_data_file"]["access_hint"]
 
     def test_format_summary_plus_file(self, large_data, temp_data_dir):
         """대용량 데이터: 요약 + 파일 저장."""
@@ -298,6 +308,7 @@ class TestFormatDataForLLMWithStorage:
 # =============================================================================
 # 성능 테스트
 # =============================================================================
+
 
 class TestPerformance:
     """성능 관련 테스트."""

@@ -19,7 +19,7 @@ Claude Desktop, Claude Code, Cursor, Windsurf 같은 MCP 지원 도구에서 통
 - 기관/주제별 통계 목록 탐색
 - 통계표 분류, 항목, 수록 기간 같은 메타데이터 조회
 - 원천 데이터 조회, 필터링, 그룹 집계
-- 저장된 데이터 청크 읽기와 표/분석 헬퍼 제공
+- 저장된 데이터 청크 읽기와 원천 데이터 검증
 - `verify_statistics`로 특정 수치가 KOSIS 원천 행과 맞는지 확인
 
 KOSIS API는 테이블마다 필요한 파라미터가 조금씩 다르고, 기간/분기/지자체
@@ -117,7 +117,6 @@ curl https://<your-host>/health
 | 가공 | `filter_statistics`, `aggregate_statistics` | 필터링, 그룹 집계 |
 | 저장 데이터 | `read_stored_data`, `list_stored_data` | 큰 결과를 나눠 읽기 |
 | 검증 | `verify_statistics` | 특정 수치와 원천 데이터 대조 |
-| 출력 | `execute_table`, `execute_analysis` | 표 생성, 간단한 분석 |
 
 전체 도구 목록과 이전 이름과의 매핑은
 [docs/TOOL_MIGRATION.md](./docs/TOOL_MIGRATION.md)를 참고하세요.

@@ -212,13 +212,12 @@ def run(
         "cases": [asdict(r) for r in results],
     }
     if effective_dry_run:
-        payload["note"] = (
-            skeleton_note
-            or "dry-run skeleton — actual scoring deferred"
-        )
+        payload["note"] = skeleton_note or "dry-run skeleton — actual scoring deferred"
 
     out_path.parent.mkdir(parents=True, exist_ok=True)
-    out_path.write_text(json.dumps(payload, indent=2, ensure_ascii=False), encoding="utf-8")
+    out_path.write_text(
+        json.dumps(payload, indent=2, ensure_ascii=False), encoding="utf-8"
+    )
 
     print(
         json.dumps(
