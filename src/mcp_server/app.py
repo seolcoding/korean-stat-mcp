@@ -152,37 +152,9 @@ def create_app() -> Starlette:
     from .middleware import ApiKeyMiddleware
     mcp_app.add_middleware(ApiKeyMiddleware)
 
-    # Rate limiting (default 300 rpm, override via RATE_LIMIT_RPM).
-    from slowapi.errors import RateLimitExceeded
-    from slowapi.middleware import SlowAPIMiddleware
-
-    from .middleware import build_rate_limiter
-
-    limiter = build_rate_limiter()
-    mcp_app.state.limiter = limiter
-    mcp_app.add_middleware(SlowAPIMiddleware)
-
-    # slowapi's _get_route_name() calls handler.__name__, but FastMCP mounts
-    # StreamableHTTPASGIApp (an ASGI object, not a plain function).  Patch
-    # __name__ / __module__ so slowapi can build a route name, then exempt
-    # /mcp entirely — authentication there is already handled by ApiKeyMiddleware.
-    for route in mcp_app.routes:
-        endpoint = getattr(route, "endpoint", None)
-        if endpoint is not None and not hasattr(endpoint, "__name__"):
-            endpoint.__name__ = "mcp_asgi_app"
-            endpoint.__module__ = "fastmcp.server.http"
-            limiter._exempt_routes.add(
-                f"{endpoint.__module__}.{endpoint.__name__}"
-            )
-
-    async def _rate_limit_handler(request: Request, exc: RateLimitExceeded):
-        return JSONResponse(
-            {"error": "rate_limit_exceeded", "detail": str(exc.detail)},
-            status_code=429,
-            headers={"Retry-After": "60"},
-        )
-
-    mcp_app.add_exception_handler(RateLimitExceeded, _rate_limit_handler)
+    # Path-agnostic rate limiting (RATE_LIMIT_RPM env, default 300/min per IP+apiKey).
+    from .middleware import RateLimitMiddleware
+    mcp_app.add_middleware(RateLimitMiddleware)
 
     # Add startup event for DB initialization
     async def init_database():

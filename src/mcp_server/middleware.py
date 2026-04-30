@@ -50,37 +50,50 @@ def missing_api_key_response() -> Response:
 
 import hashlib
 
-from slowapi import Limiter
-from slowapi.errors import RateLimitExceeded
-from slowapi.util import get_remote_address
+from limits import RateLimitItemPerMinute
+from limits.aio.storage import MemoryStorage
+from limits.aio.strategies import MovingWindowRateLimiter
 
 
-def _key_func(request: Request) -> str:
-    """Rate-limit bucket = client IP + first 8 chars of apiKey hash.
+def _bucket_key(request: Request) -> str:
+    """Composite bucket: client IP + first 8 chars of sha256(apiKey).
 
-    Using only IP would let one buggy user starve everyone behind the same NAT;
-    using only the apiKey would let one user rotate IPs to bypass it. The
-    composite bucket caps both axes.
+    IP-only would let one buggy user starve everyone behind a NAT;
+    apiKey-only would let one user rotate IPs to bypass.
     """
-    ip = get_remote_address(request)
+    client = request.client
+    ip = client.host if client else "unknown"
     api_key = request.query_params.get("apiKey", "")
     digest = hashlib.sha256(api_key.encode()).hexdigest()[:8] if api_key else "anon"
     return f"{ip}:{digest}"
 
 
-def build_rate_limiter() -> Limiter:
-    """Create a slowapi Limiter using `RATE_LIMIT_RPM` from env (default 300)."""
-    rpm = int(os.getenv("RATE_LIMIT_RPM", "300"))
-    return Limiter(
-        key_func=_key_func,
-        default_limits=[f"{rpm}/minute"],
-        headers_enabled=True,
-    )
+class RateLimitMiddleware(BaseHTTPMiddleware):
+    """Path-agnostic rate limit. RATE_LIMIT_RPM env (default 300) requests
+    per minute per (IP, apiKey hash) bucket. Applies to /mcp, /health, /info.
+    """
+
+    def __init__(self, app, rpm: int | None = None) -> None:
+        super().__init__(app)
+        self._storage = MemoryStorage()
+        self._strategy = MovingWindowRateLimiter(self._storage)
+        configured_rpm = rpm if rpm is not None else int(os.getenv("RATE_LIMIT_RPM", "300"))
+        self._limit = RateLimitItemPerMinute(configured_rpm)
+
+    async def dispatch(self, request: Request, call_next):  # type: ignore[override]
+        bucket = _bucket_key(request)
+        allowed = await self._strategy.hit(self._limit, bucket)
+        if not allowed:
+            return JSONResponse(
+                {"error": "rate_limit_exceeded", "detail": "too many requests"},
+                status_code=429,
+                headers={"Retry-After": "60"},
+            )
+        return await call_next(request)
 
 
 __all__ = [
     "ApiKeyMiddleware",
     "missing_api_key_response",
-    "build_rate_limiter",
-    "RateLimitExceeded",
+    "RateLimitMiddleware",
 ]

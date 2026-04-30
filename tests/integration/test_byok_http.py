@@ -114,3 +114,27 @@ def test_rate_limit_returns_429(monkeypatch):
     assert r2.status_code == 200
     assert r3.status_code == 429
     assert "Retry-After" in r3.headers
+
+
+def test_rate_limit_applies_to_mcp(monkeypatch):
+    """The /mcp endpoint itself must be rate limited — this is the regression
+    we're fixing from the prior slowapi exemption."""
+    monkeypatch.setenv("RATE_LIMIT_RPM", "2")
+    monkeypatch.setenv("KOSIS_API_KEY", "env-key")
+    from mcp_server.app import create_app
+
+    app = create_app()
+    client = TestClient(app, raise_server_exceptions=False)
+
+    payload = {"jsonrpc": "2.0", "id": 1, "method": "initialize", "params": {}}
+    r1 = client.post("/mcp?apiKey=k1", json=payload)
+    r2 = client.post("/mcp?apiKey=k1", json=payload)
+    r3 = client.post("/mcp?apiKey=k1", json=payload)
+
+    # First two requests pass the rate limit. Their downstream MCP behavior
+    # may be 200 / 500 / 4xx — we don't care, as long as it's not 429.
+    assert r1.status_code != 429
+    assert r2.status_code != 429
+    # The third must be rate limited.
+    assert r3.status_code == 429
+    assert "Retry-After" in r3.headers
