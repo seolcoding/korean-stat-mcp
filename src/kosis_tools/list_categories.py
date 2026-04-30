@@ -94,6 +94,46 @@ class ThemeCode:
     INTERNATIONAL = "O"  # 국제/북한
 
 
+# vwCd 코드 상수 — KOSIS 공식 12개 (개발가이드 §2.1)
+class ViewCode:
+    """KOSIS statisticsList.do 의 vwCd (서비스뷰 코드).
+
+    각 코드는 KOSIS의 별개 통계 뷰 트리를 가리킵니다. 대부분 사용 사례는
+    `MT_ZTITLE`(국내 주제별)와 `MT_OTITLE`(국내 기관별)로 충분하지만,
+    영문/광복이전/북한/국제 통계 등을 직접 탐색하려면 다른 코드를 씁니다.
+
+    매뉴얼: KOSIS 공유서비스(OpenAPI) 개발가이드 v1.0, §2.1 통계목록.
+    """
+
+    DOMESTIC_BY_THEME = "MT_ZTITLE"  # 국내통계 주제별
+    DOMESTIC_BY_ORG = "MT_OTITLE"  # 국내통계 기관별
+    EREGIONAL_BY_THEME = "MT_GTITLE01"  # e-지방지표(주제별)
+    EREGIONAL_BY_REGION = "MT_GTITLE02"  # e-지방지표(지역별)
+    PRE_LIBERATION = "MT_CHOSUN_TITLE"  # 광복이전통계 (1908~1943)
+    KOREAN_YEARBOOK = "MT_HANKUK_TITLE"  # 대한민국통계연감
+    DISCONTINUED = "MT_STOP_TITLE"  # 작성중지통계
+    INTERNATIONAL = "MT_RTITLE"  # 국제통계
+    NORTH_KOREA = "MT_BUKHAN"  # 북한통계
+    BY_TARGET = "MT_TM1_TITLE"  # 대상별통계
+    BY_ISSUE = "MT_TM2_TITLE"  # 이슈별통계
+    ENGLISH_KOSIS = "MT_ETITLE"  # 영문 KOSIS
+
+    ALL: tuple[str, ...] = (
+        "MT_ZTITLE",
+        "MT_OTITLE",
+        "MT_GTITLE01",
+        "MT_GTITLE02",
+        "MT_CHOSUN_TITLE",
+        "MT_HANKUK_TITLE",
+        "MT_STOP_TITLE",
+        "MT_RTITLE",
+        "MT_BUKHAN",
+        "MT_TM1_TITLE",
+        "MT_TM2_TITLE",
+        "MT_ETITLE",
+    )
+
+
 class CategoryList(KosisBaseClient):
     """
     KOSIS 카테고리별 통계 목록 클라이언트.
@@ -277,6 +317,63 @@ class CategoryList(KosisBaseClient):
             return [result]
         else:
             return []
+
+    def list_by_view(
+        self,
+        view_code: str,
+        parent_list_id: Optional[str] = None,
+        *,
+        response_format: str | None = None,
+    ) -> List[Dict[str, Any]]:
+        """
+        임의의 KOSIS view (vwCd)에서 목록을 조회합니다.
+
+        12개 공식 vwCd (ViewCode 클래스 참고) 중 하나를 직접 지정해 호출합니다.
+        주로 광복이전/북한/국제/영문 KOSIS 등 비주류 트리를 탐색할 때 사용.
+        일반 국내 주제·기관별 조회는 list_by_theme / list_by_org 권장.
+
+        Args:
+            view_code: KOSIS view 코드 (예: "MT_ETITLE", "MT_BUKHAN").
+                       ViewCode 상수 사용 가능.
+            parent_list_id: 해당 view 트리 내 시작 노드 (선택).
+                            None이면 view의 루트(빈 parentListId) 반환.
+
+        Returns:
+            list[dict]: KOSIS 응답. view 코드에 따라 필드 구성 다름.
+
+        Example:
+            >>> # 영문 KOSIS 루트
+            >>> CategoryList().list_by_view(ViewCode.ENGLISH_KOSIS)
+            >>> # 북한통계 특정 노드
+            >>> CategoryList().list_by_view(ViewCode.NORTH_KOREA, parent_list_id="...")
+
+        Note:
+            - 알려지지 않은 view_code는 KOSIS가 빈 결과 반환 (오류 아님)
+            - parent_list_id 형식은 view마다 다름; 첫 호출은 None으로 트리 root 탐색
+        """
+        if not view_code or not view_code.strip():
+            logger.warning("view_code가 비어있습니다.")
+            return []
+
+        params: Dict[str, Any] = {
+            "method": "getList",
+            "format": build_format_param(response_format),  # type: ignore[arg-type]
+            "vwCd": view_code.strip(),
+        }
+        if parent_list_id:
+            params["parentListId"] = parent_list_id.strip()
+
+        logger.info(f"view 별 통계 목록 조회: vwCd={view_code} parent={parent_list_id}")
+
+        result = self._request("GET", Endpoints.STATISTICS_LIST, params)
+        if result is None:
+            return []
+        if isinstance(result, list):
+            logger.info(f"조회 결과: {len(result)}개")
+            return result
+        if isinstance(result, dict):
+            return [result]
+        return []
 
     def list_statistics(
         self,

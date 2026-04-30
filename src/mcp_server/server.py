@@ -132,34 +132,73 @@ def browse_categories(
     code: Optional[str] = None,
 ) -> dict:
     """
-    기관별 또는 주제별로 통계 목록을 탐색합니다.
-
-    특정 기관이나 주제 분야의 통계를 찾을 때 사용합니다.
+    기관별 / 주제별 / 임의 view 로 KOSIS 통계 목록을 탐색합니다.
 
     Args:
         by: 탐색 기준
-            - "org": 기관별 (통계청, 고용노동부 등)
-            - "theme": 주제별 (인구, 경제, 사회 등)
-        code: 기관 코드 또는 주제 코드 (선택)
-              None이면 전체 목록 반환
+            - "org": 기관별 (통계청, 고용노동부 등) — 일반 사용
+            - "theme": 주제별 (인구, 경제, 사회 등) — 일반 사용
+            - "view": 임의 vwCd (광복이전 / 북한 / 영문 / e-지방지표 / 국제 등 12종)
+        code: by="org"면 기관 코드(101, 118, ...).
+              by="theme"이면 주제 코드(A, B, C, ...).
+              by="view"이면 vwCd 본문(MT_ETITLE, MT_BUKHAN, MT_CHOSUN_TITLE,
+              MT_HANKUK_TITLE, MT_STOP_TITLE, MT_RTITLE, MT_TM1_TITLE,
+              MT_TM2_TITLE, MT_GTITLE01, MT_GTITLE02, MT_OTITLE, MT_ZTITLE).
+              None이면 view 루트 목록 반환.
 
     Returns:
         {
-            "browse_type": "org",
-            "code": null,
-            "count": 8,
-            "categories": [...],
-            "usage": "code를 지정하면 해당 카테고리의 통계표 목록 조회"
+            "browse_type": "org" | "theme" | "view",
+            "code": <입력 그대로>,
+            "count": <int>,
+            "categories" 또는 "statistics": [...],
+            "usage" 또는 "next_step": <안내 문구>
         }
 
     Example:
-        >>> browse_categories(by="org")  # 전체 기관 목록
-        >>> browse_categories(by="org", code="101")  # 통계청 통계 목록
-        >>> browse_categories(by="theme")  # 주제 목록
+        >>> browse_categories(by="org")
+        >>> browse_categories(by="org", code="101")
+        >>> browse_categories(by="theme")
+        >>> browse_categories(by="view", code="MT_ETITLE")     # 영문 KOSIS
+        >>> browse_categories(by="view", code="MT_BUKHAN")     # 북한통계
     """
+    from kosis_tools.list_categories import CategoryList, ViewCode
     from kosis_tools.report_tools import browse_categories as _browse
 
     try:
+        if by == "view":
+            view_code = (code or "").strip()
+            if not view_code:
+                return {
+                    "browse_type": "view",
+                    "code": None,
+                    "count": 0,
+                    "categories": [],
+                    "usage": (
+                        "browse_categories(by='view', code='<vwCd>')로 호출. "
+                        f"가능한 vwCd: {', '.join(ViewCode.ALL)}"
+                    ),
+                    "supported_view_codes": list(ViewCode.ALL),
+                }
+            if view_code not in ViewCode.ALL:
+                return {
+                    "browse_type": "view",
+                    "code": view_code,
+                    "error": f"지원하지 않는 vwCd: {view_code}",
+                    "supported_view_codes": list(ViewCode.ALL),
+                }
+            results = CategoryList().list_by_view(view_code)
+            return {
+                "browse_type": "view",
+                "code": view_code,
+                "count": len(results),
+                "statistics": results,
+                "next_step": (
+                    "결과의 ORG_ID/TBL_ID로 get_table_metadata 또는 "
+                    "get_statistics_data 호출"
+                ),
+            }
+
         results = _browse(by=by, code=code)
 
         # 응답 구조화

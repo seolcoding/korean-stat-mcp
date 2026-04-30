@@ -204,3 +204,93 @@ class TestCategoryListStatistics:
         # getList 메서드와 MT_OTITLE 뷰 사용 확인
         assert "method=getList" in responses.calls[0].request.url
         assert "vwCd=MT_OTITLE" in responses.calls[0].request.url
+
+
+class TestListByView:
+    """CategoryList.list_by_view: 12개 vwCd 직접 호출."""
+
+    @pytest.mark.parametrize(
+        "view_code",
+        [
+            "MT_ZTITLE",
+            "MT_OTITLE",
+            "MT_GTITLE01",
+            "MT_GTITLE02",
+            "MT_CHOSUN_TITLE",
+            "MT_HANKUK_TITLE",
+            "MT_STOP_TITLE",
+            "MT_RTITLE",
+            "MT_BUKHAN",
+            "MT_TM1_TITLE",
+            "MT_TM2_TITLE",
+            "MT_ETITLE",
+        ],
+    )
+    @responses.activate
+    def test_each_documented_view_code_passes_through(
+        self, category_client: CategoryList, view_code: str
+    ):
+        """KOSIS 공식 12개 vwCd 모두 URL에 그대로 전달되는지 확인."""
+        responses.add(
+            responses.GET,
+            "https://kosis.kr/openapi/statisticsList.do",
+            body="[]",
+            status=200,
+        )
+
+        category_client.list_by_view(view_code)
+
+        url = responses.calls[0].request.url
+        assert f"vwCd={view_code}" in url
+        assert "method=getList" in url
+
+    @responses.activate
+    def test_list_by_view_with_parent_list_id(
+        self, category_client: CategoryList
+    ):
+        responses.add(
+            responses.GET,
+            "https://kosis.kr/openapi/statisticsList.do",
+            body="[]",
+            status=200,
+        )
+
+        category_client.list_by_view("MT_BUKHAN", parent_list_id="A")
+
+        url = responses.calls[0].request.url
+        assert "vwCd=MT_BUKHAN" in url
+        assert "parentListId=A" in url
+
+    @responses.activate
+    def test_list_by_view_omits_parent_when_none(
+        self, category_client: CategoryList
+    ):
+        responses.add(
+            responses.GET,
+            "https://kosis.kr/openapi/statisticsList.do",
+            body="[]",
+            status=200,
+        )
+
+        category_client.list_by_view("MT_ETITLE")
+
+        url = responses.calls[0].request.url
+        assert "parentListId" not in url
+
+    def test_list_by_view_empty_code_returns_empty(
+        self, category_client: CategoryList
+    ):
+        assert category_client.list_by_view("") == []
+        assert category_client.list_by_view("   ") == []
+
+
+def test_view_code_constants_match_official_12():
+    from kosis_tools.list_categories import ViewCode
+    assert len(ViewCode.ALL) == 12
+    assert "MT_ZTITLE" in ViewCode.ALL
+    assert "MT_BUKHAN" in ViewCode.ALL
+    assert "MT_ETITLE" in ViewCode.ALL
+    # named accessors map correctly
+    assert ViewCode.NORTH_KOREA == "MT_BUKHAN"
+    assert ViewCode.ENGLISH_KOSIS == "MT_ETITLE"
+    assert ViewCode.PRE_LIBERATION == "MT_CHOSUN_TITLE"
