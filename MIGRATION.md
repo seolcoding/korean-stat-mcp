@@ -127,3 +127,21 @@ uv run python scripts/validation/run_llm_judge.py
 ## 신뢰도 / Reliability
 
 KOSIS API 호출 성공률 **99.38%** (10,000 샘플 테스트, Phase 4.5에서 측정)는 그대로 유지됩니다. 모든 신규 파라미터는 기본값이 비활성이라 기존 호출 경로는 byte-identical 입니다.
+
+---
+
+## 0.2.0 — Hosted instance + per-request API key
+
+A public hosted endpoint at `https://kosis.seolcoding.com/mcp` is now available. URL form:
+
+```
+https://kosis.seolcoding.com/mcp?apiKey=<your KOSIS OpenAPI key>
+```
+
+For self-hosted deployments **nothing changes** — `KOSIS_API_KEY` env var still works exactly as before. The new behavior:
+
+- HTTP requests with `?apiKey=` use that per-request key (env is ignored for that request).
+- HTTP requests with no `?apiKey=` fall back to env.
+- Without either, `/mcp` returns `401 missing_api_key` instead of failing deep inside a tool.
+
+stdio mode is unchanged.
