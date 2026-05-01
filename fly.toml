@@ -11,12 +11,19 @@ primary_region = "nrt"
   FASTMCP_STATELESS_HTTP = "true"
   PYTHONUNBUFFERED = "1"
   RATE_LIMIT_RPM = "300"
-  # Cap KOSIS upstream timing so the worst case (1 attempt + 1 retry + delay)
-  # stays under Fly's 60s HTTP proxy timeout. Defaults (60s timeout × 3 retries)
-  # could accumulate to 184s and surface as 502/503 to the client.
-  # Worst case here: 25 + 1 + 25 = 51s.
-  KOSIS_TIMEOUT = "25"
-  KOSIS_MAX_RETRIES = "1"
+  # Cap KOSIS upstream timing so the worst case stays well under Fly's 60s
+  # HTTP proxy timeout. Tuning rationale:
+  #
+  # Observed: get_statistics_data routinely hits ~28s because the first
+  # KOSIS connection after a Fly suspend-resume gets reset by KOSIS, and
+  # we then wait the full timeout before retrying.
+  #
+  # New budget: 10 + 1 + 10 + 2 + 10 = 33s worst-case (3 attempts), but
+  # the common case (one reset, second attempt succeeds) lands at ~12s
+  # instead of ~28s. The lifespan KOSIS warm-up in app.py also reduces
+  # how often the first-attempt reset hits at all.
+  KOSIS_TIMEOUT = "10"
+  KOSIS_MAX_RETRIES = "2"
   KOSIS_RETRY_DELAY = "1"
 
 [http_service]
