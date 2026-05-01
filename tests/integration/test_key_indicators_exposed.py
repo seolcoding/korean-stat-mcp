@@ -163,3 +163,31 @@ def test_get_key_indicator_details_missing_id():
 
     result = get_key_indicator_details.fn(jipyo_id="")  # type: ignore[attr-defined]
     assert "error" in result
+
+
+def test_search_key_indicators_id_rejects_non_numeric():
+    """search_key_indicators(by='id', ...)는 numeric jipyoId만 받음.
+
+    KOSIS API에 비숫자 jipyoId를 보내면 항상 빈 결과라서, 클라이언트 측에서
+    조기에 친화적 에러를 반환해 라운드트립을 절약한다.
+    """
+    from mcp_server.server import search_key_indicators
+
+    result = search_key_indicators.fn(by="id", value="abc")  # type: ignore[attr-defined]
+    assert "error" in result
+    assert "numeric jipyoId" in result["error"]
+    assert result["count"] == 0
+    assert result["results"] == []
+
+
+def test_search_key_indicators_id_accepts_numeric(monkeypatch):
+    """numeric value는 가드 통과 후 KOSIS 호출까지 진행."""
+    monkeypatch.setenv("KOSIS_API_KEY", "test-key")
+    _stub("indListSearchRequest.do", KOSIS_LIST_RESPONSE_LIST)
+
+    from mcp_server.server import search_key_indicators
+
+    result = search_key_indicators.fn(by="id", value="160")  # type: ignore[attr-defined]
+    # 가드 통과 → KOSIS mock 응답에 도달
+    assert "error" not in result or "numeric jipyoId" not in result.get("error", "")
+    assert result["count"] >= 0
