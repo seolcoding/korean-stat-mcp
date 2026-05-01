@@ -845,23 +845,61 @@ class TableMetadata(KosisBaseClient):
             - include_extended=True: 8개의 API 호출
             - 데이터 조회 전 테이블 구조 파악에 유용
         """
+        from concurrent.futures import ThreadPoolExecutor, as_completed
+
         logger.info(
             f"전체 메타데이터 조회: org_id={org_id}, tbl_id={tbl_id}, extended={include_extended}"
         )
 
-        result = {
-            "table_info": self.get_table_info(org_id, tbl_id),
-            "obj_vars": self.get_obj_vars(org_id, tbl_id),
-            "itm_vars": self.get_itm_vars(org_id, tbl_id),
-            "prd_info": self.get_prd_info(org_id, tbl_id),
-            "org_id": org_id,
-            "tbl_id": tbl_id,
+        # Each sub-type call hits KOSIS independently (~500-800ms RTT each).
+        # Running them on a thread pool collapses 4-8 sequential calls into
+        # one wall-clock unit. Each thread gets its own TableMetadata so that
+        # the per-instance _last_error doesn't race; we aggregate errors at
+        # the end into self._last_error so the caller still sees them.
+        jobs: dict[str, str] = {
+            "table_info": "get_table_info",
+            "obj_vars": "get_obj_vars",
+            "itm_vars": "get_itm_vars",
+            "prd_info": "get_prd_info",
         }
-
         if include_extended:
-            result["comments"] = self.get_comments(org_id, tbl_id)
-            result["source"] = self.get_source(org_id, tbl_id)
-            result["units"] = self.get_unit(org_id, tbl_id)
-            result["update_dates"] = self.get_update_date(org_id, tbl_id)
+            jobs.update(
+                {
+                    "comments": "get_comments",
+                    "source": "get_source",
+                    "units": "get_unit",
+                    "update_dates": "get_update_date",
+                }
+            )
+
+        def _run(method_name: str):
+            cli = TableMetadata(self.config)
+            return getattr(cli, method_name)(org_id, tbl_id), cli._last_error
+
+        result: Dict[str, Any] = {"org_id": org_id, "tbl_id": tbl_id}
+        errors = []
+        with ThreadPoolExecutor(max_workers=min(len(jobs), 4)) as ex:
+            fut_to_key = {ex.submit(_run, m): k for k, m in jobs.items()}
+            for fut in as_completed(fut_to_key):
+                key = fut_to_key[fut]
+                value, err = fut.result()
+                result[key] = value
+                if err is not None:
+                    errors.append(err)
+
+        # Pick the most actionable error (auth > rate_limit > server > query
+        # > input > unknown) so the LLM gets the highest-priority signal.
+        if errors:
+            priority = {
+                "auth": 0,
+                "rate_limit": 1,
+                "server": 2,
+                "query": 3,
+                "input": 4,
+                "unknown": 5,
+            }
+            self._last_error = sorted(
+                errors, key=lambda e: priority.get(e.category, 5)
+            )[0]
 
         return result

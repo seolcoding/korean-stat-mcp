@@ -211,32 +211,30 @@ class TestTableMetadataGetAllMetadata:
         sample_itm_var_response: str,
         sample_prd_response: str,
     ):
-        """전체 메타데이터 조회 성공."""
-        # 4개의 API 호출을 mock
-        responses.add(
-            responses.GET,
-            "https://kosis.kr/openapi/statisticsData.do",
-            body=sample_tbl_response,
-            status=200,
-        )
-        responses.add(
-            responses.GET,
-            "https://kosis.kr/openapi/statisticsData.do",
-            body=sample_obj_var_response,
-            status=200,
-        )
-        responses.add(
-            responses.GET,
-            "https://kosis.kr/openapi/statisticsData.do",
-            body=sample_itm_var_response,
-            status=200,
-        )
-        responses.add(
-            responses.GET,
-            "https://kosis.kr/openapi/statisticsData.do",
-            body=sample_prd_response,
-            status=200,
-        )
+        """전체 메타데이터 조회 성공.
+
+        get_all_metadata는 4개 sub-type을 ThreadPoolExecutor로 병렬 호출하므로
+        request 순서가 비결정적이다. type 파라미터로 dispatch되는 mock으로 검증.
+        """
+        from responses import matchers
+
+        for type_code, body in (
+            ("TBL", sample_tbl_response),
+            ("OBJ_VAR", sample_obj_var_response),
+            ("ITM_VAR", sample_itm_var_response),
+            ("PRD", sample_prd_response),
+        ):
+            responses.add(
+                responses.GET,
+                "https://kosis.kr/openapi/statisticsData.do",
+                body=body,
+                status=200,
+                match=[
+                    matchers.query_param_matcher(
+                        {"type": type_code}, strict_match=False
+                    )
+                ],
+            )
 
         result = meta_client.get_all_metadata("101", "DT_1IN0001")
 
@@ -575,56 +573,33 @@ class TestTableMetadataGetAllMetadataExtended:
         sample_unit_response: str,
         sample_ncd_response: str,
     ):
-        """확장 메타데이터 포함 전체 조회 성공."""
-        # 8개의 API 호출을 mock (기본 4개 + 확장 4개)
-        responses.add(
-            responses.GET,
-            "https://kosis.kr/openapi/statisticsData.do",
-            body=sample_tbl_response,
-            status=200,
-        )
-        responses.add(
-            responses.GET,
-            "https://kosis.kr/openapi/statisticsData.do",
-            body=sample_obj_var_response,
-            status=200,
-        )
-        responses.add(
-            responses.GET,
-            "https://kosis.kr/openapi/statisticsData.do",
-            body=sample_itm_var_response,
-            status=200,
-        )
-        responses.add(
-            responses.GET,
-            "https://kosis.kr/openapi/statisticsData.do",
-            body=sample_prd_response,
-            status=200,
-        )
-        responses.add(
-            responses.GET,
-            "https://kosis.kr/openapi/statisticsData.do",
-            body=sample_cmmt_response,
-            status=200,
-        )
-        responses.add(
-            responses.GET,
-            "https://kosis.kr/openapi/statisticsData.do",
-            body=sample_source_response,
-            status=200,
-        )
-        responses.add(
-            responses.GET,
-            "https://kosis.kr/openapi/statisticsData.do",
-            body=sample_unit_response,
-            status=200,
-        )
-        responses.add(
-            responses.GET,
-            "https://kosis.kr/openapi/statisticsData.do",
-            body=sample_ncd_response,
-            status=200,
-        )
+        """확장 메타데이터 포함 전체 조회 성공.
+
+        병렬 fan-out 시 type 파라미터로 dispatch되는 mock으로 검증.
+        """
+        from responses import matchers
+
+        for type_code, body in (
+            ("TBL", sample_tbl_response),
+            ("OBJ_VAR", sample_obj_var_response),
+            ("ITM_VAR", sample_itm_var_response),
+            ("PRD", sample_prd_response),
+            ("CMMT", sample_cmmt_response),
+            ("SOURCE", sample_source_response),
+            ("UNIT", sample_unit_response),
+            ("NCD", sample_ncd_response),
+        ):
+            responses.add(
+                responses.GET,
+                "https://kosis.kr/openapi/statisticsData.do",
+                body=body,
+                status=200,
+                match=[
+                    matchers.query_param_matcher(
+                        {"type": type_code}, strict_match=False
+                    )
+                ],
+            )
 
         result = meta_client.get_all_metadata(
             "101", "DT_1IN0001", include_extended=True
@@ -658,31 +633,25 @@ class TestTableMetadataGetAllMetadataExtended:
         sample_prd_response: str,
     ):
         """include_extended=False일 때 확장 필드는 포함되지 않음."""
-        # 기본 4개만 mock
-        responses.add(
-            responses.GET,
-            "https://kosis.kr/openapi/statisticsData.do",
-            body=sample_tbl_response,
-            status=200,
-        )
-        responses.add(
-            responses.GET,
-            "https://kosis.kr/openapi/statisticsData.do",
-            body=sample_obj_var_response,
-            status=200,
-        )
-        responses.add(
-            responses.GET,
-            "https://kosis.kr/openapi/statisticsData.do",
-            body=sample_itm_var_response,
-            status=200,
-        )
-        responses.add(
-            responses.GET,
-            "https://kosis.kr/openapi/statisticsData.do",
-            body=sample_prd_response,
-            status=200,
-        )
+        from responses import matchers
+
+        for type_code, body in (
+            ("TBL", sample_tbl_response),
+            ("OBJ_VAR", sample_obj_var_response),
+            ("ITM_VAR", sample_itm_var_response),
+            ("PRD", sample_prd_response),
+        ):
+            responses.add(
+                responses.GET,
+                "https://kosis.kr/openapi/statisticsData.do",
+                body=body,
+                status=200,
+                match=[
+                    matchers.query_param_matcher(
+                        {"type": type_code}, strict_match=False
+                    )
+                ],
+            )
 
         result = meta_client.get_all_metadata(
             "101", "DT_1IN0001", include_extended=False
@@ -699,3 +668,63 @@ class TestTableMetadataGetAllMetadataExtended:
         assert "source" not in result
         assert "units" not in result
         assert "update_dates" not in result
+
+    @responses.activate
+    def test_get_all_metadata_runs_in_parallel(
+        self,
+        meta_client: TableMetadata,
+        sample_tbl_response: str,
+        sample_obj_var_response: str,
+        sample_itm_var_response: str,
+        sample_prd_response: str,
+    ):
+        """병렬 fan-out 검증.
+
+        각 sub-call에 일정 sleep을 끼워, 직렬이면 4*delay, 병렬이면 ~delay만
+        걸려야 함. 안전 마진을 두고 < 2.5*delay 면 통과로 본다.
+        """
+        import time
+
+        from responses import matchers
+
+        delay = 0.2
+
+        def _slow(body):
+            def _cb(request):
+                time.sleep(delay)
+                return (
+                    200,
+                    {"Content-Type": "application/json; charset=utf-8"},
+                    body.encode("utf-8"),
+                )
+
+            return _cb
+
+        for type_code, body in (
+            ("TBL", sample_tbl_response),
+            ("OBJ_VAR", sample_obj_var_response),
+            ("ITM_VAR", sample_itm_var_response),
+            ("PRD", sample_prd_response),
+        ):
+            responses.add_callback(
+                responses.GET,
+                "https://kosis.kr/openapi/statisticsData.do",
+                callback=_slow(body),
+                match=[
+                    matchers.query_param_matcher(
+                        {"type": type_code}, strict_match=False
+                    )
+                ],
+            )
+
+        t0 = time.monotonic()
+        result = meta_client.get_all_metadata("101", "DT_1IN0001")
+        elapsed = time.monotonic() - t0
+
+        # 병렬이면 ~delay, 직렬이면 ~4*delay = 0.8s. 마진 두고 < 2.5*delay (0.5s).
+        assert elapsed < 2.5 * delay, (
+            f"get_all_metadata took {elapsed:.2f}s with {delay}s mock delay; "
+            "expected parallel fan-out (< {:.2f}s)".format(2.5 * delay)
+        )
+        # 결과는 정상이어야 함
+        assert result["table_info"]["TBL_NM"] == "총조사인구 총괄(읍면동/성/연령별)"
