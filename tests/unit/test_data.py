@@ -400,3 +400,213 @@ class TestPeriodHelpers:
         url = responses.calls[0].request.url
         assert "newEstPrdCnt" not in url
         assert "prdInterval" not in url
+
+
+# =============================================================================
+# Smart-retry FSM coverage (data.py 24% → 60%+ goal, QA report A3)
+# =============================================================================
+
+
+class TestExecuteWithObjRetry:
+    """_execute_with_obj_retry 점진적 objL 확장 전략 검증.
+
+    이 함수는 objL1~objL4를 순차로 확장(strategies 1-4)하다 데이터가 잡히면
+    조기 반환하므로, 모킹할 때 strategy 단계마다 응답을 다르게 줘야 한다.
+    """
+
+    @responses.activate
+    def test_strategy_1_objL1_all_succeeds(
+        self, data_client: StatisticsData, sample_data_response: str
+    ):
+        """첫 시도(strategy 1: objL1=ALL)에서 데이터를 받으면 추가 호출 없이 반환."""
+        responses.add(
+            responses.GET,
+            "https://kosis.kr/openapi/Param/statisticsParameterData.do",
+            body=sample_data_response,
+            status=200,
+        )
+
+        result = data_client._execute_with_obj_retry(
+            org_id="101",
+            tbl_id="DT_1B040A3",
+            start_date="2022",
+            end_date="2023",
+            prd_se="Y",
+            obj_vars=[{"OBJ_ID": "ITEM", "OBJ_LV": "1"}],
+            itm_id="ALL",
+        )
+
+        assert len(result) == 3
+        # strategy 1만 호출됨 (전국 단일 첫 attempt 성공)
+        assert len(responses.calls) == 1
+        url = responses.calls[0].request.url
+        assert "objL1=ALL" in url
+        assert "objL2" not in url
+
+    @responses.activate
+    def test_strategy_falls_through_to_objL2(
+        self, data_client: StatisticsData, sample_data_response: str
+    ):
+        """strategy 1(objL1만) 빈 결과 → strategy 2(objL1+objL2 ALL)에서 성공."""
+        # 1차: 빈 결과
+        responses.add(
+            responses.GET,
+            "https://kosis.kr/openapi/Param/statisticsParameterData.do",
+            body="[]",
+            status=200,
+        )
+        # 2차: 성공
+        responses.add(
+            responses.GET,
+            "https://kosis.kr/openapi/Param/statisticsParameterData.do",
+            body=sample_data_response,
+            status=200,
+        )
+
+        result = data_client._execute_with_obj_retry(
+            org_id="101",
+            tbl_id="DT_1B040A3",
+            start_date="2022",
+            end_date="2023",
+            prd_se="Y",
+            obj_vars=[{"OBJ_ID": "ITEM", "OBJ_LV": "1"}],
+            itm_id="ALL",
+        )
+
+        assert len(result) == 3
+        assert len(responses.calls) == 2
+        # 두번째 호출에 objL2=ALL 포함
+        url2 = responses.calls[1].request.url
+        assert "objL1=ALL" in url2
+        assert "objL2=ALL" in url2
+
+
+class TestNoObjMetadataStrategies:
+    """_try_no_obj_metadata_strategies — OBJ 메타가 없는 테이블 fallback."""
+
+    @responses.activate
+    def test_regional_table_first_pattern_succeeds(
+        self, data_client: StatisticsData, sample_data_response: str
+    ):
+        """org_id="202" (부산) → region_code "26"으로 첫 시도 패턴 성공."""
+        responses.add(
+            responses.GET,
+            "https://kosis.kr/openapi/Param/statisticsParameterData.do",
+            body=sample_data_response,
+            status=200,
+        )
+
+        result = data_client._try_no_obj_metadata_strategies(
+            org_id="202",
+            tbl_id="DT_B_PUSAN",
+            start_date="2022",
+            end_date="2023",
+            prd_se="Y",
+            itm_id="ALL",
+        )
+
+        assert len(result) == 3
+        url = responses.calls[0].request.url
+        assert "objL1=26" in url  # 부산 지역 코드
+
+
+class TestFetchWithPeriodSplit:
+    """_fetch_with_period_split — 대용량 결과를 기간 분할로 회피."""
+
+    @responses.activate
+    def test_yearly_split_into_decade_chunks(
+        self, data_client: StatisticsData, sample_data_response: str
+    ):
+        """연간(Y) prd_se: 10년 단위 분할 후 결과 병합."""
+        # 연간이라 10년 chunk_years. 2010~2025는 2 chunks (2010-2019 + 2020-2025).
+        # 호출 횟수 = 2.
+        responses.add(
+            responses.GET,
+            "https://kosis.kr/openapi/Param/statisticsParameterData.do",
+            body=sample_data_response,
+            status=200,
+        )
+        responses.add(
+            responses.GET,
+            "https://kosis.kr/openapi/Param/statisticsParameterData.do",
+            body=sample_data_response,
+            status=200,
+        )
+
+        result = data_client._fetch_with_period_split(
+            org_id="101",
+            tbl_id="DT_1B040A3",
+            start_date="2010",
+            end_date="2025",
+            prd_se="Y",
+            obj_l1="ALL",
+            obj_l2=None,
+            itm_id="ALL",
+            max_records_per_call=10000,
+        )
+
+        # 두 chunk 호출 발생
+        assert len(responses.calls) == 2
+        # _deduplicate_records로 중복 키 (PRD_DE+C1+ITM_ID) 정리: 두 응답이 동일하므로 3건
+        assert len(result) == 3
+
+    @responses.activate
+    def test_monthly_split_uses_yearly_chunks(
+        self, data_client: StatisticsData, sample_data_response: str
+    ):
+        """월간(M) prd_se: 1년씩 chunk_years=1 분할."""
+        # 2022-2023: 2 chunks 발생
+        for _ in range(2):
+            responses.add(
+                responses.GET,
+                "https://kosis.kr/openapi/Param/statisticsParameterData.do",
+                body=sample_data_response,
+                status=200,
+            )
+
+        data_client._fetch_with_period_split(
+            org_id="101",
+            tbl_id="DT_M",
+            start_date="202201",
+            end_date="202312",
+            prd_se="M",
+            obj_l1="ALL",
+            obj_l2=None,
+            itm_id="ALL",
+            max_records_per_call=10000,
+        )
+
+        assert len(responses.calls) == 2
+        # 첫 chunk 종료일이 12월로 보정되는지 확인
+        url1 = responses.calls[0].request.url
+        assert "endPrdDe=202212" in url1
+
+
+class TestSmartRetryShortCircuit:
+    """get_data_with_smart_retry: newEstPrdCnt/prdInterval 지정 시 메타 우회."""
+
+    @responses.activate
+    def test_short_circuit_with_new_est_prd_cnt(
+        self, data_client: StatisticsData, sample_data_response: str
+    ):
+        """new_est_prd_cnt 가 있으면 TableMetadata.get_prd_info 호출 없이 바로 get_data."""
+        responses.add(
+            responses.GET,
+            "https://kosis.kr/openapi/Param/statisticsParameterData.do",
+            body=sample_data_response,
+            status=200,
+        )
+
+        result = data_client.get_data_with_smart_retry(
+            org_id="101",
+            tbl_id="DT_1B040A3",
+            prd_se="Y",
+            new_est_prd_cnt=3,
+        )
+
+        # KOSIS 메타 호출 없음 — 단일 데이터 호출만.
+        assert len(responses.calls) == 1
+        url = responses.calls[0].request.url
+        assert "newEstPrdCnt=3" in url
+        assert "statisticsData.do" not in url  # getMeta 안 침
+        assert len(result) == 3
