@@ -171,6 +171,24 @@ def create_app() -> Starlette:
             except Exception as e:
                 logger.warning(f"Database initialization failed: {e}")
 
+    async def warmup_kosis():
+        # Establish a TCP/TLS handshake to kosis.kr at startup so the first
+        # user request after a Fly suspend-resume doesn't pay the cold-resume
+        # connection-reset penalty (~25s observed). Best-effort, non-blocking
+        # on failure — degrades to today's behavior.
+        import asyncio
+
+        def _ping() -> None:
+            try:
+                import requests
+
+                requests.get("https://kosis.kr/openapi/", timeout=3)
+                logger.info("KOSIS TCP/TLS warmed")
+            except Exception as exc:
+                logger.info(f"KOSIS warmup skipped: {exc}")
+
+        await asyncio.to_thread(_ping)
+
     async def close_database():
         logger.info("KOSIS MCP Server shutting down...")
         try:
@@ -181,6 +199,7 @@ def create_app() -> Starlette:
             pass
 
     mcp_app.add_event_handler("startup", init_database)
+    mcp_app.add_event_handler("startup", warmup_kosis)
     mcp_app.add_event_handler("shutdown", close_database)
 
     return mcp_app
