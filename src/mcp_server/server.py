@@ -1029,6 +1029,17 @@ def search_key_indicators(
         return {"error": f"by must be 'name' or 'id', got {by!r}"}
     if not value:
         return {"error": "value is required"}
+    # by="id" expects a numeric jipyoId; non-numeric values always return
+    # zero rows from KOSIS, so reject early to save the round-trip.
+    if by == "id" and not value.isdigit():
+        return {
+            "error": "by='id' requires a numeric jipyoId (e.g. '160'). "
+            "Use by='name' for textual lookup.",
+            "by": by,
+            "value": value,
+            "count": 0,
+            "results": [],
+        }
 
     try:
         client = KeyIndicators()
