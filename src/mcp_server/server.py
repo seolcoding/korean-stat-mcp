@@ -321,7 +321,7 @@ def get_table_metadata(
             },
             "suggested_query": {
                 "example": f"get_statistics_data('{org_id}', '{tbl_id}', '{result.get('start_prd', '2020')}', '{result.get('end_prd', '2023')}')",
-                "prd_se_options": {"Y": "연간", "M": "월간", "Q": "분기", "S": "반기"},
+                "prd_se_options": {"Y": "연간", "M": "월간", "Q": "분기", "H": "반기"},
             },
         }
 
@@ -428,7 +428,7 @@ def get_statistics_data(
         start_date: 시작 기간 (예: "2019", "202301")
         end_date: 종료 기간 (예: "2023", "202312")
         prd_se: 기간 유형
-                "Y"=연간, "M"=월간, "Q"=분기, "S"=반기
+                "Y"=연간, "M"=월간, "Q"=분기, "H"=반기
         format: 응답 형식
                 "summary" (기본): LLM 친화적 요약 형식 (메타데이터 + 피벗 요약 + 샘플)
                 "raw": 전체 원본 데이터 (주의: 컨텍스트 초과 가능)
@@ -833,7 +833,7 @@ def get_period_types_resource() -> dict:
         "Y": "연간 (Annual)",
         "M": "월간 (Monthly)",
         "Q": "분기 (Quarterly)",
-        "S": "반기 (Semi-annual)",
+        "H": "반기 (Semi-annual)",
         "D": "일간 (Daily)",
     }
     return period_types

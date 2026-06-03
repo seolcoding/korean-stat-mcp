@@ -226,7 +226,7 @@ class PeriodType:
 
     MONTHLY = "M"  # 월간 (격월도 동일 코드)
     QUARTERLY = "Q"  # 분기
-    SEMI_ANNUAL = "S"  # 반기 (H와 동일)
+    SEMI_ANNUAL = "H"  # 반기 (KOSIS API 실제 prdSe 코드는 "H")
     YEARLY = "Y"  # 연간
     MULTI_YEAR = "F"  # 다년
     IRREGULAR = "IR"  # 부정기
