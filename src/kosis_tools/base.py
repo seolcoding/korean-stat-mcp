@@ -101,6 +101,15 @@ def fix_malformed_json(response_text: str) -> Optional[Union[Dict, List]]:
         # json5 라이브러리 사용: 따옴표 없는 키 등 비표준 JSON을 자동 처리
         # KOSIS API는 {TBL_ID:"값"} 형태의 비표준 JSON을 반환하므로 json5 사용
         return json5.loads(response_text)
+    except (json.JSONDecodeError, ValueError):
+        pass
+
+    try:
+        # json5도 실패하는 경우: \W 같은 비표준 이스케이프 시퀀스 보정 후 재시도
+        # jsonVD=Y 응답에서도 일부 테이블(예: DT_105Y001)이 잘못된 역슬래시를 포함함
+        import re as _re
+        fixed = _re.sub(r'\\(?!["\\/bfnrtu])', r'\\\\', response_text)
+        return json.loads(fixed)
     except (json.JSONDecodeError, ValueError) as e:
         logger.error(f"JSON 파싱 실패: {e}")
         logger.debug(f"응답 미리보기: {response_text[:500]}...")

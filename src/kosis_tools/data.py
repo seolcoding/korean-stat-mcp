@@ -120,13 +120,13 @@ class StatisticsData(KosisBaseClient):
                         - 연간(Y): "2020"
                         - 월간(M): "202001"
                         - 분기(Q): "202001" (01=1분기)
-                        - 반기(S): "202001" (01=상반기)
+                        - 반기(H): "202001" (01=상반기)
 
             end_date: 조회 종료 기간.
                       start_date와 동일한 형식.
 
             prd_se: 수록주기.
-                    "M" (월간/격월), "Q" (분기), "S" (반기),
+                    "M" (월간/격월), "Q" (분기), "H" (반기),
                     "Y" (연간), "F" (다년), "IR" (부정기)
                     PeriodType 클래스의 상수를 사용할 수 있습니다.
                     기본값: "Y" (연간)
@@ -216,6 +216,7 @@ class StatisticsData(KosisBaseClient):
         params: Dict[str, Any] = {
             "method": "getList",
             "format": build_format_param(response_format),  # type: ignore[arg-type]
+            "jsonVD": "Y",  # 표준 JSON(quoted keys) 응답 강제 — 없으면 일부 테이블에서 비표준 JSON 반환
             "orgId": org_id,
             "tblId": tbl_id,
             "objL1": obj_l1,
@@ -408,8 +409,8 @@ class StatisticsData(KosisBaseClient):
         if result:
             return result
 
-        # 4. 반기(S) 실패 시 년간(Y) 폴백 시도
-        if actual_prd_se == "S" and len(prd_info) > 1:
+        # 4. 반기(H) 실패 시 년간(Y) 폴백 시도
+        if actual_prd_se == "H" and len(prd_info) > 1:
             # 메타데이터에서 년간 주기 정보 찾기
             yearly_info = next((p for p in prd_info if p.get("PRD_SE") == "년"), None)
             if yearly_info:
@@ -898,7 +899,7 @@ class StatisticsData(KosisBaseClient):
         KOSIS API는 주기별로 다른 날짜 형식을 요구합니다:
         - 월간(M): YYYYMM (예: 202301)
         - 분기(Q): YYYYQQ (예: 202301 = 1분기)
-        - 반기(S): YYYYHH (예: 202301 = 상반기)
+        - 반기(H): YYYYHH (예: 202301 = 상반기)
         - 연간(Y): YYYY (예: 2023)
         - 다년(F): YYYY (예: 2023)
         - 부정기(IR): YYYYMMDD 또는 YYYY
@@ -936,7 +937,7 @@ class StatisticsData(KosisBaseClient):
             else:
                 return date_clean[:4] + "01"
 
-        elif period_type == "S":
+        elif period_type == "H":
             # 반기: YYYYHH
             if len(date_clean) >= 6:
                 return date_clean[:6]
@@ -1081,7 +1082,7 @@ class StatisticsData(KosisBaseClient):
         elif prd_se == "Q":
             # 분기: 2년씩 분할
             chunk_years = 2
-        elif prd_se == "S":
+        elif prd_se == "H":
             # 반기: 3년씩 분할
             chunk_years = 3
         else:
@@ -1103,7 +1104,7 @@ class StatisticsData(KosisBaseClient):
                 chunk_end_str = f"{current_end}12"
             elif prd_se == "Q":
                 chunk_end_str = f"{current_end}04"
-            elif prd_se == "S":
+            elif prd_se == "H":
                 chunk_end_str = f"{current_end}02"
 
             logger.info(f"분할 조회 #{chunk_num}: {chunk_start_str} ~ {chunk_end_str}")
